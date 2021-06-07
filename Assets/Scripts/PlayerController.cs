@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         // движение по плоскости
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
-        movement = movement.normalized;
+        movement = Vector2.ClampMagnitude(movement, 1f);
         // смещение
         Vector3 offset = new Vector3(movement.x, 0.0f, movement.y) * currentMovementSpeed;
 
