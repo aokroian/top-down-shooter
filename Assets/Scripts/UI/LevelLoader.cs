@@ -8,9 +8,11 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1.0f;
+    public GameObject background;
 
     public void LoadLevel(string levelName)
     {
+        background.SetActive(true);
         StartCoroutine(StartLevel(levelName));
     }
 
