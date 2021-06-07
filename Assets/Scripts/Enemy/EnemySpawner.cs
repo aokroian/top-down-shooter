@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    // TODO: Заменить параметры на SpawnConfig?
+    // TODO: ???????? ????????? ?? SpawnConfig?
     public void Spawn(GameObject groundTile, int groupCost, int minEnemyCost, int maxEnemyCost)
     {
         costLeft = groupCost;
@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
         float z = Random.Range(bounds.min.z, bounds.max.z);
 
         NavMeshHit hit;
-        NavMesh.SamplePosition(new Vector3(x, 0.0f, z), out hit, bounds.extents.x, 1); // 1 это walkable
+        NavMesh.SamplePosition(new Vector3(x, 0.0f, z), out hit, bounds.extents.x, 1); // 1 ??? walkable
         if (!hit.hit)
         {
             Debug.LogError("NOT HIT!!! ERROR!!");
@@ -88,10 +88,10 @@ public class EnemySpawner : MonoBehaviour
     private SpawnPoint SpawnEnemySubtractCost(Vector2 pos, GameObject enemyPrefab)
     {
         var v3pos = new Vector3(pos.x, 0.0f, pos.y);
-        var rot = Quaternion.Euler(0.0f, Random.Range(-180.0f, 180.0f), 0.0f); // Мб в сторону игрока пусть будут повернуты?
+        var rot = Quaternion.Euler(0.0f, Random.Range(-180.0f, 180.0f), 0.0f); // ?? ? ??????? ?????? ????? ????? ??????????
         //Debug.Log("angle: " + Quaternion.Angle(rot, enemyPrefab.transform.rotation));
 
-        // Нужно возвращать созданный объект? Тогда разбить на два метода?
+        // ????? ?????????? ????????? ??????? ????? ??????? ?? ??? ???????
         var enemy = Instantiate(enemyPrefab, v3pos, rot);
         NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
 
@@ -102,7 +102,7 @@ public class EnemySpawner : MonoBehaviour
 
     private GameObject GetEnemyPrefabByCost(int minEnemyCost, int maxEnemyCost)
     {
-        // TODO: Получение префаба по вычисленной стоимости
+        // TODO: ????????? ??????? ?? ??????????? ?????????
         Mathf.Min(costLeft, Random.Range(minEnemyCost, maxEnemyCost));
         return enemyPrefab;
     }
@@ -111,7 +111,7 @@ public class EnemySpawner : MonoBehaviour
     {
         NavMeshHit hit;
         NavMesh.SamplePosition(new Vector3(candidate.x, 0.0f, candidate.y), out hit, 0.1f, 1);
-        Debug.Log("Hit: " + hit.hit + "; diff x:" + (candidate.x - hit.position.x) + "; z: " + (candidate.y - hit.position.y));
+        //Debug.Log("Hit: " + hit.hit + "; diff x:" + (candidate.x - hit.position.x) + "; z: " + (candidate.y - hit.position.y));
         return hit.hit;
     }
 

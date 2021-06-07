@@ -66,6 +66,22 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        // движение по плоскости
+        movement.x = Input.GetAxis("Horizontal");
+        movement.y = Input.GetAxis("Vertical");
+        movement = movement.normalized;
+        // смещение
+        Vector3 offset = new Vector3(movement.x, 0.0f, movement.y) * currentMovementSpeed;
+
+        // игрок двигается в направлении курсора
+        //transform.Translate(offset.normalized * currentMovementSpeed * Time.deltaTime);
+
+        // игрок двигается по глобальным осям
+        if (movement.magnitude >= 0.01f)
+            transform.position += offset * Time.deltaTime;
+
+
+
         // вращение персонажа туда, куда смотрит мышь
         Ray cameraRay = cam.ScreenPointToRay(Input.mousePosition);
 
@@ -219,21 +235,13 @@ public class PlayerController : MonoBehaviour
             isAiming = false;
             aimSpotRef.gameObject.SetActive(false);
         }
+
+        
     }
 
     private void FixedUpdate()
     {
-        // движение по плоскости
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-        // движение персонажа
-        Vector3 offset = new Vector3(movement.x, 0.0f, movement.y);
-
-        // игрок двигается в направлении курсора
-        //transform.Translate(offset.normalized * currentMovementSpeed * Time.deltaTime);
-
-        // игрок двигается по глобальным осям
-        transform.position = transform.position + (offset.normalized * currentMovementSpeed * Time.deltaTime);
+        
 
         // вращение персонажа 
         Vector3 lTargetDir = lookAt - transform.position;

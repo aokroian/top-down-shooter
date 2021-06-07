@@ -20,7 +20,7 @@ public class Target : MonoBehaviour
         }
         if (health <= 0f)
         {
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 0.2f);
         }
     }
 }
