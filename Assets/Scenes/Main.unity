@@ -2102,6 +2102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 462298743271879873, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
+      propertyPath: isStartMenuScreen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4630233242979557246, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
       propertyPath: m_Layer
       value: 5

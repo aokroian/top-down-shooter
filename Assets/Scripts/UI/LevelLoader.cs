@@ -9,6 +9,15 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1.0f;
     public GameObject background;
+    public bool isStartMenuScreen = false;
+
+    public void Start()
+    {
+        if (!isStartMenuScreen)
+        {
+            background.SetActive(true);
+        }
+    }
 
     public void LoadLevel(string levelName)
     {
