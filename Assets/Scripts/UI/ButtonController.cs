@@ -43,6 +43,11 @@ public class ButtonController : MonoBehaviour
         item.LoadLevel("Main");
     }
 
+    public void OnResume(LevelLoader item)
+    {
+        item.LoadLevel("Main");
+    }
+
     public void OnSettings()
     {
         mainMenuScreen.SetActive(false);
