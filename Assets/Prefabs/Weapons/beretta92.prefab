@@ -112,6 +112,9 @@ MonoBehaviour:
   muzzleFlashRef: {fileID: 7623459529341993038, guid: d8536e3437348459eab9512313b2ac32, type: 3}
   bulletOutPointObj: {fileID: 4499716576516380466}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
+  shootWithRaycast: 0
+  muzzleObjRef: {fileID: 5642992319977051088, guid: 9e329793a92a341498854cb3fdba4eb1, type: 3}
+  muzzleVelocity: 20
   bulletsInClip: 0
 --- !u!1 &4499716576516380466
 GameObject:

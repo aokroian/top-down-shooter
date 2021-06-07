@@ -34,6 +34,10 @@ public class WeaponController : MonoBehaviour
 
     public GameObject hitEffectRef;
 
+    public bool shootWithRaycast = true;
+    public GameObject muzzleObjRef;
+    public float muzzleVelocity;
+
     private GameObject playerRef;
     private GameObject handRigObjectRef;
     private float playerDefaultRotationSpeed;
@@ -179,39 +183,52 @@ public class WeaponController : MonoBehaviour
         if (bulletsInClip >= 1)
         {
             //Debug.DrawLine(pos, targetPos, Color.green, Mathf.Infinity);
-
-
             // частицы у ствола 
             Instantiate(muzzleFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
-
+            
             // убираем пулю из обоймы
             bulletsInClip -= 1;
 
-            // если луч попал во что-то
-            RaycastHit hit;
-            if (Physics.Raycast(originPointOfShot, direction, out hit, shootRange))
+            if (!shootWithRaycast)
             {
-                // частицы на цели (потом нужно убрать логику в саму цель, чтобы были разные)
-                Instantiate(hitEffectRef, hit.point, Quaternion.LookRotation(hit.normal));
+                GameObject instantiatedProjectile = Instantiate(muzzleObjRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
 
+                // данные об уроне, силе толчка и эффекте на поверхности, куда попала пуля
+                instantiatedProjectile.GetComponent<MuzzleController>().bulletImpactForce = shotImpactForce;
+                instantiatedProjectile.GetComponent<MuzzleController>().shotDamage = shotDamage + shotDamageModifier;
+                instantiatedProjectile.GetComponent<MuzzleController>().hitEffectRef = hitEffectRef;
 
-
-                // толчок пулей на объект попадания
-                if (hit.rigidbody != null)
+                // скорость и направление полета пули
+                instantiatedProjectile.GetComponent<Rigidbody>().velocity = (targetPos - bulletOutPointObj.transform.position).normalized * muzzleVelocity;
+                instantiatedProjectile.transform.rotation = Quaternion.LookRotation(instantiatedProjectile.GetComponent<Rigidbody>().velocity);
+            } else
+            {
+                // если луч попал во что-то
+                RaycastHit hit;
+                if (Physics.Raycast(originPointOfShot, direction, out hit, shootRange))
                 {
-                    hit.rigidbody.AddForceAtPosition(-hit.normal * shotImpactForce, hit.point);
+                    // частицы на цели (потом нужно убрать логику в саму цель, чтобы были разные)
+                    Instantiate(hitEffectRef, hit.point, Quaternion.LookRotation(hit.normal));
+                    // толчок пулей на объект попадания
+                    if (hit.rigidbody != null)
+                    {
+                        hit.rigidbody.AddForceAtPosition(-hit.normal * shotImpactForce, hit.point);
+                    }
+
+                    // урон объекту
+                    Target target = hit.transform.GetComponent<Target>();
+                    if (target != null)
+                    {
+                        target.TakeDamage(shotDamage + shotDamageModifier);
+                    }
                 }
 
-
-                // урон объекту
-                Target target = hit.transform.GetComponent<Target>();
-                if (target != null)
-                {
-                    target.TakeDamage(shotDamage + shotDamageModifier);
-                }
             }
-
         }
+
+            // инстанцируем пулю и направляем ее куда нужно с заданной скоростью
+
+            
 
         // таймер времени на выстрел
         nextShotTimer = rateOfFire;

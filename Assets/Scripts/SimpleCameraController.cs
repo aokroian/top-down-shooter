@@ -13,11 +13,8 @@ public class SimpleCameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    private void Update()
     {
-
             transform.position = followObject.transform.position + offset;
-
-        
     }
 }

@@ -80,9 +80,23 @@ public class PlayerController : MonoBehaviour
         if (movement.magnitude >= 0.01f)
             transform.position += offset * Time.deltaTime;
 
+        // вращение персонажа 
+        Vector3 lTargetDir = lookAt - transform.position;
+        lTargetDir.y = 0.0f;
+
+        float playerY = transform.rotation.eulerAngles.y;
+        float directionY = Quaternion.LookRotation(lTargetDir).eulerAngles.y;
+
+        // здесь, если рука отклонена слишком сильно, вращаем всего персонажа
+        if (directionY - playerY >= 20f || directionY - playerY <= -10f)
+        {
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed);
+        }
 
 
-        // вращение персонажа туда, куда смотрит мышь
+
+        // расчеты для вращения персонажа туда, куда смотрит мышь
         Ray cameraRay = cam.ScreenPointToRay(Input.mousePosition);
 
         // абстрактная поверхность для того, чтобы понять,
@@ -237,25 +251,5 @@ public class PlayerController : MonoBehaviour
         }
 
         
-    }
-
-    private void FixedUpdate()
-    {
-        
-
-        // вращение персонажа 
-        Vector3 lTargetDir = lookAt - transform.position;
-        lTargetDir.y = 0.0f;
-
-        float playerY = transform.rotation.eulerAngles.y;
-        float directionY = Quaternion.LookRotation(lTargetDir).eulerAngles.y;
-
-        // здесь, если рука отклонена слишком сильно, вращаем всего персонажа
-        if (directionY - playerY >= 20f || directionY - playerY <= -10f)
-        {
-            //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed);
-        }
-
     }
 }
