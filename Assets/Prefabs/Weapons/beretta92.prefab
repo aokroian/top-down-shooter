@@ -113,8 +113,8 @@ MonoBehaviour:
   bulletOutPointObj: {fileID: 4499716576516380466}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
   shootWithRaycast: 0
-  muzzleObjRef: {fileID: 5642992319977051088, guid: 9e329793a92a341498854cb3fdba4eb1, type: 3}
-  muzzleVelocity: 20
+  muzzleObjRef: {fileID: 2685747771383232502, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
+  muzzleVelocity: 10
   bulletsInClip: 0
 --- !u!1 &4499716576516380466
 GameObject:

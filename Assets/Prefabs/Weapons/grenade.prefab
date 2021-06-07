@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4487077465775642147}
   - component: {fileID: 7597651767271913241}
   - component: {fileID: 5776517788051835948}
+  - component: {fileID: 8937814820522497809}
   m_Layer: 0
   m_Name: grenade
   m_TagString: Untagged
@@ -27,9 +28,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2685747771383232502}
-  m_LocalRotation: {x: -0.7071067, y: 0.000000053385072, z: -0.00000005338508, w: 0.7071068}
-  m_LocalPosition: {x: -4.2781777, y: 1.7211634, z: 4.19}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,11 +107,26 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2685747771383232502}
   serializedVersion: 2
-  m_Mass: 4
+  m_Mass: 0.001
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8937814820522497809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2685747771383232502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d736f7d0feae46ffb69db5b82f85999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffectRef: {fileID: 0}
+  bulletImpactForce: 0
+  shotDamage: 0
