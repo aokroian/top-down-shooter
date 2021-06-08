@@ -12,7 +12,6 @@ public class EnemySpawnerManager: MonoBehaviour
     void Start()
     {
         spawner = GetComponent<EnemySpawner>();
-        StartCoroutine("TEMPStartCounter");
     }
 
     // Update is called once per frame
@@ -26,11 +25,4 @@ public class EnemySpawnerManager: MonoBehaviour
         spawner.Spawn(groundTile, 5, 1, 2);
     }
 
-
-    IEnumerator TEMPStartCounter()
-    {
-        yield return new WaitForSeconds(3f);
-        Spawn(GameObject.Find("Ground"));
-        StartCoroutine("TEMPStartCounter");
-    }
 }
