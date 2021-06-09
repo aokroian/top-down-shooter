@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     public float maxDistanceMultiplier;
 
     private int costLeft;
+    private float navMeshSearchMaxDistance = 5.0f; // could change. Depends on obstacle size
 
     private class SpawnPoint
     {
@@ -32,16 +33,22 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    // TODO: ???????? ????????? ?? SpawnConfig?
-    public void Spawn(GameObject groundTile, int groupCost, int minEnemyCost, int maxEnemyCost)
+    // TODO: Change parameters to SpawnConfig?
+    public void SpawnByGround(GameObject groundTile, int groupCost, int minEnemyCost, int maxEnemyCost)
     {
-        costLeft = groupCost;
         var bounds = groundTile.GetComponent<MeshRenderer>().bounds;
         float x = Random.Range(bounds.min.x, bounds.max.x);
         float z = Random.Range(bounds.min.z, bounds.max.z);
+        Spawn(new Vector3(x, 0.0f, z), groupCost, minEnemyCost, maxEnemyCost);
+    }
+
+    public void Spawn(Vector3 point, int groupCost, int minEnemyCost, int maxEnemyCost)
+    {
+        costLeft = groupCost;
+        
 
         NavMeshHit hit;
-        NavMesh.SamplePosition(new Vector3(x, 0.0f, z), out hit, bounds.extents.x, 1); // 1 ??? walkable
+        NavMesh.SamplePosition(point, out hit, navMeshSearchMaxDistance, 1); // 1: walkable
         if (!hit.hit)
         {
             Debug.LogError("NOT HIT!!! ERROR!!");
@@ -66,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
             var enemy = GetEnemyPrefabByCost(minEnemyCost, maxEnemyCost);
             float radius = enemy.GetComponent<NavMeshAgent>().radius;
 
-            for (int i = 0; i < attemptCount; i ++)
+            for (int i = 0; i < attemptCount; i++)
             {
                 float angle = 2 * Mathf.PI * Random.value;
                 float r = radius * (maxDistanceMultiplier - minDistanceMultiplier) * Random.value + radius * minDistanceMultiplier;
@@ -79,7 +86,8 @@ public class EnemySpawner : MonoBehaviour
                     break;
                 }
             }
-            if (!found) {
+            if (!found)
+            {
                 activePoint.active = false;
             }
         }
@@ -88,11 +96,11 @@ public class EnemySpawner : MonoBehaviour
     private SpawnPoint SpawnEnemySubtractCost(Vector2 pos, GameObject enemyPrefab)
     {
         var v3pos = new Vector3(pos.x, 0.0f, pos.y);
-        var rot = Quaternion.Euler(0.0f, Random.Range(-180.0f, 180.0f), 0.0f); // ?? ? ??????? ?????? ????? ????? ??????????
+        var rot = Quaternion.Euler(0.0f, Random.Range(-180.0f, 180.0f), 0.0f); // Rotate towards player maybe?
         //Debug.Log("angle: " + Quaternion.Angle(rot, enemyPrefab.transform.rotation));
 
-        // ????? ?????????? ????????? ??????? ????? ??????? ?? ??? ???????
-        var enemy = Instantiate(enemyPrefab, v3pos, rot);
+        // need return instantiated enemy? Split method in two?
+        var enemy = Instantiate(enemyPrefab, v3pos, rot, transform);
         NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
 
         costLeft -= enemy.GetComponent<EnemyController>().cost;
@@ -102,7 +110,7 @@ public class EnemySpawner : MonoBehaviour
 
     private GameObject GetEnemyPrefabByCost(int minEnemyCost, int maxEnemyCost)
     {
-        // TODO: ????????? ??????? ?? ??????????? ?????????
+        // TODO: Get prefab by cost
         Mathf.Min(costLeft, Random.Range(minEnemyCost, maxEnemyCost));
         return enemyPrefab;
     }
