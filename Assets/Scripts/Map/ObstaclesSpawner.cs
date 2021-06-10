@@ -17,6 +17,9 @@ public class ObstaclesSpawner : MonoBehaviour
 
     private float noiseOffset = 10000;
 
+    private Dictionary<Vector2, List<GameObject>> activeObstacles = new Dictionary<Vector2, List<GameObject>>();
+    private List<GameObject> pool = new List<GameObject>();
+
     void Start()
     {
         if (randomSeed)
@@ -38,10 +41,20 @@ public class ObstaclesSpawner : MonoBehaviour
         
 
         var bounds = groundTile.GetComponent<MeshRenderer>().bounds;
-        Debug.Log("Size: " + bounds.size.z);
+        //Debug.Log("Size: " + bounds.size.z);
 
         var maxCount = Mathf.Floor(bounds.size.z / obstacleSize);
-        var iterStep = bounds.size.z / maxCount;   
+        var iterStep = bounds.size.z / maxCount;
+
+        var key = GetKeyByTile(groundTile);
+        List<GameObject> tileObstacles;
+        if (activeObstacles.ContainsKey(key)) {
+            tileObstacles = activeObstacles[key];
+        } else
+        {
+            tileObstacles = new List<GameObject>();
+            activeObstacles.Add(key, tileObstacles);
+        }
 
         for (int x = 0; x < maxCount; x ++)
         {
@@ -52,8 +65,19 @@ public class ObstaclesSpawner : MonoBehaviour
                 var y = Mathf.PerlinNoise(noiseOffset + xPos * noiseMultiplier, noiseOffset + zPos * noiseMultiplier);
                 if (y > minY)
                 {
+                    GameObject obstacle;
                     Vector3 pos = new Vector3(xPos + bounds.extents.x / 2.0f, yPos, zPos + bounds.extents.z / 2.0f);
-                    Instantiate(obstaclePrefab, pos, obstaclePrefab.transform.rotation, this.transform);
+                    if (pool.Count > 0)
+                    {
+                        obstacle = pool[0];
+                        obstacle.transform.position = pos;
+                        pool.RemoveAt(0);
+                    } else
+                    {
+                        obstacle = Instantiate(obstaclePrefab, pos, obstaclePrefab.transform.rotation, this.transform);
+                    }
+                    
+                    tileObstacles.Add(obstacle);
                 }
             }
         }
@@ -61,6 +85,20 @@ public class ObstaclesSpawner : MonoBehaviour
 
     public void RemoveObstacles(GameObject groundTile)
     {
+        var key = GetKeyByTile(groundTile);
+        if (activeObstacles.ContainsKey(key))
+        {
+            var obstacles = activeObstacles[key];
+            foreach (GameObject obs in obstacles)
+            {
+                pool.Add(obs);
+            }
+            activeObstacles.Remove(key);
+        }
+    }
 
+    private Vector2 GetKeyByTile(GameObject groundTile)
+    {
+        return new Vector2(groundTile.transform.position.x, groundTile.transform.position.z);
     }
 }

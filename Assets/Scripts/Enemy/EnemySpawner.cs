@@ -34,6 +34,9 @@ public class EnemySpawner : MonoBehaviour
     }
 
     // TODO: Change parameters to SpawnConfig?
+    /// <summary>
+    /// Spawn group of enemies at random point inside groundTile
+    /// </summary>
     public void SpawnByGround(GameObject groundTile, int groupCost, int minEnemyCost, int maxEnemyCost)
     {
         var bounds = groundTile.GetComponent<MeshRenderer>().bounds;
@@ -42,10 +45,12 @@ public class EnemySpawner : MonoBehaviour
         Spawn(new Vector3(x, 0.0f, z), groupCost, minEnemyCost, maxEnemyCost);
     }
 
+    /// <summary>
+    /// Spawn group of enemies at point
+    /// </summary>
     public void Spawn(Vector3 point, int groupCost, int minEnemyCost, int maxEnemyCost)
     {
         costLeft = groupCost;
-        
 
         NavMeshHit hit;
         NavMesh.SamplePosition(point, out hit, navMeshSearchMaxDistance, 1); // 1: walkable
@@ -78,7 +83,7 @@ public class EnemySpawner : MonoBehaviour
                 float angle = 2 * Mathf.PI * Random.value;
                 float r = radius * (maxDistanceMultiplier - minDistanceMultiplier) * Random.value + radius * minDistanceMultiplier;
                 Vector2 candidate = activePoint.pos + r * new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-                Debug.DrawLine(new Vector3(candidate.x, 1.0f, candidate.y), new Vector3(candidate.x + 0.1f, 1.0f, candidate.y + 0.1f), Color.red, 500.0f, false);
+                //Debug.DrawLine(new Vector3(candidate.x, 1.0f, candidate.y), new Vector3(candidate.x + 0.1f, 1.0f, candidate.y + 0.1f), Color.red, 500.0f, false);
                 if (IsInsideNavMesh(candidate) && IsFairEnough(spawnPoints, candidate, radius))
                 {
                     found = true;
@@ -89,6 +94,35 @@ public class EnemySpawner : MonoBehaviour
             if (!found)
             {
                 activePoint.active = false;
+            }
+        }
+    }
+
+    public void SpawnWave(Vector3 playerPoint, Vector3 towards, float angle, float minSpawnDistance, float maxSpawnDistance, int groupCost, int minEnemyCost, int maxEnemyCost)
+    {
+        costLeft = groupCost;
+        towards = towards.normalized;
+        Vector2 playerPointV2 = new Vector2(playerPoint.x, playerPoint.z);
+        Vector2 towardsV2 = new Vector2(towards.x, towards.z);
+
+        List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+        float halfAngle = angle / 2.0f;
+        while (costLeft >= minEnemyCost)
+        {
+            var enemy = GetEnemyPrefabByCost(minEnemyCost, maxEnemyCost);
+            float radius = enemy.GetComponent<NavMeshAgent>().radius;
+
+            for (int i = 0; i < attemptCount; i++)
+            {
+                Quaternion randomAngle = Quaternion.Euler(0f, 0f, Random.Range(0 - halfAngle, halfAngle));
+                Vector2 delta = randomAngle * (towardsV2 * Random.Range(minSpawnDistance, maxSpawnDistance));
+                Vector2 candidate = playerPointV2 + delta;
+                
+                if (IsInsideNavMesh(candidate) && IsFairEnough(spawnPoints, candidate, radius))
+                {
+                    spawnPoints.Add(SpawnEnemySubtractCost(candidate, enemy));
+                    break;
+                }
             }
         }
     }

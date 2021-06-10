@@ -34,7 +34,7 @@ public class BulletController : MonoBehaviour
     public void SetDirection(Vector3 direction)
     {
         this.direction = direction * velocity;
-        Debug.Log(direction);
+        //Debug.Log(direction);
     }
 
     public void SetPlayer(GameObject player)
@@ -44,7 +44,7 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collision: " + collision.gameObject.name);
+        //Debug.Log("collision: " + collision.gameObject.name);
         // частицы на цели (потом нужно убрать логику в саму цель, чтобы были разные)
         //Instantiate(hitEffectRef, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
 
