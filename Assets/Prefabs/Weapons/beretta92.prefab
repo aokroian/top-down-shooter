@@ -101,10 +101,10 @@ MonoBehaviour:
   shootRange: 200
   shotDamage: 20
   shotImpactForce: 50
-  recoilHeight: 1
+  recoilHeight: 0.07
   clipSize: 15
-  rateOfFire: 0.1
-  reloadTime: 2
+  rateOfFire: 0.2
+  reloadTime: 0.5
   shootingMode: 1
   rightHandPostionForWeapon: {x: -0.00003, y: 0.00155, z: -0.000344}
   rightHandRotationForWeapon: {x: -90, y: 180, z: 0}
@@ -113,8 +113,8 @@ MonoBehaviour:
   bulletOutPointObj: {fileID: 4499716576516380466}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
   shootWithRaycast: 0
-  muzzleObjRef: {fileID: 2685747771383232502, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
-  muzzleVelocity: 10
+  muzzleObjRef: {fileID: 5168185707833634706, guid: dd5773eef98c4aa488fdb4aabdfa4a47, type: 3}
+  muzzleVelocity: 20
   bulletsInClip: 0
 --- !u!1 &4499716576516380466
 GameObject:
@@ -143,7 +143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4499716576516380466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1522, z: 0.1511}
+  m_LocalPosition: {x: 0, y: 0.1522, z: 0.171}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4177243821781623629}

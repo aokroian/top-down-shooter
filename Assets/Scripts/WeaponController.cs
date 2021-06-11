@@ -89,7 +89,7 @@ public class WeaponController : MonoBehaviour
         if (reloadTimer > 0f)
         {
             reloadTimer -= Time.deltaTime;
-            playerRef.GetComponent<PlayerController>().isAiming = false;
+            playerRef.GetComponent<PlayerController>().isAiming = playerRef.GetComponent<PlayerController>().alwaysAiming;
         }
         if (nextShotTimer > 0f)
         {
@@ -191,7 +191,8 @@ public class WeaponController : MonoBehaviour
 
             if (!shootWithRaycast)
             {
-                GameObject instantiatedProjectile = Instantiate(muzzleObjRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
+                Vector3 muzzleSpawnPos = new Vector3 (bulletOutPointObj.transform.position.x, bulletOutPointObj.transform.position.y, bulletOutPointObj.transform.position.z + 2f);
+                GameObject instantiatedProjectile = Instantiate(muzzleObjRef, bulletOutPointObj.transform.TransformPoint(muzzleSpawnPos), bulletOutPointObj.transform.rotation);
 
                 // данные об уроне, силе толчка и эффекте на поверхности, куда попала пуля
                 instantiatedProjectile.GetComponent<MuzzleController>().bulletImpactForce = shotImpactForce;

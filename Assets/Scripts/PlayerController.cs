@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool alwaysAiming = false;
 
     public float rotationSpeed = 2f;
     public float basicMovementSpeed = 2f;
@@ -64,6 +65,10 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    private void Start()
+    {
+        isAiming = alwaysAiming;
+    }
     void Update()
     {
         // движение по плоскости
@@ -114,6 +119,9 @@ public class PlayerController : MonoBehaviour
 
             mousePosOnGround = lookAt;
         }
+
+
+
 
         // регенерация стамины
         if (stamina < maxStamina)
@@ -219,22 +227,17 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(aimSpotImageRef.raycastTarget);
 
             isAiming = true;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 FindInAllChildren(transform, "RightHandController", ref rightHandBoneController);
                 equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandBoneController.transform.position);
             }
         }
         // стрельба без прицеливания
-        if (Input.GetMouseButtonDown(0) && !isAiming && equippedWeaponObj != null)
+        if (Input.GetMouseButton(0) && /* !isAiming &&*/  equippedWeaponObj != null)
         {
-
-            isAiming = true;
             FindInAllChildren(transform, "RightHandController", ref rightHandBoneController);
             equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandBoneController.transform.position);
-            isAiming = false;
-
-
         }
 
         // перезарядка
@@ -246,7 +249,8 @@ public class PlayerController : MonoBehaviour
         // Отмена прицеливания когда опускаем пкм
         if (Input.GetMouseButtonUp(1))
         {
-            isAiming = false;
+
+            isAiming = alwaysAiming;
             aimSpotRef.gameObject.SetActive(false);
         }
 
