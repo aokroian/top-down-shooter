@@ -7,6 +7,9 @@ public class EnemyController : MonoBehaviour
 {
     public int cost;
 
+    public bool playerAwared;
+    public float visionRange = 15.0f;
+
     private Transform player;
 
     private NavMeshAgent agent;
@@ -20,6 +23,24 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.destination = player.position;
+        if (playerAwared) {
+            agent.destination = player.position;
+        } else
+        {
+            playerAwared = IsPlayerSpotted();
+        }
+    }
+
+    private bool IsPlayerSpotted()
+    {
+        var enemyPos = new Vector3(transform.position.x, 1.0f, transform.position.z);
+        var playerPos = new Vector3(player.transform.position.x, 1.0f, player.transform.position.z);
+        bool result = false;
+        if (Vector3.Distance(enemyPos, playerPos) <= visionRange)
+        {
+            result = !Physics.Linecast(enemyPos, playerPos, LayerMask.GetMask("Obstacle"));
+        }
+        
+        return result;
     }
 }
