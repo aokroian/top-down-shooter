@@ -33,21 +33,21 @@ public class SimpleCameraController : MonoBehaviour
 
         if (transform.position.z >= playerRef.transform.position.z + zAxisPositiveOffsetLimit + zAxisInstantOffset)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, zAxisPositiveOffsetLimit + playerRef.transform.position.z + zAxisInstantOffset);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, zAxisPositiveOffsetLimit + playerRef.transform.position.z + zAxisInstantOffset), smoothTime);
         }
         if (transform.position.z <= playerRef.transform.position.z + zAxisNegativeOffsetLimit + zAxisInstantOffset)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, playerRef.transform.position.z + zAxisNegativeOffsetLimit + zAxisInstantOffset);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, zAxisNegativeOffsetLimit + playerRef.transform.position.z + zAxisInstantOffset), smoothTime);
         }
 
 
         if (transform.position.x >= playerRef.transform.position.x + xAxisOffsetLimit)
         {
-            transform.position = new Vector3(playerRef.transform.position.x + xAxisOffsetLimit, transform.position.y, transform.position.z );
+            transform.position = Vector3.Lerp(transform.position,  new Vector3(playerRef.transform.position.x + xAxisOffsetLimit, transform.position.y, transform.position.z ), smoothTime);
         }
         if (transform.position.x <= playerRef.transform.position.x - xAxisOffsetLimit)
         {
-            transform.position = new Vector3(playerRef.transform.position.x - xAxisOffsetLimit, transform.position.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(playerRef.transform.position.x - xAxisOffsetLimit, transform.position.y, transform.position.z), smoothTime);
         }
 
 
