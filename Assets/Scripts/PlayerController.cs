@@ -140,14 +140,8 @@ public class PlayerController : MonoBehaviour
             stamina = 0f;
         }
         //  обновление значения стамины в UI
-        mainUIRef.transform.Find("Stamina").gameObject.GetComponent<Text>().text = "Stamina: " + Mathf.Round(stamina).ToString();
-        if (stamina > dodgeStaminaCost)
-        {
-            mainUIRef.transform.Find("Stamina").gameObject.GetComponent<Text>().color = Color.black;
-        } else
-        {
-            mainUIRef.transform.Find("Stamina").gameObject.GetComponent<Text>().color = Color.red;
-        }
+        mainUIRef.transform.Find("StaminaScrollbar").gameObject.GetComponent<Scrollbar>().value = (100 - stamina) / 100;
+        mainUIRef.transform.Find("StaminaScrollbar").gameObject.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, stamina / 100);
         // примитивная механика уклонения
         if (Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
         {

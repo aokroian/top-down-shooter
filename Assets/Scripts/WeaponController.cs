@@ -106,17 +106,10 @@ public class WeaponController : MonoBehaviour
         }
 
         // обновление ui
-        mainUIRef.gameObject.transform.Find("BulletsInClipText").gameObject.GetComponent<Text>().text = "BulletsInClip: " + bulletsInClip.ToString();
-        mainUIRef.gameObject.transform.Find("AmountOfBulletsText").gameObject.GetComponent<Text>().text = "AmountOfBullets: " + amountOfBullets.ToString();
-        mainUIRef.gameObject.transform.Find("ReloadTimerText").gameObject.GetComponent<Text>().text = "ReloadTimer: " + Mathf.RoundToInt(reloadTimer).ToString();
-
-        if (reloadTimer > 0f)
-        {
-            mainUIRef.gameObject.transform.Find("ReloadTimerText").gameObject.GetComponent<Text>().color = Color.red;
-        } else
-        {
-            mainUIRef.gameObject.transform.Find("ReloadTimerText").gameObject.GetComponent<Text>().color = Color.black;
-        }
+        mainUIRef.gameObject.transform.Find("BulletsInClipText").gameObject.GetComponent<Text>().text = bulletsInClip.ToString();
+        mainUIRef.gameObject.transform.Find("AmountOfBulletsText").gameObject.GetComponent<Text>().text = amountOfBullets.ToString();
+        mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Scrollbar>().value = reloadTimer/reloadTime;
+        mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Image>().color = Color.Lerp(Color.blue, Color.red, reloadTimer / reloadTime);
 
         // если патронов в магазине не осталось, происходит автоматическая перезарядка
         if (bulletsInClip < 1 && amountOfBullets > 0)
