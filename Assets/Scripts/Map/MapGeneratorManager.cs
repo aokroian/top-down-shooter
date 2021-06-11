@@ -22,6 +22,10 @@ public class MapGeneratorManager : MonoBehaviour
 
     private Vector2 curTilePos; // TODO: Мб не обязательно полем?
 
+
+    // TODO: Not work if in start
+    private bool firstTime = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,13 +45,18 @@ public class MapGeneratorManager : MonoBehaviour
         Vector2 prevTilePos = curTilePos;
         CalcCurTilePos();
 
-        if (prevTilePos != curTilePos)
+        if (prevTilePos != curTilePos || firstTime)
         {
-            CreateAndMarkActive();
-            RemoveInactive();
-            GetComponent<NavMeshSurface>().BuildNavMesh();
-            enemySpawner.Spawn(groundSpawner.GetGroundAt(FromTilePos(curTilePos)));
+            SpawnAll();
+            firstTime = false;
         }
+    }
+
+    private void SpawnAll()
+    {
+        CreateAndMarkActive();
+        RemoveInactive();
+        GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     private void CreateAndMarkActive()
@@ -82,7 +91,6 @@ public class MapGeneratorManager : MonoBehaviour
                 obstaclesSpawner.RemoveObstacles(groundSpawner.GetGroundAt(pos));
                 groundSpawner.RemoveGround(pos);
             }
-            // TODO: DESPAWN???
 
             grounds.Remove(key);
         }

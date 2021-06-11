@@ -38,8 +38,6 @@ public class ObstaclesSpawner : MonoBehaviour
 
     public void SpawnObstacles(GameObject groundTile)
     {
-        
-
         var bounds = groundTile.GetComponent<MeshRenderer>().bounds;
         //Debug.Log("Size: " + bounds.size.z);
 
