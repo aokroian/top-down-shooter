@@ -30,6 +30,8 @@ public class EnemySpawnerManager: MonoBehaviour
     public int startSpawnWaveCost = 5;
     public float waveCostDistanceMultiplier = 0.1f;
 
+    public float despawnDistance = 45.0f;
+
     private EnemySpawner spawner;
 
     private Vector3 prevSpawnPosition;
@@ -42,6 +44,8 @@ public class EnemySpawnerManager: MonoBehaviour
         spawner = GetComponent<EnemySpawner>();
         prevSpawnPosition = player.transform.position;
         halfSpawnPointAngle = spawnPointAngle / 2.0f;
+
+        DespawnCoroutine();
     }
 
     // Update is called once per frame
@@ -86,4 +90,20 @@ public class EnemySpawnerManager: MonoBehaviour
         //spawner.SpawnByGround(groundTile, 5, 1, 2);
     }
 
+    private IEnumerator DespawnCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.0f);
+
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                var child = transform.GetChild(i);
+                if (child.tag == "Enemy" && Vector3.Distance(child.position, player.transform.position) > despawnDistance)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+        }
+    }
 }
