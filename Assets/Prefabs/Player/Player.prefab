@@ -824,6 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83eac4a076d4410ebd13eee558f640d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alwaysAiming: 0
   rotationSpeed: 0.1
   basicMovementSpeed: 4
   dodgeSpeed: 25

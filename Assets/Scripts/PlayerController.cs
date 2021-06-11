@@ -194,6 +194,8 @@ public class PlayerController : MonoBehaviour
                 equippedWeaponObj = Instantiate(weaponEquipmentArr[selectedWeaponIndex - 1], rightHandBoneRef.transform);
 
                 WeaponController weaponController = equippedWeaponObj.GetComponent<WeaponController>();
+
+                weaponController.ownerObjRef = gameObject;
                 // вращение и движение оружия так, чтобы оно было в правой руке (подходит для пистолета)
                 equippedWeaponObj.transform.localPosition = weaponController.rightHandPostionForWeapon;
                 equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.rightHandRotationForWeapon);

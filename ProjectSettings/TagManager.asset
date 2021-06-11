@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MainUI
   - RightHandConstraint
+  - Enemy
   layers:
   - Default
   - TransparentFX

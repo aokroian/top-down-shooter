@@ -25,7 +25,7 @@ public class SimpleCameraController : MonoBehaviour
     private void Update()
     {
         //transform.position = playerRef.transform.position + offset;
-        playerAimingPoint = playerRef.GetComponent<PlayerController>().mousePosOnGround;
+        //playerAimingPoint = playerRef.GetComponent<PlayerController>().mousePosOnGround;
 
 
         //transform.Translate(playerAimingPoint * smoothTime);

@@ -11,8 +11,9 @@ public enum ShootingModes
 
 public class WeaponController : MonoBehaviour
 {
-    public float playerRotationSpeed = 1f;
-    public float rigMovementSpeed = 1f;
+    public float ownerAgility = 1f;
+    public float ownerRigControllerAgility = 1f;
+    public GameObject ownerObjRef;
 
 
     public float shootRange = 100f;
@@ -37,15 +38,12 @@ public class WeaponController : MonoBehaviour
     public bool shootWithRaycast = true;
     public GameObject muzzleObjRef;
     public float muzzleVelocity;
-
-    private GameObject playerRef;
-    private GameObject handRigObjectRef;
-    private float playerDefaultRotationSpeed;
-    private float defaultRigMovementSpeed;
-
     public int bulletsInClip = 0;
-    private GameObject rightHandBoneController;
 
+    private PlayerController playerController;
+    private ShootingEnemyController enemyController;
+
+    private GameObject rightHandBoneController;
     private float reloadTimer = 0f;
     private float nextShotTimer = 0f;
 
@@ -53,6 +51,9 @@ public class WeaponController : MonoBehaviour
     private int amountOfBullets;
     private void Start()
     {
+        playerController = ownerObjRef.GetComponent<PlayerController>();
+        enemyController = ownerObjRef.GetComponent<ShootingEnemyController>();
+
         
 
         // установка дефолтных значений таймеров и патронов в обойме
@@ -60,36 +61,28 @@ public class WeaponController : MonoBehaviour
         reloadTimer = 0f;
         nextShotTimer = 0f;
 
-        // поиск объекта игрока и отдельно контроллера рига руки для последующей модификации их параметров
-        playerRef = GameObject.FindGameObjectWithTag("Player");
-        handRigObjectRef = GameObject.FindGameObjectWithTag("RightHandConstraint");
-
-        // запись дефолтных параметров игрока для последующего возврата к ним после снятия данного оружия
-        playerDefaultRotationSpeed = playerRef.GetComponent<PlayerController>().rotationSpeed;
-        defaultRigMovementSpeed = handRigObjectRef.GetComponent<RigController>().movementRapidity;
-
         // поиск объекта UI
         mainUIRef = GameObject.FindGameObjectWithTag("MainUI");
 
 
-        amountOfBullets = playerRef.GetComponent<PlayerController>().amountOfBullets;
+        if (playerController != null)
+        {
+            amountOfBullets = playerController.amountOfBullets;
+        } else if (enemyController != null)
+        {
+            amountOfBullets = enemyController.amountOfBullets;
+        }
+        
     }
 
     private void Update()
-    {
-        // влияние на скорость поворота корпуса игрока и скорость движения руки с оружием 
-        if (playerDefaultRotationSpeed > 0f && defaultRigMovementSpeed > 0f)
-        {
-            playerRef.GetComponent<PlayerController>().rotationSpeed = playerRotationSpeed;
-            handRigObjectRef.GetComponent<RigController>().movementRapidity = rigMovementSpeed;
-        }
-
+    { 
 
         // таймеры
         if (reloadTimer > 0f)
         {
             reloadTimer -= Time.deltaTime;
-            playerRef.GetComponent<PlayerController>().isAiming = playerRef.GetComponent<PlayerController>().alwaysAiming;
+            //playerRef.GetComponent<PlayerController>().isAiming = playerRef.GetComponent<PlayerController>().alwaysAiming;
         }
         if (nextShotTimer > 0f)
         {
@@ -105,11 +98,15 @@ public class WeaponController : MonoBehaviour
             nextShotTimer = 0f;
         }
 
-        // обновление ui
-        mainUIRef.gameObject.transform.Find("BulletsInClipText").gameObject.GetComponent<Text>().text = bulletsInClip.ToString();
-        mainUIRef.gameObject.transform.Find("AmountOfBulletsText").gameObject.GetComponent<Text>().text = amountOfBullets.ToString();
-        mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Scrollbar>().value = reloadTimer/reloadTime;
-        mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Image>().color = Color.Lerp(Color.blue, Color.red, reloadTimer / reloadTime);
+        // changes in user interface
+        if (ownerObjRef.name == "Player")
+        {
+            mainUIRef.gameObject.transform.Find("BulletsInClipText").gameObject.GetComponent<Text>().text = bulletsInClip.ToString();
+            mainUIRef.gameObject.transform.Find("AmountOfBulletsText").gameObject.GetComponent<Text>().text = amountOfBullets.ToString();
+            mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Scrollbar>().value = reloadTimer / reloadTime;
+            mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Image>().color = Color.Lerp(Color.blue, Color.red, reloadTimer / reloadTime);
+        }
+        
 
         // если патронов в магазине не осталось, происходит автоматическая перезарядка
         if (bulletsInClip < 1 && amountOfBullets > 0)
@@ -117,12 +114,6 @@ public class WeaponController : MonoBehaviour
             Reload();
         }
      }
-    private void OnDestroy()
-    {
-        // когда игрок перестает использовать оружие возвращаем стандартные параметры 
-        playerRef.GetComponent<PlayerController>().rotationSpeed = playerDefaultRotationSpeed;
-        handRigObjectRef.GetComponent<RigController>().movementRapidity = defaultRigMovementSpeed;
-    }
 
 
     // вспомогательный метод для поиска вложенного объекта по имени с проходом по всем вложенным объектам
@@ -156,15 +147,13 @@ public class WeaponController : MonoBehaviour
             Reload();
             return;
         }
-
-        playerRef.GetComponent<PlayerController>().isAiming = true;
         // позиция невидимого объекта, который нужно разместить в том месте ствола, откуда будет производиться выстрел
         Vector3 originPointOfShot = transform.TransformPoint(transform.Find("BulletOutPoint").gameObject.transform.localPosition);
         // направление от места вылета пули к цели
         Vector3 direction = (targetPos - transform.position);
 
         // отдача
-        FindInAllChildren(playerRef.transform, "RightHandController", ref rightHandBoneController);
+        FindInAllChildren(ownerObjRef.transform, "RightHandController", ref rightHandBoneController);
         if (rightHandBoneController != null)
         {
             // направление отдачи
@@ -176,8 +165,9 @@ public class WeaponController : MonoBehaviour
         if (bulletsInClip >= 1)
         {
             //Debug.DrawLine(pos, targetPos, Color.green, Mathf.Infinity);
-            // частицы у ствола 
-            Instantiate(muzzleFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
+            // частицы у ствола
+            if (muzzleFlashRef != null)
+                Instantiate(muzzleFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
             
             // убираем пулю из обоймы
             bulletsInClip -= 1;
@@ -219,11 +209,6 @@ public class WeaponController : MonoBehaviour
 
             }
         }
-
-            // инстанцируем пулю и направляем ее куда нужно с заданной скоростью
-
-            
-
         // таймер времени на выстрел
         nextShotTimer = rateOfFire;
 
@@ -259,7 +244,15 @@ public class WeaponController : MonoBehaviour
                 bulletsInClip = amountOfBullets;
             }
 
-            playerRef.GetComponent<PlayerController>().amountOfBullets -= bulletsInClip;
+            if (playerController != null)
+            {
+                playerController.amountOfBullets -= bulletsInClip;
+            }
+            if (enemyController != null)
+            {
+                enemyController.amountOfBullets -= bulletsInClip;
+            }
+            
 
         }
         // если происходит перезарядка полностью израсходованного магазина
@@ -269,13 +262,29 @@ public class WeaponController : MonoBehaviour
             if (amountOfBullets >= needToAdd)
             {
                 bulletsInClip += needToAdd;
-                playerRef.GetComponent<PlayerController>().amountOfBullets -= needToAdd;
+
+                if (playerController != null)
+                {
+                    playerController.amountOfBullets -= needToAdd;
+                }
+                if (enemyController != null)
+                {
+                    enemyController.amountOfBullets -= needToAdd;
+                }
             }
             // когда общее кол-во патронов меньше размера магазина
             else
             {
                 bulletsInClip += amountOfBullets;
-                playerRef.GetComponent<PlayerController>().amountOfBullets = 0;
+
+                if (playerController != null)
+                {
+                    playerController.amountOfBullets = 0;
+                }
+                if (enemyController != null)
+                {
+                    enemyController.amountOfBullets = 0;
+                }
             }
 
             
@@ -283,8 +292,15 @@ public class WeaponController : MonoBehaviour
         }
 
 
+        if (playerController != null)
+        {
+            amountOfBullets = playerController.amountOfBullets;
+        }
+        if (enemyController != null)
+        {
+            amountOfBullets = enemyController.amountOfBullets;
+        }
 
-
-        amountOfBullets = playerRef.GetComponent<PlayerController>().amountOfBullets;
+        
     }
 }

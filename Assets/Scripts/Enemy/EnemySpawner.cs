@@ -137,7 +137,7 @@ public class EnemySpawner : MonoBehaviour
         var enemy = Instantiate(enemyPrefab, v3pos, rot, transform);
         NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
 
-        costLeft -= enemy.GetComponent<EnemyController>().cost;
+        costLeft -= 1;//enemy.GetComponent<EnemyController>().cost;
 
         return new SpawnPoint(pos, agent.radius);
     }
