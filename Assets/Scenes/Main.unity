@@ -721,12 +721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRef: {fileID: 2067822431}
   offset: {x: 0, y: 10, z: -4}
-  smoothTime: 0.1
-  zAxisInstantOffset: -2
-  yAxisInstantOffset: 10
-  zAxisPositiveOffsetLimit: 2
-  zAxisNegativeOffsetLimit: -2
-  xAxisOffsetLimit: 2
+  playerToPointerPart: 0.2
+  smoothTime: 0.2
 --- !u!114 &1071123032
 MonoBehaviour:
   m_ObjectHideFlags: 0
