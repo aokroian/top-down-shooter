@@ -101,8 +101,12 @@ public class PlayerController : MonoBehaviour
 
 
 
+        // Clamp mouse position to screen size
+        var mousePos = Input.mousePosition;
+        var clampedMousePos = new Vector3(Mathf.Clamp(mousePos.x, 0f, Screen.width), Mathf.Clamp(mousePos.y, 0f, Screen.height), 0f);
         // расчеты для вращения персонажа туда, куда смотрит мышь
-        Ray cameraRay = cam.ScreenPointToRay(Input.mousePosition);
+        Ray cameraRay = cam.ScreenPointToRay(clampedMousePos);
+        
 
         // абстрактная поверхность для того, чтобы понять,
         // где луч из камеры пересекается с землей

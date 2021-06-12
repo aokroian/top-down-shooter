@@ -712,7 +712,7 @@ GameObject:
   m_Layer: 0
   m_Name: ShootingEnemy
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -876,9 +876,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a4454aa23ba4dbca13e18dae334940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cost: 3
   amountOfBullets: 9999
   weapon: {fileID: 3653366746708802039, guid: c1a3f713b544549a68869c8f129b00a4, type: 3}
-  cost: 0
   playerAwared: 0
   visionRange: 15
 --- !u!195 &-1615593841549556595

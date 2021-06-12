@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ShootingEnemyController : MonoBehaviour
+public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 {
+    [SerializeField]
+    private int _cost;
+    public int cost { get => _cost; set => _cost = value; }
+
     public int amountOfBullets;
     public GameObject weapon;
 
@@ -12,7 +16,6 @@ public class ShootingEnemyController : MonoBehaviour
     private GameObject rightHandRigControllerObj;
     private GameObject equippedWeaponObj;
 
-    public int cost;
 
     public bool playerAwared;
     public float visionRange = 15.0f;

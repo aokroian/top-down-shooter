@@ -22,10 +22,6 @@ public class MapGeneratorManager : MonoBehaviour
 
     private Vector2 curTilePos; // TODO: Мб не обязательно полем?
 
-
-    // TODO: Not work if in start
-    private bool firstTime = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +33,9 @@ public class MapGeneratorManager : MonoBehaviour
             Vector2 pos = ToTilePos(obj.transform.position);
             grounds.Add(pos, true);
         }
+
+        CalcCurTilePos();
+        SpawnAll();
     }
 
     // Update is called once per frame
@@ -45,10 +44,9 @@ public class MapGeneratorManager : MonoBehaviour
         Vector2 prevTilePos = curTilePos;
         CalcCurTilePos();
 
-        if (prevTilePos != curTilePos || firstTime)
+        if (prevTilePos != curTilePos)
         {
             SpawnAll();
-            firstTime = false;
         }
     }
 

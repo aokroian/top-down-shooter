@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, EnemyProperties
 {
-    public int cost;
+    [SerializeField]
+    private int _cost;
+    public int cost { get => _cost; set => _cost = value; }
 
     public bool playerAwared;
     public float visionRange = 15.0f;

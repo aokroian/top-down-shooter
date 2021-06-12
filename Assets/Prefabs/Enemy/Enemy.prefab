@@ -778,7 +778,7 @@ GameObject:
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -810,7 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34daa9c472db6dc4c8f4af27de7a072e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
+  _cost: 1
   playerAwared: 0
   visionRange: 15
 --- !u!195 &367963316972990540

@@ -6,9 +6,7 @@ using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
-
-    // TODO!!!!!!!!
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
 
     [Range(1, 50)]
     public int attemptCount = 10;
@@ -18,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
 
     private int costLeft;
     private float navMeshSearchMaxDistance = 5.0f; // could change. Depends on obstacle size
+
+    private Dictionary<int, List<GameObject>> enemyCosts = new Dictionary<int, List<GameObject>>();
 
     private class SpawnPoint
     {
@@ -31,6 +31,18 @@ public class EnemySpawner : MonoBehaviour
             this.radius = radius;
             this.active = true;
         }
+    }
+
+    private void Start()
+    {
+        foreach(GameObject p in enemyPrefabs)
+        {
+            int cost = p.GetComponent<EnemyProperties>().cost;
+            var list = enemyCosts.ContainsKey(cost) ? enemyCosts[cost] : new List<GameObject>();
+            list.Add(p);
+            enemyCosts.Add(cost, list);
+        }
+        Debug.Log(enemyCosts[3][0].name);
     }
 
     // TODO: Change parameters to SpawnConfig?
@@ -137,16 +149,25 @@ public class EnemySpawner : MonoBehaviour
         var enemy = Instantiate(enemyPrefab, v3pos, rot, transform);
         NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
 
-        costLeft -= 1;//enemy.GetComponent<EnemyController>().cost;
+        costLeft -= enemy.GetComponent<EnemyProperties>().cost;
 
         return new SpawnPoint(pos, agent.radius);
     }
 
     private GameObject GetEnemyPrefabByCost(int minEnemyCost, int maxEnemyCost)
     {
-        // TODO: Get prefab by cost
-        Mathf.Min(costLeft, Random.Range(minEnemyCost, maxEnemyCost));
-        return enemyPrefab;
+        int cost = Mathf.Min(costLeft, Random.Range(minEnemyCost, maxEnemyCost + 1));
+        GameObject result = enemyCosts[1][0];
+        for (int i = cost; i > 0; i --)
+        {
+            if (enemyCosts.ContainsKey(i))
+            {
+                var list = enemyCosts[i];
+                result = list[Random.Range(0, list.Count)];
+                break;
+            }
+        }
+        return result;
     }
 
     private bool IsInsideNavMesh(Vector2 candidate)

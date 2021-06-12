@@ -20,7 +20,7 @@ public class ObstaclesSpawner : MonoBehaviour
     private Dictionary<Vector2, List<GameObject>> activeObstacles = new Dictionary<Vector2, List<GameObject>>();
     private List<GameObject> pool = new List<GameObject>();
 
-    void Start()
+    void Awake()
     {
         if (randomSeed)
         {
