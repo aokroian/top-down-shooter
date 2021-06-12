@@ -182,9 +182,11 @@ public class WeaponController : MonoBehaviour
                 instantiatedProjectile.GetComponent<MuzzleController>().shotDamage = shotDamage + shotDamageModifier;
                 instantiatedProjectile.GetComponent<MuzzleController>().hitEffectRef = hitEffectRef;
 
+                Vector3 shotDir = targetPos - bulletOutPointObj.transform.position;
+                shotDir.y = 0.0f;
                 // скорость и направление полета пули
-                instantiatedProjectile.GetComponent<Rigidbody>().velocity = (targetPos - bulletOutPointObj.transform.position).normalized * muzzleVelocity;
-                instantiatedProjectile.transform.rotation = Quaternion.LookRotation(instantiatedProjectile.GetComponent<Rigidbody>().velocity);
+                instantiatedProjectile.GetComponent<Rigidbody>().velocity = shotDir.normalized * muzzleVelocity;
+                instantiatedProjectile.transform.rotation = Quaternion.LookRotation(Vector3.up, instantiatedProjectile.GetComponent<Rigidbody>().velocity);
             } else
             {
                 // если луч попал во что-то

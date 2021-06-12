@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isAiming = false;
 
+    public float minLookAtDistance = 1.0f;
+
     private Vector3 lookAt;
     private Vector2 movement;
 
@@ -120,8 +122,14 @@ public class PlayerController : MonoBehaviour
             // определяем куда направлен персонаж
             lookAt = new Vector3(pointToLook.x, pointToLook.y, pointToLook.z);
 
-
-            mousePosOnGround = lookAt;
+            if (Vector3.Distance(lookAt, transform.position) < minLookAtDistance)
+            {
+                mousePosOnGround = Vector3.Normalize(lookAt - transform.position) * minLookAtDistance;
+            }
+            else
+            {
+                mousePosOnGround = lookAt;
+            }
         }
 
 
