@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private GameObject equippedWeaponObj;
 
     public Vector3 mousePosOnGround;
+    public Vector3 aimPosition;
     public Camera cam;
 
     public bool isAiming = false;
@@ -122,13 +123,14 @@ public class PlayerController : MonoBehaviour
             // определяем куда направлен персонаж
             lookAt = new Vector3(pointToLook.x, pointToLook.y, pointToLook.z);
 
+            mousePosOnGround = lookAt;
             if (Vector3.Distance(lookAt, transform.position) < minLookAtDistance)
             {
-                mousePosOnGround = Vector3.Normalize(lookAt - transform.position) * minLookAtDistance;
+                aimPosition = Vector3.Normalize(lookAt - transform.position) * minLookAtDistance;
             }
             else
             {
-                mousePosOnGround = lookAt;
+                aimPosition = lookAt;
             }
         }
 

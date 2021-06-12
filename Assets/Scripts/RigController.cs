@@ -35,7 +35,7 @@ public class RigController : MonoBehaviour
             offset = new Vector3(0.0f, 1.5f, 0.0f);
             if (playerController.isAiming)
             {
-                transform.position = Vector3.Lerp(transform.position, playerController.mousePosOnGround + offset, movementRapidity);
+                transform.position = Vector3.Lerp(transform.position, playerController.aimPosition + offset, movementRapidity);
                 //transform.LookAt(playerController.mousePosOnGround + offset);
             } else
             {
@@ -49,7 +49,7 @@ public class RigController : MonoBehaviour
         if (constraintSelect == constraintType.HeadPos)
         {
             offset = new Vector3(0.0f, 1f, 0.0f);
-            transform.LookAt(playerController.mousePosOnGround + offset);
+            transform.LookAt(playerController.aimPosition + offset);
             
         }
 
