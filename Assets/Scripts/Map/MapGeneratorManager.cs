@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -36,6 +37,7 @@ public class MapGeneratorManager : MonoBehaviour
 
         CalcCurTilePos();
         SpawnAll();
+        GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     // Update is called once per frame
@@ -47,6 +49,8 @@ public class MapGeneratorManager : MonoBehaviour
         if (prevTilePos != curTilePos)
         {
             SpawnAll();
+            var navMesh = GetComponent<NavMeshSurface>();
+            navMesh.UpdateNavMesh(navMesh.navMeshData);
         }
     }
 
@@ -54,7 +58,7 @@ public class MapGeneratorManager : MonoBehaviour
     {
         CreateAndMarkActive();
         RemoveInactive();
-        GetComponent<NavMeshSurface>().BuildNavMesh();
+        //GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     private void CreateAndMarkActive()
@@ -107,5 +111,14 @@ public class MapGeneratorManager : MonoBehaviour
     private Vector3 FromTilePos(Vector2 tilePos)
     {
         return new Vector3(tilePos.x * groundSize, 0.0f, tilePos.y * groundSize);
+    }
+
+    struct CalcNavMeshJob : IJob
+    {
+        public NavMeshSurface meshSurface;
+        public void Execute()
+        {
+            meshSurface.BuildNavMesh();
+        }
     }
 }

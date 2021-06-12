@@ -42,7 +42,6 @@ public class EnemySpawner : MonoBehaviour
             list.Add(p);
             enemyCosts.Add(cost, list);
         }
-        Debug.Log(enemyCosts[3][0].name);
     }
 
     // TODO: Change parameters to SpawnConfig?

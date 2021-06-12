@@ -5,29 +5,47 @@ using UnityEngine.AI;
 
 public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 {
+    enum State
+    {
+        IDLE,
+        CHASING,
+        BEFORE_SHOT,
+        AFTER_SHOT,
+        MOVING
+    }
+
     [SerializeField]
     private int _cost;
     public int cost { get => _cost; set => _cost = value; }
 
     public int amountOfBullets;
     public GameObject weapon;
+    public bool playerAwared;
+    public float visionRange = 15.0f;
+
+    public float shootTime = 1.0f;
+    public float walkDistanceMin = 1.0f;
+    public float walkDistanceMax = 2.0f;
+    public float additionalShootRange = 2.0f;
 
     private GameObject rightHandBoneRef;
     private GameObject rightHandRigControllerObj;
     private GameObject equippedWeaponObj;
 
-
-    public bool playerAwared;
-    public float visionRange = 15.0f;
-
     private Transform player;
 
     private NavMeshAgent agent;
+
+    private State currentState = State.IDLE;
+
+    private float shootTimer;
+    private float shootRange;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").transform;
+        shootRange = agent.stoppingDistance + additionalShootRange;
 
         // spawn weapon
         FindInAllChildren(gameObject.transform, "hand.R", ref rightHandBoneRef);
@@ -48,19 +66,21 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     // Update is called once per frame
     void Update()
     {
+        /*
         if (playerAwared)
         {
-            agent.destination = player.position;
-
             // always aim at user
             if (rightHandRigControllerObj != null)
                 rightHandRigControllerObj.transform.position = player.position;
-                equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandRigControllerObj.transform.position);
+                //equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandRigControllerObj.transform.position);
+            Act();
         }
         else
         {
             playerAwared = IsPlayerSpotted();
         }
+        */
+        Act();
     }
 
     private bool IsPlayerSpotted()
@@ -96,5 +116,92 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
             }
         }
 
+    }
+
+    private void Act()
+    {
+        switch (currentState)
+        {
+            case State.IDLE:
+                if (IsPlayerSpotted())
+                {
+                    playerAwared = true;
+                    currentState = State.CHASING;
+                    Debug.Log("state: " + currentState);
+                }
+                break;
+            case State.CHASING:
+                agent.isStopped = false;
+                if (IsAtDestination())
+                {
+                    currentState = State.BEFORE_SHOT;
+                    shootTimer = shootTime;
+                    agent.isStopped = true;
+                    Debug.Log("state: " + currentState);
+                } else
+                {
+                    agent.destination = player.position;
+                    AimPlayer();
+                }
+                break;
+            case State.BEFORE_SHOT:
+                // Check if player in shoot range?
+
+                AimPlayer();
+                shootTimer -= Time.deltaTime;
+                if (shootTimer <= shootTime / 2f)
+                {
+                    equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandRigControllerObj.transform.position);
+                    currentState = State.AFTER_SHOT;
+                    Debug.Log("state: " + currentState);
+                }
+                break;
+            case State.AFTER_SHOT:
+                shootTimer -= Time.deltaTime;
+                if (shootTimer <= 0f)
+                {
+                    agent.destination = GetRandomMovementPoint();
+                    currentState = State.MOVING;
+                    Debug.Log("state: " + currentState);
+                }
+                break;
+            case State.MOVING:
+                agent.isStopped = false;
+                if (Vector3.Distance(transform.position, player.transform.position) > shootRange)
+                {
+                    agent.destination = player.transform.position;
+                    currentState = State.CHASING;
+                    Debug.Log("state: " + currentState);
+                } else if (IsAtDestination())
+                {
+                    currentState = State.BEFORE_SHOT;
+                    shootTimer = shootTime;
+                    agent.isStopped = true;
+                    Debug.Log("state: " + currentState);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void AimPlayer()
+    {
+        if (rightHandRigControllerObj != null)
+            rightHandRigControllerObj.transform.position = player.position;
+    }
+
+    private Vector3 GetRandomMovementPoint()
+    {
+        float deltaAngle = Random.Range(-45f, 45f);
+        float directionAngle = Random.value > 0.5f ? 90f : -90f;
+        Quaternion rotation = Quaternion.Euler(0f, directionAngle + deltaAngle, 0f);
+        Vector3 startDirection = Vector3.Normalize(transform.position - player.transform.position);
+        return (rotation * startDirection) * (Random.Range(walkDistanceMin, walkDistanceMax) + agent.stoppingDistance) + transform.position;
+    }
+
+    private bool IsAtDestination()
+    {
+        return agent.remainingDistance <= agent.stoppingDistance;
     }
 }
