@@ -8,62 +8,60 @@ public class BulletController : MonoBehaviour
     public float bulletImpactForce;
     public float shotDamage;
 
-    public float velocity = 10.0f;
+    public float despawnDistance = 40f;
 
-    private Vector3 direction;
+    private Vector3 velocity;
     private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) >= 20f)
+        if (Vector3.Distance(player.transform.position, transform.position) >= despawnDistance)
         {
             Destroy(gameObject);
         } else
         {
-            transform.Translate(direction * Time.deltaTime, Space.World);
+            transform.Translate(velocity * Time.deltaTime, Space.World);
         }
     }
 
-    public void SetDirection(Vector3 direction)
+    public void SetVelocity(Vector3 velocity)
     {
-        this.direction = direction * velocity;
+        this.velocity = velocity;
         //Debug.Log(direction);
     }
 
-    public void SetPlayer(GameObject player)
+    private void OnTriggerEnter(Collider other)
     {
-        this.player = player;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //Debug.Log("collision: " + collision.gameObject.name);
+        Debug.Log("OnTrigger: " + other.gameObject.name);
         // частицы на цели (потом нужно убрать логику в саму цель, чтобы были разные)
-        //Instantiate(hitEffectRef, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
+        Instantiate(hitEffectRef, transform.position, Quaternion.LookRotation(transform.position - other.transform.position));
 
         // урон объекту
-        if (collision.gameObject.name != "Player" && collision.gameObject.name != "Weapon" && collision.gameObject.name != "BulletOutPoint")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy" || other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
-            Target target = collision.transform.GetComponent<Target>();
+            
+            Target target = other.transform.GetComponent<Target>();
             if (target != null)
             {
                 target.TakeDamage(shotDamage);
             }
+
             // толчок пулей на объект попадания
-            if (collision.rigidbody != null)
+            /*
+            if (other.attachedRigidbody != null)
             {
-                collision.rigidbody.AddForceAtPosition(-collision.contacts[0].normal * bulletImpactForce, collision.contacts[0].point);
+                other.attachedRigidbody.AddForceAtPosition(-collision.contacts[0].normal * bulletImpactForce, collision.contacts[0].point);
             }
+            */
 
-            Destroy(gameObject, 0.02f);
+            Destroy(gameObject);
         }
-
     }
 }

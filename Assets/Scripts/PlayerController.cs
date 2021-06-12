@@ -134,9 +134,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
-
-
         // регенерация стамины
         if (stamina < maxStamina)
         {

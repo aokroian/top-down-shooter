@@ -71,6 +71,7 @@ public class PlayerSimpleScript : MonoBehaviour
 
     private void Shoot(Vector3 aim)
     {
+        /*
         if (Time.time - prevShotTime >= reloadTime)
         {
             var rotation = Quaternion.Euler(0.0f, transform.rotation.eulerAngles.y + 90.0f, bulletPrefab.transform.rotation.eulerAngles.z);
@@ -80,5 +81,6 @@ public class PlayerSimpleScript : MonoBehaviour
             bulletController.SetPlayer(gameObject);
             prevShotTime = Time.time;
         }
+        */
     }
 }

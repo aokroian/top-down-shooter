@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: alwaysAiming
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1738910578312384545, guid: 6b8908c657c9347b8b5c46b26a875dca, type: 3}
+      propertyPath: minLookAtDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2282023774679726030, guid: 6b8908c657c9347b8b5c46b26a875dca, type: 3}
       propertyPath: m_RootOrder
       value: 1

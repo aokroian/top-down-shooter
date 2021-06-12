@@ -30,14 +30,13 @@ public class WeaponController : MonoBehaviour
     public Vector3 rightHandRotationForWeapon;
     public Vector3 rightHandScaleForWeapon;
 
-    public GameObject muzzleFlashRef;
+    public GameObject bulletFlashRef;
     public GameObject bulletOutPointObj;
 
     public GameObject hitEffectRef;
 
-    public bool shootWithRaycast = true;
-    public GameObject muzzleObjRef;
-    public float muzzleVelocity;
+    public GameObject bulletObjRef;
+    public float bulletVelocity = 30f;
     public int bulletsInClip = 0;
 
     private PlayerController playerController;
@@ -54,7 +53,7 @@ public class WeaponController : MonoBehaviour
         playerController = ownerObjRef.GetComponent<PlayerController>();
         enemyController = ownerObjRef.GetComponent<ShootingEnemyController>();
 
-        
+
 
         // установка дефолтных значений таймеров и патронов в обойме
         bulletsInClip = clipSize;
@@ -68,15 +67,17 @@ public class WeaponController : MonoBehaviour
         if (playerController != null)
         {
             amountOfBullets = playerController.amountOfBullets;
-        } else if (enemyController != null)
+        }
+        else if (enemyController != null)
         {
             amountOfBullets = enemyController.amountOfBullets;
         }
-        
+
+        bulletOutPointObj = transform.Find("BulletOutPoint").gameObject;
     }
 
     private void Update()
-    { 
+    {
 
         // таймеры
         if (reloadTimer > 0f)
@@ -106,14 +107,14 @@ public class WeaponController : MonoBehaviour
             mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Scrollbar>().value = reloadTimer / reloadTime;
             mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Image>().color = Color.Lerp(Color.blue, Color.red, reloadTimer / reloadTime);
         }
-        
+
 
         // если патронов в магазине не осталось, происходит автоматическая перезарядка
         if (bulletsInClip < 1 && amountOfBullets > 0)
         {
             Reload();
         }
-     }
+    }
 
 
     // вспомогательный метод для поиска вложенного объекта по имени с проходом по всем вложенным объектам
@@ -147,12 +148,42 @@ public class WeaponController : MonoBehaviour
             Reload();
             return;
         }
-        // позиция невидимого объекта, который нужно разместить в том месте ствола, откуда будет производиться выстрел
-        Vector3 originPointOfShot = transform.TransformPoint(transform.Find("BulletOutPoint").gameObject.transform.localPosition);
-        // направление от места вылета пули к цели
-        Vector3 direction = (targetPos - transform.position);
 
-        // отдача
+        ShotRecoil();
+
+        if (bulletsInClip >= 1)
+        {
+            //Debug.DrawLine(pos, targetPos, Color.green, Mathf.Infinity);
+            // частицы у ствола
+            if (bulletFlashRef != null)
+                Instantiate(bulletFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
+
+            // убираем пулю из обоймы
+            bulletsInClip -= 1;
+
+            GameObject instantiatedProjectile = Instantiate(bulletObjRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
+
+            var bulletController = instantiatedProjectile.GetComponent<BulletController>();
+
+            // данные об уроне, силе толчка и эффекте на поверхности, куда попала пуля
+            bulletController.bulletImpactForce = shotImpactForce;
+            bulletController.shotDamage = shotDamage + shotDamageModifier;
+            bulletController.hitEffectRef = hitEffectRef;
+
+            // скорость и направление полета пули
+            Vector3 shotDir = targetPos - bulletOutPointObj.transform.position;
+            shotDir.y = 0.0f;
+            shotDir = shotDir.normalized * bulletVelocity;
+            bulletController.SetVelocity(shotDir);
+            instantiatedProjectile.transform.rotation = Quaternion.LookRotation(Vector3.up, shotDir);
+        }
+        // таймер времени на выстрел
+        nextShotTimer = rateOfFire;
+
+    }
+
+    public void ShotRecoil()
+    {
         FindInAllChildren(ownerObjRef.transform, "RightHandController", ref rightHandBoneController);
         if (rightHandBoneController != null)
         {
@@ -160,60 +191,6 @@ public class WeaponController : MonoBehaviour
             Vector3 offset = new Vector3(0f, recoilHeight, 0f);
             rightHandBoneController.transform.position = rightHandBoneController.transform.position + offset;
         }
-
-
-        if (bulletsInClip >= 1)
-        {
-            //Debug.DrawLine(pos, targetPos, Color.green, Mathf.Infinity);
-            // частицы у ствола
-            if (muzzleFlashRef != null)
-                Instantiate(muzzleFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
-            
-            // убираем пулю из обоймы
-            bulletsInClip -= 1;
-
-            if (!shootWithRaycast)
-            {
-                Vector3 muzzleSpawnPos = new Vector3 (bulletOutPointObj.transform.position.x, bulletOutPointObj.transform.position.y, bulletOutPointObj.transform.position.z + 2f);
-                GameObject instantiatedProjectile = Instantiate(muzzleObjRef, bulletOutPointObj.transform.TransformPoint(muzzleSpawnPos), bulletOutPointObj.transform.rotation);
-
-                // данные об уроне, силе толчка и эффекте на поверхности, куда попала пуля
-                instantiatedProjectile.GetComponent<MuzzleController>().bulletImpactForce = shotImpactForce;
-                instantiatedProjectile.GetComponent<MuzzleController>().shotDamage = shotDamage + shotDamageModifier;
-                instantiatedProjectile.GetComponent<MuzzleController>().hitEffectRef = hitEffectRef;
-
-                Vector3 shotDir = targetPos - bulletOutPointObj.transform.position;
-                shotDir.y = 0.0f;
-                // скорость и направление полета пули
-                instantiatedProjectile.GetComponent<Rigidbody>().velocity = shotDir.normalized * muzzleVelocity;
-                instantiatedProjectile.transform.rotation = Quaternion.LookRotation(Vector3.up, instantiatedProjectile.GetComponent<Rigidbody>().velocity);
-            } else
-            {
-                // если луч попал во что-то
-                RaycastHit hit;
-                if (Physics.Raycast(originPointOfShot, direction, out hit, shootRange))
-                {
-                    // частицы на цели (потом нужно убрать логику в саму цель, чтобы были разные)
-                    Instantiate(hitEffectRef, hit.point, Quaternion.LookRotation(hit.normal));
-                    // толчок пулей на объект попадания
-                    if (hit.rigidbody != null)
-                    {
-                        hit.rigidbody.AddForceAtPosition(-hit.normal * shotImpactForce, hit.point);
-                    }
-
-                    // урон объекту
-                    Target target = hit.transform.GetComponent<Target>();
-                    if (target != null)
-                    {
-                        target.TakeDamage(shotDamage + shotDamageModifier);
-                    }
-                }
-
-            }
-        }
-        // таймер времени на выстрел
-        nextShotTimer = rateOfFire;
-
     }
 
 
@@ -225,7 +202,6 @@ public class WeaponController : MonoBehaviour
         reloadTimer = reloadTime;
 
         int needToAdd = clipSize - bulletsInClip;
-        
 
 
         // когда патроны остались только в магазине, перезарядка невозможна
@@ -254,7 +230,7 @@ public class WeaponController : MonoBehaviour
             {
                 enemyController.amountOfBullets -= bulletsInClip;
             }
-            
+
 
         }
         // если происходит перезарядка полностью израсходованного магазина
@@ -288,9 +264,6 @@ public class WeaponController : MonoBehaviour
                     enemyController.amountOfBullets = 0;
                 }
             }
-
-            
-            
         }
 
 
@@ -302,7 +275,5 @@ public class WeaponController : MonoBehaviour
         {
             amountOfBullets = enemyController.amountOfBullets;
         }
-
-        
     }
 }
