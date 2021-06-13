@@ -759,6 +759,7 @@ GameObject:
   - component: {fileID: 8932792466983916214}
   - component: {fileID: 5546870723539757588}
   - component: {fileID: 2673920394637561575}
+  - component: {fileID: -9105289260139157093}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -846,8 +847,10 @@ MonoBehaviour:
   aimSpotRef: {fileID: 993211511}
   mainUIRef: {fileID: 0}
   mousePosOnGround: {x: 0, y: 0, z: 0}
+  aimPosition: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
   isAiming: 0
+  minLookAtDistance: 1
 --- !u!95 &8932792466983916214
 Animator:
   serializedVersion: 3
@@ -950,6 +953,20 @@ MonoBehaviour:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
     m_Visible: 1
+--- !u!114 &-9105289260139157093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504395947704561012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
 --- !u!1 &1652071536015389267
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,6 +74,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        if (GameLoopController.paused)
+        {
+            return;
+        }
         // движение по плоскости
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
