@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLoopController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameLoopController : MonoBehaviour
 
     public GameState currentState = GameState.RUNNING;
     public Target playerTarget;
+    public GameObject pauseScreen;
     
     
     void Start()
@@ -70,7 +72,7 @@ public class GameLoopController : MonoBehaviour
         ShowMenu();
     }
 
-    private void UnPause()
+    public void UnPause()
     {
         HideMenu();
         Time.timeScale = 1f;
@@ -79,12 +81,11 @@ public class GameLoopController : MonoBehaviour
 
     private void ShowMenu()
     {
-        // TODO: Vova sdelay menu
-        // if currentState == GameState.DEAD, dead version menu
+        pauseScreen.SetActive(true);
     }
 
     private void HideMenu()
     {
-        // TODO: Vova spryach menu
+        pauseScreen.SetActive(false);
     }
 }

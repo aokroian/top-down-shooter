@@ -4327,7 +4327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 462298743271879873, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
       propertyPath: isStartMenuScreen
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4630233242979557246, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
       propertyPath: m_Layer
@@ -4351,7 +4351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4630233243618630526, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 4630233243618630527, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
       propertyPath: m_FontData.m_Font
