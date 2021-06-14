@@ -74,14 +74,38 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+
+
+
+
         if (GameLoopController.paused)
         {
             return;
         }
+
+
+       
         // движение по плоскости
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
         movement = Vector2.ClampMagnitude(movement, 1f);
+
+
+
+
+
+        // floats for animation controller
+        Vector3 globalMovement = new Vector3(movement.x, 0.0f, movement.y);
+        Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
+        gameObject.GetComponent<Animator>().SetFloat("local Z speed", localMovement.z);
+        gameObject.GetComponent<Animator>().SetFloat("local X speed", localMovement.x);
+
+        if (movement.magnitude <= 0.01f)
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
+        else
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
+
+
         // смещение
         Vector3 offset = new Vector3(movement.x, 0.0f, movement.y) * currentMovementSpeed;
 
@@ -164,6 +188,8 @@ public class PlayerController : MonoBehaviour
             //transform.Find("Cube").GetComponent<SkinnedMeshRenderer>().enabled = false;
             transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
             stamina -= dodgeStaminaCost;
+
+            gameObject.GetComponent<Animator>().SetBool("Is Dodging", true);
         }
         if (dodgeTimer > 0f)
         {
@@ -176,6 +202,7 @@ public class PlayerController : MonoBehaviour
             //transform.Find("Cube").GetComponent<SkinnedMeshRenderer>().enabled = true;
             currentMovementSpeed = basicMovementSpeed;
             transform.localScale = new Vector3(1f, 1f, 1f);
+            gameObject.GetComponent<Animator>().SetBool("Is Dodging", false);
         }
         else if (dodgeTimer < 0f)
         {
