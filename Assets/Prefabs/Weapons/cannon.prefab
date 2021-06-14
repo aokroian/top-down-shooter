@@ -148,6 +148,7 @@ MonoBehaviour:
   bulletObjRef: {fileID: 5168185707833634706, guid: dd5773eef98c4aa488fdb4aabdfa4a47, type: 3}
   bulletVelocity: 30
   bulletsInClip: 0
+  maxShotAngle: 10
 --- !u!1 &2912062577800909711
 GameObject:
   m_ObjectHideFlags: 0
