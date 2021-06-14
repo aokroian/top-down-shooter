@@ -13,21 +13,6 @@ public class ButtonController : MonoBehaviour
     public AudioMixer audioMixer;
     public Dropdown resolutionDropdown;
 
-    public void Start()
-    {
-        List<string> resolutionList = Screen.resolutions
-            .ToList()
-            .Select(e => e.width + "x" + e.height)
-            .ToList();
-
-        resolutionDropdown.AddOptions(resolutionList);
-
-        resolutionDropdown.value = Screen.resolutions
-            .ToList()
-            .FindIndex(resolution => resolution.Equals(Screen.currentResolution));
-        resolutionDropdown.RefreshShownValue();
-    }
-
     public void OnMenuItemEnter(GameObject item)
     {
         item.GetComponent<Text>().color = Color.yellow;
@@ -52,32 +37,5 @@ public class ButtonController : MonoBehaviour
     {
         mainMenuScreen.SetActive(false);
         settingScreen.SetActive(true);
-    }
-
-    public void SetResolutionLevel(int resolutionIndex)
-    {
-        Resolution resolution = Screen.resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
-
-    public void OnFullScreenValueChange(bool isFullScreen)
-    {
-        Screen.fullScreen = isFullScreen;
-    }
-
-    public void SetQuality(int qualityLevel)
-    {
-        QualitySettings.SetQualityLevel(qualityLevel);
-    }
-
-    public void SetVolume(float volumeLevel)
-    {
-        audioMixer.SetFloat("volume", volumeLevel);
-    }
-
-    public void OnSettingsBack()
-    {
-        mainMenuScreen.SetActive(true);
-        settingScreen.SetActive(false);
     }
 }
