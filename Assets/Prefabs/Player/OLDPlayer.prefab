@@ -761,12 +761,12 @@ GameObject:
   - component: {fileID: 2673920394637561575}
   - component: {fileID: -9105289260139157093}
   m_Layer: 0
-  m_Name: Player
+  m_Name: OLDPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2282023774679726030
 Transform:
   m_ObjectHideFlags: 0
@@ -775,7 +775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504395947704561012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3160055904686763179}
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83eac4a076d4410ebd13eee558f640d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alwaysAiming: 0
+  alwaysAiming: 1
   rotationSpeed: 0.1
   basicMovementSpeed: 4
   dodgeSpeed: 25
@@ -861,7 +861,7 @@ Animator:
   m_GameObject: {fileID: 1504395947704561012}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 794fd990d357749a798c21a282bfca2d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -960,7 +960,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504395947704561012}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
   m_Name: 

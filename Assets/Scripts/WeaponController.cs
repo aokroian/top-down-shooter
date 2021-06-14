@@ -39,6 +39,8 @@ public class WeaponController : MonoBehaviour
     public float bulletVelocity = 30f;
     public int bulletsInClip = 0;
 
+    public float maxShotAngle = 10f;
+
     private PlayerController playerController;
     private ShootingEnemyController enemyController;
 
@@ -174,12 +176,21 @@ public class WeaponController : MonoBehaviour
             Vector3 shotDir = targetPos - bulletOutPointObj.transform.position;
             shotDir.y = 0.0f;
             shotDir = shotDir.normalized * bulletVelocity;
+            shotDir = GetScatterAngle() * shotDir;
             bulletController.SetVelocity(shotDir);
             instantiatedProjectile.transform.rotation = Quaternion.LookRotation(Vector3.up, shotDir);
         }
         // таймер времени на выстрел
         nextShotTimer = rateOfFire;
+    }
 
+    public Quaternion GetScatterAngle()
+    {
+        float halfMaxAngle = maxShotAngle / 2;
+        float angle1 = Random.Range(0 - halfMaxAngle, halfMaxAngle);
+        float angle2 = Random.Range(0 - halfMaxAngle, halfMaxAngle);
+        var result = Quaternion.Euler(0f, Mathf.Abs(angle1) < Mathf.Abs(angle2) ? angle1 : angle2, 0f);
+        return result;
     }
 
     public void ShotRecoil()

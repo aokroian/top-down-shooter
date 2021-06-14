@@ -39,11 +39,11 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTrigger: " + other.gameObject.name);
-        // частицы на цели (потом нужно убрать логику в саму цель, чтобы были разные)
+        //Debug.Log("OnTrigger: " + other.gameObject.name);
+        // ??????? ?? ???? (????? ????? ?????? ?????? ? ???? ????, ????? ???? ??????)
         Instantiate(hitEffectRef, transform.position, Quaternion.LookRotation(transform.position - other.transform.position));
 
-        // урон объекту
+        // ???? ???????
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy" || other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
             
@@ -53,7 +53,7 @@ public class BulletController : MonoBehaviour
                 target.TakeDamage(shotDamage);
             }
 
-            // толчок пулей на объект попадания
+            // ?????? ????? ?? ?????? ?????????
             /*
             if (other.attachedRigidbody != null)
             {
