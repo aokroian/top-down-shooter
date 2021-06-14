@@ -813,6 +813,11 @@ MonoBehaviour:
   _cost: 1
   playerAwared: 0
   visionRange: 15
+  damage: 20
+  biteDistance: 1
+  beforeBiteTime: 0.2
+  afterBiteTime: 0.8
+  biteTimer: 0
 --- !u!195 &367963316972990540
 NavMeshAgent:
   m_ObjectHideFlags: 0

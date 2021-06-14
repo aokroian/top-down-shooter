@@ -127,7 +127,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 {
                     playerAwared = true;
                     currentState = State.CHASING;
-                    Debug.Log("state: " + currentState);
+                    //Debug.Log("state: " + currentState);
                 }
                 break;
             case State.CHASING:
@@ -136,9 +136,9 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 {
                     currentState = State.BEFORE_SHOT;
                     shootTimer = shootTime;
-                    agent.isStopped = true;
-                    Debug.Log("state: " + currentState);
-                } else
+                    //Debug.Log("state: " + currentState);
+                }
+                else
                 {
                     agent.destination = player.position;
                     AimPlayer();
@@ -146,14 +146,14 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 break;
             case State.BEFORE_SHOT:
                 // Check if player in shoot range?
-
+                agent.isStopped = true;
                 AimPlayer();
                 shootTimer -= Time.deltaTime;
                 if (shootTimer <= shootTime / 2f)
                 {
                     equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandRigControllerObj.transform.position);
                     currentState = State.AFTER_SHOT;
-                    Debug.Log("state: " + currentState);
+                    //Debug.Log("state: " + currentState);
                 }
                 break;
             case State.AFTER_SHOT:
@@ -162,7 +162,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 {
                     agent.destination = GetRandomMovementPoint();
                     currentState = State.MOVING;
-                    Debug.Log("state: " + currentState);
+                    //Debug.Log("state: " + currentState);
                 }
                 break;
             case State.MOVING:
@@ -171,13 +171,13 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 {
                     agent.destination = player.transform.position;
                     currentState = State.CHASING;
-                    Debug.Log("state: " + currentState);
-                } else if (IsAtDestination())
+                    //Debug.Log("state: " + currentState);
+                }
+                else if (IsAtDestination())
                 {
                     currentState = State.BEFORE_SHOT;
                     shootTimer = shootTime;
-                    agent.isStopped = true;
-                    Debug.Log("state: " + currentState);
+                    //Debug.Log("state: " + currentState);
                 }
                 break;
             default:
