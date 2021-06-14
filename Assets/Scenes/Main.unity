@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -932,6 +932,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1071123029}
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: dodgeTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: mainUIRef
       value: 
       objectReference: {fileID: 2106313311}
@@ -939,6 +943,14 @@ PrefabInstance:
       propertyPath: aimSpotRef
       value: 
       objectReference: {fileID: 572400875}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: dodgeSpeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: dodgeStaminaCost
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5032505937968330592, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_SettingsGUIToggle
       value: 1

@@ -188,6 +188,8 @@ public class PlayerController : MonoBehaviour
             //transform.Find("Cube").GetComponent<SkinnedMeshRenderer>().enabled = false;
             transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
             stamina -= dodgeStaminaCost;
+
+            gameObject.GetComponent<Animator>().SetBool("Is Dodging", true);
         }
         if (dodgeTimer > 0f)
         {
@@ -200,6 +202,7 @@ public class PlayerController : MonoBehaviour
             //transform.Find("Cube").GetComponent<SkinnedMeshRenderer>().enabled = true;
             currentMovementSpeed = basicMovementSpeed;
             transform.localScale = new Vector3(1f, 1f, 1f);
+            gameObject.GetComponent<Animator>().SetBool("Is Dodging", false);
         }
         else if (dodgeTimer < 0f)
         {
