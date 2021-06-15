@@ -1637,6 +1637,34 @@ PrefabInstance:
       propertyPath: mainUIRef
       value: 
       objectReference: {fileID: 2106313311}
+    - target: {fileID: 7425395917834704959, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425395917834704959, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425395917834704959, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425395917834704959, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478576174271764757, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478576174271764757, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Center.z
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478576174271764757, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 8546143664841721988, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_Name
       value: Player

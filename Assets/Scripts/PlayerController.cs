@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-       
+
         // движение по плоскости
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         else
             gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
 
-
+        /*
         // смещение
         Vector3 offset = new Vector3(movement.x, 0.0f, movement.y) * currentMovementSpeed;
 
@@ -106,8 +106,15 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(offset.normalized * currentMovementSpeed * Time.deltaTime);
 
         // игрок двигается по глобальным осям
-        if (movement.magnitude >= 0.01f)
-            transform.position += offset * Time.deltaTime;
+        if (movement.magnitude >= 0.01f) {
+            GetComponent<Rigidbody>().velocity = offset;
+        } else
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+        }
+            //transform.position += offset * Time.deltaTime;
+        */
 
         // вращение персонажа 
         Vector3 lTargetDir = lookAt - transform.position;
@@ -119,10 +126,8 @@ public class PlayerController : MonoBehaviour
         // здесь, если рука отклонена слишком сильно, вращаем всего персонажа
         if (directionY - playerY >= 20f || directionY - playerY <= -10f)
         {
-            //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed);
+            GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
         }
-
 
 
         // Clamp mouse position to screen size
@@ -177,7 +182,7 @@ public class PlayerController : MonoBehaviour
         {
             dodgeTimer += dodgeTime;
             //transform.Find("Cube").GetComponent<SkinnedMeshRenderer>().enabled = false;
-            transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+            //transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
             stamina -= dodgeStaminaCost;
 
             gameObject.GetComponent<Animator>().SetBool("Is Dodging", true);
@@ -192,7 +197,7 @@ public class PlayerController : MonoBehaviour
         {
             //transform.Find("Cube").GetComponent<SkinnedMeshRenderer>().enabled = true;
             currentMovementSpeed = basicMovementSpeed;
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            //transform.localScale = new Vector3(1f, 1f, 1f);
             gameObject.GetComponent<Animator>().SetBool("Is Dodging", false);
         }
         else if (dodgeTimer < 0f)
@@ -281,6 +286,24 @@ public class PlayerController : MonoBehaviour
 
             isAiming = alwaysAiming;
             aimSpotRef.gameObject.SetActive(false);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        // смещение
+        Vector3 offset = new Vector3(movement.x, 0.0f, movement.y) * currentMovementSpeed;
+
+        // игрок двигается в направлении курсора
+        //transform.Translate(offset.normalized * currentMovementSpeed * Time.deltaTime);
+
+        // игрок двигается по глобальным осям
+        if (movement.magnitude >= 0.01f) {
+            GetComponent<Rigidbody>().velocity = offset;
+        } else
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+
         }
     }
 

@@ -21,8 +21,19 @@ public class SimpleCameraController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        /*
+        var playerAimingPoint = playerRef.GetComponent<PlayerController>().mousePosOnGround;
+        var target = Vector3.Lerp(playerRef.transform.position, new Vector3(playerAimingPoint.x, 0.0f, playerAimingPoint.z), playerToPointerPart) + offset;
+        transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, smoothTime);
+        */
+    }
+    
+    private void LateUpdate()
+    {
         var playerAimingPoint = playerRef.GetComponent<PlayerController>().mousePosOnGround;
         var target = Vector3.Lerp(playerRef.transform.position, new Vector3(playerAimingPoint.x, 0.0f, playerAimingPoint.z), playerToPointerPart) + offset;
         transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, smoothTime);
     }
+    
+    
 }
