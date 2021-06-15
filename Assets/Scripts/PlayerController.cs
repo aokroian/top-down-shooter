@@ -74,23 +74,16 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-
-
-
-
         if (GameLoopController.paused)
         {
             return;
         }
-
 
        
         // движение по плоскости
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
         movement = Vector2.ClampMagnitude(movement, 1f);
-
-
 
 
 
@@ -178,9 +171,7 @@ public class PlayerController : MonoBehaviour
         {
             stamina = 0f;
         }
-        //  обновление значения стамины в UI
-        mainUIRef.transform.Find("StaminaScrollbar").gameObject.GetComponent<Scrollbar>().value = (100 - stamina) / 100;
-        mainUIRef.transform.Find("StaminaScrollbar").gameObject.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, stamina / 100);
+
         // примитивная механика уклонения
         if (Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
         {
@@ -291,7 +282,40 @@ public class PlayerController : MonoBehaviour
             isAiming = alwaysAiming;
             aimSpotRef.gameObject.SetActive(false);
         }
+    }
 
-        
+    public float GetHealthPercent()
+    {
+        return GetComponent<Target>().health / GetComponent<Target>().maxHealth;
+    }
+
+    public float GetStaminaPercent()
+    {
+        return (100 - stamina) / 100f;
+    }
+
+    public float GetReloadTimerPercent()
+    {
+        float result = 0f;
+        if (equippedWeaponObj != null) {
+            var weaponController = equippedWeaponObj.GetComponent<WeaponController>();
+            result = weaponController.reloadTimer / weaponController.reloadTime;
+        }
+        return result;
+    }
+
+    public float GetBulletsInClip()
+    {
+        float result = 0f;
+        if (equippedWeaponObj != null)
+        {
+            result = equippedWeaponObj.GetComponent<WeaponController>().bulletsInClip;
+        }
+        return result;
+    }
+
+    public float GetAmountOfBullets()
+    {
+        return amountOfBullets;
     }
 }

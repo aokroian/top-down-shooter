@@ -45,7 +45,7 @@ public class WeaponController : MonoBehaviour
     private ShootingEnemyController enemyController;
 
     private GameObject rightHandBoneController;
-    private float reloadTimer = 0f;
+    public float reloadTimer { get; private set; } = 0f;
     private float nextShotTimer = 0f;
 
     private GameObject mainUIRef;
@@ -100,16 +100,6 @@ public class WeaponController : MonoBehaviour
         {
             nextShotTimer = 0f;
         }
-
-        // changes in user interface
-        if (ownerObjRef.name == "Player")
-        {
-            mainUIRef.gameObject.transform.Find("BulletsInClipText").gameObject.GetComponent<Text>().text = bulletsInClip.ToString();
-            mainUIRef.gameObject.transform.Find("AmountOfBulletsText").gameObject.GetComponent<Text>().text = amountOfBullets.ToString();
-            mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Scrollbar>().value = reloadTimer / reloadTime;
-            mainUIRef.gameObject.transform.Find("ReloadScrollbar").gameObject.GetComponent<Image>().color = Color.Lerp(Color.blue, Color.red, reloadTimer / reloadTime);
-        }
-
 
         // если патронов в магазине не осталось, происходит автоматическая перезарядка
         if (bulletsInClip < 1 && amountOfBullets > 0)
