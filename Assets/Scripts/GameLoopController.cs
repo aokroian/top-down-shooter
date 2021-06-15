@@ -60,9 +60,13 @@ public class GameLoopController : MonoBehaviour
         }
     }
 
-    private void OnApplicationPause(bool pause)
+    private void OnApplicationFocus(bool focus)
     {
-        
+        if (!focus)
+        {
+            currentState = GameState.PAUSE;
+            Pause();
+        }
     }
 
     private void Pause()
