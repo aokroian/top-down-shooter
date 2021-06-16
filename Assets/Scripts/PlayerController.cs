@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject rightHandConstraintController;
     public GameObject leftHandConstraintController;
-
+    public GameObject rigLayerHandsPosition;
 
     private float currentMovementSpeed = 0f;
 
@@ -82,6 +82,8 @@ public class PlayerController : MonoBehaviour
         FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
         FindInAllChildren(gameObject.transform, "LeftHandController", ref leftHandConstraintController);
         FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
+        FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
+
     }
     void Update()
     {
@@ -116,8 +118,16 @@ public class PlayerController : MonoBehaviour
             rightHandConstraintController.transform.position = equippedWeaponObj.transform.Find("RightHandPoint").transform.position;
             leftHandConstraintController.transform.position = equippedWeaponObj.transform.Find("LeftHandPoint").transform.position;
         }
-        // setup weapon aim constrained object (weapon obj)
-        
+        // TODO: setup weapon aim constrained object (weapon obj)
+
+        // controlling hand position constraints weight
+        if (equippedWeaponObj == null)
+        {
+            rigLayerHandsPosition.GetComponent<Rig>().weight = 0f;
+        } else
+        {
+            rigLayerHandsPosition.GetComponent<Rig>().weight = 1f;
+        }
             
 
 
@@ -147,7 +157,7 @@ public class PlayerController : MonoBehaviour
         float directionY = Quaternion.LookRotation(lTargetDir).eulerAngles.y;
 
         // здесь, если рука отклонена слишком сильно, вращаем всего персонажа
-        if (directionY - playerY >= 20f || directionY - playerY <= -10f)
+        if (directionY - playerY >= 40f || directionY - playerY <= -1f)
         {
             GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
         }
@@ -274,7 +284,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButton(1) && equippedWeaponObj != null)
         {
             Vector3 pos = equippedWeaponObj.transform.Find("BulletOutPoint").gameObject.transform.position;
-            Vector3 dir = mousePosOnGround + new Vector3(0.0f, 1.5f, 0.0f);
+            Vector3 dir = mousePosOnGround + new Vector3(0.0f, 1.6f, 0.0f);
             Debug.DrawLine(pos, dir, Color.yellow);
 
             // отрисовка прицела
