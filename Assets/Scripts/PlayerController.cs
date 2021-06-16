@@ -25,9 +25,12 @@ public class PlayerController : MonoBehaviour
     public GameObject[] weaponEquipmentArr;
     public int selectedWeaponIndex = 0;
     public int equippedWeaponIndex = 0;
-    public GameObject rightHandBoneRef;
+    public GameObject parentBoneForWeapon;
     public GameObject aimSpotRef;
     public GameObject mainUIRef;
+
+    public GameObject rightHandConstraintController;
+    public GameObject leftHandConstraintController;
 
 
     private float currentMovementSpeed = 0f;
@@ -49,7 +52,9 @@ public class PlayerController : MonoBehaviour
     private GameObject rightHandBoneController;
 
     private float dodgeTimer = 0f;
+
     
+
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
     {
         if (obj.Find(name) != null)
@@ -71,6 +76,9 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         isAiming = alwaysAiming;
+
+        FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
+        FindInAllChildren(gameObject.transform, "LeftHandController", ref leftHandConstraintController);
     }
     void Update()
     {
@@ -97,6 +105,16 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
         else
             gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
+
+        // hand on weapon animation rigging part
+        // moving hand rig controllers to points on weapon when its equiped
+        if (equippedWeaponObj != null && isAiming)
+        {
+            rightHandConstraintController.transform.position = equippedWeaponObj.transform.Find("RightHandPoint").transform.position;
+            leftHandConstraintController.transform.position = equippedWeaponObj.transform.Find("LeftHandPoint").transform.position;
+        }
+            
+
 
         /*
         // смещение
@@ -229,15 +247,15 @@ public class PlayerController : MonoBehaviour
                     Destroy(equippedWeaponObj);
                 }
                 // спавн оружия в качестве child правой руки
-                equippedWeaponObj = Instantiate(weaponEquipmentArr[selectedWeaponIndex - 1], rightHandBoneRef.transform);
+                equippedWeaponObj = Instantiate(weaponEquipmentArr[selectedWeaponIndex - 1], parentBoneForWeapon.transform);
 
                 WeaponController weaponController = equippedWeaponObj.GetComponent<WeaponController>();
 
                 weaponController.ownerObjRef = gameObject;
-                // вращение и движение оружия так, чтобы оно было в правой руке (подходит для пистолета)
-                equippedWeaponObj.transform.localPosition = weaponController.rightHandPostionForWeapon;
-                equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.rightHandRotationForWeapon);
-                equippedWeaponObj.transform.localScale = weaponController.rightHandScaleForWeapon;
+                // moving the weapon to the desired position
+                equippedWeaponObj.transform.localPosition = weaponController.localPosition;
+                equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
+                equippedWeaponObj.transform.localScale = weaponController.localScale;
             }
         }
 
@@ -263,14 +281,14 @@ public class PlayerController : MonoBehaviour
             isAiming = true;
             if (Input.GetMouseButton(0))
             {
-                FindInAllChildren(transform, "RightHandController", ref rightHandBoneController);
+                FindInAllChildren(transform, "AimAtPoint", ref rightHandBoneController);
                 equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandBoneController.transform.position);
             }
         }
         // стрельба без прицеливания
         if (Input.GetMouseButton(0) && /* !isAiming &&*/  equippedWeaponObj != null)
         {
-            FindInAllChildren(transform, "RightHandController", ref rightHandBoneController);
+            FindInAllChildren(transform, "AimAtPoint", ref rightHandBoneController);
             equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandBoneController.transform.position);
         }
 
