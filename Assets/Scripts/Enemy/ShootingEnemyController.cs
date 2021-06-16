@@ -57,9 +57,9 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
             weaponController.ownerObjRef = gameObject;
             // correcting weapon obj transform for right hand
-            equippedWeaponObj.transform.localPosition = weaponController.rightHandPostionForWeapon;
-            equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.rightHandRotationForWeapon);
-            equippedWeaponObj.transform.localScale = weaponController.rightHandScaleForWeapon;
+            equippedWeaponObj.transform.localPosition = weaponController.localPosition;
+            equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
+            equippedWeaponObj.transform.localScale = weaponController.localScale;
         }
     }
 

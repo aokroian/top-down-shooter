@@ -26,9 +26,9 @@ public class WeaponController : MonoBehaviour
     public ShootingModes shootingMode = ShootingModes.Single;
 
 
-    public Vector3 rightHandPostionForWeapon;
-    public Vector3 rightHandRotationForWeapon;
-    public Vector3 rightHandScaleForWeapon;
+    public Vector3 localPosition;
+    public Vector3 localRotation;
+    public Vector3 localScale;
 
     public GameObject bulletFlashRef;
     public GameObject bulletOutPointObj;
@@ -44,7 +44,7 @@ public class WeaponController : MonoBehaviour
     private PlayerController playerController;
     private ShootingEnemyController enemyController;
 
-    private GameObject rightHandBoneController;
+    private GameObject aimAtPoint;
     public float reloadTimer { get; private set; } = 0f;
     private float nextShotTimer = 0f;
 
@@ -74,8 +74,6 @@ public class WeaponController : MonoBehaviour
         {
             amountOfBullets = enemyController.amountOfBullets;
         }
-
-        bulletOutPointObj = transform.Find("BulletOutPoint").gameObject;
     }
 
     private void Update()
@@ -185,12 +183,12 @@ public class WeaponController : MonoBehaviour
 
     public void ShotRecoil()
     {
-        FindInAllChildren(ownerObjRef.transform, "RightHandController", ref rightHandBoneController);
-        if (rightHandBoneController != null)
+        FindInAllChildren(ownerObjRef.transform, "AimAtPoint", ref aimAtPoint);
+        if (aimAtPoint != null)
         {
             // направление отдачи
             Vector3 offset = new Vector3(0f, recoilHeight, 0f);
-            rightHandBoneController.transform.position = rightHandBoneController.transform.position + offset;
+            aimAtPoint.transform.position = aimAtPoint.transform.position + offset;
         }
     }
 
