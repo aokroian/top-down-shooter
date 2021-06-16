@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 4958741082988955625}
   - component: {fileID: 3528634566309412702}
   m_Layer: 0
-  m_Name: AnimatedShootingEnemy 1
+  m_Name: AnimatedShootingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1135,7 +1135,7 @@ Animator:
   m_GameObject: {fileID: 4996124605211225381}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 794fd990d357749a798c21a282bfca2d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1236,6 +1236,8 @@ MonoBehaviour:
   rigLayerHandsPosition: {fileID: 8059093346692243779}
   parentBoneForWeapon: {fileID: 7175636216010811544}
   aimSpotRef: {fileID: 751133818934281291}
+  posDetectionDelay: 0.1
+  minPosChangeForAnimation: 0.1
 --- !u!1 &5107290458632776960
 GameObject:
   m_ObjectHideFlags: 0

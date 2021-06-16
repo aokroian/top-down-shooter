@@ -32,15 +32,56 @@ public class EnemyController : MonoBehaviour, EnemyProperties
 
     public float biteTimer;
 
+    // variables to detect position change
+    private Vector3 prevFramePosition;
+    private float prevFramePosDetectionTimer;
+    public float posDetectionDelay = 0.1f;
+    public float minPosChangeForAnimation = 0.1f;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").transform;
+
+        prevFramePosition = transform.position;
+        prevFramePosDetectionTimer = posDetectionDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // rotate towards player
+        Vector3 lTargetDir = player.transform.position - transform.position;
+        lTargetDir.y = 0.0f;
+        gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
+
+
+        // decrementing timer which is needed to get next difference in position
+        prevFramePosDetectionTimer -= Time.deltaTime;
+        if (prevFramePosDetectionTimer < 0f)
+            prevFramePosDetectionTimer = 0f;
+
+        // setting floats for animation controller
+        Vector3 currentFramePos = transform.position;
+        Vector3 posDifference = currentFramePos - prevFramePosition;
+        if (prevFramePosDetectionTimer == 0f)
+        {
+
+            Vector3 clampedVelocity = Vector3.ClampMagnitude(posDifference, 1f);
+            Vector3 globalMovement = new Vector3(clampedVelocity.x, 0.0f, clampedVelocity.y);
+            Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
+            gameObject.GetComponent<Animator>().SetFloat("local Z speed", localMovement.z);
+            gameObject.GetComponent<Animator>().SetFloat("local X speed", localMovement.x);
+
+            prevFramePosition = currentFramePos;
+            prevFramePosDetectionTimer = posDetectionDelay;
+        }
+
+
+
+        if (posDifference.x <= minPosChangeForAnimation && posDifference.x <= minPosChangeForAnimation)
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
+        else
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
         /*
         if (playerAwared) {
             agent.destination = player.position;

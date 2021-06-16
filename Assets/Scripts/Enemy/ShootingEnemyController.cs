@@ -50,6 +50,11 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     private float shootTimer;
     private float shootRange;
 
+
+    private Vector3 prevFramePosition;
+    private float prevFramePosDetectionTimer;
+    public float posDetectionDelay = 0.1f;
+    public float minPosChangeForAnimation = 0.1f;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -73,6 +78,9 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
         FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
         weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedWeaponObj.transform;
+
+        prevFramePosition = transform.position;
+        prevFramePosDetectionTimer = posDetectionDelay;
     }
 
     // Update is called once per frame
@@ -89,6 +97,35 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         lTargetDir.y = 0.0f;
         gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
 
+
+
+        // decrementing timer which is needed to get next difference in position
+        prevFramePosDetectionTimer -= Time.deltaTime;
+        if (prevFramePosDetectionTimer < 0f)
+            prevFramePosDetectionTimer = 0f;
+
+        // setting floats for animation controller
+        Vector3 currentFramePos = transform.position;
+        Vector3 posDifference = currentFramePos - prevFramePosition;
+        if (prevFramePosDetectionTimer == 0f)
+        {
+            
+            Vector3 clampedVelocity = Vector3.ClampMagnitude(posDifference, 1f);
+            Vector3 globalMovement = new Vector3(clampedVelocity.x, 0.0f, clampedVelocity.y);
+            Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
+            gameObject.GetComponent<Animator>().SetFloat("local Z speed", localMovement.z);
+            gameObject.GetComponent<Animator>().SetFloat("local X speed", localMovement.x);
+
+            prevFramePosition = currentFramePos;
+            prevFramePosDetectionTimer = posDetectionDelay;
+        }
+        
+
+
+        if (posDifference.x <= minPosChangeForAnimation && posDifference.x <= minPosChangeForAnimation)
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
+        else
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
         /*
         if (playerAwared)
         {

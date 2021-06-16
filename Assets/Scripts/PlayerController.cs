@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+
         if (GameLoopController.paused)
         {
             return;
@@ -164,11 +165,10 @@ public class PlayerController : MonoBehaviour
         float directionY = Quaternion.LookRotation(lTargetDir).eulerAngles.y;
 
         // здесь, если рука отклонена слишком сильно, вращаем всего персонажа
-        if (directionY - playerY >= 80f || directionY - playerY <= 1f)
+        if (directionY - playerY >= 60f || directionY - playerY <= 1f)
         {
             GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
         }
-
 
         // Clamp mouse position to screen size
         var mousePos = Input.mousePosition;
@@ -318,12 +318,12 @@ public class PlayerController : MonoBehaviour
         }
 
         // Отмена прицеливания когда опускаем пкм
-        if (Input.GetMouseButtonUp(1))
-        {
+        //if (Input.GetMouseButtonUp(1))
+        //{
 
-            isAiming = alwaysAiming;
-            aimSpotRef.gameObject.SetActive(false);
-        }
+        //    isAiming = alwaysAiming;
+        //    aimSpotRef.gameObject.SetActive(false);
+        //}
     }
 
     private void FixedUpdate()

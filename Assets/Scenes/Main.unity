@@ -462,7 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 4996124605211225381, guid: 0d2bf88c5c116aa4c93f2be7c3a1e366, type: 3}
-  - {fileID: 5576889190822642059, guid: fed2986b9862ac64c9e00d3b58348306, type: 3}
+  - {fileID: 6826610250136715397, guid: f84b15b228132e04aa9d10add2674b4d, type: 3}
   attemptCount: 10
   minDistanceMultiplier: 3
   maxDistanceMultiplier: 6
@@ -1483,6 +1483,26 @@ PrefabInstance:
       propertyPath: mainUIRef
       value: 
       objectReference: {fileID: 2106313311}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: minLookAtDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652270395972803460, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: health
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652270395972803460, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: maxHealth
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926814553588672862, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Data.m_ConstrainedAxes.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926814553588672862, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Data.m_ConstrainedAxes.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8546143664841721988, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_Name
       value: Player
