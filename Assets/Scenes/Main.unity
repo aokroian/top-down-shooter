@@ -1531,10 +1531,6 @@ PrefabInstance:
       propertyPath: mainUIRef
       value: 
       objectReference: {fileID: 2106313311}
-    - target: {fileID: 4258059720143418344, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
-      propertyPath: m_Data.m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8546143664841721988, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1542,7 +1538,7 @@ PrefabInstance:
     - target: {fileID: 8546143664841721989, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 794fd990d357749a798c21a282bfca2d, type: 2}
     - target: {fileID: 9066257110822081086, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_RootOrder
       value: 1
