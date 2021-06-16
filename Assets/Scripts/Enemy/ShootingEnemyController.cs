@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations.Rigging;
 
 public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 {
@@ -28,8 +29,16 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     public float walkDistanceMax = 2.0f;
     public float additionalShootRange = 2.0f;
 
-    private GameObject rightHandBoneRef;
-    private GameObject rightHandRigControllerObj;
+    // animation rigging variables
+    public GameObject rightHandConstraintController;
+    public GameObject leftHandConstraintController;
+    public GameObject rigLayerHandsPosition;
+    public GameObject parentBoneForWeapon;
+    public GameObject aimSpotRef;
+
+    // constraint for animation rigging (weapon aim part)
+    private GameObject weaponAimConstraintObj;
+
     private GameObject equippedWeaponObj;
 
     private Transform player;
@@ -48,24 +57,38 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         shootRange = agent.stoppingDistance + additionalShootRange;
 
         // spawn weapon
-        FindInAllChildren(gameObject.transform, "hand.R", ref rightHandBoneRef);
-        FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandRigControllerObj);
-        if (rightHandBoneRef != null && rightHandRigControllerObj != null)
-        {
-            equippedWeaponObj = Instantiate(weapon, rightHandBoneRef.transform);
-            WeaponController weaponController = equippedWeaponObj.GetComponent<WeaponController>();
+        equippedWeaponObj = Instantiate(weapon, parentBoneForWeapon.transform);
 
-            weaponController.ownerObjRef = gameObject;
-            // correcting weapon obj transform for right hand
-            equippedWeaponObj.transform.localPosition = weaponController.localPosition;
-            equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
-            equippedWeaponObj.transform.localScale = weaponController.localScale;
-        }
+        WeaponController weaponController = equippedWeaponObj.GetComponent<WeaponController>();
+
+        weaponController.ownerObjRef = gameObject;
+        // moving the weapon to the desired position
+        equippedWeaponObj.transform.localPosition = weaponController.localPosition;
+        equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
+        equippedWeaponObj.transform.localScale = weaponController.localScale;
+
+        // animation rigging variables
+        FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
+        FindInAllChildren(gameObject.transform, "LeftHandController", ref leftHandConstraintController);
+        FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
+        FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
+        weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedWeaponObj.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // hand on weapon animation rigging part
+        // moving hand rig controllers to points on weapon when its equiped
+        rightHandConstraintController.transform.position = equippedWeaponObj.transform.Find("RightHandPoint").transform.position;
+        leftHandConstraintController.transform.position = equippedWeaponObj.transform.Find("LeftHandPoint").transform.position;
+
+
+        // rotating enemy towards player
+        Vector3 lTargetDir = aimSpotRef.transform.position - transform.position;
+        lTargetDir.y = 0.0f;
+        gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
+
         /*
         if (playerAwared)
         {
@@ -151,7 +174,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 shootTimer -= Time.deltaTime;
                 if (shootTimer <= shootTime / 2f)
                 {
-                    equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandRigControllerObj.transform.position);
+                    equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, aimSpotRef.transform.position);
                     currentState = State.AFTER_SHOT;
                     //Debug.Log("state: " + currentState);
                 }
@@ -187,8 +210,8 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
     private void AimPlayer()
     {
-        if (rightHandRigControllerObj != null)
-            rightHandRigControllerObj.transform.position = player.position;
+        if (aimSpotRef != null)
+            aimSpotRef.transform.position = player.position;
     }
 
     private Vector3 GetRandomMovementPoint()
