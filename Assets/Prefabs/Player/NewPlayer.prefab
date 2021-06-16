@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80287877073703345}
   m_LocalRotation: {x: 0.01590813, y: -0.0000000012010317, z: 0.000000075488344, w: 0.9998735}
-  m_LocalPosition: {x: 0.0017199984, y: 0.0010088459, z: -0.0027452987}
+  m_LocalPosition: {x: 0.00337, y: -0.00009, z: -0.00078}
   m_LocalScale: {x: 0.01, y: 0.0100000035, z: 0.0100000035}
   m_Children: []
   m_Father: {fileID: 3454932369085297184}
@@ -155,7 +155,7 @@ Transform:
   m_Children:
   - {fileID: 2638161359057341706}
   m_Father: {fileID: 9066257110822081086}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &781926884251451968
 MonoBehaviour:
@@ -292,7 +292,7 @@ Transform:
   m_Children:
   - {fileID: 693458282225091693}
   m_Father: {fileID: 9066257110822081086}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8964516106665042150
 MonoBehaviour:
@@ -425,7 +425,7 @@ MonoBehaviour:
       y: 1
       z: 1
   m_SourceObjectsGUIToggle: 1
-  m_SettingsGUIToggle: 0
+  m_SettingsGUIToggle: 1
 --- !u!1 &2055200216230028342
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +590,7 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: 0, y: 0, z: 0}
+    m_Offset: {x: -17, y: 0, z: 0}
     m_MinLimit: -180
     m_MaxLimit: 180
     m_AimAxis: 4
@@ -982,7 +982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4976695557839734223}
   m_LocalRotation: {x: 0.01590813, y: -0.0000000012010317, z: 0.000000075488344, w: 0.9998735}
-  m_LocalPosition: {x: -0.002130002, y: 0.001071528, z: 0.0028295175}
+  m_LocalPosition: {x: -0.00249, y: 0.00102, z: 0.00283}
   m_LocalScale: {x: 0.01, y: 0.0100000035, z: 0.0100000035}
   m_Children: []
   m_Father: {fileID: 3454932369085297184}
@@ -1840,8 +1840,8 @@ Transform:
   m_Children:
   - {fileID: 5305370501421844827}
   - {fileID: 820861633909321257}
-  - {fileID: 1519416219980416670}
   - {fileID: 883741142625365587}
+  - {fileID: 1519416219980416670}
   - {fileID: 8079041925233957291}
   - {fileID: 2855811250575915230}
   m_Father: {fileID: 0}
@@ -1920,9 +1920,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RigLayers:
-  - m_Rig: {fileID: 781926884251451968}
-    m_Active: 1
   - m_Rig: {fileID: 8964516106665042150}
+    m_Active: 1
+  - m_Rig: {fileID: 781926884251451968}
     m_Active: 1
   - m_Rig: {fileID: 6989014451314280987}
     m_Active: 1
@@ -1945,7 +1945,7 @@ Animator:
   m_GameObject: {fileID: 8546143664841721988}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 794fd990d357749a798c21a282bfca2d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2014,11 +2014,12 @@ MonoBehaviour:
   - {fileID: 3653366746708802039, guid: c1a3f713b544549a68869c8f129b00a4, type: 3}
   selectedWeaponIndex: 0
   equippedWeaponIndex: 0
-  parentBoneForWeapon: {fileID: 7311716015284836467}
+  parentBoneForWeapon: {fileID: 5790282938086853945}
   aimSpotRef: {fileID: 4153264999834378730}
   mainUIRef: {fileID: 0}
   rightHandConstraintController: {fileID: 6793511732785431806}
   leftHandConstraintController: {fileID: 8061983496373915486}
+  rigLayerHandsPosition: {fileID: 6636170644396606690}
   mousePosOnGround: {x: 0, y: 0, z: 0}
   aimPosition: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}

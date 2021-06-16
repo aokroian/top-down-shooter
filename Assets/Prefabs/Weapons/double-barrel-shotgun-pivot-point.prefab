@@ -88,8 +88,8 @@ MonoBehaviour:
   rateOfFire: 0.2
   reloadTime: 1.5
   shootingMode: 1
-  localPosition: {x: 0.00065, y: 0.001, z: -0.00036}
-  localRotation: {x: 30.471, y: 90.015, z: 90.038}
+  localPosition: {x: 0.00131, y: 0.00101, z: 0.00073}
+  localRotation: {x: 0, y: 0, z: 0}
   localScale: {x: 0.01, y: 0.01, z: 0.01}
   bulletFlashRef: {fileID: 7623459529341993038, guid: d8536e3437348459eab9512313b2ac32, type: 3}
   bulletOutPointObj: {fileID: 6354097763237307107}

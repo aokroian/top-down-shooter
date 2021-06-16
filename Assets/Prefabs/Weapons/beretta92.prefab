@@ -135,12 +135,12 @@ MonoBehaviour:
   shotDamage: 20
   shotImpactForce: 50
   recoilHeight: 0.07
-  clipSize: 15
-  rateOfFire: 0.2
-  reloadTime: 0.5
+  clipSize: 20
+  rateOfFire: 0.15
+  reloadTime: 0.3
   shootingMode: 1
-  localPosition: {x: 0.00506, y: -0.00139, z: -0.00145}
-  localRotation: {x: 30.471, y: 90.015, z: 90.038}
+  localPosition: {x: 0.00144, y: 0.00129, z: 0.00663}
+  localRotation: {x: 0, y: 0, z: 0}
   localScale: {x: 0.01, y: 0.01, z: 0.01}
   bulletFlashRef: {fileID: 7623459529341993038, guid: d8536e3437348459eab9512313b2ac32, type: 3}
   bulletOutPointObj: {fileID: 5538476393623822965}

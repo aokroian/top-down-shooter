@@ -119,6 +119,13 @@ public class PlayerController : MonoBehaviour
             leftHandConstraintController.transform.position = equippedWeaponObj.transform.Find("LeftHandPoint").transform.position;
         }
         // TODO: setup weapon aim constrained object (weapon obj)
+        if (equippedWeaponObj != null && isAiming)
+        {
+            weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedWeaponObj.transform;
+            //gameObject.GetComponent<RigBuilder>().Build();
+        }
+            
+
 
         // controlling hand position constraints weight
         if (equippedWeaponObj == null)
@@ -157,7 +164,7 @@ public class PlayerController : MonoBehaviour
         float directionY = Quaternion.LookRotation(lTargetDir).eulerAngles.y;
 
         // здесь, если рука отклонена слишком сильно, вращаем всего персонажа
-        if (directionY - playerY >= 40f || directionY - playerY <= -1f)
+        if (directionY - playerY >= 80f || directionY - playerY <= 1f)
         {
             GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
         }
@@ -281,27 +288,24 @@ public class PlayerController : MonoBehaviour
         }
 
         // стрельба с предварительным прицеливанием
-        if (Input.GetMouseButton(1) && equippedWeaponObj != null)
-        {
-            Vector3 pos = equippedWeaponObj.transform.Find("BulletOutPoint").gameObject.transform.position;
-            Vector3 dir = mousePosOnGround + new Vector3(0.0f, 1.6f, 0.0f);
-            Debug.DrawLine(pos, dir, Color.yellow);
+        //if (Input.GetMouseButton(1) && equippedWeaponObj != null)
+        //{
+        //    Vector3 pos = equippedWeaponObj.transform.Find("BulletOutPoint").gameObject.transform.position;
+        //    Vector3 dir = mousePosOnGround + new Vector3(0.0f, 1.6f, 0.0f);
+        //    Debug.DrawLine(pos, dir, Color.yellow);
 
-            // отрисовка прицела
-            aimSpotRef.gameObject.SetActive(true);
-            aimSpotRef.transform.LookAt(cam.transform.position);
-            //aimSpotRef.rectTransform.position  = new Vector3(mousePosOnGround.x, mousePosOnGround.z, 0f);
-            //Debug.Log(aimSpotImageRef.raycastTarget);
+        //    isAiming = true;
+            
+        //}
+        //// стрельба без прицеливания
+        //if (Input.GetMouseButton(0) && /* !isAiming &&*/  equippedWeaponObj != null)
+        //{
+        //    FindInAllChildren(transform, "AimAtPoint", ref rightHandBoneController);
+        //    equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandBoneController.transform.position);
+        //}
 
-            isAiming = true;
-            if (Input.GetMouseButton(0))
-            {
-                FindInAllChildren(transform, "AimAtPoint", ref rightHandBoneController);
-                equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandBoneController.transform.position);
-            }
-        }
-        // стрельба без прицеливания
-        if (Input.GetMouseButton(0) && /* !isAiming &&*/  equippedWeaponObj != null)
+        // shooting if always aiming
+        if (Input.GetMouseButton(0) && equippedWeaponObj != null)
         {
             FindInAllChildren(transform, "AimAtPoint", ref rightHandBoneController);
             equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, rightHandBoneController.transform.position);
