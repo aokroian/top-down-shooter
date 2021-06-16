@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -53,7 +54,8 @@ public class PlayerController : MonoBehaviour
 
     private float dodgeTimer = 0f;
 
-    
+    // constraint for animation rigging (weapon aim part)
+    private GameObject weaponAimConstraintObj;
 
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
     {
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
         FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
         FindInAllChildren(gameObject.transform, "LeftHandController", ref leftHandConstraintController);
+        FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
     }
     void Update()
     {
@@ -113,6 +116,8 @@ public class PlayerController : MonoBehaviour
             rightHandConstraintController.transform.position = equippedWeaponObj.transform.Find("RightHandPoint").transform.position;
             leftHandConstraintController.transform.position = equippedWeaponObj.transform.Find("LeftHandPoint").transform.position;
         }
+        // setup weapon aim constrained object (weapon obj)
+        
             
 
 
