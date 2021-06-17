@@ -76,6 +76,9 @@ public class EnemyController : MonoBehaviour, EnemyProperties
             prevFramePosDetectionTimer = posDetectionDelay;
         }
 
+        // meele animation
+        Vector3 distanceToPlayer = gameObject.transform.position - player.transform.position;
+        gameObject.GetComponent<Animator>().SetFloat("distance to player", distanceToPlayer.magnitude/2);
 
 
         if (posDifference.x <= minPosChangeForAnimation && posDifference.x <= minPosChangeForAnimation)
