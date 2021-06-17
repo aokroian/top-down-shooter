@@ -119,24 +119,20 @@ public class PlayerController : MonoBehaviour
             rightHandConstraintController.transform.position = equippedWeaponObj.transform.Find("RightHandPoint").transform.position;
             leftHandConstraintController.transform.position = equippedWeaponObj.transform.Find("LeftHandPoint").transform.position;
         }
-        // TODO: setup weapon aim constrained object (weapon obj)
-        if (equippedWeaponObj != null && isAiming)
-        {
-            weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedWeaponObj.transform;
-            //gameObject.GetComponent<RigBuilder>().Build();
-        }
-            
+
+
 
 
         // controlling hand position constraints weight
         if (equippedWeaponObj == null)
         {
             rigLayerHandsPosition.GetComponent<Rig>().weight = 0f;
-        } else
+        }
+        else
         {
             rigLayerHandsPosition.GetComponent<Rig>().weight = 1f;
         }
-            
+
 
 
         /*
@@ -175,7 +171,7 @@ public class PlayerController : MonoBehaviour
         var clampedMousePos = new Vector3(Mathf.Clamp(mousePos.x, 0f, Screen.width), Mathf.Clamp(mousePos.y, 0f, Screen.height), 0f);
         // расчеты для вращения персонажа туда, куда смотрит мышь
         Ray cameraRay = cam.ScreenPointToRay(clampedMousePos);
-        
+
 
         // абстрактная поверхность для того, чтобы понять,
         // где луч из камеры пересекается с землей
@@ -278,6 +274,12 @@ public class PlayerController : MonoBehaviour
                 equippedWeaponObj.transform.localPosition = weaponController.localPosition;
                 equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
                 equippedWeaponObj.transform.localScale = weaponController.localScale;
+
+                // setup weapon aim constrained object (weapon obj)
+
+                weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedWeaponObj.transform;
+                gameObject.GetComponent<RigBuilder>().Build();
+
             }
         }
 
@@ -295,7 +297,7 @@ public class PlayerController : MonoBehaviour
         //    Debug.DrawLine(pos, dir, Color.yellow);
 
         //    isAiming = true;
-            
+
         //}
         //// стрельба без прицеливания
         //if (Input.GetMouseButton(0) && /* !isAiming &&*/  equippedWeaponObj != null)
@@ -335,9 +337,11 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(offset.normalized * currentMovementSpeed * Time.deltaTime);
 
         // игрок двигается по глобальным осям
-        if (movement.magnitude >= 0.01f) {
+        if (movement.magnitude >= 0.01f)
+        {
             GetComponent<Rigidbody>().velocity = offset;
-        } else
+        }
+        else
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
 
@@ -357,7 +361,8 @@ public class PlayerController : MonoBehaviour
     public float GetReloadTimerPercent()
     {
         float result = 0f;
-        if (equippedWeaponObj != null) {
+        if (equippedWeaponObj != null)
+        {
             var weaponController = equippedWeaponObj.GetComponent<WeaponController>();
             result = weaponController.reloadTimer / weaponController.reloadTime;
         }
