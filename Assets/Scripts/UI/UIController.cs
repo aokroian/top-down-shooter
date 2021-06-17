@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,13 +10,14 @@ public class UIController : MonoBehaviour
     public Text amountOfBullets;
 
     public PlayerController playerController;
+    public Target target;
 
     void Start()
     {
-        
+
     }
 
-    
+
     void Update()
     {
         var health = playerController.GetHealthPercent();
@@ -35,5 +34,9 @@ public class UIController : MonoBehaviour
 
         bulletsInClip.text = playerController.GetBulletsInClip().ToString();
         amountOfBullets.text = playerController.GetAmountOfBullets().ToString();
+
+        var hp = target.GetHPPercent();
+        hpScroll.GetComponent<Scrollbar>().value = hp;
+        hpScroll.GetComponent<Image>().color = Color.Lerp(Color.black, Color.red, hp);
     }
 }
