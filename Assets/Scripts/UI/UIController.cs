@@ -20,10 +20,6 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        var health = playerController.GetHealthPercent();
-        hpScroll.GetComponent<Scrollbar>().value = health;
-        hpScroll.GetComponent<Image>().color = Color.Lerp(Color.blue, Color.red, health);
-
         var reload = playerController.GetReloadTimerPercent();
         reloadScroll.GetComponent<Scrollbar>().value = reload;
         reloadScroll.GetComponent<Image>().color = Color.Lerp(Color.blue, Color.red, reload);

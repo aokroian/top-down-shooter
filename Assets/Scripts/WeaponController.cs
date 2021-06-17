@@ -159,6 +159,7 @@ public class WeaponController : MonoBehaviour
             bulletController.bulletImpactForce = shotImpactForce;
             bulletController.shotDamage = shotDamage + shotDamageModifier;
             bulletController.hitEffectRef = hitEffectRef;
+            bulletController.shooter = ownerObjRef;
 
             // скорость и направление полета пули
             Vector3 shotDir = targetPos - bulletOutPointObj.transform.position;

@@ -7,6 +7,7 @@ public class BulletController : MonoBehaviour
     public GameObject hitEffectRef;
     public float bulletImpactForce;
     public float shotDamage;
+    public GameObject shooter;
 
     public float despawnDistance = 40f;
 
@@ -40,10 +41,13 @@ public class BulletController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("OnTrigger: " + other.gameObject.name);
-        // ??????? ?? ???? (????? ????? ?????? ?????? ? ???? ????, ????? ???? ??????)
         Instantiate(hitEffectRef, transform.position, Quaternion.LookRotation(transform.position - other.transform.position));
 
-        // ???? ???????
+        if (shooter == other.gameObject)
+        {
+            return;
+        }
+
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy" || other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
             
@@ -53,7 +57,6 @@ public class BulletController : MonoBehaviour
                 target.TakeDamage(shotDamage);
             }
 
-            // ?????? ????? ?? ?????? ?????????
             /*
             if (other.attachedRigidbody != null)
             {
