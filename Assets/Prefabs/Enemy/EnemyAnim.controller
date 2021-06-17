@@ -53,16 +53,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 3427365151373533505}
-    m_Position: {x: 70, y: 250, z: 0}
+    m_Position: {x: 90, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8207460038706494047}
-    m_Position: {x: 90, y: 490, z: 0}
+    m_Position: {x: 120, y: 490, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6140257347027739898}
-    m_Position: {x: 420, y: 340, z: 0}
+    m_Position: {x: 350, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4751963206001444453}
-    m_Position: {x: -190, y: 370, z: 0}
+    m_Position: {x: -90, y: 360, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions:
@@ -422,8 +422,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Melee
-  m_Speed: 0.7
+  m_Name: "Melee\u0444"
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1844923613486420291}

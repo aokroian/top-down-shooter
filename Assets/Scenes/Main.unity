@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 1746845811839031643, guid: bd939a20b2307a5498553b2f22f8a601, type: 3}
-  minY: 0.7
+  minY: 0.55
   noiseMultiplier: 1.11
   noiseSeed: 0
   randomSeed: 0
