@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1033389794495966440}
   - component: {fileID: 3004923235635746850}
   - component: {fileID: 4499716576559252643}
+  - component: {fileID: 7616682135052341138}
   m_Layer: 0
   m_Name: beretta92
   m_TagString: Untagged
@@ -149,6 +150,19 @@ MonoBehaviour:
   bulletVelocity: 30
   bulletsInClip: 0
   maxShotAngle: 10
+--- !u!114 &7616682135052341138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3653366746708802039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c4ae5527ca74c9986af0b42f82a508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0
 --- !u!1 &5536215420189029880
 GameObject:
   m_ObjectHideFlags: 0

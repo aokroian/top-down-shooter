@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7577647148036630692}
   - component: {fileID: 2657258725382527762}
+  - component: {fileID: 4956791540696850098}
   m_Layer: 0
   m_Name: double-barrel-shotgun-pivot-point
   m_TagString: Untagged
@@ -98,6 +99,19 @@ MonoBehaviour:
   bulletVelocity: 25
   bulletsInClip: 2
   maxShotAngle: 10
+--- !u!114 &4956791540696850098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018421898667607887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c4ae5527ca74c9986af0b42f82a508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0
 --- !u!1 &6354097763237307107
 GameObject:
   m_ObjectHideFlags: 0

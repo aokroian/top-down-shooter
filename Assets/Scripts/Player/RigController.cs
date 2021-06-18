@@ -5,8 +5,6 @@ using UnityEngine;
 public class RigController : MonoBehaviour
 {
     public GameObject player;
-    public Vector3 controllerDefaultPos;
-    public Vector3 controllerDefaultRot;
 
     public float movementRapidity = 0.1f;
 
@@ -33,23 +31,13 @@ public class RigController : MonoBehaviour
         if (constraintSelect == constraintType.HandPos)
         {
             offset = new Vector3(0.0f, 1.5f, 0.0f);
-            if (playerController.isAiming)
-            {
-                transform.position = Vector3.Lerp(transform.position, playerController.aimPosition + offset, movementRapidity);
-                //transform.LookAt(playerController.mousePosOnGround + offset);
-            } else
-            {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, controllerDefaultPos, movementRapidity);
-                //transform.position = player.transform.TransformPoint(controllerDefaultPos);
-                //transform.rotation = Quaternion.Euler(controllerDefaultRot);
-            }
-            
+            transform.position = Vector3.Lerp(transform.position, playerController.aimAtPosition + offset, movementRapidity);
         }
 
         if (constraintSelect == constraintType.HeadPos)
         {
             offset = new Vector3(0.0f, 1f, 0.0f);
-            transform.LookAt(playerController.aimPosition + offset);
+            transform.LookAt(playerController.aimAtPosition + offset);
             
         }
 

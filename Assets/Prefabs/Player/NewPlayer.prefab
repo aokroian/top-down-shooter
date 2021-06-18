@@ -833,9 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8546143664841721988}
-  controllerDefaultPos: {x: 0, y: 0, z: 0}
-  controllerDefaultRot: {x: 0, y: 0, z: 0}
-  movementRapidity: 0.1
+  movementRapidity: 0.5
   constraintSelect: 0
 --- !u!1 &4516330512353110479
 GameObject:
@@ -982,7 +980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4976695557839734223}
   m_LocalRotation: {x: 0.01590813, y: -0.0000000012010317, z: 0.000000075488344, w: 0.9998735}
-  m_LocalPosition: {x: -0.00249, y: 0.00102, z: 0.00283}
+  m_LocalPosition: {x: -0.00332, y: -0.00007, z: -0.00021}
   m_LocalScale: {x: 0.01, y: 0.0100000035, z: 0.0100000035}
   m_Children: []
   m_Father: {fileID: 3454932369085297184}
@@ -1920,11 +1918,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RigLayers:
-  - m_Rig: {fileID: 8964516106665042150}
-    m_Active: 1
   - m_Rig: {fileID: 781926884251451968}
     m_Active: 1
   - m_Rig: {fileID: 6989014451314280987}
+    m_Active: 1
+  - m_Rig: {fileID: 8964516106665042150}
     m_Active: 1
   m_Effectors:
   - m_Transform: {fileID: 1752970976649712259}
@@ -1996,7 +1994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83eac4a076d4410ebd13eee558f640d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alwaysAiming: 1
   rotationSpeed: 0.1
   basicMovementSpeed: 4
   dodgeSpeed: 13
@@ -2007,24 +2004,22 @@ MonoBehaviour:
   stamina: 100
   maxStamina: 100
   staminaRegenPerSecond: 20
-  aimingEffectOnStaminaRegen: 1
-  amountOfBullets: 1000
-  weaponEquipmentArr:
-  - {fileID: 2018421898667607887, guid: cac850a810d414f0399a3425d440092d, type: 3}
+  itemsEquipmentArr:
   - {fileID: 3653366746708802039, guid: c1a3f713b544549a68869c8f129b00a4, type: 3}
-  selectedWeaponIndex: 0
-  equippedWeaponIndex: 0
+  - {fileID: 2018421898667607887, guid: cac850a810d414f0399a3425d440092d, type: 3}
+  - {fileID: 2685747771383232502, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
+  selectedItemIndex: 0
+  equippedItemIndex: 0
   parentBoneForWeapon: {fileID: 5790282938086853945}
-  aimSpotRef: {fileID: 4153264999834378730}
-  mainUIRef: {fileID: 0}
+  parentBoneForThrowableItems: {fileID: 5790282938086853945}
+  amountOfBullets: 1000
   rightHandConstraintController: {fileID: 6793511732785431806}
   leftHandConstraintController: {fileID: 8061983496373915486}
   rigLayerHandsPosition: {fileID: 6636170644396606690}
+  cam: {fileID: 0}
+  minLookAtDistance: 1
   mousePosOnGround: {x: 0, y: 0, z: 0}
   aimPosition: {x: 0, y: 0, z: 0}
-  cam: {fileID: 0}
-  isAiming: 0
-  minLookAtDistance: 1
 --- !u!114 &5652270395972803460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2037,8 +2032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  maxHealth: 1000
+  health: 100000
+  maxHealth: 100000
 --- !u!1 &8560982832322567398
 GameObject:
   m_ObjectHideFlags: 0

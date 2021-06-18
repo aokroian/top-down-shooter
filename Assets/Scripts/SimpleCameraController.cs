@@ -30,7 +30,7 @@ public class SimpleCameraController : MonoBehaviour
     
     private void LateUpdate()
     {
-        var playerAimingPoint = playerRef.GetComponent<PlayerController>().mousePosOnGround;
+        var playerAimingPoint = playerRef.GetComponent<PlayerController>().aimAtPosition;
         var target = Vector3.Lerp(playerRef.transform.position, new Vector3(playerAimingPoint.x, 0.0f, playerAimingPoint.z), playerToPointerPart) + offset;
         transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, smoothTime);
     }
