@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Target : MonoBehaviour
 {
     public float health = 100f;
     public float maxHealth = 100f;
+
+    public UnityEvent onDeath;
 
     public void TakeDamage(float amount)
     {
@@ -19,6 +22,7 @@ public class Target : MonoBehaviour
         }
         if (health <= 0f)
         {
+            onDeath.Invoke();
             Destroy(gameObject, 0.02f);
         }
     }

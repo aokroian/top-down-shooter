@@ -1188,6 +1188,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!195 &4958741082988955625
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1238,6 +1241,7 @@ MonoBehaviour:
   aimSpotRef: {fileID: 751133818934281291}
   posDetectionDelay: 0.1
   minPosChangeForAnimation: 0.1
+  diesEvent: {fileID: 11400000, guid: ca2560dd2f9dd7b48a5eef7afc954d8f, type: 2}
 --- !u!1 &5107290458632776960
 GameObject:
   m_ObjectHideFlags: 0

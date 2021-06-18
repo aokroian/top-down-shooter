@@ -25,18 +25,21 @@ public class EnemyController : MonoBehaviour, EnemyProperties
     public float beforeBiteTime = 0.2f;
     public float afterBiteTime = 0.8f;
 
+    public float posDetectionDelay = 0.1f;
+    public float minPosChangeForAnimation = 0.1f;
+    public float biteTimer;
+
+    public EnemyDiesEvent diesEvent;
+
     private State currentState;
     private Transform player;
 
     private NavMeshAgent agent;
 
-    public float biteTimer;
-
     // variables to detect position change
     private Vector3 prevFramePosition;
     private float prevFramePosDetectionTimer;
-    public float posDetectionDelay = 0.1f;
-    public float minPosChangeForAnimation = 0.1f;
+    
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -172,5 +175,10 @@ public class EnemyController : MonoBehaviour, EnemyProperties
                 playerTarget.TakeDamage(damage);
             }
         }
+    }
+
+    public void OnEnemyDies()
+    {
+        diesEvent.Raise(new EnemyEventParam(transform.position, cost));
     }
 }

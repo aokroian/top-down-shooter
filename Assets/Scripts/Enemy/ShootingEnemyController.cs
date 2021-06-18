@@ -36,6 +36,11 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     public GameObject parentBoneForWeapon;
     public GameObject aimSpotRef;
 
+    public float posDetectionDelay = 0.1f;
+    public float minPosChangeForAnimation = 0.1f;
+
+    public EnemyDiesEvent diesEvent;
+
     // constraint for animation rigging (weapon aim part)
     private GameObject weaponAimConstraintObj;
 
@@ -53,8 +58,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
     private Vector3 prevFramePosition;
     private float prevFramePosDetectionTimer;
-    public float posDetectionDelay = 0.1f;
-    public float minPosChangeForAnimation = 0.1f;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -263,5 +267,10 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     private bool IsAtDestination()
     {
         return agent.remainingDistance <= agent.stoppingDistance;
+    }
+
+    public void OnEnemyDies()
+    {
+        diesEvent.Raise(new EnemyEventParam(transform.position, cost));
     }
 }
