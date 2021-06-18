@@ -332,7 +332,7 @@ public class PlayerController : MonoBehaviour
             }
         } else
         {
-            return new Vector3(0, 0, 0);
+            return aimAtPosition;
         }
     }
 
