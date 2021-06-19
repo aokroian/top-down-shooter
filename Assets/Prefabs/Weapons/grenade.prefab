@@ -131,12 +131,14 @@ MonoBehaviour:
   localRotation: {x: -60, y: 0, z: 0}
   localScale: {x: 0.06, y: 0.06, z: 0.06}
   timeToLiveAfterThrow: 1
+  cameraShakeMagnitude: 3
   shouldExplode: 1
   explosionEffect: {fileID: 100008, guid: 06736895ea0a4ff408d25e6684dce797, type: 3}
   explosionRadius: 4
   explosionForce: 10
   explosionMaxDamage: 200
   explosionDurationTimer: 0
+  isThrowed: 0
 --- !u!1 &3761041471267226563
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class ThrowableItemController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ThrowableItemController : MonoBehaviour
     public float timeToLiveAfterThrow = 1f;
 
     // variables for explosion only
+    public float cameraShakeMagnitude;
     public bool shouldExplode = false;
     public GameObject explosionEffect;
     public float explosionRadius = 1f;
@@ -87,6 +89,10 @@ public class ThrowableItemController : MonoBehaviour
             }
         }
         Instantiate(explosionEffect, transform.position, transform.rotation);
+        SimpleCameraController camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<SimpleCameraController>();
+        CameraShaker.Instance.ShakeOnce(cameraShakeMagnitude, 4f, 0.1f, 0.5f);
         Destroy(gameObject);
     }
+
+    
 }
