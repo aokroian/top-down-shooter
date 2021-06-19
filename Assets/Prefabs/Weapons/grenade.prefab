@@ -130,12 +130,12 @@ MonoBehaviour:
   localPosition: {x: 0.00206, y: -0.00002, z: 0.00371}
   localRotation: {x: -60, y: 0, z: 0}
   localScale: {x: 0.06, y: 0.06, z: 0.06}
-  timeToLiveAfterThrow: 4
+  timeToLiveAfterThrow: 1
   shouldExplode: 1
-  explosionRadius: 2
+  explosionEffect: {fileID: 100008, guid: 06736895ea0a4ff408d25e6684dce797, type: 3}
+  explosionRadius: 4
   explosionForce: 10
   explosionMaxDamage: 200
-  explosionDuration: 2
   explosionDurationTimer: 0
 --- !u!1 &3761041471267226563
 GameObject:

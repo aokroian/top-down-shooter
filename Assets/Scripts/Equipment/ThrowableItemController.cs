@@ -14,11 +14,10 @@ public class ThrowableItemController : MonoBehaviour
 
     // variables for explosion only
     public bool shouldExplode = false;
-
+    public GameObject explosionEffect;
     public float explosionRadius = 1f;
     public float explosionForce = 1f;
     public float explosionMaxDamage = 200;
-    public float explosionDuration = 0.01f;
     public float explosionDurationTimer = 0f;
 
 
@@ -38,7 +37,6 @@ public class ThrowableItemController : MonoBehaviour
             {
                 if (shouldExplode)
                 {
-                    explosionDurationTimer = explosionDuration;
                     Explode();
                 } else
                 {
@@ -47,18 +45,6 @@ public class ThrowableItemController : MonoBehaviour
                 
             }
         }
-
-        // only for items that should explode
-        // after item is throwed and has no more time to live
-        if (explosionDurationTimer > 0f)
-        {
-            explosionDurationTimer -= Time.deltaTime;
-        }
-        if (explosionDurationTimer <= 0f && timeToLiveAfterThrow <=0)
-        {
-            Destroy(gameObject);
-        }
-
     }
 
 
@@ -79,6 +65,27 @@ public class ThrowableItemController : MonoBehaviour
 
     private void Explode()
     {
-        
+        Collider[] damagedObjects = Physics.OverlapSphere(transform.position, explosionRadius);
+
+        foreach (var hitCollider in damagedObjects)
+        {
+            Target target = hitCollider.GetComponent<Target>();
+            if (target != null)
+            {
+                // value to make damage from explosion more natural
+                float amplification = 1.3f;
+
+                float clampedDist = Mathf.Clamp(Vector3.Distance(transform.position, hitCollider.transform.position), 0f, explosionRadius);
+                float damagePercent = (explosionRadius - clampedDist) / explosionRadius;
+                float clampedDamage = Mathf.Clamp(explosionMaxDamage * damagePercent * amplification, 0f, explosionMaxDamage);
+
+                target.TakeDamage(clampedDamage);
+            }
+                
+        }
+
+
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }
