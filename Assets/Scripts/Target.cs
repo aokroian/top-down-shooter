@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using EZCameraShake;
 
 public class Target : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class Target : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
+
+        if (gameObject.tag == "Player")
+        {
+            CameraShaker.Instance.ShakeOnce(3f, 7f, 0.05f, 0.1f);
+        }
     }
 
     // Update is called once per frame
