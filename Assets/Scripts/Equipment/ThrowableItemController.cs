@@ -38,11 +38,12 @@ public class ThrowableItemController : MonoBehaviour
                 if (shouldExplode)
                 {
                     Explode();
-                } else
+                }
+                else
                 {
                     Destroy(gameObject);
                 }
-                
+
             }
         }
     }
@@ -66,25 +67,27 @@ public class ThrowableItemController : MonoBehaviour
     private void Explode()
     {
         Collider[] damagedObjects = Physics.OverlapSphere(transform.position, explosionRadius);
+        Vector3 grenadePos = new Vector3(transform.position.x, 1.5f, transform.position.z);
 
         foreach (var hitCollider in damagedObjects)
         {
-            Target target = hitCollider.GetComponent<Target>();
-            if (target != null)
+            // check if there is obstacles between grenade and target
+            RaycastHit hit;
+            Vector3 rayDir = hitCollider.transform.position - grenadePos;
+            if (Physics.Raycast(grenadePos, rayDir, out hit, explosionRadius))
             {
-                // value to make damage from explosion more natural
-                float amplification = 1.3f;
-
-                float clampedDist = Mathf.Clamp(Vector3.Distance(transform.position, hitCollider.transform.position), 0f, explosionRadius);
-                float damagePercent = (explosionRadius - clampedDist) / explosionRadius;
-                float clampedDamage = Mathf.Clamp(explosionMaxDamage * damagePercent * amplification, 0f, explosionMaxDamage);
-
-                target.TakeDamage(clampedDamage);
+                Target target = hit.transform.gameObject.GetComponent<Target>();
+                if (target != null)
+                {
+                    // value to make damage from explosion more natural
+                    float amplification = 1.3f;
+                    float clampedDist = Mathf.Clamp(Vector3.Distance(transform.position, hitCollider.transform.position), 0f, explosionRadius);
+                    float damagePercent = (explosionRadius - clampedDist) / explosionRadius;
+                    float clampedDamage = Mathf.Clamp(explosionMaxDamage * damagePercent * amplification, 0f, explosionMaxDamage);
+                    target.TakeDamage(clampedDamage);
+                }
             }
-                
         }
-
-
         Instantiate(explosionEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
