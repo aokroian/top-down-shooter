@@ -19,9 +19,7 @@ public class ThrowableItemController : MonoBehaviour
     public float explosionForce = 1f;
     public float explosionMaxDamage = 200;
     public float explosionDurationTimer = 0f;
-
-
-    private bool isThrowed = false;
+    public bool isThrowed = false;
 
 
     private void Update()
@@ -71,7 +69,7 @@ public class ThrowableItemController : MonoBehaviour
 
         foreach (var hitCollider in damagedObjects)
         {
-            // check if there is obstacles between grenade and target
+            // check if there are obstacles between grenade and target
             RaycastHit hit;
             Vector3 rayDir = hitCollider.transform.position - grenadePos;
             if (Physics.Raycast(grenadePos, rayDir, out hit, explosionRadius))
