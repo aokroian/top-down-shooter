@@ -201,9 +201,11 @@ public class PlayerController : MonoBehaviour
                 amountOfGrenades--;
                 FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
 
-                Vector3 appliedForce = (aimAtPosition - transform.position) + gameObject.GetComponent<Rigidbody>().velocity;
+                // direction and force
+                Vector3 upForce = new Vector3(0f, 3f, 0f);
+                Vector3 throwForce = (aimAtPosition - transform.position) + gameObject.GetComponent<Rigidbody>().velocity + upForce;
 
-                equippedItemObj.GetComponent<ThrowableItemController>().Throw(appliedForce);
+                equippedItemObj.GetComponent<ThrowableItemController>().Throw(throwForce);
                 selectedItemIndex = 0;
                 equippedItemIndex = 0;
                 equippedItemObj = null;

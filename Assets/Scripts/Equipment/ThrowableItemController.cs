@@ -76,25 +76,29 @@ public class ThrowableItemController : MonoBehaviour
             Vector3 rayDir = hitCollider.transform.position - grenadePos;
             if (Physics.Raycast(grenadePos, rayDir, out hit, explosionRadius))
             {
-                // DAMAGE
+                
                 Target target = hit.transform.gameObject.GetComponent<Target>();
                 if (target != null)
                 {
+                    // DAMAGE
                     // value to make damage from explosion more natural
                     float amplification = 1.3f;
                     float clampedDist = Mathf.Clamp(Vector3.Distance(transform.position, hitCollider.transform.position), 0f, explosionRadius);
                     float damagePercent = (explosionRadius - clampedDist) / explosionRadius;
                     float clampedDamage = Mathf.Clamp(explosionMaxDamage * damagePercent * amplification, 0f, explosionMaxDamage);
                     target.TakeDamage(clampedDamage);
-                }
 
-                // FORCE
-                Rigidbody rigidbody = hitCollider.gameObject.GetComponent<Rigidbody>();
-                if (rigidbody != null)
-                {
-                    rigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+
+                    // FORCE
+                    Rigidbody rigidbody = hitCollider.gameObject.GetComponent<Rigidbody>();
+                    if (rigidbody != null)
+                    {
+                        rigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+                    }
                 }
             }
+
+                
         }
         Instantiate(explosionEffect, transform.position, transform.rotation);
         SimpleCameraController camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<SimpleCameraController>();

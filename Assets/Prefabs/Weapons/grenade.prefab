@@ -130,7 +130,7 @@ MonoBehaviour:
   localPosition: {x: 0.00206, y: -0.00002, z: 0.00371}
   localRotation: {x: -60, y: 0, z: 0}
   localScale: {x: 0.06, y: 0.06, z: 0.06}
-  timeToLiveAfterThrow: 1
+  timeToLiveAfterThrow: 2
   cameraShakeMagnitude: 5
   shouldExplode: 1
   explosionEffect: {fileID: 100008, guid: 06736895ea0a4ff408d25e6684dce797, type: 3}
