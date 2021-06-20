@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Animations.Rigging;
 public enum ShootingModes
 {
     Automatic,
@@ -11,6 +12,13 @@ public enum ShootingModes
 
 public class WeaponController : MonoBehaviour
 {
+    // variables for animation
+    private Rig weaponAimRigLayer;
+    private Animator animator;
+    private bool isReloading = false;
+
+
+    //
     public float ownerAgility = 1f;
     public float ownerRigControllerAgility = 1f;
     public GameObject ownerObjRef;
@@ -48,23 +56,21 @@ public class WeaponController : MonoBehaviour
     public float reloadTimer { get; private set; } = 0f;
     private float nextShotTimer = 0f;
 
-    private GameObject mainUIRef;
     private int amountOfBullets;
     private void Start()
     {
         playerController = ownerObjRef.GetComponent<PlayerController>();
         enemyController = ownerObjRef.GetComponent<ShootingEnemyController>();
 
-
+        //get weapon animator
+        animator = gameObject.GetComponent<Animator>();
+        // get owners weapon aim rig layer (needed to disable it playing animations)
+        weaponAimRigLayer = ownerObjRef.transform.Find("RigLayer_WeaponAim").gameObject.GetComponent<Rig>();
 
         // установка дефолтных значений таймеров и патронов в обойме
         bulletsInClip = clipSize;
         reloadTimer = 0f;
         nextShotTimer = 0f;
-
-        // поиск объекта UI
-        mainUIRef = GameObject.FindGameObjectWithTag("MainUI");
-
 
         if (playerController != null)
         {
@@ -78,10 +84,41 @@ public class WeaponController : MonoBehaviour
 
     private void Update()
     {
+        // animation part
+        if (animator != null)
+        {
+            
+            if (isReloading)
+            {
+                // disable weapon aim
+                if (weaponAimRigLayer != null)
+                {
+                    weaponAimRigLayer.weight = 0f;
+                }
+                //disable laser aim
+                gameObject.GetComponent<LaserAim>().isEnabled = false;
+
+                // start reloading animation
+                animator.SetBool("is reloading", true);
+                
+            }
+            else
+            {
+                if (weaponAimRigLayer != null)
+                {
+                    weaponAimRigLayer.weight = 1f;
+                }
+                animator.SetBool("is reloading", false);
+                gameObject.GetComponent<LaserAim>().isEnabled = true;
+            }
+        }
+        
+
 
         // таймеры
         if (reloadTimer > 0f)
         {
+            isReloading = true;
             reloadTimer -= Time.deltaTime;
             //playerRef.GetComponent<PlayerController>().isAiming = playerRef.GetComponent<PlayerController>().alwaysAiming;
         }
@@ -93,6 +130,10 @@ public class WeaponController : MonoBehaviour
         {
             reloadTimer = 0f;
             //playerRef.GetComponent<PlayerController>().isAiming = false;
+        }
+        if (reloadTimer == 0f)
+        {
+            isReloading = false;
         }
         if (nextShotTimer < 0f)
         {

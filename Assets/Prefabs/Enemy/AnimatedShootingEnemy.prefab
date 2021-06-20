@@ -1227,7 +1227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cost: 3
   amountOfBullets: 9999
-  weapon: {fileID: 2018421898667607887, guid: cac850a810d414f0399a3425d440092d, type: 3}
+  weapon: {fileID: 3653366746708802039, guid: c1a3f713b544549a68869c8f129b00a4, type: 3}
   playerAwared: 0
   visionRange: 15
   shootTime: 1

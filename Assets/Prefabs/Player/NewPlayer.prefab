@@ -23,12 +23,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80287877073703345}
-  m_LocalRotation: {x: 0.01590813, y: -0.0000000012010317, z: 0.000000075488344, w: 0.9998735}
-  m_LocalPosition: {x: 0.00337, y: -0.00009, z: -0.00078}
-  m_LocalScale: {x: 0.01, y: 0.0100000035, z: 0.0100000035}
+  m_LocalRotation: {x: 0.014281166, y: -0.0000000011447062, z: 0.00000008014631, w: 0.9998981}
+  m_LocalPosition: {x: 0.0033700007, y: -0.0018214099, z: -0.0007740773}
+  m_LocalScale: {x: 0.009999996, y: 0.010000001, z: 0.0100000035}
   m_Children: []
-  m_Father: {fileID: 3454932369085297184}
-  m_RootOrder: 1
+  m_Father: {fileID: 5261264570123474986}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &663419934030543836
 GameObject:
@@ -119,8 +119,6 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.0013663665, z: 2.6193447e-11}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
   m_Children:
-  - {fileID: 718459403058428587}
-  - {fileID: 7932878766919753338}
   - {fileID: 5261264570123474986}
   m_Father: {fileID: 1238158859253410927}
   m_RootOrder: 0
@@ -306,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors: []
 --- !u!1 &1884951366936967949
 GameObject:
@@ -979,12 +977,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4976695557839734223}
-  m_LocalRotation: {x: 0.01590813, y: -0.0000000012010317, z: 0.000000075488344, w: 0.9998735}
-  m_LocalPosition: {x: -0.00332, y: -0.00007, z: -0.00021}
-  m_LocalScale: {x: 0.01, y: 0.0100000035, z: 0.0100000035}
+  m_LocalRotation: {x: 0.014281166, y: -0.0000000010183445, z: 0.000000071299695, w: 0.9998981}
+  m_LocalPosition: {x: -0.0033199992, y: -0.0017995534, z: -0.00020414506}
+  m_LocalScale: {x: 0.010000001, y: 0.010000005, z: 0.010000004}
   m_Children: []
-  m_Father: {fileID: 3454932369085297184}
-  m_RootOrder: 0
+  m_Father: {fileID: 5261264570123474986}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5270759540756566540
 GameObject:
@@ -1080,8 +1078,10 @@ Transform:
   - {fileID: 8315295699356108078}
   - {fileID: 2602219957093187085}
   - {fileID: 8219119388713299307}
+  - {fileID: 718459403058428587}
+  - {fileID: 7932878766919753338}
   m_Father: {fileID: 3454932369085297184}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6189309527356753478
 GameObject:
@@ -2013,13 +2013,13 @@ MonoBehaviour:
   parentBoneForWeapon: {fileID: 5790282938086853945}
   parentBoneForThrowableItems: {fileID: 5790282938086853945}
   amountOfBullets: 1000
+  amountOfGrenades: 1000
   rightHandConstraintController: {fileID: 6793511732785431806}
   leftHandConstraintController: {fileID: 8061983496373915486}
   rigLayerHandsPosition: {fileID: 6636170644396606690}
   cam: {fileID: 0}
-  minLookAtDistance: 1
-  mousePosOnGround: {x: 0, y: 0, z: 0}
-  aimPosition: {x: 0, y: 0, z: 0}
+  minLookAtDistance: 0
+  aimAtPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5652270395972803460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2032,8 +2032,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100000
-  maxHealth: 100000
+  health: 10000
+  maxHealth: 10000
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8560982832322567398
 GameObject:
   m_ObjectHideFlags: 0

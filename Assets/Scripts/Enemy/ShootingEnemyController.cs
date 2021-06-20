@@ -36,6 +36,10 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     public GameObject parentBoneForWeapon;
     public GameObject aimSpotRef;
 
+    private GameObject rightHandPoint;
+    private GameObject leftHandPoint;
+
+    //
     public float posDetectionDelay = 0.1f;
     public float minPosChangeForAnimation = 0.1f;
 
@@ -81,6 +85,10 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         FindInAllChildren(gameObject.transform, "LeftHandController", ref leftHandConstraintController);
         FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
         FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
+
+        FindInAllChildren(equippedWeaponObj.transform, "RightHandPoint", ref rightHandPoint);
+        FindInAllChildren(equippedWeaponObj.transform, "LeftHandPoint", ref leftHandPoint);
+
         weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedWeaponObj.transform;
 
         prevFramePosition = transform.position;
@@ -92,8 +100,10 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     {
         // hand on weapon animation rigging part
         // moving hand rig controllers to points on weapon when its equiped
-        rightHandConstraintController.transform.position = equippedWeaponObj.transform.Find("RightHandPoint").transform.position;
-        leftHandConstraintController.transform.position = equippedWeaponObj.transform.Find("LeftHandPoint").transform.position;
+        
+
+        rightHandConstraintController.transform.position = rightHandPoint.transform.position;
+        leftHandConstraintController.transform.position = leftHandPoint.transform.position;
 
 
         // rotating enemy towards player

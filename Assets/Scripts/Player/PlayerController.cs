@@ -46,6 +46,9 @@ public class PlayerController : MonoBehaviour
     private GameObject aimAtPointController;
     private GameObject weaponAimConstraintObj;
 
+    private GameObject rightHandPoint;
+    private GameObject leftHandPoint;
+
 
     // variables for aiming system
     public Camera cam;
@@ -91,7 +94,7 @@ public class PlayerController : MonoBehaviour
         movement = Vector2.ClampMagnitude(movement, 1f);
         // set aiming point from mouse on screen position (for PC)
         aimAtPosition = GetAimPoint(Input.mousePosition);
-        
+
         // stamina system
         CalculateStamina();
 
@@ -111,17 +114,16 @@ public class PlayerController : MonoBehaviour
 
         // hand on item animation rigging part
         // moving hand rig controllers to points on weapon when its equiped
-        if (equippedItemObj != null && selectedItemType == EquipmentItemType.weapon)
+        if (rightHandPoint != null)
         {
-            rightHandConstraintController.transform.position = equippedItemObj.transform.Find("RightHandPoint").transform.position;
-            leftHandConstraintController.transform.position = equippedItemObj.transform.Find("LeftHandPoint").transform.position;
+            rightHandConstraintController.transform.position = rightHandPoint.transform.position;
         }
-        // only right hand for items
-        if (equippedItemObj != null && selectedItemType == EquipmentItemType.throwableItem)
+        if (leftHandPoint != null)
         {
-            rightHandConstraintController.transform.position = equippedItemObj.transform.Find("RightHandPoint").transform.position;
-            leftHandConstraintController.transform.position = equippedItemObj.transform.Find("LeftHandPoint").transform.position;
+            leftHandConstraintController.transform.position = leftHandPoint.transform.position;
         }
+        
+
 
         // controlling hand position constraints weight
         if (equippedItemObj == null)
@@ -304,6 +306,9 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            // updating hand points on item
+            FindInAllChildren(equippedItemObj.transform, "RightHandPoint", ref rightHandPoint);
+            FindInAllChildren(equippedItemObj.transform, "LeftHandPoint", ref leftHandPoint);
 
         }
 
@@ -332,7 +337,8 @@ public class PlayerController : MonoBehaviour
             {
                 return pointToLook;
             }
-        } else
+        }
+        else
         {
             return aimAtPosition;
         }
