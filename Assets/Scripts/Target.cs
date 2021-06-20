@@ -15,7 +15,7 @@ public class Target : MonoBehaviour
 
         if (gameObject.tag == "Player")
         {
-            CameraShaker.Instance.ShakeOnce(3f, 7f, 0.05f, 0.1f);
+            CameraShaker.Instance.ShakeOnce(2f, 5f, 0.05f, 0.05f);
         }
     }
 

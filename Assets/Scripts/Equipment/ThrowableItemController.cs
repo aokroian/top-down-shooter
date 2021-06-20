@@ -76,6 +76,7 @@ public class ThrowableItemController : MonoBehaviour
             Vector3 rayDir = hitCollider.transform.position - grenadePos;
             if (Physics.Raycast(grenadePos, rayDir, out hit, explosionRadius))
             {
+                // DAMAGE
                 Target target = hit.transform.gameObject.GetComponent<Target>();
                 if (target != null)
                 {
@@ -85,6 +86,13 @@ public class ThrowableItemController : MonoBehaviour
                     float damagePercent = (explosionRadius - clampedDist) / explosionRadius;
                     float clampedDamage = Mathf.Clamp(explosionMaxDamage * damagePercent * amplification, 0f, explosionMaxDamage);
                     target.TakeDamage(clampedDamage);
+                }
+
+                // FORCE
+                Rigidbody rigidbody = hitCollider.gameObject.GetComponent<Rigidbody>();
+                if (rigidbody != null)
+                {
+                    rigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
                 }
             }
         }
