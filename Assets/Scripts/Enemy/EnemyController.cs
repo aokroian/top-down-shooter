@@ -122,7 +122,7 @@ public class EnemyController : MonoBehaviour, EnemyProperties
                     playerAwared = true;
                     currentState = State.CHASING;
                     agent.destination = player.position;
-                    Debug.Log("state: " + currentState);
+                    //Debug.Log("state: " + currentState);
                 }
                 break;
             case State.CHASING:
@@ -131,7 +131,7 @@ public class EnemyController : MonoBehaviour, EnemyProperties
                 {
                     currentState = State.BEFORE_BITE;
                     biteTimer = beforeBiteTime;
-                    Debug.Log("state: " + currentState);
+                    //Debug.Log("state: " + currentState);
                 }
                 else
                 {

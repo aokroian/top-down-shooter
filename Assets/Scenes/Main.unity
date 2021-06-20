@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2612,11 +2612,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d9e1bb55f6b1b4593786aaa40b7f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  healthPrefab: {fileID: 0}
-  healthBase: 0
-  healthNotGetAdditionalPercent: 0
-  healthEnemyCostAdditionalPercent: 0
+  player: {fileID: 330892974374317564}
+  healthPrefab: {fileID: 7389978441618331954, guid: 90df346787bd66a42b27a98665b596bc, type: 3}
+  health:
+    baseChance: 10
+    notGetPercent: 1
+    enemyCostAdditionalPercent: 10
 --- !u!4 &1982186214
 Transform:
   m_ObjectHideFlags: 0
@@ -2625,7 +2626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982186211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5532053, y: -0.84106994, z: 1.8484311}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

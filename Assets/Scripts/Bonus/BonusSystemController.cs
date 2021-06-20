@@ -8,25 +8,10 @@ public class BonusSystemController : MonoBehaviour
     public GameObject player;
     public GameObject healthPrefab;
 
-    [Header("Base chances")]
-    public float healthBase;
-
-    [Header("Additional chance for every enemy killed and not get (Percent from base chance!)")]
-    public float healthNotGetAdditionalPercent;
-
-    [Header("Additional chance for every enemy cost exceeding 1 (Percent from base chance!)")]
-    public float healthEnemyCostAdditionalPercent;
-
-    private float healthNotGet;
-
-    private float healthEnemyCost;
-
-    private float healthNotGetCurrent;
+    public BonusSpawnParams health;
 
     void Start()
     {
-        healthNotGet = (healthBase / 100) * healthNotGetAdditionalPercent;
-        healthEnemyCost = (healthBase / 100) * healthEnemyCostAdditionalPercent;
     }
 
     
@@ -37,22 +22,25 @@ public class BonusSystemController : MonoBehaviour
 
     public void EnemyDies(EnemyEventParam param)
     {
-        Debug.Log("EnemyDies event executed!!");
-        float healthChance = GetHealthChance(param.cost);
-    }
+        List<GameObject> spawnedBonuses = new List<GameObject>();
 
-    private GameObject SpawnBonusOrNull(GameObject prefab, float chance, Vector3 pos)
-    {
-        GameObject result = null;
-        if (Random.value <= chance)
+        Debug.Log("EnemyDies event executed!! Chance: " + health.GetChance(param.cost));
+        if (health.IsShouldSpawn(param.cost))
         {
-            result = Instantiate(prefab, pos, prefab.transform.rotation, transform);
+            Debug.Log("Bonus Spawned. Pos: " + param.position);
+            Vector3 pos = CalcPosition(param.position, spawnedBonuses);
+            spawnedBonuses.Add(SpawnBonus(healthPrefab, pos)); 
         }
-        return result;
     }
 
-    public float GetHealthChance(float cost)
+    private Vector3 CalcPosition(Vector3 initPos, List<GameObject> spawned)
     {
-        return healthBase + healthNotGetCurrent + (healthEnemyCost * cost);
+        // TODO
+        return initPos;
     }
+
+    private GameObject SpawnBonus(GameObject prefab, Vector3 pos)
+    {
+        return Instantiate(prefab, pos, prefab.transform.rotation, transform);
+    }    
 }

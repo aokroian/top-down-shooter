@@ -108,8 +108,11 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
         // rotating enemy towards player
         Vector3 lTargetDir = aimSpotRef.transform.position - transform.position;
-        lTargetDir.y = 0.0f;
-        gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
+        if (lTargetDir.x != 0f && lTargetDir.z != 0f)
+        {
+            lTargetDir.y = 0.0f;
+            gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
+        }
 
 
 
