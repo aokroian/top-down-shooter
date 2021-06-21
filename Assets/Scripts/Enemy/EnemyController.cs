@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour, EnemyProperties
 {
-    enum State
+    private enum State
     {
         IDLE,
         CHASING,
@@ -52,11 +52,12 @@ public class EnemyController : MonoBehaviour, EnemyProperties
     // Update is called once per frame
     void Update()
     {
+        /*
         // rotate towards player
         Vector3 lTargetDir = player.transform.position - transform.position;
         lTargetDir.y = 0.0f;
         gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
-
+        */
 
         // decrementing timer which is needed to get next difference in position
         prevFramePosDetectionTimer -= Time.deltaTime;
@@ -129,6 +130,7 @@ public class EnemyController : MonoBehaviour, EnemyProperties
                 agent.isStopped = false;
                 if (IsAtDestination())
                 {
+                    //Debug.DrawLine(agent.destination, agent.destination + (Vector3.up * 2), Color.red, 10f);
                     currentState = State.BEFORE_BITE;
                     biteTimer = beforeBiteTime;
                     //Debug.Log("state: " + currentState);
@@ -159,10 +161,13 @@ public class EnemyController : MonoBehaviour, EnemyProperties
             default:
                 break;
         }
+
+        //Debug.DrawLine(agent.destination, agent.destination + (Vector3.up * 2), Color.green, 1f);
     }
     private bool IsAtDestination()
     {
-        return agent.remainingDistance <= biteDistance;
+        return !agent.pathPending && agent.remainingDistance <= biteDistance;
+        //return Vector3.Distance(transform.position, player.transform.position) <= biteDistance;
     }
 
     private void Bite()

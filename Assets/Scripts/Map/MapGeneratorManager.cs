@@ -37,7 +37,10 @@ public class MapGeneratorManager : MonoBehaviour
 
         CalcCurTilePos();
         SpawnAll();
-        GetComponent<NavMeshSurface>().BuildNavMesh();
+        var navMesh = GetComponent<NavMeshSurface>();
+        navMesh.overrideTileSize = true;
+        navMesh.tileSize = 64;
+        navMesh.BuildNavMesh();
     }
 
     // Update is called once per frame
