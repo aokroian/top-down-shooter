@@ -27,7 +27,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     public float shootTime = 1.0f;
     public float walkDistanceMin = 1.0f;
     public float walkDistanceMax = 2.0f;
-    public float additionalShootRange = 2.0f;
+    public float shootRange = 8.0f;
 
     // animation rigging variables
     public GameObject rightHandConstraintController;
@@ -57,7 +57,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     private State currentState = State.IDLE;
 
     private float shootTimer;
-    private float shootRange;
 
 
     private Vector3 prevFramePosition;
@@ -67,7 +66,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").transform;
-        shootRange = agent.stoppingDistance + additionalShootRange;
 
         // spawn weapon
         equippedWeaponObj = Instantiate(weapon, parentBoneForWeapon.transform);
@@ -162,12 +160,10 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
     private bool IsPlayerSpotted()
     {
-        var enemyPos = new Vector3(transform.position.x, 1.0f, transform.position.z);
-        var playerPos = new Vector3(player.transform.position.x, 1.0f, player.transform.position.z);
         bool result = false;
-        if (Vector3.Distance(enemyPos, playerPos) <= visionRange)
+        if (Vector3.Distance(transform.position, player.transform.position) <= visionRange)
         {
-            result = !Physics.Linecast(enemyPos, playerPos, LayerMask.GetMask("Obstacle"));
+            result = IsNoObstacle();
         }
 
         return result;
@@ -209,7 +205,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 break;
             case State.CHASING:
                 agent.isStopped = false;
-                if (IsAtDestination())
+                if (IsAtShootingRange() && IsNoObstacle())
                 {
                     currentState = State.BEFORE_SHOT;
                     shootTimer = shootTime;
@@ -244,7 +240,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 break;
             case State.MOVING:
                 agent.isStopped = false;
-                if (Vector3.Distance(transform.position, player.transform.position) > shootRange)
+                if (!IsAtShootingRange() || !IsNoObstacle())
                 {
                     agent.destination = player.transform.position;
                     currentState = State.CHASING;
@@ -274,12 +270,24 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         float directionAngle = Random.value > 0.5f ? 90f : -90f;
         Quaternion rotation = Quaternion.Euler(0f, directionAngle + deltaAngle, 0f);
         Vector3 startDirection = Vector3.Normalize(transform.position - player.transform.position);
-        return (rotation * startDirection) * (Random.Range(walkDistanceMin, walkDistanceMax) + agent.stoppingDistance) + transform.position;
+        return (rotation * startDirection) * Random.Range(walkDistanceMin, walkDistanceMax) + transform.position;
     }
 
     private bool IsAtDestination()
     {
-        return agent.remainingDistance <= agent.stoppingDistance;
+        return !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
+    }
+
+    private bool IsNoObstacle()
+    {
+        var enemyPos = new Vector3(transform.position.x, 1.0f, transform.position.z);
+        var playerPos = new Vector3(player.transform.position.x, 1.0f, player.transform.position.z);
+        return !Physics.Linecast(enemyPos, playerPos, LayerMask.GetMask("Obstacle"));
+    }
+
+    private bool IsAtShootingRange()
+    {
+        return Vector3.Distance(transform.position, player.transform.position) <= shootRange;
     }
 
     public void OnEnemyDies()
