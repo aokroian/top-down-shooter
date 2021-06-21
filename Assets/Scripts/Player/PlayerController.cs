@@ -322,7 +322,7 @@ public class PlayerController : MonoBehaviour
         Ray cameraRay = cam.ScreenPointToRay(clampedMousePos);
         // абстрактная поверхность для того, чтобы понять,
         // где луч из камеры пересекается с землей
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        Plane groundPlane = new Plane(new Vector3 (0f, 1.57f, 0f), Vector3.zero);
         float rayLength;
         if (groundPlane.Raycast(cameraRay, out rayLength))
         {
