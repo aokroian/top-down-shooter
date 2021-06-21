@@ -9,6 +9,8 @@ public class Target : MonoBehaviour
 
     public UnityEvent onDeath;
 
+    public bool isDead {get; private set;}
+
     public void TakeDamage(float amount)
     {
         health -= amount;
@@ -22,12 +24,18 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+        {
+            return;
+        }
+
         if (health > maxHealth)
         {
             health = maxHealth;
         }
         if (health <= 0f)
         {
+            isDead = true;
             onDeath.Invoke();
             Destroy(gameObject, 0.02f);
         }
