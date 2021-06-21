@@ -21,6 +21,17 @@ public class Target : MonoBehaviour
         }
     }
 
+    public bool Heal(float amount)
+    {
+        bool result = false;
+        if (health < maxHealth)
+        {
+            health = Mathf.Min(health + amount, maxHealth);
+            result = true;
+        }
+        return result;
+    }
+
     // Update is called once per frame
     void Update()
     {

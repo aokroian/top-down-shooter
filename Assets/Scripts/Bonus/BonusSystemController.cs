@@ -29,7 +29,7 @@ public class BonusSystemController : MonoBehaviour
         {
             Debug.Log("Bonus Spawned. Pos: " + param.position);
             Vector3 pos = CalcPosition(param.position, spawnedBonuses);
-            spawnedBonuses.Add(SpawnBonus(healthPrefab, pos)); 
+            spawnedBonuses.Add(PrepareAndSpawnBonus(healthPrefab, pos)); 
         }
     }
 
@@ -39,8 +39,10 @@ public class BonusSystemController : MonoBehaviour
         return initPos;
     }
 
-    private GameObject SpawnBonus(GameObject prefab, Vector3 pos)
+    private GameObject PrepareAndSpawnBonus(GameObject prefab, Vector3 pos)
     {
-        return Instantiate(prefab, pos, prefab.transform.rotation, transform);
-    }    
+        GameObject bonus = Instantiate(prefab, pos, prefab.transform.rotation, transform);
+        bonus.GetComponent<AbstractBonusController>().player = player;
+        return bonus;
+    }
 }
