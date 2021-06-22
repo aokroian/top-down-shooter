@@ -11,6 +11,9 @@ public class BulletController : MonoBehaviour
 
     public float despawnDistance = 40f;
 
+    public EnemyAwareEvent awareEvent;
+    public float awareDistance = 5f;
+
     private Vector3 velocity;
     private GameObject player;
 
@@ -30,6 +33,12 @@ public class BulletController : MonoBehaviour
         {
             transform.Translate(velocity * Time.deltaTime, Space.World);
         }
+    }
+
+    private void OnEnable()
+    {
+        AwareEventParam param = new AwareEventParam(transform.position, awareDistance);
+        awareEvent.Raise(param);
     }
 
     public void SetVelocity(Vector3 velocity)
@@ -63,6 +72,9 @@ public class BulletController : MonoBehaviour
                 other.attachedRigidbody.AddForceAtPosition(-collision.contacts[0].normal * bulletImpactForce, collision.contacts[0].point);
             }
             */
+
+            AwareEventParam param = new AwareEventParam(transform.position, awareDistance);
+            awareEvent.Raise(param);
 
             Destroy(gameObject);
         }

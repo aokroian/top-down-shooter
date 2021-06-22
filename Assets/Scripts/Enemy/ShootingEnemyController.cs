@@ -6,7 +6,7 @@ using UnityEngine.Animations.Rigging;
 
 public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 {
-    enum State
+    public enum State
     {
         IDLE,
         CHASING,
@@ -21,7 +21,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
     public int amountOfBullets;
     public GameObject weapon;
-    public bool playerAwared;
+    public State defaultState = State.IDLE;
     public float visionRange = 15.0f;
 
     public float shootTime = 1.0f;
@@ -66,6 +66,8 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").transform;
+
+        currentState = defaultState;
 
         // spawn weapon
         equippedWeaponObj = Instantiate(weapon, parentBoneForWeapon.transform);
@@ -198,23 +200,19 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
             case State.IDLE:
                 if (IsPlayerSpotted())
                 {
-                    playerAwared = true;
                     currentState = State.CHASING;
                     //Debug.Log("state: " + currentState);
                 }
                 break;
             case State.CHASING:
                 agent.isStopped = false;
+                agent.destination = player.position;
+                AimPlayer();
                 if (IsAtShootingRange() && IsNoObstacle())
                 {
                     currentState = State.BEFORE_SHOT;
                     shootTimer = shootTime;
                     //Debug.Log("state: " + currentState);
-                }
-                else
-                {
-                    agent.destination = player.position;
-                    AimPlayer();
                 }
                 break;
             case State.BEFORE_SHOT:
@@ -293,5 +291,13 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     public void OnEnemyDies()
     {
         diesEvent.Raise(new EnemyEventParam(transform.position, cost));
+    }
+
+    public void Aware(AwareEventParam param)
+    {
+        if (currentState == State.IDLE && Vector3.Distance(param.position, transform.position) <= param.distance)
+        {
+            currentState = State.CHASING;
+        }
     }
 }

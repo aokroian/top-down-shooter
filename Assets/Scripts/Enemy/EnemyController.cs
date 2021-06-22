@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour, EnemyProperties
 {
-    private enum State
+    public enum State
     {
         IDLE,
         CHASING,
@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour, EnemyProperties
     private int _cost;
     public int cost { get => _cost; set => _cost = value; }
 
-    public bool playerAwared;
+    public State defaultState = State.IDLE;
     public float visionRange = 15.0f;
 
     public float damage = 20f;
@@ -120,24 +120,19 @@ public class EnemyController : MonoBehaviour, EnemyProperties
             case State.IDLE:
                 if (IsPlayerSpotted())
                 {
-                    playerAwared = true;
                     currentState = State.CHASING;
-                    agent.destination = player.position;
                     //Debug.Log("state: " + currentState);
                 }
                 break;
             case State.CHASING:
                 agent.isStopped = false;
+                agent.destination = player.position;
                 if (IsAtDestination())
                 {
-                    //Debug.DrawLine(agent.destination, agent.destination + (Vector3.up * 2), Color.red, 10f);
+                    Debug.DrawLine(agent.destination, agent.destination + (Vector3.up * 2), Color.red, 10f);
                     currentState = State.BEFORE_BITE;
                     biteTimer = beforeBiteTime;
                     //Debug.Log("state: " + currentState);
-                }
-                else
-                {
-                    agent.destination = player.position;
                 }
                 break;
             case State.BEFORE_BITE:
@@ -162,7 +157,7 @@ public class EnemyController : MonoBehaviour, EnemyProperties
                 break;
         }
 
-        //Debug.DrawLine(agent.destination, agent.destination + (Vector3.up * 2), Color.green, 1f);
+        Debug.DrawLine(agent.destination, agent.destination + (Vector3.up * 2), Color.green, 1f);
     }
     private bool IsAtDestination()
     {
@@ -185,5 +180,13 @@ public class EnemyController : MonoBehaviour, EnemyProperties
     public void OnEnemyDies()
     {
         diesEvent.Raise(new EnemyEventParam(transform.position, cost));
+    }
+
+    public void Aware(AwareEventParam param)
+    {
+        if (currentState == State.IDLE && Vector3.Distance(param.position, transform.position) <= param.distance)
+        {
+            currentState = State.CHASING;
+        }
     }
 }

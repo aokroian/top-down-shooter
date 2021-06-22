@@ -117,6 +117,8 @@ MonoBehaviour:
   shotDamage: 10
   shooter: {fileID: 0}
   despawnDistance: 40
+  awareEvent: {fileID: 11400000, guid: 4d6de3e5b89490647aeebebe1a6637a0, type: 2}
+  awareDistance: 10
 --- !u!54 &2907149244124643074
 Rigidbody:
   m_ObjectHideFlags: 0
