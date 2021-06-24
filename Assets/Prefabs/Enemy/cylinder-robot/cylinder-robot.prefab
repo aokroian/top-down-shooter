@@ -1784,7 +1784,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 6e6dc188d4f141e4d9b16ad5a2c55562, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1834,6 +1834,9 @@ MonoBehaviour:
         m_CallState: 2
   hitDir: {x: 0, y: 0, z: 0}
   hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!114 &-1906177929663116973
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -58,10 +58,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
     private float shootTimer;
 
-
-    private Vector3 prevFramePosition;
-    private float prevFramePosDetectionTimer;
-
     // Maybe make scriptable object? Now every enemy create additional object
     private IAmmoProvider ammoProvider = new EnemyEndlessAmmoProvider();
 
@@ -94,9 +90,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         FindInAllChildren(equippedWeaponObj.transform, "LeftHandPoint", ref leftHandPoint);
 
         weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedWeaponObj.transform;
-
-        prevFramePosition = transform.position;
-        prevFramePosDetectionTimer = posDetectionDelay;
     }
 
     // Update is called once per frame
@@ -118,35 +111,22 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
             gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
         }
 
-
-
-        // decrementing timer which is needed to get next difference in position
-        prevFramePosDetectionTimer -= Time.deltaTime;
-        if (prevFramePosDetectionTimer < 0f)
-            prevFramePosDetectionTimer = 0f;
-
-        // setting floats for animation controller
-        Vector3 currentFramePos = transform.position;
-        Vector3 posDifference = currentFramePos - prevFramePosition;
-        if (prevFramePosDetectionTimer == 0f)
+        Vector3 velocity = agent.velocity;
+        if (velocity.magnitude <= 0.1f)
         {
-            
-            Vector3 clampedVelocity = Vector3.ClampMagnitude(posDifference, 1f);
-            Vector3 globalMovement = new Vector3(clampedVelocity.x, 0.0f, clampedVelocity.y);
-            Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
-            gameObject.GetComponent<Animator>().SetFloat("local Z speed", localMovement.z);
-            gameObject.GetComponent<Animator>().SetFloat("local X speed", localMovement.x);
-
-            prevFramePosition = currentFramePos;
-            prevFramePosDetectionTimer = posDetectionDelay;
-        }
-        
-
-
-        if (posDifference.x <= minPosChangeForAnimation && posDifference.x <= minPosChangeForAnimation)
             gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
+        }
         else
+        {
             gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
+        }
+
+        gameObject.GetComponent<Animator>().SetFloat("local Z speed", velocity.z);
+        gameObject.GetComponent<Animator>().SetFloat("local X speed", velocity.x);
+
+        // meele animation
+        Vector3 distanceToPlayer = gameObject.transform.position - player.transform.position;
+        gameObject.GetComponent<Animator>().SetFloat("distance to player", distanceToPlayer.magnitude / 2);
         /*
         if (playerAwared)
         {
