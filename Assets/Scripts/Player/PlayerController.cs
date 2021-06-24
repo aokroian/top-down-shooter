@@ -50,6 +50,9 @@ public class PlayerController : MonoBehaviour
     private GameObject rightHandPoint;
     private GameObject leftHandPoint;
 
+    // Should be reworked
+    private bool grenadeInHand;
+
 
     // variables for aiming system
     public Camera cam;
@@ -201,9 +204,8 @@ public class PlayerController : MonoBehaviour
         // throwing grenades
         if (selectedItemType == EquipmentItemType.throwableItem)
         {
-            if (Input.GetMouseButtonUp(0) && equippedItemObj != null && ammoController.HasAmmo(AmmoType.GRENADE))
+            if (Input.GetMouseButtonUp(0) && equippedItemObj != null && grenadeInHand)
             {
-                ammoController.GetAmmo(AmmoType.GRENADE, 1);
                 FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
 
                 // direction and force
@@ -215,14 +217,16 @@ public class PlayerController : MonoBehaviour
                 equippedItemIndex = 0;
                 equippedItemObj = null;
 
+                grenadeInHand = false;
+
                 if (ammoController.HasAmmo(AmmoType.GRENADE))
                 {
                     SelectItem(3);
                 }
-                else
+                /*else
                 {
                     SelectItem(0);
-                }
+                }*/
             }
         }
 
@@ -268,6 +272,7 @@ public class PlayerController : MonoBehaviour
         if (itemIndex == 0)
         {
             Destroy(equippedItemObj);
+            return;
         }
 
         if (selectedItemIndex != itemIndex)
@@ -297,8 +302,13 @@ public class PlayerController : MonoBehaviour
             }
             else if (selectedItemType == EquipmentItemType.throwableItem)
             {
-                if (ammoController.HasAmmo(AmmoType.GRENADE))
+                if (grenadeInHand || ammoController.HasAmmo(AmmoType.GRENADE))
                 {
+                    if (!grenadeInHand)
+                    {
+                        ammoController.GetAmmo(AmmoType.GRENADE, 1);
+                        grenadeInHand = true;
+                    }
                     equippedItemObj = Instantiate(itemsEquipmentArr[itemIndex - 1], parentBoneForThrowableItems.transform);
                     ThrowableItemController throwableItemController = equippedItemObj.GetComponent<ThrowableItemController>();
 
@@ -310,6 +320,10 @@ public class PlayerController : MonoBehaviour
                     equippedItemObj.transform.localRotation = Quaternion.Euler(throwableItemController.localRotation);
                     equippedItemObj.transform.localScale = throwableItemController.localScale;
 
+                } else
+                {
+                    SelectItem(0);
+                    return;
                 }
             }
 

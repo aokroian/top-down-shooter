@@ -1393,11 +1393,11 @@ MonoBehaviour:
   pistolMax: -1
   machinegunMax: 0
   rifleMax: 0
-  grenadeMax: 0
+  grenadeMax: 3
   pistolDefault: -1
   machinegunDefault: 0
   rifleDefault: 0
-  grenadeDefault: 0
+  grenadeDefault: 3
 --- !u!4 &824559846
 Transform:
   m_ObjectHideFlags: 0

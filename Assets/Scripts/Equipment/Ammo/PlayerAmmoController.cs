@@ -75,7 +75,7 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
 
     public bool HasAmmo(AmmoType type)
     {
-        return maxAmmoMap[type] < 0 || ammoMap[type] >= 0;
+        return maxAmmoMap[type] < 0 || ammoMap[type] > 0;
     }
 
     public int AddAmmo(AmmoType type, int count)
