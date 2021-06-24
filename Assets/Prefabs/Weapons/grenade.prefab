@@ -135,10 +135,11 @@ MonoBehaviour:
   shouldExplode: 1
   explosionEffect: {fileID: 100008, guid: 06736895ea0a4ff408d25e6684dce797, type: 3}
   explosionRadius: 4
-  explosionForce: 1000
+  explosionForce: 200
   explosionMaxDamage: 200
   explosionDurationTimer: 0
   isThrowed: 0
+  ammoType: 4
 --- !u!1 &3761041471267226563
 GameObject:
   m_ObjectHideFlags: 0

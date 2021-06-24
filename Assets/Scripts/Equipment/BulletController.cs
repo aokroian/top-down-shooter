@@ -50,7 +50,8 @@ public class BulletController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("OnTrigger: " + other.gameObject.name);
-        Instantiate(hitEffectRef, transform.position, Quaternion.LookRotation(transform.position - other.transform.position));
+        Vector3 dir = transform.position - other.transform.position;
+        Instantiate(hitEffectRef, transform.position, Quaternion.LookRotation(dir));
 
         if (shooter == other.gameObject)
         {
@@ -63,7 +64,7 @@ public class BulletController : MonoBehaviour
             Target target = other.transform.GetComponent<Target>();
             if (target != null)
             {
-                target.TakeDamage(shotDamage);
+                target.TakeDamage(shotDamage, bulletImpactForce, -(shooter.transform.position - transform.position));
             }
 
             /*

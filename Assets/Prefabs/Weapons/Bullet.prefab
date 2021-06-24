@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffectRef: {fileID: 0}
-  bulletImpactForce: 5
+  bulletImpactForce: 0.01
   shotDamage: 10
   shooter: {fileID: 0}
   despawnDistance: 40

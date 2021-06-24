@@ -20,8 +20,29 @@ public class Destructible : MonoBehaviour
     }
     public void ChangeToDestructible()
     {
+        Target target = gameObject.GetComponent<Target>();
 
         GameObject destructible = Instantiate(destructiblePrefab, transform.position, transform.rotation);
+
+
+        //force to all parts
+        foreach (Transform child in destructible.transform)
+        {
+            Rigidbody rb = child.gameObject.GetComponent<Rigidbody>();
+            Vector3 force = Vector3.ClampMagnitude(target.hitDir, 1f) * target.hitForceAmount;
+
+            if (target.isFromExplosion)
+            {
+                rb.AddExplosionForce(target.hitForceAmount, target.explosionPosition, target.explosionRadius);
+            } else
+            {
+                rb.AddForce(force, ForceMode.Impulse);
+            }
+            
+        }
+
+
+
 
         //// writing source parts
         //foreach (Transform child in transform)

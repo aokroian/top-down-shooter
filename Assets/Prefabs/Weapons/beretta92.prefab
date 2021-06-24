@@ -135,7 +135,7 @@ MonoBehaviour:
   ownerObjRef: {fileID: 0}
   shootRange: 200
   shotDamage: 20
-  shotImpactForce: 50
+  shotImpactForce: 2
   recoilHeight: 0.07
   clipSize: 20
   rateOfFire: 0.15

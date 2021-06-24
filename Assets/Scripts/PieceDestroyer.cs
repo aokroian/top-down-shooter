@@ -5,7 +5,7 @@ using UnityEngine;
 public class PieceDestroyer : MonoBehaviour
 {
     public float timeToLive = Mathf.Infinity;
-    public float massAfterCollision = 0.001f;
+    public float massAfterCollisionWithPlayer = 0.001f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,7 @@ public class PieceDestroyer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GetComponent<Rigidbody>().mass = massAfterCollision;
+        if (collision.gameObject.tag == "Player")
+            GetComponent<Rigidbody>().mass = massAfterCollisionWithPlayer;
     }
 }

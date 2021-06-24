@@ -93,7 +93,7 @@ public class ThrowableItemController : MonoBehaviour, IAmmoConsumer
                     float clampedDist = Mathf.Clamp(Vector3.Distance(transform.position, hitCollider.transform.position), 0f, explosionRadius);
                     float damagePercent = (explosionRadius - clampedDist) / explosionRadius;
                     float clampedDamage = Mathf.Clamp(explosionMaxDamage * damagePercent * amplification, 0f, explosionMaxDamage);
-                    target.TakeDamage(clampedDamage);
+                    target.TakeDamage(clampedDamage, explosionForce, null, true, transform.position, explosionRadius);
 
 
                     // FORCE
