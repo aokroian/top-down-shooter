@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Animations.Rigging;
+
+/*
 public enum ShootingModes
 {
     Automatic,
     Single,
 }
+*/
 
 
-public class WeaponController : MonoBehaviour
+public class WeaponController : MonoBehaviour, IAmmoConsumer
 {
     // variables for animation
     private Rig weaponAimRigLayer;
@@ -31,7 +34,7 @@ public class WeaponController : MonoBehaviour
     public int clipSize = 5;
     public float rateOfFire = 0f;
     public float reloadTime = 0f;
-    public ShootingModes shootingMode = ShootingModes.Single;
+    //public ShootingModes shootingMode = ShootingModes.Single;
 
 
     public Vector3 localPosition;
@@ -49,19 +52,17 @@ public class WeaponController : MonoBehaviour
 
     public float maxShotAngle = 10f;
 
-    private PlayerController playerController;
-    private ShootingEnemyController enemyController;
+    public AmmoType ammoType;
+
+    [HideInInspector]
+    public IAmmoProvider ammoProvider;
 
     private GameObject aimAtPoint;
     public float reloadTimer { get; private set; } = 0f;
     private float nextShotTimer = 0f;
 
-    private int amountOfBullets;
     private void Start()
     {
-        playerController = ownerObjRef.GetComponent<PlayerController>();
-        enemyController = ownerObjRef.GetComponent<ShootingEnemyController>();
-
         //get weapon animator
         animator = gameObject.GetComponent<Animator>();
         // get owners weapon aim rig layer (needed to disable it playing animations)
@@ -71,15 +72,6 @@ public class WeaponController : MonoBehaviour
         bulletsInClip = clipSize;
         reloadTimer = 0f;
         nextShotTimer = 0f;
-
-        if (playerController != null)
-        {
-            amountOfBullets = playerController.amountOfBullets;
-        }
-        else if (enemyController != null)
-        {
-            amountOfBullets = enemyController.amountOfBullets;
-        }
     }
 
     private void Update()
@@ -141,7 +133,7 @@ public class WeaponController : MonoBehaviour
         }
 
         // если патронов в магазине не осталось, происходит автоматическая перезарядка
-        if (bulletsInClip < 1 && amountOfBullets > 0)
+        if (bulletsInClip < 1 && ammoProvider.HasAmmo(ammoType))
         {
             Reload();
         }
@@ -244,77 +236,20 @@ public class WeaponController : MonoBehaviour
 
         int needToAdd = clipSize - bulletsInClip;
 
-
         // когда патроны остались только в магазине, перезарядка невозможна
-        if (amountOfBullets <= 0f) return;
+        if (!ammoProvider.HasAmmo(ammoType)) return;
+        
+        // TODO: Should be at end of reloading?
+        bulletsInClip += ammoProvider.GetAmmo(ammoType, needToAdd);
+    }
 
+    public int GetAmmoLeft()
+    {
+        return bulletsInClip;
+    }
 
-        // если происходит перезарядка полностью израсходованного магазина
-        if (needToAdd == clipSize)
-        {
-            // когда общее кол-во патронов больше размера магазина
-            if (amountOfBullets >= clipSize)
-            {
-                bulletsInClip = clipSize;
-            }
-            // когда общее кол-во патронов меньше размера магазина
-            else
-            {
-                bulletsInClip = amountOfBullets;
-            }
-
-            if (playerController != null)
-            {
-                playerController.amountOfBullets -= bulletsInClip;
-            }
-            if (enemyController != null)
-            {
-                enemyController.amountOfBullets -= bulletsInClip;
-            }
-
-
-        }
-        // если происходит перезарядка полностью израсходованного магазина
-        else
-        {
-            // когда общее кол-во патронов больше размера магазина
-            if (amountOfBullets >= needToAdd)
-            {
-                bulletsInClip += needToAdd;
-
-                if (playerController != null)
-                {
-                    playerController.amountOfBullets -= needToAdd;
-                }
-                if (enemyController != null)
-                {
-                    enemyController.amountOfBullets -= needToAdd;
-                }
-            }
-            // когда общее кол-во патронов меньше размера магазина
-            else
-            {
-                bulletsInClip += amountOfBullets;
-
-                if (playerController != null)
-                {
-                    playerController.amountOfBullets = 0;
-                }
-                if (enemyController != null)
-                {
-                    enemyController.amountOfBullets = 0;
-                }
-            }
-        }
-
-
-        if (playerController != null)
-        {
-            amountOfBullets = playerController.amountOfBullets;
-        }
-        if (enemyController != null)
-        {
-            amountOfBullets = enemyController.amountOfBullets;
-        }
+    public AmmoType GetAmmoType()
+    {
+        return ammoType;
     }
 }

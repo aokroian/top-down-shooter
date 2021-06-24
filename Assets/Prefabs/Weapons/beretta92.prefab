@@ -140,7 +140,6 @@ MonoBehaviour:
   clipSize: 20
   rateOfFire: 0.15
   reloadTime: 0.3
-  shootingMode: 1
   localPosition: {x: 0.00144, y: 0.00129, z: 0.00663}
   localRotation: {x: 0, y: 0, z: 0}
   localScale: {x: 0.01, y: 0.01, z: 0.01}
@@ -151,6 +150,7 @@ MonoBehaviour:
   bulletVelocity: 30
   bulletsInClip: 0
   maxShotAngle: 10
+  ammoType: 1
 --- !u!114 &7616682135052341138
 MonoBehaviour:
   m_ObjectHideFlags: 0

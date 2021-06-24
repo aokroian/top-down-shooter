@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
 
     public PlayerController playerController;
     public Target target;
+    public PlayerAmmoController ammoController;
 
     void Start()
     {
@@ -28,8 +29,9 @@ public class UIController : MonoBehaviour
         staminaScroll.GetComponent<Scrollbar>().value = stamina;
         staminaScroll.GetComponent<Image>().color = Color.Lerp(Color.blue, Color.red, stamina);
 
-        bulletsInClip.text = playerController.GetBulletsInClip().ToString();
-        amountOfBullets.text = playerController.GetAmountOfBullets().ToString();
+        AmmoType ammoType = ammoController.GetCurrentAmmoType();
+        bulletsInClip.text = ammoController.GetCurrentAmmoInClip().ToString();
+        amountOfBullets.text = ammoController.GetAmmoLeft(ammoType).ToString();
 
         var hp = target.GetHPPercent();
         hpScroll.GetComponent<Scrollbar>().value = hp;

@@ -62,6 +62,9 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     private Vector3 prevFramePosition;
     private float prevFramePosDetectionTimer;
 
+    // Maybe make scriptable object? Now every enemy create additional object
+    private IAmmoProvider ammoProvider = new EnemyEndlessAmmoProvider();
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -75,6 +78,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         WeaponController weaponController = equippedWeaponObj.GetComponent<WeaponController>();
 
         weaponController.ownerObjRef = gameObject;
+        weaponController.ammoProvider = ammoProvider;
         // moving the weapon to the desired position
         equippedWeaponObj.transform.localPosition = weaponController.localPosition;
         equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);

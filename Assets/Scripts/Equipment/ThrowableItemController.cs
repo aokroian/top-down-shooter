@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
 
-public class ThrowableItemController : MonoBehaviour
+public class ThrowableItemController : MonoBehaviour, IAmmoConsumer
 {
     // variables needed for instantiation
     public GameObject ownerObjRef;
@@ -22,6 +22,13 @@ public class ThrowableItemController : MonoBehaviour
     public float explosionMaxDamage = 200;
     public float explosionDurationTimer = 0f;
     public bool isThrowed = false;
+
+    public AmmoType ammoType = AmmoType.GRENADE;
+
+    [HideInInspector]
+    public IAmmoProvider ammoProvider;
+
+    private int grenadesInHand = 1;
 
 
     private void Update()
@@ -106,5 +113,13 @@ public class ThrowableItemController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    
+    public int GetAmmoLeft()
+    {
+        return grenadesInHand;
+    }
+
+    public AmmoType GetAmmoType()
+    {
+        return ammoType;
+    }
 }

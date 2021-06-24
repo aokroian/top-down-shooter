@@ -31,8 +31,9 @@ public class PlayerController : MonoBehaviour
     public int equippedItemIndex = 0;
     public GameObject parentBoneForWeapon;
     public GameObject parentBoneForThrowableItems;
-    public int amountOfBullets = 1000;
-    public int amountOfGrenades = 1000;
+    public PlayerAmmoController ammoController;
+    //public int amountOfBullets = 1000;
+    //public int amountOfGrenades = 1000;
 
     private GameObject equippedItemObj;
     private EquipmentItemType selectedItemType;
@@ -195,12 +196,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+
+        // TODO: Shouldnt be here !! At throwableItemController?
         // throwing grenades
         if (selectedItemType == EquipmentItemType.throwableItem)
         {
-            if (Input.GetMouseButtonUp(0) && equippedItemObj != null && amountOfGrenades >= 1)
+            if (Input.GetMouseButtonUp(0) && equippedItemObj != null && ammoController.HasAmmo(AmmoType.GRENADE))
             {
-                amountOfGrenades--;
+                ammoController.GetAmmo(AmmoType.GRENADE, 1);
                 FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
 
                 // direction and force
@@ -212,7 +215,7 @@ public class PlayerController : MonoBehaviour
                 equippedItemIndex = 0;
                 equippedItemObj = null;
 
-                if (amountOfGrenades >= 1)
+                if (ammoController.HasAmmo(AmmoType.GRENADE))
                 {
                     SelectItem(3);
                 }
@@ -282,6 +285,8 @@ public class PlayerController : MonoBehaviour
                 WeaponController weaponController = equippedItemObj.GetComponent<WeaponController>();
 
                 weaponController.ownerObjRef = gameObject;
+                weaponController.ammoProvider = ammoController;
+                ammoController.currentWeapon = weaponController;
                 // moving the weapon to the desired position
                 equippedItemObj.transform.localPosition = weaponController.localPosition;
                 equippedItemObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
@@ -292,12 +297,14 @@ public class PlayerController : MonoBehaviour
             }
             else if (selectedItemType == EquipmentItemType.throwableItem)
             {
-                if (amountOfGrenades >= 1)
+                if (ammoController.HasAmmo(AmmoType.GRENADE))
                 {
                     equippedItemObj = Instantiate(itemsEquipmentArr[itemIndex - 1], parentBoneForThrowableItems.transform);
                     ThrowableItemController throwableItemController = equippedItemObj.GetComponent<ThrowableItemController>();
 
                     throwableItemController.ownerObjRef = gameObject;
+                    throwableItemController.ammoProvider = ammoController;
+                    ammoController.currentWeapon = throwableItemController;
                     // moving the weapon to the desired position
                     equippedItemObj.transform.localPosition = throwableItemController.localPosition;
                     equippedItemObj.transform.localRotation = Quaternion.Euler(throwableItemController.localRotation);
@@ -387,28 +394,5 @@ public class PlayerController : MonoBehaviour
             return 0f;
         }
 
-    }
-
-    public float GetBulletsInClip()
-    {
-        if (selectedItemType == EquipmentItemType.weapon)
-        {
-            float result = 0f;
-            if (equippedItemObj != null)
-            {
-                result = equippedItemObj.GetComponent<WeaponController>().bulletsInClip;
-            }
-            return result;
-        }
-        else
-        {
-            return 1;
-        }
-
-    }
-
-    public float GetAmountOfBullets()
-    {
-        return amountOfBullets;
     }
 }

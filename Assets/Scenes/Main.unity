@@ -1351,6 +1351,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76d1ba7a4f45249e4a0d0886e6e0e6e4, type: 3}
+--- !u!1 &824559844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824559846}
+  - component: {fileID: 824559845}
+  m_Layer: 0
+  m_Name: AmmoSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &824559845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824559844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccaac548287c0964c90920246af603f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pistolMax: -1
+  machinegunMax: 0
+  rifleMax: 0
+  grenadeMax: 0
+  pistolDefault: -1
+  machinegunDefault: 0
+  rifleDefault: 0
+  grenadeDefault: 0
+--- !u!4 &824559846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824559844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -77.67917, y: -0.13240647, z: 14.583194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &848356370
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,6 +3385,7 @@ MonoBehaviour:
   amountOfBullets: {fileID: 1790800150}
   playerController: {fileID: 330892974374317565}
   target: {fileID: 8218384367326094713}
+  ammoController: {fileID: 824559845}
 --- !u!1001 &2137376396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3442,6 +3494,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1071123029}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: ammoController
+      value: 
+      objectReference: {fileID: 824559845}
     - target: {fileID: 5652270395972803460, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: health
       value: 500
