@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -529,6 +529,11 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!54 &311629539
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -901,6 +906,11 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!54 &627869916
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1601,6 +1611,11 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!1001 &936015075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2359,6 +2374,11 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!54 &1104379105
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2873,6 +2893,11 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!54 &1579573065
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3124,6 +3149,11 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!54 &1994643668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3385,7 +3415,7 @@ MonoBehaviour:
   amountOfBullets: {fileID: 1790800150}
   playerController: {fileID: 330892974374317565}
   target: {fileID: 8218384367326094713}
-  ammoController: {fileID: 0}
+  ammoController: {fileID: 824559845}
 --- !u!1001 &2137376396
 PrefabInstance:
   m_ObjectHideFlags: 0
