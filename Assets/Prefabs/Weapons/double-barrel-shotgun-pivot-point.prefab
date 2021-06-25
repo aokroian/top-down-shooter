@@ -81,8 +81,7 @@ MonoBehaviour:
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
-  shootRange: 100
-  shotDamage: 100
+  shotDamage: 20
   shotImpactForce: 3
   recoilHeight: 2
   clipSize: 2
@@ -94,10 +93,10 @@ MonoBehaviour:
   bulletFlashRef: {fileID: 7623459529341993038, guid: d8536e3437348459eab9512313b2ac32, type: 3}
   bulletOutPointObj: {fileID: 6354097763237307107}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
-  bulletObjRef: {fileID: 5168185707833634706, guid: dd5773eef98c4aa488fdb4aabdfa4a47, type: 3}
+  bulletObjRef: {fileID: 8845773971008609997, guid: 70f228d42a9be0a40b15aa6741e6058b, type: 3}
   bulletVelocity: 25
   bulletsInClip: 2
-  maxShotAngle: 10
+  maxShotAngle: 0
   ammoType: 3
 --- !u!114 &4956791540696850098
 MonoBehaviour:

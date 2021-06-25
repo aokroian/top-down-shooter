@@ -26,8 +26,6 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     public float ownerRigControllerAgility = 1f;
     public GameObject ownerObjRef;
 
-
-    public float shootRange = 100f;
     public float shotDamage = 0f;
     public float shotImpactForce = 100f;
     public float recoilHeight = 1f;
@@ -191,13 +189,13 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
             GameObject instantiatedProjectile = Instantiate(bulletObjRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
 
-            var bulletController = instantiatedProjectile.GetComponent<BulletController>();
+            var bulletController = instantiatedProjectile.GetComponent<IBulletController>();
 
             // данные об уроне, силе толчка и эффекте на поверхности, куда попала пуля
-            bulletController.bulletImpactForce = shotImpactForce;
-            bulletController.shotDamage = shotDamage + shotDamageModifier;
-            bulletController.hitEffectRef = hitEffectRef;
-            bulletController.shooter = ownerObjRef;
+            bulletController.SetImpactForce(shotImpactForce);
+            bulletController.SetDamage(shotDamage + shotDamageModifier);
+            bulletController.SetHitEffectRef(hitEffectRef);
+            bulletController.SetShooter(ownerObjRef);
 
             // скорость и направление полета пули
             Vector3 shotDir = targetPos - bulletOutPointObj.transform.position;
