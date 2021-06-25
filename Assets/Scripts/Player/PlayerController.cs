@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
     public float minLookAtDistance = 1.0f;
     public Vector3 aimAtPosition;
 
+    private int[] bulletsInClip;
+
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
     {
         if (obj.Find(name) != null)
@@ -84,6 +86,11 @@ public class PlayerController : MonoBehaviour
         FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
         FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
 
+        bulletsInClip = new int[itemsEquipmentArr.Length];
+        for (int i = 0; i < bulletsInClip.Length; i ++)
+        {
+            bulletsInClip[i] = -1;
+        }
     }
     void Update()
     {
@@ -275,6 +282,10 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        if (equippedItemObj != null) {
+            bulletsInClip[selectedItemIndex] = equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoLeft();
+        }
+
         if (selectedItemIndex != itemIndex)
         {
             if (equippedItemObj != null)
@@ -291,6 +302,7 @@ public class PlayerController : MonoBehaviour
 
                 weaponController.ownerObjRef = gameObject;
                 weaponController.ammoProvider = ammoController;
+                RestoreWeaponBullets(weaponController, itemIndex);
                 ammoController.currentWeapon = weaponController;
                 // moving the weapon to the desired position
                 equippedItemObj.transform.localPosition = weaponController.localPosition;
@@ -332,7 +344,6 @@ public class PlayerController : MonoBehaviour
             FindInAllChildren(equippedItemObj.transform, "LeftHandPoint", ref leftHandPoint);
 
         }
-
         selectedItemIndex = itemIndex;
     }
 
@@ -408,5 +419,13 @@ public class PlayerController : MonoBehaviour
             return 0f;
         }
 
+    }
+
+    private void RestoreWeaponBullets(WeaponController weapon, int index)
+    {
+        if (bulletsInClip[index] != -1)
+        {
+            weapon.bulletsInClip = bulletsInClip[index];
+        }
     }
 }

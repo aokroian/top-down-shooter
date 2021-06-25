@@ -61,6 +61,11 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     public float reloadTimer { get; private set; } = 0f;
     private float nextShotTimer = 0f;
 
+    private void Awake()
+    {
+        bulletsInClip = clipSize;
+    }
+
     private void Start()
     {
         //get weapon animator
@@ -69,7 +74,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         weaponAimRigLayer = ownerObjRef.transform.Find("RigLayer_WeaponAim").gameObject.GetComponent<Rig>();
 
         // установка дефолтных значений таймеров и патронов в обойме
-        bulletsInClip = clipSize;
+        
         reloadTimer = 0f;
         nextShotTimer = 0f;
     }
