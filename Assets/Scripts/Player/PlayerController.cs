@@ -262,14 +262,8 @@ public class PlayerController : MonoBehaviour
         Vector3 lTargetDir = aimAtPosition - transform.position;
         lTargetDir.y = 0.0f;
 
-        float playerY = transform.rotation.eulerAngles.y;
-        float directionY = Quaternion.LookRotation(lTargetDir).eulerAngles.y;
-
-        // здесь, если рука отклонена слишком сильно, вращаем всего персонажа
-        if (directionY - playerY >= 60f || directionY - playerY <= 1f)
-        {
-            GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
-        }
+        //GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
+        GetComponent<Rigidbody>().MoveRotation(Quaternion.LookRotation(lTargetDir));
 
     }
 

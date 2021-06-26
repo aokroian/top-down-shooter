@@ -42,7 +42,8 @@ public class RigController : MonoBehaviour
                 finalAimPoint = Vector3.Normalize(dir) * minLookAtDistance;
             }
 
-            transform.position = Vector3.SmoothDamp(transform.position, finalAimPoint, ref currentVelocity, movementRapidity);
+            //transform.position = Vector3.SmoothDamp(transform.position, finalAimPoint, ref currentVelocity, movementRapidity);
+            transform.position = finalAimPoint;
         }
     }
 }
