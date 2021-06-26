@@ -198,7 +198,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
             bulletController.SetShooter(ownerObjRef);
 
             // скорость и направление полета пули
-            Vector3 shotDir = targetPos - bulletOutPointObj.transform.position;
+            Vector3 shotDir = bulletOutPointObj.transform.forward;
             shotDir.y = 0.0f;
             shotDir = shotDir.normalized * bulletVelocity;
             shotDir = GetScatterAngle() * shotDir;
