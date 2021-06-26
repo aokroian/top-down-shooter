@@ -2012,8 +2012,7 @@ MonoBehaviour:
   equippedItemIndex: 0
   parentBoneForWeapon: {fileID: 5790282938086853945}
   parentBoneForThrowableItems: {fileID: 5790282938086853945}
-  amountOfBullets: 1000
-  amountOfGrenades: 1000
+  ammoController: {fileID: 0}
   rightHandConstraintController: {fileID: 6793511732785431806}
   leftHandConstraintController: {fileID: 8061983496373915486}
   rigLayerHandsPosition: {fileID: 6636170644396606690}
@@ -2037,6 +2036,11 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!1 &8560982832322567398
 GameObject:
   m_ObjectHideFlags: 0

@@ -3532,6 +3532,10 @@ PrefabInstance:
       propertyPath: minLookAtDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: itemsEquipmentArr.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400639491841712557, guid: 5da85df9e3ba59a46891981a50dadc3c, type: 3}
     - target: {fileID: 5652270395972803460, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: health
       value: 500
