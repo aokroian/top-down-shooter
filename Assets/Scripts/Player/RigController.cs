@@ -32,14 +32,13 @@ public class RigController : MonoBehaviour
     {
         if (constraintSelect == constraintType.HandPos)
         {
-            offset = new Vector3(0.0f, 1.57f, 0.0f);
             Vector3 finalAimPoint = playerController.aimAtPosition;
             if (Vector3.Distance(finalAimPoint, player.transform.position) < minLookAtDistance)
             {
                 finalAimPoint = Vector3.Normalize(finalAimPoint - player.transform.position) * minLookAtDistance;
             }
 
-            transform.position = Vector3.Lerp(transform.position, finalAimPoint + offset, movementRapidity);
+            transform.position = Vector3.Lerp(transform.position, finalAimPoint, movementRapidity);
         }
 
         if (constraintSelect == constraintType.HeadPos)
