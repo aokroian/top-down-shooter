@@ -55,6 +55,25 @@ public class WeaponScreenController : MonoBehaviour
             return false;
         }
     }
+
+    public void OnMenuItemEnter(GameObject item)
+    {
+        item.GetComponent<Text>().color = Color.yellow;
+    }
+
+    public void OnMenuItemExit(GameObject item)
+    {
+        item.GetComponent<Text>().color = new Color(1.0f, 1.0f, 1.0f);
+    }
+
+    public void OnBack(LevelLoader item) {
+        item.LoadLevel("StartMenu");
+    }
+
+    public void OnNewGame(LevelLoader item)
+    {
+        item.LoadLevel("Main");
+    }
 }
 
 public class Weapon
