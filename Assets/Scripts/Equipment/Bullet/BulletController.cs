@@ -62,7 +62,7 @@ public class BulletController : MonoBehaviour, IBulletController
     {
         //Debug.Log("OnTrigger: " + other.gameObject.name);
         
-        if (bp.shooter == other.gameObject)
+        if (bp.shooter == other.gameObject || other.CompareTag(tag))
         {
             return;
         }

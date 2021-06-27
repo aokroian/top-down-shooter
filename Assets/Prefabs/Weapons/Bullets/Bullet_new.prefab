@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1031608973260867948}
   m_Layer: 0
   m_Name: Bullet_new
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9999
   m_Time: 0.03
   m_Parameters:
     serializedVersion: 3

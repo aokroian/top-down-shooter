@@ -62,6 +62,7 @@ public class ShotgunSprayController : MonoBehaviour, IBulletController
 
     private Quaternion CalcGrainAngle(float startAngle, float step, int index)
     {
-        return Quaternion.Euler(0f, startAngle + (step * index), 0f);
+        float delta = Random.Range(0 - step / 4f, step / 4f);
+        return Quaternion.Euler(0f, startAngle + (step * index) + delta, 0f);
     }
 }
