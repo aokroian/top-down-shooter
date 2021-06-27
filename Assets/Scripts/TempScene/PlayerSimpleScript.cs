@@ -71,16 +71,18 @@ public class PlayerSimpleScript : MonoBehaviour
 
     private void Shoot(Vector3 aim)
     {
-        /*
+        
         if (Time.time - prevShotTime >= reloadTime)
         {
             var rotation = Quaternion.Euler(0.0f, transform.rotation.eulerAngles.y + 90.0f, bulletPrefab.transform.rotation.eulerAngles.z);
             var bullet = Instantiate(bulletPrefab, transform.position, rotation);
-            var bulletController = bullet.GetComponent<BulletController>();
-            bulletController.SetDirection(Vector3.Normalize(aim - transform.position));
-            bulletController.SetPlayer(gameObject);
+            var bulletController = bullet.GetComponent<IBulletController>();
+            //bulletController.SetDirection(Vector3.Normalize(aim - transform.position));
+            //bulletController.SetPlayer(gameObject);
+            bulletController.SetVelocity(Vector3.Normalize(aim - transform.position) * 10f);
+            bulletController.SetShooter(gameObject);
             prevShotTime = Time.time;
         }
-        */
+        
     }
 }

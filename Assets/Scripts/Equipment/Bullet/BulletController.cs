@@ -61,13 +61,13 @@ public class BulletController : MonoBehaviour, IBulletController
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("OnTrigger: " + other.gameObject.name);
-        Vector3 dir = transform.position - other.transform.position;
-        Instantiate(bp.hitEffectRef, transform.position, Quaternion.LookRotation(dir));
-
+        
         if (bp.shooter == other.gameObject)
         {
             return;
         }
+        Vector3 dir = transform.position - other.transform.position;
+        Instantiate(bp.hitEffectRef, transform.position, Quaternion.LookRotation(dir));
 
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy" || other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {

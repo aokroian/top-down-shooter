@@ -182,7 +182,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
             //Debug.DrawLine(pos, targetPos, Color.green, Mathf.Infinity);
             // частицы у ствола
             if (bulletFlashRef != null)
-                Instantiate(bulletFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
+                Instantiate(bulletFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation, transform);
 
             // убираем пулю из обоймы
             bulletsInClip -= 1;

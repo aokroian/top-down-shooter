@@ -133,7 +133,6 @@ MonoBehaviour:
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
-  shootRange: 200
   shotDamage: 20
   shotImpactForce: 2
   recoilHeight: 0.07
@@ -143,10 +142,10 @@ MonoBehaviour:
   localPosition: {x: 0.00144, y: 0.00129, z: 0.00663}
   localRotation: {x: 0, y: 0, z: 0}
   localScale: {x: 0.01, y: 0.01, z: 0.01}
-  bulletFlashRef: {fileID: 7623459529341993038, guid: d8536e3437348459eab9512313b2ac32, type: 3}
+  bulletFlashRef: {fileID: 2514344755903072682, guid: 341dfcc7d5f4a894ca7d2340a990788e, type: 3}
   bulletOutPointObj: {fileID: 5538476393623822965}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
-  bulletObjRef: {fileID: 5168185707833634706, guid: dd5773eef98c4aa488fdb4aabdfa4a47, type: 3}
+  bulletObjRef: {fileID: 8555050829149161235, guid: c46cfb22f88b96247ae9a0ab4a804a63, type: 3}
   bulletVelocity: 30
   bulletsInClip: 0
   maxShotAngle: 10
