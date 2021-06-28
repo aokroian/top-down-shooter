@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
     public float minLookAtDistance = 1.0f;
     public Vector3 aimAtPosition;
 
+    private int[] bulletsInClip;
+
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
     {
         if (obj.Find(name) != null)
@@ -84,6 +86,11 @@ public class PlayerController : MonoBehaviour
         FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
         FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
 
+        bulletsInClip = new int[itemsEquipmentArr.Length];
+        for (int i = 0; i < bulletsInClip.Length; i ++)
+        {
+            bulletsInClip[i] = -1;
+        }
     }
     void Update()
     {
@@ -255,14 +262,8 @@ public class PlayerController : MonoBehaviour
         Vector3 lTargetDir = aimAtPosition - transform.position;
         lTargetDir.y = 0.0f;
 
-        float playerY = transform.rotation.eulerAngles.y;
-        float directionY = Quaternion.LookRotation(lTargetDir).eulerAngles.y;
-
-        // здесь, если рука отклонена слишком сильно, вращаем всего персонажа
-        if (directionY - playerY >= 60f || directionY - playerY <= 1f)
-        {
-            GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
-        }
+        //GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
+        GetComponent<Rigidbody>().MoveRotation(Quaternion.LookRotation(lTargetDir));
 
     }
 
@@ -273,6 +274,10 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(equippedItemObj);
             return;
+        }
+
+        if (equippedItemObj != null) {
+            bulletsInClip[selectedItemIndex] = equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoLeft();
         }
 
         if (selectedItemIndex != itemIndex)
@@ -291,6 +296,7 @@ public class PlayerController : MonoBehaviour
 
                 weaponController.ownerObjRef = gameObject;
                 weaponController.ammoProvider = ammoController;
+                RestoreWeaponBullets(weaponController, itemIndex);
                 ammoController.currentWeapon = weaponController;
                 // moving the weapon to the desired position
                 equippedItemObj.transform.localPosition = weaponController.localPosition;
@@ -332,7 +338,6 @@ public class PlayerController : MonoBehaviour
             FindInAllChildren(equippedItemObj.transform, "LeftHandPoint", ref leftHandPoint);
 
         }
-
         selectedItemIndex = itemIndex;
     }
 
@@ -343,25 +348,19 @@ public class PlayerController : MonoBehaviour
         Ray cameraRay = cam.ScreenPointToRay(clampedMousePos);
         // абстрактная поверхность для того, чтобы понять,
         // где луч из камеры пересекается с землей
-        Plane groundPlane = new Plane(new Vector3 (0f, 0.1f, 0f), Vector3.zero);
+        Plane groundPlane = new Plane(Vector3.up, new Vector3(0f, 1.57f, 0f));
         float rayLength;
         if (groundPlane.Raycast(cameraRay, out rayLength))
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
             //Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
 
-            if (Vector3.Distance(pointToLook, transform.position) < minLookAtDistance)
-            {
-                return Vector3.Normalize(pointToLook - transform.position) * minLookAtDistance;
-            }
-            else
-            {
-                return pointToLook;
-            }
+            
+            return pointToLook;
         }
         else
         {
-            return aimAtPosition;
+            return gameObject.transform.position;
         }
     }
 
@@ -408,5 +407,13 @@ public class PlayerController : MonoBehaviour
             return 0f;
         }
 
+    }
+
+    private void RestoreWeaponBullets(WeaponController weapon, int index)
+    {
+        if (bulletsInClip[index] != -1)
+        {
+            weapon.bulletsInClip = bulletsInClip[index];
+        }
     }
 }

@@ -26,8 +26,6 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     public float ownerRigControllerAgility = 1f;
     public GameObject ownerObjRef;
 
-
-    public float shootRange = 100f;
     public float shotDamage = 0f;
     public float shotImpactForce = 100f;
     public float recoilHeight = 1f;
@@ -61,6 +59,11 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     public float reloadTimer { get; private set; } = 0f;
     private float nextShotTimer = 0f;
 
+    private void Awake()
+    {
+        bulletsInClip = clipSize;
+    }
+
     private void Start()
     {
         //get weapon animator
@@ -69,7 +72,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         weaponAimRigLayer = ownerObjRef.transform.Find("RigLayer_WeaponAim").gameObject.GetComponent<Rig>();
 
         // установка дефолтных значений таймеров и патронов в обойме
-        bulletsInClip = clipSize;
+        
         reloadTimer = 0f;
         nextShotTimer = 0f;
     }
@@ -179,23 +182,23 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
             //Debug.DrawLine(pos, targetPos, Color.green, Mathf.Infinity);
             // частицы у ствола
             if (bulletFlashRef != null)
-                Instantiate(bulletFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
+                Instantiate(bulletFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation, transform);
 
             // убираем пулю из обоймы
             bulletsInClip -= 1;
 
             GameObject instantiatedProjectile = Instantiate(bulletObjRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation);
 
-            var bulletController = instantiatedProjectile.GetComponent<BulletController>();
+            var bulletController = instantiatedProjectile.GetComponent<IBulletController>();
 
             // данные об уроне, силе толчка и эффекте на поверхности, куда попала пуля
-            bulletController.bulletImpactForce = shotImpactForce;
-            bulletController.shotDamage = shotDamage + shotDamageModifier;
-            bulletController.hitEffectRef = hitEffectRef;
-            bulletController.shooter = ownerObjRef;
+            bulletController.SetImpactForce(shotImpactForce);
+            bulletController.SetDamage(shotDamage + shotDamageModifier);
+            bulletController.SetHitEffectRef(hitEffectRef);
+            bulletController.SetShooter(ownerObjRef);
 
             // скорость и направление полета пули
-            Vector3 shotDir = targetPos - bulletOutPointObj.transform.position;
+            Vector3 shotDir = bulletOutPointObj.transform.forward;
             shotDir.y = 0.0f;
             shotDir = shotDir.normalized * bulletVelocity;
             shotDir = GetScatterAngle() * shotDir;

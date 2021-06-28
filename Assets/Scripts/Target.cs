@@ -6,6 +6,7 @@ public class Target : MonoBehaviour
 {
     public float health = 100f;
     public float maxHealth = 100f;
+    public GameObject onHitEffect;
 
     public UnityEvent onDeath;
 

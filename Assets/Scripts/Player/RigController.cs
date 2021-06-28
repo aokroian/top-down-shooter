@@ -7,10 +7,13 @@ public class RigController : MonoBehaviour
     public GameObject player;
 
     public float movementRapidity = 0.1f;
+    public float minLookAtDistance = 1f;
+
 
     private Vector3 offset;
     private PlayerController playerController;
 
+    private Vector3 currentVelocity;
     public enum constraintType
     {
         HandPos,
@@ -19,7 +22,7 @@ public class RigController : MonoBehaviour
 
     public constraintType constraintSelect;
     // Start is called before the first frame update
-   
+
     void Start()
     {
         playerController = player.GetComponent<PlayerController>();
@@ -30,16 +33,17 @@ public class RigController : MonoBehaviour
     {
         if (constraintSelect == constraintType.HandPos)
         {
-            offset = new Vector3(0.0f, 1.5f, 0.0f);
-            transform.position = Vector3.Lerp(transform.position, playerController.aimAtPosition + offset, movementRapidity);
-        }
-
-        if (constraintSelect == constraintType.HeadPos)
-        {
-            offset = new Vector3(0.0f, 1f, 0.0f);
-            transform.LookAt(playerController.aimAtPosition + offset);
             
-        }
+            Vector3 finalAimPoint = playerController.aimAtPosition;
+            Vector3 playerPos = new Vector3(player.transform.position.x, finalAimPoint.y, player.transform.position.z);
+            if (Vector3.Distance(finalAimPoint, playerPos) < minLookAtDistance)
+            {
+                Vector3 dir = finalAimPoint - playerPos;
+                finalAimPoint = Vector3.Normalize(dir) * minLookAtDistance;
+            }
 
+            //transform.position = Vector3.SmoothDamp(transform.position, finalAimPoint, ref currentVelocity, movementRapidity);
+            transform.position = finalAimPoint;
+        }
     }
 }

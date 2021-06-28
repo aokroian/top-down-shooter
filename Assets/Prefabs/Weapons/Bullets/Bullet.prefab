@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4573040521165755197}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,13 +112,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bb2a5cb17752b43be293aefbcdc0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffectRef: {fileID: 0}
-  bulletImpactForce: 0.01
-  shotDamage: 10
-  shooter: {fileID: 0}
-  despawnDistance: 40
-  awareEvent: {fileID: 11400000, guid: 4d6de3e5b89490647aeebebe1a6637a0, type: 2}
-  awareDistance: 10
+  bp:
+    despawnDistance: 40
+    awareEvent: {fileID: 11400000, guid: 4d6de3e5b89490647aeebebe1a6637a0, type: 2}
+    awareDistance: 10
+    shotDamage: 0
+    bulletImpactForce: 0
+    hitEffectRef: {fileID: 0}
+    shooter: {fileID: 0}
+    velocity: {x: 0, y: 0, z: 0}
+    player: {fileID: 0}
 --- !u!54 &2907149244124643074
 Rigidbody:
   m_ObjectHideFlags: 0

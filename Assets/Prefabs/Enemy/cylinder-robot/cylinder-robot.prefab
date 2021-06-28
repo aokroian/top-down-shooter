@@ -1817,6 +1817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  onHitEffect: {fileID: 2285398259692336146, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
   onDeath:
     m_PersistentCalls:
       m_Calls:

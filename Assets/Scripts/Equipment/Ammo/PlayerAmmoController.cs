@@ -69,7 +69,7 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
             removed = Mathf.Min(required, ammoMap[type]);
             ammoMap[type] = ammoMap[type] - removed;
         }
-        Debug.Log("removed: " + removed);
+        //Debug.Log("removed: " + removed);
         return removed;
     }
 

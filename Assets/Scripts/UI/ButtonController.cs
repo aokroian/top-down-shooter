@@ -25,12 +25,7 @@ public class ButtonController : MonoBehaviour
 
     public void OnNewGame(LevelLoader item)
     {
-        item.LoadLevel("Main");
-    }
-
-    public void OnResume(LevelLoader item)
-    {
-        item.LoadLevel("Main");
+        item.LoadLevel("WeaponSelector");
     }
 
     public void OnSettings()

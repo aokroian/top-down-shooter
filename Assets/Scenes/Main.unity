@@ -618,6 +618,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4982691503315183210, guid: 76d1ba7a4f45249e4a0d0886e6e0e6e4, type: 3}
   m_PrefabInstance: {fileID: 1317432222}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &320752891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 781926884251451968, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+  m_PrefabInstance: {fileID: 8218384367326094712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &488773156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4982691503315183210, guid: 76d1ba7a4f45249e4a0d0886e6e0e6e4, type: 3}
@@ -1392,11 +1403,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistolMax: -1
   machinegunMax: 0
-  rifleMax: 0
+  rifleMax: 24
   grenadeMax: 3
   pistolDefault: -1
   machinegunDefault: 0
-  rifleDefault: 0
+  rifleDefault: 24
   grenadeDefault: 3
 --- !u!4 &824559846
 Transform:
@@ -2841,6 +2852,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4982691503315183210, guid: 76d1ba7a4f45249e4a0d0886e6e0e6e4, type: 3}
   m_PrefabInstance: {fileID: 2009810466}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504902263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8964516106665042150, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+  m_PrefabInstance: {fileID: 8218384367326094712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1579573062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,18 +3550,18 @@ PrefabInstance:
       propertyPath: ammoController
       value: 
       objectReference: {fileID: 824559845}
-    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
-      propertyPath: minLookAtDistance
-      value: 1
+    - target: {fileID: 3033498245604842901, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: movementRapidity
+      value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 5652270395972803460, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
-      propertyPath: health
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652270395972803460, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
-      propertyPath: maxHealth
-      value: 500
-      objectReference: {fileID: 0}
+    - target: {fileID: 4581735552380879133, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_RigLayers.Array.data[0].m_Rig
+      value: 
+      objectReference: {fileID: 320752891}
+    - target: {fileID: 4581735552380879133, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_RigLayers.Array.data[1].m_Rig
+      value: 
+      objectReference: {fileID: 1504902263}
     - target: {fileID: 8546143664841721988, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_Name
       value: Player

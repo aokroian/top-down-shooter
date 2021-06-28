@@ -419,9 +419,9 @@ MonoBehaviour:
     m_WorldUpAxis: 2
     m_MaintainOffset: 0
     m_ConstrainedAxes:
-      x: 1
+      x: 0
       y: 1
-      z: 1
+      z: 0
   m_SourceObjectsGUIToggle: 1
   m_SettingsGUIToggle: 1
 --- !u!1 &2055200216230028342
@@ -588,7 +588,7 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: -17, y: 0, z: 0}
+    m_Offset: {x: -17, y: 8, z: 0}
     m_MinLimit: -180
     m_MaxLimit: 180
     m_AimAxis: 4
@@ -832,6 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8546143664841721988}
   movementRapidity: 0.5
+  minLookAtDistance: 1
   constraintSelect: 0
 --- !u!1 &4516330512353110479
 GameObject:
@@ -1918,11 +1919,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RigLayers:
+  - m_Rig: {fileID: 8964516106665042150}
+    m_Active: 1
   - m_Rig: {fileID: 781926884251451968}
     m_Active: 1
   - m_Rig: {fileID: 6989014451314280987}
-    m_Active: 1
-  - m_Rig: {fileID: 8964516106665042150}
     m_Active: 1
   m_Effectors:
   - m_Transform: {fileID: 1752970976649712259}
@@ -2005,20 +2006,19 @@ MonoBehaviour:
   maxStamina: 100
   staminaRegenPerSecond: 20
   itemsEquipmentArr:
-  - {fileID: 3653366746708802039, guid: c1a3f713b544549a68869c8f129b00a4, type: 3}
+  - {fileID: 7400639491841712557, guid: 5da85df9e3ba59a46891981a50dadc3c, type: 3}
   - {fileID: 2018421898667607887, guid: cac850a810d414f0399a3425d440092d, type: 3}
   - {fileID: 2685747771383232502, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
   selectedItemIndex: 0
   equippedItemIndex: 0
   parentBoneForWeapon: {fileID: 5790282938086853945}
   parentBoneForThrowableItems: {fileID: 5790282938086853945}
-  amountOfBullets: 1000
-  amountOfGrenades: 1000
+  ammoController: {fileID: 0}
   rightHandConstraintController: {fileID: 6793511732785431806}
   leftHandConstraintController: {fileID: 8061983496373915486}
   rigLayerHandsPosition: {fileID: 6636170644396606690}
   cam: {fileID: 0}
-  minLookAtDistance: 0
+  minLookAtDistance: 1
   aimAtPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5652270395972803460
 MonoBehaviour:
@@ -2032,11 +2032,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10000
-  maxHealth: 10000
+  health: 500
+  maxHealth: 500
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!1 &8560982832322567398
 GameObject:
   m_ObjectHideFlags: 0

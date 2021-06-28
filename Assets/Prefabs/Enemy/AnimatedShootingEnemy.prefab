@@ -1189,6 +1189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  onHitEffect: {fileID: 2285398259692336146, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
   onDeath:
     m_PersistentCalls:
       m_Calls:
@@ -1204,6 +1205,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!195 &4958741082988955625
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1241,7 +1247,7 @@ MonoBehaviour:
   _cost: 3
   amountOfBullets: 9999
   weapon: {fileID: 3653366746708802039, guid: c1a3f713b544549a68869c8f129b00a4, type: 3}
-  playerAwared: 0
+  defaultState: 0
   visionRange: 15
   shootTime: 1
   walkDistanceMin: 1
