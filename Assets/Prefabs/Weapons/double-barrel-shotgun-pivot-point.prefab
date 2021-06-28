@@ -97,7 +97,7 @@ MonoBehaviour:
   bulletVelocity: 25
   bulletsInClip: 2
   maxShotAngle: 0
-  ammoType: 3
+  ammoType: 5
 --- !u!114 &4956791540696850098
 MonoBehaviour:
   m_ObjectHideFlags: 0

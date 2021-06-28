@@ -416,4 +416,16 @@ public class PlayerController : MonoBehaviour
             weapon.bulletsInClip = bulletsInClip[index];
         }
     }
+
+    public AmmoType[] GetAmmoTypes()
+    {
+        AmmoType[] result = new AmmoType[itemsEquipmentArr.Length];
+
+        for (int i = 0; i < itemsEquipmentArr.Length; i ++)
+        {
+            result[i] = itemsEquipmentArr[i].GetComponent<IAmmoConsumer>().GetAmmoType();
+        }
+
+        return result;
+    }
 }

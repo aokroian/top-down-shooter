@@ -66,6 +66,7 @@ public class Target : MonoBehaviour
         }
         if (health <= 0f)
         {
+            Debug.Log("Should be dead!!!");
             isDead = true;
             onDeath.Invoke();
             Destroy(gameObject, 0.02f);

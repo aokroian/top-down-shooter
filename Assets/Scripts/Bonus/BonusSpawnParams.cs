@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class BonusSpawnParams
 {
+    public GameObject bonusPrefab;
+
     // Percent
     public float baseChance;
 

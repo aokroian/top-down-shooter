@@ -342,7 +342,7 @@ MonoBehaviour:
   bulletVelocity: 30
   bulletsInClip: 30
   maxShotAngle: 10
-  ammoType: 1
+  ammoType: 2
 --- !u!114 &-212812623086173738
 MonoBehaviour:
   m_ObjectHideFlags: 0

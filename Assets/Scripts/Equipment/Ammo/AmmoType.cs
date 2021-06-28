@@ -9,5 +9,6 @@ public enum AmmoType
     PISTOL = 1,
     MACHINEGUN = 2,
     RIFLE = 3,
-    GRENADE = 4
+    GRENADE = 4,
+    SHOTGUN = 5
 }

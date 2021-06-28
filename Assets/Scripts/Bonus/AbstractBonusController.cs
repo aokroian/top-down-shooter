@@ -7,11 +7,6 @@ public abstract class AbstractBonusController : MonoBehaviour
     public GameObject player;
     public float despawnDistance = 80f;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Vector3.Distance(player.transform.position, transform.position) >= despawnDistance)

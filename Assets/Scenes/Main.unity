@@ -526,6 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  onHitEffect: {fileID: 0}
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -914,6 +915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  onHitEffect: {fileID: 0}
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -1402,12 +1404,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pistolMax: -1
-  machinegunMax: 0
-  rifleMax: 24
+  machinegunMax: 256
+  rifleMax: 48
+  shotgunMax: 48
   grenadeMax: 3
   pistolDefault: -1
-  machinegunDefault: 0
+  machinegunDefault: 128
   rifleDefault: 24
+  shotgunDefault: 24
   grenadeDefault: 3
 --- !u!4 &824559846
 Transform:
@@ -1619,6 +1623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  onHitEffect: {fileID: 0}
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -2382,6 +2387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  onHitEffect: {fileID: 0}
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -2912,6 +2918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  onHitEffect: {fileID: 0}
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -3100,10 +3107,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 330892974374317564}
-  healthPrefab: {fileID: 7389978441618331954, guid: 90df346787bd66a42b27a98665b596bc, type: 3}
   health:
+    bonusPrefab: {fileID: 7389978441618331954, guid: 90df346787bd66a42b27a98665b596bc, type: 3}
     baseChance: 15
     notGetPercent: 1
+    enemyCostAdditionalPercent: 10
+  ammoParams:
+  - bonusPrefab: {fileID: 7389978441618331954, guid: e0650115ff6b467449a8787f78584925, type: 3}
+    baseChance: 10
+    notGetPercent: 5
+    enemyCostAdditionalPercent: 10
+  - bonusPrefab: {fileID: 7389978441618331954, guid: dec818cee4aeb0145aec389390a7da26, type: 3}
+    baseChance: 10
+    notGetPercent: 5
+    enemyCostAdditionalPercent: 10
+  - bonusPrefab: {fileID: 7389978441618331954, guid: 621d0aae33f013b429f922040ad0e341, type: 3}
+    baseChance: 10
+    notGetPercent: 5
     enemyCostAdditionalPercent: 10
 --- !u!4 &1982186214
 Transform:
@@ -3168,6 +3188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  onHitEffect: {fileID: 0}
   onDeath:
     m_PersistentCalls:
       m_Calls: []

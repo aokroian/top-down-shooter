@@ -11,12 +11,14 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
     public int pistolMax = -1;
     public int machinegunMax;
     public int rifleMax;
+    public int shotgunMax;
     public int grenadeMax;
 
     [Header("Start ammo count")]
     public int pistolDefault = -1;
     public int machinegunDefault;
     public int rifleDefault;
+    public int shotgunDefault;
     public int grenadeDefault;
 
     private Dictionary<AmmoType, int> ammoMap = new Dictionary<AmmoType, int>();
@@ -44,6 +46,10 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
                     maxAmmoMap[type] = rifleMax;
                     ammoMap.Add(type, maxAmmoMap[type] >= 0 ? Mathf.Min(rifleDefault, rifleMax) : -1);
                     break;
+                case AmmoType.SHOTGUN:
+                    maxAmmoMap[type] = shotgunMax;
+                    ammoMap.Add(type, maxAmmoMap[type] >= 0 ? Mathf.Min(shotgunDefault, shotgunMax) : -1);
+                    break;
                 case AmmoType.GRENADE:
                     maxAmmoMap[type] = grenadeMax;
                     ammoMap.Add(type, maxAmmoMap[type] >= 0 ? Mathf.Min(grenadeDefault, grenadeMax) : -1);
@@ -52,11 +58,6 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
                     break;
             }
         }
-    }
-
-    void Update()
-    {
-        
     }
 
     /// <summary>
