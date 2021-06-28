@@ -33,6 +33,10 @@ public class ShotgunSprayController : MonoBehaviour, IBulletController
     {
         bp.velocity = velocity;
     }
+    public void SetNubmerOfPenetrations(int numberOfPenetrations)
+    {
+        bp.numberOfPenetrations = numberOfPenetrations;
+    }
 
     private void Start()
     {
@@ -49,6 +53,7 @@ public class ShotgunSprayController : MonoBehaviour, IBulletController
             bulletController.SetHitEffectRef(bp.hitEffectRef);
             bulletController.SetShooter(bp.shooter);
             bulletController.SetVelocity(velocity);
+            bulletController.SetNubmerOfPenetrations(bp.numberOfPenetrations);
         }
     }
 

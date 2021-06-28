@@ -13,4 +13,6 @@ public interface IBulletController
     public void SetImpactForce(float force);
 
     public void SetHitEffectRef(GameObject hitEffectRef);
+
+    public void SetNubmerOfPenetrations(int numberOfPenetrations);
 }

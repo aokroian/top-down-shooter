@@ -226,6 +226,7 @@ MonoBehaviour:
   clipSize: 1
   rateOfFire: 0
   reloadTime: 0.6
+  numberOfPenetrations: 3
   localPosition: {x: 0.00125, y: 0.00117, z: 0.00065}
   localRotation: {x: 0, y: 0, z: 0}
   localScale: {x: 1, y: 1, z: 1}

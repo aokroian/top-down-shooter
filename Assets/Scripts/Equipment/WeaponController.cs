@@ -32,7 +32,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     public int clipSize = 5;
     public float rateOfFire = 0f;
     public float reloadTime = 0f;
-    //public ShootingModes shootingMode = ShootingModes.Single;
+    public int numberOfPenetrations = 1;
 
 
     public Vector3 localPosition;
@@ -196,6 +196,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
             bulletController.SetDamage(shotDamage + shotDamageModifier);
             bulletController.SetHitEffectRef(hitEffectRef);
             bulletController.SetShooter(ownerObjRef);
+            bulletController.SetNubmerOfPenetrations(numberOfPenetrations);
 
             // скорость и направление полета пули
             Vector3 shotDir = bulletOutPointObj.transform.forward;

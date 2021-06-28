@@ -58,6 +58,11 @@ public class BulletController : MonoBehaviour, IBulletController
         bp.hitEffectRef = hitEffectRef;
     }
 
+    public void SetNubmerOfPenetrations(int nubmerOfPenetrations)
+    {
+        bp.numberOfPenetrations = nubmerOfPenetrations;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("OnTrigger: " + other.gameObject.name);
@@ -88,6 +93,15 @@ public class BulletController : MonoBehaviour, IBulletController
             AwareEventParam param = new AwareEventParam(transform.position, bp.awareDistance);
             bp.awareEvent.Raise(param);
 
+            bp.numberOfPenetrations--;
+            ToBeOrNotToBe(bp.numberOfPenetrations);
+        }
+    }
+
+    private void ToBeOrNotToBe(int numberOfPenetrations)
+    {
+        if (bp.numberOfPenetrations <= 0)
+        {
             Destroy(gameObject);
         }
     }

@@ -21,4 +21,6 @@ public class BulletParams
     public Vector3 velocity;
     [HideInInspector]
     public GameObject player;
+    [HideInInspector]
+    public int numberOfPenetrations;
 }
