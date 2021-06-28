@@ -66,8 +66,7 @@ public class BulletController : MonoBehaviour, IBulletController
         {
             return;
         }
-        Vector3 dir = transform.position - other.transform.position;
-        Instantiate(bp.hitEffectRef, transform.position, Quaternion.LookRotation(dir));
+        
 
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy" || other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
@@ -75,6 +74,7 @@ public class BulletController : MonoBehaviour, IBulletController
             Target target = other.transform.GetComponent<Target>();
             if (target != null)
             {
+                SpawnEffect(target);
                 target.TakeDamage(bp.shotDamage, bp.bulletImpactForce, -(bp.shooter.transform.position - transform.position));
             }
 
@@ -90,5 +90,13 @@ public class BulletController : MonoBehaviour, IBulletController
 
             Destroy(gameObject);
         }
+    }
+
+    private void SpawnEffect(Target target)
+    {
+        Vector3 dir = transform.position - target.transform.position;
+        dir.y = 0f;
+        var effect = target.onHitEffect == null ? bp.hitEffectRef : target.onHitEffect;
+        Instantiate(effect, transform.position, Quaternion.LookRotation(dir));
     }
 }

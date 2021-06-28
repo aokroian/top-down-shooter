@@ -1172,6 +1172,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46cfb22f88b96247ae9a0ab4a804a63, type: 3}
+--- !u!1001 &2503296281143651644
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.3361702
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740953878285993670, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285398259692336146, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
+      propertyPath: m_Name
+      value: RobotShotEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
 --- !u!1001 &4133755486566517425
 PrefabInstance:
   m_ObjectHideFlags: 0
