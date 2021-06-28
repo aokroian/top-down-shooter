@@ -3571,6 +3571,10 @@ PrefabInstance:
       propertyPath: ammoController
       value: 
       objectReference: {fileID: 824559845}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: itemsEquipmentArr.Array.data[1]
+      value: 
+      objectReference: {fileID: 3040421391604227224, guid: adb6e521861cc430ca9c6476e7849d49, type: 3}
     - target: {fileID: 3033498245604842901, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: movementRapidity
       value: 0.05
