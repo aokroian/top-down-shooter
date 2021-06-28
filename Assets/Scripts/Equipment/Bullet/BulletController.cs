@@ -94,11 +94,11 @@ public class BulletController : MonoBehaviour, IBulletController
             bp.awareEvent.Raise(param);
 
             bp.numberOfPenetrations--;
-            ToBeOrNotToBe(bp.numberOfPenetrations);
+            ToBeOrNotToBe();
         }
     }
 
-    private void ToBeOrNotToBe(int numberOfPenetrations)
+    private void ToBeOrNotToBe()
     {
         if (bp.numberOfPenetrations <= 0)
         {
