@@ -81,15 +81,15 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         equippedWeaponObj.transform.localScale = weaponController.localScale;
 
         // animation rigging variables
-        FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
-        FindInAllChildren(gameObject.transform, "LeftHandController", ref leftHandConstraintController);
-        FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
-        FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
+        //FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
+        //FindInAllChildren(gameObject.transform, "LeftHandController", ref leftHandConstraintController);
+        //FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
+        //FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
 
-        FindInAllChildren(equippedWeaponObj.transform, "RightHandPoint", ref rightHandPoint);
-        FindInAllChildren(equippedWeaponObj.transform, "LeftHandPoint", ref leftHandPoint);
+        //FindInAllChildren(equippedWeaponObj.transform, "RightHandPoint", ref rightHandPoint);
+        //FindInAllChildren(equippedWeaponObj.transform, "LeftHandPoint", ref leftHandPoint);
 
-        weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedWeaponObj.transform;
+        //weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedWeaponObj.transform;
     }
 
     // Update is called once per frame
@@ -99,8 +99,8 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         // moving hand rig controllers to points on weapon when its equiped
         
 
-        rightHandConstraintController.transform.position = rightHandPoint.transform.position;
-        leftHandConstraintController.transform.position = leftHandPoint.transform.position;
+        //rightHandConstraintController.transform.position = rightHandPoint.transform.position;
+        //leftHandConstraintController.transform.position = leftHandPoint.transform.position;
 
 
         // rotating enemy towards player
@@ -111,18 +111,18 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
             gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
         }
 
-        Vector3 velocity = agent.velocity;
-        if (velocity.magnitude <= 0.1f)
-        {
-            gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
-        }
-        else
-        {
-            gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
-        }
+        //Vector3 velocity = agent.velocity;
+        //if (velocity.magnitude <= 0.1f)
+        //{
+        //    gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
+        //}
+        //else
+        //{
+        //    gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
+        //}
 
-        gameObject.GetComponent<Animator>().SetFloat("local Z speed", velocity.z);
-        gameObject.GetComponent<Animator>().SetFloat("local X speed", velocity.x);
+        //gameObject.GetComponent<Animator>().SetFloat("local Z speed", velocity.z);
+        //gameObject.GetComponent<Animator>().SetFloat("local X speed", velocity.x);
 
         // meele animation
         Vector3 distanceToPlayer = gameObject.transform.position - player.transform.position;
