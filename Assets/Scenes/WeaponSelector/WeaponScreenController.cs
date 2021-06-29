@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,37 +8,37 @@ public class WeaponScreenController : MonoBehaviour
     public GameObject scrollItemPrefub;
     public Text amountText;
     public int amount = 500000;
+    public int maxEquipedGun = 2;
 
-    //TODO STUB DATA
-    private List<Weapon> weapons = new List<Weapon>();
+    private int equipedNow = 0;
 
-    // Start is called before the first frame update
+    // Получение оружий и вывод их на экран
     void Start()
     {
-        for (int i = 0; i < 10; i++)
-        {
-            // TODO STUB!
-            weapons.Add(new Weapon("Item " + i, "properties " + i, 100000 * i, false));
-        }
+        AbstractUpgrade[] weapons = Resources.LoadAll<AbstractUpgrade>("UpgradesSO");
 
-        for (int i = 0; i < 10; i++)
+        foreach (AbstractUpgrade weapon in weapons)
         {
-            GenerateItem(weapons[i]);
+            GenerateItem(weapon);
         }
         scrollView.verticalNormalizedPosition = 1;
         amountText.text = amount.ToString();
     }
 
-    void GenerateItem(Weapon weapon)
+    void GenerateItem(AbstractUpgrade weapon)
     {
         GameObject scrollItem = Instantiate(scrollItemPrefub);
-        scrollItem.GetComponent<BuyButtonController>().SetParent(this);
-        Transform item = scrollItem.transform;
-        item.SetParent(container.transform, false);
-        item.Find("WeaponNameText").gameObject.GetComponent<Text>().text = weapon.Name;
-        item.Find("PropertyText").gameObject.GetComponent<Text>().text = weapon.Properties;
-        item.Find("CoastText").gameObject.GetComponent<Text>().text = weapon.Price.ToString();
-        item.Find("IsPurchasedImage").gameObject.SetActive(weapon.IsPurchased);
+        scrollItem.GetComponent<WeaponButtonController>().SetParent(this);
+        scrollItem.transform.SetParent(container.transform, false);
+
+        scrollItem.GetComponent<Image>().sprite = weapon.image;
+        FindItemById<Text>(scrollItem, "WeaponNameText").text = weapon.name;
+        FindItemById<Text>(scrollItem, "PropertyText").text = weapon.description;
+        FindItemById<Text>(scrollItem, "CostText").text = weapon.cost.ToString();
+        FindItemById<Text>(scrollItem, "WeaponNameText").text = weapon.name;
+        // TODO STUB!
+        //FindItemById<Image>(scrollItem, "IsPurchasedImage").gameObject.SetActive(false);
+        //FindItemById<Image>(scrollItem, "IsEquipedImage").gameObject.SetActive(false);
     }
 
     public bool SetPurchased(int price)
@@ -56,6 +55,29 @@ public class WeaponScreenController : MonoBehaviour
         }
     }
 
+    public bool CanBeEquiped()
+    {
+        if (equipedNow < maxEquipedGun)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void Equip()
+    {
+        equipedNow++;
+    }
+
+    public void DeEquip()
+    {
+        equipedNow--;
+    }
+
+    //Интерфейсная дрочь
     public void OnMenuItemEnter(GameObject item)
     {
         item.GetComponent<Text>().color = Color.yellow;
@@ -74,20 +96,8 @@ public class WeaponScreenController : MonoBehaviour
     {
         item.LoadLevel("Main");
     }
-}
 
-public class Weapon
-{
-    public Weapon(string name, string properties, int price, bool isPurchased)
-    {
-        Name = name;
-        Properties = properties;
-        Price = price;
-        IsPurchased = isPurchased;
+    private T FindItemById<T>(GameObject parent, string id) {
+        return parent.transform.Find(id).GetComponent<T>();
     }
-
-    public string Name { get; set; }
-    public string Properties { get; set; }
-    public int Price { get; set; }
-    public bool IsPurchased { get; set; }
 }

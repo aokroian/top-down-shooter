@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AbstractUpgrade : ScriptableObject
@@ -9,7 +7,7 @@ public abstract class AbstractUpgrade : ScriptableObject
 
     public bool isRoot;
     public AbstractUpgrade[] children;
-    public Texture2D image;
+    public Sprite image;
     public int cost;
     public string upgradeName;
     public string description;

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: RifleDamage_1
   m_EditorClassIdentifier: 
   upgradeType: 1
-  itemLevel: 1
+  isRoot: 0
   children: []
-  image: {fileID: 0}
-  cost: 0
+  image: {fileID: 21300000, guid: f7141627b9596483494b96e376a7be67, type: 3}
+  cost: 200000
   upgradeName: 
-  description: 
+  description: Very cool rifle
   weapon: 2
   weaponUpgradeType: 0
   value: 0
