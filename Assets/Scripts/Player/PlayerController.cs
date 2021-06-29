@@ -277,7 +277,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (equippedItemObj != null) {
-            bulletsInClip[selectedItemIndex] = equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoLeft();
+            bulletsInClip[selectedItemIndex - 1] = equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoLeft();
         }
 
         if (selectedItemIndex != itemIndex)
@@ -296,7 +296,7 @@ public class PlayerController : MonoBehaviour
 
                 weaponController.ownerObjRef = gameObject;
                 weaponController.ammoProvider = ammoController;
-                RestoreWeaponBullets(weaponController, itemIndex);
+                RestoreWeaponBullets(weaponController, itemIndex - 1);
                 ammoController.currentWeapon = weaponController;
                 // moving the weapon to the desired position
                 equippedItemObj.transform.localPosition = weaponController.localPosition;
