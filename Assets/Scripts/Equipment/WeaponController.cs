@@ -20,6 +20,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     private Animator animator;
     private bool isReloading = false;
 
+    public WeaponEnum type;
 
     //
     public float ownerAgility = 1f;

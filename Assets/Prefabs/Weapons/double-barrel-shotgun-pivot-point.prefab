@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6290ca12821f8d341b7a1ad924a57844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 3
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}

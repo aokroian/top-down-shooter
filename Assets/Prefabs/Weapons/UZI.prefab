@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6290ca12821f8d341b7a1ad924a57844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
@@ -332,6 +333,7 @@ MonoBehaviour:
   clipSize: 32
   rateOfFire: 0.1
   reloadTime: 1
+  numberOfPenetrations: 1
   localPosition: {x: 0.00122, y: 0.0025, z: 0.0047}
   localRotation: {x: 0, y: 0, z: 0}
   localScale: {x: 0.01, y: 0.01, z: 0.01}
