@@ -111,18 +111,20 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
             gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
         }
 
-        //Vector3 velocity = agent.velocity;
-        //if (velocity.magnitude <= 0.1f)
-        //{
-        //    gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
-        //}
-        //else
-        //{
-        //    gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
-        //}
+        Vector3 velocity = agent.velocity;
+        if (velocity.magnitude <= 0.1f)
+        {
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
+        }
 
-        //gameObject.GetComponent<Animator>().SetFloat("local Z speed", velocity.z);
-        //gameObject.GetComponent<Animator>().SetFloat("local X speed", velocity.x);
+        Vector3 globalMovement = new Vector3(velocity.x, 0.0f, velocity.z);
+        Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
+        gameObject.GetComponent<Animator>().SetFloat("local Z speed", localMovement.z);
+        gameObject.GetComponent<Animator>().SetFloat("local X speed", localMovement.x);
 
         // meele animation
         Vector3 distanceToPlayer = gameObject.transform.position - player.transform.position;
