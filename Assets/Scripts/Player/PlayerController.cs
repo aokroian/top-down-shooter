@@ -113,15 +113,16 @@ public class PlayerController : MonoBehaviour
 
 
         // animations
+        Animator animator = GetComponent<Animator>();
         Vector3 globalMovement = new Vector3(movement.x, 0.0f, movement.y);
         Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
-        gameObject.GetComponent<Animator>().SetFloat("local Z speed", localMovement.z);
-        gameObject.GetComponent<Animator>().SetFloat("local X speed", localMovement.x);
+        animator.SetFloat("local Z speed", localMovement.z);
+        animator.SetFloat("local X speed", localMovement.x);
 
-        if (movement.magnitude <= 0.01f)
-            gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
+        if (localMovement.magnitude <= 0.1f)
+            animator.SetBool("Is Idle", true);
         else
-            gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
+            animator.SetBool("Is Idle", false);
 
         // hand on item animation rigging part
         // moving hand rig controllers to points on weapon when its equiped
@@ -152,7 +153,7 @@ public class PlayerController : MonoBehaviour
             dodgeTimer += dodgeTime;
             stamina -= dodgeStaminaCost;
 
-            gameObject.GetComponent<Animator>().SetBool("Is Dodging", true);
+            animator.SetBool("Is Dodging", true);
         }
         if (dodgeTimer > 0f)
         {
@@ -163,7 +164,7 @@ public class PlayerController : MonoBehaviour
         else if (dodgeTimer == 0f)
         {
             currentMovementSpeed = basicMovementSpeed;
-            gameObject.GetComponent<Animator>().SetBool("Is Dodging", false);
+            animator.SetBool("Is Dodging", false);
         }
         else if (dodgeTimer < 0f)
         {
