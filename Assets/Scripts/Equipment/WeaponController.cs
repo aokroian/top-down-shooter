@@ -69,6 +69,10 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     {
         //get weapon animator
         animator = gameObject.GetComponent<Animator>();
+        if (animator.GetFloat("reload time") >= 0.01f)
+        {
+            animator.SetFloat("reload time", reloadTime);
+        }
         // get owners weapon aim rig layer (needed to disable it playing animations)
         weaponAimRigLayer = ownerObjRef.transform.Find("RigLayer_WeaponAim").gameObject.GetComponent<Rig>();
 
@@ -76,6 +80,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         
         reloadTimer = 0f;
         nextShotTimer = 0f;
+        
     }
 
     private void Update()
@@ -95,7 +100,8 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
                 gameObject.GetComponent<LaserAim>().isEnabled = false;
 
                 // start reloading animation
-                animator.SetBool("is reloading", true);
+                if (animator != null)
+                    animator.SetBool("is reloading", true);
                 
             }
             else
@@ -104,7 +110,8 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
                 {
                     weaponAimRigLayer.weight = 1f;
                 }
-                animator.SetBool("is reloading", false);
+                if (animator != null)
+                    animator.SetBool("is reloading", false);
                 gameObject.GetComponent<LaserAim>().isEnabled = true;
             }
         }

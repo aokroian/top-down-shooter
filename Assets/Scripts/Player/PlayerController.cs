@@ -119,11 +119,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("local Z speed", localMovement.z);
         animator.SetFloat("local X speed", localMovement.x);
 
-        if (localMovement.magnitude <= 0.1f)
-            animator.SetBool("Is Idle", true);
-        else
-            animator.SetBool("Is Idle", false);
-
         // hand on item animation rigging part
         // moving hand rig controllers to points on weapon when its equiped
         if (rightHandPoint != null)

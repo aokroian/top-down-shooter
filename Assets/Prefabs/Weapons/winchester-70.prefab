@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2229621320369827879}
   - component: {fileID: 8540788568294090431}
   - component: {fileID: -8734937490160000040}
+  - component: {fileID: 7950684517113240490}
   m_Layer: 0
   m_Name: winchester-70
   m_TagString: Untagged
@@ -226,7 +227,7 @@ MonoBehaviour:
   recoilHeight: 3
   clipSize: 1
   rateOfFire: 0
-  reloadTime: 0.6
+  reloadTime: 1
   numberOfPenetrations: 3
   localPosition: {x: 0.00125, y: 0.00117, z: 0.00065}
   localRotation: {x: 0, y: 0, z: 0}
@@ -266,6 +267,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserOriginPoint: {fileID: 5561771759735119739}
   isEnabled: 0
+--- !u!95 &7950684517113240490
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040421391604227224}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 240072483358eb04bbee7717b4d7f63e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4252412773697519901
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6073998675608550423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00037, y: 0.00019, z: 0.00344}
+  m_LocalPosition: {x: 0.00037, y: 0.00019, z: 0.003538}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 2412363184823453218}
