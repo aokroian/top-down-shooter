@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 2281872067415912937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.000746, z: 0.01195}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2412363184823453218}
   m_RootOrder: 6
@@ -229,7 +229,7 @@ MonoBehaviour:
   rateOfFire: 0
   reloadTime: 1
   numberOfPenetrations: 3
-  localPosition: {x: 0.00125, y: 0.00117, z: 0.00065}
+  localPosition: {x: 0.00125, y: 0.001, z: 0.0009}
   localRotation: {x: 0, y: 0, z: 0}
   localScale: {x: 1, y: 1, z: 1}
   bulletFlashRef: {fileID: 2514344755903072682, guid: 341dfcc7d5f4a894ca7d2340a990788e, type: 3}
@@ -237,7 +237,7 @@ MonoBehaviour:
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
   bulletObjRef: {fileID: 8555050829149161235, guid: c46cfb22f88b96247ae9a0ab4a804a63, type: 3}
   bulletVelocity: 30
-  bulletsInClip: 30
+  bulletsInClip: 1
   maxShotAngle: 10
   ammoType: 3
 --- !u!114 &8540788568294090431
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserOriginPoint: {fileID: 5561771759735119739}
-  isEnabled: 0
+  isEnabled: 1
 --- !u!95 &7950684517113240490
 Animator:
   serializedVersion: 3

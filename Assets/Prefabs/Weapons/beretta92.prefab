@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6290ca12821f8d341b7a1ad924a57844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
@@ -139,7 +140,8 @@ MonoBehaviour:
   clipSize: 20
   rateOfFire: 0.15
   reloadTime: 0.3
-  localPosition: {x: 0.00144, y: 0.00129, z: 0.00663}
+  numberOfPenetrations: 1
+  localPosition: {x: 0.00144, y: 0.002, z: 0.00663}
   localRotation: {x: 0, y: 0, z: 0}
   localScale: {x: 0.01, y: 0.01, z: 0.01}
   bulletFlashRef: {fileID: 2514344755903072682, guid: 341dfcc7d5f4a894ca7d2340a990788e, type: 3}
@@ -147,7 +149,7 @@ MonoBehaviour:
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
   bulletObjRef: {fileID: 8555050829149161235, guid: c46cfb22f88b96247ae9a0ab4a804a63, type: 3}
   bulletVelocity: 30
-  bulletsInClip: 0
+  bulletsInClip: 20
   maxShotAngle: 10
   ammoType: 1
 --- !u!114 &7616682135052341138
@@ -176,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserOriginPoint: {fileID: 5538476393623822965}
-  isEnabled: 0
+  isEnabled: 1
 --- !u!1 &5536215420189029880
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,8 +282,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0.1522, z: 0}
+  - {x: 0, y: 0.1522, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

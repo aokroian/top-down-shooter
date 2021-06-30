@@ -4,15 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Animations.Rigging;
 
-/*
-public enum ShootingModes
-{
-    Automatic,
-    Single,
-}
-*/
-
-
 public class WeaponController : MonoBehaviour, IAmmoConsumer
 {
     // variables for animation
@@ -67,7 +58,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
     private void Start()
     {
-        //get weapon animator
+        //get weapon animator and set reload time float for reload animation
         animator = gameObject.GetComponent<Animator>();
         if (animator != null)
         {
@@ -76,15 +67,11 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
                 animator.SetFloat("reload time", reloadTime);
             }
         }
-        
-        // get owners weapon aim rig layer (needed to disable it playing animations)
-        weaponAimRigLayer = ownerObjRef.transform.Find("RigLayer_WeaponAim").gameObject.GetComponent<Rig>();
 
         // установка дефолтных значений таймеров и патронов в обойме
-        
         reloadTimer = 0f;
         nextShotTimer = 0f;
-        
+
     }
 
     private void Update()
@@ -92,42 +79,23 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         // animation part
         if (animator != null)
         {
-            
             if (isReloading)
             {
-                // disable weapon aim
-                if (weaponAimRigLayer != null)
-                {
-                    weaponAimRigLayer.weight = 0f;
-                }
-                //disable laser aim
                 gameObject.GetComponent<LaserAim>().isEnabled = false;
-
-                // start reloading animation
-                if (animator != null)
-                    animator.SetBool("is reloading", true);
-                
+                animator.SetBool("is reloading", true);
             }
             else
             {
-                if (weaponAimRigLayer != null)
-                {
-                    weaponAimRigLayer.weight = 1f;
-                }
-                if (animator != null)
-                    animator.SetBool("is reloading", false);
                 gameObject.GetComponent<LaserAim>().isEnabled = true;
+                animator.SetBool("is reloading", false);
             }
         }
-        
-
 
         // таймеры
         if (reloadTimer > 0f)
         {
             isReloading = true;
             reloadTimer -= Time.deltaTime;
-            //playerRef.GetComponent<PlayerController>().isAiming = playerRef.GetComponent<PlayerController>().alwaysAiming;
         }
         if (nextShotTimer > 0f)
         {
@@ -136,7 +104,6 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         if (reloadTimer < 0f)
         {
             reloadTimer = 0f;
-            //playerRef.GetComponent<PlayerController>().isAiming = false;
         }
         if (reloadTimer == 0f)
         {
@@ -191,7 +158,6 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
         if (bulletsInClip >= 1)
         {
-            //Debug.DrawLine(pos, targetPos, Color.green, Mathf.Infinity);
             // частицы у ствола
             if (bulletFlashRef != null)
                 Instantiate(bulletFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation, transform);
@@ -254,7 +220,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
         // когда патроны остались только в магазине, перезарядка невозможна
         if (!ammoProvider.HasAmmo(ammoType)) return;
-        
+
         // TODO: Should be at end of reloading?
         bulletsInClip += ammoProvider.GetAmmo(ammoType, needToAdd);
     }

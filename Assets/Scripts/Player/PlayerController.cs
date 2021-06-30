@@ -32,8 +32,6 @@ public class PlayerController : MonoBehaviour
     public GameObject parentBoneForWeapon;
     public GameObject parentBoneForThrowableItems;
     public PlayerAmmoController ammoController;
-    //public int amountOfBullets = 1000;
-    //public int amountOfGrenades = 1000;
 
     private GameObject equippedItemObj;
     private EquipmentItemType selectedItemType;
@@ -56,7 +54,6 @@ public class PlayerController : MonoBehaviour
 
     // variables for aiming system
     public Camera cam;
-    public float minLookAtDistance = 1.0f;
     public Vector3 aimAtPosition;
 
     private int[] bulletsInClip;
@@ -212,7 +209,7 @@ public class PlayerController : MonoBehaviour
                 FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
 
                 // direction and force
-                Vector3 upForce = new Vector3(0f, 3f, 0f);
+                Vector3 upForce = new Vector3(0f, 4f, 0f);
                 Vector3 throwForce = (aimAtPosition - transform.position) + gameObject.GetComponent<Rigidbody>().velocity + upForce;
 
                 equippedItemObj.GetComponent<ThrowableItemController>().Throw(throwForce);
@@ -241,9 +238,6 @@ public class PlayerController : MonoBehaviour
         // смещение
         Vector3 offset = new Vector3(movement.x, 0.0f, movement.y) * currentMovementSpeed;
 
-        // игрок двигается в направлении курсора
-        //transform.Translate(offset.normalized * currentMovementSpeed * Time.deltaTime);
-
         // игрок двигается по глобальным осям
         if (movement.magnitude >= 0.01f)
         {
@@ -256,11 +250,11 @@ public class PlayerController : MonoBehaviour
 
         // вращение персонажа 
         Vector3 lTargetDir = aimAtPosition - transform.position;
-        lTargetDir.y = 0.0f;
+        lTargetDir.y = 0f;
 
         //GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
-        GetComponent<Rigidbody>().MoveRotation(Quaternion.LookRotation(lTargetDir));
-
+        GetComponent<Rigidbody>().MoveRotation(Quaternion.LookRotation(lTargetDir, Vector3.up));
+        
     }
 
     private void SelectItem(int itemIndex)
@@ -298,9 +292,6 @@ public class PlayerController : MonoBehaviour
                 equippedItemObj.transform.localPosition = weaponController.localPosition;
                 equippedItemObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
                 equippedItemObj.transform.localScale = weaponController.localScale;
-                // setup weapon aim constrained object (weapon obj)
-                weaponAimConstraintObj.GetComponent<MultiAimConstraint>().data.constrainedObject = equippedItemObj.transform;
-                gameObject.GetComponent<RigBuilder>().Build();
             }
             else if (selectedItemType == EquipmentItemType.throwableItem)
             {
@@ -348,15 +339,11 @@ public class PlayerController : MonoBehaviour
         float rayLength;
         if (groundPlane.Raycast(cameraRay, out rayLength))
         {
-            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
-            //Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
-
-            
-            return pointToLook;
+            return cameraRay.GetPoint(rayLength); ;
         }
         else
         {
-            return gameObject.transform.position;
+            return aimAtPosition;
         }
     }
 
