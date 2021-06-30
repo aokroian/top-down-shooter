@@ -2465,6 +2465,18 @@ PrefabInstance:
       propertyPath: m_Data.m_ConstrainedObject
       value: 
       objectReference: {fileID: 328957670}
+    - target: {fileID: 8478576174271764757, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Radius
+      value: 0.13257167
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478576174271764757, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Center.x
+      value: -0.00035585463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478576174271764757, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0124696195
+      objectReference: {fileID: 0}
     - target: {fileID: 8546143664841721988, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_Name
       value: Player
