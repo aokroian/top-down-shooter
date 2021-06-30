@@ -69,10 +69,14 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     {
         //get weapon animator
         animator = gameObject.GetComponent<Animator>();
-        if (animator.GetFloat("reload time") >= 0.01f)
+        if (animator != null)
         {
-            animator.SetFloat("reload time", reloadTime);
+            if (animator.GetFloat("reload time") >= 0.01f)
+            {
+                animator.SetFloat("reload time", reloadTime);
+            }
         }
+        
         // get owners weapon aim rig layer (needed to disable it playing animations)
         weaponAimRigLayer = ownerObjRef.transform.Find("RigLayer_WeaponAim").gameObject.GetComponent<Rig>();
 
