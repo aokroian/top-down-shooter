@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: -7646230606861975914}
   - component: {fileID: -212812623086173738}
   - component: {fileID: -4223559476846630922}
+  - component: {fileID: 4706878546568707236}
   m_Layer: 0
   m_Name: UZI
   m_TagString: Untagged
@@ -372,6 +373,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+--- !u!65 &4706878546568707236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400639491841712557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08035132, y: 0.3569374, z: 0.35520878}
+  m_Center: {x: 0.0034573227, y: -0.12100637, z: 0.17200194}
 --- !u!1 &7972366740714636292
 GameObject:
   m_ObjectHideFlags: 0
