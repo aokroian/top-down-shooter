@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 4499716576559252643}
   - component: {fileID: 7616682135052341138}
   - component: {fileID: 4367855227709903072}
-  - component: {fileID: 4190336322589362175}
   m_Layer: 0
   m_Name: beretta92
   m_TagString: Untagged
@@ -180,19 +179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserOriginPoint: {fileID: 5538476393623822965}
   isEnabled: 1
---- !u!65 &4190336322589362175
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3653366746708802039}
-  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.048455007, y: 0.060744375, z: 0.16687822}
-  m_Center: {x: 0.0000000037252903, y: 0.13799314, z: 0.04638256}
 --- !u!1 &5536215420189029880
 GameObject:
   m_ObjectHideFlags: 0
