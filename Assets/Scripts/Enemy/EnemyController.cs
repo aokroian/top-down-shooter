@@ -29,6 +29,9 @@ public class EnemyController : MonoBehaviour, EnemyProperties
     public float minPosChangeForAnimation = 0.1f;
     public float biteTimer;
 
+    public GameObject aimAtPoint;
+
+
     public EnemyDiesEvent diesEvent;
 
     private State currentState;
@@ -45,6 +48,10 @@ public class EnemyController : MonoBehaviour, EnemyProperties
     // Update is called once per frame
     void Update()
     {
+        if (aimAtPoint != null)
+        {
+            aimAtPoint.transform.position = player.transform.position;
+        }
         /*
         // rotate towards player
         Vector3 lTargetDir = player.transform.position - transform.position;
