@@ -101,7 +101,6 @@ public class PlayerController : MonoBehaviour
 
         // rewrite variables for movement
 #if UNITY_ANDROID
-        movementJoystick.gameObject.SetActive(true);
         movement.x = movementJoystick.Horizontal;
         movement.y = movementJoystick.Vertical;
         aimAtPosition = GetJoystickRotation();
@@ -116,9 +115,6 @@ public class PlayerController : MonoBehaviour
 
         // stamina system
         CalculateStamina();
-
-
-
 
         // animations
         Animator animator = GetComponent<Animator>();
@@ -150,7 +146,6 @@ public class PlayerController : MonoBehaviour
             rigLayerHandsPosition.GetComponent<Rig>().weight = 1f;
         }
 
-#if UNITY_STANDALONE
         // dodge system
         if (Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
         {
@@ -176,6 +171,7 @@ public class PlayerController : MonoBehaviour
             dodgeTimer = 0f;
         }
 
+#if UNITY_STANDALONE
         // item selection system
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
