@@ -23,7 +23,7 @@ public class Destructible : MonoBehaviour
         Target target = gameObject.GetComponent<Target>();
 
         GameObject destructible = Instantiate(destructiblePrefab, transform.position, transform.rotation);
-
+        //destructible.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
 
         //force to all parts
         foreach (Transform child in destructible.transform)
