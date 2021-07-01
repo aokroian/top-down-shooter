@@ -1,42 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Destructible : MonoBehaviour
 {
     public GameObject destructiblePrefab;
 
-    private Dictionary<string, Vector3> partsPos = new Dictionary<string, Vector3>()
-    {
-
-    };
-    private Dictionary<string, Quaternion> partsRot = new Dictionary<string, Quaternion>()
-    {
-    };
-
+    private Vector3? velocity;
+    private Target target;
     private void Start()
     {
-
+        target = gameObject.GetComponent<Target>();
     }
     public void ChangeToDestructible()
     {
-        Target target = gameObject.GetComponent<Target>();
-
         GameObject destructible = Instantiate(destructiblePrefab, transform.position, transform.rotation);
-        //destructible.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+        velocity = gameObject.GetComponent<NavMeshAgent>().velocity;
 
         //force to all parts
         foreach (Transform child in destructible.transform)
         {
             Rigidbody rb = child.gameObject.GetComponent<Rigidbody>();
-            Vector3 force = Vector3.ClampMagnitude(target.hitDir, 1f) * target.hitForceAmount;
+            Vector3 force = (Vector3.ClampMagnitude(target.hitDir, 1f) * target.hitForceAmount) ;
 
             if (target.isFromExplosion)
             {
                 rb.AddExplosionForce(target.hitForceAmount, target.explosionPosition, target.explosionRadius);
             } else
             {
-                rb.AddForce(force, ForceMode.Impulse);
+                rb.AddForce(force + (velocity ?? Vector3.zero), ForceMode.Impulse);
             }
             
         }
