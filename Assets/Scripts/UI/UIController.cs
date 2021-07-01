@@ -13,9 +13,25 @@ public class UIController : MonoBehaviour
     public Target target;
     public PlayerAmmoController ammoController;
 
+    public Joystick movementJoystick;
+    public Joystick cameraJoystick;
+    public Image shootButton;
+    public Image reloadButton;
+    public Image nextWeaponButton;
+    public Image dodgeButton;
+    public Image menuButton;
+
     void Start()
     {
-
+#if UNITY_ANDROID
+        movementJoystick.gameObject.SetActive(true);
+        cameraJoystick.gameObject.SetActive(true);
+        shootButton.gameObject.SetActive(true);
+        reloadButton.gameObject.SetActive(true);
+        nextWeaponButton.gameObject.SetActive(true);
+        dodgeButton.gameObject.SetActive(true);
+        menuButton.gameObject.SetActive(true);
+#endif
     }
 
 
@@ -36,5 +52,25 @@ public class UIController : MonoBehaviour
         var hp = target.GetHPPercent();
         hpScroll.GetComponent<Scrollbar>().value = hp;
         hpScroll.GetComponent<Image>().color = Color.Lerp(Color.black, Color.red, hp);
+    }
+
+    public void Shoot()
+    {
+        playerController.Shoot();
+    }
+
+    public void Reload()
+    {
+        playerController.Reload();
+    }
+
+    public void NextWeapon()
+    {
+        playerController.NextWeapon();
+    }
+
+    public void Dodge()
+    {
+        playerController.Dodge();
     }
 }

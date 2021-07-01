@@ -35,4 +35,9 @@ public class GameButtonController : MonoBehaviour
         pauseScreen.SetActive(false);
         settingScreen.SetActive(true);
     }
+
+    public void OnBack()
+    {
+        pauseScreen.SetActive(false);
+    }
 }

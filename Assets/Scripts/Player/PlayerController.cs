@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
@@ -32,6 +30,11 @@ public class PlayerController : MonoBehaviour
     public GameObject parentBoneForWeapon;
     public GameObject parentBoneForThrowableItems;
     public PlayerAmmoController ammoController;
+
+    // Mobile controller
+    public Joystick movementJoystick;
+    public Joystick cameraJoystick;
+    private int currentWeapon = 1;
 
     private GameObject equippedItemObj;
     private EquipmentItemType selectedItemType;
@@ -84,7 +87,7 @@ public class PlayerController : MonoBehaviour
         FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
 
         bulletsInClip = new int[itemsEquipmentArr.Length];
-        for (int i = 0; i < bulletsInClip.Length; i ++)
+        for (int i = 0; i < bulletsInClip.Length; i++)
         {
             bulletsInClip[i] = -1;
         }
@@ -96,12 +99,20 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // rewrite variables for movement 
+        // rewrite variables for movement
+#if UNITY_ANDROID
+        movementJoystick.gameObject.SetActive(true);
+        movement.x = movementJoystick.Horizontal;
+        movement.y = movementJoystick.Vertical;
+        aimAtPosition = GetJoystickRotation();
+#endif
+
+#if UNITY_STANDALONE
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
-        movement = Vector2.ClampMagnitude(movement, 1f);
-        // set aiming point from mouse on screen position (for PC)
         aimAtPosition = GetAimPoint(Input.mousePosition);
+#endif
+        movement = Vector2.ClampMagnitude(movement, 1f);
 
         // stamina system
         CalculateStamina();
@@ -126,7 +137,7 @@ public class PlayerController : MonoBehaviour
         {
             leftHandConstraintController.transform.position = leftHandPoint.transform.position;
         }
-        
+
 
 
         // controlling hand position constraints weight
@@ -139,6 +150,7 @@ public class PlayerController : MonoBehaviour
             rigLayerHandsPosition.GetComponent<Rig>().weight = 1f;
         }
 
+#if UNITY_STANDALONE
         // dodge system
         if (Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
         {
@@ -229,9 +241,73 @@ public class PlayerController : MonoBehaviour
                 }*/
             }
         }
-
+#endif
     }
 
+    public void Shoot()
+    {
+        if (selectedItemType == EquipmentItemType.weapon)
+        {
+            if (equippedItemObj != null)
+            {
+                FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
+                equippedItemObj.GetComponent<WeaponController>().Shoot(0, aimAtPointController.transform.position);
+            }
+        }
+        if (Input.GetMouseButtonUp(0) && equippedItemObj != null && grenadeInHand)
+        {
+            if (equippedItemObj != null && grenadeInHand)
+            {
+                FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
+
+                // direction and force
+                Vector3 upForce = new Vector3(0f, 4f, 0f);
+                Vector3 throwForce = (aimAtPosition - transform.position) + gameObject.GetComponent<Rigidbody>().velocity + upForce;
+
+                equippedItemObj.GetComponent<ThrowableItemController>().Throw(throwForce);
+                selectedItemIndex = 0;
+                equippedItemIndex = 0;
+                equippedItemObj = null;
+
+                grenadeInHand = false;
+
+                if (ammoController.HasAmmo(AmmoType.GRENADE))
+                {
+                    SelectItem(3);
+                }
+                /*else
+                {
+                    SelectItem(0);
+                }*/
+            }
+        }
+    }
+
+    public void Reload()
+    {
+        if (selectedItemType == EquipmentItemType.weapon)
+        {
+            if (equippedItemObj != null)
+            {
+                equippedItemObj.GetComponent<WeaponController>().Reload();
+            }
+        }
+    }
+
+    public void NextWeapon()
+    {
+        currentWeapon++;
+        if (currentWeapon == 4)
+        {
+            currentWeapon = 0;
+        }
+        SelectItem(currentWeapon);
+    }
+
+    public void Dodge()
+    {
+        // Maybe next time
+    }
 
     private void FixedUpdate()
     {
@@ -254,7 +330,7 @@ public class PlayerController : MonoBehaviour
 
         //GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
         GetComponent<Rigidbody>().MoveRotation(Quaternion.LookRotation(lTargetDir, Vector3.up));
-        
+
     }
 
     private void SelectItem(int itemIndex)
@@ -266,7 +342,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (equippedItemObj != null) {
+        if (equippedItemObj != null)
+        {
             bulletsInClip[selectedItemIndex - 1] = equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoLeft();
         }
 
@@ -313,7 +390,8 @@ public class PlayerController : MonoBehaviour
                     equippedItemObj.transform.localRotation = Quaternion.Euler(throwableItemController.localRotation);
                     equippedItemObj.transform.localScale = throwableItemController.localScale;
 
-                } else
+                }
+                else
                 {
                     SelectItem(0);
                     return;
@@ -404,11 +482,20 @@ public class PlayerController : MonoBehaviour
     {
         AmmoType[] result = new AmmoType[itemsEquipmentArr.Length];
 
-        for (int i = 0; i < itemsEquipmentArr.Length; i ++)
+        for (int i = 0; i < itemsEquipmentArr.Length; i++)
         {
             result[i] = itemsEquipmentArr[i].GetComponent<IAmmoConsumer>().GetAmmoType();
         }
 
         return result;
     }
+
+    private Vector3 GetJoystickRotation()
+    {
+        return new Vector3(
+            transform.position.x + cameraJoystick.Horizontal * 10,
+            0,
+            transform.position.z + cameraJoystick.Vertical * 10);
+    }
+
 }

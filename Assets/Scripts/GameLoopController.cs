@@ -71,7 +71,7 @@ public class GameLoopController : MonoBehaviour
     //    }
     //}
 
-    private void Pause()
+    public void Pause()
     {
         Time.timeScale = 0f;
         paused = true;
