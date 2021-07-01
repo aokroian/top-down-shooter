@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
 
     private int[] bulletsInClip;
 
+    private Animator animator;
+
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
     {
         if (obj.Find(name) != null)
@@ -117,7 +119,7 @@ public class PlayerController : MonoBehaviour
         CalculateStamina();
 
         // animations
-        Animator animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         Vector3 globalMovement = new Vector3(movement.x, 0.0f, movement.y);
         Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
         animator.SetFloat("local Z speed", localMovement.z);
@@ -135,7 +137,6 @@ public class PlayerController : MonoBehaviour
         }
 
 
-
         // controlling hand position constraints weight
         if (equippedItemObj == null)
         {
@@ -146,7 +147,7 @@ public class PlayerController : MonoBehaviour
             rigLayerHandsPosition.GetComponent<Rig>().weight = 1f;
         }
 
-        // dodge system
+        // dodge system РАБОТАЕТ ЧЕРЕЗ ЖОПУ
         if (Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
         {
             dodgeTimer += dodgeTime;
@@ -300,9 +301,32 @@ public class PlayerController : MonoBehaviour
         SelectItem(currentWeapon);
     }
 
+    // РАБОТАЕТ ЧЕРЕЗ ЖОПУ КАК И ДОДЖ НА КОМПЕ
     public void Dodge()
     {
-        // Maybe next time
+        if (movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
+        {
+            dodgeTimer += dodgeTime;
+            stamina -= dodgeStaminaCost;
+
+            animator.SetBool("Is Dodging", true);
+        }
+        if (dodgeTimer > 0f)
+        {
+            dodgeTimer -= Time.deltaTime;
+            currentMovementSpeed = dodgeSpeed;
+
+        }
+        else if (dodgeTimer == 0f)
+        {
+            currentMovementSpeed = basicMovementSpeed;
+            animator.SetBool("Is Dodging", false);
+        }
+        else if (dodgeTimer < 0f)
+        {
+
+            dodgeTimer = 0f;
+        }
     }
 
     private void FixedUpdate()
