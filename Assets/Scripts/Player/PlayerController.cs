@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
     private int[] bulletsInClip;
 
     private Animator animator;
+    private Coroutine fireFrequency;
 
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
     {
@@ -241,43 +243,57 @@ public class PlayerController : MonoBehaviour
 #endif
     }
 
-    public void Shoot()
+    IEnumerator FireDelay()
     {
-        if (selectedItemType == EquipmentItemType.weapon)
+        while (true)
         {
-            if (equippedItemObj != null)
+            if (selectedItemType == EquipmentItemType.weapon)
             {
-                FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
-                equippedItemObj.GetComponent<WeaponController>().Shoot(0, aimAtPointController.transform.position);
-            }
-        }
-        if (Input.GetMouseButtonUp(0) && equippedItemObj != null && grenadeInHand)
-        {
-            if (equippedItemObj != null && grenadeInHand)
-            {
-                FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
-
-                // direction and force
-                Vector3 upForce = new Vector3(0f, 4f, 0f);
-                Vector3 throwForce = (aimAtPosition - transform.position) + gameObject.GetComponent<Rigidbody>().velocity + upForce;
-
-                equippedItemObj.GetComponent<ThrowableItemController>().Throw(throwForce);
-                selectedItemIndex = 0;
-                equippedItemIndex = 0;
-                equippedItemObj = null;
-
-                grenadeInHand = false;
-
-                if (ammoController.HasAmmo(AmmoType.GRENADE))
+                if (equippedItemObj != null)
                 {
-                    SelectItem(3);
+                    FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
+                    equippedItemObj.GetComponent<WeaponController>().Shoot(0, aimAtPointController.transform.position);
                 }
-                /*else
-                {
-                    SelectItem(0);
-                }*/
             }
+            if (Input.GetMouseButtonUp(0) && equippedItemObj != null && grenadeInHand)
+            {
+                if (equippedItemObj != null && grenadeInHand)
+                {
+                    FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
+
+                    // direction and force
+                    Vector3 upForce = new Vector3(0f, 4f, 0f);
+                    Vector3 throwForce = (aimAtPosition - transform.position) + gameObject.GetComponent<Rigidbody>().velocity + upForce;
+
+                    equippedItemObj.GetComponent<ThrowableItemController>().Throw(throwForce);
+                    selectedItemIndex = 0;
+                    equippedItemIndex = 0;
+                    equippedItemObj = null;
+
+                    grenadeInHand = false;
+
+                    if (ammoController.HasAmmo(AmmoType.GRENADE))
+                    {
+                        SelectItem(3);
+                    }
+                    /*else
+                    {
+                        SelectItem(0);
+                    }*/
+                }
+            }
+            yield return new WaitForFixedUpdate();
         }
+    }
+
+    public void StartShooting()
+    {
+        fireFrequency = StartCoroutine(FireDelay());
+    }
+
+    public void StopShooting()
+    {
+        StopCoroutine(fireFrequency);
     }
 
     public void Reload()

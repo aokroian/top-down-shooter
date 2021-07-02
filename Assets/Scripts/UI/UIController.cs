@@ -54,9 +54,14 @@ public class UIController : MonoBehaviour
         hpScroll.GetComponent<Image>().color = Color.Lerp(Color.black, Color.red, hp);
     }
 
-    public void Shoot()
+    public void StartShooting()
     {
-        playerController.Shoot();
+        playerController.StartShooting();
+    }
+
+    public void StopShooting()
+    {
+        playerController.StopShooting();
     }
 
     public void Reload()
