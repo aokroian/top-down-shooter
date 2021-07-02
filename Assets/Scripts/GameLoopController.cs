@@ -85,6 +85,11 @@ public class GameLoopController : MonoBehaviour
         paused = false;
     }
 
+    public GameState GetGameState()
+    {
+        return currentState;
+    }
+
     private void ShowMenu()
     {
         pauseScreen.SetActive(true);

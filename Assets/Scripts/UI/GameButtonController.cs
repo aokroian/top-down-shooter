@@ -9,6 +9,31 @@ public class GameButtonController : MonoBehaviour
 {
     public GameObject pauseScreen;
     public GameObject settingScreen;
+    public GameObject backButton;
+
+    public GameLoopController gameLoopController;
+
+    private Sprite pauseBackground, deadBackground;
+
+    public void Start()
+    {
+        pauseBackground = Resources.Load<Sprite>("UI/PauseBackground");
+        deadBackground = Resources.Load<Sprite>("UI/DeadBackground");
+    }
+
+    public void Update()
+    {
+        if (gameLoopController.GetGameState() == GameLoopController.GameState.DEAD)
+        {
+            backButton.SetActive(false);
+            pauseScreen.GetComponent<Image>().sprite = deadBackground;
+        }
+        else
+        {
+            backButton.SetActive(true);
+            pauseScreen.GetComponent<Image>().sprite = pauseBackground;
+        }
+    }
 
     public void OnMenuItemEnter(GameObject item)
     {
@@ -38,6 +63,6 @@ public class GameButtonController : MonoBehaviour
 
     public void OnBack()
     {
-        pauseScreen.SetActive(false);
+        gameLoopController.UnPause();
     }
 }
