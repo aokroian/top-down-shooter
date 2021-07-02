@@ -31,7 +31,7 @@ public class WeaponScreenController : MonoBehaviour
         scrollItem.GetComponent<WeaponButtonController>().SetParent(this);
         scrollItem.transform.SetParent(container.transform, false);
 
-        scrollItem.GetComponent<Image>().sprite = weapon.image;
+        scrollItem.GetComponent<Image>().sprite = Sprite.Create(weapon.image, new Rect(0.0f, 0.0f, weapon.image.width, weapon.image.height), new Vector2(0.5f, 0.5f));
         FindItemById<Text>(scrollItem, "WeaponNameText").text = weapon.name;
         FindItemById<Text>(scrollItem, "PropertyText").text = weapon.description;
         FindItemById<Text>(scrollItem, "CostText").text = weapon.cost.ToString();

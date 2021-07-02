@@ -1,0 +1,12 @@
+.menu-item {
+    -unity-font: url('/Assets/Resources/Fonts/DotGothic16-Regular.ttf');
+    font-size: 32px;
+    -unity-font-style: normal;
+    color: rgb(249, 170, 51);
+    -unity-background-image-tint-color: rgb(0, 29, 61);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menu-item:hover {
+    color: rgb(255, 214, 10);
+}

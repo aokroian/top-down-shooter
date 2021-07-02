@@ -15,10 +15,13 @@ MonoBehaviour:
   upgradeType: 1
   isRoot: 0
   children: []
-  image: {fileID: 21300000, guid: f7141627b9596483494b96e376a7be67, type: 3}
-  cost: 200000
-  upgradeName: 
-  description: Very cool rifle
+  purchased: 0
+  image: {fileID: 0}
+  cost: 300
+  upgradeName: +10% dmg
+  description: 
+  orderInUpgradeScreen: 0
   weapon: 2
   weaponUpgradeType: 0
-  value: 0
+  value: 10
+  tier: 0

@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="/Assets/UI/Styles/Overall.uss" />
+    <Style src="/Assets/UI/Styles/Upgrade.uss" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement class="panel" style="justify-content: center; align-items: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; flex-grow: 1; flex-basis: auto;">
+            <ui:Label text="Upgrade and choose weapon" display-tooltip-when-elided="true" style="font-size: 32px;" />
+        </ui:VisualElement>
+        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" mode="Horizontal" name="UpgradesScroll" style="margin-top: 0; margin-bottom: 0; background-color: rgba(0, 0, 0, 0); padding-top: 10px; padding-bottom: 10px; flex-grow: 1; justify-content: flex-start; align-items: stretch; flex-basis: 75%;" />
+        <ui:VisualElement style="border-left-width: 0; border-right-width: 0; border-bottom-width: 0; flex-grow: 0; width: auto; height: 80px; flex-direction: row;">
+            <ui:Button display-tooltip-when-elided="true" name="BackToTitle" class="button" style="position: absolute; left: 0; bottom: 10px; width: 64px; height: 64px; border-left-width: 0; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; background-image: url(&apos;/Assets/UI/Icons/outline_logout_black_48dp.png&apos;); margin-left: 0; padding-left: 0;" />
+            <ui:Button display-tooltip-when-elided="true" name="StartGame" class="button" style="right: 0; bottom: 10px; position: absolute; width: auto; height: 64px; background-image: none; border-top-left-radius: 15px; border-top-right-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 0; border-left-width: 3px; border-right-width: 0; border-top-width: 3px; border-bottom-width: 3px; margin-right: 0; padding-right: 0; -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-right: 0; flex-direction: row; padding-top: 0; padding-bottom: 0; margin-bottom: 1px; -unity-text-align: middle-center; justify-content: flex-end;">
+                <ui:Label text="Run" display-tooltip-when-elided="true" style="font-size: 24px; padding-bottom: 5px;" />
+                <ui:VisualElement style="background-image: url(&apos;/Assets/UI/Icons/outline_arrow_forward_ios_black_48dp.png&apos;); width: 58px; height: 58px; -unity-background-image-tint-color: rgb(0, 53, 102); -unity-background-scale-mode: stretch-to-fill;" />
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
