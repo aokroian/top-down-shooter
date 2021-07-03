@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
@@ -32,7 +33,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     [SerializeField] private bool snapY = false;
 
     [SerializeField] protected RectTransform background = null;
-    [SerializeField] private RectTransform handle = null;
+    [SerializeField] public RectTransform handle = null;
     private RectTransform baseRect = null;
 
     private Canvas canvas;
@@ -60,6 +61,9 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         OnDrag(eventData);
+
+        gameObject.GetComponent<Image>().color = SetAlpha(1f);
+        handle.GetComponent<Image>().color = SetAlpha(1f);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -133,13 +137,26 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     {
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
+
+        gameObject.GetComponent<Image>().color = SetAlpha(0.1f);
+        handle.GetComponent<Image>().color = SetAlpha(0.1f);
+    }
+
+    public RectTransform GetHandle()
+    {
+        return handle;
     }
 
     protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)
     {
         Vector2 localPoint = Vector2.zero;
-            Vector2 pivotOffset = baseRect.pivot * baseRect.sizeDelta;
-            return localPoint - (background.anchorMax * baseRect.sizeDelta) + pivotOffset;
+        Vector2 pivotOffset = baseRect.pivot * baseRect.sizeDelta;
+        return localPoint - (background.anchorMax * baseRect.sizeDelta) + pivotOffset;
+    }
+
+    public Color SetAlpha(float alpha)
+    {
+        return new Color(1, 1, 1, alpha);
     }
 }
 
