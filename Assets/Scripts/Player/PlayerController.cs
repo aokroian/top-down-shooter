@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
     // Mobile controller
     public Joystick movementJoystick;
     public Joystick cameraJoystick;
-    private int currentWeapon = 0;
 
     private GameObject equippedItemObj;
     private EquipmentItemType selectedItemType;
@@ -78,7 +77,7 @@ public class PlayerController : MonoBehaviour
     public void OnMovement(InputAction.CallbackContext value)
     {
         Vector2 inputMovement = value.ReadValue<Vector2>();
-        leftStickPosition = inputMovement;
+        leftStickPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
         wasdPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
 
     }
@@ -154,26 +153,6 @@ public class PlayerController : MonoBehaviour
         InputActionRebindingExtensions.RemoveAllBindingOverrides(playerInput.currentActionMap);
     }
 
-
-
-    private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
-    {
-        if (obj.Find(name) != null)
-        {
-            storeInObj = obj.Find(name).gameObject;
-        }
-        else
-        {
-            foreach (Transform eachChild in obj)
-            {
-                if (eachChild.childCount > 0)
-                {
-                    FindInAllChildren(eachChild, name, ref storeInObj);
-                }
-            }
-        }
-
-    }
     private void Start()
     {
         FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
@@ -209,10 +188,8 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                // need to calculate aim point when not touching right stick
+                //TODO: need to calculate aim point when not touching right stick here
             }
-
-
             movement = leftStickPosition;
         }
         if (currentControlScheme == "Keyboard")
@@ -380,18 +357,19 @@ public class PlayerController : MonoBehaviour
         lTargetDir.y = 0f;
 
         GetComponent<Rigidbody>().MoveRotation(Quaternion.LookRotation(lTargetDir, Vector3.up));
-
     }
 
     private void SelectItem(int itemIndex)
     {
-        selectedItemIndex = itemIndex;
-
         if (equippedItemObj != null)
         {
-            bulletsInClip[selectedItemIndex -1] = equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoLeft();
+            bulletsInClip[selectedItemIndex] = equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoLeft();
             Destroy(equippedItemObj);
         }
+
+        selectedItemIndex = itemIndex;
+
+        
 
 
         equippedItemObj = Instantiate(itemsEquipmentArr[itemIndex], parentBoneForWeapon.transform);
@@ -502,4 +480,22 @@ public class PlayerController : MonoBehaviour
             transform.position.z + cameraJoystick.Vertical * 10);
     }
 
+    private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
+    {
+        if (obj.Find(name) != null)
+        {
+            storeInObj = obj.Find(name).gameObject;
+        }
+        else
+        {
+            foreach (Transform eachChild in obj)
+            {
+                if (eachChild.childCount > 0)
+                {
+                    FindInAllChildren(eachChild, name, ref storeInObj);
+                }
+            }
+        }
+
+    }
 }

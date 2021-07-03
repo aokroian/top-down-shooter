@@ -10,14 +10,14 @@
                     "type": "Value",
                     "id": "976044b3-6d21-4789-985c-493475d98d42",
                     "expectedControlType": "Stick",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "interactions": ""
                 },
                 {
                     "name": "Aiming",
                     "type": "Value",
                     "id": "92ee61e4-33ce-4d5e-9d6b-6abad1921154",
-                    "expectedControlType": "",
+                    "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": ""
                 },
