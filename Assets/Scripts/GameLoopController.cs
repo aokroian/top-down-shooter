@@ -27,36 +27,10 @@ public class GameLoopController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Act();
-    }
-
-    private void Act()
-    {
-        switch (currentState)
+        if (playerTarget.health == 0f)
         {
-            case GameState.RUNNING:
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    currentState = GameState.PAUSE;
-                    Pause();
-                } else if (playerTarget.health == 0f)
-                {
-                    currentState = GameState.DEAD;
-                    Pause();
-                }
-                break;
-            case GameState.PAUSE:
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    currentState = GameState.RUNNING;
-                    UnPause();
-                }
-                break;
-            case GameState.DEAD:
-
-                break;
-            default:
-                break;
+            currentState = GameState.DEAD;
+            Pause();
         }
     }
 

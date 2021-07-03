@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,9 +13,13 @@ public class PlayerController : MonoBehaviour
     public float dodgeTime = 0.2f;
     public float dodgeStaminaCost = 20f;
 
+    private Vector2 wasdPosition;
+    private Vector2 leftStickPosition;
+    private bool allowedToDodge = false;
     private float currentMovementSpeed = 0f;
     private Vector2 movement;
     private float dodgeTimer = 0f;
+    private Vector2 currentVel;
 
     // variables for health and stamina
     public float health = 100f;
@@ -27,7 +32,6 @@ public class PlayerController : MonoBehaviour
     // variables for the inventory system
     public GameObject[] itemsEquipmentArr;
     public int selectedItemIndex = 0;
-    public int equippedItemIndex = 0;
     public GameObject parentBoneForWeapon;
     public GameObject parentBoneForThrowableItems;
     public PlayerAmmoController ammoController;
@@ -35,7 +39,7 @@ public class PlayerController : MonoBehaviour
     // Mobile controller
     public Joystick movementJoystick;
     public Joystick cameraJoystick;
-    private int currentWeapon = 1;
+    private int currentWeapon = 0;
 
     private GameObject equippedItemObj;
     private EquipmentItemType selectedItemType;
@@ -45,8 +49,6 @@ public class PlayerController : MonoBehaviour
     public GameObject rightHandConstraintController;
     public GameObject leftHandConstraintController;
     public GameObject rigLayerHandsPosition;
-
-    private GameObject aimAtPointController;
     private GameObject weaponAimConstraintObj;
 
     private GameObject rightHandPoint;
@@ -59,11 +61,100 @@ public class PlayerController : MonoBehaviour
     // variables for aiming system
     public Camera cam;
     public Vector3 aimAtPosition;
+    private Vector2 mousePosition;
+    private Vector2 rightStickPosition;
+
+    // other
+    public PlayerInput playerInput;
+    private string currentControlScheme;
+    public GameObject gameLoop;
 
     private int[] bulletsInClip;
-
     private Animator animator;
     private Coroutine fireFrequency;
+    private Coroutine shootingCoroutine;
+
+
+    public void OnMovement(InputAction.CallbackContext value)
+    {
+        Vector2 inputMovement = value.ReadValue<Vector2>();
+        leftStickPosition = inputMovement;
+        wasdPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
+
+    }
+    public void OnAim(InputAction.CallbackContext value)
+    {
+        Vector2 inputAim = value.ReadValue<Vector2>();
+        mousePosition = inputAim;
+        rightStickPosition = inputAim;
+    }
+    public void OnShoot(InputAction.CallbackContext value)
+    {
+        if (value.performed)
+        {
+            shootingCoroutine = StartCoroutine(Shooting());
+        }
+        if (value.canceled)
+        {
+            StopCoroutine(shootingCoroutine);
+        }
+
+    }
+    public void OnReload(InputAction.CallbackContext value)
+    {
+        if (value.performed)
+        {
+            Reload();
+        }
+    }
+    public void OnSwitchItem(InputAction.CallbackContext value)
+    {
+        if (value.performed)
+        {
+            if (selectedItemIndex + 1 == itemsEquipmentArr.Length)
+            {
+                SelectItem(0);
+            }
+            else
+            {
+                SelectItem(selectedItemIndex + 1);
+            }
+        }
+    }
+    public void OnDodge(InputAction.CallbackContext value)
+    {
+        if (value.performed)
+        {
+            allowedToDodge = true;
+        }
+    }
+    public void OnPause()
+    {
+        if (GameLoopController.paused) 
+        {
+            gameLoop.GetComponent<GameLoopController>().UnPause();
+        }
+        if (!GameLoopController.paused)
+        {
+            gameLoop.GetComponent<GameLoopController>().Pause();
+        }
+
+    }
+    public void OnControlsChanged()
+    {
+
+        if (playerInput.currentControlScheme != currentControlScheme)
+        {
+            currentControlScheme = playerInput.currentControlScheme;
+            RemoveAllBindingOverrides();
+        }
+    }
+    void RemoveAllBindingOverrides()
+    {
+        InputActionRebindingExtensions.RemoveAllBindingOverrides(playerInput.currentActionMap);
+    }
+
+
 
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
     {
@@ -95,6 +186,11 @@ public class PlayerController : MonoBehaviour
         {
             bulletsInClip[i] = -1;
         }
+
+        // instantiating first item in inventory
+        SelectItem(0);
+        currentMovementSpeed = basicMovementSpeed;
+        currentControlScheme = playerInput.currentControlScheme;
     }
     void Update()
     {
@@ -103,19 +199,32 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // rewrite variables for movement
-#if UNITY_ANDROID
-        movement.x = movementJoystick.Horizontal;
-        movement.y = movementJoystick.Vertical;
-        aimAtPosition = GetJoystickRotation();
-#endif
+        // aiming and movement values update
+        if (currentControlScheme == "Gamepad")
+        {
+            if (rightStickPosition.magnitude >= 0.1f)
+            {
+                Vector3 pos = new Vector3(rightStickPosition.x, 0f, rightStickPosition.y) * 2;
+                aimAtPosition = transform.position + pos;
+            }
+            else
+            {
+                // need to calculate aim point when not touching right stick
+            }
 
-#if UNITY_STANDALONE
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-        aimAtPosition = GetAimPoint(Input.mousePosition);
-#endif
-        movement = Vector2.ClampMagnitude(movement, 1f);
+
+            movement = leftStickPosition;
+        }
+        if (currentControlScheme == "Keyboard")
+        {
+            aimAtPosition = GetAimPoint(new Vector3(mousePosition.x, mousePosition.y, 0f));
+
+            movement = wasdPosition;
+        }
+        if (currentControlScheme == "Touch")
+        {
+            //
+        }
 
         // stamina system
         CalculateStamina();
@@ -150,7 +259,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // dodge system РАБОТАЕТ ЧЕРЕЗ ЖОПУ
-        if (Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
+        if (allowedToDodge && movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
         {
             dodgeTimer += dodgeTime;
             stamina -= dodgeStaminaCost;
@@ -159,6 +268,7 @@ public class PlayerController : MonoBehaviour
         }
         if (dodgeTimer > 0f)
         {
+            allowedToDodge = false;
             dodgeTimer -= Time.deltaTime;
             currentMovementSpeed = dodgeSpeed;
 
@@ -173,74 +283,6 @@ public class PlayerController : MonoBehaviour
 
             dodgeTimer = 0f;
         }
-
-#if UNITY_STANDALONE
-        // item selection system
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SelectItem(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SelectItem(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SelectItem(3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SelectItem(0);
-        }
-
-
-        // shooting
-        if (selectedItemType == EquipmentItemType.weapon)
-        {
-            if (Input.GetMouseButton(0) && equippedItemObj != null)
-            {
-                FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
-                equippedItemObj.GetComponent<WeaponController>().Shoot(0, aimAtPointController.transform.position);
-            }
-
-            // reload equipped weapon
-            if (Input.GetKeyDown(KeyCode.R) && equippedItemObj != null)
-            {
-                equippedItemObj.GetComponent<WeaponController>().Reload();
-            }
-        }
-
-
-        // TODO: Shouldnt be here !! At throwableItemController?
-        // throwing grenades
-        if (selectedItemType == EquipmentItemType.throwableItem)
-        {
-            if (Input.GetMouseButtonUp(0) && equippedItemObj != null && grenadeInHand)
-            {
-                FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
-
-                // direction and force
-                Vector3 upForce = new Vector3(0f, 4f, 0f);
-                Vector3 throwForce = (aimAtPosition - transform.position) + gameObject.GetComponent<Rigidbody>().velocity + upForce;
-
-                equippedItemObj.GetComponent<ThrowableItemController>().Throw(throwForce);
-                selectedItemIndex = 0;
-                equippedItemIndex = 0;
-                equippedItemObj = null;
-
-                grenadeInHand = false;
-
-                if (ammoController.HasAmmo(AmmoType.GRENADE))
-                {
-                    SelectItem(3);
-                }
-                /*else
-                {
-                    SelectItem(0);
-                }*/
-            }
-        }
-#endif
     }
 
     IEnumerator FireDelay()
@@ -251,23 +293,19 @@ public class PlayerController : MonoBehaviour
             {
                 if (equippedItemObj != null)
                 {
-                    FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
-                    equippedItemObj.GetComponent<WeaponController>().Shoot(0, aimAtPointController.transform.position);
+                    equippedItemObj.GetComponent<WeaponController>().Shoot(0);
                 }
             }
             if (Input.GetMouseButtonUp(0) && equippedItemObj != null && grenadeInHand)
             {
                 if (equippedItemObj != null && grenadeInHand)
                 {
-                    FindInAllChildren(transform, "AimAtPoint", ref aimAtPointController);
-
                     // direction and force
                     Vector3 upForce = new Vector3(0f, 4f, 0f);
                     Vector3 throwForce = (aimAtPosition - transform.position) + gameObject.GetComponent<Rigidbody>().velocity + upForce;
 
                     equippedItemObj.GetComponent<ThrowableItemController>().Throw(throwForce);
                     selectedItemIndex = 0;
-                    equippedItemIndex = 0;
                     equippedItemObj = null;
 
                     grenadeInHand = false;
@@ -286,6 +324,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator Shooting()
+    {
+        while (true)
+        {
+            equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+            yield return new WaitForFixedUpdate();
+        }
+    }
+
     public void StartShooting()
     {
         fireFrequency = StartCoroutine(FireDelay());
@@ -298,51 +345,19 @@ public class PlayerController : MonoBehaviour
 
     public void Reload()
     {
-        if (selectedItemType == EquipmentItemType.weapon)
+        if (equippedItemObj != null)
         {
-            if (equippedItemObj != null)
-            {
-                equippedItemObj.GetComponent<WeaponController>().Reload();
-            }
+            equippedItemObj.GetComponent<WeaponController>().Reload();
         }
     }
 
     public void NextWeapon()
     {
-        currentWeapon++;
-        if (currentWeapon == 4)
-        {
-            currentWeapon = 0;
-        }
-        SelectItem(currentWeapon);
-    }
 
-    // РАБОТАЕТ ЧЕРЕЗ ЖОПУ КАК И ДОДЖ НА КОМПЕ
+    }
     public void Dodge()
     {
-        if (movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
-        {
-            dodgeTimer += dodgeTime;
-            stamina -= dodgeStaminaCost;
 
-            animator.SetBool("Is Dodging", true);
-        }
-        if (dodgeTimer > 0f)
-        {
-            dodgeTimer -= Time.deltaTime;
-            currentMovementSpeed = dodgeSpeed;
-
-        }
-        else if (dodgeTimer == 0f)
-        {
-            currentMovementSpeed = basicMovementSpeed;
-            animator.SetBool("Is Dodging", false);
-        }
-        else if (dodgeTimer < 0f)
-        {
-
-            dodgeTimer = 0f;
-        }
     }
 
     private void FixedUpdate()
@@ -364,82 +379,35 @@ public class PlayerController : MonoBehaviour
         Vector3 lTargetDir = aimAtPosition - transform.position;
         lTargetDir.y = 0f;
 
-        //GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lTargetDir), rotationSpeed));
         GetComponent<Rigidbody>().MoveRotation(Quaternion.LookRotation(lTargetDir, Vector3.up));
 
     }
 
     private void SelectItem(int itemIndex)
     {
-        // remove item if needed
-        if (itemIndex == 0)
-        {
-            Destroy(equippedItemObj);
-            return;
-        }
+        selectedItemIndex = itemIndex;
 
         if (equippedItemObj != null)
         {
-            bulletsInClip[selectedItemIndex - 1] = equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoLeft();
+            bulletsInClip[selectedItemIndex -1] = equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoLeft();
+            Destroy(equippedItemObj);
         }
 
-        if (selectedItemIndex != itemIndex)
-        {
-            if (equippedItemObj != null)
-            {
-                Destroy(equippedItemObj);
-            }
 
-            selectedItemType = itemsEquipmentArr[itemIndex - 1].GetComponent<EquipmentItemController>().itemType;
+        equippedItemObj = Instantiate(itemsEquipmentArr[itemIndex], parentBoneForWeapon.transform);
+        WeaponController weaponController = equippedItemObj.GetComponent<WeaponController>();
 
-            if (selectedItemType == EquipmentItemType.weapon)
-            {
-                equippedItemObj = Instantiate(itemsEquipmentArr[itemIndex - 1], parentBoneForWeapon.transform);
-                WeaponController weaponController = equippedItemObj.GetComponent<WeaponController>();
-
-                weaponController.ownerObjRef = gameObject;
-                weaponController.ammoProvider = ammoController;
-                RestoreWeaponBullets(weaponController, itemIndex - 1);
-                ammoController.currentWeapon = weaponController;
-                // moving the weapon to the desired position
-                equippedItemObj.transform.localPosition = weaponController.localPosition;
-                equippedItemObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
-                equippedItemObj.transform.localScale = weaponController.localScale;
-            }
-            else if (selectedItemType == EquipmentItemType.throwableItem)
-            {
-                if (grenadeInHand || ammoController.HasAmmo(AmmoType.GRENADE))
-                {
-                    if (!grenadeInHand)
-                    {
-                        ammoController.GetAmmo(AmmoType.GRENADE, 1);
-                        grenadeInHand = true;
-                    }
-                    equippedItemObj = Instantiate(itemsEquipmentArr[itemIndex - 1], parentBoneForThrowableItems.transform);
-                    ThrowableItemController throwableItemController = equippedItemObj.GetComponent<ThrowableItemController>();
-
-                    throwableItemController.ownerObjRef = gameObject;
-                    throwableItemController.ammoProvider = ammoController;
-                    ammoController.currentWeapon = throwableItemController;
-                    // moving the weapon to the desired position
-                    equippedItemObj.transform.localPosition = throwableItemController.localPosition;
-                    equippedItemObj.transform.localRotation = Quaternion.Euler(throwableItemController.localRotation);
-                    equippedItemObj.transform.localScale = throwableItemController.localScale;
-
-                }
-                else
-                {
-                    SelectItem(0);
-                    return;
-                }
-            }
-
-            // updating hand points on item
-            FindInAllChildren(equippedItemObj.transform, "RightHandPoint", ref rightHandPoint);
-            FindInAllChildren(equippedItemObj.transform, "LeftHandPoint", ref leftHandPoint);
-
-        }
-        selectedItemIndex = itemIndex;
+        weaponController.ownerObjRef = gameObject;
+        weaponController.ammoProvider = ammoController;
+        RestoreWeaponBullets(weaponController, itemIndex);
+        ammoController.currentWeapon = weaponController;
+        // moving the weapon to the desired position
+        equippedItemObj.transform.localPosition = weaponController.localPosition;
+        equippedItemObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
+        equippedItemObj.transform.localScale = weaponController.localScale;
+        // updating hand points on item
+        FindInAllChildren(equippedItemObj.transform, "RightHandPoint", ref rightHandPoint);
+        FindInAllChildren(equippedItemObj.transform, "LeftHandPoint", ref leftHandPoint);
     }
 
     private Vector3 GetAimPoint(Vector3 mousePosition)

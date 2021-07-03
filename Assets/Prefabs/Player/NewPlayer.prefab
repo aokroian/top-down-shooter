@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Weight: 1
   m_Data:
-    m_ConstrainedObject: {fileID: 3454932369085297184}
+    m_ConstrainedObject: {fileID: 5261264570123474986}
     m_SourceObjects:
       m_Length: 1
       m_Item0:
@@ -368,12 +368,12 @@ MonoBehaviour:
     m_MaxLimit: 180
     m_AimAxis: 4
     m_UpAxis: 2
-    m_WorldUpType: 0
+    m_WorldUpType: 1
     m_WorldUpObject: {fileID: 0}
     m_WorldUpAxis: 2
     m_MaintainOffset: 0
     m_ConstrainedAxes:
-      x: 0
+      x: 1
       y: 1
       z: 0
   m_SourceObjectsGUIToggle: 1
@@ -678,13 +678,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4153264999834378730}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.0016231126, y: 0, z: 0, w: 0.9999987}
   m_LocalPosition: {x: 0, y: 1.645, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9066257110822081086}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.186, y: 0, z: 0}
 --- !u!114 &3033498245604842901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8546143664841721988}
-  minLookAtDistance: 2
+  minLookAtDistance: 1
 --- !u!1 &4516330512353110479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1459,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8203036515733309361}
-  m_LocalRotation: {x: -0.7071067, y: 0.000000053385072, z: -0.00000005338508, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
@@ -1684,6 +1684,7 @@ GameObject:
   - component: {fileID: 8478576174271764757}
   - component: {fileID: -4395259204290596482}
   - component: {fileID: 5652270395972803460}
+  - component: {fileID: 330892974374317566}
   m_Layer: 0
   m_Name: NewPlayer
   m_TagString: Player
@@ -1784,7 +1785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RigLayers:
   - m_Rig: {fileID: 8964516106665042150}
-    m_Active: 0
+    m_Active: 1
   - m_Rig: {fileID: 6989014451314280987}
     m_Active: 1
   m_Effectors:
@@ -1841,10 +1842,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 0.13257167
   m_Height: 2.0052423
   m_Direction: 1
-  m_Center: {x: -0.0023490489, y: 1.004497, z: 0.15}
+  m_Center: {x: -0.00035585463, y: 1.004497, z: 0.0124696195}
 --- !u!114 &-4395259204290596482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1876,11 +1877,14 @@ MonoBehaviour:
   parentBoneForWeapon: {fileID: 5790282938086853945}
   parentBoneForThrowableItems: {fileID: 5790282938086853945}
   ammoController: {fileID: 0}
+  movementJoystick: {fileID: 0}
+  cameraJoystick: {fileID: 0}
   rightHandConstraintController: {fileID: 6793511732785431806}
   leftHandConstraintController: {fileID: 8061983496373915486}
   rigLayerHandsPosition: {fileID: 6636170644396606690}
   cam: {fileID: 0}
   aimAtPosition: {x: 0, y: 0, z: 0}
+  playerInput: {fileID: 330892974374317566}
 --- !u!114 &5652270395972803460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1904,6 +1908,148 @@ MonoBehaviour:
   isFromExplosion: 0
   explosionPosition: {x: 0, y: 0, z: 0}
   explosionRadius: 0
+--- !u!114 &330892974374317566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546143664841721988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a9e5f44b081d1bb4c9410ee084baa08f, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4395259204290596482}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnControlsChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4395259204290596482}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a57fa31f-4248-4235-9727-a30e215e974b
+    m_ActionName: PlayerControls/Shoot[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4395259204290596482}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 976044b3-6d21-4789-985c-493475d98d42
+    m_ActionName: PlayerControls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4395259204290596482}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnSwitchItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 44d7d8b1-4461-49fa-8f6e-91336e7ea3c3
+    m_ActionName: PlayerControls/SwitchItem
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4395259204290596482}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8ba7e8c0-3f4a-4791-8c54-c04158c237ec
+    m_ActionName: PlayerControls/Pause
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4395259204290596482}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnDodge
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4a496790-fb00-413b-a9da-7fc58e574a33
+    m_ActionName: PlayerControls/Dodge
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4395259204290596482}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 92ee61e4-33ce-4d5e-9d6b-6abad1921154
+    m_ActionName: PlayerControls/Aiming[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aef26450-bd3d-4e10-8318-3d0360f0a30c
+    m_ActionName: PlayerControls/New action
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerControls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8560982832322567398
 GameObject:
   m_ObjectHideFlags: 0

@@ -143,7 +143,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     }
 
 
-    public void Shoot(float shotDamageModifier, Vector3 targetPos)
+    public void Shoot(float shotDamageModifier)
     {
         // если один из таймеров еще не достиг нуля, выстрел невозможен
         if (reloadTimer > 0f || nextShotTimer > 0f) return;
