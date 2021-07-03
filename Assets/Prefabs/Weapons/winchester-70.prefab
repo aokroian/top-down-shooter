@@ -226,7 +226,7 @@ MonoBehaviour:
   shotImpactForce: 4
   recoilHeight: 3
   clipSize: 1
-  rateOfFire: 0
+  rateOfFire: 0.1
   reloadTime: 1
   numberOfPenetrations: 3
   localPosition: {x: 0.00125, y: 0.001, z: 0.0009}

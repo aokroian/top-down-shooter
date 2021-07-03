@@ -208,7 +208,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 shootTimer -= Time.deltaTime;
                 if (shootTimer <= shootTime / 2f)
                 {
-                    equippedWeaponObj.GetComponent<WeaponController>().Shoot(0, aimSpotRef.transform.position);
+                    equippedWeaponObj.GetComponent<WeaponController>().Shoot(0);
                     currentState = State.AFTER_SHOT;
                     //Debug.Log("state: " + currentState);
                 }
