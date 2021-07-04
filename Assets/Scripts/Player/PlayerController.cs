@@ -144,15 +144,17 @@ public class PlayerController : MonoBehaviour
             allowedToDodge = true;
         }
     }
-    public void OnPause()
+    public void OnPause(InputAction.CallbackContext value)
     {
-        if (GameLoopController.paused)
-        {
-            gameLoop.GetComponent<GameLoopController>().UnPause();
-        }
-        if (!GameLoopController.paused)
-        {
-            gameLoop.GetComponent<GameLoopController>().Pause();
+        if (value.performed) {
+            Debug.Log("pause pressed");
+            if (GameLoopController.paused)
+            {
+                gameLoop.GetComponent<GameLoopController>().UnPause();
+            } else if (!GameLoopController.paused)
+            {
+                gameLoop.GetComponent<GameLoopController>().Pause();
+            }
         }
 
     }
