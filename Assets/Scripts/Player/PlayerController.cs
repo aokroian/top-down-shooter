@@ -146,12 +146,13 @@ public class PlayerController : MonoBehaviour
     }
     public void OnPause(InputAction.CallbackContext value)
     {
-        if (value.performed) {
-            Debug.Log("pause pressed");
+        if (value.performed)
+        {
             if (GameLoopController.paused)
             {
                 gameLoop.GetComponent<GameLoopController>().UnPause();
-            } else if (!GameLoopController.paused)
+            }
+            else if (!GameLoopController.paused)
             {
                 gameLoop.GetComponent<GameLoopController>().Pause();
             }
@@ -203,31 +204,41 @@ public class PlayerController : MonoBehaviour
         {
             if (rightStickPosition.magnitude >= 0.05f)
             {
-                Vector3 pos = new Vector3(rightStickPosition.x, 0f, rightStickPosition.y) * 10;
+                Vector3 pos = new Vector3(rightStickPosition.x, 0f, rightStickPosition.y) * 12;
                 aimAtPosition = transform.position + pos;
 
 
-                // shooting for weak weapons
-                if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() != AmmoType.RIFLE && shootingCoroutine == null)
+                if (rightStickPosition.magnitude >= 0.7f)
                 {
-                    shootingCoroutine = StartCoroutine(Shooting());
+                    // shooting for weak weapons
+                    if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() != AmmoType.RIFLE && shootingCoroutine == null)
+                    {
+                        shootingCoroutine = StartCoroutine(Shooting());
+                    }
+                    else if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
+                    {
+                        SafelyStopShootingCoroutine();
+                    }
                 }
-                else if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
+                if (rightStickPosition.magnitude < 0.7f)
                 {
+                    // stop shooting
                     SafelyStopShootingCoroutine();
                 }
-
             }
             if (rightStickPosition.magnitude < 0.05f)
             {
                 // stop shooting
                 SafelyStopShootingCoroutine();
-
                 // keep the last direction
-                aimAtPosition = transform.position + transform.forward * 15;
+                aimAtPosition = transform.position + transform.forward * 12;
             }
+
+
             movement = leftStickPosition;
         }
+
+
         if (currentControlScheme == "Keyboard")
         {
             aimAtPosition = GetAimPoint(new Vector3(mousePosition.x, mousePosition.y, 0f));
