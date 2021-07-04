@@ -203,7 +203,7 @@ public class PlayerController : MonoBehaviour
         {
             if (rightStickPosition.magnitude >= 0.05f)
             {
-                Vector3 pos = new Vector3(rightStickPosition.x, 0f, rightStickPosition.y) * 2;
+                Vector3 pos = new Vector3(rightStickPosition.x, 0f, rightStickPosition.y) * 10;
                 aimAtPosition = transform.position + pos;
 
 
@@ -224,7 +224,7 @@ public class PlayerController : MonoBehaviour
                 SafelyStopShootingCoroutine();
 
                 // keep the last direction
-                aimAtPosition = transform.position + transform.forward * 2;
+                aimAtPosition = transform.position + transform.forward * 15;
             }
             movement = leftStickPosition;
         }
