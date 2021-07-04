@@ -220,9 +220,7 @@ public class PlayerController : MonoBehaviour
                 // stop shooting
                 SafelyStopShootingCoroutine();
 
-                //TODO: need to calculate aim point when not touching right stick here
-                Vector3 weaponForward = equippedItemObj.transform.Find("BulletOutPoint").transform.forward;
-                Vector3 dir = transform.TransformDirection(weaponForward);
+                // keep the last direction
                 aimAtPosition = transform.position + transform.forward * 2;
             }
             movement = leftStickPosition;

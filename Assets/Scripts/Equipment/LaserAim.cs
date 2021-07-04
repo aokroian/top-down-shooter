@@ -23,17 +23,18 @@ public class LaserAim : MonoBehaviour
         lineRenderer.enabled = isEnabled;
 
         lineRenderer.SetPosition(0, laserOriginPoint.transform.position);
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, laserOriginPoint.transform.forward, out hit, Mathf.Infinity))
-        {
-            if (hit.collider)
-            {
-                lineRenderer.SetPosition(1, hit.point);
-            }
-            else
-            {
-                lineRenderer.SetPosition(1, laserOriginPoint.transform.position + laserOriginPoint.transform.forward * 100f);
-            }
-        }
+        lineRenderer.SetPosition(1, laserOriginPoint.transform.position + laserOriginPoint.transform.forward * 100f);
+        //RaycastHit hit;
+        //if (Physics.Raycast(transform.position, laserOriginPoint.transform.forward, out hit, Mathf.Infinity))
+        //{
+        //    if (hit.collider)
+        //    {
+        //        lineRenderer.SetPosition(1, hit.point);
+        //    }
+        //    else
+        //    {
+        //        lineRenderer.SetPosition(1, laserOriginPoint.transform.position + laserOriginPoint.transform.forward * 100f);
+        //    }
+        //}
     }
 }
