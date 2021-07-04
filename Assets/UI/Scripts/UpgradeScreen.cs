@@ -16,23 +16,14 @@ public class UpgradeScreen : MonoBehaviour
 
     private AbstractUpgrade[] upgrades;
 
-    /*
+    
     private void Awake()
     {
-        
+        upgrades = Resources.LoadAll<AbstractUpgrade>("UpgradesSO");
     }
 
     private void OnEnable()
     {
-        
-        
-    }
-    */
-
-    private void Start()
-    {
-        upgrades = Resources.LoadAll<AbstractUpgrade>("UpgradesSO");
-
         rootEl = GetComponent<UIDocument>().rootVisualElement;
         scrollEl = rootEl.Q<ScrollView>("UpgradesScroll");
         rootEl.Q("BackToTitle").RegisterCallback<ClickEvent>(e => manager.ToTitleScreen());
@@ -41,7 +32,19 @@ public class UpgradeScreen : MonoBehaviour
         scrollEl.horizontalScrollerVisibility = ScrollerVisibility.Auto;
 #endif
 
+        Draw();
+    }
+
+    private void Draw()
+    {
+        ClearUpgradeScroll();
+        rootEl.Q<Label>("MoneyLabel").text = moneyCount.value.ToString();
         FillUpgradeScroll();
+    }
+
+    private void ClearUpgradeScroll()
+    {
+        scrollEl.Clear();
     }
 
     private void FillUpgradeScroll()
@@ -50,7 +53,8 @@ public class UpgradeScreen : MonoBehaviour
         Debug.Log("SortedLength " + sortedUIList.Count());
         foreach (AbstractUpgrade upgrade in sortedUIList)
         {
-            AddUpgrade(upgrade);
+            var upgradeEl = BuildUpgradeEl(upgrade);
+            scrollEl.Add(upgradeEl);
         }
     }
 
@@ -76,7 +80,7 @@ public class UpgradeScreen : MonoBehaviour
         return current;
     }
 
-    private UpgradeVisualElement AddUpgrade(AbstractUpgrade upgrade)
+    private UpgradeVisualElement BuildUpgradeEl(AbstractUpgrade upgrade)
     {
         var tree = upgradeElement.CloneTree();
         var upgradeEl = tree.Q<UpgradeVisualElement>();
@@ -85,17 +89,14 @@ public class UpgradeScreen : MonoBehaviour
         upgradeEl.SetName(upgrade.upgradeName);
         upgradeEl.SetCost(upgrade.cost);
 
-        if (upgrade.upgradeType == UpgradeType.WEAPON_UPGRADE) {
-            upgradeEl.SetProgressVisible(upgrade.upgradeType == UpgradeType.WEAPON_UPGRADE);
+        upgradeEl.SetUpgrade(upgrade.upgradeType == UpgradeType.WEAPON_UPGRADE);
+        if (upgrade.upgradeType == UpgradeType.WEAPON_UPGRADE)
+        {
             int currentTier = ((WeaponUpgrade)upgrade).tier;
             int maxTier = GetMaxTier((WeaponUpgrade)upgrade);
             upgradeEl.SetProgressValue(currentTier, maxTier);
-        } else
-        {
-            upgradeEl.SetProgressVisible(false);
         }
-
-        scrollEl.Add(upgradeEl);
+        upgradeEl.SetUpgradeButtonCallback(e => TryToPurchase(upgrade));
         return upgradeEl;
     }
 
@@ -107,5 +108,23 @@ public class UpgradeScreen : MonoBehaviour
             current = (WeaponUpgrade) current.children[0];
         }
         return current.tier;
+    }
+
+    private void TryToPurchase(AbstractUpgrade upgrade)
+    {
+        Purchase(upgrade);
+    }
+
+    private bool Purchase(AbstractUpgrade upgrade)
+    {
+        bool result = false;
+        if (!upgrade.purchased && moneyCount.value >= upgrade.cost)
+        {
+            upgrade.purchased = true;
+            moneyCount.value -= upgrade.cost;
+            Draw();
+            result = true;
+        }
+        return result;
     }
 }

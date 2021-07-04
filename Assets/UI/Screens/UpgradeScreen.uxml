@@ -2,8 +2,12 @@
     <Style src="/Assets/UI/Styles/Overall.uss" />
     <Style src="/Assets/UI/Styles/Upgrade.uss" />
     <ui:VisualElement style="flex-grow: 1;">
-        <ui:VisualElement class="panel" style="justify-content: center; align-items: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; flex-grow: 1; flex-basis: auto;">
+        <ui:VisualElement class="panel" style="justify-content: center; align-items: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; flex-grow: 1; flex-basis: auto; flex-direction: row;">
             <ui:Label text="Upgrade and choose weapon" display-tooltip-when-elided="true" style="font-size: 32px;" />
+            <ui:VisualElement style="position: absolute; flex-direction: row; align-items: center; right: 10px; top: auto;">
+                <ui:VisualElement style="flex-shrink: 1; -unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&apos;/Assets/UI/Icons/dollar.png&apos;); width: 32px; height: 32px;" />
+                <ui:Label text="0" display-tooltip-when-elided="true" name="MoneyLabel" style="margin-left: 10px; font-size: 32px;" />
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" mode="Horizontal" name="UpgradesScroll" style="margin-top: 0; margin-bottom: 0; background-color: rgba(0, 0, 0, 0); padding-top: 10px; padding-bottom: 10px; flex-grow: 1; justify-content: flex-start; align-items: stretch; flex-basis: 75%;" />
         <ui:VisualElement style="border-left-width: 0; border-right-width: 0; border-bottom-width: 0; flex-grow: 0; width: auto; height: 80px; flex-direction: row;">
