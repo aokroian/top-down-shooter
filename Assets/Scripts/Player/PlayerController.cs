@@ -170,6 +170,7 @@ public class PlayerController : MonoBehaviour
         InputActionRebindingExtensions.RemoveAllBindingOverrides(playerInput.currentActionMap);
     }
 
+
     private void Start()
     {
         FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
@@ -228,7 +229,6 @@ public class PlayerController : MonoBehaviour
         if (currentControlScheme == "Keyboard")
         {
             aimAtPosition = GetAimPoint(new Vector3(mousePosition.x, mousePosition.y, 0f));
-
             movement = wasdPosition;
         }
         if (currentControlScheme == "Touch")

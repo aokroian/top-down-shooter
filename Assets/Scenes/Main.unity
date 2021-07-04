@@ -2716,6 +2716,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 157892513}
     - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}

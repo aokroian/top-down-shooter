@@ -10,15 +10,15 @@
                     "type": "Value",
                     "id": "976044b3-6d21-4789-985c-493475d98d42",
                     "expectedControlType": "Stick",
-                    "processors": "NormalizeVector2",
+                    "processors": "",
                     "interactions": ""
                 },
                 {
                     "name": "Aiming",
                     "type": "Value",
                     "id": "92ee61e4-33ce-4d5e-9d6b-6abad1921154",
-                    "expectedControlType": "Stick",
-                    "processors": "NormalizeVector2",
+                    "expectedControlType": "",
+                    "processors": "",
                     "interactions": ""
                 },
                 {
@@ -211,7 +211,7 @@
                     "id": "a2b6c2de-2300-434e-bc01-b5fd798f4630",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "groups": "Gamepad",
                     "action": "Movement",
                     "isComposite": false,
@@ -233,7 +233,7 @@
                     "id": "217f8252-0b44-4709-bce5-291954764a75",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "groups": "Gamepad",
                     "action": "Aiming",
                     "isComposite": false,
