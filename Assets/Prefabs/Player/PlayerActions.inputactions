@@ -7,10 +7,10 @@
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "976044b3-6d21-4789-985c-493475d98d42",
                     "expectedControlType": "Stick",
-                    "processors": "StickDeadzone",
+                    "processors": "NormalizeVector2",
                     "interactions": ""
                 },
                 {
@@ -70,6 +70,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e276b80-91af-42d7-9584-86578e4abea6",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false

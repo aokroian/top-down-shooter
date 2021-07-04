@@ -73,7 +73,6 @@ public class PlayerController : MonoBehaviour
     private Coroutine fireFrequency;
     private Coroutine shootingCoroutine;
 
-
     public void OnMovement(InputAction.CallbackContext value)
     {
         Vector2 inputMovement = value.ReadValue<Vector2>();
@@ -89,15 +88,33 @@ public class PlayerController : MonoBehaviour
     }
     public void OnShoot(InputAction.CallbackContext value)
     {
-        if (value.performed)
+        // keyboard
+        if (currentControlScheme == "Keyboard")
         {
-            shootingCoroutine = StartCoroutine(Shooting());
-        }
-        if (value.canceled)
-        {
-            StopCoroutine(shootingCoroutine);
+            if (value.performed)
+            {
+                SafelyStopShootingCoroutine();
+                shootingCoroutine = StartCoroutine(Shooting());
+            }
+            if (value.canceled)
+            {
+                SafelyStopShootingCoroutine();
+            }
         }
 
+        // gamepad 
+        if (currentControlScheme == "Gamepad")
+        {
+            if (value.performed)
+            {
+                SafelyStopShootingCoroutine();
+                // single shot and only for strong weapons
+                if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
+                {
+                    equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+                }
+            }
+        }
     }
     public void OnReload(InputAction.CallbackContext value)
     {
@@ -129,7 +146,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnPause()
     {
-        if (GameLoopController.paused) 
+        if (GameLoopController.paused)
         {
             gameLoop.GetComponent<GameLoopController>().UnPause();
         }
@@ -181,16 +198,32 @@ public class PlayerController : MonoBehaviour
         // aiming and movement values update
         if (currentControlScheme == "Gamepad")
         {
-            if (rightStickPosition.magnitude >= 0.1f)
+            if (rightStickPosition.magnitude >= 0.05f)
             {
                 Vector3 pos = new Vector3(rightStickPosition.x, 0f, rightStickPosition.y) * 2;
                 aimAtPosition = transform.position + pos;
-                shootingCoroutine = StartCoroutine(Shooting());
+
+
+                // shooting for weak weapons
+                if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() != AmmoType.RIFLE && shootingCoroutine == null)
+                {
+                    shootingCoroutine = StartCoroutine(Shooting());
+                }
+                else if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
+                {
+                    SafelyStopShootingCoroutine();
+                }
+
             }
-            else
+            if (rightStickPosition.magnitude < 0.05f)
             {
-                StopCoroutine(shootingCoroutine);
+                // stop shooting
+                SafelyStopShootingCoroutine();
+
                 //TODO: need to calculate aim point when not touching right stick here
+                Vector3 weaponForward = equippedItemObj.transform.Find("BulletOutPoint").transform.forward;
+                Vector3 dir = transform.TransformDirection(weaponForward);
+                aimAtPosition = transform.position + transform.forward * 2;
             }
             movement = leftStickPosition;
         }
@@ -311,6 +344,14 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
+    private void SafelyStopShootingCoroutine()
+    {
+        if (shootingCoroutine != null)
+        {
+            StopCoroutine(shootingCoroutine);
+            shootingCoroutine = null;
+        }
+    }
 
     public void StartShooting()
     {
@@ -371,7 +412,7 @@ public class PlayerController : MonoBehaviour
 
         selectedItemIndex = itemIndex;
 
-        
+
 
 
         equippedItemObj = Instantiate(itemsEquipmentArr[itemIndex], parentBoneForWeapon.transform);
