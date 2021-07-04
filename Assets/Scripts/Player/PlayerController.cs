@@ -185,9 +185,11 @@ public class PlayerController : MonoBehaviour
             {
                 Vector3 pos = new Vector3(rightStickPosition.x, 0f, rightStickPosition.y) * 2;
                 aimAtPosition = transform.position + pos;
+                shootingCoroutine = StartCoroutine(Shooting());
             }
             else
             {
+                StopCoroutine(shootingCoroutine);
                 //TODO: need to calculate aim point when not touching right stick here
             }
             movement = leftStickPosition;
