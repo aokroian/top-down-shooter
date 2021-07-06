@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
 
     private int[] bulletsInClip;
     private Animator animator;
-    private Coroutine fireFrequency;
     private Coroutine shootingCoroutine;
 
     public void OnMovement(InputAction.CallbackContext value)
@@ -119,7 +118,10 @@ public class PlayerController : MonoBehaviour
     {
         if (value.performed)
         {
-            Reload();
+            if (equippedItemObj != null)
+            {
+                equippedItemObj.GetComponent<WeaponController>().Reload();
+            }
         }
     }
     public void OnSwitchItem(InputAction.CallbackContext value)
@@ -375,33 +377,6 @@ public class PlayerController : MonoBehaviour
             StopCoroutine(shootingCoroutine);
             shootingCoroutine = null;
         }
-    }
-
-    public void StartShooting()
-    {
-        fireFrequency = StartCoroutine(FireDelay());
-    }
-
-    public void StopShooting()
-    {
-        StopCoroutine(fireFrequency);
-    }
-
-    public void Reload()
-    {
-        if (equippedItemObj != null)
-        {
-            equippedItemObj.GetComponent<WeaponController>().Reload();
-        }
-    }
-
-    public void NextWeapon()
-    {
-
-    }
-    public void Dodge()
-    {
-
     }
 
     private void FixedUpdate()

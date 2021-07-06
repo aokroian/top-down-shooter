@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 5393345158657623923}
   - component: {fileID: 2965619679138143618}
   - component: {fileID: 4261187712781641837}
-  - component: {fileID: 8345670746811729766}
+  - component: {fileID: 722454697309265939}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8345670746811729766
+--- !u!114 &722454697309265939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -550,26 +550,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1522245034213226283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: GameLoopController, Assembly-CSharp
-          m_MethodName: Pause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_ControlPath: <Gamepad>/start
 --- !u!1 &1848694310091209335
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +910,7 @@ GameObject:
   - component: {fileID: 1586809786509995599}
   - component: {fileID: 2202891546986810485}
   - component: {fileID: 8483668695097453460}
-  - component: {fileID: 6633358559328955430}
+  - component: {fileID: 1599051619749957056}
   m_Layer: 5
   m_Name: ShootButton
   m_TagString: Untagged
@@ -992,7 +976,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6633358559328955430
+--- !u!114 &1599051619749957056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1001,26 +985,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2264839360104188334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-          m_MethodName: Shoot
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_ControlPath: <Gamepad>/rightTrigger
 --- !u!1 &2598631823856987470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1568,7 @@ GameObject:
   - component: {fileID: 7641473011888468913}
   - component: {fileID: 2896604150738937870}
   - component: {fileID: 7363542624971681100}
+  - component: {fileID: 1329321690032753318}
   m_Layer: 5
   m_Name: CameraJoystick
   m_TagString: Untagged
@@ -1665,6 +1634,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1329321690032753318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920839968117847541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementRange: 100
+  m_ControlPath: <Gamepad>/rightStick
 --- !u!1 &4009418088782245166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1779,7 @@ GameObject:
   - component: {fileID: 2017930991547368159}
   - component: {fileID: 7426623243209848171}
   - component: {fileID: 8193979686978884047}
-  - component: {fileID: 8720520926897239090}
+  - component: {fileID: 7730076088038542163}
   m_Layer: 5
   m_Name: ReloadButton
   m_TagString: Untagged
@@ -1862,7 +1845,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8720520926897239090
+--- !u!114 &7730076088038542163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1871,26 +1854,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4951697144551272138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-          m_MethodName: Reload
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_ControlPath: <Gamepad>/buttonWest
 --- !u!1 &5322243200934513609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,7 +1869,7 @@ GameObject:
   - component: {fileID: 4493777616232282392}
   - component: {fileID: 8748549133769667890}
   - component: {fileID: 916639730114809548}
-  - component: {fileID: 7881488423437241997}
+  - component: {fileID: 3308789968249218511}
   m_Layer: 5
   m_Name: DodgeButton
   m_TagString: Untagged
@@ -1968,7 +1935,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7881488423437241997
+--- !u!114 &3308789968249218511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1977,26 +1944,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5322243200934513609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-          m_MethodName: Dodge
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_ControlPath: <Gamepad>/leftShoulder
 --- !u!1 &5701555608495331435
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,6 +2190,7 @@ GameObject:
   - component: {fileID: 482086721936407814}
   - component: {fileID: 1456498455334787760}
   - component: {fileID: 6173226837715331364}
+  - component: {fileID: 6152721476358169263}
   m_Layer: 5
   m_Name: MovementJoystick
   m_TagString: Untagged
@@ -2304,6 +2256,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6152721476358169263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6377627492291195853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementRange: 100
+  m_ControlPath: <Gamepad>/leftStick
 --- !u!1 &6409126360070029539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,7 +2281,7 @@ GameObject:
   - component: {fileID: 8505826121680225198}
   - component: {fileID: 6992336864354719630}
   - component: {fileID: 7318288237266487052}
-  - component: {fileID: 1566151488133411941}
+  - component: {fileID: 225618493025470715}
   m_Layer: 5
   m_Name: NextWeaponButton
   m_TagString: Untagged
@@ -2381,7 +2347,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1566151488133411941
+--- !u!114 &225618493025470715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2390,26 +2356,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6409126360070029539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-          m_MethodName: NextWeapon
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_ControlPath: <Gamepad>/buttonNorth
 --- !u!1 &6519848796814246268
 GameObject:
   m_ObjectHideFlags: 0
