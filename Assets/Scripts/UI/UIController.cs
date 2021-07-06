@@ -13,28 +13,6 @@ public class UIController : MonoBehaviour
     public Target target;
     public PlayerAmmoController ammoController;
 
-    public Image movementJoystick;
-    public Image cameraJoystick;
-    public Image shootButton;
-    public Image reloadButton;
-    public Image nextWeaponButton;
-    public Image dodgeButton;
-    public Image menuButton;
-
-    void Start()
-    {
-#if UNITY_ANDROID || UNITY_IOS
-        movementJoystick.gameObject.SetActive(true);
-        cameraJoystick.gameObject.SetActive(true);
-        shootButton.gameObject.SetActive(true);
-        reloadButton.gameObject.SetActive(true);
-        nextWeaponButton.gameObject.SetActive(true);
-        dodgeButton.gameObject.SetActive(true);
-        menuButton.gameObject.SetActive(true);
-#endif
-    }
-
-
     void Update()
     {
         var reload = playerController.GetReloadTimerPercent();

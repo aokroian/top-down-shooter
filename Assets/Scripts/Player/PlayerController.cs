@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     public GameObject parentBoneForThrowableItems;
     public PlayerAmmoController ammoController;
 
+    // Touch controls
+    public GameObject mobileInput;
+
     private GameObject equippedItemObj;
     private EquipmentItemType selectedItemType;
 
@@ -155,15 +158,25 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
     public void OnControlsChanged()
     {
-
         if (playerInput.currentControlScheme != currentControlScheme)
         {
             currentControlScheme = playerInput.currentControlScheme;
+            switch (currentControlScheme)
+            {
+                case "Keyboard":
+                    break;
+                case "Gamepad":
+                    break;
+                case "Touch":
+                    break;
+            }
             RemoveAllBindingOverrides();
         }
     }
+
     void RemoveAllBindingOverrides()
     {
         InputActionRebindingExtensions.RemoveAllBindingOverrides(playerInput.currentActionMap);
@@ -187,6 +200,10 @@ public class PlayerController : MonoBehaviour
         SelectItem(0);
         currentMovementSpeed = basicMovementSpeed;
         currentControlScheme = playerInput.currentControlScheme;
+
+#if UNITY_ANDROID || UNITY_IOS
+        mobileInput.SetActive(true);
+#endif
     }
     void Update()
     {

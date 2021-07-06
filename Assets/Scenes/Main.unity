@@ -412,6 +412,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e2b7a55004f4058925517ef19950f5, type: 3}
+--- !u!114 &571306960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6173226837715331364, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+  m_PrefabInstance: {fileID: 936015075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &634465820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1121,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 4009418088782245166, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4682308925249176791, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -1486,6 +1501,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &936015078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4009418088782245166, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+  m_PrefabInstance: {fileID: 936015075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &936015080 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4261187712781641837, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
@@ -1792,6 +1812,17 @@ MonoBehaviour:
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
   RestPositionOffset: {x: 0, y: 0, z: 0}
   RestRotationOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &1082137493 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7363542624971681100, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+  m_PrefabInstance: {fileID: 936015075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1099389160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,13 +2585,6 @@ MonoBehaviour:
   playerController: {fileID: 330892974374317565}
   target: {fileID: 8218384367326094713}
   ammoController: {fileID: 824559845}
-  movementJoystick: {fileID: 0}
-  cameraJoystick: {fileID: 0}
-  shootButton: {fileID: 936015077}
-  reloadButton: {fileID: 936015076}
-  nextWeaponButton: {fileID: 936015082}
-  dodgeButton: {fileID: 936015081}
-  menuButton: {fileID: 936015080}
 --- !u!1001 &2137376396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2674,17 +2698,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099389160}
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: menuButton
+      value: 
+      objectReference: {fileID: 936015080}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: dodgeButton
+      value: 
+      objectReference: {fileID: 936015081}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: mobileInput
+      value: 
+      objectReference: {fileID: 936015078}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: shootButton
+      value: 
+      objectReference: {fileID: 936015077}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: reloadButton
+      value: 
+      objectReference: {fileID: 936015076}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: ammoController
       value: 
       objectReference: {fileID: 824559845}
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: cameraJoystick
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1082137493}
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: movementJoystick
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 571306960}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: nextWeaponButton
+      value: 
+      objectReference: {fileID: 936015082}
     - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2698,8 +2746,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: 4842bdec-972b-415f-9816-a4380689b4ee
+      objectReference: {fileID: 0}
+    - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: e612776d-dd7b-4af3-af96-21891d723bc7
+      objectReference: {fileID: 0}
+    - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: UI/Point[/Mouse/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: UI/Click[/Mouse/leftButton]
       objectReference: {fileID: 0}
     - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.size
