@@ -23,7 +23,7 @@ public class UIController : MonoBehaviour
 
     void Start()
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_IOS
         movementJoystick.gameObject.SetActive(true);
         cameraJoystick.gameObject.SetActive(true);
         shootButton.gameObject.SetActive(true);
