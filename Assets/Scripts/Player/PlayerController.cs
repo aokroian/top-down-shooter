@@ -36,10 +36,6 @@ public class PlayerController : MonoBehaviour
     public GameObject parentBoneForThrowableItems;
     public PlayerAmmoController ammoController;
 
-    // Mobile controller
-    public Joystick movementJoystick;
-    public Joystick cameraJoystick;
-
     private GameObject equippedItemObj;
     private EquipmentItemType selectedItemType;
 
@@ -524,14 +520,6 @@ public class PlayerController : MonoBehaviour
         }
 
         return result;
-    }
-
-    private Vector3 GetJoystickRotation()
-    {
-        return new Vector3(
-            transform.position.x + cameraJoystick.Horizontal * 10,
-            0,
-            transform.position.z + cameraJoystick.Vertical * 10);
     }
 
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)

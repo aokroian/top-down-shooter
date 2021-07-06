@@ -13,8 +13,8 @@ public class UIController : MonoBehaviour
     public Target target;
     public PlayerAmmoController ammoController;
 
-    public Joystick movementJoystick;
-    public Joystick cameraJoystick;
+    public Image movementJoystick;
+    public Image cameraJoystick;
     public Image shootButton;
     public Image reloadButton;
     public Image nextWeaponButton;

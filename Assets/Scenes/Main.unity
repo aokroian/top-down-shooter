@@ -170,17 +170,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_ActionsAsset: {fileID: -944628639613478452, guid: a9e5f44b081d1bb4c9410ee084baa08f, type: 3}
-  m_PointAction: {fileID: 879579833587367654, guid: a9e5f44b081d1bb4c9410ee084baa08f, type: 3}
-  m_MoveAction: {fileID: 0}
-  m_SubmitAction: {fileID: 0}
-  m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: -1052181375216146051, guid: a9e5f44b081d1bb4c9410ee084baa08f, type: 3}
-  m_MiddleClickAction: {fileID: 0}
-  m_RightClickAction: {fileID: 0}
-  m_ScrollWheelAction: {fileID: 0}
-  m_TrackedDevicePositionAction: {fileID: 0}
-  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
 --- !u!114 &157892514
@@ -1486,28 +1486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &936015078 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5981178139112329140, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
-  m_PrefabInstance: {fileID: 936015075}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2de3ae87cbd5d48378aa0f7b4f94826e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &936015079 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2918932574734800353, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
-  m_PrefabInstance: {fileID: 936015075}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &936015080 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4261187712781641837, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
@@ -2576,8 +2554,8 @@ MonoBehaviour:
   playerController: {fileID: 330892974374317565}
   target: {fileID: 8218384367326094713}
   ammoController: {fileID: 824559845}
-  movementJoystick: {fileID: 936015079}
-  cameraJoystick: {fileID: 936015078}
+  movementJoystick: {fileID: 0}
+  cameraJoystick: {fileID: 0}
   shootButton: {fileID: 936015077}
   reloadButton: {fileID: 936015076}
   nextWeaponButton: {fileID: 936015082}
@@ -2702,11 +2680,11 @@ PrefabInstance:
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: cameraJoystick
       value: 
-      objectReference: {fileID: 936015078}
+      objectReference: {fileID: 0}
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: movementJoystick
       value: 
-      objectReference: {fileID: 936015079}
+      objectReference: {fileID: 0}
     - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2714,7 +2692,7 @@ PrefabInstance:
     - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_UIInputModule
       value: 
-      objectReference: {fileID: 157892513}
+      objectReference: {fileID: 0}
     - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_DefaultControlScheme
       value: 
