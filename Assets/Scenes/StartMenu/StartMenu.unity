@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 1045911396}
   - component: {fileID: 1045911398}
   - component: {fileID: 1045911397}
+  - component: {fileID: 1045911399}
   m_Layer: 0
   m_Name: UpgradeScreen
   m_TagString: Untagged
@@ -301,7 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 956195905}
   upgradeElement: {fileID: 9197481963319205126, guid: b817395b78053854896af5c66a3f3f72, type: 3}
-  moneyCount: {fileID: 11400000, guid: 79afb49bfef323b45afbc180f399c604, type: 2}
+  progressionManager: {fileID: 1045911399}
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!114 &1045911398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +320,19 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 2d48c74918719e54d879b9528713d9b4, type: 3}
   m_SortingOrder: 0
+--- !u!114 &1045911399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045911395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f8ac847e60adc42a1c5ac4dd3a7d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!1 &1411809348
 GameObject:
   m_ObjectHideFlags: 0

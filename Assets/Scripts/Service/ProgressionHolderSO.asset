@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e61109114f1099749b39d7ad726e5ca2, type: 3}
-  m_Name: MoneyCount
+  m_Script: {fileID: 11500000, guid: 618868fbe709e8f4da287090b722e0bd, type: 3}
+  m_Name: ProgressionHolderSO
   m_EditorClassIdentifier: 
-  value: 1000
+  moneyCount: 0

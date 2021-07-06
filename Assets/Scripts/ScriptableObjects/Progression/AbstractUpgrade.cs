@@ -5,7 +5,7 @@ public abstract class AbstractUpgrade : ScriptableObject
     [HideInInspector]
     public UpgradeType upgradeType;
     [HideInInspector]
-    public bool purchased;
+    //public bool purchased;
 
     public bool isRoot;
     public AbstractUpgrade[] children;

@@ -9,17 +9,22 @@ public class UpgradeScreen : MonoBehaviour
 {
     public MainUIController manager;
     public VisualTreeAsset upgradeElement;
-    public FloatVariable moneyCount;
+    //public FloatVariable moneyCount;
+
+    public ProgressionManager progressionManager;
+    public ProgressionHolder progressionHolder;
 
     private VisualElement rootEl;
     private ScrollView scrollEl;
 
-    private AbstractUpgrade[] upgrades;
+    //private AbstractUpgrade[] upgrades;
 
     
     private void Awake()
     {
-        upgrades = Resources.LoadAll<AbstractUpgrade>("UpgradesSO");
+        //upgrades = Resources.LoadAll<AbstractUpgrade>("UpgradesSO");
+        progressionManager.Init();
+        progressionManager.LoadFromSaveFile();
     }
 
     private void OnEnable()
@@ -38,7 +43,7 @@ public class UpgradeScreen : MonoBehaviour
     private void Draw()
     {
         ClearUpgradeScroll();
-        rootEl.Q<Label>("MoneyLabel").text = moneyCount.value.ToString();
+        rootEl.Q<Label>("MoneyLabel").text = progressionHolder.moneyCount.ToString();
         FillUpgradeScroll();
     }
 
@@ -62,9 +67,9 @@ public class UpgradeScreen : MonoBehaviour
     private List<AbstractUpgrade> CreateListForUI()
     {
         List<AbstractUpgrade> result = new List<AbstractUpgrade>();
-        foreach(AbstractUpgrade upgrade in upgrades.Where(e => e.isRoot))
+        foreach(AbstractUpgrade upgrade in progressionHolder.GetAllUpgrades().Where(e => e.isRoot))
         {
-            Debug.Log("Root: " + upgrade);
+            //Debug.Log("Root: " + upgrade);
             result.Add(getFirstNotBought(upgrade));
         }
 
@@ -73,7 +78,7 @@ public class UpgradeScreen : MonoBehaviour
 
     private AbstractUpgrade getFirstNotBought(AbstractUpgrade first) {
         AbstractUpgrade current = first;
-        while (current.purchased && current.children.Length > 0)
+        while (progressionHolder.IsPurchased(current) && current.children.Length > 0)
         {
             current = current.children[0];
         }
@@ -118,10 +123,11 @@ public class UpgradeScreen : MonoBehaviour
     private bool Purchase(AbstractUpgrade upgrade)
     {
         bool result = false;
-        if (!upgrade.purchased && moneyCount.value >= upgrade.cost)
+        if (!progressionHolder.IsPurchased(upgrade) && progressionHolder.moneyCount >= upgrade.cost)
         {
-            upgrade.purchased = true;
-            moneyCount.value -= upgrade.cost;
+            progressionHolder.AddPurchasedUpgrade(upgrade);
+            progressionHolder.moneyCount -= upgrade.cost;
+            progressionManager.WriteToSaveFile();
             Draw();
             result = true;
         }
