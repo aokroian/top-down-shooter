@@ -229,9 +229,9 @@ MonoBehaviour:
   rateOfFire: 0.1
   reloadTime: 1
   numberOfPenetrations: 3
-  localPosition: {x: 0.00125, y: 0.001, z: 0.0009}
-  localRotation: {x: 0, y: 0, z: 0}
-  localScale: {x: 1, y: 1, z: 1}
+  localPosition: {x: 0.157, y: 0.257, z: 0.194}
+  localRotation: {x: 11.53, y: 0, z: 0}
+  localScale: {x: 145, y: 145, z: 145}
   bulletFlashRef: {fileID: 2514344755903072682, guid: 341dfcc7d5f4a894ca7d2340a990788e, type: 3}
   bulletOutPointObj: {fileID: 2281872067415912937}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
@@ -798,10 +798,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8857489086292807764}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00023, y: 0.00037, z: 0.00593}
+  m_LocalRotation: {x: -0, y: -0, z: 0.54370934, w: 0.83927363}
+  m_LocalPosition: {x: -0.0004, y: 0.00037, z: 0.00593}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 2412363184823453218}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 65.873}

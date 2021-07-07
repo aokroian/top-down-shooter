@@ -11,7 +11,7 @@ public class BulletController : MonoBehaviour, IBulletController
     // Start is called before the first frame update
     void Start()
     {
-        bp.player = GameObject.Find("Player");
+        bp.player = GameObject.FindGameObjectsWithTag("Player")[0];
     }
 
     // Update is called once per frame

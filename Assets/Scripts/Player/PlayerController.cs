@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
         InputActionRebindingExtensions.RemoveAllBindingOverrides(playerInput.currentActionMap);
     }
 
-    private void OnEnable()
+    private void Awake()
     {
         itemsEquipmentArr = progressionManager.GetWeapons();
     }

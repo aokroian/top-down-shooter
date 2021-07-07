@@ -89,9 +89,9 @@ MonoBehaviour:
   rateOfFire: 0.2
   reloadTime: 1
   numberOfPenetrations: 3
-  localPosition: {x: 0.00131, y: 0.00101, z: 0.0009}
-  localRotation: {x: 0, y: 0, z: 0}
-  localScale: {x: 0.01, y: 0.01, z: 0.01}
+  localPosition: {x: 0.126, y: 0.246, z: 0.238}
+  localRotation: {x: 12.64, y: 0, z: 0}
+  localScale: {x: 1.5, y: 1.5, z: 1.5}
   bulletFlashRef: {fileID: 2514344755903072682, guid: 341dfcc7d5f4a894ca7d2340a990788e, type: 3}
   bulletOutPointObj: {fileID: 6354097763237307107}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
