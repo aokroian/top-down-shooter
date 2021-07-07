@@ -412,17 +412,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e2b7a55004f4058925517ef19950f5, type: 3}
---- !u!114 &571306960 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6173226837715331364, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
-  m_PrefabInstance: {fileID: 936015075}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &634465820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,6 +1454,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8505826121680225198, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 107.541504
+      objectReference: {fileID: 0}
     - target: {fileID: 8720520926897239090, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1506,11 +1499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &936015078 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4009418088782245166, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
-  m_PrefabInstance: {fileID: 936015075}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &936015080 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4261187712781641837, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
@@ -1817,17 +1805,6 @@ MonoBehaviour:
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
   RestPositionOffset: {x: 0, y: 0, z: 0}
   RestRotationOffset: {x: 0, y: 0, z: 0}
---- !u!114 &1082137493 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7363542624971681100, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
-  m_PrefabInstance: {fileID: 936015075}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1099389160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,7 +2600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4630233244120903010, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4630233244120903011, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
       propertyPath: m_RootOrder
@@ -2713,7 +2690,7 @@ PrefabInstance:
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: mobileInput
       value: 
-      objectReference: {fileID: 936015078}
+      objectReference: {fileID: 0}
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: shootButton
       value: 
@@ -2729,11 +2706,11 @@ PrefabInstance:
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: cameraJoystick
       value: 
-      objectReference: {fileID: 1082137493}
+      objectReference: {fileID: 0}
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: movementJoystick
       value: 
-      objectReference: {fileID: 571306960}
+      objectReference: {fileID: 0}
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: nextWeaponButton
       value: 
