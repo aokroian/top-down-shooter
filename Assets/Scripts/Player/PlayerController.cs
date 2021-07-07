@@ -278,7 +278,7 @@ public class PlayerController : MonoBehaviour
         Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
         animator.SetFloat("local Z speed", localMovement.z);
         animator.SetFloat("local X speed", localMovement.x);
-
+        
         // hand on item animation rigging part
         // moving hand rig controllers to points on weapon when its equiped
         if (rightHandPoint != null)
@@ -388,22 +388,24 @@ public class PlayerController : MonoBehaviour
     {
         // смещение
         Vector3 offset = new Vector3(movement.x, 0.0f, movement.y) * currentMovementSpeed;
+        Rigidbody rb = GetComponent<Rigidbody>();
 
         // игрок двигается по глобальным осям
         if (movement.magnitude >= 0.01f)
         {
-            GetComponent<Rigidbody>().velocity = offset;
+            rb.velocity = offset;
         }
         else
         {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            rb.velocity = Vector3.zero;
         }
 
         // вращение персонажа 
         Vector3 lTargetDir = aimAtPosition - transform.position;
         lTargetDir.y = 0f;
 
-        GetComponent<Rigidbody>().MoveRotation(Quaternion.LookRotation(lTargetDir, Vector3.up));
+
+        rb.MoveRotation(Quaternion.LookRotation(lTargetDir, Vector3.up));
     }
 
     private void SelectItem(int itemIndex)
