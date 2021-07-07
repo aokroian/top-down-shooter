@@ -128,6 +128,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4636331940892833827, guid: 63e2b7a55004f4058925517ef19950f5, type: 3}
   m_PrefabInstance: {fileID: 1635123804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &31522453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31522455}
+  - component: {fileID: 31522454}
+  - component: {fileID: 31522456}
+  m_Layer: 0
+  m_Name: ProgressionSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &31522454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31522453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3eb70a6b26a814d87d4616e041eaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pistolPrefab: {fileID: 4499716576559252643, guid: c1a3f713b544549a68869c8f129b00a4, type: 3}
+  otherWeaponPrefabs:
+  - {fileID: -7646230606861975914, guid: 5da85df9e3ba59a46891981a50dadc3c, type: 3}
+  - {fileID: 2657258725382527762, guid: cac850a810d414f0399a3425d440092d, type: 3}
+  - {fileID: 2229621320369827879, guid: adb6e521861cc430ca9c6476e7849d49, type: 3}
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
+  progressionManager: {fileID: 31522456}
+--- !u!4 &31522455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31522453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &31522456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31522453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f8ac847e60adc42a1c5ac4dd3a7d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!1 &115857524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2618712874212572650, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
@@ -826,6 +890,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1500429687199438463, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1520389126516391263, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1111,6 +1179,10 @@ PrefabInstance:
       value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 4009418088782245166, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284849191812329873, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1667,6 +1739,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e2b7a55004f4058925517ef19950f5, type: 3}
+--- !u!1 &1049430825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4284849191812329873, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+  m_PrefabInstance: {fileID: 936015075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1063663575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4636331940892833827, guid: 63e2b7a55004f4058925517ef19950f5, type: 3}
@@ -2690,7 +2767,7 @@ PrefabInstance:
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: mobileInput
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1049430825}
     - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: shootButton
       value: 
@@ -2715,6 +2792,10 @@ PrefabInstance:
       propertyPath: nextWeaponButton
       value: 
       objectReference: {fileID: 936015082}
+    - target: {fileID: -4395259204290596482, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
+      propertyPath: progressionManager
+      value: 
+      objectReference: {fileID: 31522454}
     - target: {fileID: 330892974374317566, guid: 9478c5a75311f411999f4b38927b5758, type: 3}
       propertyPath: m_Camera
       value: 

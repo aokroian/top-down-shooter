@@ -10,9 +10,10 @@ public class SaveLoadController
     {
         public int money;
         public int[] upgrades;
+        public int[] selected;
     }
 
-    private string fileFullPath = Application.persistentDataPath + "/save.dat";
+    public string fileFullPath { get; } = Application.persistentDataPath + "/save.dat";
 
     private JsonConverter converter;
 
@@ -35,14 +36,19 @@ public class SaveLoadController
         {
             result.upgrades = new int[0];
         }
+        if (result.selected == null)
+        {
+            result.selected = new int[0];
+        }
         return result;
     }
 
-    public void SaveProgression(int money, int[] upgrades)
+    public void SaveProgression(int money, int[] upgrades, int[] selected)
     {
         SaveData data = new SaveData();
         data.money = money;
         data.upgrades = upgrades;
+        data.selected = selected;
         SaveProgression(data);
     }
 

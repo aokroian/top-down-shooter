@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainUIController : MonoBehaviour
 {
+    private const string GAME_SCENE_NAME = "Main";
+
     public GameObject titleScreen;
     public GameObject settingsScreen;
     public GameObject upgradeScreen;
     
+
 
     public void ToTitleScreen()
     {
@@ -28,5 +32,10 @@ public class MainUIController : MonoBehaviour
         titleScreen.SetActive(false);
         settingsScreen.SetActive(false);
         upgradeScreen.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
     }
 }

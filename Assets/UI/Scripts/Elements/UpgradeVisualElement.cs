@@ -21,6 +21,11 @@ public class UpgradeVisualElement : VisualElement
         this.Q<Label>("Name").text = name;
     }
 
+    public void SetDescription(string description)
+    {
+        this.Q<Label>("Description").text = name;
+    }
+
     // Add type enum
     public void SetUpgrade(bool value)
     {
@@ -40,8 +45,25 @@ public class UpgradeVisualElement : VisualElement
         this.Q<Label>("Cost").text = cost.ToString();
     }
 
+    public void SetSelectable(bool selectable)
+    {
+        this.Q<Button>("EquipButton").style.display = selectable ? DisplayStyle.Flex : DisplayStyle.None;
+        this.Q<Label>("EquipPlaceholder").style.display = selectable ? DisplayStyle.None : DisplayStyle.Flex;
+    }
+
+    public void SetSelected(bool selected)
+    {
+        var button = this.Q<Button>("EquipButton");
+        button.text = selected ? "Unequip" : "Equip";
+    }
+
     public void SetUpgradeButtonCallback(EventCallback<ClickEvent> callback)
     {
         this.Q<Button>("UpgradeButton").RegisterCallback(callback);
+    }
+
+    public void SetEquipButtonCallback(EventCallback<ClickEvent> callback)
+    {
+        this.Q<Button>("EquipButton").RegisterCallback(callback);
     }
 }

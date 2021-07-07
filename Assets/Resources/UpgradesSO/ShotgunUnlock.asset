@@ -16,11 +16,9 @@ MonoBehaviour:
   isRoot: 1
   children:
   - {fileID: 11400000, guid: 027ea76ad6a8e5649b9d225965b1535a, type: 2}
-  purchased: 0
   image: {fileID: 21300000, guid: a50d4949f54314d7a80de2e9dcca296b, type: 3}
   cost: 200
   upgradeName: Shotgun
-  description: 
+  description: Unlock to equip
   orderInUpgradeScreen: 0
   weapon: 3
-  selected: 0

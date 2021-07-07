@@ -15,13 +15,12 @@ MonoBehaviour:
   upgradeType: 1
   isRoot: 0
   children: []
-  purchased: 0
   image: {fileID: 0}
   cost: 300
-  upgradeName: +10% dmg
-  description: 
+  upgradeName: Shotgun damage
+  description: +10% dmg
   orderInUpgradeScreen: 0
   weapon: 2
   weaponUpgradeType: 0
   value: 10
-  tier: 0
+  tier: 1

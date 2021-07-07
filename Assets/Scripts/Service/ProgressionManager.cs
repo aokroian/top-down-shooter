@@ -28,10 +28,11 @@ public class ProgressionManager : MonoBehaviour
         var saveData = saveLoadController.LoadProgression();
         progressionHolder.moneyCount = saveData.money;
         progressionHolder.SetPurchasedUpgrades(saveData.upgrades);
+        progressionHolder.SetSelectedUpgrades(saveData.selected);
     }
 
     public void WriteToSaveFile() {
-        saveLoadController.SaveProgression(progressionHolder.moneyCount, progressionHolder.GetPurchasedUpgradesId());
+        saveLoadController.SaveProgression(progressionHolder.moneyCount, progressionHolder.GetPurchasedUpgradesId(), progressionHolder.GetSelectedIds());
     }
 
 }

@@ -16,11 +16,9 @@ MonoBehaviour:
   isRoot: 1
   children:
   - {fileID: 11400000, guid: aa68abff895d191469deaa0025882187, type: 2}
-  purchased: 0
   image: {fileID: 21300000, guid: f7141627b9596483494b96e376a7be67, type: 3}
   cost: 200
   upgradeName: Rifle
-  description: 
+  description: Unlock to equip
   orderInUpgradeScreen: 0
   weapon: 2
-  selected: 0

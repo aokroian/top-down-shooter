@@ -5,17 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/StartMenu/StartMenu_old.unity
-    guid: 9fc01c8311e1c474d9850c2d991032e7
-  - enabled: 0
-    path: Assets/Scenes/WeaponSelector/WeaponSelector.unity
-    guid: cc94fa7af1cf74a018df541a8270cd03
+  - enabled: 1
+    path: Assets/Scenes/StartMenu/StartMenu.unity
+    guid: 6c0857bce3d31154f8bebc6c14fa88c4
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 731675aa2208d4b38940d7e3898e871b
-  - enabled: 0
-    path: Assets/Scenes/StartMenu/StartMenu.unity
-    guid: 6c0857bce3d31154f8bebc6c14fa88c4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d3c6cf363cab08149a48cb8ae3658889, type: 2}

@@ -7,8 +7,8 @@ public class WeaponUnlock : AbstractUpgrade
 {
     public WeaponEnum weapon;
 
-    [HideInInspector]
-    public bool selected;
+    //[HideInInspector]
+    //public bool selected;
 
     public WeaponUnlock()
     {

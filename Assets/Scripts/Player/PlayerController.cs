@@ -30,11 +30,12 @@ public class PlayerController : MonoBehaviour
 
 
     // variables for the inventory system
-    public GameObject[] itemsEquipmentArr;
+    private GameObject[] itemsEquipmentArr;
     public int selectedItemIndex = 0;
     public GameObject parentBoneForWeapon;
     public GameObject parentBoneForThrowableItems;
     public PlayerAmmoController ammoController;
+    public IngameProgressionManager progressionManager;
 
     // Touch controls
     public GameObject mobileInput;
@@ -184,6 +185,10 @@ public class PlayerController : MonoBehaviour
         InputActionRebindingExtensions.RemoveAllBindingOverrides(playerInput.currentActionMap);
     }
 
+    private void OnEnable()
+    {
+        itemsEquipmentArr = progressionManager.GetWeapons();
+    }
 
     private void Start()
     {
