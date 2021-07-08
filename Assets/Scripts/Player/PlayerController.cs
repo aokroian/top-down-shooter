@@ -211,8 +211,8 @@ public class PlayerController : MonoBehaviour
 #if UNITY_ANDROID || UNITY_IOS
         mobileInput.SetActive(true);
 #endif
-#if UNITY_DESKTOP
-    mobileInput.SetActive(false);
+#if UNITY_STANDALONE
+        mobileInput.SetActive(false);
 #endif
     }
     void Update()
