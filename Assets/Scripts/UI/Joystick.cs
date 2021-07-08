@@ -22,7 +22,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
-        background.gameObject.SetActive(false);
         stick.OnPointerUp(eventData);
+        background.gameObject.SetActive(false);
     }
 }
