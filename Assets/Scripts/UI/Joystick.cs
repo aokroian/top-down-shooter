@@ -10,6 +10,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
+        background.gameObject.SetActive(true);
         background.position = eventData.position;
         stick.OnPointerDown(eventData);
     }
@@ -21,6 +22,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
+        background.gameObject.SetActive(false);
         stick.OnPointerUp(eventData);
     }
 }
