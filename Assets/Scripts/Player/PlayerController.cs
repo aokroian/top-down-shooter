@@ -399,7 +399,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
-
+        
         // вращение персонажа 
         Vector3 lTargetDir = aimAtPosition - transform.position;
         lTargetDir.y = 0f;
