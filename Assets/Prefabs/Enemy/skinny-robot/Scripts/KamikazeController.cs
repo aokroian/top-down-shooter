@@ -10,7 +10,8 @@ public class KamikazeController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GetComponent<Destructible>().ChangeToDestructible();
+            GetComponent<Target>().health = 0;
+            //GetComponent<Destructible>().ChangeToDestructible();
             foreach (GameObject explosive in explosives)
             {
                 explosive.GetComponent<ThrowableItemController>().Throw(Vector3.zero);
