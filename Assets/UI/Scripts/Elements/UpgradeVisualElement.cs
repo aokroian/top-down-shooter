@@ -23,7 +23,7 @@ public class UpgradeVisualElement : VisualElement
 
     public void SetDescription(string description)
     {
-        this.Q<Label>("Description").text = name;
+        this.Q<Label>("Description").text = description;
     }
 
     // Add type enum

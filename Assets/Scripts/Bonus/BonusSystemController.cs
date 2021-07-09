@@ -7,11 +7,15 @@ public class BonusSystemController : MonoBehaviour
 
     public GameObject player;
 
+    public ProgressionManager progressionManager;
+
     //public GameObject healthPrefab;
     public BonusSpawnParams health;
+    public BonusSpawnParams credits;
 
     //public GameObject[] ammoPrefabs;
     public BonusSpawnParams[] ammoParams;
+    
 
     private Dictionary<AmmoType, BonusSpawnParams> actualAmmoParams = new Dictionary<AmmoType, BonusSpawnParams>();
 
@@ -46,21 +50,28 @@ public class BonusSystemController : MonoBehaviour
         List<GameObject> spawnedBonuses = new List<GameObject>();
 
         //Debug.Log("EnemyDies event executed!! Chance: " + health.GetChance(param.cost));
-        if (health.IsShouldSpawn(param.cost))
-        {
-            Vector3 pos = CalcPosition(param.position, spawnedBonuses);
-            spawnedBonuses.Add(PrepareAndSpawnBonus(health.bonusPrefab, pos));
+        SpawnIfNeed(param, health, spawnedBonuses);
+        var creditObject = SpawnIfNeed(param, credits, spawnedBonuses);
+        if (creditObject != null) {
+            creditObject.GetComponent<CreditBonusController>().SetProgressionManager(progressionManager);
         }
 
         foreach (KeyValuePair<AmmoType, BonusSpawnParams> entity in actualAmmoParams)
         {
-            if (entity.Value.IsShouldSpawn(param.cost))
-            {
-                Debug.Log("Spawned ammo: " + entity.Key);
-                Vector3 pos = CalcPosition(param.position, spawnedBonuses);
-                spawnedBonuses.Add(PrepareAndSpawnBonus(entity.Value.bonusPrefab, pos));
-            }
+            SpawnIfNeed(param, entity.Value, spawnedBonuses);
         }
+    }
+    
+    private GameObject SpawnIfNeed(EnemyEventParam eventParam, BonusSpawnParams bonusParam, List<GameObject> spawnedBonuses)
+    {
+        GameObject result = null;
+        if (bonusParam.IsShouldSpawn(eventParam.cost))
+        {
+            Vector3 pos = CalcPosition(eventParam.position, spawnedBonuses);
+            result = PrepareAndSpawnBonus(bonusParam.bonusPrefab, pos);
+            spawnedBonuses.Add(result);
+        }
+        return result;
     }
 
     private Vector3 CalcPosition(Vector3 initPos, List<GameObject> spawned)
