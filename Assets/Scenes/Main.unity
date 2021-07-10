@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d14558a6eeeae34eba0385e6a1728f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 1746845811839031643, guid: bd939a20b2307a5498553b2f22f8a601, type: 3}
+  obstaclePrefab: {fileID: 7817173880744911522, guid: ec720f317c909449a8e506cfedc68538, type: 3}
   minY: 0.55
   noiseMultiplier: 1.11
   noiseSeed: 0
@@ -2185,7 +2185,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3550225429023996705, guid: c586d91e6340e4daa8d59f0634005ca9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3550225429023996705, guid: c586d91e6340e4daa8d59f0634005ca9, type: 3}
       propertyPath: m_LocalPosition.x

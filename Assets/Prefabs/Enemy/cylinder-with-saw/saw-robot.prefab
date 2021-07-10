@@ -1297,6 +1297,7 @@ GameObject:
   - component: {fileID: 848633122}
   - component: {fileID: 848633127}
   - component: {fileID: 1193346341}
+  - component: {fileID: -596523366260598061}
   m_Layer: 0
   m_Name: saw-robot
   m_TagString: Enemy
@@ -1558,11 +1559,40 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -596523366260598061}
+        m_TargetAssemblyTypeName: Explosion, Assembly-CSharp
+        m_MethodName: Explode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hitDir: {x: 0, y: 0, z: 0}
   hitForceAmount: 0
   isFromExplosion: 0
   explosionPosition: {x: 0, y: 0, z: 0}
   explosionRadius: 0
+--- !u!114 &-596523366260598061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3739565477740236748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d513b92b04340cda9b7086c0398b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraShakeMagnitude: 2
+  explosionEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 3}
+  explosionRadius: 2
+  explosionForce: 100
+  explosionMaxDamage: 50
 --- !u!1 &3998158665979894991
 GameObject:
   m_ObjectHideFlags: 0
