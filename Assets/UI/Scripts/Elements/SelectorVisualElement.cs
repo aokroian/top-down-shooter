@@ -7,6 +7,10 @@ public class SelectorVisualElement : VisualElement
 {
     public new class UxmlFactory : UxmlFactory<SelectorVisualElement> { }
 
+    public delegate void ChangeCallback(string value);
+
+    private ChangeCallback changeCallback;
+
     private List<string> values = new List<string>();
     private int selectedInd;
 
@@ -24,7 +28,7 @@ public class SelectorVisualElement : VisualElement
         this.Q<Button>("Prev").RegisterCallback<ClickEvent>(e => Prev());
         this.Q<Button>("Next").RegisterCallback<ClickEvent>(e => Next());
 
-        Redraw();
+        RedrawAndGet();
 
         this.UnregisterCallback<GeometryChangedEvent>(OnGeometryChange);
     }
@@ -33,42 +37,49 @@ public class SelectorVisualElement : VisualElement
     public void SetValues(List<string> values)
     {
         this.values = values;
-        Redraw();
+        RedrawAndGet();
     }
 
     public bool SetSelected(string selected)
     {
         int ind = values.IndexOf(selected);
         this.selectedInd = ind >= 0 ? ind : 0;
-        Redraw();
+        RedrawAndGet();
         return ind >= 0;
     }
 
     public void SetSelectedInd(int selectedInd)
     {
         this.selectedInd = selectedInd;
-        Redraw();
+        RedrawAndGet();
     }
 
     public void Prev()
     {
         int indTmp = selectedInd - 1;
         selectedInd = indTmp < 0 ? values.Count - 1 : indTmp;
-        Redraw();
+        string value = RedrawAndGet();
+        changeCallback?.Invoke(value);
     }
 
     public void Next()
     {
         int indTmp = selectedInd + 1;
         selectedInd = indTmp > values.Count - 1 ? 0 : indTmp;
-        Redraw();
+        string value = RedrawAndGet();
+        changeCallback?.Invoke(value);
     }
 
-    private void Redraw()
+    public void SetChangeCallback(ChangeCallback changeCallback)
+    {
+        this.changeCallback = changeCallback;
+    }
+
+    private string RedrawAndGet()
     {
         if (selectedLabel == null)
         {
-            return;
+            return "";
         }
         if (values.Count <= selectedInd)
         {
@@ -78,5 +89,6 @@ public class SelectorVisualElement : VisualElement
         {
             selectedLabel.text = values[selectedInd];
         }
+        return selectedLabel.text;
     }
 }
