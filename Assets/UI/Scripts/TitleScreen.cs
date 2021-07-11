@@ -15,5 +15,6 @@ public class TitleScreen : MonoBehaviour
     {
         rootEl = GetComponent<UIDocument>().rootVisualElement;
         rootEl.Q("NewRun").RegisterCallback<ClickEvent>(e => manager.ToUpgradeScreen());
+        rootEl.Q("Settings").RegisterCallback<ClickEvent>(e => manager.ToSettingsScreen());
     }
 }

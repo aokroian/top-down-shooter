@@ -4,7 +4,7 @@
     <ui:VisualElement style="flex-grow: 1;">
         <ui:VisualElement class="panel" style="justify-content: center; align-items: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; flex-grow: 1; flex-basis: auto; flex-direction: row;">
             <ui:Label text="Upgrade and choose weapon" display-tooltip-when-elided="true" style="font-size: 48px;" />
-            <ui:VisualElement style="position: absolute; flex-direction: row; align-items: center; right: 10px; top: auto;">
+            <ui:VisualElement style="position: absolute; flex-direction: row; align-items: center; right: 10px; top: auto; margin-right: 20px;">
                 <ui:VisualElement style="flex-shrink: 1; -unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&apos;/Assets/UI/Icons/dollar.png&apos;); width: 32px; height: 32px;" />
                 <ui:Label text="0" display-tooltip-when-elided="true" name="MoneyLabel" style="margin-left: 10px; font-size: 48px;" />
             </ui:VisualElement>

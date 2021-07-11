@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="/Assets/UI/Styles/Overall.uss" />
+    <SelectorVisualElement>
+        <ui:VisualElement style="flex-direction: row; align-items: center; font-size: 24px;">
+            <ui:Button display-tooltip-when-elided="true" name="Prev" style="font-size: 24px; background-color: rgba(0, 8, 20, 255); border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); padding-left: 12px; padding-right: 12px; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 30px; border-bottom-left-radius: 30px;" />
+            <ui:Label display-tooltip-when-elided="true" name="SelectedLabel" style="width: 120px; -unity-text-align: upper-center;" />
+            <ui:Button display-tooltip-when-elided="true" name="Next" style="font-size: 24px; background-color: rgba(0, 8, 20, 255); border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; padding-left: 12px; padding-right: 12px;" />
+        </ui:VisualElement>
+    </SelectorVisualElement>
+</ui:UXML>

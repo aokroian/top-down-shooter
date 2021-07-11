@@ -1,0 +1,62 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="ToggleButton" src="Components/ToggleButton.uxml" />
+    <ui:Template name="Selector" src="Components/Selector.uxml" />
+    <Style src="/Assets/UI/Styles/Overall.uss" />
+    <Style src="/Assets/UI/Styles/Settings.uss" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement style="align-items: center; background-color: rgba(0, 8, 20, 255); border-left-color: rgba(0, 53, 102, 255); border-right-color: rgba(0, 53, 102, 255); border-top-color: rgba(0, 53, 102, 255); border-bottom-color: rgba(0, 53, 102, 255); border-bottom-width: 3px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
+            <ui:Label text="Settings" display-tooltip-when-elided="true" style="flex-grow: 1; font-size: 32px;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; justify-content: flex-start; align-items: stretch; background-color: rgba(0, 15, 31, 255); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-around; background-color: rgba(0, 25, 51, 255); padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px; width: auto; height: auto; border-left-color: rgba(0, 53, 102, 255); border-right-color: rgba(0, 53, 102, 255); border-top-color: rgba(0, 53, 102, 255); border-bottom-color: rgba(0, 53, 102, 255); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 3px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; margin-left: 0; margin-right: 0; margin-top: 0; align-items: stretch;">
+                <ui:VisualElement style="flex-grow: 1; width: auto;">
+                    <ui:VisualElement class="row">
+                        <ui:VisualElement class="left_col">
+                            <ui:Label text="Vibration" display-tooltip-when-elided="true" class="label" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="right_col">
+                            <ui:Instance template="ToggleButton" name="Vibration" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="row">
+                        <ui:VisualElement class="left_col">
+                            <ui:Label text="Music" display-tooltip-when-elided="true" class="label" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="right_col">
+                            <ui:Instance template="ToggleButton" name="Music" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="row">
+                        <ui:VisualElement class="left_col">
+                            <ui:Label text="Sfx" display-tooltip-when-elided="true" class="label" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="right_col">
+                            <ui:Instance template="ToggleButton" name="Sfx" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; width: auto;">
+                    <ui:VisualElement class="row">
+                        <ui:VisualElement class="left_col">
+                            <ui:Label text="Graphics" display-tooltip-when-elided="true" class="label" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="right_col">
+                            <ui:Instance template="Selector" name="Graphics" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="row">
+                        <ui:VisualElement class="left_col">
+                            <ui:Label text="Fps" display-tooltip-when-elided="true" class="label" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="right_col">
+                            <ui:Instance template="ToggleButton" name="Fps" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="height: 170px; flex-grow: 0; justify-content: center;">
+                <ui:Button display-tooltip-when-elided="true" name="BackToTitle" class="button" style="height: 128px; background-image: url(&apos;/Assets/UI/Icons/outline_logout_black_48dp.png&apos;); background-color: rgba(0, 8, 20, 255); -unity-background-image-tint-color: rgba(0, 53, 102, 255); width: 128px; border-left-width: 0; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 15px; border-bottom-right-radius: 15px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

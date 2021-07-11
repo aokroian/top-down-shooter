@@ -1,0 +1,20 @@
+.label {
+    font-size: 24px;
+}
+
+.row {
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 0;
+    align-items: center;
+}
+
+.left_col {
+    width: 130px;
+}
+
+.right_col {
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+}

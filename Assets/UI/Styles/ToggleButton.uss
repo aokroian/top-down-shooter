@@ -1,0 +1,47 @@
+.checked #OffContainer {
+    background-color: rgba(0, 8, 20, 255);
+    border-left-color: rgba(0, 53, 102, 255);
+    border-right-color: rgba(0, 53, 102, 255);
+    border-top-color: rgba(0, 53, 102, 255);
+    border-bottom-color: rgba(0, 53, 102, 255);
+}
+
+.checked #OffLabel {
+    visibility: hidden;
+}
+
+.checked #OnContainer {
+    border-left-color: rgba(0, 53, 102, 255);
+    border-right-color: rgba(0, 53, 102, 255);
+    border-top-color: rgba(0, 53, 102, 255);
+    border-bottom-color: rgba(0, 53, 102, 255);
+    background-color: rgba(255, 195, 0, 255);
+}
+
+.checked #OnLabel {
+    color: rgba(0, 8, 20, 255);
+}
+
+.unchecked #OffContainer {
+    border-left-color: rgba(0, 53, 102, 255);
+    border-right-color: rgba(0, 53, 102, 255);
+    border-top-color: rgba(0, 53, 102, 255);
+    border-bottom-color: rgba(0, 53, 102, 255);
+    background-color: rgba(61, 90, 128, 255);
+}
+
+.unchecked #OffLabel {
+    color: rgba(0, 8, 20, 255);
+}
+
+.unchecked #OnContainer {
+    background-color: rgba(0, 8, 20, 255);
+    border-left-color: rgba(0, 53, 102, 255);
+    border-right-color: rgba(0, 53, 102, 255);
+    border-top-color: rgba(0, 53, 102, 255);
+    border-bottom-color: rgba(0, 53, 102, 255);
+}
+
+.unchecked #OnLabel {
+    visibility: hidden;
+}
