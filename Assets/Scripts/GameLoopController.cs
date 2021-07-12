@@ -21,11 +21,6 @@ public class GameLoopController : MonoBehaviour
 
     private HashSet<Action<GameState>> stateChangeHandlers = new HashSet<Action<GameState>>();
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

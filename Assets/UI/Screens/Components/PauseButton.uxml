@@ -1,9 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Button display-tooltip-when-elided="true" style="flex-direction: column; justify-content: center; background-color: rgb(0, 8, 20); border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; align-items: center; width: 64px; height: 64px; flex-grow: 0;">
-        <ui:VisualElement style="flex-direction: row; height: 60%; width: 60%;">
-            <ui:VisualElement style="flex-direction: column; background-color: rgb(0, 53, 102); flex-grow: 1; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
-            <ui:VisualElement style="flex-grow: 1;" />
-            <ui:VisualElement style="flex-direction: column; background-color: rgb(0, 53, 102); flex-grow: 1; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
-        </ui:VisualElement>
-    </ui:Button>
+    <ui:VisualElement style="align-items: flex-end; margin-right: 10px; margin-top: 10px;">
+        <ui:Button display-tooltip-when-elided="true" style="flex-direction: column; justify-content: center; background-color: rgb(0, 8, 20); border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; align-items: center; width: 64px; height: 64px; flex-grow: 0;">
+            <ui:VisualElement style="flex-direction: row; height: 60%; width: 60%;">
+                <ui:VisualElement style="flex-direction: column; background-color: rgb(0, 53, 102); flex-grow: 1; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
+                <ui:VisualElement style="flex-grow: 1;" />
+                <ui:VisualElement style="flex-direction: column; background-color: rgb(0, 53, 102); flex-grow: 1; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
+            </ui:VisualElement>
+        </ui:Button>
+    </ui:VisualElement>
 </ui:UXML>

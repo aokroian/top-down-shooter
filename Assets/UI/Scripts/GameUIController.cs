@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.UIElements.InputSystem;
 
 public class GameUIController : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class GameUIController : MonoBehaviour
     public GameObject settingsScreen;
     public LevelLoader levelLoader;
     public GameLoopController gameLoopController;
+
+    public InputSystemUIInputModule oldEventSystem;
+    public InputSystemEventSystem newEventSystem;
 
     private PauseScreen pauseController;
     
@@ -33,6 +38,9 @@ public class GameUIController : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         settingsScreen.SetActive(false);
+
+        oldEventSystem.enabled = true;
+        //newEventSystem.enabled = false;
     }
 
     private void ToPauseScreen(bool dead)
@@ -40,6 +48,9 @@ public class GameUIController : MonoBehaviour
         pauseScreen.SetActive(true);
         pauseController.SetDead(dead);
         settingsScreen.SetActive(false);
+
+        oldEventSystem.enabled = false;
+        newEventSystem.enabled = true;
     }
 
     private void ToSettingsScreen()

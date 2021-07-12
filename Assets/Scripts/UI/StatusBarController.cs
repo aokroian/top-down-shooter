@@ -7,13 +7,14 @@ public class StatusBarController : MonoBehaviour
 {
     public UIDocument statusBarDoc;
     public UIDocument reloadBarDoc;
-    public UIDocument pauseButtonDoc;
+    //public UIDocument pauseButtonDoc;
 
     public PlayerController playerController;
     public PlayerAmmoController ammoController;
     public Target target;
     public ProgressionHolder progressionHolder;
     public Camera mainCamera;
+    //public GameLoopController gameLoopController;
 
     private VisualElement statusContainer;
     private StatusBarVisualElement statusBar;
@@ -22,16 +23,15 @@ public class StatusBarController : MonoBehaviour
     private VisualElement reloadInnerContainer;
     private ReloadBarVisualElement reloadBar;
 
-    private VisualElement pauseButtonContainer;
-    private Button pauseButton;
+    //private VisualElement pauseButtonContainer;
+    //private Button pauseButton;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         statusContainer = statusBarDoc.rootVisualElement;
         statusBar = statusContainer.Q<StatusBarVisualElement>();
         statusBar.Init();
-        statusContainer.transform.position = new Vector2(10f, 10f);
 
         reloadContainer = reloadBarDoc.rootVisualElement;
         reloadBar = reloadContainer.Q<ReloadBarVisualElement>();
@@ -39,15 +39,9 @@ public class StatusBarController : MonoBehaviour
         reloadBar.Init();
         reloadBar.SetReloadProgress(0f);
 
-        pauseButtonContainer = pauseButtonDoc.rootVisualElement;
-        pauseButton = pauseButtonContainer.Q<Button>();
-
-        //pauseButtonContainer.transform.position =
-        //    new Vector2(mainCamera.pixelWidth - pauseButtonContainer.layout.width - 10f, mainCamera.pixelHeight - pauseButtonContainer.layout.height - 10f);
-        pauseButtonContainer.transform.position = RuntimePanelUtils.ScreenToPanel(pauseButtonContainer.panel, new Vector2(mainCamera.pixelWidth - 64f - 10f, 10));
-        Debug.Log("pos " + new Vector2(mainCamera.pixelWidth - pauseButtonContainer.layout.width - 10f, 10) + " - " + pauseButton.layout.width + " - " + pauseButton);
-        Debug.Log("pos2 " + RuntimePanelUtils.ScreenToPanel(pauseButtonContainer.panel, new Vector2(Screen.width - pauseButton.layout.width - 10f, Screen.height - pauseButtonContainer.layout.height - 10f)));
-        Debug.Log("pos3 " + mainCamera.pixelWidth + " " + mainCamera.pixelHeight);
+        //pauseButtonContainer = pauseButtonDoc.rootVisualElement;
+        //pauseButton = pauseButtonContainer.Q<Button>();
+        //pauseButton.RegisterCallback<ClickEvent>(e => gameLoopController.Pause());
     }
 
     // Update is called once per frame
@@ -74,10 +68,8 @@ public class StatusBarController : MonoBehaviour
         if (progress != 0)
         {
             var playerPos = playerController.transform.position;
-            //Vector3 pos3 = new Vector3(playerPos.x, 4f, playerPos.z);
             Vector2 newPosition = RuntimePanelUtils.CameraTransformWorldToPanel(reloadContainer.panel, playerPos, mainCamera);
             reloadInnerContainer.transform.position = new Vector2(newPosition.x - reloadInnerContainer.layout.width / 2, newPosition.y + 20f);
-            Debug.Log("width: " + reloadInnerContainer.layout.width);
         }
 
         reloadBar.SetReloadProgress(progress);

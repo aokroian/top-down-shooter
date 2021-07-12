@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9bbf33d468231945b2e5c4fe85ae347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsSaver: {fileID: 0}
-  settings: {fileID: 0}
+  settingsSaver: {fileID: 866064498}
+  settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
 --- !u!114 &14482275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,53 +385,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &233150762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 233150763}
-  - component: {fileID: 233150764}
-  m_Layer: 0
-  m_Name: PauseButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &233150763
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233150762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1444775451}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &233150764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233150762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21c074d86024caca2a0034ce4f53f73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 12c8956cc91823141a56391f05488db4, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 17ba3cc5dc9ce7d4582e66de2b8b1fd8, type: 3}
-  m_SortingOrder: 0
 --- !u!1 &445431182
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1444775451}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &445431184
 MonoBehaviour:
@@ -647,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f02e554031281449dae0c34c083972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseDoc: {fileID: 0}
+  pauseDoc: {fileID: 690551150}
 --- !u!114 &690551150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,6 +957,8 @@ MonoBehaviour:
   settingsScreen: {fileID: 14482272}
   levelLoader: {fileID: 886370014}
   gameLoopController: {fileID: 1099389162}
+  oldEventSystem: {fileID: 157892513}
+  newEventSystem: {fileID: 157892516}
 --- !u!1001 &936015075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1014,6 +969,10 @@ PrefabInstance:
     - target: {fileID: 143648639573224081, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239986117842695203, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 487358211104171546, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1670,10 +1629,22 @@ PrefabInstance:
     - target: {fileID: 8046648180890032705, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d16b838f7ab434c538da89c2d9a10fdb, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8046648180890032705, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_Color.a
-      value: 0.39215687
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8046648180890032705, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8046648180890032705, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.03137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 8046648180890032705, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8345670746811729766, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2296,7 +2267,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1452680597}
-  - {fileID: 233150763}
   - {fileID: 445431183}
   m_Father: {fileID: 926524190}
   m_RootOrder: 0
@@ -2315,7 +2285,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusBarDoc: {fileID: 445431184}
   reloadBarDoc: {fileID: 1452680598}
-  pauseButtonDoc: {fileID: 233150764}
   playerController: {fileID: 3883960182137148088}
   ammoController: {fileID: 824559845}
   target: {fileID: 3883960182137148087}
@@ -2569,6 +2538,10 @@ PrefabInstance:
       propertyPath: isStartMenuScreen
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 462298743271879873, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
+      propertyPath: gameLoopController
+      value: 
+      objectReference: {fileID: 1099389162}
     - target: {fileID: 4630233242979557246, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
       propertyPath: m_Layer
       value: 5

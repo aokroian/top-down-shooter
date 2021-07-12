@@ -19,8 +19,8 @@ public class PauseScreen : MonoBehaviour
     private Action gameAction;
     private Action newRunAction;
     private Action mainMenuAction;
-
-    void Start()
+    
+    void OnEnable()
     {
         rootEl = pauseDoc.rootVisualElement;
         resumeEl = rootEl.Q<Button>("Resume");

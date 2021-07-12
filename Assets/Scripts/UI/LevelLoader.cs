@@ -10,21 +10,25 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 1.0f;
     public GameObject background;
     public bool isStartMenuScreen = false;
+    public GameLoopController gameLoopController;
 
     public void Start()
     {
         if (!isStartMenuScreen)
         {
-            background.SetActive(true);
+            //background.SetActive(true);
         }
     }
 
     public void LoadLevel(string levelName)
     {
-        background.SetActive(true);
-        StartCoroutine(StartLevel(levelName));
+        //background.SetActive(true);
+        //StartCoroutine(StartLevel(levelName));
+        gameLoopController.UnPause();
+        SceneManager.LoadSceneAsync(levelName);
     }
 
+    
     IEnumerator StartLevel(string levelName)
     {
         transition.SetTrigger("Start");
@@ -33,4 +37,5 @@ public class LevelLoader : MonoBehaviour
 
         SceneManager.LoadScene(levelName);
     }
+    
 }
