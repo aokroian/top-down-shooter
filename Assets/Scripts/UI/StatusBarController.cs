@@ -76,7 +76,7 @@ public class StatusBarController : MonoBehaviour
             var playerPos = playerController.transform.position;
             //Vector3 pos3 = new Vector3(playerPos.x, 4f, playerPos.z);
             Vector2 newPosition = RuntimePanelUtils.CameraTransformWorldToPanel(reloadContainer.panel, playerPos, mainCamera);
-            reloadInnerContainer.transform.position = new Vector2(newPosition.x - reloadInnerContainer.layout.width / 2, newPosition.y - 20f);
+            reloadInnerContainer.transform.position = new Vector2(newPosition.x - reloadInnerContainer.layout.width / 2, newPosition.y + 20f);
             Debug.Log("width: " + reloadInnerContainer.layout.width);
         }
 
