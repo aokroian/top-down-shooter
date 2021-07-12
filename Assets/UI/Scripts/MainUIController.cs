@@ -10,8 +10,11 @@ public class MainUIController : MonoBehaviour
     public GameObject titleScreen;
     public GameObject settingsScreen;
     public GameObject upgradeScreen;
-    
 
+    private void Start()
+    {
+        settingsScreen.GetComponent<SettingsScreen>().SetBackAction(ToTitleScreen);
+    }
 
     public void ToTitleScreen()
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +17,10 @@ public class GameLoopController : MonoBehaviour
 
     public GameState currentState = GameState.RUNNING;
     public Target playerTarget;
-    public GameObject pauseScreen;
-    
-    
+    //public GameObject pauseScreen;
+
+    private HashSet<Action<GameState>> stateChangeHandlers = new HashSet<Action<GameState>>();
+
     void Start()
     {
         
@@ -29,8 +31,7 @@ public class GameLoopController : MonoBehaviour
     {
         if (playerTarget.health == 0f)
         {
-            currentState = GameState.DEAD;
-            Pause();
+            Pause(GameState.DEAD);
         }
     }
 
@@ -45,18 +46,22 @@ public class GameLoopController : MonoBehaviour
     //    }
     //}
 
-    public void Pause()
+    public void Pause(GameState state = GameState.PAUSE)
     {
         Time.timeScale = 0f;
         paused = true;
-        ShowMenu();
+        currentState = state;
+        //ShowMenu();
+        NotifyAll();
     }
 
     public void UnPause()
     {
-        HideMenu();
+        //HideMenu();
         Time.timeScale = 1f;
         paused = false;
+        currentState = GameState.RUNNING;
+        NotifyAll();
     }
 
     public GameState GetGameState()
@@ -64,13 +69,21 @@ public class GameLoopController : MonoBehaviour
         return currentState;
     }
 
-    private void ShowMenu()
+    public void AddStateChangeHandler(Action<GameState> handler)
     {
-        pauseScreen.SetActive(true);
+        stateChangeHandlers.Add(handler);
     }
 
-    private void HideMenu()
+    public void RemoveStateChangeHandler(Action<GameState> handler)
     {
-        pauseScreen.SetActive(false);
+        stateChangeHandlers.Remove(handler);
+    }
+
+    public void NotifyAll()
+    {
+        foreach(Action<GameState> handler in stateChangeHandlers)
+        {
+            handler(currentState);
+        }
     }
 }

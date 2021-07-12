@@ -482,7 +482,7 @@ public class PlayerController : MonoBehaviour
 
     public float GetStaminaPercent()
     {
-        return (100 - stamina) / 100f;
+        return stamina / maxStamina;
     }
 
     public float GetReloadTimerPercent()

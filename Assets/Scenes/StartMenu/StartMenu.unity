@@ -591,8 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9bbf33d468231945b2e5c4fe85ae347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 956195905}
-  settingsManager: {fileID: 858362096}
+  settingsSaver: {fileID: 858362096}
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
 --- !u!1 &1978944927
 GameObject:

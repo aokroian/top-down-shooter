@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,8 @@ using UnityEngine.UIElements;
 public class SettingsScreen : MonoBehaviour
 {
 
-    public MainUIController manager;
-    public SettingsManager settingsManager;
+    //public MainUIController manager;
+    public SettingsSaver settingsSaver;
     public SettingsHolder settings;
 
     private VisualElement rootEl;
@@ -16,6 +17,8 @@ public class SettingsScreen : MonoBehaviour
     private ToggleVisualElement sfxEl;
     private SelectorVisualElement graphicsEl;
     private ToggleVisualElement fpsEl;
+
+    private Action backAction;
 
     private void OnEnable()
     {
@@ -26,7 +29,7 @@ public class SettingsScreen : MonoBehaviour
         graphicsEl = rootEl.Q<TemplateContainer>("Graphics").Q<SelectorVisualElement>();
         fpsEl = rootEl.Q<TemplateContainer>("Fps").Q<ToggleVisualElement>();
 
-        rootEl.Q("BackToTitle").RegisterCallback<ClickEvent>(e => manager.ToTitleScreen());
+        rootEl.Q("BackToTitle").RegisterCallback<ClickEvent>(e => backAction?.Invoke());
         fpsEl.SetLabels("30", "60");
         graphicsEl.SetValues(new List<string>(QualitySettings.names));
 
@@ -39,31 +42,31 @@ public class SettingsScreen : MonoBehaviour
         vibrationEl.SetToggleCallback(v =>
         {
             settings.vibration = v;
-            settingsManager.ApplyAndSave();
+            settingsSaver.ApplyAndSave();
         });
 
         musicEl.SetToggleCallback(v =>
         {
             settings.music = v;
-            settingsManager.ApplyAndSave();
+            settingsSaver.ApplyAndSave();
         });
 
         sfxEl.SetToggleCallback(v =>
         {
             settings.sfx = v;
-            settingsManager.ApplyAndSave();
+            settingsSaver.ApplyAndSave();
         });
 
         graphicsEl.SetChangeCallback(v =>
         {
             settings.graphics = v;
-            settingsManager.ApplyAndSave();
+            settingsSaver.ApplyAndSave();
         });
 
         fpsEl.SetToggleCallback(v =>
         {
             settings.fps = v;
-            settingsManager.ApplyAndSave();
+            settingsSaver.ApplyAndSave();
         });
     }
 
@@ -74,5 +77,10 @@ public class SettingsScreen : MonoBehaviour
         sfxEl.SetValue(settings.sfx);
         graphicsEl.SetSelected(settings.graphics);
         fpsEl.SetValue(settings.fps);
+    }
+
+    public void SetBackAction(Action backAction)
+    {
+        this.backAction = backAction;
     }
 }

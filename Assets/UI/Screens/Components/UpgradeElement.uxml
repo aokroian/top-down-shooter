@@ -22,7 +22,7 @@
             </ui:VisualElement>
             <ui:Button display-tooltip-when-elided="true" name="UpgradeButton" class="button" style="font-size: 24px; flex-direction: row; flex-shrink: 0; -unity-text-align: middle-center; white-space: nowrap; align-items: center; justify-content: center; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin-top: 10px; margin-bottom: 10px; margin-left: 10px; margin-right: 10px;">
                 <ui:Label text="Upgrade" display-tooltip-when-elided="true" name="ButtonLabel" style="width: auto; -unity-text-align: middle-right; margin-right: 0; padding-right: 15px;" />
-                <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; background-image: url(&apos;/Assets/UI/Icons/dollar.png&apos;); -unity-background-scale-mode: stretch-to-fill; width: 24px; height: 24px;" />
+                <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; background-image: url(&apos;/Assets/Materials/Bonus/CreditIcon.png&apos;); -unity-background-scale-mode: stretch-to-fill; width: 28px; height: 28px;" />
                 <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="Cost" style="padding-left: 5px;" />
             </ui:Button>
         </ui:VisualElement>
