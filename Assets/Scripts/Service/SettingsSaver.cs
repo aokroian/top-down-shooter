@@ -32,6 +32,7 @@ public class SettingsSaver : MonoBehaviour
         // fps
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = settings.fps ? 60 : 30;
+        Debug.Log("vsyncCount: " + QualitySettings.vSyncCount);
     }
 
     protected bool GetBool(string key, bool defaultValue)

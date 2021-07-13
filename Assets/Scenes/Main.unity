@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 10
+  m_DragThreshold: 5
 --- !u!4 &157892515
 Transform:
   m_ObjectHideFlags: 0
@@ -895,7 +895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c09e68ace0e2c4da6b5016aea8af3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 0}
+  settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
 --- !u!114 &886370014 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 462298743271879873, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
