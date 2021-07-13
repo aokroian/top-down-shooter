@@ -106,5 +106,13 @@ MonoBehaviour:
     m_Localized: +10% damage
     m_Metadata:
       m_Items: []
+  - m_Id: 108740088848384
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108800725901312
+    m_Localized: Main menu
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

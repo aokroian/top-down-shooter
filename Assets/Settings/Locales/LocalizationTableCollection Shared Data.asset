@@ -103,6 +103,14 @@ MonoBehaviour:
     m_Key: +10% damage
     m_Metadata:
       m_Items: []
+  - m_Id: 108740088848384
+    m_Key: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108800725901312
+    m_Key: MainMenu
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

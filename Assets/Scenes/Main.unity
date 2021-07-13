@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 14482273}
   - component: {fileID: 14482275}
   - component: {fileID: 14482274}
+  - component: {fileID: 14482276}
   m_Layer: 0
   m_Name: SettingsScreen
   m_TagString: Untagged
@@ -169,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsSaver: {fileID: 866064498}
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
+  localizer: {fileID: 14482276}
 --- !u!114 &14482275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +187,22 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: ec33397d6e4d98d4a951ebcce541b8f4, type: 3}
   m_SortingOrder: 110
+--- !u!114 &14482276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14482272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2998bc4fc667b4cbc29eb69fbf7a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _table:
+    m_TableReference:
+      m_TableCollectionName: GUID:f572717ea8b4dcf47908f29ad22ffd9a
+  shouldRebuild: 1
 --- !u!1 &31522453
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +585,7 @@ GameObject:
   - component: {fileID: 690551148}
   - component: {fileID: 690551150}
   - component: {fileID: 690551149}
+  - component: {fileID: 690551151}
   m_Layer: 0
   m_Name: PauseScreen
   m_TagString: Untagged
@@ -617,6 +636,22 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 3fcae020835830d439386c894bbb7145, type: 3}
   m_SortingOrder: 100
+--- !u!114 &690551151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690551147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2998bc4fc667b4cbc29eb69fbf7a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _table:
+    m_TableReference:
+      m_TableCollectionName: GUID:f572717ea8b4dcf47908f29ad22ffd9a
+  shouldRebuild: 0
 --- !u!1 &732860204
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,8 +992,8 @@ MonoBehaviour:
   settingsScreen: {fileID: 14482272}
   levelLoader: {fileID: 886370014}
   gameLoopController: {fileID: 1099389162}
-  oldEventSystem: {fileID: 0}
-  newEventSystem: {fileID: 0}
+  oldEventSystem: {fileID: 157892513}
+  newEventSystem: {fileID: 157892516}
 --- !u!1001 &936015075
 PrefabInstance:
   m_ObjectHideFlags: 0
