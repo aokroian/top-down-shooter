@@ -14,6 +14,8 @@ public class UpgradeScreen : MonoBehaviour
     public ProgressionManager progressionManager;
     public ProgressionHolder progressionHolder;
 
+    public LocalizationTableHolder localizer;
+
     private VisualElement rootEl;
     private ScrollView scrollEl;
 
@@ -96,6 +98,8 @@ public class UpgradeScreen : MonoBehaviour
     {
         var tree = upgradeElement.CloneTree();
         var upgradeEl = tree.Q<UpgradeVisualElement>();
+
+        upgradeEl.SetLocalizer(localizer);
 
         //upgradeEl.SetIcon(upgrade.image);
         upgradeEl.SetName(upgrade.upgradeName);

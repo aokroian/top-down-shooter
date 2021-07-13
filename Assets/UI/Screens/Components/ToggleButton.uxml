@@ -5,10 +5,10 @@
         <ui:VisualElement style="flex-direction: row; flex-shrink: 1;">
             <ui:VisualElement style="flex-direction: row; width: 120px; justify-content: flex-start;">
                 <ui:VisualElement name="OffContainer" style="border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-top-right-radius: 0; border-bottom-right-radius: 0; flex-grow: 1; flex-shrink: 0; flex-direction: row;">
-                    <ui:Label text="Off" display-tooltip-when-elided="true" name="OffLabel" class="label" style="flex-grow: 0; flex-shrink: 1; flex-direction: column; margin-left: 10px; margin-right: 10px; margin-top: 8px; margin-bottom: 10px;" />
+                    <ui:Label text="#Off" display-tooltip-when-elided="true" name="OffLabel" class="label" style="flex-grow: 0; flex-shrink: 1; flex-direction: column; margin-left: 10px; margin-right: 10px; margin-top: 8px; margin-bottom: 10px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="OnContainer" style="border-left-width: 1px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 30px; border-bottom-right-radius: 30px; flex-grow: 1; flex-shrink: 0; flex-direction: row;">
-                    <ui:Label text="On" display-tooltip-when-elided="true" name="OnLabel" class="label" style="flex-grow: 0; flex-shrink: 1; margin-left: 10px; margin-right: 10px; margin-top: 8px; margin-bottom: 10px;" />
+                    <ui:Label text="#On" display-tooltip-when-elided="true" name="OnLabel" class="label" style="flex-grow: 0; flex-shrink: 1; margin-left: 10px; margin-right: 10px; margin-top: 8px; margin-bottom: 10px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

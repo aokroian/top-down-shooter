@@ -10,4 +10,5 @@ public class SettingsHolder : ScriptableObject
     public bool sfx;
     public string graphics;
     public bool fps;
+    public string language;
 }

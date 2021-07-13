@@ -7,8 +7,15 @@ public class UpgradeVisualElement : VisualElement
 {
     public new class UxmlFactory : UxmlFactory<UpgradeVisualElement> { }
 
+    private LocalizationTableHolder localizer;
+
     public UpgradeVisualElement()
     {
+    }
+
+    public void SetLocalizer(LocalizationTableHolder localizer)
+    {
+        this.localizer = localizer;
     }
 
     public void SetIcon(Texture2D icon)
@@ -18,18 +25,18 @@ public class UpgradeVisualElement : VisualElement
 
     public void SetName(string name)
     {
-        this.Q<Label>("Name").text = name;
+        this.Q<Label>("Name").text = localizer.Translate(name);
     }
 
     public void SetDescription(string description)
     {
-        this.Q<Label>("Description").text = description;
+        this.Q<Label>("Description").text = localizer.Translate(description);
     }
 
     // Add type enum
     public void SetUpgrade(bool value)
     {
-        this.Q<Label>("ButtonLabel").text = value ? "Upgrade" : "Unlock";
+        this.Q<Label>("ButtonLabel").text = value ? localizer.Translate("Upgrade") : localizer.Translate("Unlock");
         this.Q("ProgressBar").style.display = value ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
@@ -54,7 +61,7 @@ public class UpgradeVisualElement : VisualElement
     public void SetSelected(bool selected)
     {
         var button = this.Q<Button>("EquipButton");
-        button.text = selected ? "Unequip" : "Equip";
+        button.text = selected ? localizer.Translate("Unequip") : localizer.Translate("Equip");
     }
 
     public void SetUpgradeButtonCallback(EventCallback<ClickEvent> callback)

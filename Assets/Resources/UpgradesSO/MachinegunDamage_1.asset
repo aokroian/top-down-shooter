@@ -17,8 +17,8 @@ MonoBehaviour:
   children: []
   image: {fileID: 0}
   cost: 10
-  upgradeName: Machinegun damage
-  description: +10% dmg
+  upgradeName: Machinegun
+  description: +10% damage
   orderInUpgradeScreen: 0
   weapon: 1
   weaponUpgradeType: 0

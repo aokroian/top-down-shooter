@@ -5,30 +5,30 @@
     <Style src="/Assets/UI/Styles/Settings.uss" />
     <ui:VisualElement style="flex-grow: 1;">
         <ui:VisualElement style="align-items: center; background-color: rgb(0, 8, 20); border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); border-bottom-width: 3px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
-            <ui:Label text="Settings" display-tooltip-when-elided="true" style="flex-grow: 1; font-size: 48px;" />
+            <ui:Label text="#Settings" display-tooltip-when-elided="true" style="flex-grow: 1; font-size: 48px;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; justify-content: flex-start; align-items: stretch; background-color: rgb(0, 15, 31); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
             <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-around; background-color: rgb(0, 25, 51); padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px; width: auto; height: auto; border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 3px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; margin-left: 0; margin-right: 0; margin-top: 0; align-items: stretch;">
                 <ui:VisualElement style="flex-grow: 1; width: auto;">
                     <ui:VisualElement class="row">
                         <ui:VisualElement class="left_col">
-                            <ui:Label text="Vibration" display-tooltip-when-elided="true" class="label" />
+                            <ui:Label text="#Vibration" display-tooltip-when-elided="true" class="label" />
                         </ui:VisualElement>
                         <ui:VisualElement class="right_col">
                             <ui:Instance template="ToggleButton" name="Vibration" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement class="row">
+                    <ui:VisualElement class="row" style="margin-top: 30px;">
                         <ui:VisualElement class="left_col">
-                            <ui:Label text="Music" display-tooltip-when-elided="true" class="label" />
+                            <ui:Label text="#Music" display-tooltip-when-elided="true" class="label" />
                         </ui:VisualElement>
                         <ui:VisualElement class="right_col">
                             <ui:Instance template="ToggleButton" name="Music" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement class="row">
+                    <ui:VisualElement class="row" style="margin-top: 30px;">
                         <ui:VisualElement class="left_col">
-                            <ui:Label text="Sfx" display-tooltip-when-elided="true" class="label" />
+                            <ui:Label text="#Sfx" display-tooltip-when-elided="true" class="label" />
                         </ui:VisualElement>
                         <ui:VisualElement class="right_col">
                             <ui:Instance template="ToggleButton" name="Sfx" />
@@ -38,18 +38,26 @@
                 <ui:VisualElement style="flex-grow: 1; width: auto;">
                     <ui:VisualElement class="row">
                         <ui:VisualElement class="left_col">
-                            <ui:Label text="Graphics" display-tooltip-when-elided="true" class="label" />
+                            <ui:Label text="#Graphics" display-tooltip-when-elided="true" class="label" />
                         </ui:VisualElement>
                         <ui:VisualElement class="right_col">
                             <ui:Instance template="Selector" name="Graphics" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement class="row">
+                    <ui:VisualElement class="row" style="margin-top: 30px;">
                         <ui:VisualElement class="left_col">
-                            <ui:Label text="Fps" display-tooltip-when-elided="true" class="label" />
+                            <ui:Label text="#Fps" display-tooltip-when-elided="true" class="label" />
                         </ui:VisualElement>
-                        <ui:VisualElement class="right_col">
+                        <ui:VisualElement class="right_col" style="align-items: center;">
                             <ui:Instance template="ToggleButton" name="Fps" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-direction: row; align-items: center; padding-top: 0; margin-top: 30px;">
+                        <ui:VisualElement style="width: 130px;">
+                            <ui:Label text="#Language" display-tooltip-when-elided="true" class="label" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; align-items: center;">
+                            <ui:Instance template="Selector" name="Language" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>

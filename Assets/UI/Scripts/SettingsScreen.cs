@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UIElements;
 
 public class SettingsScreen : MonoBehaviour
@@ -10,6 +12,7 @@ public class SettingsScreen : MonoBehaviour
     //public MainUIController manager;
     public SettingsSaver settingsSaver;
     public SettingsHolder settings;
+    public UIDocumentLocalization localizer;
 
     private VisualElement rootEl;
     private ToggleVisualElement vibrationEl;
@@ -17,10 +20,21 @@ public class SettingsScreen : MonoBehaviour
     private ToggleVisualElement sfxEl;
     private SelectorVisualElement graphicsEl;
     private ToggleVisualElement fpsEl;
+    private SelectorVisualElement languageEl;
 
     private Action backAction;
 
+    void Awake()
+    {
+        localizer.SetRebuildCallback(Init);
+    }
+
     private void OnEnable()
+    {
+        //Init();
+    }
+
+    private void Init()
     {
         rootEl = GetComponent<UIDocument>().rootVisualElement;
         vibrationEl = rootEl.Q<TemplateContainer>("Vibration").Q<ToggleVisualElement>();
@@ -28,13 +42,24 @@ public class SettingsScreen : MonoBehaviour
         sfxEl = rootEl.Q<TemplateContainer>("Sfx").Q<ToggleVisualElement>();
         graphicsEl = rootEl.Q<TemplateContainer>("Graphics").Q<SelectorVisualElement>();
         fpsEl = rootEl.Q<TemplateContainer>("Fps").Q<ToggleVisualElement>();
+        languageEl = rootEl.Q<TemplateContainer>("Language").Q<SelectorVisualElement>();
 
         rootEl.Q("BackToTitle").RegisterCallback<ClickEvent>(e => backAction?.Invoke());
         fpsEl.SetLabels("30", "60");
         graphicsEl.SetValues(new List<string>(QualitySettings.names));
+        languageEl.SetValues(CreateLocaleStrings()); // Should be in Awake?
 
         CreateHandlers();
         Restore();
+    }
+
+    private List<string> CreateLocaleStrings()
+    {
+        List<string> result = new List<string>();
+        foreach(Locale locale in LocalizationSettings.AvailableLocales.Locales) {
+            result.Add(locale.LocaleName);
+        }
+        return result;
     }
 
     private void CreateHandlers()
@@ -68,6 +93,12 @@ public class SettingsScreen : MonoBehaviour
             settings.fps = v;
             settingsSaver.ApplyAndSave();
         });
+
+        languageEl.SetChangeCallback(v =>
+        {
+            settings.language = v;
+            settingsSaver.ApplyAndSave();
+        });
     }
 
     private void Restore()
@@ -77,6 +108,7 @@ public class SettingsScreen : MonoBehaviour
         sfxEl.SetValue(settings.sfx);
         graphicsEl.SetSelected(settings.graphics);
         fpsEl.SetValue(settings.fps);
+        languageEl.SetSelected(settings.language);
     }
 
     public void SetBackAction(Action backAction)

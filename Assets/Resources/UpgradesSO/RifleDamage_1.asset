@@ -17,8 +17,8 @@ MonoBehaviour:
   children: []
   image: {fileID: 0}
   cost: 15
-  upgradeName: Rifle damage
-  description: +10% dmg
+  upgradeName: Rifle
+  description: +10% damage
   orderInUpgradeScreen: 0
   weapon: 2
   weaponUpgradeType: 0

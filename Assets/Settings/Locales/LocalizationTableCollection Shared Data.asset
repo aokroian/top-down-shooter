@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: LocalizationTableCollection Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: LocalizationTableCollection
+  m_TableCollectionNameGuidString: f572717ea8b4dcf47908f29ad22ffd9a
+  m_Entries:
+  - m_Id: 66842419200
+    m_Key: NewRun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 851969990656
+    m_Key: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75928048656384
+    m_Key: Vibration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76306198716416
+    m_Key: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76405230428160
+    m_Key: Sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76457894109184
+    m_Key: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76517654552576
+    m_Key: Fps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76681739919360
+    m_Key: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80745659785216
+    m_Key: On
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80795555225600
+    m_Key: Off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86254160863232
+    m_Key: UpgradeAndChooseWeapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86403427753984
+    m_Key: Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86517445713920
+    m_Key: Unlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86603097595904
+    m_Key: Machinegun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86692193001472
+    m_Key: Pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86740771430400
+    m_Key: Shotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86796975104000
+    m_Key: Rifle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87404452929536
+    m_Key: Equip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87459394117632
+    m_Key: Unequip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87826743844864
+    m_Key: Run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104090912579584
+    m_Key: Unlock to equip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105238448988160
+    m_Key: +10% damage
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1626184328755

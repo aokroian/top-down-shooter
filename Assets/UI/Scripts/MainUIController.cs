@@ -11,8 +11,11 @@ public class MainUIController : MonoBehaviour
     public GameObject settingsScreen;
     public GameObject upgradeScreen;
 
+    public LocalizationTableHolder localizationTableHolder;
+
     private void Start()
     {
+        localizationTableHolder.Init();
         settingsScreen.GetComponent<SettingsScreen>().SetBackAction(ToTitleScreen);
     }
 

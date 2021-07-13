@@ -1,5 +1,4 @@
 .menu-item {
-    -unity-font: url('/Assets/Resources/Fonts/DotGothic16-Regular.ttf');
     font-size: 64px;
     -unity-font-style: normal;
     color: rgb(249, 170, 51);

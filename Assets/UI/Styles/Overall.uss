@@ -49,6 +49,6 @@
 }
 
 .unity-text-element {
-    -unity-font: resource('Fonts/DotGothic16-Regular');
+    -unity-font: resource('Fonts/Jura-Bold');
     color: rgb(255, 255, 255);
 }

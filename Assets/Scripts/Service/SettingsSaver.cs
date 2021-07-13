@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class SettingsSaver : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class SettingsSaver : MonoBehaviour
     protected const string SFX = "sfx";
     protected const string GRAPHICS = "graphics";
     protected const string FPS = "fps";
+    protected const string LANGUAGE = "language";
 
     public SettingsHolder settings;
 
@@ -20,6 +23,7 @@ public class SettingsSaver : MonoBehaviour
         SetBool(SFX, settings.sfx);
         PlayerPrefs.SetString(GRAPHICS, settings.graphics);
         SetBool(FPS, settings.fps);
+        PlayerPrefs.SetString(LANGUAGE, settings.language);
         PlayerPrefs.Save();
     }
 
@@ -33,6 +37,13 @@ public class SettingsSaver : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = settings.fps ? 60 : 30;
         Debug.Log("vsyncCount: " + QualitySettings.vSyncCount);
+
+        // language
+        var locale = LocalizationSettings.AvailableLocales.Locales.FirstOrDefault(v => v.LocaleName == settings.language);
+        if (locale != null)
+        {
+            LocalizationSettings.SelectedLocale = locale;
+        }
     }
 
     protected bool GetBool(string key, bool defaultValue)

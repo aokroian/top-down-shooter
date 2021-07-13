@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class SettingsManager : SettingsSaver
 {
 
-    // Start is called before the first frame update
     void Start()
     {
         LoadSettings();
@@ -19,5 +19,6 @@ public class SettingsManager : SettingsSaver
         settings.sfx = GetBool(SFX, true);
         settings.graphics = PlayerPrefs.GetString(GRAPHICS, QualitySettings.names[QualitySettings.GetQualityLevel()]);
         settings.fps = GetBool(FPS, false);
+        settings.language = PlayerPrefs.GetString(LANGUAGE, LocalizationSettings.SelectedLocale.LocaleName);
     }
 }

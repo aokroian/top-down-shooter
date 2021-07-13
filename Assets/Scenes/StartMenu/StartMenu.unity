@@ -282,6 +282,7 @@ MonoBehaviour:
   titleScreen: {fileID: 1411809348}
   settingsScreen: {fileID: 1953305820}
   upgradeScreen: {fileID: 1045911395}
+  localizationTableHolder: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
 --- !u!4 &956195906
 Transform:
   m_ObjectHideFlags: 0
@@ -311,6 +312,7 @@ GameObject:
   - component: {fileID: 1045911398}
   - component: {fileID: 1045911397}
   - component: {fileID: 1045911399}
+  - component: {fileID: 1045911400}
   m_Layer: 0
   m_Name: UpgradeScreen
   m_TagString: Untagged
@@ -348,6 +350,7 @@ MonoBehaviour:
   upgradeElement: {fileID: 9197481963319205126, guid: b817395b78053854896af5c66a3f3f72, type: 3}
   progressionManager: {fileID: 1045911399}
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
+  localizer: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
 --- !u!114 &1045911398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +380,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
+--- !u!114 &1045911400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045911395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2998bc4fc667b4cbc29eb69fbf7a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _table:
+    m_TableReference:
+      m_TableCollectionName: GUID:f572717ea8b4dcf47908f29ad22ffd9a
+  shouldRebuild: 0
 --- !u!1 &1411809348
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +407,7 @@ GameObject:
   - component: {fileID: 1411809349}
   - component: {fileID: 1411809351}
   - component: {fileID: 1411809350}
+  - component: {fileID: 1411809352}
   m_Layer: 0
   m_Name: TitleScreen
   m_TagString: Untagged
@@ -438,6 +458,22 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: fbe2b94eaee9d0047b5ad9dabf0ed3e5, type: 3}
   m_SortingOrder: 0
+--- !u!114 &1411809352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411809348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2998bc4fc667b4cbc29eb69fbf7a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _table:
+    m_TableReference:
+      m_TableCollectionName: GUID:f572717ea8b4dcf47908f29ad22ffd9a
+  shouldRebuild: 0
 --- !u!1 &1782804398
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +578,7 @@ GameObject:
   - component: {fileID: 1953305821}
   - component: {fileID: 1953305822}
   - component: {fileID: 1953305823}
+  - component: {fileID: 1953305824}
   m_Layer: 0
   m_Name: SettingsScreen
   m_TagString: Untagged
@@ -593,6 +630,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsSaver: {fileID: 858362096}
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
+  localizer: {fileID: 1953305824}
+--- !u!114 &1953305824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953305820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2998bc4fc667b4cbc29eb69fbf7a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _table:
+    m_TableReference:
+      m_TableCollectionName: GUID:f572717ea8b4dcf47908f29ad22ffd9a
+  shouldRebuild: 1
 --- !u!1 &1978944927
 GameObject:
   m_ObjectHideFlags: 0
