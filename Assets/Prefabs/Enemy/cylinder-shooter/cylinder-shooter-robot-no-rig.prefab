@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &992249265418582212
 GameObject:
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &1791714739586159786
 GameObject:
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &1892436371911094907
 GameObject:
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 6
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &2423162766636079648
 BoxCollider:
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &3584225799722595877
 GameObject:
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &4603300788604594936
 GameObject:
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &4719806764497388499
 GameObject:
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &6190602120689375460
 GameObject:
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &7168145697974317382
 GameObject:
@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &7816982450251814109
 GameObject:
@@ -1416,5 +1416,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001

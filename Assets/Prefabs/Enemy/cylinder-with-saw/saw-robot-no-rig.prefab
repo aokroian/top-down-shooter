@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &8184216130896353139
 BoxCollider:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &812090141535333204
 BoxCollider:
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &6144869337697194255
 BoxCollider:
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &2440966463229182227
 BoxCollider:
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &1157172478998253539
 BoxCollider:
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &3314866423318345114
 BoxCollider:
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &1537613511342121243
 BoxCollider:
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &5242323425157645905
 BoxCollider:
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &7315568602726256880
 BoxCollider:
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &4113857334535652046
 BoxCollider:
@@ -1292,6 +1292,7 @@ GameObject:
   - component: {fileID: 7210454824908411863}
   - component: {fileID: 4896636809120458525}
   - component: {fileID: 6867825893527488092}
+  - component: {fileID: 5119782838455760617}
   m_Layer: 0
   m_Name: saw-robot-no-rig
   m_TagString: Untagged
@@ -1391,6 +1392,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5119782838455760617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409929916415313608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 3
+  massAfterCollisionWithPlayer: 0.001
 --- !u!1 &6944900748000134817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &888978378339356182
 BoxCollider:
@@ -1616,7 +1631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 3
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &6255148596056813842
 BoxCollider:
