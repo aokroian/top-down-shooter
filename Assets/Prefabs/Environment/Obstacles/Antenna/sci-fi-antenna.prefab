@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 2017624573955673367}
   - component: {fileID: -6940802526155880690}
   - component: {fileID: 5089910702707886972}
-  m_Layer: 0
+  - component: {fileID: -3064295273831823187}
+  m_Layer: 6
   m_Name: sci-fi-antenna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +118,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 2.8290002, y: 0.15300001, z: 2.8290002}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.15300001, z: 0}
   m_TimeToStationary: 0.5
@@ -132,8 +133,31 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.6578417, y: 3.7091124, z: 5.6578417}
-  m_Center: {x: 0, y: 1.8545562, z: 0}
+  m_Size: {x: 5.6578417, y: 0.3391509, z: 5.6578417}
+  m_Center: {x: 0, y: 0.16957545, z: 0}
+--- !u!114 &-3064295273831823187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121481787433120845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000000
+  maxHealth: 1000000
+  onHitEffect: {fileID: 0}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!1 &5963099279631132831
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +169,10 @@ GameObject:
   - component: {fileID: 3992193638421916318}
   - component: {fileID: 5855008577385657379}
   - component: {fileID: 3278854331741250189}
-  m_Layer: 0
+  - component: {fileID: 3675905739868045103}
+  - component: {fileID: 4901345236673892383}
+  - component: {fileID: 8820824087273960563}
+  m_Layer: 6
   m_Name: leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,6 +244,59 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &3675905739868045103
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5963099279631132831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6400293
+  m_Height: 2.2824645
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.055322647, z: 0}
+--- !u!208 &4901345236673892383
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5963099279631132831}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.64000005, y: 1.072, z: 0.64000005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.087000005, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &8820824087273960563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5963099279631132831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000000
+  maxHealth: 1000000
+  onHitEffect: {fileID: 0}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0
 --- !u!1 &8971738303185708511
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +308,10 @@ GameObject:
   - component: {fileID: 8064328575964682518}
   - component: {fileID: 9145128238861821491}
   - component: {fileID: 8087241718532211365}
-  m_Layer: 0
+  - component: {fileID: 5437076928396172946}
+  - component: {fileID: 630518033065707168}
+  - component: {fileID: 314807231590101643}
+  m_Layer: 6
   m_Name: antenna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,3 +382,55 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5437076928396172946
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971738303185708511}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.8772326, y: 1.040756, z: 6.881818}
+  m_Center: {x: 0, y: 0.5296165, z: -0.0015339851}
+--- !u!208 &630518033065707168
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971738303185708511}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.4390001, y: 0.74, z: 3.4410002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.31, z: -0.002}
+  m_TimeToStationary: 0.5
+--- !u!114 &314807231590101643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971738303185708511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000000
+  maxHealth: 1000000
+  onHitEffect: {fileID: 0}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  hitDir: {x: 0, y: 0, z: 0}
+  hitForceAmount: 0
+  isFromExplosion: 0
+  explosionPosition: {x: 0, y: 0, z: 0}
+  explosionRadius: 0

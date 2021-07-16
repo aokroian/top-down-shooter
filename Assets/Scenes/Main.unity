@@ -578,7 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2831b5717f4ba418edb32d72af03a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPrefab: {fileID: 478865443476345267, guid: ff1f3707c1e7f594b9c0837d3207b829, type: 3}
+  groundPrefab: {fileID: 1313270553}
 --- !u!1 &690551147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 478865443476345267, guid: ff1f3707c1e7f594b9c0837d3207b829, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1810415943204170339, guid: ff1f3707c1e7f594b9c0837d3207b829, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2102,6 +2106,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1313270553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 478865443476345267, guid: ff1f3707c1e7f594b9c0837d3207b829, type: 3}
+  m_PrefabInstance: {fileID: 1212409109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1326640811 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7983726029250563888, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}

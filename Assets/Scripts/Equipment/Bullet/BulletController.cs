@@ -93,6 +93,12 @@ public class BulletController : MonoBehaviour, IBulletController
             AwareEventParam param = new AwareEventParam(transform.position, bp.awareDistance);
             bp.awareEvent.Raise(param);
 
+            //the bullet must not penetrate obstacles
+            if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+            {
+                bp.numberOfPenetrations = 0;
+            }
+
             bp.numberOfPenetrations--;
             ToBeOrNotToBe();
         }
