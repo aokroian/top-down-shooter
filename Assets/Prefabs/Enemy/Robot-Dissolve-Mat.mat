@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: dissolve-robot
+  m_Name: Robot-Dissolve-Mat
   m_Shader: {fileID: -6465566751694194690, guid: a0371c6808595e1439a06510e031340e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4

@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &8184216130896353139
 BoxCollider:
@@ -191,7 +191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &812090141535333204
 BoxCollider:
@@ -319,7 +319,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &6144869337697194255
 BoxCollider:
@@ -447,7 +447,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &2440966463229182227
 BoxCollider:
@@ -575,7 +575,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &1157172478998253539
 BoxCollider:
@@ -703,7 +703,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &3314866423318345114
 BoxCollider:
@@ -831,7 +831,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &1537613511342121243
 BoxCollider:
@@ -959,7 +959,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &5242323425157645905
 BoxCollider:
@@ -1087,7 +1087,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &7315568602726256880
 BoxCollider:
@@ -1215,7 +1215,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &4113857334535652046
 BoxCollider:
@@ -1354,7 +1354,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!1 &6944900748000134817
 GameObject:
@@ -1469,7 +1469,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &888978378339356182
 BoxCollider:
@@ -1597,7 +1597,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdf5e1c7a558e5f4084c11c2a7f61fa4, type: 2}
+  - {fileID: 2100000, guid: 9bb2c6d2d5617ca4ea04ea6fe5227164, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d763dc83568416193b49579a9bec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 3
+  timeToLive: 4
   massAfterCollisionWithPlayer: 0.001
 --- !u!65 &6255148596056813842
 BoxCollider:
