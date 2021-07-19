@@ -75,9 +75,11 @@ public class PlayerController : MonoBehaviour
     public void OnMovement(InputAction.CallbackContext value)
     {
         Vector2 inputMovement = value.ReadValue<Vector2>();
-        leftStickPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
-        wasdPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
+        //leftStickPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
+        //wasdPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
 
+        leftStickPosition = inputMovement;
+        wasdPosition = inputMovement;
     }
     public void OnAim(InputAction.CallbackContext value)
     {
