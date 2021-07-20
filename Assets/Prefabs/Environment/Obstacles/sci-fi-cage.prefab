@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 8968495157402156592}
   m_Layer: 0
   m_Name: sci-fi-cage
-  m_TagString: Untagged
+  m_TagString: ObsCage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6359400822183817917}
   m_Layer: 6
   m_Name: gas-tank-high-poly
-  m_TagString: Untagged
+  m_TagString: ObsGasTank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

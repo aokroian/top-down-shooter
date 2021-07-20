@@ -8,6 +8,12 @@ TagManager:
   - RightHandConstraint
   - Enemy
   - Bullet
+  - ObsGasTank
+  - ObsContainer
+  - ObsBarrelsPalette
+  - ObsBoxes
+  - ObsCage
+  - ObsAntenna
   layers:
   - Default
   - TransparentFX
