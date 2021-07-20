@@ -143,6 +143,10 @@ public class ObstaclesSpawner : MonoBehaviour
             var obstacles = activeObstacles[key];
             foreach (GameObject obs in obstacles)
             {
+                if (!pool.ContainsKey(obs.tag))
+                {
+                    pool.Add(obs.tag, new List<GameObject>());
+                }
                 pool[obs.tag].Add(obs);
             }
             activeObstacles.Remove(key);

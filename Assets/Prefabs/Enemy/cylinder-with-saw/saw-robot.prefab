@@ -1470,7 +1470,7 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9030502270949030188, guid: f84b15b228132e04aa9d10add2674b4d, type: 3}
+      - m_Target: {fileID: 848633121}
         m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
         m_MethodName: Aware
         m_Mode: 0
