@@ -66,12 +66,17 @@ public class ObstaclesSpawner : MonoBehaviour
             activeObstacles.Add(key, tileObstacles);
         }
 
-        HashSet<Vector2> occupied = new HashSet<Vector2>();
+        var coroutine = SpawnCoroutine(bounds, maxCount, iterStep, tileObstacles);
+        StartCoroutine(coroutine);
+    }
 
-        for (int x = 0; x < maxCount; x ++)
+    private IEnumerator SpawnCoroutine(Bounds bounds, float maxCount, float iterStep, List<GameObject> tileObstacles)
+    {
+        HashSet<Vector2> occupied = new HashSet<Vector2>();
+        for (int x = 0; x < maxCount; x++)
         {
             var xPos = bounds.min.x + iterStep * x;
-            for (int z = 0; z < maxCount; z ++)
+            for (int z = 0; z < maxCount; z++)
             {
                 if (occupied.Contains(new Vector2(x, z)))
                 {
@@ -110,7 +115,8 @@ public class ObstaclesSpawner : MonoBehaviour
                             rotation = Quaternion.Euler(0f, 0f, 0f);
                             occupied.Add(new Vector2(x, z + 1));
                         }
-                    } else
+                    }
+                    else
                     {
                         pos = new Vector3(xPos, yPos, zPos);
                         rotation = Quaternion.Euler(0f, 0f, 0f);
@@ -124,13 +130,15 @@ public class ObstaclesSpawner : MonoBehaviour
                         obstacle.transform.position = pos;
                         obstacle.transform.rotation = obstaclePrefab.transform.rotation * rotation;
                         pool[obstaclePrefab.tag].RemoveAt(0);
-                    } else
+                    }
+                    else
                     {
                         obstacle = Instantiate(obstaclePrefab, pos, rotation * obstaclePrefab.transform.rotation, this.transform);
                     }
 
                     tileObstacles.Add(obstacle);
                 }
+                yield return null;
             }
         }
     }
