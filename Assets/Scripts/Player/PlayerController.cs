@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour
         audioStorage.TryGetValue("Dodge", out dodgeSound);
         audioStorage.TryGetValue("Hit by an enemy bullet", out bulletHittingPlayerSound);
         audioStorage.TryGetValue("Hit by an enemy saw", out sawHittingPlayerSound);
-       
+
 
         // finding objects for rigging
         FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
@@ -250,9 +250,9 @@ public class PlayerController : MonoBehaviour
             audioSource.volume = Random.Range(0.1f, 0.2f);
             if (!audioSource.isPlaying)
             {
-               audioSource.Play();
+                audioSource.Play();
             }
-            
+
         }
         else if (rb.velocity.magnitude < 1)
         {
@@ -323,13 +323,14 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetFloat("local Z speed", localMovement.z);
             animator.SetFloat("local X speed", localMovement.x);
-        } else if (rb.velocity.magnitude < 0.1f)
+        }
+        else if (rb.velocity.magnitude < 0.1f)
         {
             animator.SetFloat("local Z speed", 0);
             animator.SetFloat("local X speed", 0);
         }
-        
-        
+
+
         // hand on item animation rigging part
         // moving hand rig controllers to points on weapon when its equiped
         if (rightHandPoint != null)
@@ -353,12 +354,25 @@ public class PlayerController : MonoBehaviour
         }
 
         // dodge system РАБОТАЕТ ЧЕРЕЗ ЖОПУ
-        if (allowedToDodge && movement.magnitude > 0.01f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
+        if (allowedToDodge && rb.velocity.magnitude > 1f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
         {
             dodgeTimer += dodgeTime;
             stamina -= dodgeStaminaCost;
 
             animator.SetBool("Is Dodging", true);
+
+            // stop walking audio
+            if (audioSource.isPlaying)
+            {
+                audioSource.clip = null;
+                audioSource.loop = false;
+                audioSource.pitch = 1;
+                audioSource.volume = 1;
+                audioSource.Stop();
+            }
+
+            // play dodge audio
+            audioSource.PlayOneShot(dodgeSound);
         }
         if (dodgeTimer > 0f)
         {
@@ -450,7 +464,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
-        
+
         // вращение персонажа 
         Vector3 lTargetDir = aimAtPosition - transform.position;
         lTargetDir.y = 0f;
