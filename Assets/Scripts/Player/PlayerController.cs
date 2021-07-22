@@ -21,6 +21,14 @@ public class PlayerController : MonoBehaviour
     private float dodgeTimer = 0f;
     private Vector2 currentVel;
 
+    // variables for sound system
+    private AudioSource audioSource;
+    private AudioClip deathSound;
+    private AudioClip runSound;
+    private AudioClip dodgeSound;
+    private AudioClip bulletHittingPlayerSound;
+    private AudioClip sawHittingPlayerSound;
+
     // variables for health and stamina
     public float health = 100f;
     public float maxHealth = 100f;
@@ -163,7 +171,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
     public void OnControlsChanged()
     {
         if (playerInput.currentControlScheme != currentControlScheme)
@@ -181,19 +188,28 @@ public class PlayerController : MonoBehaviour
             RemoveAllBindingOverrides();
         }
     }
-
     void RemoveAllBindingOverrides()
     {
         InputActionRebindingExtensions.RemoveAllBindingOverrides(playerInput.currentActionMap);
     }
-
     private void Awake()
     {
         itemsEquipmentArr = progressionManager.GetWeapons();
     }
-
     private void Start()
     {
+        // writing variables for audio system
+        audioSource = GetComponent<AudioSource>();
+        SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
+
+        audioStorage.TryGetValue("Death", out deathSound);
+        audioStorage.TryGetValue("Run", out runSound);
+        audioStorage.TryGetValue("Dodge", out dodgeSound);
+        audioStorage.TryGetValue("Hit by an enemy bullet", out bulletHittingPlayerSound);
+        audioStorage.TryGetValue("Hit by an enemy saw", out sawHittingPlayerSound);
+       
+
+        // finding objects for rigging
         FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
         FindInAllChildren(gameObject.transform, "LeftHandController", ref leftHandConstraintController);
         FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
@@ -223,6 +239,30 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        // run sound
+        if (rb.velocity.magnitude >= 1)
+        {
+            audioSource.clip = runSound;
+            audioSource.loop = true;
+            audioSource.pitch = Random.Range(0.6f, 0.8f);
+            audioSource.volume = Random.Range(0.1f, 0.2f);
+            if (!audioSource.isPlaying)
+            {
+               audioSource.Play();
+            }
+            
+        }
+        else if (rb.velocity.magnitude < 1)
+        {
+            audioSource.clip = null;
+            audioSource.loop = false;
+            audioSource.pitch = 1;
+            audioSource.volume = 1;
+            audioSource.Stop();
+        }
+
 
         // aiming and movement values update
         if (currentControlScheme == "Gamepad")
@@ -262,8 +302,6 @@ public class PlayerController : MonoBehaviour
 
             movement = leftStickPosition;
         }
-
-
         if (currentControlScheme == "Keyboard")
         {
             aimAtPosition = GetAimPoint(new Vector3(mousePosition.x, mousePosition.y, 0f));
@@ -281,8 +319,16 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         Vector3 globalMovement = new Vector3(movement.x, 0.0f, movement.y);
         Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
-        animator.SetFloat("local Z speed", localMovement.z);
-        animator.SetFloat("local X speed", localMovement.x);
+        if (rb.velocity.magnitude >= 0.1f)
+        {
+            animator.SetFloat("local Z speed", localMovement.z);
+            animator.SetFloat("local X speed", localMovement.x);
+        } else if (rb.velocity.magnitude < 0.1f)
+        {
+            animator.SetFloat("local Z speed", 0);
+            animator.SetFloat("local X speed", 0);
+        }
+        
         
         // hand on item animation rigging part
         // moving hand rig controllers to points on weapon when its equiped

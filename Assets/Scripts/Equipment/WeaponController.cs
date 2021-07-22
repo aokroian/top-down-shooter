@@ -13,6 +13,14 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
     public WeaponEnum type;
 
+    // variables for sound system
+    public float reloadSoundDelay = 0f;
+
+    private AudioSource audioSource;
+    private AudioClip shotSound;
+    private AudioClip reloadSound;
+    private AudioClip noBulletsSound;
+
     //
     public float ownerAgility = 1f;
     public float ownerRigControllerAgility = 1f;
@@ -58,6 +66,15 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
     private void Start()
     {
+        // writing variables for audio system
+        audioSource = GetComponent<AudioSource>();
+        SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
+
+        audioStorage.TryGetValue("Shot", out shotSound);
+        audioStorage.TryGetValue("Reload", out reloadSound);
+        audioStorage.TryGetValue("No bullets", out noBulletsSound);
+
+
         //get weapon animator and set reload time float for reload animation
         animator = gameObject.GetComponent<Animator>();
         if (animator != null)
@@ -150,6 +167,11 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         // если в обойме нет патронов, вместо выстрела производится перезарядка
         if (bulletsInClip <= 0)
         {
+            if (!ammoProvider.HasAmmo(ammoType))
+            {
+                // audio
+                audioSource.PlayOneShot(noBulletsSound);
+            }
             Reload();
             return;
         }
@@ -158,6 +180,9 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
         if (bulletsInClip >= 1)
         {
+            // audio
+            audioSource.PlayOneShot(shotSound);
+
             // частицы у ствола
             if (bulletFlashRef != null)
                 Instantiate(bulletFlashRef, bulletOutPointObj.transform.position, bulletOutPointObj.transform.rotation, transform);
@@ -213,6 +238,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     {
         // невозможно перезарядиться, если уже идет перезарядка
         if (reloadTimer > 0f) return;
+        
         // устанавливаем таймер
         reloadTimer = reloadTime;
 
@@ -223,6 +249,11 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
         // TODO: Should be at end of reloading?
         bulletsInClip += ammoProvider.GetAmmo(ammoType, needToAdd);
+        // audio
+        audioSource.clip = reloadSound;
+        audioSource.loop = false;
+        audioSource.PlayDelayed(reloadSoundDelay);
+        
     }
 
     public int GetAmmoLeft()
