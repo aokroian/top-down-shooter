@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2317510065248028855}
   - component: {fileID: 8171030663683997361}
   - component: {fileID: 7376279947953155692}
+  - component: {fileID: 8525736964815440172}
   m_Layer: 6
   m_Name: side1
   m_TagString: Untagged
@@ -39,12 +40,12 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3995220855920395188}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5548773, y: 5.0276, z: 0.26255226}
-  m_Center: {x: 0.11345339, y: 0.12290788, z: 0.047272205}
+  m_Size: {x: 3.3362525, y: 5.0276, z: 0.62949824}
+  m_Center: {x: 0.11345327, y: 0.12290788, z: -0.13620079}
 --- !u!208 &7376279947953155692
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -55,12 +56,28 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 3.3362525, y: 5.0276, z: 0.62949824}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.11345327, y: 0.12290788, z: -0.13620079}
   m_TimeToStationary: 0.5
+--- !u!54 &8525736964815440172
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995220855920395188}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &4435643958023794748
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,6 +89,7 @@ GameObject:
   - component: {fileID: 7435053030814124179}
   - component: {fileID: 760248242498251906}
   - component: {fileID: 3489957237857181072}
+  - component: {fileID: 4963956645670827843}
   m_Layer: 6
   m_Name: side2
   m_TagString: Untagged
@@ -100,12 +118,12 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4435643958023794748}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24364305, y: 5.0276, z: 4.6116033}
-  m_Center: {x: 0.056726813, y: 0.12290788, z: 0.1039989}
+  m_Size: {x: 0.6680937, y: 5.0276, z: 4.729534}
+  m_Center: {x: 0.22964168, y: 0.12290788, z: 0.10399914}
 --- !u!208 &3489957237857181072
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -116,12 +134,28 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 0.6680937, y: 5.0276, z: 4.729534}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.22964168, y: 0.12290788, z: 0.10399914}
   m_TimeToStationary: 0.5
+--- !u!54 &4963956645670827843
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435643958023794748}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &4529312228017379500
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +167,7 @@ GameObject:
   - component: {fileID: 2671605899916721053}
   - component: {fileID: 2354031298940654655}
   - component: {fileID: 4446450438271541349}
+  - component: {fileID: 1948148403925411906}
   m_Layer: 6
   m_Name: side3
   m_TagString: Untagged
@@ -161,12 +196,12 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4529312228017379500}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.762875, y: 5.103236, z: 0.30036974}
-  m_Center: {x: -0.009454489, y: 0.16072595, z: 0.009454012}
+  m_Size: {x: 3.3280435, y: 5.103236, z: 0.7037033}
+  m_Center: {x: 0.020028353, y: 0.16072607, z: 0.21112078}
 --- !u!208 &4446450438271541349
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -177,12 +212,28 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 3.3280435, y: 5.103236, z: 0.7037033}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.020028353, y: 0.16072607, z: 0.21112078}
   m_TimeToStationary: 0.5
+--- !u!54 &1948148403925411906
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4529312228017379500}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &5775684947015919250
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +245,7 @@ GameObject:
   - component: {fileID: 4809593436668660374}
   - component: {fileID: 4708288767681666721}
   - component: {fileID: 1201873620310329825}
+  - component: {fileID: 5838414544614874048}
   m_Layer: 6
   m_Name: side
   m_TagString: Untagged
@@ -222,12 +274,12 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5775684947015919250}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24364328, y: 4.9897823, z: 4.6683297}
-  m_Center: {x: 0.037817717, y: 0.06618118, z: 0.01890874}
+  m_Size: {x: 0.6243987, y: 4.9897823, z: 4.7076406}
+  m_Center: {x: -0.15256, y: 0.06618118, z: -0.0007466078}
 --- !u!208 &1201873620310329825
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -238,12 +290,28 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 0.6243987, y: 4.9897823, z: 4.7076406}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.15256, y: 0.06618118, z: -0.0007466078}
   m_TimeToStationary: 0.5
+--- !u!54 &5838414544614874048
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775684947015919250}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &6613770231785700250
 GameObject:
   m_ObjectHideFlags: 0
