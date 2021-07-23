@@ -56,7 +56,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 3.3362525, y: 5.0276, z: 0.62949824}
+  m_Extents: {x: 1.668126, y: 2.5138, z: 0.3147491}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -134,7 +134,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.6680937, y: 5.0276, z: 4.729534}
+  m_Extents: {x: 0.33404684, y: 2.5138, z: 2.364767}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -212,7 +212,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 3.3280435, y: 5.103236, z: 0.7037033}
+  m_Extents: {x: 1.6640215, y: 2.551618, z: 0.35185164}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4809593436668660374}
   - component: {fileID: 4708288767681666721}
-  - component: {fileID: 1201873620310329825}
+  - component: {fileID: 1004673327636731831}
   - component: {fileID: 5838414544614874048}
   m_Layer: 6
   m_Name: side
@@ -280,7 +280,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6243987, y: 4.9897823, z: 4.7076406}
   m_Center: {x: -0.15256, y: 0.06618118, z: -0.0007466078}
---- !u!208 &1201873620310329825
+--- !u!208 &1004673327636731831
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,7 +290,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.6243987, y: 4.9897823, z: 4.7076406}
+  m_Extents: {x: 0.31219935, y: 2.494891, z: 2.3538206}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
