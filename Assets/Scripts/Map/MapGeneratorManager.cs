@@ -5,7 +5,6 @@ using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(GroundSpawner), typeof(ObstaclesSpawner))]
 public class MapGeneratorManager : MonoBehaviour
 {
     public GameObject player;
@@ -14,8 +13,9 @@ public class MapGeneratorManager : MonoBehaviour
 
     public EnemySpawnerManager enemySpawner;
 
-    private GroundSpawner groundSpawner;
-    private ObstaclesSpawner obstaclesSpawner;
+    public GroundSpawner groundSpawner;
+    public ObstaclesSpawner obstaclesSpawner;
+    public NavMeshSurface navMesh;
 
     private float groundSize;
 
@@ -26,8 +26,6 @@ public class MapGeneratorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        groundSpawner = GetComponent<GroundSpawner>();
-        obstaclesSpawner = GetComponent<ObstaclesSpawner>();
         groundSize = groundSpawner.groundSize;
         foreach (GameObject obj in groundSpawner.preCreatedGrounds)
         {
@@ -37,7 +35,6 @@ public class MapGeneratorManager : MonoBehaviour
 
         CalcCurTilePos();
         SpawnAll();
-        var navMesh = GetComponent<NavMeshSurface>();
         navMesh.overrideTileSize = true;
         navMesh.tileSize = 64;
         navMesh.BuildNavMesh();
@@ -52,7 +49,6 @@ public class MapGeneratorManager : MonoBehaviour
         if (prevTilePos != curTilePos)
         {
             SpawnAll();
-            var navMesh = GetComponent<NavMeshSurface>();
             navMesh.UpdateNavMesh(navMesh.navMeshData);
         }
     }
