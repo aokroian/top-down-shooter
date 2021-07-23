@@ -7,6 +7,8 @@ public class BulletController : MonoBehaviour, IBulletController
     [InspectorName("Bullet params")]
     public BulletParams bp;
 
+    public HitType hitType;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +82,7 @@ public class BulletController : MonoBehaviour, IBulletController
             if (target != null)
             {
                 SpawnEffect(target);
-                target.TakeDamage(bp.shotDamage, bp.bulletImpactForce, -(bp.shooter.transform.position - transform.position));
+                target.TakeDamage(bp.shotDamage, bp.bulletImpactForce, -(bp.shooter.transform.position - transform.position), hitType: hitType);
             }
 
             /*

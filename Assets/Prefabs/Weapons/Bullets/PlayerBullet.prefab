@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9013387487956621814}
   - component: {fileID: 1031608973260867948}
   m_Layer: 0
-  m_Name: Bullet_new
+  m_Name: PlayerBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,6 +226,8 @@ MonoBehaviour:
     shooter: {fileID: 0}
     velocity: {x: 0, y: 0, z: 0}
     player: {fileID: 0}
+    numberOfPenetrations: 0
+  hitType: 2
 --- !u!136 &-2046446463222077947
 CapsuleCollider:
   m_ObjectHideFlags: 0

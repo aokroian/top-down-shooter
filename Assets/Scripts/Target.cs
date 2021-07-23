@@ -2,6 +2,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using EZCameraShake;
 
+public enum HitType
+{
+    RobotSaw,
+    RobotBullet,
+    PlayerBullet
+}
+
 public class Target : MonoBehaviour
 {
     public float health = 100f;
@@ -9,6 +16,9 @@ public class Target : MonoBehaviour
     public GameObject onHitEffect;
 
     public UnityEvent onDeath;
+    public UnityEvent onRobotSawHit;
+    public UnityEvent onRobotBulletHit;
+    public UnityEvent onPlayerBulletHit;
 
     public bool isDead { get; private set; }
 
@@ -23,10 +33,13 @@ public class Target : MonoBehaviour
     public Vector3 explosionPosition;
     [HideInInspector]
     public float explosionRadius;
+    [HideInInspector]
+    public HitType typeOfHit;
 
-    public void TakeDamage(float amount, float? forceAmount = null, Vector3? hitDirection = null, bool? isHitFromExplosion = null, Vector3? explPosition = null, float? explRadius = null)
+    public void TakeDamage(float amount, float? forceAmount = null, Vector3? hitDirection = null, bool? isHitFromExplosion = null, Vector3? explPosition = null, float? explRadius = null, HitType? hitType = HitType.PlayerBullet)
     {
         health -= amount;
+
 
         if (gameObject.tag == "Player")
         {
@@ -39,6 +52,21 @@ public class Target : MonoBehaviour
         isFromExplosion = isHitFromExplosion ?? false;
         explosionPosition = explPosition ?? Vector3.zero;
         explosionRadius = explRadius ?? 0f;
+        typeOfHit = hitType ?? HitType.PlayerBullet;
+
+
+        if (typeOfHit == HitType.PlayerBullet)
+        {
+            onPlayerBulletHit.Invoke();
+        }
+        if (typeOfHit == HitType.RobotBullet)
+        {
+            onRobotBulletHit.Invoke();
+        }
+        if (typeOfHit == HitType.RobotSaw)
+        {
+            onRobotSawHit.Invoke();
+        }
     }
 
     public bool Heal(float amount)

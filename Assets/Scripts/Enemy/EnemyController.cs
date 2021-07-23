@@ -115,7 +115,7 @@ public class EnemyController : MonoBehaviour, EnemyProperties
                 biteTimer -= Time.deltaTime;
                 if (biteTimer <= 0f)
                 {
-                    Bite();
+                    //Bite();
                     biteTimer = afterBiteTime;
                     currentState = State.AFTER_BITE;
                 }
@@ -140,14 +140,14 @@ public class EnemyController : MonoBehaviour, EnemyProperties
         //return Vector3.Distance(transform.position, player.transform.position) <= biteDistance;
     }
 
-    private void Bite()
+    public void Bite()
     {
         if (Vector3.Distance(transform.position, player.transform.position) <= biteDistance)
         {
             var playerTarget = player.GetComponent<Target>();
             if (playerTarget != null)
             {
-                playerTarget.TakeDamage(damage);
+                playerTarget.TakeDamage(damage, hitType: HitType.RobotSaw);
             }
         }
     }

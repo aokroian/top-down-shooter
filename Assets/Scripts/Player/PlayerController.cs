@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentVel;
 
     // variables for sound system
-    private AudioSource audioSource;
+    private AudioSource damageAudioSource;
+    private AudioSource movementAudioSource;
     private AudioClip deathSound;
     private AudioClip runSound;
     private AudioClip dodgeSound;
@@ -199,7 +200,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         // writing variables for audio system
-        audioSource = GetComponent<AudioSource>();
+        damageAudioSource = transform.Find("DamageAudioSource").GetComponent<AudioSource>();
+        movementAudioSource = transform.Find("MovementAudioSource").GetComponent<AudioSource>();
         SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
 
         audioStorage.TryGetValue("Death", out deathSound);
@@ -244,23 +246,11 @@ public class PlayerController : MonoBehaviour
         // run sound
         if (rb.velocity.magnitude >= 1)
         {
-            audioSource.clip = runSound;
-            audioSource.loop = true;
-            audioSource.pitch = Random.Range(0.6f, 0.8f);
-            audioSource.volume = Random.Range(0.1f, 0.2f);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
-
+            PlayStepsSound(true);
         }
         else if (rb.velocity.magnitude < 1)
         {
-            audioSource.clip = null;
-            audioSource.loop = false;
-            audioSource.pitch = 1;
-            audioSource.volume = 1;
-            audioSource.Stop();
+            PlayStepsSound(false);
         }
 
 
@@ -362,17 +352,10 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Is Dodging", true);
 
             // stop walking audio
-            if (audioSource.isPlaying)
-            {
-                audioSource.clip = null;
-                audioSource.loop = false;
-                audioSource.pitch = 1;
-                audioSource.volume = 1;
-                audioSource.Stop();
-            }
+            PlayStepsSound(false);
 
             // play dodge audio
-            audioSource.PlayOneShot(dodgeSound);
+            movementAudioSource.PlayOneShot(dodgeSound);
         }
         if (dodgeTimer > 0f)
         {
@@ -440,6 +423,7 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
+
     private void SafelyStopShootingCoroutine()
     {
         if (shootingCoroutine != null)
@@ -584,6 +568,40 @@ public class PlayerController : MonoBehaviour
         }
 
         return result;
+    }
+
+
+    // if arg is true - turning on
+    // if arg is false - turning off
+    private void PlayStepsSound(bool playOrStop)
+    {
+        if (playOrStop)
+        {
+            movementAudioSource.clip = runSound;
+            movementAudioSource.loop = true;
+            movementAudioSource.pitch = Random.Range(0.6f, 0.8f);
+            movementAudioSource.volume = Random.Range(0.8f, 1f);
+            if (!movementAudioSource.isPlaying)
+            {
+                movementAudioSource.Play();
+            }
+        } else
+        {
+            movementAudioSource.clip = null;
+            movementAudioSource.loop = false;
+            movementAudioSource.pitch = 1;
+            movementAudioSource.volume = 1;
+            movementAudioSource.Stop();
+        }
+    }
+
+    public void PlayHitByEnemySawSound()
+    {
+        damageAudioSource.PlayOneShot(sawHittingPlayerSound);
+    }
+    public void PlayHitByEnemyBulletSound()
+    {
+        damageAudioSource.PlayOneShot(bulletHittingPlayerSound);
     }
 
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)

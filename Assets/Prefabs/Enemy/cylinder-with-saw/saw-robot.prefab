@@ -40,6 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2745442103784100048}
+  - component: {fileID: 8031997550393087830}
+  - component: {fileID: 1674688205020560204}
+  - component: {fileID: 5279748912978416538}
   m_Layer: 0
   m_Name: saw.R
   m_TagString: Untagged
@@ -62,6 +65,48 @@ Transform:
   m_Father: {fileID: 899698339028868962}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8031997550393087830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203507224269839526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7cc258eca0243cab09da64245b60f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotRef: {fileID: 3739565477740236748}
+--- !u!65 &1674688205020560204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203507224269839526}
+  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005897191, y: 0.001803731, z: 0.006185538}
+  m_Center: {x: 0.00013736029, y: 0.00043711634, z: 0.00005078288}
+--- !u!54 &5279748912978416538
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203507224269839526}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &542092987792717995
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 899698339028868962}
+  - component: {fileID: 5607364503217683399}
   m_Layer: 0
   m_Name: spine.003
   m_TagString: Untagged
@@ -300,6 +346,19 @@ Transform:
   m_Father: {fileID: 7678065826172122472}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5607364503217683399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523533032084064881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.015444364, y: 0.002634733, z: 0.0055271513}
+  m_Center: {x: 0.000034983615, y: 0.0015602835, z: -0.00040904703}
 --- !u!1 &1645578840465806361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,7 +1467,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3739565477740236748}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 200
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -1571,11 +1630,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onRobotSawHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRobotBulletHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerBulletHit:
+    m_PersistentCalls:
+      m_Calls: []
   hitDir: {x: 0, y: 0, z: 0}
   hitForceAmount: 0
   isFromExplosion: 0
   explosionPosition: {x: 0, y: 0, z: 0}
   explosionRadius: 0
+  typeOfHit: 0
 --- !u!114 &-596523366260598061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,6 +2462,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5015848015559997386}
+  - component: {fileID: 1124490500859978552}
+  - component: {fileID: 6912301829505612549}
+  - component: {fileID: 8060752343742186857}
   m_Layer: 0
   m_Name: saw.L
   m_TagString: Untagged
@@ -2415,6 +2487,48 @@ Transform:
   m_Father: {fileID: 899698339028868962}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1124490500859978552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5625181718982051239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7cc258eca0243cab09da64245b60f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotRef: {fileID: 3739565477740236748}
+--- !u!65 &6912301829505612549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5625181718982051239}
+  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0061342777, y: 0.0020056164, z: 0.0058865277}
+  m_Center: {x: -0.000038186317, y: 0.00077627186, z: 0.00023764417}
+--- !u!54 &8060752343742186857
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5625181718982051239}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5693486726511398721
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,7 +3690,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3201644415762372464}
   - component: {fileID: 2225866988866029558}
-  - component: {fileID: 8028663893201135769}
   m_Layer: 0
   m_Name: spine.03
   m_TagString: Untagged
@@ -3682,19 +3795,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0007253438, y: 0.0062513705, z: -0.00027880492}
     m_Extent: {x: 0.0112972595, y: 0.002304917, z: 0.004609132}
   m_DirtyAABB: 0
---- !u!65 &8028663893201135769
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7529206314119363818}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.027431661, y: 0.0048838486, z: 0.00240357}
-  m_Center: {x: 0.00057009625, y: 0.000592383, z: 0.0016859903}
 --- !u!1 &7682437956199781757
 GameObject:
   m_ObjectHideFlags: 0
