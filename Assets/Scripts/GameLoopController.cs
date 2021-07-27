@@ -30,6 +30,11 @@ public class GameLoopController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        UnPause();
+    }
+
     // pause on focus is needed only in release version
 
     //private void OnApplicationFocus(bool focus)

@@ -62,6 +62,7 @@ public class GameUIController : MonoBehaviour
     private void NewRun()
     {
         levelLoader.LoadLevel("Main");
+        gameLoopController.UnPause();
     }
 
     private void ToMainMenu()

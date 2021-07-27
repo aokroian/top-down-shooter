@@ -61,6 +61,12 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     public void Spawn(Vector3 point, int groupCost, int minEnemyCost, int maxEnemyCost)
     {
+        var coroutine = SpawnCoroutine(point, groupCost, minEnemyCost, maxEnemyCost);
+        StartCoroutine(coroutine);
+    }
+
+    private IEnumerator SpawnCoroutine(Vector3 point, int groupCost, int minEnemyCost, int maxEnemyCost)
+    {
         costLeft = groupCost;
 
         NavMeshHit hit;
@@ -68,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
         if (!hit.hit)
         {
             Debug.LogError("NOT HIT!!! ERROR!!");
-            return;
+            yield break;
         }
 
         List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
@@ -82,9 +88,11 @@ public class EnemySpawner : MonoBehaviour
             //Debug.Log("radius: " + activePoint.radius + "; active: " + activePoint.active);
             if (activePoint == null)
             {
-                Debug.LogError("NO AVAILABLE PLACE FOR SPAWN POINT!!! ERROR!!");
-                return;
+                Debug.Log("NO AVAILABLE PLACE FOR SPAWN POINT!!! ERROR!!");
+                yield break;
             }
+
+            yield return null;
 
             var enemy = GetEnemyPrefabByCost(minEnemyCost, maxEnemyCost);
             float radius = enemy.GetComponent<NavMeshAgent>().radius;
@@ -111,6 +119,12 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnWave(Vector3 playerPoint, Vector3 towards, float angle, float minSpawnDistance, float maxSpawnDistance, int groupCost, int minEnemyCost, int maxEnemyCost)
     {
+        var coroutine = SpawnWaveCoroutine(playerPoint, towards, angle, minSpawnDistance, maxSpawnDistance, groupCost, minEnemyCost, maxEnemyCost);
+        StartCoroutine(coroutine); ;
+    }
+
+    private IEnumerator SpawnWaveCoroutine(Vector3 playerPoint, Vector3 towards, float angle, float minSpawnDistance, float maxSpawnDistance, int groupCost, int minEnemyCost, int maxEnemyCost)
+    {
         costLeft = groupCost;
         towards = towards.normalized;
         Vector2 playerPointV2 = new Vector2(playerPoint.x, playerPoint.z);
@@ -128,10 +142,11 @@ public class EnemySpawner : MonoBehaviour
                 Quaternion randomAngle = Quaternion.Euler(0f, 0f, Random.Range(0 - halfAngle, halfAngle));
                 Vector2 delta = randomAngle * (towardsV2 * Random.Range(minSpawnDistance, maxSpawnDistance));
                 Vector2 candidate = playerPointV2 + delta;
-                
+
                 if (IsInsideNavMesh(candidate) && IsFairEnough(spawnPoints, candidate, radius))
                 {
                     spawnPoints.Add(SpawnEnemySubtractCost(candidate, enemy));
+                    yield return null;
                     break;
                 }
             }
