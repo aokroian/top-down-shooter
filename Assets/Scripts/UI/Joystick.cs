@@ -6,7 +6,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 {
     public RectTransform background = null;
 
-    public OnScreenStick stick;
+    public CustomScreenStick stick;
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {

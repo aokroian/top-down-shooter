@@ -83,18 +83,23 @@ public class PlayerController : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext value)
     {
-        Vector2 inputMovement = value.ReadValue<Vector2>();
-        //leftStickPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
-        //wasdPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
-
-        leftStickPosition = inputMovement;
-        wasdPosition = inputMovement;
+        if (value.performed)
+        {
+            Vector2 inputMovement = value.ReadValue<Vector2>();
+            //leftStickPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
+            //wasdPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
+            leftStickPosition = inputMovement;
+            wasdPosition = inputMovement;
+        }
     }
     public void OnAim(InputAction.CallbackContext value)
     {
-        Vector2 inputAim = value.ReadValue<Vector2>();
-        mousePosition = inputAim;
-        rightStickPosition = inputAim;
+        if (value.performed)
+        {
+            Vector2 inputAim = value.ReadValue<Vector2>();
+            mousePosition = inputAim;
+            rightStickPosition = inputAim;
+        }
     }
     public void OnShoot(InputAction.CallbackContext value)
     {
@@ -253,9 +258,8 @@ public class PlayerController : MonoBehaviour
             PlayStepsSound(false);
         }
 
-
         // aiming and movement values update
-        if (currentControlScheme == "Gamepad")
+        if (currentControlScheme == "Gamepad" || currentControlScheme == "Touch")
         {
             if (rightStickPosition.magnitude >= 0.05f)
             {
@@ -296,10 +300,6 @@ public class PlayerController : MonoBehaviour
         {
             aimAtPosition = GetAimPoint(new Vector3(mousePosition.x, mousePosition.y, 0f));
             movement = wasdPosition;
-        }
-        if (currentControlScheme == "Touch")
-        {
-            //
         }
 
         // stamina system
@@ -585,7 +585,8 @@ public class PlayerController : MonoBehaviour
             {
                 movementAudioSource.Play();
             }
-        } else
+        }
+        else
         {
             movementAudioSource.clip = null;
             movementAudioSource.loop = false;
