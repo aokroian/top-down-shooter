@@ -67,6 +67,8 @@ public class Target : MonoBehaviour
         {
             onRobotSawHit.Invoke();
         }
+
+        CheckHealth();
     }
 
     public bool Heal(float amount)
@@ -77,11 +79,13 @@ public class Target : MonoBehaviour
             health = Mathf.Min(health + amount, maxHealth);
             result = true;
         }
+
+        CheckHealth();
         return result;
     }
 
     // Update is called once per frame
-    void Update()
+    private void CheckHealth()
     {
         if (isDead)
         {
@@ -102,6 +106,7 @@ public class Target : MonoBehaviour
 
     public float GetHPPercent()
     {
+        CheckHealth();
         return health / maxHealth;
     }
 }
