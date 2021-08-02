@@ -21,15 +21,6 @@ public class GameLoopController : MonoBehaviour
 
     private HashSet<Action<GameState>> stateChangeHandlers = new HashSet<Action<GameState>>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (playerTarget.health == 0f)
-        {
-            Pause(GameState.DEAD);
-        }
-    }
-
     private void Start()
     {
         UnPause();
@@ -45,6 +36,11 @@ public class GameLoopController : MonoBehaviour
     //        Pause();
     //    }
     //}
+
+    public void Death()
+    {
+        Pause(GameState.DEAD);
+    }
 
     public void Pause(GameState state = GameState.PAUSE)
     {
