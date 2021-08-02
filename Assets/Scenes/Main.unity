@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2653,7 +2653,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4635058b252814477b516d68e57cf1d1, type: 3}
   - {fileID: 8300000, guid: e92c3929c49284eedb439a29dd5daa06, type: 3}
   - {fileID: 8300000, guid: b156b9f0ee14141d2bfd7c77aadfd191, type: 3}
-  currentTrackIndex: 0
 --- !u!82 &1948297201
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3293,6 +3292,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1071123029}
+    - target: {fileID: 7095800815447081901, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
 --- !u!1001 &3319225361507312841
