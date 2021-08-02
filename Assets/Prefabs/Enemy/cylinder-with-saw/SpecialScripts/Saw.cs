@@ -6,8 +6,10 @@ public class Saw : MonoBehaviour
 {
     public GameObject robotRef;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        robotRef.GetComponent<EnemyController>().Bite();
+        if (other.tag == "Player") {
+            robotRef.GetComponent<EnemyController>().Bite();
+        }
     }
 }

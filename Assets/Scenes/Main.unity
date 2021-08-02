@@ -3217,6 +3217,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: afterHitDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}

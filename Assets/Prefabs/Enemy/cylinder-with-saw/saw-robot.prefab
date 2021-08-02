@@ -86,10 +86,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203507224269839526}
   m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.005897191, y: 0.001803731, z: 0.006185538}
+  m_Size: {x: 0.004897191, y: 0.001803731, z: 0.004185538}
   m_Center: {x: 0.00013736029, y: 0.00043711634, z: 0.00005078288}
 --- !u!54 &5279748912978416538
 Rigidbody:
@@ -319,7 +319,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 899698339028868962}
-  - component: {fileID: 5607364503217683399}
   m_Layer: 0
   m_Name: spine.003
   m_TagString: Untagged
@@ -346,19 +345,6 @@ Transform:
   m_Father: {fileID: 7678065826172122472}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5607364503217683399
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523533032084064881}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.015444364, y: 0.002634733, z: 0.0055271513}
-  m_Center: {x: 0.000034983615, y: 0.0015602835, z: -0.00040904703}
 --- !u!1 &1645578840465806361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1621,7 @@ MonoBehaviour:
   defaultState: 0
   visionRange: 15
   damage: 20
-  biteDistance: 1
+  biteDistance: 1.8
   beforeBiteTime: 0.2
   afterBiteTime: 0.8
   posDetectionDelay: 0.1
@@ -1720,6 +1706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  afterHitDelay: 0
   onHitEffect: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -2785,10 +2772,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5625181718982051239}
   m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0061342777, y: 0.0020056164, z: 0.0058865277}
+  m_Size: {x: 0.004134278, y: 0.0020056164, z: 0.004886528}
   m_Center: {x: -0.000038186317, y: 0.00077627186, z: 0.00023764417}
 --- !u!54 &8060752343742186857
 Rigidbody:

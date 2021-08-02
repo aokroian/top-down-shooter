@@ -13,6 +13,7 @@ public class Target : MonoBehaviour
 {
     public float health = 100f;
     public float maxHealth = 100f;
+    public float afterHitDelay = 0f;
     public GameObject onHitEffect;
 
     public UnityEvent onDeath;
@@ -36,8 +37,21 @@ public class Target : MonoBehaviour
     [HideInInspector]
     public HitType typeOfHit;
 
+    private float prevHitTime;
+
     public void TakeDamage(float amount, float? forceAmount = null, Vector3? hitDirection = null, bool? isHitFromExplosion = null, Vector3? explPosition = null, float? explRadius = null, HitType? hitType = HitType.PlayerBullet)
     {
+        if (afterHitDelay > 0) {
+            if (Time.time - prevHitTime > afterHitDelay)
+            {
+                prevHitTime = Time.time;
+            }
+            else
+            {
+                return;
+            }
+        }
+
         health -= amount;
 
 
