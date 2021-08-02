@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour, EnemyProperties
     private Transform player;
 
     private NavMeshAgent agent;
-    
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
