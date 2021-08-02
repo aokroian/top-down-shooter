@@ -42,7 +42,7 @@ public class CustomScreenStick : OnScreenControl
         if (eventData == null)
             throw new System.ArgumentNullException(nameof(eventData));
 
-        Debug.Log("OnPointerDown: " + eventData.ToString());
+        //Debug.Log("OnPointerDown: " + eventData.ToString());
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponentInParent<RectTransform>(), eventData.position, eventData.pressEventCamera, out m_PointerDownPos);
     }
 
@@ -58,14 +58,14 @@ public class CustomScreenStick : OnScreenControl
         ((RectTransform)transform).anchoredPosition = m_StartPos + (Vector3)delta;
 
         var newPos = new Vector2(delta.x / movementRange, delta.y / movementRange);
-        Debug.Log("OnDrug: " + eventData.ToString());
+        //Debug.Log("OnDrug: " + eventData.ToString());
         SendValueToControl(newPos);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         ((RectTransform)transform).anchoredPosition = m_StartPos;
-        Debug.Log("OnPointerUp: " + eventData.ToString());
+        //Debug.Log("OnPointerUp: " + eventData.ToString());
         SendValueToControl(Vector2.zero);
     }
 }

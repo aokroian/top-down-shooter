@@ -90,6 +90,11 @@ public class PlayerController : MonoBehaviour
             //wasdPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
             leftStickPosition = inputMovement;
             wasdPosition = inputMovement;
+        } else if (value.canceled)
+        {
+            Vector2 zeroMovement = Vector2.zero;
+            leftStickPosition = zeroMovement;
+            wasdPosition = zeroMovement;
         }
     }
     public void OnAim(InputAction.CallbackContext value)
@@ -99,6 +104,11 @@ public class PlayerController : MonoBehaviour
             Vector2 inputAim = value.ReadValue<Vector2>();
             mousePosition = inputAim;
             rightStickPosition = inputAim;
+        } else if (value.canceled)
+        {
+            Vector2 zeroMovement = Vector2.zero;
+            mousePosition = zeroMovement;
+            rightStickPosition = zeroMovement;
         }
     }
     public void OnShoot(InputAction.CallbackContext value)
@@ -181,6 +191,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerInput.currentControlScheme != currentControlScheme)
         {
+            
             currentControlScheme = playerInput.currentControlScheme;
             switch (currentControlScheme)
             {
@@ -191,6 +202,7 @@ public class PlayerController : MonoBehaviour
                 case "Touch":
                     break;
             }
+            Debug.Log(currentControlScheme);
             RemoveAllBindingOverrides();
         }
     }
