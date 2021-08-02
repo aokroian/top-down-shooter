@@ -21,15 +21,9 @@ public class MusicManager : MonoBehaviour
     private void Update()
     {
         // play next track
-        currentTrackIndex++;
         if (!audioSource.isPlaying &&  state == MusicState.playing)
         {
-            currentTrackIndex++;
-            if (currentTrackIndex > music.Length - 1)
-            {
-                currentTrackIndex = 0;
-            }
-            audioSource.clip = music[currentTrackIndex];  
+            PlayNextTrack();
         }   
     }
 
@@ -46,7 +40,12 @@ public class MusicManager : MonoBehaviour
 
     public void PlayNextTrack()
     {
-
+        currentTrackIndex++;
+        if (currentTrackIndex > music.Length - 1)
+        {
+            currentTrackIndex = 0;
+        }
+        audioSource.clip = music[currentTrackIndex];
     }
 
     public void PlayTrackByName(string name)
