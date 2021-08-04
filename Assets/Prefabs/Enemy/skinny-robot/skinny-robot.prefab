@@ -3196,7 +3196,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8900470874175376767}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 200
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -3283,6 +3283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructiblePrefab: {fileID: 7881663197556177211, guid: 74adfb62c51c73a4eb086fbe4ba78489, type: 3}
+  explosion: {fileID: 0}
 --- !u!195 &4205132554241998946
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3319,6 +3320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  afterHitDelay: 0
   onHitEffect: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -3335,11 +3337,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7765032890344867472}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
+        m_MethodName: OnEnemyDies
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRobotSawHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRobotBulletHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerBulletHit:
+    m_PersistentCalls:
+      m_Calls: []
   hitDir: {x: 0, y: 0, z: 0}
   hitForceAmount: 0
   isFromExplosion: 0
   explosionPosition: {x: 0, y: 0, z: 0}
   explosionRadius: 0
+  typeOfHit: 0
 --- !u!114 &1136487805633829762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3652,16 +3676,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4685775916219305392, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
---- !u!4 &5379074235517327766 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3318697671038365004, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
-  m_PrefabInstance: {fileID: 7253098285619950810}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4750628176609608492 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2685747771383232502, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
+  m_PrefabInstance: {fileID: 7253098285619950810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5379074235517327766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3318697671038365004, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
   m_PrefabInstance: {fileID: 7253098285619950810}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8061329854254159489

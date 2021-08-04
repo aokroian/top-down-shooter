@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4487077465775642147}
   - component: {fileID: 6869421363339924685}
   - component: {fileID: -5339170704977121273}
-  - component: {fileID: -4685775916219305392}
+  - component: {fileID: -6349645506720649874}
   m_Layer: 0
   m_Name: grenade
   m_TagString: Untagged
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
---- !u!114 &-4685775916219305392
+--- !u!114 &-6349645506720649874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,23 +123,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2685747771383232502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a8ac9257d330476aafb2afef6c22674, type: 3}
+  m_Script: {fileID: 11500000, guid: c6d513b92b04340cda9b7086c0398b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerObjRef: {fileID: 0}
-  localPosition: {x: 0.00206, y: -0.00002, z: 0.00371}
-  localRotation: {x: -60, y: 0, z: 0}
-  localScale: {x: 0.06, y: 0.06, z: 0.06}
-  timeToLiveAfterThrow: 2
-  cameraShakeMagnitude: 5
-  shouldExplode: 1
-  explosionEffect: {fileID: 100008, guid: 06736895ea0a4ff408d25e6684dce797, type: 3}
-  explosionRadius: 4
-  explosionForce: 800
+  timeBeforeForcedExplosion: Infinity
+  destroyAfterExplosion: 1
+  cameraShakeMagnitude: 2
+  explosionEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 3}
+  explosionRadius: 3
+  explosionForce: 300
   explosionMaxDamage: 200
-  explosionDurationTimer: 0
-  isThrowed: 0
-  ammoType: 4
 --- !u!1 &3761041471267226563
 GameObject:
   m_ObjectHideFlags: 0

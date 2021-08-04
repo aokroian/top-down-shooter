@@ -1471,6 +1471,7 @@ GameObject:
   - component: {fileID: 1193346341}
   - component: {fileID: -596523366260598061}
   - component: {fileID: 8837724193239896909}
+  - component: {fileID: -544568261331387710}
   m_Layer: 0
   m_Name: saw-robot
   m_TagString: Enemy
@@ -1670,6 +1671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructiblePrefab: {fileID: 6409929916415313608, guid: 5197549744ae54fbe9156e038511b612, type: 3}
+  explosion: {fileID: 0}
 --- !u!195 &848633127
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1711,18 +1713,6 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 848633122}
-        m_TargetAssemblyTypeName: Destructible, Assembly-CSharp
-        m_MethodName: ChangeToDestructible
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 848633121}
         m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
         m_MethodName: OnEnemyDies
@@ -1735,9 +1725,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -596523366260598061}
-        m_TargetAssemblyTypeName: Explosion, Assembly-CSharp
-        m_MethodName: Explode
+      - m_Target: {fileID: 848633122}
+        m_TargetAssemblyTypeName: Destructible, Assembly-CSharp
+        m_MethodName: ChangeToDestructible
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1774,11 +1764,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d513b92b04340cda9b7086c0398b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBeforeForcedExplosion: Infinity
+  destroyAfterExplosion: 1
   cameraShakeMagnitude: 2
   explosionEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 3}
   explosionRadius: 2
-  explosionForce: 100
-  explosionMaxDamage: 50
+  explosionForce: 800
+  explosionMaxDamage: 30
 --- !u!114 &8837724193239896909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1799,6 +1791,18 @@ MonoBehaviour:
       Value: {fileID: 0}
     - Key: Get hit by a player
       Value: {fileID: 0}
+--- !u!114 &-544568261331387710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3739565477740236748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15478b0640ae146cdbb4bc9c03ecef7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3836866714593287920
 GameObject:
   m_ObjectHideFlags: 0

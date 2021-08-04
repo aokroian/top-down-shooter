@@ -114,7 +114,6 @@ public class Target : MonoBehaviour
         {
             isDead = true;
             onDeath.Invoke();
-            Destroy(gameObject, 0.02f);
         }
     }
 

@@ -1424,7 +1424,7 @@ GameObject:
   - component: {fileID: -2627030214369474742}
   - component: {fileID: 2933777894029775972}
   - component: {fileID: 9034636907917357092}
-  - component: {fileID: 1395060929}
+  - component: {fileID: 763315116370814500}
   m_Layer: 0
   m_Name: cylinder-shooter-robot
   m_TagString: Enemy
@@ -1593,6 +1593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  afterHitDelay: 0
   onHitEffect: {fileID: 2285398259692336146, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
   onDeath:
     m_PersistentCalls:
@@ -1621,23 +1622,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1395060929}
-        m_TargetAssemblyTypeName: Explosion, Assembly-CSharp
-        m_MethodName: Explode
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  onRobotSawHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRobotBulletHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerBulletHit:
+    m_PersistentCalls:
+      m_Calls: []
   hitDir: {x: 0, y: 0, z: 0}
   hitForceAmount: 0
   isFromExplosion: 0
   explosionPosition: {x: 0, y: 0, z: 0}
   explosionRadius: 0
+  typeOfHit: 0
 --- !u!114 &-2627030214369474742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1708,7 +1707,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructiblePrefab: {fileID: 1892436371911094907, guid: 9442fbb0a7b9644a39bb0e44065b01c5, type: 3}
---- !u!114 &1395060929
+  explosion: {fileID: 763315116370814500}
+--- !u!114 &763315116370814500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1720,11 +1720,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d513b92b04340cda9b7086c0398b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBeforeForcedExplosion: Infinity
+  destroyAfterExplosion: 1
   cameraShakeMagnitude: 2
   explosionEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 3}
   explosionRadius: 2
-  explosionForce: 100
-  explosionMaxDamage: 50
+  explosionForce: 500
+  explosionMaxDamage: 20
 --- !u!1 &5442841380682983192
 GameObject:
   m_ObjectHideFlags: 0
