@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -984,6 +984,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
+  audioMixer: {fileID: 24100000, guid: 6166c4e3e76f27e4d94faff5bd26be99, type: 2}
+  masterVolumeParamName: MasterSoundVolume
+  musicVolumeParamName: MusicVolume
+  sfxVolumeParamName: SFXVolume
 --- !u!114 &886370014 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 462298743271879873, guid: 26501e708e3ee468684de540f4bb049b, type: 3}
@@ -2662,9 +2666,9 @@ AudioSource:
   m_GameObject: {fileID: 1948297199}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8108891946355385203, guid: 6166c4e3e76f27e4d94faff5bd26be99, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

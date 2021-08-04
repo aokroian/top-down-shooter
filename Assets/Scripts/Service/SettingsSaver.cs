@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Audio;
 
 public class SettingsSaver : MonoBehaviour
 {
@@ -15,12 +16,35 @@ public class SettingsSaver : MonoBehaviour
 
     public SettingsHolder settings;
 
+    // vars for audio
+    public AudioMixer audioMixer;
+    public string masterVolumeParamName;
+    public string musicVolumeParamName;
+    public string sfxVolumeParamName;
+
     public void ApplyAndSave()
     {
         ApplySettings();
         SetBool(VIBRATION, settings.vibration);
         SetBool(MUSIC, settings.music);
         SetBool(SFX, settings.sfx);
+        if (!settings.music)
+        {
+            audioMixer.SetFloat(musicVolumeParamName, -80);
+        }
+        else if (settings.music)
+        {
+            audioMixer.SetFloat(musicVolumeParamName, 0);
+        }
+        if (!settings.sfx)
+        {
+            audioMixer.SetFloat(sfxVolumeParamName, -80);
+        }
+        else if (settings.sfx)
+        {
+            audioMixer.SetFloat(sfxVolumeParamName, 0);
+        }
+
         PlayerPrefs.SetString(GRAPHICS, settings.graphics);
         SetBool(FPS, settings.fps);
         PlayerPrefs.SetString(LANGUAGE, settings.language);
