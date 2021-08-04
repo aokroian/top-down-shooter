@@ -30,7 +30,7 @@ public class FpsMeter : MonoBehaviour
 	{
 		float msec = deltaTime * 1000.0f;
 		float fps = 1.0f / deltaTime;
-		string text = string.Format("{0:0.0} ms ({1:0.} fps)", msec, fps);
+		string text = string.Format("{0:0.0} ms ({1:0.} fps) {2:0.0}", msec, fps, Time.timeScale);
 		GUI.Label(rect, text, style);
 	}
 }
