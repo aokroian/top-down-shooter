@@ -322,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8140757099602295420}
   - component: {fileID: 5071080796221661314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 8968495157402156590}
   - component: {fileID: 8968495157402156593}
   - component: {fileID: 8968495157402156592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sci-fi-cage
   m_TagString: ObsCage
   m_Icon: {fileID: 0}

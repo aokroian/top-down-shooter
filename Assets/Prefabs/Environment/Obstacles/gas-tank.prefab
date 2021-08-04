@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6854261781336557796}
   - component: {fileID: 6854261781336557797}
   - component: {fileID: 6854261781336557802}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gas-tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,8 +129,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1000000
   maxHealth: 1000000
+  afterHitDelay: 0
   onHitEffect: {fileID: 0}
   onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onRobotSawHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRobotBulletHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerBulletHit:
     m_PersistentCalls:
       m_Calls: []
   hitDir: {x: 0, y: 0, z: 0}
@@ -138,3 +148,4 @@ MonoBehaviour:
   isFromExplosion: 0
   explosionPosition: {x: 0, y: 0, z: 0}
   explosionRadius: 0
+  typeOfHit: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -915,7 +915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848356370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0607982, y: 1.0189904, z: 1.3474827}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3220,6 +3220,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 402684775, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: autoAimAngle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 402684775, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: enemiesContainer
+      value: 
+      objectReference: {fileID: 848356370}
     - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: afterHitDelay
       value: 0.2
