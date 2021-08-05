@@ -43,7 +43,6 @@ public class RigController : MonoBehaviour
     private Transform GetEnemyAimTo(Vector3 aimVector)
     {
         Transform currentAimEnemy = null;
-        float currentAngle = 180f;
         float currentWeight = float.MaxValue;
         var enemiesTransform = enemiesContainer.transform;
         for (int i = 0; i < enemiesTransform.childCount; i++)
@@ -51,19 +50,18 @@ public class RigController : MonoBehaviour
             var child = enemiesTransform.GetChild(i);
             Vector3 toEnemy = child.transform.position - player.transform.position;
             float angle = Mathf.Abs(Vector3.Angle(aimVector, toEnemy));
+            float distance = Vector3.Distance(player.transform.position, child.position);
+            float weight = CalcWeight(angle, distance, child);
             if (angle < autoAimAngle
-                && angle < currentAngle
-                && Vector3.Distance(player.transform.position, child.position) < maxAutoAimDistance
+                && weight < currentWeight
+                && distance < maxAutoAimDistance
                 && child.gameObject.GetComponentInChildren<Renderer>().isVisible
                 && !Physics.Linecast(player.transform.position, child.position, LayerMask.GetMask("Obstacle")))
             {
-                float weight = CalcWeight(angle, child);
-                if (weight < currentWeight) {
-                    currentAimEnemy = child;
-                    currentAngle = angle;
-                    currentWeight = weight;
-                    prevTarget = child;
-                }
+                currentAimEnemy = child;
+                //currentAngle = angle;
+                currentWeight = weight;
+                prevTarget = child;
             }
         }
 
@@ -77,7 +75,7 @@ public class RigController : MonoBehaviour
 
     // Lower - better
     // Can be negative
-    private float CalcWeight(float angle, Transform enemy)
+    private float CalcWeight(float angle, float distance, Transform enemy)
     {
         float result = angle;
 
@@ -86,7 +84,6 @@ public class RigController : MonoBehaviour
             result -= prevTargetWeightBonus;
         }
 
-        var distance = Vector3.Distance(player.transform.position, enemy.position);
         result += distance * distancePriorityWeightMultiplier;
 
         return result;

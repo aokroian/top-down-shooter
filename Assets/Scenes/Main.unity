@@ -2839,7 +2839,7 @@ MonoBehaviour:
     enemyCostAdditionalPercent: 10
   credits:
     bonusPrefab: {fileID: 640587863994964912, guid: d70e704eedb4bf04f98439ce79213e81, type: 3}
-    baseChance: 0.1
+    baseChance: 0.2
     notGetPercent: 10
     enemyCostAdditionalPercent: 50
   ammoParams:

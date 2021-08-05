@@ -137,8 +137,8 @@ public class ObstaclesSpawner : MonoBehaviour
                     }
 
                     tileObstacles.Add(obstacle);
+                    yield return null;
                 }
-                yield return null;
             }
         }
     }
