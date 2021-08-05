@@ -241,7 +241,7 @@ MonoBehaviour:
   bulletObjRef: {fileID: 8555050829149161235, guid: c46cfb22f88b96247ae9a0ab4a804a63, type: 3}
   bulletVelocity: 30
   bulletsInClip: 1
-  maxShotAngle: 10
+  maxShotAngle: 0
   ammoType: 3
 --- !u!114 &8540788568294090431
 MonoBehaviour:

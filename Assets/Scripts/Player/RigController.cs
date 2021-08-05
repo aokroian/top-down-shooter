@@ -8,9 +8,12 @@ public class RigController : MonoBehaviour
     public float minLookAtDistance = 1f;
     public float autoAimAngle = 15f;
     public float maxAutoAimDistance = 25f;
+    public float distancePriorityWeightMultiplier = 1.0f;
+    public float prevTargetWeightBonus = 10.0f;
     public GameObject enemiesContainer;
 
     private PlayerController playerController;
+    private Transform prevTarget;
 
     void Start()
     {
@@ -41,25 +44,51 @@ public class RigController : MonoBehaviour
     {
         Transform currentAimEnemy = null;
         float currentAngle = 180f;
+        float currentWeight = float.MaxValue;
         var enemiesTransform = enemiesContainer.transform;
         for (int i = 0; i < enemiesTransform.childCount; i++)
         {
             var child = enemiesTransform.GetChild(i);
             Vector3 toEnemy = child.transform.position - player.transform.position;
             float angle = Mathf.Abs(Vector3.Angle(aimVector, toEnemy));
-            RaycastHit hitInfo;
-            bool isHit = Physics.Linecast(player.transform.position, child.position, out hitInfo, LayerMask.GetMask("Obstacle"));
             if (angle < autoAimAngle
                 && angle < currentAngle
                 && Vector3.Distance(player.transform.position, child.position) < maxAutoAimDistance
                 && child.gameObject.GetComponentInChildren<Renderer>().isVisible
-                && !isHit)
+                && !Physics.Linecast(player.transform.position, child.position, LayerMask.GetMask("Obstacle")))
             {
-                currentAimEnemy = child;
-                currentAngle = angle;
+                float weight = CalcWeight(angle, child);
+                if (weight < currentWeight) {
+                    currentAimEnemy = child;
+                    currentAngle = angle;
+                    currentWeight = weight;
+                    prevTarget = child;
+                }
             }
         }
 
+        if (currentAimEnemy == null)
+        {
+            prevTarget = null;
+        }
+
         return currentAimEnemy;
+    }
+
+    // Lower - better
+    // Can be negative
+    private float CalcWeight(float angle, Transform enemy)
+    {
+        float result = angle;
+
+        if (enemy == prevTarget)
+        {
+            result -= prevTargetWeightBonus;
+        }
+
+        var distance = Vector3.Distance(player.transform.position, enemy.position);
+        result += distance * distancePriorityWeightMultiplier;
+
+        return result;
     }
 }

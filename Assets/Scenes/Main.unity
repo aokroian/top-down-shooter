@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3227,12 +3227,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 402684775, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: autoAimAngle
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 402684775, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: enemiesContainer
       value: 
       objectReference: {fileID: 848356370}
+    - target: {fileID: 402684775, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: maxAutoAimDistance
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: afterHitDelay
       value: 0.25
