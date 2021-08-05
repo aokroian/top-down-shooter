@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -447,6 +447,11 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 4502412055082496612, guid: 5af24a746b199d945b2aea0b3b50e409, type: 3}
   m_MiddleClickAction: {fileID: -2185481485913320682, guid: 5af24a746b199d945b2aea0b3b50e409, type: 3}
   m_RightClickAction: {fileID: -4090225696740746782, guid: 5af24a746b199d945b2aea0b3b50e409, type: 3}
+--- !u!4 &236989088 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1066374995385616916, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+  m_PrefabInstance: {fileID: 2829624618161243639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &334445244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3330,6 +3335,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1867182952350748155, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5102222969195600411, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Data.m_AimAxis
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5102222969195600411, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Data.m_Offset.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5102222969195600411, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Data.m_WorldUpType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5102222969195600411, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Data.m_ConstrainedAxes.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5102222969195600411, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Data.m_ConstrainedObject
+      value: 
+      objectReference: {fileID: 236989088}
+    - target: {fileID: 5959398395167706107, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Data.m_Offset.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095800815447081901, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
