@@ -7,6 +7,7 @@ using UnityEngine;
 public class ProgressionHolder : ScriptableObject
 {
     public int moneyCount;
+    public int topScore;
 
     private AbstractUpgrade[] allUpgrades;
     private HashSet<AbstractUpgrade> purchasedUpgrades = new HashSet<AbstractUpgrade>();

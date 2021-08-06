@@ -30,7 +30,7 @@ public class SaveFileUtils
     {
         var data = getController().LoadProgression();
         var current = data.money + 1000;
-        getController().SaveProgression(current, data.upgrades, data.selected);
+        getController().SaveProgression(current, data.upgrades, data.selected, data.topScore);
         Debug.Log("Money added. Current: " + current);
     }
 }

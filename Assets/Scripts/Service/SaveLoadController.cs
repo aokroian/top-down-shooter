@@ -11,6 +11,7 @@ public class SaveLoadController
         public int money;
         public int[] upgrades;
         public int[] selected;
+        public int topScore;
     }
 
     public string fileFullPath { get; } = Application.persistentDataPath + "/save.dat";
@@ -43,7 +44,7 @@ public class SaveLoadController
         return result;
     }
 
-    public void SaveProgression(int money, int[] upgrades, int[] selected)
+    public void SaveProgression(int money, int[] upgrades, int[] selected, int topScore)
     {
         SaveData data = new SaveData();
         data.money = money;

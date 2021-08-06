@@ -32,7 +32,7 @@ public class ProgressionManager : MonoBehaviour
     }
 
     public void WriteToSaveFile() {
-        saveLoadController.SaveProgression(progressionHolder.moneyCount, progressionHolder.GetPurchasedUpgradesId(), progressionHolder.GetSelectedIds());
+        saveLoadController.SaveProgression(progressionHolder.moneyCount, progressionHolder.GetPurchasedUpgradesId(), progressionHolder.GetSelectedIds(), progressionHolder.topScore);
     }
 
 }
