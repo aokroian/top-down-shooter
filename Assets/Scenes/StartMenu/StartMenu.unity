@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 322248419}
   - component: {fileID: 322248418}
   - component: {fileID: 322248417}
+  - component: {fileID: 322248420}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -206,6 +207,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322248420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322248416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &858362095
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +269,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
+  audioMixer: {fileID: 0}
+  masterVolumeParamName: 
+  musicVolumeParamName: 
+  sfxVolumeParamName: 
 --- !u!4 &858362097
 Transform:
   m_ObjectHideFlags: 0
@@ -260,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 956195906}
   - component: {fileID: 956195905}
+  - component: {fileID: 956195907}
   m_Layer: 0
   m_Name: MainMenuController
   m_TagString: Untagged
@@ -283,6 +321,7 @@ MonoBehaviour:
   settingsScreen: {fileID: 1953305820}
   upgradeScreen: {fileID: 1045911395}
   localizationTableHolder: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
+  progressionManager: {fileID: 956195907}
 --- !u!4 &956195906
 Transform:
   m_ObjectHideFlags: 0
@@ -300,6 +339,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &956195907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956195904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f8ac847e60adc42a1c5ac4dd3a7d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!1 &1045911395
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +363,6 @@ GameObject:
   - component: {fileID: 1045911396}
   - component: {fileID: 1045911398}
   - component: {fileID: 1045911397}
-  - component: {fileID: 1045911399}
   - component: {fileID: 1045911400}
   m_Layer: 0
   m_Name: UpgradeScreen
@@ -348,7 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 956195905}
   upgradeElement: {fileID: 9197481963319205126, guid: b817395b78053854896af5c66a3f3f72, type: 3}
-  progressionManager: {fileID: 1045911399}
+  progressionManager: {fileID: 956195907}
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
   localizer: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
 --- !u!114 &1045911398
@@ -367,19 +418,6 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 2d48c74918719e54d879b9528713d9b4, type: 3}
   m_SortingOrder: 0
---- !u!114 &1045911399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045911395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f8ac847e60adc42a1c5ac4dd3a7d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!114 &1045911400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 956195905}
+  progressionHolder: {fileID: 0}
 --- !u!114 &1411809351
 MonoBehaviour:
   m_ObjectHideFlags: 0

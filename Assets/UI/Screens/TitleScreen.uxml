@@ -8,5 +8,10 @@
         <ui:VisualElement style="position: absolute; left: 0; bottom: 20px;">
             <ui:Button display-tooltip-when-elided="true" name="Settings" class="button" style="border-left-width: 0; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; background-image: url(&apos;/Assets/UI/Images/gear-128x128_new.png&apos;); width: 128px; height: 128px; padding-left: 0; margin-left: 0; border-bottom-left-radius: 0; border-top-left-radius: 0; border-top-right-radius: 30px; border-bottom-right-radius: 30px;" />
         </ui:VisualElement>
+        <ui:VisualElement style="position: absolute; left: 0; top: 0; flex-direction: row; justify-content: center; right: 0; font-size: 48px; margin-top: 10px;">
+            <ui:Label text="#TopScore" display-tooltip-when-elided="true" />
+            <ui:Label text=":" display-tooltip-when-elided="true" />
+            <ui:Label text="0" display-tooltip-when-elided="true" name="TopScoreLabel" style="margin-left: 10px;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

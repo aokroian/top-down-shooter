@@ -114,5 +114,13 @@ MonoBehaviour:
     m_Localized: Main menu
     m_Metadata:
       m_Items: []
+  - m_Id: 8738125420433408
+    m_Localized: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8738345319403520
+    m_Localized: Top score
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

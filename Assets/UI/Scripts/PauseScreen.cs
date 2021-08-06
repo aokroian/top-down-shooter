@@ -8,6 +8,8 @@ public class PauseScreen : MonoBehaviour
 {
 
     public UIDocument pauseDoc;
+    public ProgressionHolder progressionHolder;
+    public ScoreCounter scoreCounter;
 
     private VisualElement rootEl;
     private Button resumeEl;
@@ -19,6 +21,9 @@ public class PauseScreen : MonoBehaviour
     private Action gameAction;
     private Action newRunAction;
     private Action mainMenuAction;
+
+    private Label scoreLabel;
+    private Label topScoreLabel;
     
     void OnEnable()
     {
@@ -32,6 +37,10 @@ public class PauseScreen : MonoBehaviour
         settingsEl.RegisterCallback<ClickEvent>(e => settingsAction?.Invoke());
         newRunEl.RegisterCallback<ClickEvent>(e => newRunAction?.Invoke());
         mainMenuEl.RegisterCallback<ClickEvent>(e => mainMenuAction?.Invoke());
+
+        scoreLabel = rootEl.Q<Label>("ScoreLabel");
+        topScoreLabel = rootEl.Q<Label>("TopScoreLabel");
+        SetScore();
     }
 
     public void SetDead(bool dead)
@@ -57,5 +66,15 @@ public class PauseScreen : MonoBehaviour
     public void SetMainMenuAction(Action mainMenuAction)
     {
         this.mainMenuAction = mainMenuAction;
+    }
+
+    private void SetScore()
+    {
+        scoreLabel.text = scoreCounter.currentScore.ToString();
+        if (scoreCounter.currentScore > progressionHolder.topScore)
+        {
+            progressionHolder.topScore = scoreCounter.currentScore;
+        }
+        topScoreLabel.text = progressionHolder.topScore.ToString();
     }
 }

@@ -13,10 +13,14 @@ public class MainUIController : MonoBehaviour
 
     public LocalizationTableHolder localizationTableHolder;
 
+    public ProgressionManager progressionManager;
+
     private void Start()
     {
         localizationTableHolder.Init();
         settingsScreen.GetComponent<SettingsScreen>().SetBackAction(ToTitleScreen);
+
+        progressionManager.LoadFromSaveFile();
     }
 
     public void ToTitleScreen()

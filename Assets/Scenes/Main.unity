@@ -659,6 +659,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseDoc: {fileID: 690551150}
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
+  scoreCounter: {fileID: 1653811888}
 --- !u!114 &690551150
 MonoBehaviour:
   m_ObjectHideFlags: 0

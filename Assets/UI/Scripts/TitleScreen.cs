@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class TitleScreen : MonoBehaviour
 {
     public MainUIController manager;
+    public ProgressionHolder progressionHolder;
 
 
     private VisualElement rootEl;
@@ -16,5 +17,7 @@ public class TitleScreen : MonoBehaviour
         rootEl = GetComponent<UIDocument>().rootVisualElement;
         rootEl.Q("NewRun").RegisterCallback<ClickEvent>(e => manager.ToUpgradeScreen());
         rootEl.Q("Settings").RegisterCallback<ClickEvent>(e => manager.ToSettingsScreen());
+
+        rootEl.Q<Label>("TopScoreLabel").text = progressionHolder.topScore.ToString();
     }
 }

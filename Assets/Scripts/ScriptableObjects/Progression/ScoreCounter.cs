@@ -13,7 +13,7 @@ public class ScoreCounter : MonoBehaviour
     public float enemyCostMultiplier = 10f;
     public float distanceMultiplier = 1f;
 
-    private int currentScore;
+    public int currentScore { get; private set; }
     private int maxDistanceInt;
 
     private Label scoreLabel;
@@ -33,6 +33,32 @@ public class ScoreCounter : MonoBehaviour
             maxDistanceInt = distance;
             updateScoreLabel();
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        WriteScoreToStore();
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+        {
+            WriteScoreToStore();
+        }
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            WriteScoreToStore();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        WriteScoreToStore();
     }
 
     public void EnemyToScore(EnemyEventParam param)
