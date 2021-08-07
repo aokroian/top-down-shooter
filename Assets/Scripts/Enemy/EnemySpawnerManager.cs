@@ -32,12 +32,16 @@ public class EnemySpawnerManager: MonoBehaviour
 
     public float despawnDistance = 45.0f;
 
+    public bool spawnWaves;
+
     private EnemySpawner spawner;
 
     private Vector3 prevSpawnPosition;
     private float halfSpawnPointAngle;
 
     private int nextWaveCount = 1;
+
+    private float maxDistanceFromStart;
 
     void Start()
     {
@@ -51,7 +55,15 @@ public class EnemySpawnerManager: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, prevSpawnPosition) > spawnDistancePassed)
+        float distanceFormStart = Vector3.Distance(player.transform.position, Vector3.zero);
+        bool canSpawn = false;
+        if (distanceFormStart > maxDistanceFromStart)
+        {
+            maxDistanceFromStart = distanceFormStart;
+            canSpawn = true;
+        }
+
+        if (canSpawn && Vector3.Distance(player.transform.position, prevSpawnPosition) > spawnDistancePassed)
         {
             Vector3 angle = (player.transform.position - prevSpawnPosition).normalized;
             int spawnCost = Mathf.FloorToInt(startSpawnCost + Vector3.Distance(Vector3.zero, player.transform.position) * spawnCostDistanceMultiplier);
@@ -60,7 +72,7 @@ public class EnemySpawnerManager: MonoBehaviour
             prevSpawnPosition = player.transform.position;
         }
 
-        if (Vector3.Distance(player.transform.position, Vector3.zero) > nextWaveCount * waveDistancePassed)
+        if (spawnWaves && canSpawn && Vector3.Distance(player.transform.position, Vector3.zero) > nextWaveCount * waveDistancePassed)
         {
             Vector3 angle = player.transform.position.normalized;
             int waveSpawnCost = Mathf.FloorToInt(startSpawnWaveCost + Vector3.Distance(Vector3.zero, player.transform.position) * waveCostDistanceMultiplier);
