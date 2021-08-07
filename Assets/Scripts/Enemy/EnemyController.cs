@@ -34,6 +34,8 @@ public class EnemyController : MonoBehaviour, EnemyProperties
 
     public EnemyDiesEvent diesEvent;
 
+    public float stopPursuitDistance = 20f;
+
     private State currentState;
     private Transform player;
 
@@ -100,6 +102,12 @@ public class EnemyController : MonoBehaviour, EnemyProperties
                 }
                 break;
             case State.CHASING:
+                if (Vector3.Distance(transform.position, player.transform.position) > stopPursuitDistance)
+                {
+                    currentState = State.IDLE;
+                    agent.destination = transform.position;
+                    agent.isStopped = true;
+                }
                 agent.isStopped = false;
                 agent.destination = player.position;
                 if (IsAtDestination())

@@ -45,6 +45,8 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
     public EnemyDiesEvent diesEvent;
 
+    public float stopPursuitDistance = 20f;
+
     // constraint for animation rigging (weapon aim part)
     private GameObject weaponAimConstraintObj;
 
@@ -191,6 +193,12 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 }
                 break;
             case State.CHASING:
+                if (Vector3.Distance(transform.position, player.transform.position) > stopPursuitDistance)
+                {
+                    currentState = State.IDLE;
+                    agent.destination = transform.position;
+                    agent.isStopped = true;
+                }
                 agent.isStopped = false;
                 agent.destination = player.position;
                 AimPlayer();

@@ -1630,6 +1630,7 @@ MonoBehaviour:
   biteTimer: 0
   aimAtPoint: {fileID: 2155651483251198025}
   diesEvent: {fileID: 11400000, guid: ca2560dd2f9dd7b48a5eef7afc954d8f, type: 2}
+  stopPursuitDistance: 15
 --- !u!114 &848633123
 MonoBehaviour:
   m_ObjectHideFlags: 0

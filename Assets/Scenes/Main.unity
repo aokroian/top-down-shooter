@@ -896,6 +896,7 @@ MonoBehaviour:
   startSpawnWaveCost: 5
   waveCostDistanceMultiplier: 0.01
   despawnDistance: 45
+  spawnWaves: 0
 --- !u!114 &848356372
 MonoBehaviour:
   m_ObjectHideFlags: 0
