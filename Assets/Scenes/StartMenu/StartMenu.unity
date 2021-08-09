@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 956195905}
-  progressionHolder: {fileID: 0}
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!114 &1411809351
 MonoBehaviour:
   m_ObjectHideFlags: 0

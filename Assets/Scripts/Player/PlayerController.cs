@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.PlayerInput;
 
 public class PlayerController : MonoBehaviour
 {
@@ -80,6 +81,13 @@ public class PlayerController : MonoBehaviour
     private int[] bulletsInClip;
     private Animator animator;
     private Coroutine shootingCoroutine;
+
+    private void OnEnable()
+    {
+        playerInput.SwitchCurrentControlScheme("Gamepad");
+
+        RemoveAllBindingOverrides();
+    }
 
     public void OnMovement(InputAction.CallbackContext value)
     {
@@ -202,10 +210,11 @@ public class PlayerController : MonoBehaviour
                 case "Touch":
                     break;
             }
-            Debug.Log(currentControlScheme);
+            Debug.Log("Changed: " + currentControlScheme);
             RemoveAllBindingOverrides();
         }
     }
+
     void RemoveAllBindingOverrides()
     {
         InputActionRebindingExtensions.RemoveAllBindingOverrides(playerInput.currentActionMap);

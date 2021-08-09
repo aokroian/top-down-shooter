@@ -21,6 +21,7 @@ public class MainUIController : MonoBehaviour
         settingsScreen.GetComponent<SettingsScreen>().SetBackAction(ToTitleScreen);
 
         progressionManager.LoadFromSaveFile();
+        titleScreen.GetComponent<TitleScreen>().ShowTopScore();
     }
 
     public void ToTitleScreen()

@@ -74,6 +74,7 @@ public class PauseScreen : MonoBehaviour
         if (scoreCounter.currentScore > progressionHolder.topScore)
         {
             progressionHolder.topScore = scoreCounter.currentScore;
+            Debug.Log("ScoreCounter: " + scoreCounter.currentScore + "; Holder: " + progressionHolder.topScore);
         }
         topScoreLabel.text = progressionHolder.topScore.ToString();
     }

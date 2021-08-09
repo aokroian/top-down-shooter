@@ -69,7 +69,7 @@ public class ScoreCounter : MonoBehaviour
 
     public void WriteScoreToStore()
     {
-        if (currentScore > progressionHolder.topScore)
+        if (currentScore >= progressionHolder.topScore)
         {
             progressionHolder.topScore = currentScore;
             progressionManager.WriteToSaveFile();

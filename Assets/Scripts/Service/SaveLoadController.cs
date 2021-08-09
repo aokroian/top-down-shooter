@@ -50,12 +50,14 @@ public class SaveLoadController
         data.money = money;
         data.upgrades = upgrades;
         data.selected = selected;
+        data.topScore = topScore;
         SaveProgression(data);
     }
 
     public void SaveProgression(SaveData data)
     {
         string json = converter.Serialize(data);
+        Debug.Log("Save: " + json);
         File.WriteAllText(fileFullPath, json);
     }
 }
