@@ -79,7 +79,7 @@ public class BulletController : MonoBehaviour, IBulletController
         {
             
             Target target = other.transform.GetComponent<Target>();
-            if (target != null)
+            if (other.gameObject != null && target != null && bp.shooter != null)
             {
                 SpawnEffect(target);
                 target.TakeDamage(bp.shotDamage, bp.bulletImpactForce, -(bp.shooter.transform.position - transform.position), hitType: hitType);

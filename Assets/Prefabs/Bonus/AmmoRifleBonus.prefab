@@ -131,5 +131,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   despawnDistance: 80
+  pickUpDistance: 5
+  textTime: 2
+  textMovement: 0.2
+  textFont: {fileID: 12800000, guid: e1608a7ff7cd9a34081b60200f8c3e75, type: 3}
+  textColor: {r: 0, g: 1, b: 0, a: 1}
   amount: 8
   ammoType: 3

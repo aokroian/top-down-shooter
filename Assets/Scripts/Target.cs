@@ -98,6 +98,11 @@ public class Target : MonoBehaviour
         return result;
     }
 
+    public bool CanHeal()
+    {
+        return health < maxHealth;
+    }
+
     // Update is called once per frame
     private void CheckHealth()
     {

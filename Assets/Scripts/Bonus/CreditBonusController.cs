@@ -16,8 +16,18 @@ public class CreditBonusController : AbstractBonusController
         return true;
     }
 
+    public override bool CanPickUp()
+    {
+        return true;
+    }
+    
     public void SetProgressionManager(ProgressionManager progressionManager)
     {
         this.progressionManager = progressionManager;
+    }
+
+    public override string GetPickupText()
+    {
+        return "+" + amount + " CREDIT_PLACEHOLDER";
     }
 }
