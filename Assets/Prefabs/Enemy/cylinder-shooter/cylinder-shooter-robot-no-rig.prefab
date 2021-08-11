@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!1 &992249265418582212
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!1 &1791714739586159786
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!1 &1892436371911094907
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!65 &2423162766636079648
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!1 &3584225799722595877
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!1 &4603300788604594936
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!1 &4719806764497388499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!1 &6190602120689375460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!1 &7168145697974317382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01
 --- !u!1 &7816982450251814109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,4 +1417,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 4
-  massAfterCollisionWithPlayer: 0.001
+  massAfterCollisionWithPlayer: 0.01

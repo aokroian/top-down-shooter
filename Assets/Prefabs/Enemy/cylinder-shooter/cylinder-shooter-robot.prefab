@@ -1541,7 +1541,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &8365038223575669757
 CapsuleCollider:
@@ -1724,10 +1724,12 @@ MonoBehaviour:
   timeBeforeForcedExplosion: Infinity
   destroyAfterExplosion: 1
   cameraShakeMagnitude: 2
-  explosionEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 3}
+  explosionEffect: {fileID: 100006, guid: 28ccd38a41e256a4e8fea96f5a8d039d, type: 3}
   explosionRadius: 2
   explosionForce: 500
   explosionMaxDamage: 20
+  minExplosionHeight: 1
+  maxExplosionHeight: 1
 --- !u!1 &5442841380682983192
 GameObject:
   m_ObjectHideFlags: 0

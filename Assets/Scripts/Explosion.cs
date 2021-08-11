@@ -13,6 +13,8 @@ public class Explosion : MonoBehaviour
     public float explosionRadius = 1f;
     public float explosionForce = 1f;
     public float explosionMaxDamage = 200;
+    public float minExplosionHeight = 1f;
+    public float maxExplosionHeight = 1f;
 
     private void Start()
     {
@@ -25,7 +27,7 @@ public class Explosion : MonoBehaviour
     public void Explode()
     {
         Collider[] damagedObjects = Physics.OverlapSphere(transform.position, explosionRadius);
-        Vector3 explosivePos = new Vector3(transform.position.x, Random.Range(1.3f, 1.9f), transform.position.z);
+        Vector3 explosivePos = new Vector3(Random.Range(transform.position.x - 0.2f, transform.position.x + 0.2f), Random.Range(minExplosionHeight, maxExplosionHeight), Random.Range(transform.position.z - 0.2f, transform.position.z + 0.2f));
 
         foreach (var hitCollider in damagedObjects)
         {
