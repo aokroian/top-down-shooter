@@ -122,5 +122,13 @@ MonoBehaviour:
     m_Localized: Top score
     m_Metadata:
       m_Items: []
+  - m_Id: 10480823626354688
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10485323841916928
+    m_Localized: Credit
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

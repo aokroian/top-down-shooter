@@ -15,12 +15,14 @@ public class BonusSystemController : MonoBehaviour
 
     //public GameObject[] ammoPrefabs;
     public BonusSpawnParams[] ammoParams;
-    
+    public LocalizationTableHolder localizationTableHolder;
+
 
     private Dictionary<AmmoType, BonusSpawnParams> actualAmmoParams = new Dictionary<AmmoType, BonusSpawnParams>();
 
     void Start()
     {
+        localizationTableHolder.Init();
         FillActualAmmoParams();
     }
 
@@ -88,7 +90,10 @@ public class BonusSystemController : MonoBehaviour
     private GameObject PrepareAndSpawnBonus(GameObject prefab, Vector3 pos)
     {
         GameObject bonus = Instantiate(prefab, pos, prefab.transform.rotation, transform);
-        bonus.GetComponent<AbstractBonusController>().player = player;
+        AbstractBonusController bonusController = bonus.GetComponent<AbstractBonusController>();
+        bonusController.player = player;
+
+        bonusController.SetLocalizationTableHolder(localizationTableHolder);
         return bonus;
     }
 }

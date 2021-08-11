@@ -7,6 +7,7 @@ public abstract class AbstractBonusController : MonoBehaviour
     public GameObject player;
     public float despawnDistance = 80f;
     public float pickUpDistance = 5f;
+    public string pickupString;
     public float textTime = 2f;
     public float textMovement = 0.2f;
     public Font textFont;
@@ -18,6 +19,8 @@ public abstract class AbstractBonusController : MonoBehaviour
     private Vector2 currentTextPosition;
     private GUIStyle textStyle;
     private Rect textRect;
+
+    protected LocalizationTableHolder localizationTableHolder;
 
     private void Start()
     {
@@ -62,6 +65,11 @@ public abstract class AbstractBonusController : MonoBehaviour
     public abstract bool CanPickUp();
 
     public abstract string GetPickupText();
+
+    public void SetLocalizationTableHolder(LocalizationTableHolder localizationTableHolder)
+    {
+        this.localizationTableHolder = localizationTableHolder;
+    }
 
     private void PrepareTextProperties()
     {

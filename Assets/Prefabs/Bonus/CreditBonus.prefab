@@ -68,6 +68,7 @@ MonoBehaviour:
   player: {fileID: 0}
   despawnDistance: 80
   pickUpDistance: 5
+  pickupString: Credit
   textTime: 2
   textMovement: 0.2
   textFont: {fileID: 12800000, guid: e1608a7ff7cd9a34081b60200f8c3e75, type: 3}
