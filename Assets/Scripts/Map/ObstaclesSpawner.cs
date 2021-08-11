@@ -123,7 +123,7 @@ public class ObstaclesSpawner : MonoBehaviour
                         //rotation = obstaclePrefab.transform.rotation;
                     }
 
-
+                    rotation = Rotate(rotation, wrapper.big);
                     if (pool.ContainsKey(obstaclePrefab.tag) && pool[obstaclePrefab.tag].Count > 0)
                     {
                         obstacle = pool[obstaclePrefab.tag][0];
@@ -179,5 +179,19 @@ public class ObstaclesSpawner : MonoBehaviour
         }
 
         return current;
+    }
+
+    private Quaternion Rotate(Quaternion rotation, bool big)
+    {   
+        float angle;
+        if (big)
+        {
+            angle = Random.Range(0, 2) * 180f;
+        } else
+        {
+            angle = Random.Range(0, 4) * 90f;
+        }
+
+        return rotation * Quaternion.AngleAxis(angle, Vector3.up);
     }
 }

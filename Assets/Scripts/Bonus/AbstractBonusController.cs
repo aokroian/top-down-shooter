@@ -92,6 +92,7 @@ public abstract class AbstractBonusController : MonoBehaviour
         }
 
         transform.localScale = Vector3.zero;  // Or disable? Or disable MeshRenderer?
+        transform.GetComponent<Collider>().enabled = false;
 
         if (Time.time < pickupTime + textTime)
         {
