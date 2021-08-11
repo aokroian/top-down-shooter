@@ -89,7 +89,8 @@ public class BonusSystemController : MonoBehaviour
 
     private GameObject PrepareAndSpawnBonus(GameObject prefab, Vector3 pos)
     {
-        GameObject bonus = Instantiate(prefab, pos, prefab.transform.rotation, transform);
+        Vector3 positionYFixed = new Vector3(pos.x, prefab.transform.position.y, pos.z);
+        GameObject bonus = Instantiate(prefab, positionYFixed, prefab.transform.rotation, transform);
         AbstractBonusController bonusController = bonus.GetComponent<AbstractBonusController>();
         bonusController.player = player;
 
