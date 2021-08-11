@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7537885594294434757}
   - component: {fileID: -6282946564115539482}
   - component: {fileID: 1752777469939030997}
+  - component: {fileID: 6409341865363581901}
   m_Layer: 0
   m_Name: double-barrel-shotgun-pivot-point
   m_TagString: Untagged
@@ -265,6 +266,20 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: a3419ece500bc0543915c34c0af5e3da, type: 3}
     - Key: No bullets
       Value: {fileID: 8300000, guid: 49772f31cf3a22740be75a868d9606a8, type: 3}
+--- !u!136 &6409341865363581901
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018421898667607887}
+  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.03392952
+  m_Height: 0.7866659
+  m_Direction: 2
+  m_Center: {x: -0.00054820627, y: 0.09526265, z: 0.72762024}
 --- !u!1 &3084177664585094267
 GameObject:
   m_ObjectHideFlags: 0

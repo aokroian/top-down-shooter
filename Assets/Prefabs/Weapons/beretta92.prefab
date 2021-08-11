@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 4367855227709903072}
   - component: {fileID: 9063869324245948783}
   - component: {fileID: 2898469142578646278}
+  - component: {fileID: 8830304499529818642}
   m_Layer: 0
   m_Name: beretta92
   m_TagString: Untagged
@@ -298,6 +299,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &8830304499529818642
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3653366746708802039}
+  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.031556994
+  m_Height: 0.25950268
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.13561186, z: 0.016178936}
 --- !u!1 &5536215420189029880
 GameObject:
   m_ObjectHideFlags: 0

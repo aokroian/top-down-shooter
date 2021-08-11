@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 7950684517113240490}
   - component: {fileID: -2167027041597358327}
   - component: {fileID: -147432925433341432}
+  - component: {fileID: 4836352549964562179}
   m_Layer: 0
   m_Name: winchester-70
   m_TagString: Untagged
@@ -405,6 +406,20 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: a3419ece500bc0543915c34c0af5e3da, type: 3}
     - Key: No bullets
       Value: {fileID: 8300000, guid: 49772f31cf3a22740be75a868d9606a8, type: 3}
+--- !u!136 &4836352549964562179
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040421391604227224}
+  m_Material: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.00045836688
+  m_Height: 0.00594074
+  m_Direction: 2
+  m_Center: {x: 0.0000012794137, y: 0.00066096545, z: 0.0065298826}
 --- !u!1 &4252412773697519901
 GameObject:
   m_ObjectHideFlags: 0

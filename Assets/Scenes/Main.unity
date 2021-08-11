@@ -3499,6 +3499,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3883960182137148097, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5102222969195600411, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: m_Data.m_AimAxis
       value: 4
@@ -3591,7 +3595,12 @@ PrefabInstance:
       propertyPath: m_DeviceRegainedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7661580581317306586, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3883960182137148097, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
 --- !u!1001 &3319225361507312841
 PrefabInstance:
