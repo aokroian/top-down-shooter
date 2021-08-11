@@ -34,7 +34,8 @@ public abstract class AbstractBonusController : MonoBehaviour
             flyToPlayer = true;
         } else if (flyToPlayer)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, currentSpeed * Time.deltaTime);
+            Vector3 playerPosYFixed = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, playerPosYFixed, currentSpeed * Time.deltaTime);
             currentSpeed += Time.deltaTime * 10f;
         }
 
