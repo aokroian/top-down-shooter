@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640587863994964912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.227, y: 0.6, z: -0.578}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3815467283128105521}
@@ -72,7 +72,7 @@ MonoBehaviour:
   textTime: 2
   textMovement: 0.2
   textFont: {fileID: 12800000, guid: e1608a7ff7cd9a34081b60200f8c3e75, type: 3}
-  textColor: {r: 0, g: 1, b: 0, a: 1}
+  textColor: {r: 1, g: 0.8447998, b: 0, a: 1}
   amount: 1
 --- !u!135 &8148205408013908821
 SphereCollider:
@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2717002819696959926}
   m_LocalRotation: {x: -0.86602545, y: 0, z: 0, w: 0.49999994}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2596372956814452599}

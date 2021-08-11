@@ -60,6 +60,8 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
     private float shootTimer;
 
+    private LaserAim laserAim;
+
     // Maybe make scriptable object? Now every enemy create additional object
     private IAmmoProvider ammoProvider = new EnemyEndlessAmmoProvider();
 
@@ -72,6 +74,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
         // spawn weapon
         equippedWeaponObj = Instantiate(weapon, parentBoneForWeapon.transform);
+        laserAim = equippedWeaponObj.GetComponent<LaserAim>();
 
         WeaponController weaponController = equippedWeaponObj.GetComponent<WeaponController>();
 
@@ -213,6 +216,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 // Check if player in shoot range?
                 agent.isStopped = true;
                 AimPlayer();
+                laserAim.isEnabled = true;
                 shootTimer -= Time.deltaTime;
                 if (shootTimer <= shootTime / 2f)
                 {
@@ -222,6 +226,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 }
                 break;
             case State.AFTER_SHOT:
+                laserAim.isEnabled = false;
                 shootTimer -= Time.deltaTime;
                 if (shootTimer <= 0f)
                 {
