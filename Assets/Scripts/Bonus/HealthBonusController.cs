@@ -25,6 +25,7 @@ public class HealthBonusController : AbstractBonusController
 
     public override string GetPickupText()
     {
-        return "+" + amount + " HEALTH_PLACEHOLDER";
+        string localizedString = localizationTableHolder.currentTable.GetEntry(pickupString).GetLocalizedString();
+        return "+" + amount + " " + localizedString;
     }
 }

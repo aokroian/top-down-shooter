@@ -28,6 +28,7 @@ public class CreditBonusController : AbstractBonusController
 
     public override string GetPickupText()
     {
-        return "+" + amount + " CREDIT_PLACEHOLDER";
+        string localizedString = localizationTableHolder.currentTable.GetEntry(pickupString).GetLocalizedString();
+        return "+" + amount + " " + localizedString;
     }
 }

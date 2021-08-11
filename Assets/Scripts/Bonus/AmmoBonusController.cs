@@ -27,6 +27,7 @@ public class AmmoBonusController : AbstractBonusController
 
     public override string GetPickupText()
     {
-        return "+" + amount + " AMMO_TYPE_PLACEHOLDER";
+        string localizedString = localizationTableHolder.currentTable.GetEntry(pickupString).GetLocalizedString();
+        return "+" + amount + " " + localizedString;
     }
 }
