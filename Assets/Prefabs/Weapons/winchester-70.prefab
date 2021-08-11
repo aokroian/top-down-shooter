@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserOriginPoint: {fileID: 5561771759735119739}
-  isEnabled: 1
+  isEnabled: 0
 --- !u!95 &7950684517113240490
 Animator:
   serializedVersion: 3

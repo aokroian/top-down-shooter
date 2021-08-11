@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserOriginPoint: {fileID: 5538476393623822965}
-  isEnabled: 1
+  isEnabled: 0
 --- !u!114 &9063869324245948783
 MonoBehaviour:
   m_ObjectHideFlags: 0
