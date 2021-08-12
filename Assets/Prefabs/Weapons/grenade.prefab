@@ -129,10 +129,12 @@ MonoBehaviour:
   timeBeforeForcedExplosion: Infinity
   destroyAfterExplosion: 1
   cameraShakeMagnitude: 2
-  explosionEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 3}
+  explosionEffect: {fileID: 100006, guid: 28ccd38a41e256a4e8fea96f5a8d039d, type: 3}
   explosionRadius: 3
   explosionForce: 300
   explosionMaxDamage: 200
+  minExplosionHeight: 1
+  maxExplosionHeight: 1
 --- !u!1 &3761041471267226563
 GameObject:
   m_ObjectHideFlags: 0
