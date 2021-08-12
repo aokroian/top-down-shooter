@@ -2573,8 +2573,8 @@ MonoBehaviour:
     big: 1
   noiseMultiplier: 1.11
   obstacleSize: 3
-  noiseSeed: 0
-  randomSeed: 0
+  noiseSeed: 10000
+  randomSeed: 1
 --- !u!1 &1478468544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1063314865500979917, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
