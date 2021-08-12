@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 237294559050635839}
   m_Layer: 6
   m_Name: low-poly-antenna-2
-  m_TagString: Untagged
+  m_TagString: ObsAntenna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,7 +374,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.010000001, y: 0.045, z: 0.010000001}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.045, z: 0}
   m_TimeToStationary: 0.5
