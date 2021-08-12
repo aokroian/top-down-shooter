@@ -2569,7 +2569,7 @@ MonoBehaviour:
     yValue: 0.95
     big: 0
   - obstacle: {fileID: 3525893139860414828, guid: 92091cff557dc8944b62fd4e7bf44c8c, type: 3}
-    yValue: 0.77
+    yValue: 0.87
     big: 1
   noiseMultiplier: 1.11
   obstacleSize: 3

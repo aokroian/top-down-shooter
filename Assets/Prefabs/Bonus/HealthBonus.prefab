@@ -101,8 +101,8 @@ MonoBehaviour:
   despawnDistance: 80
   pickUpDistance: 5
   pickupString: Health
-  textTime: 2
-  textMovement: 0.2
+  textTime: 1
+  textMovement: 0.1
   textFont: {fileID: 12800000, guid: e1608a7ff7cd9a34081b60200f8c3e75, type: 3}
   textColor: {r: 0.36561954, g: 1, b: 0.08962262, a: 1}
   amount: 20
