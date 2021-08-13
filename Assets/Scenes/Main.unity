@@ -2273,7 +2273,7 @@ MonoBehaviour:
   smoothTime: 0.2
   normalOffset: {x: 0, y: 12, z: -4}
   cageOffset: {x: 0, y: 3.3, z: -0.5}
-  maxBrokenCageLatticeCountBeforeCameraUp: 10
+  maxBrokenCageLatticeCountBeforeCameraUp: 15
 --- !u!1001 &1435106875
 PrefabInstance:
   m_ObjectHideFlags: 0
