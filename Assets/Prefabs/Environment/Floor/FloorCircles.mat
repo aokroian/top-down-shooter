@@ -87,7 +87,7 @@ Material:
     m_Floats:
     - AmbientOcclusion: 1
     - CirclesOffset: 0.8
-    - CirclesSize: 1
+    - CirclesSize: 2
     - CirclesThickness: 0
     - Metallic: 0
     - PaintOpacity: 0.75

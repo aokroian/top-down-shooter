@@ -2572,12 +2572,12 @@ MonoBehaviour:
     yValue: 0.95
     big: 0
   - obstacle: {fileID: 3525893139860414828, guid: 92091cff557dc8944b62fd4e7bf44c8c, type: 3}
-    yValue: 0.77
-    big: 0
+    yValue: 0.87
+    big: 1
   noiseMultiplier: 1.11
   obstacleSize: 3
-  noiseSeed: 0
-  randomSeed: 0
+  noiseSeed: 10000
+  randomSeed: 1
 --- !u!1 &1478468544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1063314865500979917, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
@@ -2956,7 +2956,7 @@ MonoBehaviour:
     baseChance: 10
     notGetPercent: 5
     enemyCostAdditionalPercent: 10
-  localizationTableHolder: {fileID: 0}
+  localizationTableHolder: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
 --- !u!4 &1982186214
 Transform:
   m_ObjectHideFlags: 0
