@@ -59,7 +59,10 @@ public class Explosion : MonoBehaviour
 
 
         }
-        Instantiate(explosionEffect, transform.position, transform.rotation);
+        if (explosionEffect != null)
+        {
+            Instantiate(explosionEffect, transform.position, transform.rotation);
+        }
         CameraShaker.Instance.ShakeOnce(cameraShakeMagnitude, 4f, 0.1f, 0.5f);
         if (destroyAfterExplosion)
         {
