@@ -258,7 +258,11 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     private void AimPlayer()
     {
         if (aimSpotRef != null)
-            aimSpotRef.transform.position = player.position;
+        {
+            Vector3 correction = equippedWeaponObj.transform.position - transform.position;
+            aimSpotRef.transform.position = player.position - correction;
+
+        }
     }
 
     private Vector3 GetRandomMovementPoint()

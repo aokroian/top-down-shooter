@@ -19,12 +19,9 @@ public abstract class AbstractBonusController : MonoBehaviour
     private Vector2 currentTextPosition;
     private GUIStyle textStyle;
     private Rect textRect;
+    private string pickupText;
 
     protected LocalizationTableHolder localizationTableHolder;
-
-    private void Start()
-    {
-    }
 
     void Update()
     {
@@ -34,7 +31,8 @@ public abstract class AbstractBonusController : MonoBehaviour
             flyToPlayer = true;
         } else if (flyToPlayer)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, currentSpeed * Time.deltaTime);
+            Vector3 playerPosYFixed = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, playerPosYFixed, currentSpeed * Time.deltaTime);
             currentSpeed += Time.deltaTime * 10f;
         }
 
@@ -52,7 +50,6 @@ public abstract class AbstractBonusController : MonoBehaviour
             {
                 PrepareTextProperties();
                 pickupTime = Time.time;
-
             } else
             {
                 flyToPlayer = false;
@@ -63,7 +60,7 @@ public abstract class AbstractBonusController : MonoBehaviour
     public abstract bool OnPickUp();
 
     public abstract bool CanPickUp();
-
+    
     public abstract string GetPickupText();
 
     public void SetLocalizationTableHolder(LocalizationTableHolder localizationTableHolder)
@@ -81,6 +78,7 @@ public abstract class AbstractBonusController : MonoBehaviour
         textStyle.font = textFont;
         textRect = new Rect(0, 0, w / 3, h * 2 / 100);
         currentTextPosition = Camera.main.WorldToScreenPoint(player.transform.position);
+        pickupText = GetPickupText();
     }
 
     private void OnGUI()
@@ -91,12 +89,13 @@ public abstract class AbstractBonusController : MonoBehaviour
         }
 
         transform.localScale = Vector3.zero;  // Or disable? Or disable MeshRenderer?
+        transform.GetComponent<Collider>().enabled = false;
 
         if (Time.time < pickupTime + textTime)
         {
             currentTextPosition.y -= Time.deltaTime / textTime * textMovement * Screen.height;
             textRect.center = currentTextPosition;
-            GUI.Label(textRect, GetPickupText(), textStyle);
+            GUI.Label(textRect, pickupText, textStyle);
         }
         else
         {

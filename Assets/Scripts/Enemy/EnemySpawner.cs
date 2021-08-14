@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
             int cost = p.GetComponent<EnemyProperties>().cost;
             var list = enemyCosts.ContainsKey(cost) ? enemyCosts[cost] : new List<GameObject>();
             list.Add(p);
-            enemyCosts.Add(cost, list);
+            enemyCosts[cost] = list;
         }
     }
 

@@ -133,8 +133,8 @@ MonoBehaviour:
   despawnDistance: 80
   pickUpDistance: 5
   pickupString: Rifle
-  textTime: 2
-  textMovement: 0.2
+  textTime: 1
+  textMovement: 0.1
   textFont: {fileID: 12800000, guid: e1608a7ff7cd9a34081b60200f8c3e75, type: 3}
   textColor: {r: 1, g: 1, b: 1, a: 1}
   amount: 8

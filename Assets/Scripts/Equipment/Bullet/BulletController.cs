@@ -85,6 +85,12 @@ public class BulletController : MonoBehaviour, IBulletController
                 target.TakeDamage(bp.shotDamage, bp.bulletImpactForce, -(bp.shooter.transform.position - transform.position), hitType: hitType);
             }
 
+            // for cage and maybe other cases
+            if (other.gameObject.GetComponent<CageLatticeController>() != null)
+            {
+                other.gameObject.GetComponent<CageLatticeController>().AddForceOppositeOfPlayer();
+            }
+
             /*
             if (other.attachedRigidbody != null)
             {

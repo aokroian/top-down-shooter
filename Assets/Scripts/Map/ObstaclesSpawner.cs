@@ -25,7 +25,7 @@ public class ObstaclesSpawner : MonoBehaviour
     //private float obstacleSize;
     private float yPos;
 
-    private float noiseOffset = 10000;
+    //private float noiseOffset = 10000;
 
     private Dictionary<Vector2, List<GameObject>> activeObstacles = new Dictionary<Vector2, List<GameObject>>();
     private Dictionary<string, List<GameObject>> pool = new Dictionary<string, List<GameObject>>();
@@ -84,7 +84,7 @@ public class ObstaclesSpawner : MonoBehaviour
                 }
 
                 var zPos = bounds.min.z + iterStep * z;
-                var y = Mathf.PerlinNoise(noiseOffset + xPos * noiseMultiplier, noiseOffset + zPos * noiseMultiplier);
+                var y = Mathf.PerlinNoise(noiseSeed + xPos * noiseMultiplier, noiseSeed + zPos * noiseMultiplier);
                 bool bigAcceptable = x < maxCount - 1 && z < maxCount - 1 && !occupied.Contains(new Vector2(x + 1, z)) && !occupied.Contains(new Vector2(x, z + 1));
                 ObstacleWrapper wrapper = GetObstacleByValueOrNull(y, bigAcceptable);
 
@@ -123,7 +123,7 @@ public class ObstaclesSpawner : MonoBehaviour
                         //rotation = obstaclePrefab.transform.rotation;
                     }
 
-
+                    rotation = Rotate(rotation, wrapper.big);
                     if (pool.ContainsKey(obstaclePrefab.tag) && pool[obstaclePrefab.tag].Count > 0)
                     {
                         obstacle = pool[obstaclePrefab.tag][0];
@@ -179,5 +179,19 @@ public class ObstaclesSpawner : MonoBehaviour
         }
 
         return current;
+    }
+
+    private Quaternion Rotate(Quaternion rotation, bool big)
+    {   
+        float angle;
+        if (big)
+        {
+            angle = Random.Range(0, 2) * 180f;
+        } else
+        {
+            angle = Random.Range(0, 4) * 90f;
+        }
+
+        return rotation * Quaternion.AngleAxis(angle, Vector3.up);
     }
 }
