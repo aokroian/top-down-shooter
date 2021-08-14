@@ -3128,6 +3128,8 @@ GameObject:
   - component: {fileID: 4205132554241998946}
   - component: {fileID: 1047173427319471681}
   - component: {fileID: 1136487805633829762}
+  - component: {fileID: -1605534587396907508}
+  - component: {fileID: 5022095335121668716}
   m_Layer: 0
   m_Name: skinny-robot
   m_TagString: Enemy
@@ -3242,6 +3244,7 @@ MonoBehaviour:
   biteTimer: 0
   aimAtPoint: {fileID: 0}
   diesEvent: {fileID: 11400000, guid: ca2560dd2f9dd7b48a5eef7afc954d8f, type: 2}
+  stopPursuitDistance: 20
 --- !u!114 &7822125996213104878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3379,6 +3382,40 @@ MonoBehaviour:
   explosives:
   - {fileID: 5375654824635933047}
   - {fileID: 4750628176609608492}
+--- !u!114 &-1605534587396907508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8900470874175376767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15478b0640ae146cdbb4bc9c03ecef7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5022095335121668716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8900470874175376767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d527b9688078342989f22d2a473e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDictionary:
+    list:
+    - Key: Walk
+      Value: {fileID: 0}
+    - Key: Death
+      Value: {fileID: 0}
+    - Key: Hit by player bullet
+      Value: {fileID: 0}
+    - Key: Before suicide
+      Value: {fileID: 0}
 --- !u!1 &8962464125082246976
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,12 +4,152 @@ using UnityEngine;
 
 public class EnemyAudioManager : MonoBehaviour
 {
-    // variables for sound system
+    // main for damage etc
     private AudioSource mainAudioSource;
+    // movement for steps
     private AudioSource movementAudioSource;
+
+
     private AudioClip deathExplosionSound;
     private AudioClip walkSound;
     private AudioClip getHitByPlayer;
+    private AudioClip aimingSound;
+    // saw robot only
+    private AudioClip sawSound;
+    // kamikaze robot only
+    private AudioClip soundBeforeSuicide;
+
+    private void Start()
+    {
+        mainAudioSource = transform.Find("MainAudioSource").GetComponent<AudioSource>();
+        movementAudioSource = transform.Find("MovementAudioSource").GetComponent<AudioSource>();
+        SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
+
+        audioStorage.TryGetValue("Death", out deathExplosionSound);
+        audioStorage.TryGetValue("Walk", out walkSound);
+        audioStorage.TryGetValue("Hit by player bullet", out getHitByPlayer);
+        audioStorage.TryGetValue("Aiming", out aimingSound);
+        audioStorage.TryGetValue("Saw", out sawSound);
+        audioStorage.TryGetValue("Before suicide", out soundBeforeSuicide);
+    }
 
 
+    public void PlayMovementSound(bool isPlaying)
+    {
+        if (walkSound == null)
+        {
+            Debug.Log("No walking sound found in enemy " + gameObject.name);
+            return;
+        }
+
+        if (isPlaying)
+        {
+            movementAudioSource.clip = walkSound;
+            movementAudioSource.loop = true;
+            movementAudioSource.pitch = Random.Range(0.6f, 0.8f);
+            movementAudioSource.volume = Random.Range(0.8f, 1f);
+            if (!movementAudioSource.isPlaying)
+            {
+                movementAudioSource.Play();
+            }
+        }
+        else
+        {
+            movementAudioSource.clip = null;
+            movementAudioSource.loop = false;
+            movementAudioSource.pitch = 1;
+            movementAudioSource.volume = 1;
+            movementAudioSource.Stop();
+        }
+    }
+
+    public void PlayAimingSound(bool isPlaying)
+    {
+        if (aimingSound == null)
+        {
+            Debug.Log("No aiming sound found in enemy " + gameObject.name);
+            return;
+        }
+
+        if (isPlaying)
+        {
+            mainAudioSource.clip = aimingSound;
+            mainAudioSource.loop = true;
+            mainAudioSource.pitch = 1;
+            mainAudioSource.volume = 1;
+            if (!mainAudioSource.isPlaying)
+            {
+                mainAudioSource.Play();
+            }
+        }
+        else
+        {
+            mainAudioSource.clip = null;
+            mainAudioSource.loop = false;
+            mainAudioSource.pitch = 1;
+            mainAudioSource.volume = 1;
+            mainAudioSource.Stop();
+        }
+    }
+
+    public void PlayDeathSound()
+    {
+        if (deathExplosionSound == null)
+        {
+            Debug.Log("No death explosion sound sound found in enemy " + gameObject.name);
+            return;
+        }
+
+        mainAudioSource.PlayOneShot(deathExplosionSound);
+    }
+
+    public void PlayHitByPlayerBulletSound()
+    {
+        if (getHitByPlayer == null)
+        {
+            Debug.Log("No get hit by player sound sound found in enemy " + gameObject.name);
+            return;
+        }
+
+        mainAudioSource.PlayOneShot(getHitByPlayer);
+    }
+
+    public void PlaySawSound(bool isPlaying)
+    {
+        if (sawSound == null)
+        {
+            Debug.Log("No saw sound found in enemy " + gameObject.name);
+            return;
+        }
+
+        if (isPlaying)
+        {
+            mainAudioSource.clip = sawSound;
+            mainAudioSource.loop = true;
+            mainAudioSource.pitch = 1;
+            mainAudioSource.volume = 1;
+            if (!mainAudioSource.isPlaying)
+            {
+                mainAudioSource.Play();
+            }
+        }
+        else
+        {
+            mainAudioSource.clip = null;
+            mainAudioSource.loop = false;
+            mainAudioSource.pitch = 1;
+            mainAudioSource.volume = 1;
+            mainAudioSource.Stop();
+        }
+    }
+
+    public void PlaySoundBeforeSuicide()
+    {
+        if (soundBeforeSuicide == null)
+        {
+            Debug.Log("No saw sound before suicide found in enemy " + gameObject.name);
+            return;
+        }
+        mainAudioSource.PlayOneShot(soundBeforeSuicide);
+    }
 }

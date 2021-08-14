@@ -1470,8 +1470,8 @@ GameObject:
   - component: {fileID: 848633127}
   - component: {fileID: 1193346341}
   - component: {fileID: -596523366260598061}
-  - component: {fileID: 8837724193239896909}
   - component: {fileID: -544568261331387710}
+  - component: {fileID: 8837724193239896909}
   m_Layer: 0
   m_Name: saw-robot
   m_TagString: Enemy
@@ -1772,6 +1772,20 @@ MonoBehaviour:
   explosionRadius: 2
   explosionForce: 800
   explosionMaxDamage: 30
+  minExplosionHeight: 1
+  maxExplosionHeight: 1
+--- !u!114 &-544568261331387710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3739565477740236748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15478b0640ae146cdbb4bc9c03ecef7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8837724193239896909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1786,24 +1800,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioDictionary:
     list:
-    - Key: Death explosion
+    - Key: Death
       Value: {fileID: 0}
     - Key: Walk
       Value: {fileID: 0}
-    - Key: Get hit by a player
+    - Key: Hit by player bullet
       Value: {fileID: 0}
---- !u!114 &-544568261331387710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3739565477740236748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15478b0640ae146cdbb4bc9c03ecef7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    - Key: Saw
+      Value: {fileID: 0}
 --- !u!1 &3836866714593287920
 GameObject:
   m_ObjectHideFlags: 0

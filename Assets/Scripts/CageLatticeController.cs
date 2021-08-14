@@ -5,7 +5,7 @@ using UnityEngine;
 public class CageLatticeController : MonoBehaviour
 {
     public float force = 10;
-    public GameObject camera;
+    public GameObject mainCam;
 
     public void AddForceOppositeOfPlayer()
     {
@@ -31,6 +31,6 @@ public class CageLatticeController : MonoBehaviour
             rb.AddForce(direction.normalized * force, ForceMode.Impulse);
         }
 
-        camera.GetComponent<SimpleCameraController>().IncrementBrokenCageLatticeCount();
+        mainCam.GetComponent<SimpleCameraController>().IncrementBrokenCageLatticeCount();
     }
 }

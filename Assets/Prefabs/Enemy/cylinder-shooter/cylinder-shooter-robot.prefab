@@ -1425,6 +1425,8 @@ GameObject:
   - component: {fileID: 2933777894029775972}
   - component: {fileID: 9034636907917357092}
   - component: {fileID: 763315116370814500}
+  - component: {fileID: -8692451392542071342}
+  - component: {fileID: 4332139763250591562}
   m_Layer: 0
   m_Name: cylinder-shooter-robot
   m_TagString: Enemy
@@ -1730,6 +1732,40 @@ MonoBehaviour:
   explosionMaxDamage: 20
   minExplosionHeight: 1
   maxExplosionHeight: 1
+--- !u!114 &-8692451392542071342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412306376972477081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15478b0640ae146cdbb4bc9c03ecef7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4332139763250591562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412306376972477081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d527b9688078342989f22d2a473e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDictionary:
+    list:
+    - Key: Walk
+      Value: {fileID: 0}
+    - Key: Death
+      Value: {fileID: 0}
+    - Key: Hit by player bullet
+      Value: {fileID: 0}
+    - Key: Aiming
+      Value: {fileID: 0}
 --- !u!1 &5442841380682983192
 GameObject:
   m_ObjectHideFlags: 0
