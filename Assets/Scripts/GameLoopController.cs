@@ -18,12 +18,15 @@ public class GameLoopController : MonoBehaviour
     public GameState currentState = GameState.RUNNING;
     public Target playerTarget;
     //public GameObject pauseScreen;
+    public LoadProgressSceneEvent loadProgressSceneEvent;
 
     private HashSet<Action<GameState>> stateChangeHandlers = new HashSet<Action<GameState>>();
 
     private void Start()
     {
-        UnPause();
+        var param = new LoadProgressSceneEP(true, UnPause);
+        loadProgressSceneEvent.Raise(param);
+        //UnPause();
     }
 
     // pause on focus is needed only in release version

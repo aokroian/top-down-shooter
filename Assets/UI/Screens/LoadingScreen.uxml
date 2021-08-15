@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="/Assets/UI/Styles/Overall.uss" />
+    <Style src="/Assets/UI/Styles/Title.uss" />
+    <ui:VisualElement class="panel" style="flex-grow: 1; align-items: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;">
+        <ui:VisualElement style="bottom: 30%; top: auto; position: absolute; flex-direction: row;">
+            <ui:Label text="#Loading" display-tooltip-when-elided="true" class="menu-item" />
+            <ui:Label text="..." display-tooltip-when-elided="true" class="menu-item" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

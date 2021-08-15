@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 690551147}
   settingsScreen: {fileID: 14482272}
-  levelLoader: {fileID: 886370014}
+  changeSceneEvent: {fileID: 11400000, guid: 63404419b261a944f8b2d1849d1408b3, type: 2}
   gameLoopController: {fileID: 1099389162}
   oldEventSystem: {fileID: 157892513}
   newEventSystem: {fileID: 157892516}
@@ -1995,6 +1995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   playerTarget: {fileID: 3883960182137148087}
+  loadProgressSceneEvent: {fileID: 11400000, guid: 56d046bed5f47204ab21c5d9adca5189, type: 2}
 --- !u!114 &1102999976 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2973999207565824745, guid: 2867852081fcf4ef0bdd0c17a9e161fb, type: 3}

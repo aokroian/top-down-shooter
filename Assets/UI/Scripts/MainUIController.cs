@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainUIController : MonoBehaviour
 {
-    private const string GAME_SCENE_NAME = "Main";
-
     public GameObject titleScreen;
     public GameObject settingsScreen;
     public GameObject upgradeScreen;
@@ -14,6 +12,8 @@ public class MainUIController : MonoBehaviour
     public LocalizationTableHolder localizationTableHolder;
 
     public ProgressionManager progressionManager;
+
+    public ChangeSceneEvent changeSceneEvent;
 
     private void Start()
     {
@@ -26,6 +26,7 @@ public class MainUIController : MonoBehaviour
 
     public void ToTitleScreen()
     {
+        Debug.Log("ToTitleScreen");
         titleScreen.SetActive(true);
         settingsScreen.SetActive(false);
         upgradeScreen.SetActive(false);
@@ -47,6 +48,8 @@ public class MainUIController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
+        Debug.Log("START GAME");
+        var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.TITLE, false);
+        changeSceneEvent.Raise(param);
     }
 }

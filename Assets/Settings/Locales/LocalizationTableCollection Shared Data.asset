@@ -127,6 +127,10 @@ MonoBehaviour:
     m_Key: Credit
     m_Metadata:
       m_Items: []
+  - m_Id: 11922222589304832
+    m_Key: Loading
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

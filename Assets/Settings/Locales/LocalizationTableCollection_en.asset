@@ -130,5 +130,9 @@ MonoBehaviour:
     m_Localized: Credit
     m_Metadata:
       m_Items: []
+  - m_Id: 11922222589304832
+    m_Localized: Loading
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

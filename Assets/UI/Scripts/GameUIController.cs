@@ -8,7 +8,8 @@ public class GameUIController : MonoBehaviour
 {
     public GameObject pauseScreen;
     public GameObject settingsScreen;
-    public LevelLoader levelLoader;
+    //public LevelLoader levelLoader;
+    public ChangeSceneEvent changeSceneEvent;
     public GameLoopController gameLoopController;
 
     public InputSystemUIInputModule oldEventSystem;
@@ -61,13 +62,17 @@ public class GameUIController : MonoBehaviour
 
     private void NewRun()
     {
-        levelLoader.LoadLevel("Main");
-        gameLoopController.UnPause();
+        //levelLoader.LoadLevel("Main");
+        //gameLoopController.UnPause();
+        var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.GAME, true);
+        changeSceneEvent.Raise(param);
     }
 
     private void ToMainMenu()
     {
-        levelLoader.LoadLevel("StartMenu");
+        //levelLoader.LoadLevel("StartMenu");
+        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.GAME, true);
+        changeSceneEvent.Raise(param);
     }
 
     private void OnStateChange(GameLoopController.GameState state)
