@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using System;
+using System.Collections;
 
 // NOTE: this class assumes that you designate StringTable keys in label fields (as seen in Label, Button, etc)
 // and start them all with '#' char (so other labels will be left be)
@@ -34,7 +34,6 @@ public class UIDocumentLocalization : MonoBehaviour
 			_document = gameObject.GetComponentInParent<UIDocument>(includeInactive: true);
 
 		_table.TableChanged += OnTableChanged;
-		//Debug.Log("Enabled " + gameObject.name);
 	}
 
 
@@ -60,27 +59,29 @@ public class UIDocumentLocalization : MonoBehaviour
 			_document.visualTreeAsset.CloneTree(root);
 		}
 
-		var op = _table.GetTableAsync();
-		op.Completed -= OnTableLoaded;
-		op.Completed += OnTableLoaded;
+		OnTableLoaded(table);
 	}
 
-	void OnTableLoaded(AsyncOperationHandle<StringTable> op)
+	void OnTableLoaded(StringTable table)
 	{
-		StringTable table = op.Result;
 		currentTable = table;
 		var root = _document.rootVisualElement;
 
-		//Debug.Log("Document: " + _document + "; root: " + root);
 		LocalizeChildrenRecursively(root, table);
 		onCompleted();
 
 		if (shouldRebuild)
         {
-			rebuildCallback?.Invoke();
+			StartCoroutine(RebuildCallbackCoroutine());
         }
 
 		root.MarkDirtyRepaint();
+	}
+
+	private IEnumerator RebuildCallbackCoroutine()
+    {
+		yield return null;
+		rebuildCallback?.Invoke();
 	}
 
 	void Localize(VisualElement next, StringTable table)
@@ -95,7 +96,6 @@ public class UIDocumentLocalization : MonoBehaviour
 				StringTableEntry entry = table[key];
 				if (entry != null)
 				{
-					//Debug.Log("Localize: " + textElement.text + " - " + entry.LocalizedValue);
 					textElement.text = entry.LocalizedValue;
 				}
 				else
