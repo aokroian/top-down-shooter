@@ -14,9 +14,9 @@ public class SimpleCameraController : MonoBehaviour
     public Vector3 cageOffset;
     private Vector3 offset;
 
-    // for start pos player cage
-    public int maxBrokenCageLatticeCountBeforeCameraUp = 3;
-    private int brokenCageLatticeCount = 0;
+    // for player cage
+    public float centerToPlayerRadiusToRaiseCam = 2;
+    public bool hasAlreadyBeenRaised = false;
 
     private Vector3 velocity = Vector3.zero;
 
@@ -26,31 +26,19 @@ public class SimpleCameraController : MonoBehaviour
         offset = cageOffset;
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-        /*
-        var playerAimingPoint = playerRef.GetComponent<PlayerController>().mousePosOnGround;
-        var target = Vector3.Lerp(playerRef.transform.position, new Vector3(playerAimingPoint.x, 0.0f, playerAimingPoint.z), playerToPointerPart) + offset;
-        transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, smoothTime);
-        */
-    }
-
     private void LateUpdate()
     {
+        if (playerRef.transform.position.magnitude < centerToPlayerRadiusToRaiseCam && hasAlreadyBeenRaised == false)
+        {
+            offset = cageOffset;
+        } else
+        {
+            offset = normalOffset;
+            hasAlreadyBeenRaised = true;
+        }
         var playerAimingPoint = playerRef.GetComponent<PlayerController>().aimAtPosition;
         var target = Vector3.Lerp(playerRef.transform.position, new Vector3(playerAimingPoint.x, 0f, playerAimingPoint.z), playerToPointerPart) + offset;
         transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, smoothTime);
-    }
-
-
-    public void IncrementBrokenCageLatticeCount()
-    {
-        brokenCageLatticeCount++;
-        if (brokenCageLatticeCount > maxBrokenCageLatticeCountBeforeCameraUp)
-        {
-            offset = normalOffset;
-        }
     }
 
 }

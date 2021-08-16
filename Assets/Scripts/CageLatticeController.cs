@@ -5,12 +5,18 @@ using UnityEngine;
 public class CageLatticeController : MonoBehaviour
 {
     public float force = 10;
-    public GameObject mainCam;
+    public float radiusOfOneBulletImpact = 0.2f;
 
-    public void AddForceOppositeOfPlayer()
+    public void AddForceOppositeOfPlayer(float radiusOfOneBulletImpact)
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         Transform player = GameObject.Find("Player").transform;
+
+        if (player == null)
+        {
+            Debug.Log("Player not found in CageLatticeController script in " + gameObject.name + " object");
+            return;
+        }
 
         // disabling joints
         FixedJoint[] joints = GetComponents<FixedJoint>();
@@ -19,18 +25,26 @@ public class CageLatticeController : MonoBehaviour
             joint.connectedBody = null;
             joint.breakForce = 0;
         }
-
-        if (player == null)
-        {
-            Debug.Log("Player not found in SimpleForce script in " + gameObject.name + " object");
-            return;
-        }
+        // adding force
         Vector3 direction = gameObject.transform.position - player.position;
         if (rb != null)
         {
-            rb.AddForce(direction.normalized * force, ForceMode.Impulse);
+            rb.AddForce(direction.normalized * force, ForceMode.Impulse);  
         }
-
-        mainCam.GetComponent<SimpleCameraController>().IncrementBrokenCageLatticeCount();
+        if (radiusOfOneBulletImpact > 0)
+        {
+            Collider[] nearbyLattices = Physics.OverlapSphere(transform.position, radiusOfOneBulletImpact);
+            foreach (var hitCollider in nearbyLattices)
+            {
+                if (hitCollider.GetComponent<CageLatticeController>() != null)
+                {
+                    hitCollider.GetComponent<CageLatticeController>().AddForceOppositeOfPlayer(0);
+                }
+            }
+                
+        }
+       
+        // time to live
+        gameObject.GetComponent<PieceDestroyer>().timeToLive = 4;
     }
 }

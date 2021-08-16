@@ -88,7 +88,7 @@ public class BulletController : MonoBehaviour, IBulletController
             // for cage and maybe other cases
             if (other.gameObject.GetComponent<CageLatticeController>() != null)
             {
-                other.gameObject.GetComponent<CageLatticeController>().AddForceOppositeOfPlayer();
+                other.gameObject.GetComponent<CageLatticeController>().AddForceOppositeOfPlayer(other.gameObject.GetComponent<CageLatticeController>().radiusOfOneBulletImpact);
             }
 
             /*
