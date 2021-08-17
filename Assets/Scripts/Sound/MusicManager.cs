@@ -7,16 +7,18 @@ public enum MusicState
     playing,
     stop,
     pause
-} 
+}
 
 public class MusicManager : MonoBehaviour
 {
+    public AudioClip[] gameMusic;
+    public AudioClip[] menuMusic;
 
-    public AudioClip[] music;
-
+    private AudioClip[] music;
     private MusicState state = MusicState.stop;
     private int currentTrackIndex = 0;
     private AudioSource audioSource;
+
 
     private void Update()
     {
@@ -36,6 +38,27 @@ public class MusicManager : MonoBehaviour
         audioSource.playOnAwake = false;
 
         PlayTrackByIndex(0);
+    }
+
+    public void SwitchMusicMode (SceneSwitchEventParam param)
+    {
+        if (param.state != SceneSwitchEventParam.SceneLoadStateEnum.LOADED) return;
+
+        // when main menu loaded
+        if (param.scene == SceneEnum.TITLE)
+        {
+            music = menuMusic;
+            Stop();
+            PlayNextTrack();
+        }
+
+        // from main menu to game
+        if (param.scene == SceneEnum.GAME && param.previousScene != SceneEnum.GAME)
+        {
+            music = gameMusic;
+            Stop();
+            PlayNextTrack();
+        }
     }
 
     public void PlayNextTrack()

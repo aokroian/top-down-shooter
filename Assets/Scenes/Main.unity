@@ -3806,6 +3806,7 @@ GameObject:
   - component: {fileID: 1948297202}
   - component: {fileID: 1948297201}
   - component: {fileID: 1948297200}
+  - component: {fileID: 1948297203}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -3939,6 +3940,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1948297203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948297199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4010feb05a958554c855f76473434204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: 66425d9fb53a00d418d858a3b68218ad, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1949575104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2550144086597004224, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
