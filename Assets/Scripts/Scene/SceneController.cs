@@ -8,17 +8,19 @@ public class SceneController : MonoBehaviour
     public GameObject loadingScreen;
     public SceneSwitchEvent sceneSwitchEvent;
 
-    private ChangeSceneEventParam currentChangeSceneEventParam;
+    private Dictionary<SceneEnum, ChangeSceneEventParam> currentLoadings = new Dictionary<SceneEnum, ChangeSceneEventParam>();
 
     private void Awake()
     {
-        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.NULL, true);
-        ChangeScene(param);
+        var titleParam = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.NULL, true);
+        ChangeScene(titleParam);
+        var musicParam = new ChangeSceneEventParam(SceneEnum.MUSIC, SceneEnum.NULL, true);
+        ChangeScene(musicParam);
     }
 
     public void ChangeScene(ChangeSceneEventParam param)
     {
-        currentChangeSceneEventParam = param;
+        currentLoadings.Add(param.scene, param);
         var switchParam = new SceneSwitchEventParam(SceneSwitchEventParam.SceneLoadStateEnum.STARTED, param.scene, param.sceneToUnload);
         sceneSwitchEvent.Raise(switchParam);
         SetLoadingScreenActive(true);
@@ -40,7 +42,7 @@ public class SceneController : MonoBehaviour
     {
         if (param.complete)
         {
-            SceneLoadCompleted(currentChangeSceneEventParam);
+            SceneLoadCompleted(currentLoadings[param.scene]);
             if (param.onSceneActive != null)
             {
                 param.onSceneActive();
@@ -61,7 +63,10 @@ public class SceneController : MonoBehaviour
     {
         SetLoadingScreenActive(false);
         var switchParam = new SceneSwitchEventParam(SceneSwitchEventParam.SceneLoadStateEnum.STARTED, param.scene, param.sceneToUnload);
-        sceneSwitchEvent.Raise(switchParam);
+        currentLoadings.Remove(param.scene);
+        if (currentLoadings.Count == 0) {
+            sceneSwitchEvent.Raise(switchParam);
+        }
     }
 
     private void SetLoadingScreenActive(bool active)

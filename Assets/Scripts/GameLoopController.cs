@@ -24,7 +24,7 @@ public class GameLoopController : MonoBehaviour
 
     private void Start()
     {
-        var param = new LoadProgressSceneEP(true, UnPause);
+        var param = new LoadProgressSceneEP(SceneEnum.GAME, true, UnPause);
         loadProgressSceneEvent.Raise(param);
         //UnPause();
     }

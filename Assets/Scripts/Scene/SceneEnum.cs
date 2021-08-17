@@ -8,5 +8,6 @@ public enum SceneEnum
     CONTROLLER = 0,
     TITLE = 1,
     GAME = 2,
+    MUSIC = 3,
     NULL = 9999
 }

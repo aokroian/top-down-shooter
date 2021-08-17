@@ -33,6 +33,7 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
+        music = menuMusic;
         audioSource = GetComponent<AudioSource>();
 
         // initial settings
@@ -45,6 +46,7 @@ public class MusicManager : MonoBehaviour
 
     public void SwitchMusicMode (SceneSwitchEventParam param)
     {
+        Debug.Log("SwitchMusicMode: " + param.scene + "; prev: " + param.previousScene);
         if (param.state != SceneSwitchEventParam.SceneLoadStateEnum.LOADED) return;
 
         // when main menu loaded
