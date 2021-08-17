@@ -46,7 +46,6 @@ public class MusicManager : MonoBehaviour
 
     public void SwitchMusicMode (SceneSwitchEventParam param)
     {
-        Debug.Log("SwitchMusicMode: " + param.scene + "; prev: " + param.previousScene);
         if (param.state != SceneSwitchEventParam.SceneLoadStateEnum.LOADED) return;
 
         // when main menu loaded

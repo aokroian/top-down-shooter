@@ -62,7 +62,7 @@ public class SceneController : MonoBehaviour
     private void SceneLoadCompleted(ChangeSceneEventParam param)
     {
         SetLoadingScreenActive(false);
-        var switchParam = new SceneSwitchEventParam(SceneSwitchEventParam.SceneLoadStateEnum.STARTED, param.scene, param.sceneToUnload);
+        var switchParam = new SceneSwitchEventParam(SceneSwitchEventParam.SceneLoadStateEnum.LOADED, param.scene, param.sceneToUnload);
         currentLoadings.Remove(param.scene);
         if (currentLoadings.Count == 0) {
             sceneSwitchEvent.Raise(switchParam);
