@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public enum MusicState
 {
@@ -11,6 +12,7 @@ public enum MusicState
 
 public class MusicManager : MonoBehaviour
 {
+    public AudioMixer audioMixer;
     public AudioClip[] gameMusic;
     public AudioClip[] menuMusic;
 
@@ -36,6 +38,7 @@ public class MusicManager : MonoBehaviour
         // initial settings
         audioSource.loop = false;
         audioSource.playOnAwake = false;
+        audioMixer.SetFloat("MusicHighpassCutoff", 10);
 
         PlayTrackByIndex(0);
     }
@@ -58,6 +61,20 @@ public class MusicManager : MonoBehaviour
             music = gameMusic;
             Stop();
             PlayNextTrack();
+        }
+    }
+
+    public void SwitchMusicModeInGame (MenuToggleEventParam param)
+    {
+        // from game to pause menu
+        if (param.showMenu)
+        {
+            audioMixer.SetFloat("MusicHighpassCutoff", 5000);
+        }
+        // from pause menu to game
+        if (!param.showMenu)
+        {
+            audioMixer.SetFloat("MusicHighpassCutoff", 10);
         }
     }
 
