@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2585,6 +2585,7 @@ MonoBehaviour:
   currentState: 0
   playerTarget: {fileID: 3883960182137148087}
   loadProgressSceneEvent: {fileID: 11400000, guid: 56d046bed5f47204ab21c5d9adca5189, type: 2}
+  menuToggleEvent: {fileID: 11400000, guid: 872df7faee47cb14a8135ccbc77d7b64, type: 2}
 --- !u!114 &1102999976 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2973999207565824745, guid: 2867852081fcf4ef0bdd0c17a9e161fb, type: 3}
