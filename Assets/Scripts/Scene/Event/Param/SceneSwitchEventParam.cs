@@ -12,4 +12,12 @@ public class SceneSwitchEventParam
 
     public SceneLoadStateEnum state;
     public SceneEnum scene;
+    public SceneEnum previousScene;
+
+    public SceneSwitchEventParam(SceneLoadStateEnum state, SceneEnum scene, SceneEnum previousScene)
+    {
+        this.state = state;
+        this.scene = scene;
+        this.previousScene = previousScene;
+    }
 }
