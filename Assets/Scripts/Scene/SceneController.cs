@@ -6,18 +6,22 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public GameObject loadingScreen;
+    public SceneSwitchEvent sceneSwitchEvent;
+
+    private ChangeSceneEventParam currentChangeSceneEventParam;
 
     private void Awake()
     {
-        var operation = SceneManager.LoadSceneAsync((int)SceneEnum.TITLE, LoadSceneMode.Additive);
-        operation.completed += (op) => SceneLoaded((int)SceneEnum.TITLE, true);
+        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.NULL, true);
+        ChangeScene(param);
     }
 
     public void ChangeScene(ChangeSceneEventParam param)
     {
-        Debug.Log("Before Loading screen");
+        currentChangeSceneEventParam = param;
+        var switchParam = new SceneSwitchEventParam(SceneSwitchEventParam.SceneLoadStateEnum.STARTED, param.scene, param.sceneToUnload);
+        sceneSwitchEvent.Raise(switchParam);
         SetLoadingScreenActive(true);
-        Debug.Log("After Loading screen");
         StartCoroutine(SwitchSceneCoroutine(param));
     }
 
@@ -25,16 +29,18 @@ public class SceneController : MonoBehaviour
     private IEnumerator SwitchSceneCoroutine(ChangeSceneEventParam param)
     {
         yield return null;
-        SceneManager.UnloadSceneAsync((int)param.sceneToUnload);
+        if (param.sceneToUnload != SceneEnum.NULL) {
+            SceneManager.UnloadSceneAsync((int)param.sceneToUnload);
+        }
         var operation = SceneManager.LoadSceneAsync((int)param.scene, LoadSceneMode.Additive);
-        operation.completed += (op) => SceneLoaded((int)param.scene, param.showAfterLoad);
+        operation.completed += (op) => UnitySceneLoaded(param);
     }
 
     public void SetLoadProgress(LoadProgressSceneEP param)
     {
         if (param.complete)
         {
-            SetLoadingScreenActive(false);
+            SceneLoadCompleted(currentChangeSceneEventParam);
             if (param.onSceneActive != null)
             {
                 param.onSceneActive();
@@ -42,13 +48,20 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    private void SceneLoaded(int scene, bool showAfterLoad)
+    private void UnitySceneLoaded(ChangeSceneEventParam param)
     {
-        if (showAfterLoad)
+        if (param.showAfterLoad)
         {
-            SetLoadingScreenActive(false);
+            SceneLoadCompleted(param);
         }
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(scene));
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)param.scene));
+    }
+
+    private void SceneLoadCompleted(ChangeSceneEventParam param)
+    {
+        SetLoadingScreenActive(false);
+        var switchParam = new SceneSwitchEventParam(SceneSwitchEventParam.SceneLoadStateEnum.STARTED, param.scene, param.sceneToUnload);
+        sceneSwitchEvent.Raise(switchParam);
     }
 
     private void SetLoadingScreenActive(bool active)
