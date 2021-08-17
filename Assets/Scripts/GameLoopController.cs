@@ -20,6 +20,8 @@ public class GameLoopController : MonoBehaviour
     //public GameObject pauseScreen;
     public LoadProgressSceneEvent loadProgressSceneEvent;
 
+    public MenuToggleEvent menuToggleEvent;
+
     private HashSet<Action<GameState>> stateChangeHandlers = new HashSet<Action<GameState>>();
 
     private void Start()
@@ -84,5 +86,6 @@ public class GameLoopController : MonoBehaviour
         {
             handler(currentState);
         }
+        menuToggleEvent.Raise(new MenuToggleEventParam(paused));
     }
 }
