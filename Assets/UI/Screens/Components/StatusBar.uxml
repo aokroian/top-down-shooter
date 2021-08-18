@@ -3,7 +3,7 @@
     <StatusBarVisualElement style="margin-left: 10px; margin-top: 10px;">
         <ui:VisualElement name="Container" style="flex-direction: row;">
             <ui:VisualElement style="background-image: url(&apos;/Assets/Materials/Bonus/CreditIcon.png&apos;); width: 80px; height: 80px; border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; -unity-slice-left: 3; -unity-slice-top: 3; -unity-slice-right: 3; -unity-slice-bottom: 3; background-color: rgb(0, 8, 20); align-items: flex-end; justify-content: flex-end; border-bottom-right-radius: 10px;">
-                <ui:Label text="0" display-tooltip-when-elided="true" name="CreditLabel" style="font-size: 18px; white-space: normal; color: rgb(208, 222, 232);" />
+                <ui:Label text="0" display-tooltip-when-elided="true" name="CreditLabel" class="primary-text" style="font-size: 18px; white-space: normal; color: rgb(208, 222, 232);" />
             </ui:VisualElement>
             <ui:VisualElement>
                 <ui:VisualElement style="width: 300px; height: 25px; border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); border-left-width: 0; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 2px; border-top-right-radius: 15px; border-bottom-right-radius: 0; padding-left: 0; padding-right: 3px; padding-top: 0; padding-bottom: 0; background-color: rgb(0, 8, 20);">
@@ -15,9 +15,9 @@
                     <ui:VisualElement style="left: 0; top: 0; right: 0; bottom: 0; flex-grow: 1; border-left-color: rgb(0, 8, 20); border-right-color: rgb(0, 8, 20); border-top-color: rgb(0, 8, 20); border-bottom-color: rgb(0, 8, 20); border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-bottom-right-radius: 10px; position: absolute;" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-direction: row; font-size: 24px;">
-                    <ui:Label text="0" display-tooltip-when-elided="true" name="BulletsInClip" style="margin-left: 20px;" />
-                    <ui:Label text="/" display-tooltip-when-elided="true" />
-                    <ui:Label text="0" display-tooltip-when-elided="true" name="BulletsAmount" />
+                    <ui:Label text="0" display-tooltip-when-elided="true" name="BulletsInClip" class="primary-text" style="margin-left: 20px;" />
+                    <ui:Label text="/" display-tooltip-when-elided="true" class="primary-text" />
+                    <ui:Label text="0" display-tooltip-when-elided="true" name="BulletsAmount" class="primary-text" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

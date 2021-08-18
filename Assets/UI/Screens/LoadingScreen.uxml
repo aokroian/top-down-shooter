@@ -3,8 +3,8 @@
     <Style src="/Assets/UI/Styles/Title.uss" />
     <ui:VisualElement class="panel" style="flex-grow: 1; align-items: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;">
         <ui:VisualElement style="bottom: 30%; top: auto; position: absolute; flex-direction: row;">
-            <ui:Label text="#Loading" display-tooltip-when-elided="true" class="menu-item" />
-            <ui:Label text="..." display-tooltip-when-elided="true" class="menu-item" />
+            <ui:Label text="#Loading" display-tooltip-when-elided="true" class="menu-item primary-text" />
+            <ui:Label text="..." display-tooltip-when-elided="true" class="menu-item primary-text" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

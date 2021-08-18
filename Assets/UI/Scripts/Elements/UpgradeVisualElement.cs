@@ -16,6 +16,30 @@ public class UpgradeVisualElement : VisualElement
     public void SetLocalizer(LocalizationTableHolder localizer)
     {
         this.localizer = localizer;
+        if (localizer.currentTable.LocaleIdentifier.Code == "zh-Hans")
+        {
+            ChangeStyleRecursively(this);
+        }
+    }
+
+    void ChangeStyleRecursively(VisualElement element)
+    {
+        VisualElement.Hierarchy elementHierarchy = element.hierarchy;
+        int numChildren = elementHierarchy.childCount;
+        for (int i = 0; i < numChildren; i++)
+        {
+            VisualElement child = elementHierarchy.ElementAt(i);
+            child.RemoveFromClassList("primary-text");
+            child.AddToClassList("secondary-text");
+        }
+        for (int i = 0; i < numChildren; i++)
+        {
+            VisualElement child = elementHierarchy.ElementAt(i);
+            VisualElement.Hierarchy childHierarchy = child.hierarchy;
+            int numGrandChildren = childHierarchy.childCount;
+            if (numGrandChildren != 0)
+                ChangeStyleRecursively(child);
+        }
     }
 
     public void SetIcon(Texture2D icon)

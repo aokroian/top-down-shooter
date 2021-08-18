@@ -48,7 +48,12 @@
     border-bottom-right-radius: 10px;
 }
 
-.unity-text-element {
-    -unity-font: resource('Fonts/Jura-Bold');
+.primary-text {
     color: rgb(255, 255, 255);
+    -unity-font: resource('Fonts/Jura-Bold');
+}
+
+.secondary-text {
+    color: rgb(255, 255, 255);
+    -unity-font: resource('Fonts/ZCOOLQingKeHuangYou-Regular');
 }

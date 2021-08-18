@@ -64,6 +64,7 @@ public class UIDocumentLocalization : MonoBehaviour
 
 	void OnTableLoaded(StringTable table)
 	{
+		Debug.Log("table.LocaleIdentifier.Code: " + table.LocaleIdentifier.Code);
 		currentTable = table;
 		var root = _document.rootVisualElement;
 
@@ -89,6 +90,11 @@ public class UIDocumentLocalization : MonoBehaviour
 		if (typeof(TextElement).IsInstanceOfType(next))
 		{
 			TextElement textElement = (TextElement)next;
+			if (table.LocaleIdentifier.Code == "zh-Hans")
+            {
+				textElement.RemoveFromClassList("primary-text");
+				textElement.AddToClassList("secondary-text");
+            }
 			string key = textElement.text;
 			if (!string.IsNullOrEmpty(key) && key[0] == '#')
 			{
