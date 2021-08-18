@@ -127,7 +127,7 @@ public class UIDocumentLocalization : MonoBehaviour
 
 	public void SetRebuildCallback(Action callback)
     {
-		Debug.Log("RET REBUILD CALLBACK");
+		//Debug.Log("RET REBUILD CALLBACK");
 		rebuildCallback = callback;
     }
 

@@ -64,7 +64,7 @@ public class GameUIController : MonoBehaviour
     {
         //levelLoader.LoadLevel("Main");
         //gameLoopController.UnPause();
-        var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.GAME, true);
+        var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.GAME, false);
         changeSceneEvent.Raise(param);
     }
 

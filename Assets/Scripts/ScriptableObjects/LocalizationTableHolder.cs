@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,14 +13,17 @@ public class LocalizationTableHolder : ScriptableObject
 
     public StringTable currentTable { get; private set; }
 
+    private Action listener;
+
     public void Init()
     {
-        localizedStringTable.TableChanged += OnTableChanged;
+        localizedStringTable.TableChanged += (table) => OnTableChanged(table);
     }
 
     private void OnTableChanged (StringTable table)
     {
         this.currentTable = table;
+        listener?.Invoke();
     }
 
     // Translate or return input
@@ -27,5 +31,15 @@ public class LocalizationTableHolder : ScriptableObject
     {
         var entry = currentTable[token];
         return entry == null ? token : entry.LocalizedValue;
+    }
+
+    public void SetListener(Action listener)
+    {
+        this.listener = listener;
+    }
+
+    public void removeListener()
+    {
+        listener = null;
     }
 }

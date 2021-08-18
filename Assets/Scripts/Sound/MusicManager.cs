@@ -49,7 +49,7 @@ public class MusicManager : MonoBehaviour
         if (param.state != SceneSwitchEventParam.SceneLoadStateEnum.LOADED) return;
 
         // when main menu loaded
-        if (param.scene == SceneEnum.TITLE)
+        if (param.scene == SceneEnum.TITLE && music != menuMusic)
         {
             music = menuMusic;
             Stop();

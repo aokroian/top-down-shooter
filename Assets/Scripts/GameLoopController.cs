@@ -58,6 +58,7 @@ public class GameLoopController : MonoBehaviour
 
     public void UnPause()
     {
+        Debug.Log("UnPause!!!");
         //HideMenu();
         Time.timeScale = 1f;
         paused = false;

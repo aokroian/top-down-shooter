@@ -323,6 +323,7 @@ MonoBehaviour:
   localizationTableHolder: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
   progressionManager: {fileID: 956195907}
   changeSceneEvent: {fileID: 11400000, guid: 63404419b261a944f8b2d1849d1408b3, type: 2}
+  loadProgressSceneEvent: {fileID: 11400000, guid: 56d046bed5f47204ab21c5d9adca5189, type: 2}
 --- !u!4 &956195906
 Transform:
   m_ObjectHideFlags: 0

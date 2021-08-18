@@ -14,10 +14,12 @@ public class MainUIController : MonoBehaviour
     public ProgressionManager progressionManager;
 
     public ChangeSceneEvent changeSceneEvent;
+    public LoadProgressSceneEvent loadProgressSceneEvent;
 
     private void Start()
     {
         localizationTableHolder.Init();
+        localizationTableHolder.SetListener(LocalizationLoaded);
         settingsScreen.GetComponent<SettingsScreen>().SetBackAction(ToTitleScreen);
 
         progressionManager.LoadFromSaveFile();
@@ -50,5 +52,12 @@ public class MainUIController : MonoBehaviour
         Debug.Log("START GAME");
         var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.TITLE, false);
         changeSceneEvent.Raise(param);
+    }
+
+    private void LocalizationLoaded()
+    {
+        var param = new LoadProgressSceneEP(SceneEnum.TITLE, true);
+        loadProgressSceneEvent.Raise(param);
+        localizationTableHolder.removeListener();
     }
 }
