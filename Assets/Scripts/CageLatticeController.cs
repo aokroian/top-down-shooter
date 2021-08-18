@@ -6,6 +6,7 @@ public class CageLatticeController : MonoBehaviour
 {
     public float force = 10;
     public float radiusOfOneBulletImpact = 0.2f;
+    public float timeToLiveAfterShot = 6;
 
     public void AddForceOppositeOfPlayer(float radiusOfOneBulletImpact)
     {
@@ -45,6 +46,6 @@ public class CageLatticeController : MonoBehaviour
         }
        
         // time to live
-        gameObject.GetComponent<PieceDestroyer>().timeToLive = 4;
+        gameObject.GetComponent<PieceDestroyer>().timeToLive = timeToLiveAfterShot;
     }
 }
