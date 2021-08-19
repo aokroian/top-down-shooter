@@ -9,6 +9,10 @@ public class IngameProgressionManager : MonoBehaviour
     public WeaponController[] otherWeaponPrefabs;
     public ProgressionHolder progressionHolder;
     public ProgressionManager progressionManager;
+    public GameObject weaponPreview;
+    public Camera weaponPreviewCamera;
+
+    private GameObject[] currentWeapons;
 
     
     public GameObject[] GetWeapons()
@@ -20,16 +24,16 @@ public class IngameProgressionManager : MonoBehaviour
         HashSet<GameObject> result = new HashSet<GameObject>();
 
         // TODO: pistol upgrades!!!
-        result.Add(Instantiate(pistolPrefab.gameObject, new Vector3(0f, -10f, 0f), Quaternion.identity));
+        result.Add(Instantiate(pistolPrefab.gameObject, weaponPreview.transform.position + Vector3.up, Quaternion.identity, weaponPreview.transform));
         foreach (WeaponUnlock upgrade in selected) {
             var prefab = otherWeaponPrefabs.First(e => e.type == upgrade.weapon);
-            var clone = Instantiate(prefab.gameObject, new Vector3(0f, -10f, 0f), Quaternion.identity);
+            var clone = Instantiate(prefab.gameObject, weaponPreview.transform.position + Vector3.up, Quaternion.identity, weaponPreview.transform);
             var controller = clone.GetComponent<WeaponController>();
             controller.shotDamage *= CalcDamageMultiplier(upgrade);
             result.Add(clone);
         }
-
-        return result.ToArray();
+        currentWeapons = result.ToArray();
+        return currentWeapons;
     }
     
     // TODO: Pattern
@@ -45,5 +49,26 @@ public class IngameProgressionManager : MonoBehaviour
         }
 
         return result;
+    }
+
+    public void WeaponChanged(GameObject weapon)
+    {
+        foreach (GameObject w in currentWeapons)
+        {
+            if (w == weapon)
+            {
+                float pistolSize = pistolPrefab.GetComponent<MeshRenderer>().bounds.size.magnitude;
+
+                w.transform.position = weaponPreview.transform.position;
+                Vector3 center = w.GetComponentInChildren<MeshRenderer>().bounds.center;
+
+                Vector3 cameraPos = new Vector3(0.6f, 0.18f, 0.2f) * (w.GetComponentInChildren<MeshRenderer>().bounds.size.magnitude / pistolSize);
+
+                weaponPreviewCamera.transform.position = center + cameraPos;
+                weaponPreviewCamera.transform.LookAt(center);
+            } else {
+                w.transform.position = weaponPreview.transform.position + Vector3.up;
+            }
+        }
     }
 }

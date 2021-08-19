@@ -14,6 +14,7 @@ public class StatusBarController : MonoBehaviour
     public Target target;
     public ProgressionHolder progressionHolder;
     public Camera mainCamera;
+    public Texture weaponPreviewTexture;
     //public GameLoopController gameLoopController;
 
     private VisualElement statusContainer;
@@ -32,6 +33,7 @@ public class StatusBarController : MonoBehaviour
         statusContainer = statusBarDoc.rootVisualElement;
         statusBar = statusContainer.Q<StatusBarVisualElement>();
         statusBar.Init();
+        statusBar.SetWeaponPreviewTexture(weaponPreviewTexture);
 
         reloadContainer = reloadBarDoc.rootVisualElement;
         reloadBar = reloadContainer.Q<ReloadBarVisualElement>();

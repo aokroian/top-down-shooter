@@ -489,8 +489,6 @@ public class PlayerController : MonoBehaviour
         selectedItemIndex = itemIndex;
 
 
-
-
         equippedItemObj = Instantiate(itemsEquipmentArr[itemIndex], parentBoneForWeapon.transform);
         WeaponController weaponController = equippedItemObj.GetComponent<WeaponController>();
 
@@ -505,6 +503,8 @@ public class PlayerController : MonoBehaviour
         // updating hand points on item
         FindInAllChildren(equippedItemObj.transform, "RightHandPoint", ref rightHandPoint);
         FindInAllChildren(equippedItemObj.transform, "LeftHandPoint", ref leftHandPoint);
+
+        progressionManager.WeaponChanged(itemsEquipmentArr[itemIndex]);
     }
 
     private Vector3 GetAimPoint(Vector3 mousePosition)
