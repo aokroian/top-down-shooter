@@ -54,7 +54,27 @@ public class SettingsSaver : MonoBehaviour
             LocalizationSettings.SelectedLocale = locale;
         }
 
-        audioMixer.SetFloat(musicVolumeParamName, settings.music ? 0 : - 80);
+        // sound
+        if (GetBool("music", true) != settings.music)
+        {
+            MusicManager musicManager = GameObject.Find("MusicController").GetComponent<MusicManager>();
+            audioMixer.SetFloat(musicVolumeParamName, settings.music ? 0 : -80);
+            if (musicManager == null)
+            {
+                Debug.Log("Settings saver cannot find music manager to pause music");
+            }
+            else
+            {
+                if (settings.music)
+                {
+                    musicManager.TogglePause(false);
+                }
+                else
+                {
+                    musicManager.TogglePause(true);
+                }
+            }
+        }
         audioMixer.SetFloat(sfxVolumeParamName, settings.sfx ? 0 : - 80);
     }
 

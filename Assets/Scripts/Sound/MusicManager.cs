@@ -124,10 +124,17 @@ public class MusicManager : MonoBehaviour
         state = MusicState.playing;
     }
 
-    public void Pause()
+    public void TogglePause(bool pause)
     {
-        audioSource.Pause();
-        state = MusicState.pause;
+        if (!pause)
+        {
+            audioSource.Play();
+            state = MusicState.playing;
+        } else
+        {
+            audioSource.Pause();
+            state = MusicState.pause;
+        }
     }
 
     public void Stop()
