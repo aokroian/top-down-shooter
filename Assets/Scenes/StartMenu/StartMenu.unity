@@ -269,10 +269,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
-  audioMixer: {fileID: 0}
-  masterVolumeParamName: 
-  musicVolumeParamName: 
-  sfxVolumeParamName: 
+  audioMixer: {fileID: 24100000, guid: 6166c4e3e76f27e4d94faff5bd26be99, type: 2}
+  masterVolumeParamName: MasterSoundVolume
+  musicVolumeParamName: MusicVolume
+  sfxVolumeParamName: SFXVolume
 --- !u!4 &858362097
 Transform:
   m_ObjectHideFlags: 0

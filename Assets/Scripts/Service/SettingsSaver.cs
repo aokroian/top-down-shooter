@@ -28,22 +28,6 @@ public class SettingsSaver : MonoBehaviour
         SetBool(VIBRATION, settings.vibration);
         SetBool(MUSIC, settings.music);
         SetBool(SFX, settings.sfx);
-        if (!settings.music)
-        {
-            audioMixer.SetFloat(musicVolumeParamName, -80);
-        }
-        else if (settings.music)
-        {
-            audioMixer.SetFloat(musicVolumeParamName, 0);
-        }
-        if (!settings.sfx)
-        {
-            audioMixer.SetFloat(sfxVolumeParamName, -80);
-        }
-        else if (settings.sfx)
-        {
-            audioMixer.SetFloat(sfxVolumeParamName, 0);
-        }
 
         PlayerPrefs.SetString(GRAPHICS, settings.graphics);
         SetBool(FPS, settings.fps);
@@ -64,10 +48,14 @@ public class SettingsSaver : MonoBehaviour
 
         // language
         var locale = LocalizationSettings.AvailableLocales.Locales.FirstOrDefault(v => v.LocaleName == settings.language);
+        Debug.Log("Settings locale: " + settings.language + "; " + locale);
         if (locale != null)
         {
             LocalizationSettings.SelectedLocale = locale;
         }
+
+        audioMixer.SetFloat(musicVolumeParamName, settings.music ? 0 : - 80);
+        audioMixer.SetFloat(sfxVolumeParamName, settings.sfx ? 0 : - 80);
     }
 
     protected bool GetBool(string key, bool defaultValue)
