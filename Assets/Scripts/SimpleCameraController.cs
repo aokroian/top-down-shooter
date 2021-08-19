@@ -7,6 +7,7 @@ public class SimpleCameraController : MonoBehaviour
     public GameObject playerRef;
     
     public float playerToPointerPart = 0.2f;
+    public float cagePlayerToPointerPart = 0.05f;
     public float smoothTime = 0.2f;
 
     // offset vars
@@ -28,16 +29,18 @@ public class SimpleCameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (playerRef.transform.position.magnitude < centerToPlayerRadiusToRaiseCam && hasAlreadyBeenRaised == false)
+        float lerpPart = playerToPointerPart;
+        if (hasAlreadyBeenRaised == false && playerRef.transform.position.magnitude < centerToPlayerRadiusToRaiseCam)
         {
             offset = cageOffset;
+            lerpPart = cagePlayerToPointerPart;
         } else
         {
             offset = normalOffset;
             hasAlreadyBeenRaised = true;
         }
         var playerAimingPoint = playerRef.GetComponent<PlayerController>().aimAtPosition;
-        var target = Vector3.Lerp(playerRef.transform.position, new Vector3(playerAimingPoint.x, 0f, playerAimingPoint.z), playerToPointerPart) + offset;
+        var target = Vector3.Lerp(playerRef.transform.position, new Vector3(playerAimingPoint.x, 0f, playerAimingPoint.z), lerpPart) + offset;
         transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, smoothTime);
     }
 
