@@ -16,13 +16,16 @@ public class MainUIController : MonoBehaviour
     public ChangeSceneEvent changeSceneEvent;
     public LoadProgressSceneEvent loadProgressSceneEvent;
 
+    private void Awake()
+    {
+        progressionManager.LoadFromSaveFile();
+    }
+
     private void Start()
     {
         localizationTableHolder.Init();
         localizationTableHolder.SetListener(LocalizationLoaded);
         settingsScreen.GetComponent<SettingsScreen>().SetBackAction(ToTitleScreen);
-
-        progressionManager.LoadFromSaveFile();
     }
 
     public void ToTitleScreen()
