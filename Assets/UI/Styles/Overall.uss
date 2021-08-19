@@ -55,5 +55,5 @@
 
 .secondary-text {
     color: rgb(255, 255, 255);
-    -unity-font: resource('Fonts/ZCOOLQingKeHuangYou-Regular');
+    -unity-font: resource('Fonts/NotoSansSC-Medium');
 }

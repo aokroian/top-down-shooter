@@ -52,11 +52,11 @@
                             <ui:Instance template="ToggleButton" name="Fps" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement style="flex-direction: row; align-items: center; padding-top: 0; margin-top: 30px;">
-                        <ui:VisualElement style="width: 130px;">
+                    <ui:VisualElement class="row" style="flex-direction: row; align-items: center; padding-top: 0; margin-top: 30px;">
+                        <ui:VisualElement class="left_col" style="width: 130px;">
                             <ui:Label text="#Language" display-tooltip-when-elided="true" class="label primary-text" />
                         </ui:VisualElement>
-                        <ui:VisualElement style="flex-grow: 1; align-items: center;">
+                        <ui:VisualElement class="right_col" style="flex-grow: 1; align-items: center;">
                             <ui:Instance template="Selector" name="Language" />
                         </ui:VisualElement>
                     </ui:VisualElement>
