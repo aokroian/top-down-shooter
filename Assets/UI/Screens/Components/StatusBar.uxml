@@ -22,7 +22,7 @@
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-direction: row; font-size: 24px; align-items: center; margin-top: 5px; margin-left: 5px;">
                     <ui:VisualElement style="width: 30px; height: 30px; margin-left: 0; background-image: url(&apos;/Assets/Materials/Bonus/CreditIcon.png&apos;); max-width: none;" />
-                    <ui:Label text="0" display-tooltip-when-elided="true" name="CreditLabel" class="primary-text" style="font-size: 22px; white-space: normal; color: rgb(208, 222, 232);" />
+                    <ui:Label text="0" display-tooltip-when-elided="true" name="CreditLabel" class="primary-text" style="font-size: 22px; white-space: normal; color: rgb(208, 222, 232); flex-grow: 1;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

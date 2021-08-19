@@ -401,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 956195905}
   upgradeElement: {fileID: 9197481963319205126, guid: b817395b78053854896af5c66a3f3f72, type: 3}
-  progressionManager: {fileID: 0}
+  progressionManager: {fileID: 956195907}
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
   localizer: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
 --- !u!114 &1045911398
