@@ -85,7 +85,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
             }
         }
 
-        // установка дефолтных значений таймеров и патронов в обойме
+        // установка 14.17ефолтных значений таймеров и патронов в обойме
         reloadTimer = 0f;
         nextShotTimer = 0f;
 
@@ -98,12 +98,10 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         {
             if (isReloading)
             {
-                gameObject.GetComponent<LaserAim>().isEnabled = false;
                 animator.SetBool("is reloading", true);
             }
             else
             {
-                gameObject.GetComponent<LaserAim>().isEnabled = true;
                 animator.SetBool("is reloading", false);
             }
         }
