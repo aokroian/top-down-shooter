@@ -98,6 +98,8 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         {
             if (isReloading)
             {
+                float animationTime = reloadTime < 1 ? 1/reloadTime : reloadTime;
+                animator.SetFloat("reload time", animationTime);
                 animator.SetBool("is reloading", true);
             }
             else
