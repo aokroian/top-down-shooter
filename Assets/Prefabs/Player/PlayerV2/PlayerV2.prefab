@@ -1255,6 +1255,8 @@ MonoBehaviour:
   minLookAtDistance: 1
   autoAimAngle: 45
   maxAutoAimDistance: 25
+  distancePriorityWeightMultiplier: 1
+  prevTargetWeightBonus: 10
   enemiesContainer: {fileID: 0}
 --- !u!1 &2931356961593311067
 GameObject:
@@ -2216,7 +2218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6921782177791972509}
   m_LocalRotation: {x: 0.12973353, y: 3.3139977e-12, z: 3.8837536e-12, w: 0.9915489}
-  m_LocalPosition: {x: -0.433, y: -0.209, z: -0.002}
+  m_LocalPosition: {x: -0.565, y: -0.254, z: 0.169}
   m_LocalScale: {x: 1.4705882, y: 1.4705882, z: 1.4705882}
   m_Children: []
   m_Father: {fileID: 1066374995385616916}
