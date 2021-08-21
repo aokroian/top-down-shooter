@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4570,6 +4570,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -4586,11 +4590,35 @@ PrefabInstance:
       value: Death
       objectReference: {fileID: 0}
     - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3883960182137148089}
+    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Vibrate
+      objectReference: {fileID: 0}
+    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameLoopController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VibrationController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1272146180179036847, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
@@ -4909,6 +4937,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83eac4a076d4410ebd13eee558f640d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3883960182137148089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3883960182137148086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba70769ed4ec1147a9d25576d0080f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsHolder: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
 --- !u!1001 &4336707989542770340
 PrefabInstance:
   m_ObjectHideFlags: 0

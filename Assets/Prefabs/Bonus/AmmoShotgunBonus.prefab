@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5303741881427458432}
   - component: {fileID: 3213322130268583640}
   - component: {fileID: 7311987764635241403}
+  - component: {fileID: 3061908026803932545}
   m_Layer: 0
   m_Name: AmmoShotgunBonus
   m_TagString: Untagged
@@ -139,3 +140,31 @@ MonoBehaviour:
   textColor: {r: 1, g: 1, b: 1, a: 1}
   amount: 8
   ammoType: 5
+--- !u!114 &3061908026803932545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389978441618331954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad97a0ca3b551e4f82346fb2a4e4e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: 872df7faee47cb14a8135ccbc77d7b64, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7311987764635241403}
+        m_TargetAssemblyTypeName: AbstractBonusController, Assembly-CSharp
+        m_MethodName: OnMenuToggle
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

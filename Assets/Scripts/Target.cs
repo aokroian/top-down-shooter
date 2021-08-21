@@ -20,6 +20,7 @@ public class Target : MonoBehaviour
     public UnityEvent onRobotSawHit;
     public UnityEvent onRobotBulletHit;
     public UnityEvent onPlayerBulletHit;
+    public UnityEvent onPlayerDamaged;
 
     public bool isDead { get; private set; }
 
@@ -58,6 +59,7 @@ public class Target : MonoBehaviour
         if (gameObject.tag == "Player")
         {
             CameraShaker.Instance.ShakeOnce(2f, 5f, 0.05f, 0.05f);
+            onPlayerDamaged.Invoke();
         }
 
         // store last hit parameters 

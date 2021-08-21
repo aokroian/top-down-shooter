@@ -19,6 +19,7 @@ public class MainUIController : MonoBehaviour
     private void Awake()
     {
         progressionManager.LoadFromSaveFile();
+        Vibration.Init();
     }
 
     private void Start()

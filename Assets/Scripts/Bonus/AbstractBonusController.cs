@@ -21,6 +21,8 @@ public abstract class AbstractBonusController : MonoBehaviour
     private Rect textRect;
     private string pickupText;
 
+    private bool menuOpened;
+
     protected LocalizationTableHolder localizationTableHolder;
 
     void Update()
@@ -83,8 +85,12 @@ public abstract class AbstractBonusController : MonoBehaviour
 
     private void OnGUI()
     {
-        if (pickupTime == 0f)
+        if (pickupTime == 0f || menuOpened)
         {
+            if (menuOpened)
+            {
+                Debug.Log("Opened");
+            }
             return;
         }
 
@@ -106,5 +112,11 @@ public abstract class AbstractBonusController : MonoBehaviour
     protected void DestroyPickedUp()
     {
         Destroy(gameObject);
+    }
+
+    public void OnMenuToggle(MenuToggleEventParam param)
+    {
+        menuOpened = param.showMenu;
+        Debug.Log("Opened invoke");
     }
 }

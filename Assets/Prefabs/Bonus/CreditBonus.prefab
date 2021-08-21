@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2599032539611799964}
   - component: {fileID: 6663249676180728585}
   - component: {fileID: 8148205408013908821}
+  - component: {fileID: -167437600809737876}
   m_Layer: 0
   m_Name: CreditBonus
   m_TagString: Untagged
@@ -87,6 +88,35 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-167437600809737876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640587863994964912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad97a0ca3b551e4f82346fb2a4e4e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: 872df7faee47cb14a8135ccbc77d7b64, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -167437600809737876}
+        m_TargetAssemblyTypeName: GameEventWithParamListener`1[[MenuToggleEventParam,
+          Assembly-CSharp
+        m_MethodName: OnEventRaised
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2717002819696959926
 GameObject:
   m_ObjectHideFlags: 0
