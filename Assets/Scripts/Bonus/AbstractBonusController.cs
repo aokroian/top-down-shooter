@@ -23,6 +23,8 @@ public abstract class AbstractBonusController : MonoBehaviour
 
     private bool menuOpened;
 
+    private bool touchPlayer;
+
     protected LocalizationTableHolder localizationTableHolder;
 
     void Update()
@@ -33,6 +35,10 @@ public abstract class AbstractBonusController : MonoBehaviour
             flyToPlayer = true;
         } else if (flyToPlayer)
         {
+            if (touchPlayer)
+            {
+                StartPickup();
+            }
             Vector3 playerPosYFixed = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, playerPosYFixed, currentSpeed * Time.deltaTime);
             currentSpeed += Time.deltaTime * 10f;
@@ -48,14 +54,29 @@ public abstract class AbstractBonusController : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            if (OnPickUp())
-            {
-                PrepareTextProperties();
-                pickupTime = Time.time;
-            } else
-            {
-                flyToPlayer = false;
-            }
+            touchPlayer = true;
+            StartPickup();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            touchPlayer = false;
+        }
+    }
+
+    private void StartPickup()
+    {
+        if (OnPickUp())
+        {
+            PrepareTextProperties();
+            pickupTime = Time.time;
+        }
+        else
+        {
+            flyToPlayer = false;
         }
     }
 
@@ -87,10 +108,6 @@ public abstract class AbstractBonusController : MonoBehaviour
     {
         if (pickupTime == 0f || menuOpened)
         {
-            if (menuOpened)
-            {
-                Debug.Log("Opened");
-            }
             return;
         }
 
@@ -117,6 +134,5 @@ public abstract class AbstractBonusController : MonoBehaviour
     public void OnMenuToggle(MenuToggleEventParam param)
     {
         menuOpened = param.showMenu;
-        Debug.Log("Opened invoke");
     }
 }
