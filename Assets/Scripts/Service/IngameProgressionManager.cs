@@ -57,12 +57,11 @@ public class IngameProgressionManager : MonoBehaviour
         {
             if (w == weapon)
             {
-                float pistolSize = pistolPrefab.GetComponent<MeshRenderer>().bounds.size.magnitude;
+                float pistolSize = pistolPrefab.GetComponent<MeshRenderer>().bounds.size.z;
 
                 w.transform.position = weaponPreview.transform.position;
                 Vector3 center = w.GetComponentInChildren<MeshRenderer>().bounds.center;
-
-                Vector3 cameraPos = new Vector3(0.6f, 0.18f, 0.2f) * (w.GetComponentInChildren<MeshRenderer>().bounds.size.magnitude / pistolSize);
+                Vector3 cameraPos = new Vector3(0.8f, 0.18f, 0.25f) * (w.GetComponentInChildren<MeshRenderer>().bounds.size.z / pistolSize);
 
                 weaponPreviewCamera.transform.position = center + cameraPos;
                 weaponPreviewCamera.transform.LookAt(center);

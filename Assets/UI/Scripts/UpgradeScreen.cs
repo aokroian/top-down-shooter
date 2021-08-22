@@ -105,6 +105,7 @@ public class UpgradeScreen : MonoBehaviour
         upgradeEl.SetName(upgrade.upgradeName);
         upgradeEl.SetDescription(upgrade.description);
         upgradeEl.SetCost(upgrade.cost);
+        upgradeEl.SetIcon(upgrade.image);
 
         upgradeEl.SetUpgrade(upgrade.upgradeType == UpgradeType.WEAPON_UPGRADE);
         if (upgrade.upgradeType == UpgradeType.WEAPON_UPGRADE)

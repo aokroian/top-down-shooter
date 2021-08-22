@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 1
   isRoot: 0
   children: []
-  image: {fileID: 0}
+  image: {fileID: 2800000, guid: 416251da0227a2349bac124a02102551, type: 3}
   cost: 20
   upgradeName: Shotgun
   description: +10% damage

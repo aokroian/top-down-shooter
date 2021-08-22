@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MusicScene.unity
     guid: eb896a07985214b3bbb35d8c3c7305cc
+  - enabled: 0
+    path: Assets/Scenes/Main_test.unity
+    guid: f625046423d521e49a483a727dc34290
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: eeb10aeb2acd5164ca0865e45e739109, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: d3c6cf363cab08149a48cb8ae3658889, type: 2}

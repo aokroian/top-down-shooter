@@ -13,7 +13,7 @@ scopes = {
 	"last_search.7F95D817" = "CageLa"
 	"InspectorPreview.7F95D817" = "0"
 	"currentGroup.7F95D817" = "all"
-	"last_search.83F126EB" = "menutogg"
+	"last_search.83F126EB" = "weapons/*.png"
 	"InspectorPreview.83F126EB" = "0"
 	"currentGroup.83F126EB" = "asset"
 }
@@ -55,6 +55,8 @@ providers = {
 	}
 }
 recentSearches = [
+	"weapons"
+	"menutogg"
 	"CageLa"
 	"asset store"
 ]
