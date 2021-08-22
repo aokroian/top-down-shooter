@@ -27,6 +27,7 @@ public class MainUIController : MonoBehaviour
         localizationTableHolder.Init();
         localizationTableHolder.SetListener(LocalizationLoaded);
         settingsScreen.GetComponent<SettingsScreen>().SetBackAction(ToTitleScreen);
+        titleScreen.GetComponent<TitleScreen>().ShowTopScore();
     }
 
     public void ToTitleScreen()

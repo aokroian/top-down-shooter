@@ -64,7 +64,7 @@ public class UIDocumentLocalization : MonoBehaviour
 
 	void OnTableLoaded(StringTable table)
 	{
-		Debug.Log("table.LocaleIdentifier.Code: " + table.LocaleIdentifier.Code);
+		//Debug.Log("table.LocaleIdentifier.Code: " + table.LocaleIdentifier.Code);
 		currentTable = table;
 		var root = _document.rootVisualElement;
 
