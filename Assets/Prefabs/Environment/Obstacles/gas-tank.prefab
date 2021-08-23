@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6043359111282111929}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.1240635, y: 1.1297836, z: -2.571188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4874126678125670354, guid: eaf42b9daba364e1b802dcad78a0724e, type: 3}
+  - {fileID: 2100000, guid: 607d6878ece62934dae7b9a45b61c89b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,6 +141,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onPlayerBulletHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
   hitDir: {x: 0, y: 0, z: 0}
