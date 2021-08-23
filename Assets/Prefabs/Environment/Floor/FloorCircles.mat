@@ -87,10 +87,10 @@ Material:
     m_Floats:
     - AmbientOcclusion: 1
     - CirclesOffset: 0.8
-    - CirclesSize: 2
-    - CirclesThickness: 0
+    - CirclesSize: 0.05
+    - CirclesThickness: 1.23
     - Metallic: 0
-    - PaintOpacity: 0.75
+    - PaintOpacity: 0.35
     - RoundsMultiplier: 2
     - RoundsSize: 1
     - Smoothness: 0
@@ -121,7 +121,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - PaintColor: {r: 1, g: 0.7079444, b: 0.18396229, a: 0}
+    - PaintColor: {r: 0.42443925, g: 0.48914564, b: 0.5377358, a: 0}
     - PaintTiling: {r: 10, g: 10, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
