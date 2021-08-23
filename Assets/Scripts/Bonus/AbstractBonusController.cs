@@ -35,7 +35,7 @@ public abstract class AbstractBonusController : MonoBehaviour
             flyToPlayer = true;
         } else if (flyToPlayer)
         {
-            if (touchPlayer)
+            if (touchPlayer && pickupTime == 0)
             {
                 StartPickup();
             }
