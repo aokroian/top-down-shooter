@@ -929,7 +929,7 @@ AudioSource:
   m_GameObject: {fileID: 2612801746598390000}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8716994981164738544, guid: 6166c4e3e76f27e4d94faff5bd26be99, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1747,6 +1747,9 @@ MonoBehaviour:
   onPlayerBulletHit:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
   hitDir: {x: 0, y: 0, z: 0}
   hitForceAmount: 0
   isFromExplosion: 0
@@ -1848,7 +1851,7 @@ AudioSource:
   m_GameObject: {fileID: 3836866714593287920}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8716994981164738544, guid: 6166c4e3e76f27e4d94faff5bd26be99, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

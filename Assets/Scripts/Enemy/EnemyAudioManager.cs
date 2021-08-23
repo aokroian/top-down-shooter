@@ -21,8 +21,8 @@ public class EnemyAudioManager : MonoBehaviour
 
     private void Start()
     {
-        mainAudioSource = transform.Find("MainAudioSource").GetComponent<AudioSource>();
-        movementAudioSource = transform.Find("MovementAudioSource").GetComponent<AudioSource>();
+        mainAudioSource = transform.Find("MainAudioSource")?.GetComponent<AudioSource>();
+        movementAudioSource = transform.Find("MovementAudioSource")?.GetComponent<AudioSource>();
         SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
 
         audioStorage.TryGetValue("Death", out deathExplosionSound);
