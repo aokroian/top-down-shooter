@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 5926758911421348507}
   - component: {fileID: -243810245953152958}
   - component: {fileID: 4885829270935628574}
+  - component: {fileID: 3052979063616002414}
   m_Layer: 0
   m_Name: UZI
   m_TagString: Untagged
@@ -204,7 +205,7 @@ MonoBehaviour:
   recoilHeight: 1
   clipSize: 32
   rateOfFire: 0.1
-  reloadTime: 1
+  reloadTime: 0.7
   numberOfPenetrations: 1
   localPosition: {x: 0.101, y: 0.122, z: 0.801}
   localRotation: {x: 15.45, y: 0, z: 0}
@@ -360,6 +361,25 @@ CapsuleCollider:
   m_Height: 0.34270447
   m_Direction: 2
   m_Center: {x: 0, y: -0.0047287494, z: 0.1773279}
+--- !u!95 &3052979063616002414
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400639491841712557}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9fb8940879c0c3f489f6b1aba5539cca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7972366740714636292
 GameObject:
   m_ObjectHideFlags: 0
