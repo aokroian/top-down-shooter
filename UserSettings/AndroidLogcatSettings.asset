@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "X4PNOBN7GAU8BUQC",
         "name": "com.DefaultCompany.topdownshooter",
-        "processId": 10819,
+        "processId": 9419,
         "exited": false
     },
     "m_SelectedPriority": 3,
@@ -18,6 +18,36 @@
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.topdownshooter",
             "processId": 10819,
+            "exited": true
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.DefaultCompany.topdownshooter",
+            "processId": 1942,
+            "exited": true
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.DefaultCompany.topdownshooter",
+            "processId": 5021,
+            "exited": true
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.DefaultCompany.topdownshooter",
+            "processId": 8303,
+            "exited": true
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.DefaultCompany.topdownshooter",
+            "processId": 8723,
+            "exited": false
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.DefaultCompany.topdownshooter",
+            "processId": 9419,
             "exited": false
         }
     ],
