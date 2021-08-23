@@ -446,7 +446,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100000
   maxHealth: 100000
-  onHitEffect: {fileID: 100002, guid: 99c73c92ac40473459640b165473206f, type: 3}
+  afterHitDelay: 0
+  onHitEffect: {fileID: 100002, guid: 07ed67d00b853b3488d253b0ad752dd7, type: 3}
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -457,6 +458,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onPlayerBulletHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
   hitDir: {x: 0, y: 0, z: 0}
