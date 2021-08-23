@@ -134,5 +134,9 @@ MonoBehaviour:
     m_Localized: "\u8F7D\u5165\u4E2D"
     m_Metadata:
       m_Items: []
+  - m_Id: 14631739345231872
+    m_Localized: "+20%\u4F24\u5BB3"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

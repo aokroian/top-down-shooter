@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 1
   isRoot: 0
-  children: []
+  children:
+  - {fileID: 11400000, guid: 57ab6389f3dd1d14eb36fea7ecde6439, type: 2}
   image: {fileID: 2800000, guid: c07bcb7467790b349aa6f404ef3eec9e, type: 3}
   cost: 15
   upgradeName: Rifle
   description: +10% damage
-  orderInUpgradeScreen: 0
+  orderInUpgradeScreen: 20
   weapon: 2
   weaponUpgradeType: 0
   value: 10

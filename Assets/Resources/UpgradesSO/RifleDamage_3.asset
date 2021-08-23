@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4aedb124465027540ab8ad050e6a2be4, type: 3}
-  m_Name: ShotgunDamage_1
+  m_Name: RifleDamage_3
   m_EditorClassIdentifier: 
   upgradeType: 1
   isRoot: 0
   children:
-  - {fileID: 11400000, guid: 7f690c26f94dcfe42870b8554359ca18, type: 2}
-  image: {fileID: 2800000, guid: 416251da0227a2349bac124a02102551, type: 3}
-  cost: 20
-  upgradeName: Shotgun
+  - {fileID: 11400000, guid: 58e0a341d94c4fd4a912009409948229, type: 2}
+  image: {fileID: 2800000, guid: c07bcb7467790b349aa6f404ef3eec9e, type: 3}
+  cost: 15
+  upgradeName: Rifle
   description: +10% damage
-  orderInUpgradeScreen: 30
+  orderInUpgradeScreen: 20
   weapon: 2
   weaponUpgradeType: 0
   value: 10

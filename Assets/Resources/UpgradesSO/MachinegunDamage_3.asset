@@ -9,16 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65dc12b898fcae444b81baa99210a18b, type: 3}
-  m_Name: MachinegunUnlock
+  m_Script: {fileID: 11500000, guid: 4aedb124465027540ab8ad050e6a2be4, type: 3}
+  m_Name: MachinegunDamage_3
   m_EditorClassIdentifier: 
-  upgradeType: 0
-  isRoot: 1
+  upgradeType: 1
+  isRoot: 0
   children:
-  - {fileID: 11400000, guid: bac632d615a3f104cab183eff2c326ce, type: 2}
+  - {fileID: 11400000, guid: 1b4c40ddbb1c6194a81fa5427b19ab1d, type: 2}
   image: {fileID: 2800000, guid: 6ebe10b455279be40a93f5f3c1728f43, type: 3}
-  cost: 5
+  cost: 10
   upgradeName: Machinegun
-  description: Unlock to equip
+  description: +10% damage
   orderInUpgradeScreen: 10
   weapon: 1
+  weaponUpgradeType: 0
+  value: 10
+  tier: 1

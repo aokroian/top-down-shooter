@@ -23,8 +23,14 @@ public class IngameProgressionManager : MonoBehaviour
         var selected = progressionHolder.GetSelected();
         HashSet<GameObject> result = new HashSet<GameObject>();
 
-        // TODO: pistol upgrades!!!
-        result.Add(Instantiate(pistolPrefab.gameObject, weaponPreview.transform.position + Vector3.up, Quaternion.identity, weaponPreview.transform));
+        var pistolClone = Instantiate(pistolPrefab.gameObject, weaponPreview.transform.position + Vector3.up, Quaternion.identity, weaponPreview.transform);
+        var pistolController = pistolClone.GetComponent<WeaponController>();
+        var pistolUpgrade = progressionHolder.GetPurchasedUpgrades().FirstOrDefault(e => e.upgradeType == UpgradeType.WEAPON_UPGRADE && ((WeaponUpgrade) e).weapon == WeaponEnum.PISTOL && ((WeaponUpgrade)e).isRoot);
+        if (pistolUpgrade != null) {
+            pistolController.shotDamage *= CalcDamageMultiplier(pistolUpgrade);
+        }
+        result.Add(pistolClone);
+
         foreach (WeaponUnlock upgrade in selected) {
             var prefab = otherWeaponPrefabs.First(e => e.type == upgrade.weapon);
             var clone = Instantiate(prefab.gameObject, weaponPreview.transform.position + Vector3.up, Quaternion.identity, weaponPreview.transform);
@@ -38,10 +44,10 @@ public class IngameProgressionManager : MonoBehaviour
     
     // TODO: Pattern
     // Now ignore upgrade type!!
-    private float CalcDamageMultiplier(WeaponUnlock weapon)
+    private float CalcDamageMultiplier(AbstractUpgrade weapon)
     {
         float result = 1f;
-        WeaponUpgrade upgrade = (WeaponUpgrade) weapon.children[0];
+        WeaponUpgrade upgrade = weapon.upgradeType == UpgradeType.WEAPON_UPGRADE ? (WeaponUpgrade) weapon : (WeaponUpgrade) weapon.children[0];
         while (upgrade != null && progressionHolder.IsPurchased(upgrade))
         {
             result += upgrade.value / 100f;

@@ -9,16 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65dc12b898fcae444b81baa99210a18b, type: 3}
-  m_Name: ShotgunUnlock
+  m_Script: {fileID: 11500000, guid: 4aedb124465027540ab8ad050e6a2be4, type: 3}
+  m_Name: ShotgunDamage_4
   m_EditorClassIdentifier: 
-  upgradeType: 0
-  isRoot: 1
+  upgradeType: 1
+  isRoot: 0
   children:
-  - {fileID: 11400000, guid: 027ea76ad6a8e5649b9d225965b1535a, type: 2}
+  - {fileID: 11400000, guid: 20d3e91ffeefbb44ab7f7763083b59bd, type: 2}
   image: {fileID: 2800000, guid: 416251da0227a2349bac124a02102551, type: 3}
-  cost: 10
+  cost: 20
   upgradeName: Shotgun
-  description: Unlock to equip
+  description: +10% damage
   orderInUpgradeScreen: 30
-  weapon: 3
+  weapon: 2
+  weaponUpgradeType: 0
+  value: 10
+  tier: 1

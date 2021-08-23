@@ -20,5 +20,5 @@ MonoBehaviour:
   cost: 7
   upgradeName: Rifle
   description: Unlock to equip
-  orderInUpgradeScreen: 0
+  orderInUpgradeScreen: 20
   weapon: 2

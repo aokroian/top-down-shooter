@@ -29,10 +29,17 @@ public class ProgressionHolder : ScriptableObject
     {
         foreach (AbstractUpgrade root in allUpgrades.Where(e => e.isRoot))
         {
-            //Debug.Log(root.name);
-            foreach (WeaponUpgrade child in root.children.Where(e => e.upgradeType == UpgradeType.WEAPON_UPGRADE))
+            if (root.upgradeType == UpgradeType.WEAPON_UPGRADE)
             {
-                SetTierRecursive(child, 1);
+                SetTierRecursive((WeaponUpgrade) root, 1);
+            }
+            else
+            {
+                //Debug.Log(root.name);
+                foreach (WeaponUpgrade child in root.children.Where(e => e.upgradeType == UpgradeType.WEAPON_UPGRADE))
+                {
+                    SetTierRecursive(child, 1);
+                }
             }
         }
     }
