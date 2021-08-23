@@ -63,7 +63,7 @@ public class UpgradeScreen : MonoBehaviour
 
     private void FillUpgradeScroll()
     {
-        var sortedUIList = CreateListForUI().OrderBy(e => e.isRoot ? 0 : 1);
+        var sortedUIList = CreateListForUI().OrderBy(e => e.orderInUpgradeScreen);
         //Debug.Log("SortedLength " + sortedUIList.Count());
         foreach (AbstractUpgrade upgrade in sortedUIList)
         {
