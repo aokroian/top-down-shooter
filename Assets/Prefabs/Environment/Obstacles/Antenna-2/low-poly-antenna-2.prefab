@@ -406,6 +406,9 @@ MonoBehaviour:
   onPlayerBulletHit:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
   hitDir: {x: 0, y: 0, z: 0}
   hitForceAmount: 0
   isFromExplosion: 0
