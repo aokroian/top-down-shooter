@@ -4452,7 +4452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1867182952350748155, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000047683716
+      value: 0.109
       objectReference: {fileID: 0}
     - target: {fileID: 1867182952350748155, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4510,6 +4510,10 @@ PrefabInstance:
       propertyPath: m_Data.m_ConstrainedObject
       value: 
       objectReference: {fileID: 236989088}
+    - target: {fileID: 5474095535304741746, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 5959398395167706107, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: m_Data.m_Offset.y
       value: 0
