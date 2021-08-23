@@ -4600,6 +4600,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1281642770}
     m_Modifications:
+    - target: {fileID: 5816454674226507847, guid: 2c45225eabb723a4ea878c76d725b4c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 607d6878ece62934dae7b9a45b61c89b, type: 2}
+    - target: {fileID: 6935331529728975367, guid: 2c45225eabb723a4ea878c76d725b4c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 607d6878ece62934dae7b9a45b61c89b, type: 2}
+    - target: {fileID: 6992794580545066331, guid: 2c45225eabb723a4ea878c76d725b4c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 607d6878ece62934dae7b9a45b61c89b, type: 2}
     - target: {fileID: 8160603079267692084, guid: 2c45225eabb723a4ea878c76d725b4c1, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4644,6 +4656,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8397798530105481248, guid: 2c45225eabb723a4ea878c76d725b4c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 607d6878ece62934dae7b9a45b61c89b, type: 2}
     - target: {fileID: 8794291949516747918, guid: 2c45225eabb723a4ea878c76d725b4c1, type: 3}
       propertyPath: m_Name
       value: low-poly-antenna-2
