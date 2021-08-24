@@ -24,8 +24,8 @@ public class MainUIController : MonoBehaviour
 
     private void Start()
     {
-        localizationTableHolder.Init();
         localizationTableHolder.SetListener(LocalizationLoaded);
+        localizationTableHolder.Init();
         settingsScreen.GetComponent<SettingsScreen>().SetBackAction(ToTitleScreen);
         titleScreen.GetComponent<TitleScreen>().ShowTopScore();
     }
@@ -61,8 +61,8 @@ public class MainUIController : MonoBehaviour
 
     private void LocalizationLoaded()
     {
+        localizationTableHolder.removeListener();
         var param = new LoadProgressSceneEP(SceneEnum.TITLE, true);
         loadProgressSceneEvent.Raise(param);
-        localizationTableHolder.removeListener();
     }
 }

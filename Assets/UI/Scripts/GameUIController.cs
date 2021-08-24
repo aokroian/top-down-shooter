@@ -71,7 +71,7 @@ public class GameUIController : MonoBehaviour
     private void ToMainMenu()
     {
         //levelLoader.LoadLevel("StartMenu");
-        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.GAME, true);
+        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.GAME, false);
         changeSceneEvent.Raise(param);
     }
 

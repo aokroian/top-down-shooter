@@ -22,7 +22,6 @@ public class BonusSystemController : MonoBehaviour
 
     void Start()
     {
-        localizationTableHolder.Init();
         FillActualAmmoParams();
     }
 
