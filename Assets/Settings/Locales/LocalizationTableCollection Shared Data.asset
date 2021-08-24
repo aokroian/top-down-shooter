@@ -135,6 +135,10 @@ MonoBehaviour:
     m_Key: +20% damage
     m_Metadata:
       m_Items: []
+  - m_Id: 15214321360687104
+    m_Key: GameOver
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
