@@ -36,6 +36,9 @@ public class EnemyController : MonoBehaviour, EnemyProperties
 
     public float stopPursuitDistance = 20f;
 
+    // sound system
+    private EnemyAudioManager audioManager;
+
     private State currentState;
     private Transform player;
 
@@ -45,6 +48,8 @@ public class EnemyController : MonoBehaviour, EnemyProperties
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").transform;
+
+        audioManager = GetComponent<EnemyAudioManager>();
     }
 
     // Update is called once per frame
@@ -65,7 +70,17 @@ public class EnemyController : MonoBehaviour, EnemyProperties
         Vector3 localMovement = gameObject.transform.InverseTransformDirection(globalMovement);
         gameObject.GetComponent<Animator>().SetFloat("local Z speed", localMovement.z);
         gameObject.GetComponent<Animator>().SetFloat("local X speed", localMovement.x);
-        
+
+        if (velocity.magnitude <= 0.1f)
+        {
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
+            audioManager.PlayMovementSound(false);
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
+            audioManager.PlayMovementSound(true);
+        }
         /*
         if (playerAwared) {
             agent.destination = player.position;

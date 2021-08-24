@@ -446,7 +446,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Shooting()
     {
-        while (true && equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() != AmmoType.RIFLE)
+        while (true)
         {
             equippedItemObj.GetComponent<WeaponController>().Shoot(0);
             yield return new WaitForFixedUpdate();

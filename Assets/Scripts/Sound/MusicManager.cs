@@ -71,7 +71,7 @@ public class MusicManager : MonoBehaviour
         // from game to pause menu
         if (param.showMenu)
         {
-            audioMixer.SetFloat("MusicHighpassCutoff", 5000);
+            audioMixer.SetFloat("MusicHighpassCutoff", 3000);
         }
         // from pause menu to game
         if (!param.showMenu)

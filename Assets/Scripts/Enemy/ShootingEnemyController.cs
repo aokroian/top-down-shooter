@@ -47,6 +47,9 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
     public float stopPursuitDistance = 20f;
 
+    //audio system
+    private EnemyAudioManager audioManager;
+
     // constraint for animation rigging (weapon aim part)
     private GameObject weaponAimConstraintObj;
 
@@ -71,6 +74,9 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         player = GameObject.Find("Player").transform;
 
         currentState = defaultState;
+
+        //audio
+        audioManager = GetComponent<EnemyAudioManager>();
 
         // spawn weapon
         equippedWeaponObj = Instantiate(weapon, parentBoneForWeapon.transform);
@@ -120,10 +126,12 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         if (velocity.magnitude <= 0.1f)
         {
             gameObject.GetComponent<Animator>().SetBool("Is Idle", true);
+            audioManager.PlayMovementSound(false);
         }
         else
         {
             gameObject.GetComponent<Animator>().SetBool("Is Idle", false);
+            audioManager.PlayMovementSound(true);
         }
 
         Vector3 globalMovement = new Vector3(velocity.x, 0.0f, velocity.z);

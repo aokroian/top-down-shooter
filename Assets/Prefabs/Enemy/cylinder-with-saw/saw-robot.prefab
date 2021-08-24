@@ -1806,7 +1806,7 @@ MonoBehaviour:
     - Key: Death
       Value: {fileID: 0}
     - Key: Walk
-      Value: {fileID: 0}
+      Value: {fileID: 8300000, guid: 1c2cefc09237e47d89e79d0ed7974c83, type: 3}
     - Key: Hit by player bullet
       Value: {fileID: 0}
     - Key: Saw
