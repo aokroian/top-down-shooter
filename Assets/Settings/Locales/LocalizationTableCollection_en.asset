@@ -138,5 +138,9 @@ MonoBehaviour:
     m_Localized: +20% damage
     m_Metadata:
       m_Items: []
+  - m_Id: 15214321360687104
+    m_Localized: Game over
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

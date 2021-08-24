@@ -12,6 +12,7 @@ public class PauseScreen : MonoBehaviour
     public ScoreCounter scoreCounter;
 
     private VisualElement rootEl;
+    private VisualElement gameOverContainer;
     private Button resumeEl;
     private Button settingsEl;
     private Button newRunEl;
@@ -28,6 +29,7 @@ public class PauseScreen : MonoBehaviour
     void OnEnable()
     {
         rootEl = pauseDoc.rootVisualElement;
+        gameOverContainer = rootEl.Q("GameOverContainer");
         resumeEl = rootEl.Q<Button>("Resume");
         settingsEl = rootEl.Q<Button>("Settings");
         newRunEl = rootEl.Q<Button>("NewRun");
@@ -45,6 +47,7 @@ public class PauseScreen : MonoBehaviour
 
     public void SetDead(bool dead)
     {
+        gameOverContainer.style.display = dead ? DisplayStyle.Flex : DisplayStyle.None;
         resumeEl.style.display = dead ? DisplayStyle.None : DisplayStyle.Flex;
     }
 
