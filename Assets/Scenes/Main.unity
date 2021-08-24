@@ -5023,6 +5023,10 @@ PrefabInstance:
       propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2327540286366548902, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2598631823856987470, guid: 67d60cd49060f452a94e6e80d34194f5, type: 3}
       propertyPath: m_IsActive
       value: 0

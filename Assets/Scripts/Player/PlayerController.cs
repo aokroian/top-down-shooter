@@ -114,8 +114,11 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 inputAim = value.ReadValue<Vector2>();
             mousePosition = inputAim;
-            lastRightStickPosition = rightStickPosition;
             rightStickPosition = inputAim;
+            if (lastRightStickPosition != rightStickPosition)
+            {
+                lastRightStickPosition = rightStickPosition;
+            }
         } else if (value.canceled)
         {
             Vector2 zeroMovement = Vector2.zero;
@@ -443,7 +446,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Shooting()
     {
-        while (true)
+        while (true && equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() != AmmoType.RIFLE)
         {
             equippedItemObj.GetComponent<WeaponController>().Shoot(0);
             yield return new WaitForFixedUpdate();
@@ -464,17 +467,18 @@ public class PlayerController : MonoBehaviour
         // shooting for strong weapons
         if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
         {
-            if (lastRightStickPosition.magnitude - rightStickPosition.magnitude >= 0.07f)
+            if (lastRightStickPosition.magnitude - rightStickPosition.magnitude >= 0.1f && !rifleShootNeeded)
             {
                 rifleShootNeeded = true;
             }
-            if (rightStickPosition.magnitude <= 0.5f && rifleShootNeeded)
+            if (rightStickPosition.magnitude <= 0.3f && rifleShootNeeded)
             {
                 SafelyStopShootingCoroutine();
                 equippedItemObj.GetComponent<WeaponController>().Shoot(0);
-                SafelyStopShootingCoroutine();
                 rifleShootNeeded = false;
+                lastRightStickPosition = rightStickPosition;
             }
+            
         }
 
 
