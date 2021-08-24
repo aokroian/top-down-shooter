@@ -13,7 +13,7 @@
                 <ui:Label text="0" display-tooltip-when-elided="true" name="TopScoreLabel" class="primary-text" style="margin-left: 10px;" />
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1; opacity: 1; justify-content: center; align-items: center;">
-                <ui:VisualElement style="height: 30%;">
+                <ui:VisualElement name="GameOverContainer" style="height: 30%;">
                     <ui:Label text="#GameOver" display-tooltip-when-elided="true" name="GameOver" class="primary-text" style="font-size: 72px; color: rgba(253, 0, 0, 255); -unity-font-style: bold; margin-bottom: 30px;" />
                 </ui:VisualElement>
                 <ui:Button text="#Resume" display-tooltip-when-elided="true" name="Resume" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 1px; margin-bottom: 30px;" />
