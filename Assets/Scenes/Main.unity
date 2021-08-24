@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &12406643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &123654016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &160374001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &202254106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &252564980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &254507299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,7 +1456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &311785049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1635,7 +1635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &338012139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1766,7 +1766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &394217066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1897,7 +1897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &435579310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &461864754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2206,7 +2206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &463067945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2337,7 +2337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &503335923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2468,7 +2468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &547969569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2604,7 +2604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &592017426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2735,7 +2735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &598609034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2918,7 +2918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &666290691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3049,7 +3049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &666439954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3185,7 +3185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &686346927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3396,7 +3396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &696756955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3635,7 +3635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &738288081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3766,7 +3766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &785371959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3897,7 +3897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &795064784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4028,7 +4028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &818432070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4164,7 +4164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &822762074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4443,7 +4443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &859087459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4633,7 +4633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &895800367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4764,7 +4764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &904182716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5707,7 +5707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1028939975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5843,7 +5843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1053165029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6180,7 +6180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1081778891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6358,7 +6358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1167663820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6489,7 +6489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1181477735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6620,7 +6620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1202541337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6751,7 +6751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1211235864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6961,7 +6961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1286989333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7166,7 +7166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1402639713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7349,7 +7349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1431107174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7480,7 +7480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1438117027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7778,7 +7778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1477657585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7928,7 +7928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1490194685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8059,7 +8059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1515702230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8190,7 +8190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1529268697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8321,7 +8321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1533283828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8452,7 +8452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1538071303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8583,7 +8583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1569814450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8714,7 +8714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1600777404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8845,7 +8845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1614183636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9144,7 +9144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1662193899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9275,7 +9275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1716537186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9406,7 +9406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1730287945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9537,7 +9537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1769870469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9668,7 +9668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1813014298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9872,7 +9872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1851250760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10003,7 +10003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1853122287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10134,7 +10134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1904284346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10296,7 +10296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1949575115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10427,7 +10427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1973943880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10558,7 +10558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &1980422156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10787,7 +10787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &2000323369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10918,7 +10918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &2006070372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11049,7 +11049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &2021860236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11180,7 +11180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &2032338946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11311,7 +11311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: Infinity
-  massAfterCollisionWithPlayer: 20
+  massAfterCollisionWithPlayer: 30
 --- !u!114 &2085812622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12219,6 +12219,10 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959852959551762, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959852959551767, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -12229,7 +12233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959852959551788, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959852959551788, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12240,12 +12244,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959852959551788, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959852959551788, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959852959551791, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959853023172021, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959853023172024, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853023172026, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853023172026, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12256,8 +12276,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853023172026, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853023172026, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853023172029, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12283,9 +12307,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853028397761, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959853028397764, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959853028397766, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853028397766, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12296,8 +12328,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853028397766, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853028397766, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853028397769, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12323,9 +12359,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853166596741, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959853166596744, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959853166596746, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853166596746, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12336,8 +12380,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853166596746, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853166596746, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853166596749, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12365,7 +12413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853204961108, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853204961108, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12376,9 +12424,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853204961108, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853204961108, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853204961111, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853204961112, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -12394,6 +12450,10 @@ PrefabInstance:
     - target: {fileID: 7757959853204961113, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853204961114, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853204961119, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12411,9 +12471,13 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853262686488, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853262686491, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853262686491, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12424,8 +12488,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853262686491, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853262686491, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853262686492, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -12442,14 +12510,26 @@ PrefabInstance:
     - target: {fileID: 7757959853262686493, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853262686494, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853299735388, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_Mass
       value: 20000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853348043749, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959853348043752, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959853348043754, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853348043754, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12460,8 +12540,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853348043754, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853348043754, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853348043757, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12487,9 +12571,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853403252748, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853403252749, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853403252749, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12500,8 +12588,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853403252749, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853403252749, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853403252849, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -12510,6 +12602,10 @@ PrefabInstance:
     - target: {fileID: 7757959853403252849, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853403252851, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853403252852, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12529,7 +12625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853440281636, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853440281636, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12540,9 +12636,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853440281636, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853440281636, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853440281639, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853440281640, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -12558,6 +12662,10 @@ PrefabInstance:
     - target: {fileID: 7757959853440281641, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853440281642, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853440281647, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12583,9 +12691,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853471931000, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853471931001, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853471931001, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12596,8 +12708,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853471931001, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853471931001, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853471931005, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -12607,9 +12723,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853471931007, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853472262988, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853472262989, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853472262989, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12620,8 +12744,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853472262989, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853472262989, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853472263089, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -12630,6 +12758,10 @@ PrefabInstance:
     - target: {fileID: 7757959853472263089, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853472263091, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853472263092, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12647,9 +12779,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853508429965, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853508429966, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853508429967, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853508429967, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12660,8 +12800,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853508429967, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853508429967, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853508430064, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -12703,9 +12847,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853530813912, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853530813913, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853530813913, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12716,8 +12864,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853530813913, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853530813913, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853530813917, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -12727,9 +12879,21 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853530813919, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853531294373, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853531294374, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853531294375, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853531294375, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12740,8 +12904,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853531294375, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853531294375, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853531294376, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -12775,6 +12943,10 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853531329171, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959853531329172, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -12791,9 +12963,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853531329196, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853531329197, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853531329197, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12804,12 +12980,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853531329197, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853531329197, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853533498821, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959853533498824, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853533498826, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853533498826, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12820,8 +13008,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853533498826, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853533498826, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853533498829, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12847,9 +13039,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853536382512, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853536382513, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853536382513, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12860,8 +13056,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853536382513, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853536382513, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853536382517, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -12870,6 +13070,10 @@ PrefabInstance:
     - target: {fileID: 7757959853536382517, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853536382519, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853536382520, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -12889,7 +13093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853549991188, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853549991188, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12900,9 +13104,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853549991188, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
-      propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      propertyPath: timeToLiveAfterShot
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853549991188, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: radiusOfOneBulletImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853549991191, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853549991192, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -12919,6 +13131,10 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853549991194, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959853549991199, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -12929,7 +13145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853590259492, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853590259492, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12940,9 +13156,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853590259492, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
-      propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      propertyPath: timeToLiveAfterShot
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853590259492, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: radiusOfOneBulletImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853590259495, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853590259496, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -12959,6 +13183,10 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853590259498, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959853590259503, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -12967,9 +13195,13 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853604512416, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853604512417, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853604512417, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -12980,8 +13212,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853604512417, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853604512417, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853604512421, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -12990,6 +13226,10 @@ PrefabInstance:
     - target: {fileID: 7757959853604512421, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853604512423, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853604512424, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13011,9 +13251,13 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 4000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853706331532, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853706331533, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853706331533, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13024,8 +13268,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853706331533, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853706331533, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853706331633, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13034,6 +13282,10 @@ PrefabInstance:
     - target: {fileID: 7757959853706331633, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853706331635, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853706331636, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13059,6 +13311,10 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853707009171, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959853707009172, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -13075,9 +13331,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853707009196, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853707009197, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853707009197, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13088,12 +13348,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853707009197, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
-      propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      propertyPath: timeToLiveAfterShot
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853707009197, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: radiusOfOneBulletImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853782991189, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853782991190, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853782991191, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853782991191, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13104,8 +13376,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853782991191, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853782991191, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853782991192, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13131,6 +13407,14 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853811306100, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959853811306101, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959853811306105, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -13141,7 +13425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853811306107, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853811306107, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13152,8 +13436,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853811306107, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853811306107, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853811306108, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13179,6 +13467,10 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853851535491, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959853851535492, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -13195,9 +13487,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853851535516, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853851535517, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853851535517, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13208,8 +13504,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853851535517, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853851535517, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853894157968, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13235,9 +13535,17 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853894157997, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853894157998, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853894157999, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853894157999, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13248,12 +13556,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853894157999, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853894157999, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853906057472, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853906057472, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13264,9 +13576,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853906057472, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
-      propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      propertyPath: timeToLiveAfterShot
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853906057472, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: radiusOfOneBulletImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853906057475, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853906057476, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -13282,6 +13602,10 @@ PrefabInstance:
     - target: {fileID: 7757959853906057477, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853906057478, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853906057483, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13301,7 +13625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853928060056, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853928060056, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13312,9 +13636,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853928060056, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853928060056, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853928060059, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853928060060, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -13331,9 +13663,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959853928060062, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853940710052, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959853940710053, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853940710053, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13344,8 +13684,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959853940710053, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853940710053, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853940710057, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13354,6 +13698,10 @@ PrefabInstance:
     - target: {fileID: 7757959853940710057, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959853940710059, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959853940710060, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13379,9 +13727,17 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854020461561, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854020461562, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854020461563, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854020461563, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13392,8 +13748,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854020461563, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854020461563, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854020461564, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13411,9 +13771,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854041206788, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854041206789, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854041206789, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13424,8 +13788,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854041206789, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854041206789, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854041206793, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13434,6 +13802,10 @@ PrefabInstance:
     - target: {fileID: 7757959854041206793, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854041206795, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854041206796, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13451,9 +13823,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854048362913, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959854048362916, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959854048362918, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854048362918, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13464,8 +13844,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854048362918, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854048362918, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854048362921, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13507,9 +13891,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854075672920, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854075672921, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854075672921, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13520,8 +13908,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854075672921, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854075672921, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854075672925, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13530,6 +13922,10 @@ PrefabInstance:
     - target: {fileID: 7757959854075672925, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854075672927, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854117190048, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13547,6 +13943,10 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854117190050, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959854117190055, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -13557,7 +13957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854117190076, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854117190076, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13568,9 +13968,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854117190076, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
-      propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      propertyPath: timeToLiveAfterShot
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854117190076, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: radiusOfOneBulletImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854117190079, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854138549521, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -13578,6 +13986,10 @@ PrefabInstance:
     - target: {fileID: 7757959854138549521, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854138549523, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854138549524, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13595,9 +14007,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854138549548, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854138549549, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854138549549, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13608,12 +14024,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854138549549, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854138549549, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854193564788, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854193564788, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13624,9 +14044,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854193564788, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
-      propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      propertyPath: timeToLiveAfterShot
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854193564788, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: radiusOfOneBulletImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854193564791, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854193564792, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -13642,6 +14070,10 @@ PrefabInstance:
     - target: {fileID: 7757959854193564793, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854193564794, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854193564799, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13675,9 +14107,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854265747801, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959854265747804, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959854265747806, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854265747806, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13688,12 +14128,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854265747806, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854265747806, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854286210516, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854286210516, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13704,9 +14148,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854286210516, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
-      propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      propertyPath: timeToLiveAfterShot
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854286210516, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: radiusOfOneBulletImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854286210519, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854286210520, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -13722,6 +14174,10 @@ PrefabInstance:
     - target: {fileID: 7757959854286210521, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854286210522, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854286210527, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13755,9 +14211,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854298488825, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959854298488828, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959854298488830, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854298488830, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13768,12 +14232,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854298488830, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854298488830, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854350720901, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959854350720904, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854350720906, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854350720906, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13784,8 +14260,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854350720906, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854350720906, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854350720909, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13811,9 +14291,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854390485761, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854390485762, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854390485763, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854390485763, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13824,8 +14312,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854390485763, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854390485763, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854390485764, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13851,9 +14343,13 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854422066224, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854422066225, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854422066225, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13864,8 +14360,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854422066225, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854422066225, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854422066229, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13874,6 +14374,10 @@ PrefabInstance:
     - target: {fileID: 7757959854422066229, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854422066231, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854422066232, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -13907,6 +14411,10 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854443672082, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959854443672087, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -13917,7 +14425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854443672108, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854443672108, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13928,12 +14436,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854443672108, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
-      propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      propertyPath: timeToLiveAfterShot
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854443672108, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: radiusOfOneBulletImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854443672111, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959854451784853, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854451784854, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854451784855, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854451784855, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13944,8 +14468,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854451784855, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854451784855, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854451784856, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -13971,9 +14499,17 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854526518341, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959854526518344, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959854526518346, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854526518346, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -13984,8 +14520,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854526518346, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854526518346, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854526518349, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14013,7 +14553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854546447264, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854546447264, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14024,9 +14564,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854546447264, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854546447264, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854546447267, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854546447268, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -14042,6 +14590,10 @@ PrefabInstance:
     - target: {fileID: 7757959854546447269, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854546447270, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854546447275, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14061,7 +14613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854604691480, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854604691480, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14072,9 +14624,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854604691480, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854604691480, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854604691483, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854604691484, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -14090,6 +14650,10 @@ PrefabInstance:
     - target: {fileID: 7757959854604691485, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854604691486, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854658842192, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14107,9 +14671,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854658842216, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854658842217, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854658842217, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14120,8 +14688,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854658842217, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854658842217, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854658842221, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14131,9 +14703,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854658842223, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854689417424, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959854689417426, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854689417426, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14144,8 +14724,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854689417426, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854689417426, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854689417429, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14171,9 +14755,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854689417453, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959854698774324, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854698774325, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854698774325, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14184,8 +14776,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854698774325, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854698774325, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854698774329, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14194,6 +14790,10 @@ PrefabInstance:
     - target: {fileID: 7757959854698774329, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854698774331, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854698774332, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14213,7 +14813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854710258916, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854710258916, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14224,9 +14824,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854710258916, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854710258916, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854710258919, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854710258920, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -14242,6 +14850,10 @@ PrefabInstance:
     - target: {fileID: 7757959854710258921, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854710258922, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854710258927, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14259,9 +14871,17 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854771467465, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854771467466, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854771467467, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854771467467, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14272,8 +14892,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854771467467, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854771467467, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854771467468, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14291,9 +14915,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854779768784, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854779768785, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854779768785, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14304,8 +14932,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854779768785, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854779768785, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854779768789, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14314,6 +14946,10 @@ PrefabInstance:
     - target: {fileID: 7757959854779768789, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854779768791, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854779768792, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14331,9 +14967,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854805894148, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854805894149, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854805894149, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14344,8 +14984,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854805894149, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854805894149, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854805894153, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14354,6 +14998,10 @@ PrefabInstance:
     - target: {fileID: 7757959854805894153, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854805894155, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854805894156, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14371,9 +15019,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854882243145, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854882243146, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854882243147, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854882243147, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14384,8 +15040,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854882243147, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854882243147, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854882243148, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14411,9 +15071,17 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854892673953, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854892673954, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854892673955, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854892673955, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14424,8 +15092,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854892673955, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854892673955, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854892673956, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14453,7 +15125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854904383244, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854904383244, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14464,9 +15136,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854904383244, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854904383244, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854904383247, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854904383344, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
       value: 10000000
@@ -14482,6 +15162,10 @@ PrefabInstance:
     - target: {fileID: 7757959854904383345, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854904383346, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854904383351, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14491,9 +15175,17 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854943761421, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959854943761520, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959854943761522, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854943761522, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14504,8 +15196,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854943761522, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854943761522, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854943761525, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14531,9 +15227,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854952468773, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
+    - target: {fileID: 7757959854952468776, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959854952468778, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854952468778, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14544,8 +15248,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854952468778, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854952468778, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854952468781, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14587,9 +15295,13 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854958131512, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854958131513, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854958131513, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14600,8 +15312,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854958131513, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854958131513, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854958131517, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14611,9 +15327,17 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959854958131519, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854992434188, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959854992434189, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854992434189, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14624,8 +15348,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959854992434189, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854992434189, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854992434289, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14634,6 +15362,10 @@ PrefabInstance:
     - target: {fileID: 7757959854992434289, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakTorque
       value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959854992434291, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7757959854992434292, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
@@ -14667,6 +15399,10 @@ PrefabInstance:
       propertyPath: m_BreakTorque
       value: 10000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959855004458706, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7757959855004458711, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -14677,7 +15413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7757959855004458732, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959855004458732, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14688,9 +15424,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959855004458732, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
-      propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      propertyPath: timeToLiveAfterShot
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959855004458732, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: radiusOfOneBulletImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959855004458735, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959855052129218, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: health
       value: 1
@@ -14699,9 +15443,17 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959855052129241, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959855052129242, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959855052129243, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959855052129243, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14712,8 +15464,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959855052129243, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959855052129243, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959855052129244, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
@@ -14739,9 +15495,17 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757959855070541769, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959855070541770, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 5915ef586b908c048b789af7313e1be1, type: 2}
     - target: {fileID: 7757959855070541771, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: force
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757959855070541771, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: camera
@@ -14752,8 +15516,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1420575593}
     - target: {fileID: 7757959855070541771, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: timeToLiveAfterShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757959855070541771, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: radiusOfOneBulletImpact
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757959855070541772, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_BreakForce
