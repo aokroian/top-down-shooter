@@ -25,6 +25,9 @@ public abstract class AbstractBonusController : MonoBehaviour
 
     private bool touchPlayer;
 
+    //sound
+    public AudioSource audioSource;
+
     protected LocalizationTableHolder localizationTableHolder;
 
     void Update()
@@ -71,6 +74,12 @@ public abstract class AbstractBonusController : MonoBehaviour
     {
         if (OnPickUp())
         {
+            // play sound
+            AudioClip audioClip;
+            SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
+            audioStorage.TryGetValue("pick up", out audioClip);
+            audioSource.PlayOneShot(audioClip);
+
             PrepareTextProperties();
             pickupTime = Time.time;
         }
