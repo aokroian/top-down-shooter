@@ -72,6 +72,9 @@ public class PlayerController : MonoBehaviour
     public Vector3 aimAtPosition;
     private Vector2 mousePosition;
     private Vector2 rightStickPosition;
+    // test 
+    private Vector2 lastRightStickPosition;
+    private bool rifleShootNeeded = false;
 
     // other
     public PlayerInput playerInput;
@@ -111,6 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 inputAim = value.ReadValue<Vector2>();
             mousePosition = inputAim;
+            lastRightStickPosition = rightStickPosition;
             rightStickPosition = inputAim;
         } else if (value.canceled)
         {
@@ -128,6 +132,7 @@ public class PlayerController : MonoBehaviour
             {
                 SafelyStopShootingCoroutine();
                 shootingCoroutine = StartCoroutine(Shooting());
+                SafelyStopShootingCoroutine();
             }
             if (value.canceled)
             {
@@ -282,9 +287,9 @@ public class PlayerController : MonoBehaviour
         // aiming and movement values update
         if (currentControlScheme == "Gamepad" || currentControlScheme == "Touch")
         {
-            if (rightStickPosition.magnitude >= 0.05f)
+            if (rightStickPosition.magnitude >= 0.2f)
             {
-                Vector3 pos = new Vector3(rightStickPosition.x, 0f, rightStickPosition.y) * 12;
+                Vector3 pos = new Vector3(rightStickPosition.normalized.x, 0f, rightStickPosition.normalized.y) * 12;
                 aimAtPosition = transform.position + pos;
 
 
@@ -306,7 +311,7 @@ public class PlayerController : MonoBehaviour
                     SafelyStopShootingCoroutine();
                 }
             }
-            if (rightStickPosition.magnitude < 0.05f)
+            if (rightStickPosition.magnitude < 0.2f)
             {
                 // stop shooting
                 SafelyStopShootingCoroutine();
@@ -456,6 +461,22 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // shooting for strong weapons
+        if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
+        {
+            if (lastRightStickPosition.magnitude - rightStickPosition.magnitude >= 0.05f)
+            {
+                rifleShootNeeded = true;
+            }
+            if (rightStickPosition.magnitude <= 0.5f && rifleShootNeeded)
+            {
+                equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+                SafelyStopShootingCoroutine();
+                rifleShootNeeded = false;
+            }
+        }
+
+
         // смещение
         Vector3 offset = new Vector3(movement.x, 0.0f, movement.y) * currentMovementSpeed;
         Rigidbody rb = GetComponent<Rigidbody>();
