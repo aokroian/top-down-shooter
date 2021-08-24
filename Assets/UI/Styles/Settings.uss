@@ -10,7 +10,7 @@
 }
 
 .left_col {
-    width: 130px;
+    width: 220px;
 }
 
 .right_col {

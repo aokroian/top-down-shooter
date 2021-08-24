@@ -1,0 +1,9 @@
+#UpgradesScroll #unity-content-container {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#UpgradesScroll #unity-content-viewport {
+    flex-direction: row;
+    justify-content: space-around;
+}

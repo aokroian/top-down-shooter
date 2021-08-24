@@ -3,7 +3,7 @@
     <Style src="/Assets/UI/Styles/Upgrade.uss" />
     <UpgradeVisualElement class="panel-round" style="flex-grow: 1; margin-left: 5px; margin-right: 5px; height: auto; width: auto; justify-content: flex-start; align-items: stretch; min-width: 250px;">
         <ui:VisualElement style="visibility: visible; display: flex; flex-direction: column; justify-content: flex-start;">
-            <ui:Button text="#Equip" display-tooltip-when-elided="true" name="EquipButton" focusable="false" class="button primary-text" style="font-size: 24px; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; flex-grow: 0; flex-shrink: 1; visibility: visible; display: flex; opacity: 1;" />
+            <ui:Button text="#Equip" display-tooltip-when-elided="true" name="EquipButton" focusable="false" class="button primary-text" style="font-size: 28px; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; flex-grow: 0; flex-shrink: 1; visibility: visible; display: flex; opacity: 1;" />
             <ui:Label display-tooltip-when-elided="true" name="EquipPlaceholder" class="primary-text" style="font-size: 24px; margin-left: 10px; margin-right: 10px; margin-top: 11px; margin-bottom: 11px; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); flex-shrink: 1; padding-left: 6px; padding-right: 6px; padding-top: 1px; padding-bottom: 1px; display: none;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; flex-basis: 40%; align-items: stretch; justify-content: space-around; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
@@ -21,9 +21,9 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:Button display-tooltip-when-elided="true" name="UpgradeButton" class="button" style="font-size: 24px; flex-direction: row; flex-shrink: 0; -unity-text-align: middle-center; white-space: nowrap; align-items: center; justify-content: center; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin-top: 10px; margin-bottom: 10px; margin-left: 10px; margin-right: 10px;">
-                <ui:Label text="#Upgrade" display-tooltip-when-elided="true" name="ButtonLabel" class="primary-text" style="width: auto; -unity-text-align: middle-right; margin-right: 0; padding-right: 15px;" />
+                <ui:Label text="#Upgrade" display-tooltip-when-elided="true" name="ButtonLabel" class="primary-text" style="width: auto; -unity-text-align: middle-right; margin-right: 0; padding-right: 15px; font-size: 28px;" />
                 <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; background-image: url(&apos;/Assets/Materials/Bonus/CreditIcon.png&apos;); -unity-background-scale-mode: stretch-to-fill; width: 28px; height: 28px;" />
-                <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="Cost" class="primary-text" style="padding-left: 5px;" />
+                <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="Cost" class="primary-text" style="padding-left: 5px; font-size: 28px;" />
             </ui:Button>
         </ui:VisualElement>
     </UpgradeVisualElement>
