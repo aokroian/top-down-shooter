@@ -9,6 +9,11 @@ public class CageLatticeController : MonoBehaviour
     public float timeToLiveAfterShot = 6;
     public AudioSource audioSource;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void AddForceOppositeOfPlayer(float radiusOfOneBulletImpact)
     {
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -35,6 +40,12 @@ public class CageLatticeController : MonoBehaviour
         }
         if (radiusOfOneBulletImpact > 0)
         {
+            // audio
+            SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
+            AudioClip audioClip;
+            audioStorage.TryGetValue("metal hit", out audioClip);
+            audioSource.PlayOneShot(audioClip);
+
             Collider[] nearbyLattices = Physics.OverlapSphere(transform.position, radiusOfOneBulletImpact);
             foreach (var hitCollider in nearbyLattices)
             {
@@ -44,12 +55,6 @@ public class CageLatticeController : MonoBehaviour
                 }
             }
         }
-
-        // audio
-        SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
-        AudioClip audioClip;
-        audioStorage.TryGetValue("metal hit",out audioClip);
-        audioSource.PlayOneShot(audioClip);
        
         // time to live
         gameObject.GetComponent<PieceDestroyer>().timeToLive = timeToLiveAfterShot;
