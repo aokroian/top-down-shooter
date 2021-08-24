@@ -132,7 +132,6 @@ public class PlayerController : MonoBehaviour
             {
                 SafelyStopShootingCoroutine();
                 shootingCoroutine = StartCoroutine(Shooting());
-                SafelyStopShootingCoroutine();
             }
             if (value.canceled)
             {
@@ -150,6 +149,7 @@ public class PlayerController : MonoBehaviour
                 if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
                 {
                     equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+                    SafelyStopShootingCoroutine();
                 }
             }
         }
@@ -464,12 +464,13 @@ public class PlayerController : MonoBehaviour
         // shooting for strong weapons
         if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
         {
-            if (lastRightStickPosition.magnitude - rightStickPosition.magnitude >= 0.05f)
+            if (lastRightStickPosition.magnitude - rightStickPosition.magnitude >= 0.07f)
             {
                 rifleShootNeeded = true;
             }
             if (rightStickPosition.magnitude <= 0.5f && rifleShootNeeded)
             {
+                SafelyStopShootingCoroutine();
                 equippedItemObj.GetComponent<WeaponController>().Shoot(0);
                 SafelyStopShootingCoroutine();
                 rifleShootNeeded = false;

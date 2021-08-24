@@ -47,6 +47,7 @@ public class MusicManager : MonoBehaviour
     public void SwitchMusicMode (SceneSwitchEventParam param)
     {
         if (param.state != SceneSwitchEventParam.SceneLoadStateEnum.LOADED) return;
+        audioMixer.SetFloat("MusicHighpassCutoff", 10);
 
         // when main menu loaded
         if (param.scene == SceneEnum.TITLE && music != menuMusic)
