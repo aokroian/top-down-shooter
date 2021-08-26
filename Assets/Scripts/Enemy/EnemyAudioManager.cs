@@ -121,8 +121,11 @@ public class EnemyAudioManager : MonoBehaviour
             Debug.Log("No death explosion sound sound found in enemy " + gameObject.name);
             return;
         }
-
-        mainAudioSource.PlayOneShot(deathExplosionSound);
+        mainAudioSource.clip = deathExplosionSound;
+        mainAudioSource.loop = false;
+        mainAudioSource.pitch = 1;
+        mainAudioSource.volume = 1;
+        mainAudioSource.Play();
     }
 
     public void PlayHitByPlayerBulletSound()
