@@ -46,7 +46,6 @@ public class MusicManager : MonoBehaviour
         audioSource.playOnAwake = false;
         audioMixer.SetFloat("MusicHighpassCutoff", 10);
 
-        PlayTrackByIndex(0);
         TogglePause(false);
         SettingsChanged();
     }
@@ -61,6 +60,8 @@ public class MusicManager : MonoBehaviour
         {
             music = menuMusic;
             Stop();
+            // random track
+            currentTrackIndex = Random.Range(0, music.Length - 1);
             PlayNextTrack();
         }
 
@@ -69,6 +70,8 @@ public class MusicManager : MonoBehaviour
         {
             music = gameMusic;
             Stop();
+            // random track
+            currentTrackIndex = Random.Range(0, music.Length - 1);
             PlayNextTrack();
         }
     }
