@@ -9,9 +9,8 @@ public class UpgradeScreen : MonoBehaviour
 {
     public MainUIController manager;
     public VisualTreeAsset upgradeElement;
-    //public FloatVariable moneyCount;
 
-    public ProgressionManager progressionManager;
+    public GameEvent progressionSaveEvent;
     public ProgressionHolder progressionHolder;
 
     public LocalizationTableHolder localizer;
@@ -19,18 +18,12 @@ public class UpgradeScreen : MonoBehaviour
     private VisualElement rootEl;
     private ScrollView scrollEl;
 
-    //private AbstractUpgrade[] equipped = new AbstractUpgrade[2];
     private int equippedCount;
     private const int MAX_WEAPON_COUNT = 2;
-
-    //private AbstractUpgrade[] upgrades;
 
     
     private void Awake()
     {
-        //upgrades = Resources.LoadAll<AbstractUpgrade>("UpgradesSO");
-        progressionManager.Init();
-        progressionManager.LoadFromSaveFile();
         equippedCount = progressionHolder.GetSelected().Count();
     }
 
@@ -64,7 +57,6 @@ public class UpgradeScreen : MonoBehaviour
     private void FillUpgradeScroll()
     {
         var sortedUIList = CreateListForUI().OrderBy(e => e.orderInUpgradeScreen);
-        //Debug.Log("SortedLength " + sortedUIList.Count());
         foreach (AbstractUpgrade upgrade in sortedUIList)
         {
             var upgradeEl = BuildUpgradeEl(upgrade);
@@ -78,7 +70,6 @@ public class UpgradeScreen : MonoBehaviour
         List<AbstractUpgrade> result = new List<AbstractUpgrade>();
         foreach(AbstractUpgrade upgrade in progressionHolder.GetAllUpgrades().Where(e => e.isRoot))
         {
-            //Debug.Log("Root: " + upgrade);
             result.Add(getFirstNotBought(upgrade));
         }
 
@@ -101,7 +92,6 @@ public class UpgradeScreen : MonoBehaviour
 
         upgradeEl.SetLocalizer(localizer);
 
-        //upgradeEl.SetIcon(upgrade.image);
         upgradeEl.SetName(upgrade.upgradeName);
         upgradeEl.SetDescription(upgrade.description);
         upgradeEl.SetCost(upgrade.cost);
@@ -157,7 +147,7 @@ public class UpgradeScreen : MonoBehaviour
         {
             progressionHolder.AddPurchasedUpgrade(upgrade);
             progressionHolder.moneyCount -= upgrade.cost;
-            progressionManager.WriteToSaveFile();
+            progressionSaveEvent.Raise();
             Draw();
             result = true;
         }
@@ -178,29 +168,7 @@ public class UpgradeScreen : MonoBehaviour
         {
             return;
         }
-        progressionManager.WriteToSaveFile();
+        progressionSaveEvent.Raise();
         Draw();
-
-        /*
-        if (equipped.Contains(upgrade))
-        {
-            if (equipped[0] == upgrade)
-            {
-                equipped[0] = equipped[1];
-                
-            }
-            equipped[1] = null;
-        } else if (equipped[0] == null)
-        {
-            equipped[0] = upgrade;
-        } else if (equipped[1] == null)
-        {
-            equipped[1] = upgrade;
-        } else
-        {
-            return;
-        }
-        
-        */
     }
 }

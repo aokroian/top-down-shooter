@@ -8,7 +8,6 @@ public class IngameProgressionManager : MonoBehaviour
     public WeaponController pistolPrefab;
     public WeaponController[] otherWeaponPrefabs;
     public ProgressionHolder progressionHolder;
-    public ProgressionManager progressionManager;
     public GameObject weaponPreview;
     public Camera weaponPreviewCamera;
 
@@ -17,9 +16,6 @@ public class IngameProgressionManager : MonoBehaviour
     
     public GameObject[] GetWeapons()
     {
-#if UNITY_EDITOR
-        progressionManager.LoadFromSaveFile();
-#endif
         var selected = progressionHolder.GetSelected();
         HashSet<GameObject> result = new HashSet<GameObject>();
 

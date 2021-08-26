@@ -12,10 +12,16 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        var titleParam = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.NULL, false);
-        ChangeScene(titleParam);
         var musicParam = new ChangeSceneEventParam(SceneEnum.MUSIC, SceneEnum.NULL, true);
         ChangeScene(musicParam);
+        var sharedDataParam = new ChangeSceneEventParam(SceneEnum.SHARED_DATA, SceneEnum.NULL, false, LoadMainMenu);
+        ChangeScene(sharedDataParam);
+    }
+
+    private void LoadMainMenu()
+    {
+        var titleParam = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.NULL, false);
+        ChangeScene(titleParam);
     }
 
     public void ChangeScene(ChangeSceneEventParam param)
@@ -43,10 +49,6 @@ public class SceneController : MonoBehaviour
         if (param.complete)
         {
             SceneLoadCompleted(currentLoadings[param.scene]);
-            if (param.onSceneActive != null)
-            {
-                param.onSceneActive();
-            }
         }
     }
 
@@ -64,6 +66,10 @@ public class SceneController : MonoBehaviour
         var switchParam = new SceneSwitchEventParam(SceneSwitchEventParam.SceneLoadStateEnum.LOADED, param.scene, param.sceneToUnload);
         sceneSwitchEvent.Raise(switchParam);
         currentLoadings.Remove(param.scene);
+        if (param.onLoad != null)
+        {
+            param.onLoad();
+        }
         if (currentLoadings.Count == 0) {
             SetLoadingScreenActive(false);
         }

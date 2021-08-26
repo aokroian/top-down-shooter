@@ -248,7 +248,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 858362097}
-  - component: {fileID: 858362096}
   m_Layer: 0
   m_Name: SettingsManager
   m_TagString: Untagged
@@ -256,23 +255,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &858362096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858362095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac8ea0c206a5a4d4dab332834b53f3b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
-  audioMixer: {fileID: 24100000, guid: 6166c4e3e76f27e4d94faff5bd26be99, type: 2}
-  masterVolumeParamName: MasterSoundVolume
-  musicVolumeParamName: MusicVolume
-  sfxVolumeParamName: SFXVolume
 --- !u!4 &858362097
 Transform:
   m_ObjectHideFlags: 0
@@ -297,7 +279,6 @@ GameObject:
   m_Component:
   - component: {fileID: 956195906}
   - component: {fileID: 956195905}
-  - component: {fileID: 956195907}
   m_Layer: 0
   m_Name: MainMenuController
   m_TagString: Untagged
@@ -320,8 +301,6 @@ MonoBehaviour:
   titleScreen: {fileID: 1411809348}
   settingsScreen: {fileID: 1953305820}
   upgradeScreen: {fileID: 1045911395}
-  localizationTableHolder: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
-  progressionManager: {fileID: 956195907}
   changeSceneEvent: {fileID: 11400000, guid: 63404419b261a944f8b2d1849d1408b3, type: 2}
   loadProgressSceneEvent: {fileID: 11400000, guid: 56d046bed5f47204ab21c5d9adca5189, type: 2}
 --- !u!4 &956195906
@@ -341,19 +320,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &956195907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956195904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f8ac847e60adc42a1c5ac4dd3a7d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!1 &1045911395
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 956195905}
   upgradeElement: {fileID: 9197481963319205126, guid: b817395b78053854896af5c66a3f3f72, type: 3}
-  progressionManager: {fileID: 956195907}
+  progressionSaveEvent: {fileID: 11400000, guid: 2ca6dcf43fea80a4db3f7d33d9f44e9a, type: 2}
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
   localizer: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
 --- !u!114 &1045911398
@@ -669,8 +635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9bbf33d468231945b2e5c4fe85ae347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsSaver: {fileID: 858362096}
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
+  settingsSaveEvent: {fileID: 11400000, guid: d1dcd861b20437443afb4f464a3f5c7f, type: 2}
   localizer: {fileID: 1953305824}
 --- !u!114 &1953305824
 MonoBehaviour:

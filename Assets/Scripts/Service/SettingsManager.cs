@@ -1,16 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
-public class SettingsManager : SettingsSaver
+public class SettingsManager : SettingsSaver, Loadable
 {
-
-    void Start()
-    {
-        LoadSettings();
-        ApplySettings();
-    }
+    public int _loadCost = 3;
+    public int loadCost => _loadCost;
 
     public void LoadSettings()
     {
@@ -20,5 +17,12 @@ public class SettingsManager : SettingsSaver
         settings.graphics = PlayerPrefs.GetString(GRAPHICS, QualitySettings.names[QualitySettings.GetQualityLevel()]);
         settings.fps = GetBool(FPS, false);
         settings.language = PlayerPrefs.GetString(LANGUAGE, LocalizationSettings.SelectedLocale.LocaleName);
+    }
+
+    public void Load(Action onLoad)
+    {
+        LoadSettings();
+        ApplySettings();
+        onLoad();
     }
 }

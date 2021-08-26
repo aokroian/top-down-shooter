@@ -1,13 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProgressionManager : MonoBehaviour
+
+public class ProgressionManager : MonoBehaviour, Loadable
 {
     public ProgressionHolder progressionHolder;
 
     private SaveLoadController saveLoadController;
     private JsonConverter jsonConverter;
+
+    public int _loadCost = 5;
+    public int loadCost => _loadCost;
 
     private void Awake()
     {
@@ -37,4 +42,9 @@ public class ProgressionManager : MonoBehaviour
         saveLoadController.SaveProgression(progressionHolder.moneyCount, progressionHolder.GetPurchasedUpgradesId(), progressionHolder.GetSelectedIds(), progressionHolder.topScore);
     }
 
+    public void Load(Action onLoad)
+    {
+        LoadFromSaveFile();
+        onLoad();
+    }
 }

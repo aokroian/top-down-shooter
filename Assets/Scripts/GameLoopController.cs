@@ -26,9 +26,9 @@ public class GameLoopController : MonoBehaviour
 
     private void Start()
     {
-        var param = new LoadProgressSceneEP(SceneEnum.GAME, true, UnPause);
+        var param = new LoadProgressSceneEP(SceneEnum.GAME, true);
         loadProgressSceneEvent.Raise(param);
-        //UnPause();
+        UnPause();
     }
 
     // pause on focus is needed only in release version

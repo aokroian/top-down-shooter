@@ -9,25 +9,18 @@ public class MainUIController : MonoBehaviour
     public GameObject settingsScreen;
     public GameObject upgradeScreen;
 
-    public LocalizationTableHolder localizationTableHolder;
-
-    public ProgressionManager progressionManager;
-
     public ChangeSceneEvent changeSceneEvent;
     public LoadProgressSceneEvent loadProgressSceneEvent;
 
     private void Awake()
     {
-        progressionManager.LoadFromSaveFile();
         Vibration.Init();
     }
 
     private void Start()
     {
-        localizationTableHolder.SetListener(LocalizationLoaded);
-        localizationTableHolder.Init();
         settingsScreen.GetComponent<SettingsScreen>().SetBackAction(ToTitleScreen);
-        titleScreen.GetComponent<TitleScreen>().ShowTopScore();
+        LoadComplete();
     }
 
     public void ToTitleScreen()
@@ -59,9 +52,8 @@ public class MainUIController : MonoBehaviour
         changeSceneEvent.Raise(param);
     }
 
-    private void LocalizationLoaded()
+    private void LoadComplete()
     {
-        localizationTableHolder.removeListener();
         var param = new LoadProgressSceneEP(SceneEnum.TITLE, true);
         loadProgressSceneEvent.Raise(param);
     }

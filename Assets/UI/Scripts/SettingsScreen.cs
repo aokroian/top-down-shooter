@@ -10,8 +10,8 @@ public class SettingsScreen : MonoBehaviour
 {
 
     //public MainUIController manager;
-    public SettingsSaver settingsSaver;
     public SettingsHolder settings;
+    public GameEvent settingsSaveEvent;
     public UIDocumentLocalization localizer;
 
     private VisualElement rootEl;
@@ -67,37 +67,37 @@ public class SettingsScreen : MonoBehaviour
         vibrationEl.SetToggleCallback(v =>
         {
             settings.vibration = v;
-            settingsSaver.ApplyAndSave();
+            settingsSaveEvent.Raise();
         });
 
         musicEl.SetToggleCallback(v =>
         {
             settings.music = v;
-            settingsSaver.ApplyAndSave();
+            settingsSaveEvent.Raise();
         });
 
         sfxEl.SetToggleCallback(v =>
         {
             settings.sfx = v;
-            settingsSaver.ApplyAndSave();
+            settingsSaveEvent.Raise();
         });
 
         graphicsEl.SetChangeCallback(v =>
         {
             settings.graphics = v;
-            settingsSaver.ApplyAndSave();
+            settingsSaveEvent.Raise();
         });
 
         fpsEl.SetToggleCallback(v =>
         {
             settings.fps = v;
-            settingsSaver.ApplyAndSave();
+            settingsSaveEvent.Raise();
         });
 
         languageEl.SetChangeCallback(v =>
         {
             settings.language = v;
-            settingsSaver.ApplyAndSave();
+            settingsSaveEvent.Raise();
         });
     }
 

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class ScoreCounter : MonoBehaviour
 {
     public ProgressionHolder progressionHolder;
-    public ProgressionManager progressionManager;
+    public GameEvent progressionSaveEvent;
     public UIDocument scoreDocument;
     public GameObject player;
 
@@ -72,7 +72,7 @@ public class ScoreCounter : MonoBehaviour
         if (currentScore >= progressionHolder.topScore)
         {
             progressionHolder.topScore = currentScore;
-            progressionManager.WriteToSaveFile();
+            progressionSaveEvent.Raise();
         }
     }
 

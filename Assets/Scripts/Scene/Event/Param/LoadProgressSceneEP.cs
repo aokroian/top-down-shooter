@@ -7,12 +7,10 @@ public class LoadProgressSceneEP
 {
     public SceneEnum scene;
     public bool complete;
-    public Action onSceneActive;
 
-    public LoadProgressSceneEP(SceneEnum scene, bool complete, Action onSceneActive = null)
+    public LoadProgressSceneEP(SceneEnum scene, bool complete)
     {
         this.scene = scene;
         this.complete = complete;
-        this.onSceneActive = onSceneActive;
     }
 }

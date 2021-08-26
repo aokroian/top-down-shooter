@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -299,8 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9bbf33d468231945b2e5c4fe85ae347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsSaver: {fileID: 866064498}
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
+  settingsSaveEvent: {fileID: 11400000, guid: d1dcd861b20437443afb4f464a3f5c7f, type: 2}
   localizer: {fileID: 14482276}
 --- !u!114 &14482275
 MonoBehaviour:
@@ -419,7 +419,6 @@ GameObject:
   m_Component:
   - component: {fileID: 31522455}
   - component: {fileID: 31522454}
-  - component: {fileID: 31522456}
   m_Layer: 0
   m_Name: ProgressionSystem
   m_TagString: Untagged
@@ -445,7 +444,7 @@ MonoBehaviour:
   - {fileID: 2657258725382527762, guid: cac850a810d414f0399a3425d440092d, type: 3}
   - {fileID: 2229621320369827879, guid: adb6e521861cc430ca9c6476e7849d49, type: 3}
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
-  progressionManager: {fileID: 31522456}
+  progressionManager: {fileID: 0}
   weaponPreview: {fileID: 1912022782}
   weaponPreviewCamera: {fileID: 244909499}
 --- !u!4 &31522455
@@ -462,19 +461,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &31522456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31522453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f8ac847e60adc42a1c5ac4dd3a7d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!1 &123654005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6917783853901249668, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
@@ -8965,7 +8951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
-  progressionManager: {fileID: 31522456}
+  progressionSaveEvent: {fileID: 11400000, guid: 2ca6dcf43fea80a4db3f7d33d9f44e9a, type: 2}
   scoreDocument: {fileID: 1653811889}
   player: {fileID: 3883960182137148086}
   enemyCostMultiplier: 100
@@ -10691,7 +10677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3883960182137148086}
-  progressionManager: {fileID: 31522456}
+  progressionManager: {fileID: 0}
   health:
     bonusPrefab: {fileID: 7389978441618331954, guid: 90df346787bd66a42b27a98665b596bc, type: 3}
     baseChance: 15
