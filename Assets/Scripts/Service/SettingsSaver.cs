@@ -16,12 +16,6 @@ public class SettingsSaver : MonoBehaviour
 
     public SettingsHolder settings;
 
-    // vars for audio
-    public AudioMixer audioMixer;
-    public string masterVolumeParamName;
-    public string musicVolumeParamName;
-    public string sfxVolumeParamName;
-
     public void ApplyAndSave()
     {
         ApplySettings();
@@ -53,8 +47,6 @@ public class SettingsSaver : MonoBehaviour
         {
             LocalizationSettings.SelectedLocale = locale;
         }
-
-        
     }
 
     protected bool GetBool(string key, bool defaultValue)
