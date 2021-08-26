@@ -309,8 +309,8 @@ GameObject:
   - component: {fileID: 1272146180179036847}
   - component: {fileID: 528382163874372828}
   - component: {fileID: 7095800815447081901}
-  - component: {fileID: 3883960182137148097}
   - component: {fileID: 3883960182137148089}
+  - component: {fileID: 8086083840729457098}
   m_Layer: 0
   m_Name: PlayerV2
   m_TagString: Player
@@ -485,7 +485,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &1272146180179036847
 MonoBehaviour:
@@ -586,6 +586,21 @@ MonoBehaviour:
   onPlayerBulletHit:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8086083840729457098}
+        m_TargetAssemblyTypeName: VibrationController, Assembly-CSharp
+        m_MethodName: Vibrate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hitDir: {x: 0, y: 0, z: 0}
   hitForceAmount: 0
   isFromExplosion: 0
@@ -742,24 +757,10 @@ MonoBehaviour:
     m_ActionId: aef26450-bd3d-4e10-8318-3d0360f0a30c
     m_ActionName: PlayerControls/New action
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: PlayerControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!136 &3883960182137148097
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342707846021142337}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.2522833
-  m_Height: 1.2351148
-  m_Direction: 2
-  m_Center: {x: 0.16413173, y: 2.3206377, z: 1.159016}
 --- !u!114 &3883960182137148089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,13 +778,26 @@ MonoBehaviour:
     - Key: Death
       Value: {fileID: 8300000, guid: d5d0043f268fc2f4b8708ad2145505b6, type: 3}
     - Key: Run
-      Value: {fileID: 8300000, guid: d5d0043f268fc2f4b8708ad2145505b6, type: 3}
+      Value: {fileID: 8300000, guid: b14cd747c0b53458d9c14a6b2ca87f87, type: 3}
     - Key: Dodge
-      Value: {fileID: 8300000, guid: e66dd422f55d93642bee0220333248d8, type: 3}
+      Value: {fileID: 8300000, guid: 4d81d1293bc964fe8ab99ae8caa63767, type: 3}
     - Key: Hit by an enemy bullet
-      Value: {fileID: 8300000, guid: e66dd422f55d93642bee0220333248d8, type: 3}
+      Value: {fileID: 8300000, guid: e38401a78e0ab4526ac682cdd80213f8, type: 3}
     - Key: Hit by an enemy saw
-      Value: {fileID: 8300000, guid: e66dd422f55d93642bee0220333248d8, type: 3}
+      Value: {fileID: 8300000, guid: e38401a78e0ab4526ac682cdd80213f8, type: 3}
+--- !u!114 &8086083840729457098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342707846021142337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba70769ed4ec1147a9d25576d0080f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsHolder: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
 --- !u!1 &1452562347024993287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,8 +1267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1342707846021142337}
   minLookAtDistance: 1
-  autoAimAngle: 45
-  maxAutoAimDistance: 25
+  autoAimAngle: 50
+  maxAutoAimDistance: 15
   distancePriorityWeightMultiplier: 1
   prevTargetWeightBonus: 10
   enemiesContainer: {fileID: 0}

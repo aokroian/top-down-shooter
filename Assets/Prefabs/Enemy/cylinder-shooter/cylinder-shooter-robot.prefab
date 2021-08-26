@@ -1753,6 +1753,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -8692451392542071342}
+        m_TargetAssemblyTypeName: EnemyAudioManager, Assembly-CSharp
+        m_MethodName: PlayDeathSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onRobotSawHit:
     m_PersistentCalls:
       m_Calls: []
@@ -1891,13 +1903,13 @@ MonoBehaviour:
   audioDictionary:
     list:
     - Key: Walk
-      Value: {fileID: 8300000, guid: 1c2cefc09237e47d89e79d0ed7974c83, type: 3}
+      Value: {fileID: 8300000, guid: 599eb29df01504aceb5cf634174fac53, type: 3}
     - Key: Death
-      Value: {fileID: 0}
+      Value: {fileID: 8300000, guid: 87895c81a49f04f3cbc816844c8f1375, type: 3}
     - Key: Hit by player bullet
       Value: {fileID: 0}
     - Key: Aiming
-      Value: {fileID: 0}
+      Value: {fileID: 8300000, guid: 6c8bb9df2c6e044678eeea7499bb0c24, type: 3}
 --- !u!1 &5442841380682983192
 GameObject:
   m_ObjectHideFlags: 0

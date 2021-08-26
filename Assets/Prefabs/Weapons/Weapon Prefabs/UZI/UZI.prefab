@@ -342,11 +342,11 @@ MonoBehaviour:
   audioDictionary:
     list:
     - Key: Shot
-      Value: {fileID: 8300000, guid: 900d009b51701284a82d8f6e76edc3e5, type: 3}
+      Value: {fileID: 8300000, guid: 73d02aaabca9b4402868fcd97d33d924, type: 3}
     - Key: Reload
-      Value: {fileID: 8300000, guid: a3419ece500bc0543915c34c0af5e3da, type: 3}
+      Value: {fileID: 8300000, guid: 7b866bb552bbd42a8a1d949ea8f7e075, type: 3}
     - Key: No bullets
-      Value: {fileID: 8300000, guid: 49772f31cf3a22740be75a868d9606a8, type: 3}
+      Value: {fileID: 8300000, guid: 2f00b1e10501e4a86a4c89489067cb2b, type: 3}
 --- !u!136 &4885829270935628574
 CapsuleCollider:
   m_ObjectHideFlags: 0

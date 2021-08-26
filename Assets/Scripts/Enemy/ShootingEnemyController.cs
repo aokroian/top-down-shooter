@@ -225,9 +225,15 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 agent.isStopped = true;
                 AimPlayer();
                 laserAim.isEnabled = true;
+                //sound
+                audioManager.PlayAimingSound(true);
+
                 shootTimer -= Time.deltaTime;
                 if (shootTimer <= shootTime / 2f)
                 {
+                    //sound
+                    audioManager.PlayAimingSound(false);
+
                     equippedWeaponObj.GetComponent<WeaponController>().Shoot(0);
                     currentState = State.AFTER_SHOT;
                     //Debug.Log("state: " + currentState);

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyAudioManager : MonoBehaviour
 {
+    public float maxWalkSoundDistance = 15;
+    private Transform player;
+
     // main for damage etc
     private AudioSource mainAudioSource;
     // movement for steps
@@ -21,6 +24,8 @@ public class EnemyAudioManager : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.Find("Player").transform;
+
         mainAudioSource = transform.Find("MainAudioSource")?.GetComponent<AudioSource>();
         movementAudioSource = transform.Find("MovementAudioSource")?.GetComponent<AudioSource>();
         SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
@@ -38,18 +43,31 @@ public class EnemyAudioManager : MonoBehaviour
     {
         if (walkSound == null)
         {
-            Debug.Log("No walking sound found in enemy " + gameObject.name);
+            Debug.Log("No walking sound found in enemy audio manager " + gameObject.name);
             return;
         }
 
-        if (isPlaying)
+        if (player == null)
         {
-            movementAudioSource.clip = walkSound;
-            movementAudioSource.loop = true;
-            movementAudioSource.pitch = Random.Range(0.6f, 0.8f);
-            movementAudioSource.volume = Random.Range(0.8f, 1f);
+            Debug.Log("Player not found in enemy audio manager " + gameObject.name);
+            return;
+        }
+
+        float distToPlayer = Vector3.Distance(transform.position, player.position);
+        if (distToPlayer >= maxWalkSoundDistance)
+        {
+            return;
+        }
+        float volume = distToPlayer / maxWalkSoundDistance;
+
+        if (isPlaying)
+        {  
             if (!movementAudioSource.isPlaying)
             {
+                movementAudioSource.clip = walkSound;
+                movementAudioSource.loop = true;
+                movementAudioSource.pitch = Random.Range(0.6f, 0.8f);
+                movementAudioSource.volume = Random.Range(0.8f, 1f) * volume;
                 movementAudioSource.Play();
             }
         }
