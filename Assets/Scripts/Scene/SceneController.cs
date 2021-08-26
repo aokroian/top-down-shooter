@@ -12,16 +12,16 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        var musicParam = new ChangeSceneEventParam(SceneEnum.MUSIC, SceneEnum.NULL, true);
-        ChangeScene(musicParam);
-        var sharedDataParam = new ChangeSceneEventParam(SceneEnum.SHARED_DATA, SceneEnum.NULL, false, LoadMainMenu);
+        var sharedDataParam = new ChangeSceneEventParam(SceneEnum.SHARED_DATA, SceneEnum.NULL, false, SharedDataLoaded);
         ChangeScene(sharedDataParam);
     }
 
-    private void LoadMainMenu()
+    private void SharedDataLoaded()
     {
         var titleParam = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.NULL, false);
         ChangeScene(titleParam);
+        var musicParam = new ChangeSceneEventParam(SceneEnum.MUSIC, SceneEnum.NULL, true);
+        ChangeScene(musicParam);
     }
 
     public void ChangeScene(ChangeSceneEventParam param)

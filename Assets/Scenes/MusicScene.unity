@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 1071301833}
   - component: {fileID: 1071301836}
   - component: {fileID: 1071301835}
+  - component: {fileID: 1071301837}
   m_Layer: 0
   m_Name: MusicController
   m_TagString: Untagged
@@ -178,6 +179,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 060cc971c4d25411d828c97167ad251d, type: 3}
   menuMusic:
   - {fileID: 8300000, guid: 415f3c06a30064c7ca35d19ee010be7b, type: 3}
+  settingsHolder: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
+  masterVolumeParamName: MasterSoundVolume
+  musicVolumeParamName: MusicVolume
+  sfxVolumeParamName: SFXVolume
 --- !u!82 &1071301834
 AudioSource:
   m_ObjectHideFlags: 0
@@ -322,6 +327,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: SwitchMusicMode
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1071301837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071301831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97932cb82ad8bc4898af84a0bf1a08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: d1dcd861b20437443afb4f464a3f5c7f, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1071301833}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: SettingsChanged
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

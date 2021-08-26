@@ -15,6 +15,11 @@ public class MusicManager : MonoBehaviour
     public AudioMixer audioMixer;
     public AudioClip[] gameMusic;
     public AudioClip[] menuMusic;
+    public SettingsHolder settingsHolder;
+
+    public string masterVolumeParamName;
+    public string musicVolumeParamName;
+    public string sfxVolumeParamName;
 
     private AudioClip[] music;
     private MusicState state = MusicState.stop;
@@ -28,7 +33,7 @@ public class MusicManager : MonoBehaviour
         if (!audioSource.isPlaying && state == MusicState.playing)
         {
             PlayNextTrack();
-        }   
+        }
     }
 
     private void Start()
@@ -42,9 +47,11 @@ public class MusicManager : MonoBehaviour
         audioMixer.SetFloat("MusicHighpassCutoff", 10);
 
         PlayTrackByIndex(0);
+        TogglePause(false);
+        SettingsChanged();
     }
 
-    public void SwitchMusicMode (SceneSwitchEventParam param)
+    public void SwitchMusicMode(SceneSwitchEventParam param)
     {
         if (param.state != SceneSwitchEventParam.SceneLoadStateEnum.LOADED) return;
         audioMixer.SetFloat("MusicHighpassCutoff", 10);
@@ -66,7 +73,7 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    public void SwitchMusicModeInGame (MenuToggleEventParam param)
+    public void SwitchMusicModeInGame(MenuToggleEventParam param)
     {
         // from game to pause menu
         if (param.showMenu)
@@ -88,6 +95,7 @@ public class MusicManager : MonoBehaviour
             currentTrackIndex = 0;
         }
         PlayTrackByIndex(currentTrackIndex);
+        TogglePause(!settingsHolder.music);
     }
 
     public void PlayTrackByName(string name)
@@ -121,8 +129,6 @@ public class MusicManager : MonoBehaviour
     public void PlayTrackByIndex(int index)
     {
         audioSource.clip = music[index];
-        audioSource.Play();
-        state = MusicState.playing;
     }
 
     public void TogglePause(bool pause)
@@ -131,7 +137,8 @@ public class MusicManager : MonoBehaviour
         {
             audioSource.Play();
             state = MusicState.playing;
-        } else
+        }
+        else
         {
             audioSource.Pause();
             state = MusicState.pause;
@@ -148,5 +155,25 @@ public class MusicManager : MonoBehaviour
     {
         if (audioSource.clip == null) return null;
         return audioSource.clip.name;
+    }
+
+    public void SettingsChanged()
+    {
+        bool playing = state == MusicState.playing;
+        Debug.Log("mUSIC: " + settingsHolder.music + "; " + playing);
+        if (playing != settingsHolder.music)
+        {
+            if (settingsHolder.music)
+            {
+                TogglePause(false);
+                //audioMixer.SetFloat(musicVolumeParamName, 0);
+            }
+            else
+            {
+                TogglePause(true);
+                //audioMixer.SetFloat(musicVolumeParamName, -80);
+            }
+        }
+        audioMixer.SetFloat(sfxVolumeParamName, settingsHolder.sfx ? 0 : -80);
     }
 }
