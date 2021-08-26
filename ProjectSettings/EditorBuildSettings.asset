@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MusicScene.unity
     guid: eb896a07985214b3bbb35d8c3c7305cc
+  - enabled: 1
+    path: Assets/Scenes/SharedDataScene.unity
+    guid: 29ee64e9ca890784197ba8a89ce83892
   - enabled: 0
     path: Assets/Scenes/Main_test.unity
     guid: f625046423d521e49a483a727dc34290
