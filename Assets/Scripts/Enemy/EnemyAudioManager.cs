@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAudioManager : MonoBehaviour
 {
-    public float maxWalkSoundDistance = 15;
+    public float maxWalkSoundDistance = 10;
     private Transform player;
     private float movementSpeed = 1;
 
@@ -112,20 +112,6 @@ public class EnemyAudioManager : MonoBehaviour
             mainAudioSource.volume = 1;
             mainAudioSource.Stop();
         }
-    }
-
-    public void PlayDeathSound()
-    {
-        if (deathExplosionSound == null)
-        {
-            Debug.Log("No death explosion sound sound found in enemy " + gameObject.name);
-            return;
-        }
-        mainAudioSource.clip = deathExplosionSound;
-        mainAudioSource.loop = false;
-        mainAudioSource.pitch = 1;
-        mainAudioSource.volume = 1;
-        mainAudioSource.Play();
     }
 
     public void PlayHitByPlayerBulletSound()
