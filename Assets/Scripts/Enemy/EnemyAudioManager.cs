@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAudioManager : MonoBehaviour
 {
     public float maxWalkSoundDistance = 15;
     private Transform player;
+    private float movementSpeed = 1;
 
     // main for damage etc
     private AudioSource mainAudioSource;
@@ -25,6 +27,8 @@ public class EnemyAudioManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player").transform;
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        movementSpeed = agent.velocity.magnitude;
 
         mainAudioSource = transform.Find("MainAudioSource")?.GetComponent<AudioSource>();
         movementAudioSource = transform.Find("MovementAudioSource")?.GetComponent<AudioSource>();
@@ -66,7 +70,7 @@ public class EnemyAudioManager : MonoBehaviour
             {
                 movementAudioSource.clip = walkSound;
                 movementAudioSource.loop = true;
-                movementAudioSource.pitch = Random.Range(0.6f, 0.8f);
+                movementAudioSource.pitch = Random.Range(0.6f, 0.8f) + movementSpeed / 20;
                 movementAudioSource.volume = Random.Range(0.8f, 1f) * volume;
                 movementAudioSource.Play();
             }
