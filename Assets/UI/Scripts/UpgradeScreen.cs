@@ -103,6 +103,7 @@ public class UpgradeScreen : MonoBehaviour
             int currentTier = ((WeaponUpgrade)upgrade).tier - (progressionHolder.IsPurchased(upgrade) ? 0 : 1);
             int maxTier = GetMaxTier((WeaponUpgrade)upgrade);
             upgradeEl.SetProgressValue(currentTier, maxTier);
+            upgradeEl.SetNeedUpgradeButton(currentTier < maxTier);
         }
         upgradeEl.SetUpgradeButtonCallback(e => TryToPurchase(upgrade));
 

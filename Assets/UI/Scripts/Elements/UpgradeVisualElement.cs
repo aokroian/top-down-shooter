@@ -97,4 +97,9 @@ public class UpgradeVisualElement : VisualElement
     {
         this.Q<Button>("EquipButton").RegisterCallback(callback);
     }
+
+    public void SetNeedUpgradeButton(bool needButton)
+    {
+        this.Q<Button>("UpgradeButton").style.display = needButton ? DisplayStyle.Flex : DisplayStyle.None;
+    }
 }
