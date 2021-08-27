@@ -53,9 +53,6 @@ public class BonusSystemController : MonoBehaviour
         //Debug.Log("EnemyDies event executed!! Chance: " + health.GetChance(param.cost));
         SpawnIfNeed(param, health, spawnedBonuses);
         var creditObject = SpawnIfNeed(param, credits, spawnedBonuses);
-        if (creditObject != null) {
-            creditObject.GetComponent<CreditBonusController>().SetProgressionManager(progressionManager);
-        }
 
         foreach (KeyValuePair<AmmoType, BonusSpawnParams> entity in actualAmmoParams)
         {
