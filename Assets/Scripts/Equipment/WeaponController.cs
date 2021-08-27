@@ -59,6 +59,8 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     public float reloadTimer { get; private set; } = 0f;
     private float nextShotTimer = 0f;
 
+    public Texture2D icon;
+
     private void Awake()
     {
         bulletsInClip = clipSize;

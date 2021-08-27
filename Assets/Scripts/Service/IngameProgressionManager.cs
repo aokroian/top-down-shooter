@@ -9,7 +9,9 @@ public class IngameProgressionManager : MonoBehaviour
     public WeaponController[] otherWeaponPrefabs;
     public ProgressionHolder progressionHolder;
     public GameObject weaponPreview;
-    public Camera weaponPreviewCamera;
+    //public Camera weaponPreviewCamera;
+
+    public StatusBarController statusBarController;
 
     private GameObject[] currentWeapons;
 
@@ -55,12 +57,13 @@ public class IngameProgressionManager : MonoBehaviour
 
     public void WeaponChanged(GameObject weapon)
     {
+        /*
         foreach (GameObject w in currentWeapons)
         {
             if (w == weapon)
             {
                 float pistolSize = pistolPrefab.GetComponent<MeshRenderer>().bounds.size.z;
-
+                weapon.GetComponent<WeaponController>().
                 w.transform.position = weaponPreview.transform.position;
                 Vector3 center = w.GetComponentInChildren<MeshRenderer>().bounds.center;
                 Vector3 cameraPos = new Vector3(0.8f, 0.18f, 0.25f) * (w.GetComponentInChildren<MeshRenderer>().bounds.size.z / pistolSize);
@@ -71,5 +74,7 @@ public class IngameProgressionManager : MonoBehaviour
                 w.transform.position = weaponPreview.transform.position + Vector3.up;
             }
         }
+        */
+        statusBarController.SetWeaponPreviewTexture(weapon.GetComponent<WeaponController>().icon);
     }
 }
