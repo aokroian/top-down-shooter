@@ -200,7 +200,7 @@ MonoBehaviour:
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
-  shotDamage: 4
+  shotDamage: 3
   shotImpactForce: 2
   recoilHeight: 1
   clipSize: 48
