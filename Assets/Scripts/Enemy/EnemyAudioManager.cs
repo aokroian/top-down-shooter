@@ -107,6 +107,15 @@ public class EnemyAudioManager : MonoBehaviour
             Debug.Log("No aiming sound found in enemy " + gameObject.name);
             return;
         }
+        if (GameLoopController.paused)
+        {
+            mainAudioSource.clip = null;
+            mainAudioSource.loop = false;
+            mainAudioSource.pitch = 1;
+            mainAudioSource.volume = 1;
+            mainAudioSource.Stop();
+            return;
+        }
 
         if (isPlaying)
         {
@@ -145,6 +154,16 @@ public class EnemyAudioManager : MonoBehaviour
         if (sawSound == null)
         {
             Debug.Log("No saw sound found in enemy " + gameObject.name);
+            return;
+        }
+
+        if (GameLoopController.paused)
+        {
+            mainAudioSource.clip = null;
+            mainAudioSource.loop = false;
+            mainAudioSource.pitch = 1;
+            mainAudioSource.volume = 1;
+            mainAudioSource.Stop();
             return;
         }
 

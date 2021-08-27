@@ -18,6 +18,10 @@ public class DeadEnemySound : MonoBehaviour
 
     public void PlayDeathSound()
     {
+        if (GameLoopController.paused)
+        {
+            return;
+        }
         if (deathExplosionSound == null)
         {
             Debug.Log("No death explosion sound sound found in enemy " + gameObject.name);
