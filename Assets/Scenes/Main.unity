@@ -3358,7 +3358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
-  progressionSaveEvent: {fileID: 0}
+  progressionSaveEvent: {fileID: 11400000, guid: 2ca6dcf43fea80a4db3f7d33d9f44e9a, type: 2}
   scoreDocument: {fileID: 1653811889}
   player: {fileID: 3883960182137148086}
   enemyCostMultiplier: 100
