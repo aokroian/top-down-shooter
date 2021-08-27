@@ -78,6 +78,8 @@ MonoBehaviour:
   textColor: {r: 1, g: 0.8447998, b: 0, a: 1}
   audioSource: {fileID: -1985771326581612498}
   amount: 1
+  progressionChangeEvent: {fileID: 11400000, guid: 2ca6dcf43fea80a4db3f7d33d9f44e9a, type: 2}
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!135 &8148205408013908821
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -107,10 +109,9 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -167437600809737876}
-        m_TargetAssemblyTypeName: GameEventWithParamListener`1[[MenuToggleEventParam,
-          Assembly-CSharp
-        m_MethodName: OnEventRaised
+      - m_Target: {fileID: 6663249676180728585}
+        m_TargetAssemblyTypeName: AbstractBonusController, Assembly-CSharp
+        m_MethodName: OnMenuToggle
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

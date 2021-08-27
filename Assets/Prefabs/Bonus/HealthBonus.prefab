@@ -158,10 +158,9 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3373145438698517562}
-        m_TargetAssemblyTypeName: GameEventWithParamListener`1[[MenuToggleEventParam,
-          Assembly-CSharp
-        m_MethodName: OnEventRaised
+      - m_Target: {fileID: 4324873871168357248}
+        m_TargetAssemblyTypeName: AbstractBonusController, Assembly-CSharp
+        m_MethodName: OnMenuToggle
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

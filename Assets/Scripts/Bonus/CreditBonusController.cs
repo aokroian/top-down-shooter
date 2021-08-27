@@ -7,23 +7,19 @@ public class CreditBonusController : AbstractBonusController
 
     public int amount;
 
-    private ProgressionManager progressionManager;
+    public GameEvent progressionChangeEvent;
+    public ProgressionHolder progressionHolder;
 
     public override bool OnPickUp()
     {
-        progressionManager.progressionHolder.moneyCount += amount;
-        progressionManager.WriteToSaveFile(); // Async!!!
+        progressionHolder.moneyCount += amount;
+        progressionChangeEvent.Raise();
         return true;
     }
 
     public override bool CanPickUp()
     {
         return true;
-    }
-    
-    public void SetProgressionManager(ProgressionManager progressionManager)
-    {
-        this.progressionManager = progressionManager;
     }
 
     public override string GetPickupText()
