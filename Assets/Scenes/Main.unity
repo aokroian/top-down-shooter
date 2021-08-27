@@ -1366,6 +1366,7 @@ MonoBehaviour:
   - {fileID: 5412306376972477081, guid: 63e2b7a55004f4058925517ef19950f5, type: 3}
   - {fileID: 3739565477740236748, guid: 8866ec5e89e8cba4882d180c41e25d42, type: 3}
   - {fileID: 8900470874175376767, guid: 915220f483515294398172efe70188f3, type: 3}
+  - {fileID: 5412306376972477081, guid: 5930921bba76442c99c7c8dd0da46578, type: 3}
   attemptCount: 10
   minDistanceMultiplier: 3
   maxDistanceMultiplier: 6

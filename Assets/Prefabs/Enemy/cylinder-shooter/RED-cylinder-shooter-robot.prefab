@@ -1783,7 +1783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a4454aa23ba4dbca13e18dae334940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cost: 3
+  _cost: 5
   amountOfBullets: 9999
   weapon: {fileID: 2743782959536650614, guid: dd3790427396440b89ce4c14563590b5, type: 3}
   defaultState: 0
