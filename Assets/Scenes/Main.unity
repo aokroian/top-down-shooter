@@ -333,7 +333,7 @@ MonoBehaviour:
   - {fileID: 2229621320369827879, guid: adb6e521861cc430ca9c6476e7849d49, type: 3}
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
   weaponPreview: {fileID: 1912022782}
-  statusBarController: {fileID: 0}
+  statusBarController: {fileID: 1444775453}
 --- !u!4 &31522455
 Transform:
   m_ObjectHideFlags: 0
