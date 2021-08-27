@@ -11,7 +11,7 @@ public class PieceDestroyer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        material = GetComponent<MeshRenderer>().material;
+        material = GetComponent<MeshRenderer>()?.material;
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class PieceDestroyer : MonoBehaviour
     {
         timeToLive -= Time.deltaTime;
 
-
+        if (material == null) return;
         // dissolve shader update 
         if (material.HasFloat("Dissolve"))
         {

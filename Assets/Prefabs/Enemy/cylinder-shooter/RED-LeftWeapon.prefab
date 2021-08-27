@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4729069260467746522}
   - component: {fileID: 1337574975389593416}
   m_Layer: 0
-  m_Name: LeftWeapon
+  m_Name: RED-LeftWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
-  shotDamage: 10
+  shotDamage: 20
   shotImpactForce: 2
   recoilHeight: 0.07
   clipSize: 20
@@ -130,7 +130,7 @@ MonoBehaviour:
   bulletOutPointObj: {fileID: 2622839661895820804}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
   bulletObjRef: {fileID: 8555050829149161235, guid: baa06e5f4a51c429184666e260477de6, type: 3}
-  bulletVelocity: 15
+  bulletVelocity: 30
   bulletsInClip: 0
   maxShotAngle: 10
   ammoType: 1
