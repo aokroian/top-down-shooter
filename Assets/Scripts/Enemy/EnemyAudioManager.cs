@@ -61,6 +61,15 @@ public class EnemyAudioManager : MonoBehaviour
             movementAudioSource.Stop();
             return;
         }
+        if (GameLoopController.paused)
+        {
+            movementAudioSource.clip = null;
+            movementAudioSource.loop = false;
+            movementAudioSource.pitch = 1;
+            movementAudioSource.volume = 1;
+            movementAudioSource.Stop();
+            return;
+        }
 
         float distToPlayer = Vector3.Distance(transform.position, player.position);
         if (distToPlayer >= maxWalkSoundDistance)

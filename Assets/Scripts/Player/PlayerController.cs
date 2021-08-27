@@ -94,6 +94,10 @@ public class PlayerController : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext value)
     {
+        if (GameLoopController.paused)
+        {
+            return;
+        }
         if (value.performed)
         {
             Vector2 inputMovement = value.ReadValue<Vector2>();
@@ -110,6 +114,10 @@ public class PlayerController : MonoBehaviour
     }
     public void OnAim(InputAction.CallbackContext value)
     {
+        if (GameLoopController.paused)
+        {
+            return;
+        }
         if (value.performed)
         {
             Vector2 inputAim = value.ReadValue<Vector2>();
@@ -128,6 +136,10 @@ public class PlayerController : MonoBehaviour
     }
     public void OnShoot(InputAction.CallbackContext value)
     {
+        if (GameLoopController.paused)
+        {
+            return;
+        }
         // keyboard
         if (currentControlScheme == "Keyboard")
         {
@@ -145,6 +157,10 @@ public class PlayerController : MonoBehaviour
         // gamepad 
         if (currentControlScheme == "Gamepad")
         {
+            if (GameLoopController.paused)
+            {
+                return;
+            }
             if (value.performed)
             {
                 SafelyStopShootingCoroutine();
@@ -159,6 +175,10 @@ public class PlayerController : MonoBehaviour
     }
     public void OnReload(InputAction.CallbackContext value)
     {
+        if (GameLoopController.paused)
+        {
+            return;
+        }
         if (value.performed)
         {
             if (equippedItemObj != null)
@@ -169,6 +189,11 @@ public class PlayerController : MonoBehaviour
     }
     public void OnSwitchItem(InputAction.CallbackContext value)
     {
+        if (GameLoopController.paused)
+        {
+            return;
+        }
+        SafelyStopShootingCoroutine();
         if (value.performed)
         {
             if (selectedItemIndex + 1 == itemsEquipmentArr.Length)
@@ -183,6 +208,10 @@ public class PlayerController : MonoBehaviour
     }
     public void OnDodge(InputAction.CallbackContext value)
     {
+        if (GameLoopController.paused)
+        {
+            return;
+        }
         if (value.performed)
         {
             allowedToDodge = true;
