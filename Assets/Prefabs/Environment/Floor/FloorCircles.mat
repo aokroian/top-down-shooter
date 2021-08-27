@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - MainTexture:
-        m_Texture: {fileID: 2800000, guid: 5c1d11f3399d1f3499d4ea1af1114967, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2988669444ec044e88f1c9134c7b5e63, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - PaintTexture:
@@ -86,11 +86,11 @@ Material:
     m_Ints: []
     m_Floats:
     - AmbientOcclusion: 1
-    - CirclesOffset: 0.8
-    - CirclesSize: 0.05
-    - CirclesThickness: 1.23
-    - Metallic: 0
-    - PaintOpacity: 0.35
+    - CirclesOffset: 1.27
+    - CirclesSize: 0.04
+    - CirclesThickness: 1.24
+    - Metallic: 1
+    - PaintOpacity: -0.5
     - RoundsMultiplier: 2
     - RoundsSize: 1
     - Smoothness: 0
@@ -121,7 +121,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - PaintColor: {r: 0.42443925, g: 0.48914564, b: 0.5377358, a: 0}
+    - PaintColor: {r: 0, g: 0, b: 0, a: 1}
     - PaintTiling: {r: 10, g: 10, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
