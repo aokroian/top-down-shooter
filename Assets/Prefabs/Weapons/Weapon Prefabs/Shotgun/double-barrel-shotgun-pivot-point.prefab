@@ -85,12 +85,12 @@ MonoBehaviour:
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
-  shotDamage: 20
+  shotDamage: 4
   shotImpactForce: 3
   recoilHeight: 2
   clipSize: 2
   rateOfFire: 0.2
-  reloadTime: 1
+  reloadTime: 1.2
   numberOfPenetrations: 3
   localPosition: {x: 0.126, y: 0.246, z: 0.238}
   localRotation: {x: 12.64, y: 0, z: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   bulletOutPointObj: {fileID: 6354097763237307107}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
   bulletObjRef: {fileID: 8845773971008609997, guid: 8c4d51161a179374199a4bb733cc64c5, type: 3}
-  bulletVelocity: 25
+  bulletVelocity: 30
   bulletsInClip: 2
   maxShotAngle: 0
   ammoType: 5

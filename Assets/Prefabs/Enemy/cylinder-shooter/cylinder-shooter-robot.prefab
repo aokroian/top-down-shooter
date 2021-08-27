@@ -1722,8 +1722,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  health: 20
+  maxHealth: 20
   afterHitDelay: 0
   onHitEffect: {fileID: 2285398259692336146, guid: b218e3e16afb4b14a95809bca713c756, type: 3}
   onDeath:
@@ -1788,7 +1788,7 @@ MonoBehaviour:
   weapon: {fileID: 2743782959536650614, guid: abbed55832a7c4e54b1d7f46cd4901db, type: 3}
   defaultState: 0
   visionRange: 15
-  shootTime: 1
+  shootTime: 2
   walkDistanceMin: 1
   walkDistanceMax: 2
   shootRange: 8

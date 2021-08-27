@@ -224,7 +224,7 @@ MonoBehaviour:
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
-  shotDamage: 100
+  shotDamage: 30
   shotImpactForce: 4
   recoilHeight: 3
   clipSize: 1
@@ -238,7 +238,7 @@ MonoBehaviour:
   bulletOutPointObj: {fileID: 2281872067415912937}
   hitEffectRef: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
   bulletObjRef: {fileID: 8555050829149161235, guid: c46cfb22f88b96247ae9a0ab4a804a63, type: 3}
-  bulletVelocity: 30
+  bulletVelocity: 40
   bulletsInClip: 1
   maxShotAngle: 0
   ammoType: 3

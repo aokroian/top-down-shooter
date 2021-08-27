@@ -504,8 +504,8 @@ MonoBehaviour:
   dodgeSpeed: 13
   dodgeTime: 0.5
   dodgeStaminaCost: 5
-  health: 10000
-  maxHealth: 10000
+  health: 100
+  maxHealth: 100
   stamina: 100
   maxStamina: 100
   staminaRegenPerSecond: 20
