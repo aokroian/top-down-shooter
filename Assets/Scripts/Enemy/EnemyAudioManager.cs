@@ -7,15 +7,13 @@ public class EnemyAudioManager : MonoBehaviour
 {
     public float maxWalkSoundDistance = 10;
     private Transform player;
-    private float movementSpeed = 1;
+    private NavMeshAgent agent;
 
     // main for damage etc
     private AudioSource mainAudioSource;
     // movement for steps
     private AudioSource movementAudioSource;
 
-
-    private AudioClip deathExplosionSound;
     private AudioClip walkSound;
     private AudioClip getHitByPlayer;
     private AudioClip aimingSound;
@@ -27,14 +25,12 @@ public class EnemyAudioManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player").transform;
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        movementSpeed = agent.velocity.magnitude;
+        agent = GetComponent<NavMeshAgent>();
 
         mainAudioSource = transform.Find("MainAudioSource")?.GetComponent<AudioSource>();
         movementAudioSource = transform.Find("MovementAudioSource")?.GetComponent<AudioSource>();
         SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
 
-        audioStorage.TryGetValue("Death", out deathExplosionSound);
         audioStorage.TryGetValue("Walk", out walkSound);
         audioStorage.TryGetValue("Hit by player bullet", out getHitByPlayer);
         audioStorage.TryGetValue("Aiming", out aimingSound);
@@ -56,12 +52,22 @@ public class EnemyAudioManager : MonoBehaviour
             Debug.Log("Player not found in enemy audio manager " + gameObject.name);
             return;
         }
+        if (agent.velocity.magnitude <= 0)
+        {
+            movementAudioSource.clip = null;
+            movementAudioSource.loop = false;
+            movementAudioSource.pitch = 1;
+            movementAudioSource.volume = 1;
+            movementAudioSource.Stop();
+            return;
+        }
 
         float distToPlayer = Vector3.Distance(transform.position, player.position);
         if (distToPlayer >= maxWalkSoundDistance)
         {
             return;
         }
+
         float volume = distToPlayer / maxWalkSoundDistance;
 
         if (isPlaying)
@@ -70,7 +76,7 @@ public class EnemyAudioManager : MonoBehaviour
             {
                 movementAudioSource.clip = walkSound;
                 movementAudioSource.loop = true;
-                movementAudioSource.pitch = Random.Range(0.6f, 0.8f) + movementSpeed / 20;
+                movementAudioSource.pitch = Random.Range(0.6f, 0.8f);
                 movementAudioSource.volume = Random.Range(0.8f, 1f) * volume;
                 movementAudioSource.Play();
             }

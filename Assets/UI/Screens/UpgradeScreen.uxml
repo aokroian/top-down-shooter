@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="/Assets/UI/Styles/Overall.uss" />
     <Style src="/Assets/UI/Styles/Upgrade.uss" />
-    <ui:VisualElement style="flex-grow: 1;">
+    <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;/Assets/UI/Images/TitleBackground.png&apos;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgba(255, 186, 186, 255);">
         <ui:VisualElement class="panel" style="justify-content: center; align-items: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; flex-grow: 1; flex-basis: auto; flex-direction: row; margin-bottom: 5px; padding-left: 0; padding-right: 0;">
             <ui:Label text="#UpgradeAndChooseWeapon" display-tooltip-when-elided="true" class="primary-text" style="font-size: 48px; margin-bottom: 10px;" />
             <ui:VisualElement style="position: absolute; flex-direction: row; align-items: center; right: 20px; top: auto; margin-right: 0;">
