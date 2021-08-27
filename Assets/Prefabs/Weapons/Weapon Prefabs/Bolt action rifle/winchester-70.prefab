@@ -242,6 +242,7 @@ MonoBehaviour:
   bulletsInClip: 1
   maxShotAngle: 0
   ammoType: 3
+  icon: {fileID: 2800000, guid: c07bcb7467790b349aa6f404ef3eec9e, type: 3}
 --- !u!114 &8540788568294090431
 MonoBehaviour:
   m_ObjectHideFlags: 0

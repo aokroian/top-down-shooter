@@ -14,7 +14,8 @@ public class StatusBarVisualElement : VisualElement
     private Label bulletsInClipEl;
     private Label bulletsAmountEl;
 
-    private WeaponPreviewVisualElement weaponPreview;
+    //private WeaponPreviewVisualElement weaponPreview;
+    private VisualElement weaponPreview;
 
     private EventCallback<GeometryChangedEvent> initCallback;
 
@@ -31,8 +32,9 @@ public class StatusBarVisualElement : VisualElement
         creditEl = this.Q<Label>("CreditLabel");
         bulletsInClipEl = this.Q<Label>("BulletsInClip");
         bulletsAmountEl = this.Q<Label>("BulletsAmount");
-        weaponPreview = this.Q<WeaponPreviewVisualElement>();
-        weaponPreview.Init();
+        //weaponPreview = this.Q<WeaponPreviewVisualElement>();
+        //weaponPreview.Init();
+        weaponPreview = this.Q("WeaponPreview");
 
         this.UnregisterCallback(initCallback);
     }
@@ -58,8 +60,8 @@ public class StatusBarVisualElement : VisualElement
         bulletsAmountEl.text = amount == -1 ? '\u221E'.ToString() : amount.ToString(); // infinity sign
     }
 
-    public void SetWeaponPreviewTexture(Texture texture)
+    public void SetWeaponPreviewTexture(Texture2D texture)
     {
-        weaponPreview.SetTexture(texture);
+        weaponPreview.style.backgroundImage = new StyleBackground(texture);
     }
 }
