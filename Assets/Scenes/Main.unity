@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3103,6 +3103,15 @@ MonoBehaviour:
   - obstacle: {fileID: 7817173880744911522, guid: ec720f317c909449a8e506cfedc68538, type: 3}
     yValue: 0.6
     big: 1
+  - obstacle: {fileID: 7817173880744911522, guid: f40c642ff524c4dc6a5bd60b98fdf920, type: 3}
+    yValue: 0.603
+    big: 1
+  - obstacle: {fileID: 7817173880744911522, guid: e5a6b8255d9054bd498a608f854f3e15, type: 3}
+    yValue: 0.602
+    big: 1
+  - obstacle: {fileID: 7817173880744911522, guid: 59d13dff7ee57487e8cde36be213b3df, type: 3}
+    yValue: 0.601
+    big: 1
   - obstacle: {fileID: 607106182383175758, guid: 2edf0265353bd4f468c2d531aa05463d, type: 3}
     yValue: 0.85
     big: 0
@@ -3117,15 +3126,6 @@ MonoBehaviour:
     big: 1
   - obstacle: {fileID: 5557106227692089896, guid: c36d4ee011c250a46b80c932f0de0dc8, type: 3}
     yValue: 0.9
-    big: 0
-  - obstacle: {fileID: 7817173880744911522, guid: f40c642ff524c4dc6a5bd60b98fdf920, type: 3}
-    yValue: 0.605
-    big: 0
-  - obstacle: {fileID: 7817173880744911522, guid: e5a6b8255d9054bd498a608f854f3e15, type: 3}
-    yValue: 0.61
-    big: 0
-  - obstacle: {fileID: 7817173880744911522, guid: 59d13dff7ee57487e8cde36be213b3df, type: 3}
-    yValue: 0.62
     big: 0
   noiseMultiplier: 1.11
   obstacleSize: 3

@@ -7,11 +7,16 @@ public class PieceDestroyer : MonoBehaviour
     public float timeToLive = Mathf.Infinity;
     public float massAfterCollisionWithPlayer = 0.001f;
 
+    private MeshRenderer meshRenderer;
     private Material material;
     // Start is called before the first frame update
     void Start()
     {
-        material = GetComponent<MeshRenderer>()?.material;
+        TryGetComponent<MeshRenderer>(out meshRenderer);
+        if (meshRenderer != null)
+        {
+            material = meshRenderer.material;
+        }
     }
 
     // Update is called once per frame
