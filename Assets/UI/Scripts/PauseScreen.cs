@@ -25,6 +25,8 @@ public class PauseScreen : MonoBehaviour
 
     private Label scoreLabel;
     private Label topScoreLabel;
+
+    private bool dead;
     
     void OnEnable()
     {
@@ -42,10 +44,17 @@ public class PauseScreen : MonoBehaviour
 
         scoreLabel = rootEl.Q<Label>("ScoreLabel");
         topScoreLabel = rootEl.Q<Label>("TopScoreLabel");
+        ChangeDeathScreen();
         SetScore();
     }
 
     public void SetDead(bool dead)
+    {
+        this.dead = dead;
+        ChangeDeathScreen();
+    }
+
+    private void ChangeDeathScreen()
     {
         gameOverContainer.style.display = dead ? DisplayStyle.Flex : DisplayStyle.None;
         resumeEl.style.display = dead ? DisplayStyle.None : DisplayStyle.Flex;
