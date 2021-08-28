@@ -67,7 +67,7 @@ public class EnemySpawnerManager: MonoBehaviour
         {
             Vector3 angle = (player.transform.position - prevSpawnPosition).normalized;
             int spawnCost = Mathf.FloorToInt(startSpawnCost + Vector3.Distance(Vector3.zero, player.transform.position) * spawnCostDistanceMultiplier);
-            SpawnAtPoint(angle, spawnCost, 1, 3);
+            SpawnAtPoint(angle, spawnCost, 1, 9999);
 
             prevSpawnPosition = player.transform.position;
         }
@@ -76,7 +76,7 @@ public class EnemySpawnerManager: MonoBehaviour
         {
             Vector3 angle = player.transform.position.normalized;
             int waveSpawnCost = Mathf.FloorToInt(startSpawnWaveCost + Vector3.Distance(Vector3.zero, player.transform.position) * waveCostDistanceMultiplier);
-            SpawnWave(angle, waveSpawnCost, 1, 3);
+            SpawnWave(angle, waveSpawnCost, 1, 9999);
 
             nextWaveCount++;
         }

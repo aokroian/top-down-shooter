@@ -88,7 +88,7 @@ public class EnemySpawner : MonoBehaviour
             //Debug.Log("radius: " + activePoint.radius + "; active: " + activePoint.active);
             if (activePoint == null)
             {
-                Debug.Log("NO AVAILABLE PLACE FOR SPAWN POINT!!! ERROR!!");
+                Debug.Log("NO AVAILABLE PLACE FOR SPAWN POINT");
                 yield break;
             }
 
@@ -170,7 +170,9 @@ public class EnemySpawner : MonoBehaviour
 
     private GameObject GetEnemyPrefabByCost(int minEnemyCost, int maxEnemyCost)
     {
-        int cost = Mathf.Min(costLeft, Random.Range(minEnemyCost, maxEnemyCost + 1));
+        //int cost = Mathf.Min(costLeft, Random.Range(minEnemyCost, maxEnemyCost + 1));
+        int cost = Random.Range(minEnemyCost, Mathf.Min(costLeft, maxEnemyCost));
+        //Debug.Log("Cost: " + cost + "; min: " + minEnemyCost + "; max: " + maxEnemyCost + "; left: " + costLeft);
         GameObject result = enemyCosts[1][0];
         for (int i = cost; i > 0; i --)
         {

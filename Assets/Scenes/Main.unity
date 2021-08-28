@@ -1341,7 +1341,7 @@ MonoBehaviour:
   spawnDistancePassed: 10
   minSpawnPointDistance: 30
   maxSpawnPointDistance: 40
-  spawnPointAngle: 90
+  spawnPointAngle: 60
   startSpawnCost: 3
   spawnCostDistanceMultiplier: 0.01
   waveDistancePassed: 30
@@ -1349,7 +1349,7 @@ MonoBehaviour:
   startSpawnWaveCost: 5
   waveCostDistanceMultiplier: 0.01
   despawnDistance: 45
-  spawnWaves: 0
+  spawnWaves: 1
 --- !u!114 &848356372
 MonoBehaviour:
   m_ObjectHideFlags: 0
