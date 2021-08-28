@@ -247,7 +247,7 @@ MonoBehaviour:
   audioDictionary:
     list:
     - Key: Shot
-      Value: {fileID: 8300000, guid: 6e4ea592958824beb885e26cc3640317, type: 3}
+      Value: {fileID: 8300000, guid: e16e38a0c47c54e1b8a7ff0389beaee1, type: 3}
     - Key: Reload
       Value: {fileID: 8300000, guid: 649803541c40a4543beeb9c28feab6d8, type: 3}
     - Key: No bullets
