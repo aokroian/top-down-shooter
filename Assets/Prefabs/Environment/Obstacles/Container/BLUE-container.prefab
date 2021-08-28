@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: -1728358044513565564}
   - component: {fileID: 3293452310016166190}
   m_Layer: 6
-  m_Name: container-blue
+  m_Name: BLUE-container
   m_TagString: ObsContainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

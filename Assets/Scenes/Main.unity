@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: d51f4fbd1118027498dabdb1c5a7d8e3, type: 2}
@@ -3118,6 +3118,15 @@ MonoBehaviour:
   - obstacle: {fileID: 5557106227692089896, guid: c36d4ee011c250a46b80c932f0de0dc8, type: 3}
     yValue: 0.9
     big: 0
+  - obstacle: {fileID: 7817173880744911522, guid: f40c642ff524c4dc6a5bd60b98fdf920, type: 3}
+    yValue: 0.6
+    big: 0
+  - obstacle: {fileID: 7817173880744911522, guid: e5a6b8255d9054bd498a608f854f3e15, type: 3}
+    yValue: 0.6
+    big: 0
+  - obstacle: {fileID: 7817173880744911522, guid: 59d13dff7ee57487e8cde36be213b3df, type: 3}
+    yValue: 0.6
+    big: 0
   noiseMultiplier: 1.11
   obstacleSize: 3
   noiseSeed: 10000
@@ -4187,14 +4196,6 @@ PrefabInstance:
       propertyPath: enemiesContainer
       value: 
       objectReference: {fileID: 848356370}
-    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 528382163874372828, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
