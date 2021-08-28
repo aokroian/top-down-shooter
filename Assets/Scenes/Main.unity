@@ -4210,6 +4210,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099389160}
     - target: {fileID: 1272146180179036847, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: dodgeSpeed
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272146180179036847, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: mobileInput
       value: 
       objectReference: {fileID: 1049430825}
@@ -4218,9 +4222,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 824559845}
     - target: {fileID: 1272146180179036847, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: dodgeStaminaCost
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272146180179036847, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: progressionManager
       value: 
       objectReference: {fileID: 31522454}
+    - target: {fileID: 1272146180179036847, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
+      propertyPath: staminaRegenPerSecond
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1342707846021142337, guid: e25b818ca6aaa594fa171ceaa588e141, type: 3}
       propertyPath: m_Name
       value: Player

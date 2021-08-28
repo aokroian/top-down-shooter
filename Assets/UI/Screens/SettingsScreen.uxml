@@ -35,7 +35,7 @@
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; width: auto; align-items: center;">
+                <ui:VisualElement style="flex-grow: 1; width: auto; align-items: stretch;">
                     <ui:VisualElement class="row">
                         <ui:VisualElement class="left_col">
                             <ui:Label text="#Graphics" display-tooltip-when-elided="true" class="label primary-text" />
@@ -44,11 +44,11 @@
                             <ui:Instance template="Selector" name="Graphics" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement class="row" style="margin-top: 30px;">
+                    <ui:VisualElement class="row">
                         <ui:VisualElement class="left_col">
                             <ui:Label text="#Fps" display-tooltip-when-elided="true" class="label primary-text" />
                         </ui:VisualElement>
-                        <ui:VisualElement class="right_col" style="align-items: center;">
+                        <ui:VisualElement class="right_col">
                             <ui:Instance template="ToggleButton" name="Fps" />
                         </ui:VisualElement>
                     </ui:VisualElement>

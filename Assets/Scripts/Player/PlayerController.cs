@@ -414,6 +414,9 @@ public class PlayerController : MonoBehaviour
 
             // play dodge audio
             movementAudioSource.PlayOneShot(dodgeSound);
+        } else
+        {
+            allowedToDodge = false;
         }
         if (dodgeTimer > 0f)
         {
