@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
@@ -23,6 +25,12 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
 
     private Dictionary<AmmoType, int> ammoMap = new Dictionary<AmmoType, int>();
     private Dictionary<AmmoType, int> maxAmmoMap = new Dictionary<AmmoType, int>();
+
+    private Dictionary<AmmoType, float> statPrevFullTime = new Dictionary<AmmoType, float>();
+    private Dictionary<AmmoType, int> statAmmoFull = new Dictionary<AmmoType, int>();
+    private Dictionary<AmmoType, float> statPrevEmptyTime = new Dictionary<AmmoType, float>();
+    private Dictionary<AmmoType, int> statAmmoEmpty = new Dictionary<AmmoType, int>();
+    private Dictionary<AmmoType, int> statAmmoSpent = new Dictionary<AmmoType, int>();
 
     void Start()
     {
@@ -57,6 +65,12 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
                 default:
                     break;
             }
+
+            statAmmoEmpty[type] = 0;
+            statAmmoFull[type] = 0;
+            statAmmoSpent[type] = 0;
+            statPrevFullTime[type] = Time.time;
+            statPrevEmptyTime[type] = Time.time;
         }
     }
 
@@ -69,13 +83,20 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
         if (maxAmmoMap[type] >= 0) {
             removed = Mathf.Min(required, ammoMap[type]);
             ammoMap[type] = ammoMap[type] - removed;
+            statAmmoSpent[type] += removed;
+        } else
+        {
+            AddEmptyToStat(type);
         }
-        //Debug.Log("removed: " + removed);
         return removed;
     }
 
     public bool HasAmmo(AmmoType type)
     {
+        var result = maxAmmoMap[type] < 0 || ammoMap[type] > 0;
+        if (!result) {
+            AddEmptyToStat(type);
+        }
         return maxAmmoMap[type] < 0 || ammoMap[type] > 0;
     }
 
@@ -86,13 +107,20 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
         {
             added = Mathf.Min(count, maxAmmoMap[type] - ammoMap[type]);
             ammoMap[type] = ammoMap[type] + added;
+        } else
+        {
+            AddFullToStat(type);
         }
         return added;
     }
 
     public bool IsAmmoFull(AmmoType type)
     {
-        return ammoMap[type] == maxAmmoMap[type];
+        var result = ammoMap[type] == maxAmmoMap[type];
+        if (result) {
+            AddFullToStat(type);
+        }
+        return result;
     }
 
     public AmmoType GetCurrentAmmoType()
@@ -108,5 +136,55 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
     public int GetAmmoLeft(AmmoType type)
     {
         return ammoMap[type];
+    }
+
+    private void AddFullToStat(AmmoType type)
+    {
+        if (statPrevFullTime[type] + 3f > Time.time)
+        {
+            statAmmoFull[type]++;
+            statPrevFullTime[type] = Time.time;
+        }
+    }
+
+    private void AddEmptyToStat(AmmoType type)
+    {
+        if (statPrevEmptyTime[type] + 3f > Time.time)
+        {
+            statAmmoEmpty[type]++;
+            statPrevEmptyTime[type] = Time.time;
+        }
+    }
+
+    public Dictionary<string, int> GetAnalyticsValues()
+    {
+        var result = new Dictionary<string, int>();
+
+        foreach(var pair in statAmmoFull)
+        {
+            if (pair.Value == 0)
+            {
+                break;
+            }
+            result["full_" + Enum.GetName(typeof(AmmoType), pair.Key)] = pair.Value;
+        }
+        foreach (var pair in statAmmoEmpty)
+        {
+            if (pair.Value == 0)
+            {
+                break;
+            }
+            result["empty_" + Enum.GetName(typeof(AmmoType), pair.Key)] = pair.Value;
+        }
+        foreach (var pair in statAmmoSpent)
+        {
+            if (pair.Value == 0)
+            {
+                break;
+            }
+            result["spent_" + Enum.GetName(typeof(AmmoType), pair.Key)] = pair.Value;
+        }
+
+        return result;
     }
 }

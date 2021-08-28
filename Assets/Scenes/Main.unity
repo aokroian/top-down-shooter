@@ -2596,6 +2596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   scoreCounter: {fileID: 1653811888}
+  playerAmmoController: {fileID: 824559845}
   loadProgressSceneEvent: {fileID: 11400000, guid: 56d046bed5f47204ab21c5d9adca5189, type: 2}
   menuToggleEvent: {fileID: 11400000, guid: 872df7faee47cb14a8135ccbc77d7b64, type: 2}
 --- !u!1 &1167663809 stripped

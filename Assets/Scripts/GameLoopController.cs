@@ -18,7 +18,8 @@ public class GameLoopController : MonoBehaviour
 
     public GameState currentState = GameState.RUNNING;
     public ScoreCounter scoreCounter;
-    //public GameObject pauseScreen;
+    public PlayerAmmoController playerAmmoController;
+
     public LoadProgressSceneEvent loadProgressSceneEvent;
 
     public MenuToggleEvent menuToggleEvent;
@@ -57,14 +58,13 @@ public class GameLoopController : MonoBehaviour
     public void Pause(GameState state = GameState.PAUSE)
     {
         if (state == GameState.DEAD) {
-            var data = new Dictionary<string, object>();
-            data.Add("time", Time.time - startTime);
-            data.Add("distance", scoreCounter.maxDistanceInt);
-            data.Add("creditByRun", scoreCounter.progressionHolder.moneyCount - startCredit);
-            data.Add("credit", scoreCounter.progressionHolder.moneyCount);
-            data.Add("score", scoreCounter.currentScore);
-            data.Add("topScore", Mathf.Max(scoreCounter.currentScore, scoreCounter.progressionHolder.topScore));
-            AnalyticsEvent.GameOver(eventData: data);
+            try
+            {
+                GameOverAnalytics();
+            } catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
         }
         Time.timeScale = 0f;
         paused = true;
@@ -105,5 +105,24 @@ public class GameLoopController : MonoBehaviour
             handler(currentState);
         }
         menuToggleEvent.Raise(new MenuToggleEventParam(paused));
+    }
+
+    private void GameOverAnalytics()
+    {
+        var data = new Dictionary<string, object>();
+        data.Add("time", Time.time - startTime);
+        data.Add("distance", scoreCounter.maxDistanceInt);
+        data.Add("creditByRun", scoreCounter.progressionHolder.moneyCount - startCredit);
+        data.Add("credit", scoreCounter.progressionHolder.moneyCount);
+        data.Add("score", scoreCounter.currentScore);
+        data.Add("topScore", Mathf.Max(scoreCounter.currentScore, scoreCounter.progressionHolder.topScore));
+        AnalyticsEvent.GameOver(eventData: data);
+
+        var ammoData = new Dictionary<string, object>();
+        foreach (var pair in playerAmmoController.GetAnalyticsValues())
+        {
+            ammoData[pair.Key] = pair.Value;
+        }
+        AnalyticsEvent.LevelFail(SceneManager.GetActiveScene().name, ammoData);
     }
 }
