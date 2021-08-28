@@ -3119,13 +3119,13 @@ MonoBehaviour:
     yValue: 0.9
     big: 0
   - obstacle: {fileID: 7817173880744911522, guid: f40c642ff524c4dc6a5bd60b98fdf920, type: 3}
-    yValue: 0.6
+    yValue: 0.605
     big: 0
   - obstacle: {fileID: 7817173880744911522, guid: e5a6b8255d9054bd498a608f854f3e15, type: 3}
-    yValue: 0.6
+    yValue: 0.61
     big: 0
   - obstacle: {fileID: 7817173880744911522, guid: 59d13dff7ee57487e8cde36be213b3df, type: 3}
-    yValue: 0.6
+    yValue: 0.62
     big: 0
   noiseMultiplier: 1.11
   obstacleSize: 3
