@@ -14,7 +14,7 @@ public class ScoreCounter : MonoBehaviour
     public float distanceMultiplier = 1f;
 
     public int currentScore { get; private set; }
-    private int maxDistanceInt;
+    public int maxDistanceInt { get; private set; }
 
     private Label scoreLabel;
 

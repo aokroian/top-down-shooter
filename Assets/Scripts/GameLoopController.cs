@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class GameLoopController : MonoBehaviour
@@ -16,7 +17,7 @@ public class GameLoopController : MonoBehaviour
     public static bool paused = false;
 
     public GameState currentState = GameState.RUNNING;
-    public Target playerTarget;
+    public ScoreCounter scoreCounter;
     //public GameObject pauseScreen;
     public LoadProgressSceneEvent loadProgressSceneEvent;
 
@@ -24,11 +25,17 @@ public class GameLoopController : MonoBehaviour
 
     private HashSet<Action<GameState>> stateChangeHandlers = new HashSet<Action<GameState>>();
 
+    private float startTime;
+    private int startCredit;
+
     private void Start()
     {
+        AnalyticsEvent.GameStart();
         var param = new LoadProgressSceneEP(SceneEnum.GAME, true);
         loadProgressSceneEvent.Raise(param);
         UnPause();
+        startTime = Time.time;
+        startCredit = scoreCounter.progressionHolder.moneyCount;
     }
 
     // pause on focus is needed only in release version
@@ -49,6 +56,16 @@ public class GameLoopController : MonoBehaviour
 
     public void Pause(GameState state = GameState.PAUSE)
     {
+        if (state == GameState.DEAD) {
+            var data = new Dictionary<string, object>();
+            data.Add("time", Time.time - startTime);
+            data.Add("distance", scoreCounter.maxDistanceInt);
+            data.Add("creditByRun", scoreCounter.progressionHolder.moneyCount - startCredit);
+            data.Add("credit", scoreCounter.progressionHolder.moneyCount);
+            data.Add("score", scoreCounter.currentScore);
+            data.Add("topScore", Mathf.Max(scoreCounter.currentScore, scoreCounter.progressionHolder.topScore));
+            AnalyticsEvent.GameOver(eventData: data);
+        }
         Time.timeScale = 0f;
         paused = true;
         currentState = state;

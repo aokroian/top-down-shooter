@@ -2595,7 +2595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  playerTarget: {fileID: 3883960182137148087}
+  scoreCounter: {fileID: 0}
   loadProgressSceneEvent: {fileID: 11400000, guid: 56d046bed5f47204ab21c5d9adca5189, type: 2}
   menuToggleEvent: {fileID: 11400000, guid: 872df7faee47cb14a8135ccbc77d7b64, type: 2}
 --- !u!1 &1167663809 stripped
@@ -3103,20 +3103,20 @@ MonoBehaviour:
   - obstacle: {fileID: 7817173880744911522, guid: ec720f317c909449a8e506cfedc68538, type: 3}
     yValue: 0.6
     big: 1
-  - obstacle: {fileID: 7817173880744911522, guid: f40c642ff524c4dc6a5bd60b98fdf920, type: 3}
-    yValue: 0.603
-    big: 1
   - obstacle: {fileID: 7817173880744911522, guid: e5a6b8255d9054bd498a608f854f3e15, type: 3}
-    yValue: 0.602
+    yValue: 0.65
+    big: 1
+  - obstacle: {fileID: 7817173880744911522, guid: f40c642ff524c4dc6a5bd60b98fdf920, type: 3}
+    yValue: 0.69
     big: 1
   - obstacle: {fileID: 7817173880744911522, guid: 59d13dff7ee57487e8cde36be213b3df, type: 3}
-    yValue: 0.601
+    yValue: 0.72
     big: 1
-  - obstacle: {fileID: 607106182383175758, guid: 2edf0265353bd4f468c2d531aa05463d, type: 3}
-    yValue: 0.85
-    big: 0
   - obstacle: {fileID: 4438044729109110362, guid: 9557cb0704bf649019cdd54116deed79, type: 3}
     yValue: 0.75
+    big: 0
+  - obstacle: {fileID: 607106182383175758, guid: 2edf0265353bd4f468c2d531aa05463d, type: 3}
+    yValue: 0.85
     big: 0
   - obstacle: {fileID: 8794291949516747918, guid: 2c45225eabb723a4ea878c76d725b4c1, type: 3}
     yValue: 0.95
