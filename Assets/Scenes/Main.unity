@@ -1338,12 +1338,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3883960182137148086}
-  spawnDistancePassed: 10
+  spawnDistancePassed: 8
   minSpawnPointDistance: 30
   maxSpawnPointDistance: 40
   spawnPointAngle: 60
   startSpawnCost: 3
-  spawnCostDistanceMultiplier: 0.01
+  spawnCostDistanceMultiplier: 0.012
   waveDistancePassed: 30
   waveAngle: 90
   startSpawnWaveCost: 5
