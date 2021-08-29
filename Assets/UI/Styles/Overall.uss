@@ -5,7 +5,7 @@
     border-right-color: rgb(0, 53, 102);
     border-top-color: rgb(0, 53, 102);
     border-bottom-color: rgb(0, 53, 102);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 53, 102);
 }
 
 .button:hover {

@@ -13,5 +13,8 @@
             <ui:Label text=":" display-tooltip-when-elided="true" class="primary-text" />
             <ui:Label text="0" display-tooltip-when-elided="true" name="TopScoreLabel" class="primary-text" style="margin-left: 10px;" />
         </ui:VisualElement>
+        <ui:VisualElement style="position: absolute; top: 20px; right: 0;">
+            <ui:Button text="i" display-tooltip-when-elided="true" name="Credits" class="button" style="width: 128px; height: 128px; font-size: 96px; -unity-font-style: bold; border-right-width: 0; border-left-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 30px; border-top-right-radius: 0; border-bottom-left-radius: 30px; border-bottom-right-radius: 0;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

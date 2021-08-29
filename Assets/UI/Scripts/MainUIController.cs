@@ -8,6 +8,7 @@ public class MainUIController : MonoBehaviour
     public GameObject titleScreen;
     public GameObject settingsScreen;
     public GameObject upgradeScreen;
+    public GameObject creditsScreen;
 
     public ChangeSceneEvent changeSceneEvent;
     public LoadProgressSceneEvent loadProgressSceneEvent;
@@ -25,10 +26,10 @@ public class MainUIController : MonoBehaviour
 
     public void ToTitleScreen()
     {
-        Debug.Log("ToTitleScreen");
         titleScreen.SetActive(true);
         settingsScreen.SetActive(false);
         upgradeScreen.SetActive(false);
+        creditsScreen.SetActive(false);
     }
 
     public void ToSettingsScreen()
@@ -36,6 +37,7 @@ public class MainUIController : MonoBehaviour
         titleScreen.SetActive(false);
         settingsScreen.SetActive(true);
         upgradeScreen.SetActive(false);
+        creditsScreen.SetActive(false);
     }
 
     public void ToUpgradeScreen()
@@ -43,6 +45,15 @@ public class MainUIController : MonoBehaviour
         titleScreen.SetActive(false);
         settingsScreen.SetActive(false);
         upgradeScreen.SetActive(true);
+        creditsScreen.SetActive(false);
+    }
+
+    public void ToCreditsScreen()
+    {
+        titleScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        upgradeScreen.SetActive(false);
+        creditsScreen.SetActive(true);
     }
 
     public void StartGame()

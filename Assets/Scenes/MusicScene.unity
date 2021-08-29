@@ -173,7 +173,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 6166c4e3e76f27e4d94faff5bd26be99, type: 2}
   gameMusic:
   - {fileID: 8300000, guid: 02832baa95e0a4dbf8e47f15b358d48f, type: 3}
-  - {fileID: 8300000, guid: bb9a663845ecd4cb7a59b03e54966661, type: 3}
   - {fileID: 8300000, guid: 6628dfe14745f4b15b016b0635f0b131, type: 3}
   - {fileID: 8300000, guid: a431787c9674f43278042f97e9265ccc, type: 3}
   - {fileID: 8300000, guid: 4253786d4c483401aba8878fccd47ce8, type: 3}

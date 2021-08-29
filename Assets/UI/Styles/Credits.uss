@@ -1,0 +1,15 @@
+ScrollView Label {
+    margin-bottom: 5px;
+    font-size: 28px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(255, 255, 255, 255);
+    padding-bottom: 5px;
+    margin-left: 0;
+    margin-right: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+Scroller {
+    width: 30px;
+}

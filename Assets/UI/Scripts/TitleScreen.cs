@@ -17,12 +17,12 @@ public class TitleScreen : MonoBehaviour
         rootEl = GetComponent<UIDocument>().rootVisualElement;
         rootEl.Q("NewRun").RegisterCallback<ClickEvent>(e => manager.ToUpgradeScreen());
         rootEl.Q("Settings").RegisterCallback<ClickEvent>(e => manager.ToSettingsScreen());
+        rootEl.Q("Credits").RegisterCallback<ClickEvent>(e => manager.ToCreditsScreen());
         ShowTopScore();
     }
 
     public void ShowTopScore()
     {
-        Debug.Log("TitleScreen, TopScore: " + progressionHolder.topScore.ToString());
         rootEl.Q<Label>("TopScoreLabel").text = progressionHolder.topScore.ToString();
     }
 }

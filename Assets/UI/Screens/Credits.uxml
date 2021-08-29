@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="/Assets/UI/Styles/Overall.uss" />
+    <Style src="/Assets/UI/Styles/Credits.uss" />
+    <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;/Assets/UI/Images/TitleBackground.png&apos;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(80, 58, 58); padding-left: 0; padding-right: 0;">
+        <ui:VisualElement style="flex-direction: row; font-size: 48px; justify-content: center; margin-bottom: 30px; flex-grow: 0; white-space: normal; -unity-text-align: upper-left;">
+            <ui:Label text="#Music" display-tooltip-when-elided="true" enable-rich-text="true" class="primary-text" style="color: rgb(249, 170, 51); flex-shrink: 0; flex-grow: 0;" />
+            <ui:Label text=":" display-tooltip-when-elided="true" style="color: rgb(249, 170, 51); flex-grow: 0;" />
+        </ui:VisualElement>
+        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" vertical-scroller-visibility="Auto" horizontal-scroller-visibility="Hidden" touch-scroll-type="Elastic" style="flex-grow: 1; margin-left: 10px; margin-right: 10px;">
+            <ui:Label text="Ethereal Space (cdk Mix) by Analog By Nature (c) copyright 2011 Licensed under a Creative Commons Attribution (3.0) license. http://dig.ccmixter.org/files/cdk/34151 Ft: snowflake" display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
+            <ui:Label text="reCreation by airtone (c) copyright 2019 Licensed under a Creative Commons Attribution (3.0) license. http://dig.ccmixter.org/files/airtone/59721 " display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
+            <ui:Label text="panspermia by airtone (c) copyright 2018 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license. http://dig.ccmixter.org/files/airtone/57606 " display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
+            <ui:Label text="nightWalk by airtone (c) copyright 2017 Licensed under a Creative Commons Attribution (3.0) license. http://dig.ccmixter.org/files/airtone/56520" display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
+            <ui:Label text="Dj Rkod - Pulse (George Ellinas Remix) by George_Ellinas (c) copyright 2008 Licensed under a Creative Commons Attribution (3.0) license. http://dig.ccmixter.org/files/George_Ellinas/14073 " display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
+            <ui:Label text="Good And Evil Is Evil by septahelix (c) copyright 2020 Licensed under a Creative Commons Noncommercial Sampling Plus license. http://dig.ccmixter.org/files/septahelix/61280 " display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
+            <ui:Label text="Shrimp Rich by septahelix (c) copyright 2019 Licensed under a Creative Commons Attribution (3.0) license. http://dig.ccmixter.org/files/septahelix/59735 Ft: PerchanceMusic" display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
+            <ui:Label text="Midnight Phunk by Doxent Zsigmond (c) copyright 2015 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license. http://dig.ccmixter.org/files/doxent/50695 Ft: Javolenus" display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
+        </ui:ScrollView>
+        <ui:VisualElement style="margin-top: 10px; position: relative;">
+            <ui:Button display-tooltip-when-elided="true" name="Back" class="button" style="width: 128px; height: 128px; background-image: url(&apos;/Assets/UI/Images/outline_logout_black_48dp.png&apos;); border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: 0; padding-left: 0; margin-bottom: 20px; border-left-width: 0; position: relative; left: auto; bottom: auto;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
