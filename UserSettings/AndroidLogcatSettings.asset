@@ -3,23 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "X4PNOBN7GAU8BUQC",
         "name": "com.DefaultCompany.topdownshooter",
-        "processId": 9419,
+        "processId": 32657,
         "exited": false
     },
     "m_SelectedPriority": 3,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "X4PNOBN7GAU8BUQC",
-            "name": "com.android.chrome",
-            "processId": 2414,
-            "exited": false
-        },
-        {
-            "deviceId": "X4PNOBN7GAU8BUQC",
-            "name": "com.DefaultCompany.topdownshooter",
-            "processId": 10819,
-            "exited": true
-        },
         {
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.topdownshooter",
@@ -42,12 +30,24 @@
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.topdownshooter",
             "processId": 8723,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.topdownshooter",
             "processId": 9419,
+            "exited": true
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.oppo.launcher",
+            "processId": 2750,
+            "exited": false
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.DefaultCompany.topdownshooter",
+            "processId": 32657,
             "exited": false
         }
     ],

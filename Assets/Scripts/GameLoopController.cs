@@ -122,6 +122,7 @@ public class GameLoopController : MonoBehaviour
         foreach (var pair in playerAmmoController.GetAnalyticsValues())
         {
             ammoData[pair.Key] = pair.Value;
+
         }
         AnalyticsEvent.LevelFail(SceneManager.GetActiveScene().name, ammoData);
     }

@@ -83,11 +83,13 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
         if (maxAmmoMap[type] >= 0) {
             removed = Mathf.Min(required, ammoMap[type]);
             ammoMap[type] = ammoMap[type] - removed;
-            statAmmoSpent[type] += removed;
-        } else
-        {
+        }
+
+        statAmmoSpent[type] += removed;
+        if (removed == 0 && required != 0) {
             AddEmptyToStat(type);
         }
+
         return removed;
     }
 
@@ -140,7 +142,7 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
 
     private void AddFullToStat(AmmoType type)
     {
-        if (statPrevFullTime[type] + 3f > Time.time)
+        if (statPrevFullTime[type] + 5f < Time.time)
         {
             statAmmoFull[type]++;
             statPrevFullTime[type] = Time.time;
@@ -149,7 +151,7 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
 
     private void AddEmptyToStat(AmmoType type)
     {
-        if (statPrevEmptyTime[type] + 3f > Time.time)
+        if (statPrevEmptyTime[type] + 5f < Time.time)
         {
             statAmmoEmpty[type]++;
             statPrevEmptyTime[type] = Time.time;
@@ -164,7 +166,7 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
         {
             if (pair.Value == 0)
             {
-                break;
+                continue;
             }
             result["full_" + Enum.GetName(typeof(AmmoType), pair.Key)] = pair.Value;
         }
@@ -172,7 +174,7 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
         {
             if (pair.Value == 0)
             {
-                break;
+                continue;
             }
             result["empty_" + Enum.GetName(typeof(AmmoType), pair.Key)] = pair.Value;
         }
@@ -180,7 +182,7 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
         {
             if (pair.Value == 0)
             {
-                break;
+                continue;
             }
             result["spent_" + Enum.GetName(typeof(AmmoType), pair.Key)] = pair.Value;
         }
