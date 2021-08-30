@@ -8175,10 +8175,6 @@ PrefabInstance:
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1099389162}
-    - target: {fileID: 7502695412977259146, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 0cdd44b1764097247965f4ce03354e85, type: 2}
     - target: {fileID: 9039489057143238393, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: m_Camera
       value: 

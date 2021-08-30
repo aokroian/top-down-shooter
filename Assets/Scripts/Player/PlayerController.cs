@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private AudioClip dodgeSound;
     private AudioClip bulletHittingPlayerSound;
     private AudioClip sawHittingPlayerSound;
+    private AudioClip switchWeaponSound;
 
     // variables for health and stamina
     public float health = 100f;
@@ -196,6 +197,8 @@ public class PlayerController : MonoBehaviour
         SafelyStopShootingCoroutine();
         if (value.performed)
         {
+            // sound 
+            PlaySwitchWeaponSound();
             if (selectedItemIndex + 1 == itemsEquipmentArr.Length)
             {
                 SelectItem(0);
@@ -272,6 +275,7 @@ public class PlayerController : MonoBehaviour
         audioStorage.TryGetValue("Dodge", out dodgeSound);
         audioStorage.TryGetValue("Hit by an enemy bullet", out bulletHittingPlayerSound);
         audioStorage.TryGetValue("Hit by an enemy saw", out sawHittingPlayerSound);
+        audioStorage.TryGetValue("Switch weapon", out switchWeaponSound);
 
 
         // finding objects for rigging
@@ -649,11 +653,38 @@ public class PlayerController : MonoBehaviour
         return result;
     }
 
+    private void PlaySwitchWeaponSound()
+    {
+        if (GameLoopController.paused)
+        {
+            damageAudioSource.clip = null;
+            damageAudioSource.loop = false;
+            damageAudioSource.pitch = 1;
+            damageAudioSource.volume = 1;
+            damageAudioSource.Stop();
+            return;
+        }
+        if (itemsEquipmentArr.Length < 2)
+        {
+            return;
+        }
+        damageAudioSource.PlayOneShot(switchWeaponSound);
+    }
+
 
     // if arg is true - turning on
     // if arg is false - turning off
     private void PlayStepsSound(bool playOrStop)
     {
+        if (GameLoopController.paused)
+        {
+            movementAudioSource.clip = null;
+            movementAudioSource.loop = false;
+            movementAudioSource.pitch = 1;
+            movementAudioSource.volume = 1;
+            movementAudioSource.Stop();
+            return;
+        }
         if (playOrStop)
         {
             movementAudioSource.clip = runSound;
@@ -677,10 +708,28 @@ public class PlayerController : MonoBehaviour
 
     public void PlayHitByEnemySawSound()
     {
+        if (GameLoopController.paused)
+        {
+            damageAudioSource.clip = null;
+            damageAudioSource.loop = false;
+            damageAudioSource.pitch = 1;
+            damageAudioSource.volume = 1;
+            damageAudioSource.Stop();
+            return;
+        }
         damageAudioSource.PlayOneShot(sawHittingPlayerSound);
     }
     public void PlayHitByEnemyBulletSound()
     {
+        if (GameLoopController.paused)
+        {
+            damageAudioSource.clip = null;
+            damageAudioSource.loop = false;
+            damageAudioSource.pitch = 1;
+            damageAudioSource.volume = 1;
+            damageAudioSource.Stop();
+            return;
+        }
         damageAudioSource.PlayOneShot(bulletHittingPlayerSound);
     }
 

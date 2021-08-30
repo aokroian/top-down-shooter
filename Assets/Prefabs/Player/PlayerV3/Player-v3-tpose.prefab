@@ -643,7 +643,7 @@ Animator:
   m_GameObject: {fileID: 1719441473545155237}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0cdd44b1764097247965f4ce03354e85, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -980,6 +980,8 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: e38401a78e0ab4526ac682cdd80213f8, type: 3}
     - Key: Hit by an enemy saw
       Value: {fileID: 8300000, guid: e38401a78e0ab4526ac682cdd80213f8, type: 3}
+    - Key: Switch weapon
+      Value: {fileID: 8300000, guid: 6ff1a3ef04bfacf4f8ec6dbadfd1eba3, type: 3}
 --- !u!114 &1397911962566492021
 MonoBehaviour:
   m_ObjectHideFlags: 0
