@@ -306,6 +306,11 @@ public class PlayerController : MonoBehaviour
     {
         if (GameLoopController.paused)
         {
+            movementAudioSource.clip = null;
+            movementAudioSource.loop = false;
+            movementAudioSource.pitch = 1;
+            movementAudioSource.volume = 1;
+            movementAudioSource.Stop();
             return;
         }
         Rigidbody rb = GetComponent<Rigidbody>();
