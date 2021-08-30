@@ -501,14 +501,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 0.1
   basicMovementSpeed: 4
-  dodgeSpeed: 13
+  dodgeSpeed: 18
   dodgeTime: 0.5
-  dodgeStaminaCost: 5
+  dodgeStaminaCost: 40
   health: 100
   maxHealth: 100
   stamina: 100
   maxStamina: 100
-  staminaRegenPerSecond: 20
+  staminaRegenPerSecond: 35
   selectedItemIndex: 0
   parentBoneForWeapon: {fileID: 7154224294120359447}
   parentBoneForThrowableItems: {fileID: 7154224294120359447}
