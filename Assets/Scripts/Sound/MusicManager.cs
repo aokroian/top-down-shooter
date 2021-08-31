@@ -123,15 +123,26 @@ public class MusicManager : MonoBehaviour
         {
             Debug.Log("Playing music track: " + track.name);
 
+            var prevTrack = audioSource.clip;
             audioSource.clip = track;
             audioSource.Play();
             state = MusicState.playing;
+
+            if (prevTrack != null)
+            {
+                prevTrack.UnloadAudioData();
+            }
         }
     }
 
     public void PlayTrackByIndex(int index)
     {
+        var prevTrack = audioSource.clip;
         audioSource.clip = music[index];
+        if (prevTrack != null)
+        {
+            prevTrack.UnloadAudioData();
+        }
     }
 
     public void TogglePause(bool pause)
