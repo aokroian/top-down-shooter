@@ -35,11 +35,18 @@ public class ProgressionManager : MonoBehaviour, Loadable
         progressionHolder.SetPurchasedUpgrades(saveData.upgrades);
         progressionHolder.SetSelectedUpgrades(saveData.selected);
         progressionHolder.topScore = saveData.topScore;
+        progressionHolder.SetPurchasedPlayerUpgrades(saveData.playerUpgrades);
     }
 
-    public void WriteToSaveFile() {
+    public void WriteToSaveFile()
+    {
         Debug.Log("ProgressionManager, topScore: " + progressionHolder.topScore);
-        saveLoadController.SaveProgression(progressionHolder.moneyCount, progressionHolder.GetPurchasedUpgradesId(), progressionHolder.GetSelectedIds(), progressionHolder.topScore);
+        saveLoadController.SaveProgression(progressionHolder.moneyCount,
+            progressionHolder.GetPurchasedUpgradesId(),
+            progressionHolder.GetSelectedIds(),
+            progressionHolder.topScore,
+            progressionHolder.GetPurchasedPlayerUpgradesId(),
+            progressionHolder.exp);
     }
 
     public void Load(Action onLoad)

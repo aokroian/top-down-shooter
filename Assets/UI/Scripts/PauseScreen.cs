@@ -56,8 +56,10 @@ public class PauseScreen : MonoBehaviour
 
     private void ChangeDeathScreen()
     {
-        gameOverContainer.style.display = dead ? DisplayStyle.Flex : DisplayStyle.None;
-        resumeEl.style.display = dead ? DisplayStyle.None : DisplayStyle.Flex;
+        if (gameOverContainer != null) {
+            gameOverContainer.style.display = dead ? DisplayStyle.Flex : DisplayStyle.None;
+            resumeEl.style.display = dead ? DisplayStyle.None : DisplayStyle.Flex;
+        }
     }
 
     public void SetSettingsAction(Action settingsAction)

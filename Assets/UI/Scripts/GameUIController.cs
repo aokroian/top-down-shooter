@@ -25,7 +25,7 @@ public class GameUIController : MonoBehaviour
         pauseController.SetNewRunAction(NewRun);
         pauseController.SetMainMenuAction(ToMainMenu);
 
-        settingsScreen.GetComponent<SettingsScreen>().SetBackAction(() => ToPauseScreen(false));
+        settingsScreen.GetComponent<SettingsScreen>().SetBackAction(() => ToPauseScreen());
 
         gameLoopController.AddStateChangeHandler(OnStateChange);
     }
@@ -44,10 +44,9 @@ public class GameUIController : MonoBehaviour
         //newEventSystem.enabled = false;
     }
 
-    private void ToPauseScreen(bool dead)
+    private void ToPauseScreen()
     {
         pauseScreen.SetActive(true);
-        pauseController.SetDead(dead);
         settingsScreen.SetActive(false);
 
         oldEventSystem.enabled = false;
@@ -75,6 +74,11 @@ public class GameUIController : MonoBehaviour
         changeSceneEvent.Raise(param);
     }
 
+    private void SetDead(bool dead)
+    {
+        pauseController.SetDead(dead);
+    }
+
     private void OnStateChange(GameLoopController.GameState state)
     {
         if (state == GameLoopController.GameState.RUNNING)
@@ -82,10 +86,12 @@ public class GameUIController : MonoBehaviour
             HideScreens();
         } else if (state == GameLoopController.GameState.PAUSE)
         {
-            ToPauseScreen(false);
+            ToPauseScreen();
+            SetDead(false);
         } else if (state == GameLoopController.GameState.DEAD)
         {
-            ToPauseScreen(true);
+            ToPauseScreen();
+            SetDead(true);
         }
     }
 }

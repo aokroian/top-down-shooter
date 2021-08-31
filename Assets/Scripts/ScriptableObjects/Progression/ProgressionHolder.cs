@@ -8,10 +8,14 @@ public class ProgressionHolder : ScriptableObject
 {
     public int moneyCount;
     public int topScore;
+    public int exp;
 
-    private AbstractUpgrade[] allUpgrades;
+    public AbstractUpgrade[] allUpgrades;
     private HashSet<AbstractUpgrade> purchasedUpgrades = new HashSet<AbstractUpgrade>();
     private HashSet<WeaponUnlock> selectedUpgrades = new HashSet<WeaponUnlock>(); // Or should be in SO?
+
+    public PlayerUpgrade[] allPlayerUpgrades;
+    public HashSet<PlayerUpgrade> purchasedPlayerUpgrades = new HashSet<PlayerUpgrade>();
 
     public ProgressionHolder()
     {
@@ -21,7 +25,8 @@ public class ProgressionHolder : ScriptableObject
     private void OnEnable()
     {
         //Debug.Log("ProgressionHolder OnEnable!!!!!");
-        allUpgrades = Resources.LoadAll<AbstractUpgrade>("UpgradesSO");
+        allUpgrades = Resources.LoadAll<AbstractUpgrade>("UpgradesSO/Weapons");
+        allPlayerUpgrades = Resources.LoadAll<PlayerUpgrade>("UpgradesSO/Player");
         CalcTiers();
     }
 
@@ -192,5 +197,44 @@ public class ProgressionHolder : ScriptableObject
             }
         }
         return false;
+    }
+
+
+
+    public void SetPurchasedPlayerUpgrades(int[] purchased)
+    {
+        AddPlayerUpgradesToSet(purchased, purchasedPlayerUpgrades);
+    }
+
+    private void AddPlayerUpgradesToSet<T>(int[] ids, HashSet<T> set) where T : PlayerUpgrade
+    {
+        foreach (int id in ids)
+        {
+            var item = allPlayerUpgrades.First(v => v.name.GetHashCode() == id);
+            if (item != null)
+            {
+                set.Add((T)item);
+            }
+        }
+    }
+
+    public void AddPurchasedPlayerUpgrade(PlayerUpgrade upgrade)
+    {
+        purchasedPlayerUpgrades.Add(upgrade);
+    }
+
+    public PlayerUpgrade[] GetAllPlayerUpgrades()
+    {
+        return allPlayerUpgrades;
+    }
+
+    public HashSet<PlayerUpgrade> GetPurchasedPlayerUpgrades()
+    {
+        return purchasedPlayerUpgrades;
+    }
+
+    public int[] GetPurchasedPlayerUpgradesId()
+    {
+        return GetIdsFromSet(purchasedPlayerUpgrades);
     }
 }

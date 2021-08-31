@@ -1,0 +1,77 @@
+.upgrade-row {
+    flex-grow: 1;
+    flex-direction: row;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.left-col {
+    flex-grow: 1;
+    background-color: rgba(0, 8, 20, 255);
+    border-left-color: rgba(0, 53, 102, 255);
+    border-right-color: rgba(0, 53, 102, 255);
+    border-top-color: rgba(0, 53, 102, 255);
+    border-bottom-color: rgba(0, 53, 102, 255);
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    justify-content: space-around;
+    flex-basis: 60%;
+    padding-left: 30px;
+}
+
+.right-col {
+    flex-grow: 1;
+    background-color: rgba(0, 20, 51, 255);
+    border-left-color: rgba(0, 53, 102, 255);
+    border-right-color: rgba(0, 53, 102, 255);
+    border-top-color: rgba(0, 53, 102, 255);
+    border-bottom-color: rgba(0, 53, 102, 255);
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-left-width: 3px;
+    flex-basis: 40%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 36px;
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.right-col:hover {
+    border-left-color: rgba(0, 53, 102, 255);
+    border-right-color: rgba(0, 53, 102, 255);
+    border-top-color: rgba(0, 53, 102, 255);
+    border-bottom-color: rgba(0, 53, 102, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 36px;
+    align-items: center;
+    justify-content: space-around;
+    flex-basis: 40%;
+    flex-grow: 1;
+    background-color: rgba(0, 53, 102, 255);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}

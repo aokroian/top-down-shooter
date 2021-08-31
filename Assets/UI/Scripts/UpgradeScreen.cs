@@ -32,7 +32,7 @@ public class UpgradeScreen : MonoBehaviour
         rootEl = GetComponent<UIDocument>().rootVisualElement;
         scrollEl = rootEl.Q<ScrollView>("UpgradesScroll");
         rootEl.Q("BackToTitle").RegisterCallback<ClickEvent>(e => manager.ToTitleScreen());
-        rootEl.Q("StartGame").RegisterCallback<ClickEvent>(e => manager.StartGame());
+        rootEl.Q("StartGame").RegisterCallback<ClickEvent>(e => manager.ToPlayerUpgradeScreen());
 
 #if UNITY_STANDALONE || UNITY_EDITOR
         scrollEl.horizontalScrollerVisibility = ScrollerVisibility.Auto;

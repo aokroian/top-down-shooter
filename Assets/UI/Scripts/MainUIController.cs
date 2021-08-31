@@ -9,6 +9,7 @@ public class MainUIController : MonoBehaviour
     public GameObject settingsScreen;
     public GameObject upgradeScreen;
     public GameObject creditsScreen;
+    public GameObject playerUpgradeScreen;
 
     public ChangeSceneEvent changeSceneEvent;
     public LoadProgressSceneEvent loadProgressSceneEvent;
@@ -30,6 +31,7 @@ public class MainUIController : MonoBehaviour
         settingsScreen.SetActive(false);
         upgradeScreen.SetActive(false);
         creditsScreen.SetActive(false);
+        playerUpgradeScreen.SetActive(false);
     }
 
     public void ToSettingsScreen()
@@ -38,6 +40,7 @@ public class MainUIController : MonoBehaviour
         settingsScreen.SetActive(true);
         upgradeScreen.SetActive(false);
         creditsScreen.SetActive(false);
+        playerUpgradeScreen.SetActive(false);
     }
 
     public void ToUpgradeScreen()
@@ -46,6 +49,7 @@ public class MainUIController : MonoBehaviour
         settingsScreen.SetActive(false);
         upgradeScreen.SetActive(true);
         creditsScreen.SetActive(false);
+        playerUpgradeScreen.SetActive(false);
     }
 
     public void ToCreditsScreen()
@@ -54,6 +58,16 @@ public class MainUIController : MonoBehaviour
         settingsScreen.SetActive(false);
         upgradeScreen.SetActive(false);
         creditsScreen.SetActive(true);
+        playerUpgradeScreen.SetActive(false);
+    }
+
+    public void ToPlayerUpgradeScreen()
+    {
+        titleScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        upgradeScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        playerUpgradeScreen.SetActive(true);
     }
 
     public void StartGame()

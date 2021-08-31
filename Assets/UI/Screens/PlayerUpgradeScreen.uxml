@@ -1,0 +1,54 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="/Assets/UI/Styles/Overall.uss" />
+    <Style src="/Assets/UI/Styles/PlayerUpgrade.uss" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement class="panel" style="justify-content: center; align-items: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; flex-grow: 0; flex-basis: auto; flex-direction: row; margin-bottom: 5px; padding-left: 0; padding-right: 0; height: 80px;">
+            <ui:Label text="#UpgradePlayer" display-tooltip-when-elided="true" class="primary-text" style="font-size: 48px; margin-bottom: 10px;" />
+            <ui:VisualElement style="position: absolute; flex-direction: row; align-items: center; right: 20px; top: auto; margin-right: 0;">
+                <ui:VisualElement style="flex-shrink: 1; -unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&apos;/Assets/Materials/Bonus/CreditIcon.png&apos;); width: 48px; height: 48px;" />
+                <ui:Label text="0" display-tooltip-when-elided="true" name="ExpLabel" class="primary-text" style="margin-left: 10px; font-size: 48px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:VisualElement style="height: auto; flex-grow: 1; width: 30%; justify-content: space-between;">
+                <ui:VisualElement class="upgrade-row">
+                    <ui:VisualElement class="left-col">
+                        <ui:Label text="#Life" display-tooltip-when-elided="true" class="primary-text" />
+                        <ui:Label text="CurLife" display-tooltip-when-elided="true" name="CurrentLife" class="primary-text" />
+                    </ui:VisualElement>
+                    <ui:Button display-tooltip-when-elided="true" name="UpgradeLife" class="right-col">
+                        <ui:Label text="LifeCost&#10;" display-tooltip-when-elided="true" name="LifeCost" class="primary-text" />
+                        <ui:Label text="LifeVal" display-tooltip-when-elided="true" name="LifeDescription" class="primary-text" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement class="upgrade-row">
+                    <ui:VisualElement class="left-col">
+                        <ui:Label text="#Ammo&#10;" display-tooltip-when-elided="true" class="primary-text" />
+                        <ui:Label text="CurAmmo" display-tooltip-when-elided="true" name="CurrentAmmo" class="primary-text" />
+                    </ui:VisualElement>
+                    <ui:Button display-tooltip-when-elided="true" name="UpgradeAmmo" class="right-col">
+                        <ui:Label text="AmCost&#10;" display-tooltip-when-elided="true" name="AmmoCost" enable-rich-text="true" class="primary-text" />
+                        <ui:Label text="AmVal" display-tooltip-when-elided="true" name="AmmoDescription" class="primary-text" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement class="upgrade-row">
+                    <ui:VisualElement class="left-col">
+                        <ui:Label text="#Stamina" display-tooltip-when-elided="true" class="primary-text" />
+                        <ui:Label text="CurStamina" display-tooltip-when-elided="true" name="CurrentStamina" class="primary-text" />
+                    </ui:VisualElement>
+                    <ui:Button display-tooltip-when-elided="true" name="UpgradeStamina" class="right-col">
+                        <ui:Label text="StCost&#10;" display-tooltip-when-elided="true" name="StaminaCost" enable-rich-text="true" class="primary-text" />
+                        <ui:Label text="StVal" display-tooltip-when-elided="true" name="StaminaDescription" class="primary-text" />
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="border-left-width: 0; border-right-width: 0; border-bottom-width: 0; flex-grow: 0; width: auto; height: 160px; flex-direction: row; flex-shrink: 0;">
+            <ui:Button display-tooltip-when-elided="true" name="BackToTitle" class="button" style="position: absolute; left: 0; bottom: 20px; width: 128px; height: 128px; border-left-width: 0; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; background-image: url(&apos;/Assets/UI/Images/outline_logout_black_48dp.png&apos;); margin-left: 0; padding-left: 0;" />
+            <ui:Button display-tooltip-when-elided="true" name="StartGame" class="button" style="right: 0; bottom: 20px; position: absolute; width: auto; height: 128px; background-image: none; border-top-left-radius: 15px; border-top-right-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 0; border-left-width: 3px; border-right-width: 0; border-top-width: 3px; border-bottom-width: 3px; margin-right: 0; padding-right: 0; -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-right: 0; flex-direction: row; padding-top: 0; padding-bottom: 0; margin-bottom: 1px; -unity-text-align: middle-center; justify-content: flex-end;">
+                <ui:Label text="#Run" display-tooltip-when-elided="true" class="primary-text" style="font-size: 48px; padding-bottom: 5px;" />
+                <ui:VisualElement style="background-image: url(&apos;/Assets/UI/Images/outline_arrow_forward_ios_black_48dp.png&apos;); width: 116px; height: 116px; -unity-background-image-tint-color: rgb(0, 53, 102); -unity-background-scale-mode: stretch-to-fill;" />
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
