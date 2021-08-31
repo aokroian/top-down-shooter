@@ -178,7 +178,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4253786d4c483401aba8878fccd47ce8, type: 3}
   - {fileID: 8300000, guid: 295cb7babee9a44b5835ec1b4a709d0e, type: 3}
   - {fileID: 8300000, guid: 83e723398e65f43ddb40f58f26386675, type: 3}
-  - {fileID: 8300000, guid: 35a3868f17c5e4da18e67c2bb01343d0, type: 3}
   menuMusic:
   - {fileID: 8300000, guid: 3876994d0988c4d208f697c152248833, type: 3}
   settingsHolder: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
