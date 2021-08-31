@@ -718,7 +718,6 @@ MonoBehaviour:
   aimAtPosition: {x: 0, y: 0, z: 0}
   playerInput: {fileID: 9039489057143238393}
   gameLoop: {fileID: 0}
-  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!114 &6629349634982217810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,6 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddac66b877ec04d8f86384a8afdeaa4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
   glasses:
   - {fileID: 2861375183000632977}
   - {fileID: 8834207264134967526}

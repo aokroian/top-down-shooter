@@ -4,7 +4,7 @@ using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.PlayerInput;
-using System.Linq;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -89,7 +89,6 @@ public class PlayerController : MonoBehaviour
 
     // upgrades
     private PlayerConfigurator playerConfigurator;
-    public ProgressionHolder progressionHolder;
 
 
     public void OnMovement(InputAction.CallbackContext value)
@@ -262,7 +261,12 @@ public class PlayerController : MonoBehaviour
     {
         itemsEquipmentArr = progressionManager.GetWeapons();
 
-        ConfigureUpgrades();
+        // upgrade system
+        TryGetComponent<PlayerConfigurator>(out playerConfigurator);
+        if (playerConfigurator != null)
+        {
+            playerConfigurator.ApplyAllUpgrades();
+        }
     }
     private void OnEnable()
     {
@@ -748,30 +752,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
         damageAudioSource.PlayOneShot(bulletHittingPlayerSound);
-    }
-
-    public void ConfigureUpgrades()
-    {
-        // upgrade system
-        TryGetComponent<PlayerConfigurator>(out playerConfigurator);
-        var filteredHealth = progressionHolder.GetPurchasedPlayerUpgrades().Where(v => v.playerUpgradeType == PlayerUpgradeType.LIFE);
-        int addedHealth = filteredHealth.Select(v => v.value).Sum(); // общая сумма дополнительных хп/процентов патронов/стамины
-        int countHealth = filteredHealth.Count(); // Количество вкачанных апгрейдов
-
-        var filteredStamina = progressionHolder.GetPurchasedPlayerUpgrades().Where(v => v.playerUpgradeType == PlayerUpgradeType.STAMINA);
-        int addedStamina = filteredStamina.Select(v => v.value).Sum(); // общая сумма дополнительных хп/процентов патронов/стамины
-        int countStamina = filteredStamina.Count(); // Количество вкачанных апгрейдов
-
-        var filteredAmmo = progressionHolder.GetPurchasedPlayerUpgrades().Where(v => v.playerUpgradeType == PlayerUpgradeType.AMMO);
-        int addedAmmo = filteredAmmo.Select(v => v.value).Sum(); // общая сумма дополнительных хп/процентов патронов/стамины
-        int countAmmo = filteredAmmo.Count(); // Количество вкачанных апгрейдов
-
-        if (playerConfigurator != null)
-        {
-            playerConfigurator.ApplyAmmoUpgrade(countAmmo, addedAmmo);
-            playerConfigurator.ApplyHealthUpgrade(countHealth, addedHealth);
-            playerConfigurator.ApplyStaminaUpgrade(countStamina, addedStamina);
-        }
     }
 
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
