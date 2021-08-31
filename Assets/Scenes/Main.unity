@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8103,6 +8103,10 @@ PrefabInstance:
       propertyPath: enemiesContainer
       value: 
       objectReference: {fileID: 848356370}
+    - target: {fileID: 909242564331401637, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1719441473545155237, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8171,6 +8175,14 @@ PrefabInstance:
       propertyPath: progressionManager
       value: 
       objectReference: {fileID: 31522454}
+    - target: {fileID: 2861375183000632977, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624142232369630675, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

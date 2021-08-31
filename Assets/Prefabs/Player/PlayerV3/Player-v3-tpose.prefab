@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 9039489057143238393}
   - component: {fileID: 2855859652091394054}
   - component: {fileID: 1397911962566492021}
+  - component: {fileID: 6971399184106823467}
   m_Layer: 0
   m_Name: Player-v3-tpose
   m_TagString: Player
@@ -717,6 +718,7 @@ MonoBehaviour:
   aimAtPosition: {x: 0, y: 0, z: 0}
   playerInput: {fileID: 9039489057143238393}
   gameLoop: {fileID: 0}
+  progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
 --- !u!114 &6629349634982217810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,6 +997,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsHolder: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
+--- !u!114 &6971399184106823467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719441473545155237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddac66b877ec04d8f86384a8afdeaa4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glasses:
+  - {fileID: 2861375183000632977}
+  - {fileID: 8834207264134967526}
+  - {fileID: 5995607421799244169}
+  - {fileID: 6210326413193711105}
+  belts:
+  - {fileID: 6624142232369630675}
+  - {fileID: 1176444118771100687}
+  - {fileID: 4791472483669317370}
+  - {fileID: 3430766697644636431}
+  kneePads:
+  - {fileID: 909242564331401637}
+  - {fileID: 4560769024187506022}
+  - {fileID: 7474535868532945845}
+  - {fileID: 2416880251464713202}
 --- !u!1 &1737877182569778681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,7 +1247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2908241961166451649
 Transform:
   m_ObjectHideFlags: 0
@@ -1632,7 +1661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7644107920053375356
 Transform:
   m_ObjectHideFlags: 0
@@ -2452,7 +2481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8104194353696651630
 Transform:
   m_ObjectHideFlags: 0

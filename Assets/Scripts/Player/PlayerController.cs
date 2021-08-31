@@ -4,6 +4,7 @@ using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.PlayerInput;
+using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
@@ -86,12 +87,10 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Coroutine shootingCoroutine;
 
-    private void OnEnable()
-    {
-        playerInput.SwitchCurrentControlScheme("Gamepad");
+    // upgrades
+    private PlayerConfigurator playerConfigurator;
+    public ProgressionHolder progressionHolder;
 
-        RemoveAllBindingOverrides();
-    }
 
     public void OnMovement(InputAction.CallbackContext value)
     {
@@ -254,17 +253,26 @@ public class PlayerController : MonoBehaviour
             RemoveAllBindingOverrides();
         }
     }
-
     void RemoveAllBindingOverrides()
     {
         InputActionRebindingExtensions.RemoveAllBindingOverrides(playerInput.currentActionMap);
     }
+
     private void Awake()
     {
         itemsEquipmentArr = progressionManager.GetWeapons();
+
+        ConfigureUpgrades();
+    }
+    private void OnEnable()
+    {
+        playerInput.SwitchCurrentControlScheme("Gamepad");
+
+        RemoveAllBindingOverrides();
     }
     private void Start()
     {
+        
         // writing variables for audio system
         damageAudioSource = transform.Find("DamageAudioSource").GetComponent<AudioSource>();
         movementAudioSource = transform.Find("MovementAudioSource").GetComponent<AudioSource>();
@@ -571,6 +579,10 @@ public class PlayerController : MonoBehaviour
         FindInAllChildren(equippedItemObj.transform, "RightHandPoint", ref rightHandPoint);
         FindInAllChildren(equippedItemObj.transform, "LeftHandPoint", ref leftHandPoint);
 
+        // UPGRADE SYSTEM
+        // change ammo capacity
+
+
         progressionManager.WeaponChanged(itemsEquipmentArr[itemIndex]);
     }
 
@@ -736,6 +748,30 @@ public class PlayerController : MonoBehaviour
             return;
         }
         damageAudioSource.PlayOneShot(bulletHittingPlayerSound);
+    }
+
+    public void ConfigureUpgrades()
+    {
+        // upgrade system
+        TryGetComponent<PlayerConfigurator>(out playerConfigurator);
+        var filteredHealth = progressionHolder.GetPurchasedPlayerUpgrades().Where(v => v.playerUpgradeType == PlayerUpgradeType.LIFE);
+        int addedHealth = filteredHealth.Select(v => v.value).Sum(); // общая сумма дополнительных хп/процентов патронов/стамины
+        int countHealth = filteredHealth.Count(); // Количество вкачанных апгрейдов
+
+        var filteredStamina = progressionHolder.GetPurchasedPlayerUpgrades().Where(v => v.playerUpgradeType == PlayerUpgradeType.STAMINA);
+        int addedStamina = filteredStamina.Select(v => v.value).Sum(); // общая сумма дополнительных хп/процентов патронов/стамины
+        int countStamina = filteredStamina.Count(); // Количество вкачанных апгрейдов
+
+        var filteredAmmo = progressionHolder.GetPurchasedPlayerUpgrades().Where(v => v.playerUpgradeType == PlayerUpgradeType.AMMO);
+        int addedAmmo = filteredAmmo.Select(v => v.value).Sum(); // общая сумма дополнительных хп/процентов патронов/стамины
+        int countAmmo = filteredAmmo.Count(); // Количество вкачанных апгрейдов
+
+        if (playerConfigurator != null)
+        {
+            playerConfigurator.ApplyAmmoUpgrade(countAmmo, addedAmmo);
+            playerConfigurator.ApplyHealthUpgrade(countHealth, addedHealth);
+            playerConfigurator.ApplyStaminaUpgrade(countStamina, addedStamina);
+        }
     }
 
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
