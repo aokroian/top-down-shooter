@@ -9,7 +9,6 @@ using static UnityEngine.InputSystem.PlayerInput;
 public class PlayerController : MonoBehaviour
 {
     // variables for movement
-    public float rotationSpeed = 2f;
     public float basicMovementSpeed = 2f;
     public float dodgeSpeed = 20f;
     public float dodgeTime = 0.2f;
@@ -21,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private float currentMovementSpeed = 0f;
     private Vector2 movement;
     private float dodgeTimer = 0f;
-    private Vector2 currentVel;
 
     // variables for sound system
     private AudioSource damageAudioSource;
@@ -45,7 +43,6 @@ public class PlayerController : MonoBehaviour
     private GameObject[] itemsEquipmentArr;
     public int selectedItemIndex = 0;
     public GameObject parentBoneForWeapon;
-    public GameObject parentBoneForThrowableItems;
     public PlayerAmmoController ammoController;
     public IngameProgressionManager progressionManager;
 
@@ -57,10 +54,10 @@ public class PlayerController : MonoBehaviour
 
 
     // variables for animation rigging system
+    [HideInInspector]
     public GameObject rightHandConstraintController;
+    [HideInInspector]
     public GameObject leftHandConstraintController;
-    public GameObject rigLayerHandsPosition;
-    private GameObject weaponAimConstraintObj;
 
     private GameObject rightHandPoint;
     private GameObject leftHandPoint;
@@ -293,8 +290,6 @@ public class PlayerController : MonoBehaviour
         // finding objects for rigging
         FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
         FindInAllChildren(gameObject.transform, "LeftHandController", ref leftHandConstraintController);
-        FindInAllChildren(gameObject.transform, "AimWeapon", ref weaponAimConstraintObj);
-        FindInAllChildren(gameObject.transform, "RigLayer_HandsPosition", ref rigLayerHandsPosition);
 
         bulletsInClip = new int[itemsEquipmentArr.Length];
         for (int i = 0; i < bulletsInClip.Length; i++)
@@ -409,17 +404,6 @@ public class PlayerController : MonoBehaviour
         if (leftHandPoint != null)
         {
             leftHandConstraintController.transform.position = leftHandPoint.transform.position;
-        }
-
-
-        // controlling hand position constraints weight
-        if (equippedItemObj == null)
-        {
-            rigLayerHandsPosition.GetComponent<Rig>().weight = 0f;
-        }
-        else
-        {
-            rigLayerHandsPosition.GetComponent<Rig>().weight = 1f;
         }
 
         // dodge system РАБОТАЕТ ЧЕРЕЗ ЖОПУ
