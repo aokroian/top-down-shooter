@@ -10,7 +10,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1;">
-            <ui:VisualElement style="height: auto; flex-grow: 1; width: 35%; justify-content: space-between;">
+            <ui:VisualElement style="height: auto; flex-grow: 1; width: 30%; justify-content: space-between;">
                 <ui:VisualElement class="upgrade-row">
                     <ui:VisualElement class="left-col">
                         <ui:Label text="#Life" display-tooltip-when-elided="true" class="primary-text" />

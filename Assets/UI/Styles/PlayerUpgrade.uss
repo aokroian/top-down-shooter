@@ -19,7 +19,7 @@
     border-bottom-width: 3px;
     justify-content: space-around;
     flex-basis: 60%;
-    padding-left: 60px;
+    padding-left: 70px;
 }
 
 .right-col {
