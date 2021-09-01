@@ -72,8 +72,9 @@ public class ScoreCounter : MonoBehaviour
         if (currentScore >= progressionHolder.topScore)
         {
             progressionHolder.topScore = currentScore;
-            progressionSaveEvent.Raise();
         }
+        progressionHolder.exp += currentScore;
+        progressionSaveEvent.Raise();
     }
 
     private void updateScoreLabel()

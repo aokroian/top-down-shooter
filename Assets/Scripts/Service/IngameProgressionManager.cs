@@ -15,7 +15,13 @@ public class IngameProgressionManager : MonoBehaviour
 
     private GameObject[] currentWeapons;
 
-    
+    public int startExp { get; private set; }
+
+    private void Start()
+    {
+        startExp = progressionHolder.exp;
+    }
+
     public GameObject[] GetWeapons()
     {
         var selected = progressionHolder.GetSelected();
