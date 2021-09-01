@@ -25,12 +25,21 @@ public class SaveFileUtils
         Debug.Log("Save file deleted");
     }
 
-    [MenuItem("Custom/Save data/Add 1000 to save file")]
+    [MenuItem("Custom/Save data/Add 1000 credits")]
     public static void AddMoneyToSaveFile()
     {
         var data = getController().LoadProgression();
         var current = data.money + 1000;
         getController().SaveProgression(current, data.upgrades, data.selected, data.topScore, data.playerUpgrades, data.exp);
         Debug.Log("Money added. Current: " + current);
+    }
+
+    [MenuItem("Custom/Save data/Add 100000 exp")]
+    public static void AddExpToSaveFile()
+    {
+        var data = getController().LoadProgression();
+        var current = data.exp + 100000;
+        getController().SaveProgression(current, data.upgrades, data.selected, data.topScore, data.playerUpgrades, data.exp);
+        Debug.Log("Exp added. Current: " + current);
     }
 }
