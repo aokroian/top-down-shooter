@@ -36,6 +36,7 @@ public class ProgressionManager : MonoBehaviour, Loadable
         progressionHolder.SetSelectedUpgrades(saveData.selected);
         progressionHolder.topScore = saveData.topScore;
         progressionHolder.SetPurchasedPlayerUpgrades(saveData.playerUpgrades);
+        progressionHolder.exp = saveData.exp;
     }
 
     public void WriteToSaveFile()
