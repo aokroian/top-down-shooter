@@ -87,6 +87,13 @@ public class PlayerController : MonoBehaviour
     // upgrades
     private PlayerConfigurator playerConfigurator;
 
+    private Vector3 IsoVectorConvert(Vector3 vector)
+    {
+        Quaternion rotation = Quaternion.Euler(0, 45f, 0);
+        Matrix4x4 isoMatrix = Matrix4x4.Rotate(rotation);
+        Vector3 result = isoMatrix.MultiplyPoint3x4(vector);
+        return result;
+    }
 
     public void OnMovement(InputAction.CallbackContext value)
     {
@@ -97,10 +104,10 @@ public class PlayerController : MonoBehaviour
         if (value.performed)
         {
             Vector2 inputMovement = value.ReadValue<Vector2>();
-            //leftStickPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
-            //wasdPosition = Vector2.SmoothDamp(movement, inputMovement, ref currentVel, 0.0005f);
-            leftStickPosition = inputMovement;
-            wasdPosition = inputMovement;
+            Vector3 toConvert = new Vector3(inputMovement.x, 0, inputMovement.y);
+            Vector3 converted = IsoVectorConvert(toConvert);
+            leftStickPosition = new Vector2(converted.x, converted.z);
+            wasdPosition = new Vector2(converted.x, converted.z);
         } else if (value.canceled)
         {
             Vector2 zeroMovement = Vector2.zero;
@@ -117,8 +124,10 @@ public class PlayerController : MonoBehaviour
         if (value.performed)
         {
             Vector2 inputAim = value.ReadValue<Vector2>();
-            mousePosition = inputAim;
-            rightStickPosition = inputAim;
+            Vector3 toConvert = new Vector3(inputAim.x, 0, inputAim.y);
+            Vector3 converted = IsoVectorConvert(toConvert);
+            mousePosition = new Vector2(converted.x, converted.z);
+            rightStickPosition = new Vector2(converted.x, converted.z);
             if (lastRightStickPosition != rightStickPosition)
             {
                 lastRightStickPosition = rightStickPosition;
