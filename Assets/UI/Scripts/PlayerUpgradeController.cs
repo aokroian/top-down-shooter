@@ -10,6 +10,7 @@ public class PlayerUpgradeController : MonoBehaviour
     public UIDocument uiDocument;
     public ProgressionHolder progressionHolder;
     public GameEvent progressionSaveEvent;
+    public AudioSource audioSource;
 
     private VisualElement rootEl;
 
@@ -73,6 +74,12 @@ public class PlayerUpgradeController : MonoBehaviour
 
     private void Purchase(PlayerUpgrade upgrade)
     {
+        //sound
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+        
         progressionHolder.AddPurchasedPlayerUpgrade(upgrade);
         progressionHolder.exp -= upgrade.cost;
         progressionSaveEvent.Raise();

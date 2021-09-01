@@ -15,6 +15,9 @@ public class UpgradeScreen : MonoBehaviour
 
     public LocalizationTableHolder localizer;
 
+    public AudioSource upgradeAudioSource;
+    public AudioSource equipAudioSource;
+
     private VisualElement rootEl;
     private ScrollView scrollEl;
 
@@ -143,11 +146,17 @@ public class UpgradeScreen : MonoBehaviour
 
     private bool Purchase(AbstractUpgrade upgrade)
     {
+        
         bool result = false;
         if (!progressionHolder.IsPurchased(upgrade) && progressionHolder.moneyCount >= upgrade.cost)
         {
             progressionHolder.AddPurchasedUpgrade(upgrade);
             progressionHolder.moneyCount -= upgrade.cost;
+            // sound
+            if (upgradeAudioSource != null)
+            {
+                upgradeAudioSource.Play();
+            }
             progressionSaveEvent.Raise();
             Draw();
             result = true;
@@ -157,6 +166,7 @@ public class UpgradeScreen : MonoBehaviour
 
     private void ToggleEquip(AbstractUpgrade upgrade)
     {
+
         if (progressionHolder.IsSelectedRoot(upgrade))
         {
             equippedCount--;
@@ -168,6 +178,11 @@ public class UpgradeScreen : MonoBehaviour
         } else
         {
             return;
+        }
+        // sound
+        if (equipAudioSource != null)
+        {
+            equipAudioSource.Play();
         }
         progressionSaveEvent.Raise();
         Draw();
