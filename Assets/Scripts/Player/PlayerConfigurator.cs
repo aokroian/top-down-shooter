@@ -82,7 +82,7 @@ public class PlayerConfigurator : MonoBehaviour
         {
             if (i != index)
             {
-                kneePads[i].SetActive(false);
+                arr[i].SetActive(false);
             }
         }
         arr[index].SetActive(true);

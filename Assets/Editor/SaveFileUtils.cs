@@ -34,11 +34,11 @@ public class SaveFileUtils
         Debug.Log("Money added. Current: " + current);
     }
 
-    [MenuItem("Custom/Save data/Add 100000 exp")]
+    [MenuItem("Custom/Save data/Add 10000000 exp")]
     public static void AddExpToSaveFile()
     {
         var data = getController().LoadProgression();
-        var current = data.exp + 100000;
+        var current = data.exp + 10000000;
         getController().SaveProgression(data.money, data.upgrades, data.selected, data.topScore, data.playerUpgrades, current);
         Debug.Log("Exp added. Current: " + current);
     }
