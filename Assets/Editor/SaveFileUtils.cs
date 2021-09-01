@@ -39,7 +39,7 @@ public class SaveFileUtils
     {
         var data = getController().LoadProgression();
         var current = data.exp + 100000;
-        getController().SaveProgression(current, data.upgrades, data.selected, data.topScore, data.playerUpgrades, data.exp);
+        getController().SaveProgression(data.money, data.upgrades, data.selected, data.topScore, data.playerUpgrades, current);
         Debug.Log("Exp added. Current: " + current);
     }
 }
