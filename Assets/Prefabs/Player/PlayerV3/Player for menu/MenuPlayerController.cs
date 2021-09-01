@@ -13,7 +13,7 @@ public class MenuPlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        lastRandom = Random.Range(0, maxAnimIndex);
+        lastRandom = Random.Range(0, maxAnimIndex + 1);
     }
 
 
@@ -22,11 +22,11 @@ public class MenuPlayerController : MonoBehaviour
     {
         if (animator != null)
         {
-            int random = Random.Range(0, maxAnimIndex);
+            int random = Random.Range(0, maxAnimIndex + 1);
 
             while(random == lastRandom)
             {
-                random = Random.Range(0, maxAnimIndex);
+                random = Random.Range(0, maxAnimIndex + 1);
             }
             animator.SetInteger("upgrade anim index", random);
             lastRandom = random;
