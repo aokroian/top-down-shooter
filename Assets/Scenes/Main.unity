@@ -2377,8 +2377,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -1000
-  far clip plane: 1000
+  near clip plane: -20
+  far clip plane: 20
   field of view: 60
   orthographic: 1
   orthographic size: 6
@@ -2891,7 +2891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420575593}
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: -1, y: 2, z: -1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1071123030}
@@ -2914,8 +2914,8 @@ MonoBehaviour:
   playerToPointerPart: 0.23
   cagePlayerToPointerPart: 0.23
   smoothTime: 0.2
-  normalOffset: {x: -1, y: 2, z: -1}
-  cageOffset: {x: -1, y: 2, z: -1}
+  normalOffset: {x: 0, y: 2, z: 0}
+  cageOffset: {x: 0, y: 2, z: 0}
   centerToPlayerRadiusToRaiseCam: 0
   hasAlreadyBeenRaised: 1
 --- !u!1 &1431107163 stripped
