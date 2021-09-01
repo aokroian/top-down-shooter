@@ -91,7 +91,7 @@ public class PauseScreen : MonoBehaviour
 
     private IEnumerator ExpAnimationCoroutine()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.6f);
         int expLeft = scoreCounter.currentScore;
         int expCurrent = progressionManager.startExp;
         while (expLeft > 0)
@@ -103,7 +103,7 @@ public class PauseScreen : MonoBehaviour
             expLabelEl.text = expCurrent.ToString();
             audioSource.Play();
 
-            float deltaTime = 0.03f + Mathf.Min(50f / (float) expLeft, 0.2f);
+            float deltaTime = 0.03f + Mathf.Min(40f / (float) expLeft, 0.2f);
             yield return new WaitForSecondsRealtime(deltaTime);
         }
     }
