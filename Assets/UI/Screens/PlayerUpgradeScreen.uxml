@@ -5,7 +5,7 @@
         <ui:VisualElement class="panel" style="justify-content: center; align-items: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; flex-grow: 0; flex-basis: auto; flex-direction: row; margin-bottom: 5px; padding-left: 0; padding-right: 0; height: 80px;">
             <ui:Label text="#UpgradePlayer" display-tooltip-when-elided="true" class="primary-text" style="font-size: 48px; margin-bottom: 10px;" />
             <ui:VisualElement style="position: absolute; flex-direction: row; align-items: center; right: 20px; top: auto; margin-right: 0;">
-                <ui:VisualElement style="flex-shrink: 1; -unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&apos;/Assets/Materials/Bonus/CreditIcon.png&apos;); width: 48px; height: 48px;" />
+                <ui:VisualElement style="flex-shrink: 1; -unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&apos;/Assets/UI/Images/ExpOrb.png&apos;); width: 52px; height: 52px;" />
                 <ui:Label text="0" display-tooltip-when-elided="true" name="ExpLabel" class="primary-text" style="margin-left: 10px; font-size: 48px;" />
             </ui:VisualElement>
         </ui:VisualElement>

@@ -26,7 +26,7 @@ public class PlayerUpgradeController : MonoBehaviour
 
     private void FillScreen()
     {
-        rootEl.Q<Label>("ExpLabel").text = progressionHolder.exp.ToString();
+        SetExp();
         FillUpgrade(PlayerUpgradeType.LIFE, "Life", 100);
         FillUpgrade(PlayerUpgradeType.AMMO, "Ammo", 100);
         FillUpgrade(PlayerUpgradeType.STAMINA, "Stamina", 100);
@@ -82,6 +82,12 @@ public class PlayerUpgradeController : MonoBehaviour
         
         progressionHolder.AddPurchasedPlayerUpgrade(upgrade);
         progressionHolder.exp -= upgrade.cost;
+        SetExp();
         progressionSaveEvent.Raise();
+    }
+
+    private void SetExp()
+    {
+        rootEl.Q<Label>("ExpLabel").text = progressionHolder.exp.ToString();
     }
 }

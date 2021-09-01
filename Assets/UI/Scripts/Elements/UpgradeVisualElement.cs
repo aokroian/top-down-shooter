@@ -86,6 +86,7 @@ public class UpgradeVisualElement : VisualElement
     {
         var button = this.Q<Button>("EquipButton");
         button.text = selected ? localizer.Translate("Unequip") : localizer.Translate("Equip");
+        this.Q("Image").style.backgroundColor = new StyleColor(selected ? new Color(0f, 0.09803922f, 0.2509804f) : new Color(0f, 0.04705882f, 0.1215686f));
     }
 
     public void SetUpgradeButtonCallback(EventCallback<ClickEvent> callback)
