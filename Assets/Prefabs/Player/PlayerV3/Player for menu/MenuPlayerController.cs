@@ -16,8 +16,9 @@ public class MenuPlayerController : MonoBehaviour
     {
         if (animator != null)
         {
-            animator.SetBool("is idle", false);
             animator.SetFloat("upgrade anim index", Random.Range(0, numberOfUpgradeAnimations));
+            animator.SetBool("is idle", false);
+            animator.SetBool("is idle", true);
         }
     }
 }
