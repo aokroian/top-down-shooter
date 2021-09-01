@@ -876,6 +876,7 @@ GameObject:
   - component: {fileID: 3697648619906267322}
   - component: {fileID: 7918243578771294207}
   - component: {fileID: 7991316735206535043}
+  - component: {fileID: 6463408773190077240}
   m_Layer: 0
   m_Name: MENU-Player-v3
   m_TagString: Untagged
@@ -977,6 +978,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6463408773190077240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525182656436299251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed81b2314053448d68f7ea7391303ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfUpgradeAnimations: 7
 --- !u!1 &3688342265633244840
 GameObject:
   m_ObjectHideFlags: 0
