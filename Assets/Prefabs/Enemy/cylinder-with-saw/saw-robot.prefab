@@ -1774,7 +1774,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 100006, guid: 28ccd38a41e256a4e8fea96f5a8d039d, type: 3}
   explosionRadius: 2
   explosionForce: 800
-  explosionMaxDamage: 30
+  explosionMaxDamage: 7
   minExplosionHeight: 1
   maxExplosionHeight: 1
 --- !u!114 &-544568261331387710
