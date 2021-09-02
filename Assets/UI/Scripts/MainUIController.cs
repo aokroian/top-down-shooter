@@ -82,4 +82,12 @@ public class MainUIController : MonoBehaviour
         var param = new LoadProgressSceneEP(SceneEnum.TITLE, true);
         loadProgressSceneEvent.Raise(param);
     }
+
+    public void ProcessSceneParam(string param)
+    {
+        if (param == "UPGRADES")
+        {
+            ToUpgradeScreen();
+        }
+    }
 }

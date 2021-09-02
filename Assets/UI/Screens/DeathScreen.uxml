@@ -12,7 +12,7 @@
             <ui:VisualElement style="font-size: 52px; -unity-text-align: upper-center; height: 80px; align-items: center; justify-content: center;">
                 <ui:Label text="#NewRecord" display-tooltip-when-elided="true" name="RecordLabel" class="primary-text" style="color: rgb(226, 61, 61); visibility: visible; display: none;" />
             </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 0; opacity: 1; justify-content: center; align-items: center; flex-basis: auto; height: 30%;">
+            <ui:VisualElement style="flex-grow: 0; opacity: 1; justify-content: center; align-items: center; flex-basis: auto; height: 25%;">
                 <ui:VisualElement name="ExpContainer" style="height: 25%; flex-direction: row; align-items: center; margin-bottom: 50px;">
                     <ui:VisualElement style="background-image: url(&apos;/Assets/UI/Images/ExpOrb.png&apos;); width: 100px; height: 100px; -unity-background-scale-mode: scale-to-fit;" />
                     <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="ExpLabel" class="primary-text" style="font-size: 58px;" />
@@ -20,6 +20,7 @@
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1; margin-top: 40px;">
                 <ui:Button text="#NewRun" display-tooltip-when-elided="true" name="NewRun" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 40px;" />
+                <ui:Button text="#Upgrades" display-tooltip-when-elided="true" name="Upgrades" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 40px;" />
                 <ui:Button text="#MainMenu" display-tooltip-when-elided="true" name="MainMenu" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 30px;" />
             </ui:VisualElement>
         </ui:VisualElement>

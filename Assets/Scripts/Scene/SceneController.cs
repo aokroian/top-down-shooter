@@ -63,6 +63,7 @@ public class SceneController : MonoBehaviour
 
     private void SceneLoadCompleted(ChangeSceneEventParam param)
     {
+        PassParamToReceivers(param);
         var switchParam = new SceneSwitchEventParam(SceneSwitchEventParam.SceneLoadStateEnum.LOADED, param.scene, param.sceneToUnload);
         sceneSwitchEvent.Raise(switchParam);
         currentLoadings.Remove(param.scene);
@@ -78,5 +79,17 @@ public class SceneController : MonoBehaviour
     private void SetLoadingScreenActive(bool active)
     {
         loadingScreen.SetActive(active);
+    }
+
+    private void PassParamToReceivers(ChangeSceneEventParam param)
+    {
+        var scene = SceneManager.GetSceneByBuildIndex((int) param.scene);
+        foreach (GameObject obj in scene.GetRootGameObjects())
+        {
+            foreach (SceneParameterReceiver receiver in obj.GetComponentsInChildren<SceneParameterReceiver>())
+            {
+                receiver.PassParam(param.param);
+            }
+        }
     }
 }

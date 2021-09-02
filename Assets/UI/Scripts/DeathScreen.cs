@@ -17,9 +17,11 @@ public class DeathScreen : MonoBehaviour
     private VisualElement expContainer;
     private Label expLabelEl;
     private Button newRunEl;
+    private Button upgradesEl;
     private Button mainMenuEl;
 
     private Action newRunAction;
+    private Action upgradesAction;
     private Action mainMenuAction;
 
     private Label scoreLabel;
@@ -32,9 +34,11 @@ public class DeathScreen : MonoBehaviour
         expContainer = rootEl.Q("ExpContainer");
         expLabelEl = expContainer.Q<Label>("ExpLabel");
         newRunEl = rootEl.Q<Button>("NewRun");
+        upgradesEl = rootEl.Q<Button>("Upgrades");
         mainMenuEl = rootEl.Q<Button>("MainMenu");
 
         newRunEl.RegisterCallback<ClickEvent>(e => newRunAction?.Invoke());
+        upgradesEl.RegisterCallback<ClickEvent>(e => upgradesAction?.Invoke());
         mainMenuEl.RegisterCallback<ClickEvent>(e => mainMenuAction?.Invoke());
 
         scoreLabel = rootEl.Q<Label>("ScoreLabel");
@@ -87,6 +91,11 @@ public class DeathScreen : MonoBehaviour
     public void SetNewRunAction(Action newRunAction)
     {
         this.newRunAction = newRunAction;
+    }
+
+    public void SetUpgradesAction(Action upgradesAction)
+    {
+        this.upgradesAction = upgradesAction;
     }
 
     public void SetMainMenuAction(Action mainMenuAction)

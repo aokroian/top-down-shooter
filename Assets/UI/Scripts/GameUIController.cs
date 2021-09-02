@@ -30,6 +30,7 @@ public class GameUIController : MonoBehaviour
 
         deathController = deathScreen.GetComponent<DeathScreen>();
         deathController.SetNewRunAction(NewRun);
+        deathController.SetUpgradesAction(ToUpgrades);
         deathController.SetMainMenuAction(ToMainMenu);
 
         gameLoopController.AddStateChangeHandler(OnStateChange);
@@ -78,15 +79,18 @@ public class GameUIController : MonoBehaviour
 
     private void NewRun()
     {
-        //levelLoader.LoadLevel("Main");
-        //gameLoopController.UnPause();
         var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.GAME, false);
+        changeSceneEvent.Raise(param);
+    }
+
+    private void ToUpgrades()
+    {
+        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.GAME, false, null, "UPGRADES");
         changeSceneEvent.Raise(param);
     }
 
     private void ToMainMenu()
     {
-        //levelLoader.LoadLevel("StartMenu");
         var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.GAME, false);
         changeSceneEvent.Raise(param);
     }
