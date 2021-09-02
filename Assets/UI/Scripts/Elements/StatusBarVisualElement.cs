@@ -10,6 +10,9 @@ public class StatusBarVisualElement : VisualElement
 
     private VisualElement healthEl;
     private VisualElement staminaEl;
+    private VisualElement healthFullEl;
+    private VisualElement staminaFullEl;
+
     private Label creditEl;
     private Label bulletsInClipEl;
     private Label bulletsAmountEl;
@@ -29,6 +32,9 @@ public class StatusBarVisualElement : VisualElement
     {
         healthEl = this.Q("HealthBar");
         staminaEl = this.Q("StaminaBar");
+        healthFullEl = this.Q("HealthBarFull");
+        staminaFullEl = this.Q("StaminaBarFull");
+
         creditEl = this.Q<Label>("CreditLabel");
         bulletsInClipEl = this.Q<Label>("BulletsInClip");
         bulletsAmountEl = this.Q<Label>("BulletsAmount");
@@ -47,6 +53,16 @@ public class StatusBarVisualElement : VisualElement
     public void SetStamina(float stamina)
     {
         staminaEl.style.width = new StyleLength(new Length(stamina * 100f, LengthUnit.Percent));
+    }
+
+    public void SetHealthFull(float healthFull)
+    {
+        healthFullEl.style.width = new StyleLength(new Length(healthFull, LengthUnit.Pixel));
+    }
+
+    public void SetStaminaFull(float staminaFull)
+    {
+        staminaFullEl.style.width = new StyleLength(new Length(staminaFull, LengthUnit.Pixel));
     }
 
     public void SetCreditCount(int credit)

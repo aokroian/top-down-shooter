@@ -9,16 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58bd5f26b770a0348ad3bcd9896cec7a, type: 3}
-  m_Name: StaminaUpgrade_4
+  m_Script: {fileID: 11500000, guid: e61109114f1099749b39d7ad726e5ca2, type: 3}
+  m_Name: DefaultStamina
   m_EditorClassIdentifier: 
-  upgradeType: 2
-  isRoot: 0
-  children: []
-  image: {fileID: 0}
-  cost: 40000
-  upgradeName: Stamina
-  description: +10
-  orderInUpgradeScreen: 2
-  playerUpgradeType: 2
-  value: 10
+  value: 50

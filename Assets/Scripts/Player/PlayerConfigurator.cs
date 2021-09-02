@@ -11,6 +11,9 @@ public class PlayerConfigurator : MonoBehaviour
     public GameObject[] kneePads;
     public PlayerAmmoController playerAmmoController;
 
+    public FloatVariable defaultHealth;
+    public FloatVariable defaultStamina;
+
     private PlayerController playerController;
     private float addedHealth;
     private int countHealth;
@@ -46,8 +49,8 @@ public class PlayerConfigurator : MonoBehaviour
         SwitchModels(kneePads, countStamina);
 
         if (playerController == null) return;
-        playerController.stamina += addedStamina;
-        playerController.maxStamina += addedStamina;
+        playerController.stamina = defaultStamina.value + addedStamina;
+        playerController.maxStamina = defaultStamina.value + addedStamina;
     }
     private void ApplyHealthUpgrade()
     {
@@ -55,8 +58,8 @@ public class PlayerConfigurator : MonoBehaviour
 
         if (playerController == null) return;
         Target target = playerController.GetComponent<Target>();
-        target.maxHealth += addedHealth;
-        target.health += addedHealth;
+        target.maxHealth = defaultHealth.value + addedHealth;
+        target.health = defaultHealth.value + addedHealth;
     }
     private void ApplyAmmoUpgrade()
     {

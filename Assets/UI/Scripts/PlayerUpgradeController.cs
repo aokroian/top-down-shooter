@@ -11,6 +11,8 @@ public class PlayerUpgradeController : MonoBehaviour
     public ProgressionHolder progressionHolder;
     public GameEvent progressionSaveEvent;
     public AudioSource audioSource;
+    public FloatVariable defaultHealth;
+    public FloatVariable defaultStamina;
 
     private VisualElement rootEl;
 
@@ -27,9 +29,9 @@ public class PlayerUpgradeController : MonoBehaviour
     private void FillScreen()
     {
         SetExp();
-        FillUpgrade(PlayerUpgradeType.LIFE, "Life", 100);
+        FillUpgrade(PlayerUpgradeType.LIFE, "Life", (int) defaultHealth.value);
         FillUpgrade(PlayerUpgradeType.AMMO, "Ammo", 100);
-        FillUpgrade(PlayerUpgradeType.STAMINA, "Stamina", 100);
+        FillUpgrade(PlayerUpgradeType.STAMINA, "Stamina", (int) defaultStamina.value);
     }
 
     private void FillUpgrade(PlayerUpgradeType type, string elPrefix, int startValue) {

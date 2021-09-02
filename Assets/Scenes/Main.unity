@@ -3027,7 +3027,9 @@ MonoBehaviour:
   target: {fileID: 9205994612711088163}
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
   mainCamera: {fileID: 1071123029}
-  weaponPreviewTexture: {fileID: 8400000, guid: d172ed78a667ccf429b041bacfdbf7f0, type: 2}
+  barSizeMultiplier: 3
+  defaultHealth: {fileID: 11400000, guid: 725feabe3f43b4a46b9db3948102d1b9, type: 2}
+  defaultStamina: {fileID: 11400000, guid: 0971a0d8e3d410c46aee8bf4ea624bdf, type: 2}
 --- !u!1 &1452680596
 GameObject:
   m_ObjectHideFlags: 0
@@ -8369,9 +8371,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1071123029}
     - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: stamina
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: gameLoop
       value: 
       objectReference: {fileID: 1099389160}
+    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: dodgeTime
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: dodgeSpeed
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: maxStamina
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: mobileInput
       value: 
@@ -8380,6 +8398,10 @@ PrefabInstance:
       propertyPath: ammoController
       value: 
       objectReference: {fileID: 824559845}
+    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: dodgeStaminaCost
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: progressionManager
       value: 
@@ -8432,6 +8454,14 @@ PrefabInstance:
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1099389162}
+    - target: {fileID: 6971399184106823467, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: defaultHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: 725feabe3f43b4a46b9db3948102d1b9, type: 2}
+    - target: {fileID: 6971399184106823467, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: defaultStamina
+      value: 
+      objectReference: {fileID: 11400000, guid: 0971a0d8e3d410c46aee8bf4ea624bdf, type: 2}
     - target: {fileID: 6971399184106823467, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: playerAmmoController
       value: 

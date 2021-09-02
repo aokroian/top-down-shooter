@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,8 +15,9 @@ public class StatusBarController : MonoBehaviour
     public Target target;
     public ProgressionHolder progressionHolder;
     public Camera mainCamera;
-    public Texture weaponPreviewTexture;
-    //public GameLoopController gameLoopController;
+    public float barSizeMultiplier = 3f;
+    public FloatVariable defaultHealth;
+    public FloatVariable defaultStamina;
 
     private VisualElement statusContainer;
     private StatusBarVisualElement statusBar;
@@ -32,18 +34,24 @@ public class StatusBarController : MonoBehaviour
     {
         statusContainer = statusBarDoc.rootVisualElement;
         statusBar = statusContainer.Q<StatusBarVisualElement>();
+
+        progressionHolder.GetPurchasedPlayerUpgrades();
         statusBar.Init();
-        //statusBar.SetWeaponPreviewTexture(weaponPreviewTexture);
+        statusBar.SetHealthFull((defaultHealth.value + CalcAdditionalUpgradeAmount(PlayerUpgradeType.LIFE)) * barSizeMultiplier);
+        statusBar.SetStaminaFull((defaultStamina.value + CalcAdditionalUpgradeAmount(PlayerUpgradeType.STAMINA)) * barSizeMultiplier);
+
 
         reloadContainer = reloadBarDoc.rootVisualElement;
         reloadBar = reloadContainer.Q<ReloadBarVisualElement>();
         reloadInnerContainer = reloadContainer.Q("Container");
         reloadBar.Init();
         reloadBar.SetReloadProgress(0f);
+    }
 
-        //pauseButtonContainer = pauseButtonDoc.rootVisualElement;
-        //pauseButton = pauseButtonContainer.Q<Button>();
-        //pauseButton.RegisterCallback<ClickEvent>(e => gameLoopController.Pause());
+    private int CalcAdditionalUpgradeAmount(PlayerUpgradeType type)
+    {
+        var filtered = progressionHolder.GetPurchasedPlayerUpgrades().Where(v => v.playerUpgradeType == type);
+        return filtered.Select(v => v.value).Sum();
     }
 
     // Update is called once per frame
