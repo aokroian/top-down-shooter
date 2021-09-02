@@ -273,7 +273,11 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     {
         if (aimSpotRef != null)
         {
-            Vector3 correction = equippedWeaponObj.transform.position - transform.position;
+            Vector3 correction = Vector3.zero;
+            if (Vector3.Distance(transform.position, player.position) > 2f)
+            {
+                correction = equippedWeaponObj.transform.position - transform.position;
+            }
             aimSpotRef.transform.position = player.position - correction;
 
         }
