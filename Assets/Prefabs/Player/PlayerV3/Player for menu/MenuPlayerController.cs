@@ -21,6 +21,8 @@ public class MenuPlayerController : MonoBehaviour
         {
             animator.SetBool("is idle", true);
         }
+
+        Time.timeScale = 1;
     }
 
     public void PlayRandomUpdateAnimation()

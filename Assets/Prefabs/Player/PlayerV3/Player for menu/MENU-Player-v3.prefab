@@ -950,6 +950,7 @@ MonoBehaviour:
   - {fileID: 1764359201719994928}
   - {fileID: 4651579455727805667}
   - {fileID: 485583725897012388}
+  playerAmmoController: {fileID: 0}
 --- !u!114 &7991316735206535043
 MonoBehaviour:
   m_ObjectHideFlags: 0
