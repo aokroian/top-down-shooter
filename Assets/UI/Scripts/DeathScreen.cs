@@ -76,7 +76,7 @@ public class DeathScreen : MonoBehaviour
         int expCurrent = progressionManager.startExp;
         while (expLeft > 0)
         {
-            int expDelta = Mathf.Min(100 + 100 * Mathf.FloorToInt(expLeft / 10000), expLeft);
+            int expDelta = Mathf.Min(100 + 100 * Mathf.FloorToInt(expLeft / 5000), expLeft);
             expLeft -= expDelta;
             expCurrent += expDelta;
             scoreLabel.text = expLeft.ToString();

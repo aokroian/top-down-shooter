@@ -101,6 +101,7 @@ public class UpgradeVisualElement : VisualElement
 
     public void SetNeedUpgradeButton(bool needButton)
     {
-        this.Q<Button>("UpgradeButton").style.display = needButton ? DisplayStyle.Flex : DisplayStyle.None;
+        //this.Q<Button>("UpgradeButton").style.display = needButton ? DisplayStyle.Flex : DisplayStyle.None;
+        this.Q<Button>("UpgradeButton").style.visibility = needButton ? Visibility.Visible : Visibility.Hidden;
     }
 }
