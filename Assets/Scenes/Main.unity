@@ -8384,7 +8384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: dodgeSpeed
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: maxStamina

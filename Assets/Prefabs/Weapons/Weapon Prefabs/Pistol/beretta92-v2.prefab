@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1956860794098079283}
   - component: {fileID: 7004769373600977664}
   - component: {fileID: 5507670509775282215}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: beretta92-v2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8857759009490319732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletOutPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6268617112677454858}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightHandPoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -375,7 +375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6670527688881253006}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftHandPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6905358039209603752}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftHandPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -6282946564115539482}
   - component: {fileID: 1752777469939030997}
   - component: {fileID: 6409341865363581901}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: double-barrel-shotgun-pivot-point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 6451689736848896027}
   - component: {fileID: 1326986739618357497}
   - component: {fileID: 1544424084961289132}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 1095874180627516547}
   - component: {fileID: 970454581055797907}
   - component: {fileID: 7222422944994759619}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: barrels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 3570233059330002363}
   - component: {fileID: 442443034298647070}
   - component: {fileID: 2433959004392093396}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: double-barrel-shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7300631204780695865}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletOutPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 430698325305214175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightHandPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
