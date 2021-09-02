@@ -19,7 +19,7 @@ MonoBehaviour:
   image: {fileID: 0}
   cost: 30000
   upgradeName: Stamina
-  description: +25%
+  description: +10
   orderInUpgradeScreen: 2
   playerUpgradeType: 2
-  value: 25
+  value: 10

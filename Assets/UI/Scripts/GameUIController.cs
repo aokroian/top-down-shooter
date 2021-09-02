@@ -8,7 +8,7 @@ public class GameUIController : MonoBehaviour
 {
     public GameObject pauseScreen;
     public GameObject settingsScreen;
-    //public LevelLoader levelLoader;
+    public GameObject deathScreen;
     public ChangeSceneEvent changeSceneEvent;
     public GameLoopController gameLoopController;
 
@@ -16,6 +16,7 @@ public class GameUIController : MonoBehaviour
     public InputSystemEventSystem newEventSystem;
 
     private PauseScreen pauseController;
+    private DeathScreen deathController;
     
     void Start()
     {
@@ -26,6 +27,10 @@ public class GameUIController : MonoBehaviour
         pauseController.SetMainMenuAction(ToMainMenu);
 
         settingsScreen.GetComponent<SettingsScreen>().SetBackAction(() => ToPauseScreen());
+
+        deathController = deathScreen.GetComponent<DeathScreen>();
+        deathController.SetNewRunAction(NewRun);
+        deathController.SetMainMenuAction(ToMainMenu);
 
         gameLoopController.AddStateChangeHandler(OnStateChange);
     }
@@ -48,6 +53,7 @@ public class GameUIController : MonoBehaviour
     {
         pauseScreen.SetActive(true);
         settingsScreen.SetActive(false);
+        deathScreen.SetActive(false);
 
         oldEventSystem.enabled = false;
         newEventSystem.enabled = true;
@@ -57,6 +63,17 @@ public class GameUIController : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         settingsScreen.SetActive(true);
+        deathScreen.SetActive(false);
+    }
+
+    private void ToDeathScreen()
+    {
+        pauseScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        deathScreen.SetActive(true);
+
+        oldEventSystem.enabled = false;
+        newEventSystem.enabled = true;
     }
 
     private void NewRun()
@@ -74,11 +91,6 @@ public class GameUIController : MonoBehaviour
         changeSceneEvent.Raise(param);
     }
 
-    private void SetDead(bool dead)
-    {
-        pauseController.SetDead(dead);
-    }
-
     private void OnStateChange(GameLoopController.GameState state)
     {
         if (state == GameLoopController.GameState.RUNNING)
@@ -87,11 +99,9 @@ public class GameUIController : MonoBehaviour
         } else if (state == GameLoopController.GameState.PAUSE)
         {
             ToPauseScreen();
-            SetDead(false);
         } else if (state == GameLoopController.GameState.DEAD)
         {
-            ToPauseScreen();
-            SetDead(true);
+            ToDeathScreen();
         }
     }
 }

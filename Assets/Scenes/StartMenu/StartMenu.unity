@@ -553,6 +553,8 @@ MonoBehaviour:
   progressionHolder: {fileID: 11400000, guid: b32708adda8a4c9498c7db407054bad1, type: 2}
   progressionSaveEvent: {fileID: 11400000, guid: 2ca6dcf43fea80a4db3f7d33d9f44e9a, type: 2}
   audioSource: {fileID: 740820249}
+  defaultHealth: {fileID: 11400000, guid: 725feabe3f43b4a46b9db3948102d1b9, type: 2}
+  defaultStamina: {fileID: 11400000, guid: 0971a0d8e3d410c46aee8bf4ea624bdf, type: 2}
 --- !u!114 &406154335
 MonoBehaviour:
   m_ObjectHideFlags: 0

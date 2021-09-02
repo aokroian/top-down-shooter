@@ -16,10 +16,12 @@ public class IngameProgressionManager : MonoBehaviour
     private GameObject[] currentWeapons;
 
     public int startExp { get; private set; }
+    public int startTopScore { get; private set; }
 
     private void Start()
     {
         startExp = progressionHolder.exp;
+        startTopScore = progressionHolder.topScore;
     }
 
     public GameObject[] GetWeapons()

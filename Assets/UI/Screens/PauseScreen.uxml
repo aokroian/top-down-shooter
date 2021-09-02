@@ -13,10 +13,6 @@
                 <ui:Label text="0" display-tooltip-when-elided="true" name="TopScoreLabel" class="primary-text" style="margin-left: 10px;" />
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1; opacity: 1; justify-content: center; align-items: center;">
-                <ui:VisualElement name="ExpContainer" style="height: 25%; flex-direction: row; align-items: center; margin-bottom: 50px;">
-                    <ui:VisualElement style="background-image: url(&apos;/Assets/UI/Images/ExpOrb.png&apos;); width: 128px; height: 128px; -unity-background-scale-mode: scale-to-fit;" />
-                    <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="ExpLabel" class="primary-text" style="font-size: 58px;" />
-                </ui:VisualElement>
                 <ui:Button text="#Resume" display-tooltip-when-elided="true" name="Resume" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 1px; margin-bottom: 30px;" />
                 <ui:Button text="#Settings" display-tooltip-when-elided="true" name="Settings" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 1px; margin-bottom: 30px;" />
                 <ui:Button text="#NewRun" display-tooltip-when-elided="true" name="NewRun" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 30px;" />
