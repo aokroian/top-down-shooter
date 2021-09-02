@@ -9,7 +9,7 @@ public class PlayerConfigurator : MonoBehaviour
     public GameObject[] glasses;
     public GameObject[] belts;
     public GameObject[] kneePads;
-
+    public PlayerAmmoController playerAmmoController;
 
     private PlayerController playerController;
     private float addedHealth;
@@ -29,6 +29,7 @@ public class PlayerConfigurator : MonoBehaviour
         {
             ApplyAllUpgrades();
         }
+
         
     }
 
@@ -46,27 +47,29 @@ public class PlayerConfigurator : MonoBehaviour
 
         if (playerController == null) return;
         playerController.stamina += addedStamina;
+        playerController.maxStamina += addedStamina;
     }
     private void ApplyHealthUpgrade()
     {
         SwitchModels(glasses, countHealth);
 
         if (playerController == null) return;
-        playerController.maxHealth += addedHealth;
-        playerController.health += addedHealth;
+        Target target = playerController.GetComponent<Target>();
+        target.maxHealth += addedHealth;
+        target.health += addedHealth;
     }
     private void ApplyAmmoUpgrade()
     {
         SwitchModels(belts, countAmmo);
 
-        if (playerController == null) return;
-        int machinegunMax = playerController.ammoController.machinegunMax;
-        int rifleMax = playerController.ammoController.rifleMax;
-        int shotgunMax = playerController.ammoController.shotgunMax;
+        if (playerController == null || playerAmmoController == null) return;
+        int machinegunMax = playerAmmoController.machinegunMax;
+        int rifleMax = playerAmmoController.rifleMax;
+        int shotgunMax = playerAmmoController.shotgunMax;
 
-        playerController.ammoController.machinegunMax = Mathf.RoundToInt(machinegunMax * addedAmmo / 100);
-        playerController.ammoController.rifleMax = Mathf.RoundToInt(rifleMax * addedAmmo / 100); ;
-        playerController.ammoController.shotgunMax = Mathf.RoundToInt(shotgunMax * addedAmmo / 100); ;
+        playerAmmoController.machinegunMax = Mathf.RoundToInt(machinegunMax * addedAmmo / 100);
+        playerAmmoController.rifleMax = Mathf.RoundToInt(rifleMax * addedAmmo / 100); ;
+        playerAmmoController.shotgunMax = Mathf.RoundToInt(shotgunMax * addedAmmo / 100); ;
 
     }
 
@@ -101,5 +104,8 @@ public class PlayerConfigurator : MonoBehaviour
         var filteredAmmo = progressionHolder.GetPurchasedPlayerUpgrades().Where(v => v.playerUpgradeType == PlayerUpgradeType.AMMO);
         addedAmmo = filteredAmmo.Select(v => v.value).Sum(); // общая сумма дополнительных хп/процентов патронов/стамины
         countAmmo = filteredAmmo.Count(); // Количество вкачанных апгрейдов
+
+
+        Debug.Log(addedAmmo);
     }
 }

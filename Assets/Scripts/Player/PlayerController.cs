@@ -87,6 +87,8 @@ public class PlayerController : MonoBehaviour
     // upgrades
     private PlayerConfigurator playerConfigurator;
 
+
+    // converting input for isometric camera with 45 degrees 
     private Vector3 IsoVectorConvert(Vector3 vector)
     {
         Quaternion rotation = Quaternion.Euler(0, 45f, 0);
@@ -267,12 +269,6 @@ public class PlayerController : MonoBehaviour
     {
         itemsEquipmentArr = progressionManager.GetWeapons();
 
-        // upgrade system
-        TryGetComponent<PlayerConfigurator>(out playerConfigurator);
-        if (playerConfigurator != null)
-        {
-            playerConfigurator.ApplyAllUpgrades();
-        }
     }
     private void OnEnable()
     {
@@ -282,7 +278,13 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        
+        // upgrade system
+        TryGetComponent<PlayerConfigurator>(out playerConfigurator);
+        if (playerConfigurator != null)
+        {
+            playerConfigurator.ApplyAllUpgrades();
+        }
+
         // writing variables for audio system
         damageAudioSource = transform.Find("DamageAudioSource").GetComponent<AudioSource>();
         movementAudioSource = transform.Find("MovementAudioSource").GetComponent<AudioSource>();
