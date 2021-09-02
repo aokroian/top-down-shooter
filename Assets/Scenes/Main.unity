@@ -863,7 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7502695412977259143}
-  tilesCount: 2
+  tilesCount: 1
   enemySpawner: {fileID: 848356371}
   groundSpawner: {fileID: 21440212}
   obstaclesSpawner: {fileID: 1473315390}
@@ -1339,8 +1339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7502695412977259143}
   spawnDistancePassed: 8
-  minSpawnPointDistance: 30
-  maxSpawnPointDistance: 40
+  minSpawnPointDistance: 20
+  maxSpawnPointDistance: 28
   spawnPointAngle: 60
   startSpawnCost: 3
   spawnCostDistanceMultiplier: 0.012
