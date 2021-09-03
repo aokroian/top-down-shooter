@@ -14,6 +14,8 @@
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 0; opacity: 1; justify-content: center; align-items: center; flex-basis: auto; height: 25%;">
                 <ui:VisualElement name="ExpContainer" style="height: 45%; flex-direction: row; align-items: center; margin-bottom: 50px;">
+                    <ui:Label text="#ProgressionPoints" display-tooltip-when-elided="true" class="primary-text" style="font-size: 58px;" />
+                    <ui:Label text=":" display-tooltip-when-elided="true" class="primary-text" style="font-size: 58px; margin-right: 5px;" />
                     <ui:VisualElement style="background-image: url(&apos;/Assets/UI/Images/ExpOrb.png&apos;); width: 100px; height: 100px; -unity-background-scale-mode: scale-to-fit;" />
                     <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="ExpLabel" class="primary-text" style="font-size: 58px;" />
                 </ui:VisualElement>

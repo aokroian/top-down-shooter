@@ -83,7 +83,7 @@ public class DeathScreen : MonoBehaviour
             expLabelEl.text = expCurrent.ToString();
             audioSource.Play();
 
-            float deltaTime = 0.03f + Mathf.Min(40f / (float)expLeft, 0.2f);
+            float deltaTime = 0.03f + Mathf.Min(40f / (float)expLeft, 0.17f);
             yield return new WaitForSecondsRealtime(deltaTime);
         }
     }
