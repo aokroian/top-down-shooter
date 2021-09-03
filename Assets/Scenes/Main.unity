@@ -3635,7 +3635,7 @@ MonoBehaviour:
   progressionManager: {fileID: 0}
   health:
     bonusPrefab: {fileID: 7389978441618331954, guid: 90df346787bd66a42b27a98665b596bc, type: 3}
-    baseChance: 10
+    baseChance: 8
     notGetPercent: 10
     enemyCostAdditionalPercent: 10
   credits:
@@ -3645,15 +3645,15 @@ MonoBehaviour:
     enemyCostAdditionalPercent: 50
   ammoParams:
   - bonusPrefab: {fileID: 7389978441618331954, guid: e0650115ff6b467449a8787f78584925, type: 3}
-    baseChance: 10
+    baseChance: 8
     notGetPercent: 5
     enemyCostAdditionalPercent: 10
   - bonusPrefab: {fileID: 7389978441618331954, guid: dec818cee4aeb0145aec389390a7da26, type: 3}
-    baseChance: 10
+    baseChance: 8
     notGetPercent: 5
     enemyCostAdditionalPercent: 10
   - bonusPrefab: {fileID: 7389978441618331954, guid: 621d0aae33f013b429f922040ad0e341, type: 3}
-    baseChance: 10
+    baseChance: 8
     notGetPercent: 5
     enemyCostAdditionalPercent: 10
   localizationTableHolder: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}

@@ -17,7 +17,7 @@ MonoBehaviour:
   children:
   - {fileID: 11400000, guid: 18753b47233109446aafde1e1c054408, type: 2}
   image: {fileID: 0}
-  cost: 25000
+  cost: 40000
   upgradeName: Ammo capacity
   description: +25%
   orderInUpgradeScreen: 1

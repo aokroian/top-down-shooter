@@ -141,7 +141,7 @@ MonoBehaviour:
   textFont: {fileID: 12800000, guid: e1608a7ff7cd9a34081b60200f8c3e75, type: 3}
   textColor: {r: 1, g: 1, b: 1, a: 1}
   audioSource: {fileID: 6168664876497394714}
-  amount: 32
+  amount: 48
   ammoType: 2
 --- !u!114 &6949757416220479433
 MonoBehaviour:
