@@ -188,13 +188,56 @@ public class EnemyAudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySoundBeforeSuicide()
+    public void PlaySoundBeforeSuicide(bool isPlaying)
     {
         if (soundBeforeSuicide == null)
         {
-            Debug.Log("No saw sound before suicide found in enemy " + gameObject.name);
+            Debug.Log("No walking sound found in enemy audio manager " + gameObject.name);
             return;
         }
-        mainAudioSource.PlayOneShot(soundBeforeSuicide);
+
+        if (player == null)
+        {
+            Debug.Log("Player not found in enemy audio manager " + gameObject.name);
+            return;
+        }
+        if (agent.velocity.magnitude <= 0)
+        {
+            mainAudioSource.clip = null;
+            mainAudioSource.loop = false;
+            mainAudioSource.pitch = 1;
+            mainAudioSource.volume = 1;
+            mainAudioSource.Stop();
+            return;
+        }
+        if (GameLoopController.paused)
+        {
+            mainAudioSource.clip = null;
+            mainAudioSource.loop = false;
+            mainAudioSource.pitch = 1;
+            mainAudioSource.volume = 1;
+            mainAudioSource.Stop();
+            return;
+        }
+
+        if (isPlaying)
+        {
+            if (!mainAudioSource.isPlaying)
+            {
+                mainAudioSource.clip = soundBeforeSuicide;
+                mainAudioSource.loop = true;
+                mainAudioSource.pitch = 1;
+                mainAudioSource.volume = 1;
+                mainAudioSource.Play();
+            }
+        }
+        else
+        {
+            mainAudioSource.clip = null;
+            mainAudioSource.loop = false;
+            mainAudioSource.pitch = 1;
+            mainAudioSource.volume = 1;
+            mainAudioSource.Stop();
+        }
     }
 }

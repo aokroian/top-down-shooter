@@ -3653,6 +3653,7 @@ MonoBehaviour:
   explosives:
   - {fileID: 5375654824635933047}
   - {fileID: 4750628176609608492}
+  distanceForSound: 0
 --- !u!114 &-1605534587396907508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3687,7 +3688,7 @@ MonoBehaviour:
     - Key: Hit by player bullet
       Value: {fileID: 0}
     - Key: Before suicide
-      Value: {fileID: 8300000, guid: 6c8bb9df2c6e044678eeea7499bb0c24, type: 3}
+      Value: {fileID: 8300000, guid: 516854c3024d34ebe93aa185d75cd394, type: 3}
 --- !u!1 &8962464125082246976
 GameObject:
   m_ObjectHideFlags: 0

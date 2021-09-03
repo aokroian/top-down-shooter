@@ -5,6 +5,23 @@ using UnityEngine;
 public class KamikazeController : MonoBehaviour
 {
     public GameObject[] explosives;
+    public float distanceForSound;
+
+    private Transform player;
+    private void Start()
+    {
+        player = GameObject.Find("Player").transform;
+    }
+    private void Update()
+    {
+        if (Vector3.Distance(transform.position, player.position) <= distanceForSound)
+        {
+            GetComponent<EnemyAudioManager>().PlaySoundBeforeSuicide(true);
+        } else
+        {
+            GetComponent<EnemyAudioManager>().PlaySoundBeforeSuicide(true);
+        }
+    }
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision other)
     {
