@@ -19,9 +19,9 @@ MonoBehaviour:
   image: {fileID: 2800000, guid: c07bcb7467790b349aa6f404ef3eec9e, type: 3}
   cost: 15
   upgradeName: Rifle
-  description: +10% damage
+  description: +10% dmg
   orderInUpgradeScreen: 20
   weapon: 2
   weaponUpgradeType: 0
   value: 10
-  tier: 1
+  tier: 4

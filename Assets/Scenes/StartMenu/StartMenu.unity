@@ -462,6 +462,7 @@ MonoBehaviour:
   audioSource: {fileID: 740820249}
   defaultHealth: {fileID: 11400000, guid: 725feabe3f43b4a46b9db3948102d1b9, type: 2}
   defaultStamina: {fileID: 11400000, guid: 0971a0d8e3d410c46aee8bf4ea624bdf, type: 2}
+  localizer: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
 --- !u!114 &406154335
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -34,38 +34,10 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
 
     void Start()
     {
+        CalcAmmo();
+
         foreach (AmmoType type in (AmmoType[])System.Enum.GetValues(typeof(AmmoType)))
         {
-            switch (type)
-            {
-                case AmmoType.NONE:
-                    maxAmmoMap[type] = 0;
-                    ammoMap.Add(type, 0);
-                    break;
-                case AmmoType.PISTOL:
-                    maxAmmoMap[type] = pistolMax;
-                    ammoMap.Add(type, maxAmmoMap[type] >= 0 ? Mathf.Min(pistolDefault, pistolMax) : -1);
-                    break;
-                case AmmoType.MACHINEGUN:
-                    maxAmmoMap[type] = machinegunMax;
-                    ammoMap.Add(type, maxAmmoMap[type] >= 0 ? Mathf.Min(machinegunDefault, machinegunMax) : -1);
-                    break;
-                case AmmoType.RIFLE:
-                    maxAmmoMap[type] = rifleMax;
-                    ammoMap.Add(type, maxAmmoMap[type] >= 0 ? Mathf.Min(rifleDefault, rifleMax) : -1);
-                    break;
-                case AmmoType.SHOTGUN:
-                    maxAmmoMap[type] = shotgunMax;
-                    ammoMap.Add(type, maxAmmoMap[type] >= 0 ? Mathf.Min(shotgunDefault, shotgunMax) : -1);
-                    break;
-                case AmmoType.GRENADE:
-                    maxAmmoMap[type] = grenadeMax;
-                    ammoMap.Add(type, maxAmmoMap[type] >= 0 ? Mathf.Min(grenadeDefault, grenadeMax) : -1);
-                    break;
-                default:
-                    break;
-            }
-
             statAmmoEmpty[type] = 0;
             statAmmoFull[type] = 0;
             statAmmoSpent[type] = 0;
@@ -74,10 +46,46 @@ public class PlayerAmmoController : MonoBehaviour, IAmmoProvider
         }
     }
 
-    /// <summary>
-    /// Excclude ammo from system!
-    /// </summary>
-    public int GetAmmo(AmmoType type, int required)
+    public void CalcAmmo()
+    {
+        foreach (AmmoType type in (AmmoType[])System.Enum.GetValues(typeof(AmmoType)))
+        {
+            switch (type)
+            {
+                case AmmoType.NONE:
+                    maxAmmoMap[type] = 0;
+                    ammoMap[type] = 0;
+                    break;
+                case AmmoType.PISTOL:
+                    maxAmmoMap[type] = pistolMax;
+                    ammoMap[type] = maxAmmoMap[type] >= 0 ? Mathf.Min(pistolDefault, pistolMax) : -1;
+                    break;
+                case AmmoType.MACHINEGUN:
+                    maxAmmoMap[type] = machinegunMax;
+                    ammoMap[type] = maxAmmoMap[type] >= 0 ? Mathf.Min(machinegunDefault, machinegunMax) : -1;
+                    break;
+                case AmmoType.RIFLE:
+                    maxAmmoMap[type] = rifleMax;
+                    ammoMap[type] = maxAmmoMap[type] >= 0 ? Mathf.Min(rifleDefault, rifleMax) : -1;
+                    break;
+                case AmmoType.SHOTGUN:
+                    maxAmmoMap[type] = shotgunMax;
+                    ammoMap[type] = maxAmmoMap[type] >= 0 ? Mathf.Min(shotgunDefault, shotgunMax) : -1;
+                    break;
+                case AmmoType.GRENADE:
+                    maxAmmoMap[type] = grenadeMax;
+                    ammoMap[type] = maxAmmoMap[type] >= 0 ? Mathf.Min(grenadeDefault, grenadeMax) : -1;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+/// <summary>
+/// Excclude ammo from system!
+/// </summary>
+public int GetAmmo(AmmoType type, int required)
     {
         int removed = required;
         if (maxAmmoMap[type] >= 0) {

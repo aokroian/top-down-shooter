@@ -10,7 +10,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1;">
-            <ui:VisualElement style="height: auto; flex-grow: 1; width: 30%; justify-content: space-between;">
+            <ui:VisualElement style="height: auto; flex-grow: 1; width: 35%; justify-content: space-between;">
                 <ui:VisualElement class="upgrade-row">
                     <ui:VisualElement class="left-col">
                         <ui:Label text="#Life" display-tooltip-when-elided="true" class="primary-text" />
@@ -23,7 +23,7 @@
                 </ui:VisualElement>
                 <ui:VisualElement class="upgrade-row">
                     <ui:VisualElement class="left-col">
-                        <ui:Label text="#Ammo&#10;" display-tooltip-when-elided="true" class="primary-text" />
+                        <ui:Label text="#Ammo" display-tooltip-when-elided="true" class="primary-text" />
                         <ui:Label text="CurAmmo" display-tooltip-when-elided="true" name="CurrentAmmo" class="primary-text" />
                     </ui:VisualElement>
                     <ui:Button display-tooltip-when-elided="true" name="UpgradeAmmo" class="right-col">

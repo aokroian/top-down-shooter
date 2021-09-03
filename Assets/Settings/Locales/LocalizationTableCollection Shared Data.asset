@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 105238448988160
-    m_Key: +10% damage
+    m_Key: +10% dmg
     m_Metadata:
       m_Items: []
   - m_Id: 108740088848384
@@ -132,11 +132,51 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14631739345231872
-    m_Key: +20% damage
+    m_Key: +20% dmg
     m_Metadata:
       m_Items: []
   - m_Id: 15214321360687104
     m_Key: GameOver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18872947161944064
+    m_Key: Life
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873050547343360
+    m_Key: Ammo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873342579953664
+    m_Key: Stamina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873412759048192
+    m_Key: Max
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873693886468096
+    m_Key: UpgradePlayer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873915702235136
+    m_Key: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18874320947499008
+    m_Key: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18874421224919040
+    m_Key: Dev
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18874602129444864
+    m_Key: Upgrades
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18878511732477952
+    m_Key: NewRecord
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -19,6 +19,6 @@ MonoBehaviour:
   image: {fileID: 2800000, guid: 416251da0227a2349bac124a02102551, type: 3}
   cost: 10
   upgradeName: Shotgun
-  description: Unlock to equip
+  description: Unlock
   orderInUpgradeScreen: 30
   weapon: 3

@@ -14,6 +14,8 @@ public class PlayerUpgradeController : MonoBehaviour
     public FloatVariable defaultHealth;
     public FloatVariable defaultStamina;
 
+    public LocalizationTableHolder localizer;
+
     private VisualElement rootEl;
 
     private void OnEnable()
@@ -65,7 +67,7 @@ public class PlayerUpgradeController : MonoBehaviour
         else
         {
             rootEl.Q<Label>(elPrefix + "Cost").style.display = DisplayStyle.None;
-            rootEl.Q<Label>(elPrefix + "Description").text = "Max";
+            rootEl.Q<Label>(elPrefix + "Description").text = localizer.Translate("Max");
         }
     }
 

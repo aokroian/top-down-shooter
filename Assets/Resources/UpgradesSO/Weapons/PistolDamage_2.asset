@@ -19,7 +19,7 @@ MonoBehaviour:
   image: {fileID: 2800000, guid: 4652ed64cdc8ff64daf96d9e99819b74, type: 3}
   cost: 30
   upgradeName: Pistol
-  description: +20% damage
+  description: +20% dmg
   orderInUpgradeScreen: 0
   weapon: 0
   weaponUpgradeType: 0

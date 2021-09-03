@@ -1434,14 +1434,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pistolMax: -1
-  machinegunMax: 256
-  rifleMax: 48
-  shotgunMax: 48
+  machinegunMax: 144
+  rifleMax: 8
+  shotgunMax: 12
   grenadeMax: 3
   pistolDefault: -1
-  machinegunDefault: 128
-  rifleDefault: 24
-  shotgunDefault: 24
+  machinegunDefault: 144
+  rifleDefault: 8
+  shotgunDefault: 12
   grenadeDefault: 3
 --- !u!4 &824559846
 Transform:

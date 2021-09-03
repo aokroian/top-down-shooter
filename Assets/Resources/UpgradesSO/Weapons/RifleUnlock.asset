@@ -19,6 +19,6 @@ MonoBehaviour:
   image: {fileID: 2800000, guid: c07bcb7467790b349aa6f404ef3eec9e, type: 3}
   cost: 7
   upgradeName: Rifle
-  description: Unlock to equip
+  description: Unlock
   orderInUpgradeScreen: 20
   weapon: 2

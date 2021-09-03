@@ -19,6 +19,6 @@ MonoBehaviour:
   image: {fileID: 2800000, guid: 6ebe10b455279be40a93f5f3c1728f43, type: 3}
   cost: 5
   upgradeName: Machinegun
-  description: Unlock to equip
+  description: Unlock
   orderInUpgradeScreen: 10
   weapon: 1

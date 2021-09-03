@@ -103,7 +103,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 105238448988160
-    m_Localized: +10% damage
+    m_Localized: +10% dmg
     m_Metadata:
       m_Items: []
   - m_Id: 108740088848384
@@ -135,11 +135,51 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14631739345231872
-    m_Localized: +20% damage
+    m_Localized: +20% dmg
     m_Metadata:
       m_Items: []
   - m_Id: 15214321360687104
     m_Localized: Game over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18872947161944064
+    m_Localized: Life
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873050547343360
+    m_Localized: Ammo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873342579953664
+    m_Localized: Stamina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873412759048192
+    m_Localized: Max
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873693886468096
+    m_Localized: ' Upgrade character'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18873915702235136
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18874320947499008
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18874421224919040
+    m_Localized: Developers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18874602129444864
+    m_Localized: Upgrades
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18878511732477952
+    m_Localized: New record
     m_Metadata:
       m_Items: []
   references:

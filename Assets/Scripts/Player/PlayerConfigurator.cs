@@ -71,9 +71,14 @@ public class PlayerConfigurator : MonoBehaviour
         int shotgunMax = playerAmmoController.shotgunMax;
 
         playerAmmoController.machinegunMax = Mathf.RoundToInt(machinegunMax * addedAmmo / 100);
-        playerAmmoController.rifleMax = Mathf.RoundToInt(rifleMax * addedAmmo / 100); ;
-        playerAmmoController.shotgunMax = Mathf.RoundToInt(shotgunMax * addedAmmo / 100); ;
+        playerAmmoController.rifleMax = Mathf.RoundToInt(rifleMax * addedAmmo / 100);
+        playerAmmoController.shotgunMax = Mathf.RoundToInt(shotgunMax * addedAmmo / 100);
 
+        playerAmmoController.machinegunDefault = Mathf.RoundToInt(machinegunMax * addedAmmo / 100);
+        playerAmmoController.rifleDefault = Mathf.RoundToInt(rifleMax * addedAmmo / 100);
+        playerAmmoController.shotgunDefault = Mathf.RoundToInt(shotgunMax * addedAmmo / 100);
+
+        playerAmmoController.CalcAmmo();
     }
 
     private void SwitchModels(GameObject[] arr, int index)
