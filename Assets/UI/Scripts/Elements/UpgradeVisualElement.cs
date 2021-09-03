@@ -52,15 +52,19 @@ public class UpgradeVisualElement : VisualElement
         this.Q<Label>("Name").text = localizer.Translate(name);
     }
 
+    /*
     public void SetDescription(string description)
     {
-        this.Q<Label>("Description").text = localizer.Translate(description);
+        //this.Q<Label>("Description").text = localizer.Translate(description);
+        this.description = description;
     }
+    */
 
     // Add type enum
-    public void SetUpgrade(bool value)
+    public void SetUpgrade(bool value, string description)
     {
-        this.Q<Label>("ButtonLabel").text = value ? localizer.Translate("Upgrade") : localizer.Translate("Unlock");
+        //this.Q<Label>("ButtonLabel").text = value ? localizer.Translate("Upgrade") : localizer.Translate("Unlock");
+        this.Q<Label>("ButtonLabel").text = value ? localizer.Translate(description) : localizer.Translate("Unlock");
         this.Q("ProgressBar").style.display = value ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
