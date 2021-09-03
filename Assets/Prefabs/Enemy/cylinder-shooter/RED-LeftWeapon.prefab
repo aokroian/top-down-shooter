@@ -116,13 +116,13 @@ MonoBehaviour:
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
-  shotDamage: 20
+  shotDamage: 25
   shotImpactForce: 2
   recoilHeight: 0.07
   clipSize: 20
   rateOfFire: 0.15
   reloadTime: 0.3
-  numberOfPenetrations: 1
+  numberOfPenetrations: 2
   localPosition: {x: -0.0034, y: -0.0077, z: 0.0001}
   localRotation: {x: 90, y: 0, z: 0}
   localScale: {x: 0.01, y: 0.01, z: 0.01}

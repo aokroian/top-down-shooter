@@ -17,7 +17,7 @@ MonoBehaviour:
   children:
   - {fileID: 11400000, guid: 4057b527039f13e4891dc963f9de65eb, type: 2}
   image: {fileID: 2800000, guid: 4652ed64cdc8ff64daf96d9e99819b74, type: 3}
-  cost: 30
+  cost: 25
   upgradeName: Pistol
   description: +20% dmg
   orderInUpgradeScreen: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   isRoot: 0
   children: []
   image: {fileID: 0}
-  cost: 50000
+  cost: 100000
   upgradeName: Life
   description: +15
   orderInUpgradeScreen: 0

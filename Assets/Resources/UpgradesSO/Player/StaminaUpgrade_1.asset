@@ -17,7 +17,7 @@ MonoBehaviour:
   children:
   - {fileID: 11400000, guid: 2e7a840595817a847bc77322a0edd8fd, type: 2}
   image: {fileID: 0}
-  cost: 10000
+  cost: 15000
   upgradeName: Stamina
   description: +10
   orderInUpgradeScreen: 2

@@ -1621,7 +1621,7 @@ MonoBehaviour:
   _cost: 3
   defaultState: 0
   visionRange: 15
-  damage: 10
+  damage: 15
   biteDistance: 1.8
   beforeBiteTime: 0.2
   afterBiteTime: 0.8
