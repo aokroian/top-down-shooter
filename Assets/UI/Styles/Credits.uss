@@ -13,3 +13,7 @@ ScrollView Label {
 Scroller {
     width: 30px;
 }
+
+#unity-slider {
+    width: 30px;
+}
