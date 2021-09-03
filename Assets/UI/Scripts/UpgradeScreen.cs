@@ -96,11 +96,11 @@ public class UpgradeScreen : MonoBehaviour
         upgradeEl.SetLocalizer(localizer);
 
         upgradeEl.SetName(upgrade.upgradeName);
-        upgradeEl.SetDescription(upgrade.description);
+        //upgradeEl.SetDescription(upgrade.description);
         upgradeEl.SetCost(upgrade.cost);
         upgradeEl.SetIcon(upgrade.image);
 
-        upgradeEl.SetUpgrade(upgrade.upgradeType == UpgradeType.WEAPON_UPGRADE);
+        upgradeEl.SetUpgrade(upgrade.upgradeType == UpgradeType.WEAPON_UPGRADE, upgrade.description);
         if (upgrade.upgradeType == UpgradeType.WEAPON_UPGRADE)
         {
             int currentTier = ((WeaponUpgrade)upgrade).tier - (progressionHolder.IsPurchased(upgrade) ? 0 : 1);
