@@ -17,4 +17,18 @@
             <ui:Button text="i" display-tooltip-when-elided="true" name="Credits" class="button" style="width: 128px; height: 128px; font-size: 96px; -unity-font-style: bold; border-right-width: 0; border-left-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 30px; border-top-right-radius: 0; border-bottom-left-radius: 30px; border-bottom-right-radius: 0;" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement name="Money" style="position: absolute; left: 0; flex-direction: row; right: 0; bottom: 10px; justify-content: center;">
+        <ui:VisualElement style="flex-direction: row; font-size: 38px;">
+            <ui:Label text="#Money" display-tooltip-when-elided="true" class="primary-text" />
+            <ui:Label text=":" display-tooltip-when-elided="true" class="primary-text" />
+            <ui:VisualElement style="width: 50px; height: 50px; background-image: url(&apos;/Assets/Materials/Bonus/CreditIcon.png&apos;); margin-left: 5px; margin-right: 5px;" />
+            <ui:Label text="0" display-tooltip-when-elided="true" name="CreditsLabel" class="primary-text" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-direction: row; font-size: 38px; margin-left: 60px;">
+            <ui:Label text="#ProgressionPoints" display-tooltip-when-elided="true" class="primary-text" />
+            <ui:Label text=":" display-tooltip-when-elided="true" class="primary-text" />
+            <ui:VisualElement style="width: 50px; height: 50px; background-image: url(&apos;/Assets/UI/Images/ExpOrb.png&apos;); margin-left: 5px; margin-right: 5px;" />
+            <ui:Label text="0" display-tooltip-when-elided="true" name="ProgressionPointsLabel" class="primary-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>

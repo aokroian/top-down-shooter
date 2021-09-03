@@ -66,7 +66,7 @@ public class PlayerUpgradeController : MonoBehaviour
         }
         else
         {
-            rootEl.Q<Label>(elPrefix + "Cost").style.display = DisplayStyle.None;
+            rootEl.Q(elPrefix + "CostContainer").style.display = DisplayStyle.None;
             rootEl.Q<Label>(elPrefix + "Description").text = localizer.Translate("Max");
         }
     }

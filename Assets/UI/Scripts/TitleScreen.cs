@@ -19,10 +19,22 @@ public class TitleScreen : MonoBehaviour
         rootEl.Q("Settings").RegisterCallback<ClickEvent>(e => manager.ToSettingsScreen());
         rootEl.Q("Credits").RegisterCallback<ClickEvent>(e => manager.ToCreditsScreen());
         ShowTopScore();
+        ShowCredits();
+        ShowProgressionPoints();
     }
 
     public void ShowTopScore()
     {
         rootEl.Q<Label>("TopScoreLabel").text = progressionHolder.topScore.ToString();
+    }
+
+    public void ShowCredits()
+    {
+        rootEl.Q<Label>("CreditsLabel").text = progressionHolder.moneyCount.ToString();
+    }
+
+    public void ShowProgressionPoints()
+    {
+        rootEl.Q<Label>("ProgressionPointsLabel").text = progressionHolder.exp.ToString();
     }
 }

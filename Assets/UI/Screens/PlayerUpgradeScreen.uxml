@@ -17,7 +17,7 @@
                         <ui:Label text="CurLife" display-tooltip-when-elided="true" name="CurrentLife" class="primary-text" />
                     </ui:VisualElement>
                     <ui:Button display-tooltip-when-elided="true" name="UpgradeLife" class="right-col">
-                        <ui:VisualElement style="flex-direction: row;">
+                        <ui:VisualElement name="LifeCostContainer" style="flex-direction: row;">
                             <ui:VisualElement style="width: 50px; height: 50px; background-image: url(&apos;/Assets/UI/Images/ExpOrb.png&apos;);" />
                             <ui:Label text="LifeCost&#10;" display-tooltip-when-elided="true" name="LifeCost" class="primary-text" />
                         </ui:VisualElement>
@@ -30,7 +30,7 @@
                         <ui:Label text="CurAmmo" display-tooltip-when-elided="true" name="CurrentAmmo" class="primary-text" />
                     </ui:VisualElement>
                     <ui:Button display-tooltip-when-elided="true" name="UpgradeAmmo" class="right-col">
-                        <ui:VisualElement style="flex-direction: row;">
+                        <ui:VisualElement name="AmmoCostContainer" style="flex-direction: row;">
                             <ui:VisualElement style="width: 50px; height: 50px; background-image: url(&apos;/Assets/UI/Images/ExpOrb.png&apos;);" />
                             <ui:Label text="AmCost&#10;" display-tooltip-when-elided="true" name="AmmoCost" enable-rich-text="true" class="primary-text" />
                         </ui:VisualElement>
@@ -43,7 +43,7 @@
                         <ui:Label text="CurStamina" display-tooltip-when-elided="true" name="CurrentStamina" class="primary-text" />
                     </ui:VisualElement>
                     <ui:Button display-tooltip-when-elided="true" name="UpgradeStamina" class="right-col">
-                        <ui:VisualElement style="flex-direction: row;">
+                        <ui:VisualElement name="StaminaCostContainer" style="flex-direction: row;">
                             <ui:VisualElement style="width: 50px; height: 50px; background-image: url(&apos;/Assets/UI/Images/ExpOrb.png&apos;);" />
                             <ui:Label text="StCost&#10;" display-tooltip-when-elided="true" name="StaminaCost" enable-rich-text="true" class="primary-text" />
                         </ui:VisualElement>
