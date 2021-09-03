@@ -179,6 +179,14 @@ MonoBehaviour:
     m_Key: NewRecord
     m_Metadata:
       m_Items: []
+  - m_Id: 18965580109209600
+    m_Key: Money
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18965649206173696
+    m_Key: ProgressionPoints
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

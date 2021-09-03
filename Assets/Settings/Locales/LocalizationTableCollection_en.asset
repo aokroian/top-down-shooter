@@ -182,5 +182,13 @@ MonoBehaviour:
     m_Localized: New record
     m_Metadata:
       m_Items: []
+  - m_Id: 18965580109209600
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18965649206173696
+    m_Localized: Progression points
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
