@@ -79,19 +79,19 @@ public class GameUIController : MonoBehaviour
 
     private void NewRun()
     {
-        var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.GAME, false);
+        var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.GAME, false, active: true);
         changeSceneEvent.Raise(param);
     }
 
     private void ToUpgrades()
     {
-        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.GAME, false, null, "UPGRADES");
+        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.GAME, false, null, "UPGRADES", active: true);
         changeSceneEvent.Raise(param);
     }
 
     private void ToMainMenu()
     {
-        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.GAME, false);
+        var param = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.GAME, false, active: true);
         changeSceneEvent.Raise(param);
     }
 

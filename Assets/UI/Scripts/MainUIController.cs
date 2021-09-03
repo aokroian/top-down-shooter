@@ -73,7 +73,7 @@ public class MainUIController : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("START GAME");
-        var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.TITLE, false);
+        var param = new ChangeSceneEventParam(SceneEnum.GAME, SceneEnum.TITLE, false, active: true);
         changeSceneEvent.Raise(param);
     }
 

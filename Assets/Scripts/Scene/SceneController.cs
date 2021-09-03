@@ -18,7 +18,7 @@ public class SceneController : MonoBehaviour
 
     private void SharedDataLoaded()
     {
-        var titleParam = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.NULL, false);
+        var titleParam = new ChangeSceneEventParam(SceneEnum.TITLE, SceneEnum.NULL, false, null, null, true);
         ChangeScene(titleParam);
         var musicParam = new ChangeSceneEventParam(SceneEnum.MUSIC, SceneEnum.NULL, true);
         ChangeScene(musicParam);
@@ -58,7 +58,9 @@ public class SceneController : MonoBehaviour
         {
             SceneLoadCompleted(param);
         }
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)param.scene));
+        if (param.active) {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)param.scene));
+        }
     }
 
     private void SceneLoadCompleted(ChangeSceneEventParam param)

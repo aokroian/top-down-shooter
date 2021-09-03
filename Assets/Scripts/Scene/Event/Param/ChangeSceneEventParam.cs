@@ -11,13 +11,15 @@ public class ChangeSceneEventParam
     public bool showAfterLoad { get; private set; }
     public Action onLoad { get; private set; }
     public string param { get; private set; }
+    public bool active { get; private set; }
 
-    public ChangeSceneEventParam(SceneEnum scene, SceneEnum sceneToUnload, bool showAfterLoad, Action onLoad = null, string param = null)
+    public ChangeSceneEventParam(SceneEnum scene, SceneEnum sceneToUnload, bool showAfterLoad, Action onLoad = null, string param = null, bool active = false)
     {
         this.scene = scene;
         this.sceneToUnload = sceneToUnload;
         this.showAfterLoad = showAfterLoad;
         this.onLoad = onLoad;
         this.param = param;
+        this.active = active;
     }
 }
