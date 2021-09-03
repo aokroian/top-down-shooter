@@ -21,7 +21,7 @@
             <ui:Label text="Shrimp Rich by septahelix (c) copyright 2019 Licensed under a Creative Commons Attribution (3.0) license. http://dig.ccmixter.org/files/septahelix/59735 Ft: PerchanceMusic" display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
             <ui:Label text="Midnight Phunk by Doxent Zsigmond (c) copyright 2015 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license. http://dig.ccmixter.org/files/doxent/50695 Ft: Javolenus" display-tooltip-when-elided="true" class="primary-text" style="white-space: normal;" />
         </ui:ScrollView>
-        <ui:VisualElement style="margin-top: 10px; position: relative; height: 150px; flex-grow: 0;">
+        <ui:VisualElement style="margin-top: 10px; position: relative; height: 150px; flex-grow: 1; flex-shrink: 0;">
             <ui:Button display-tooltip-when-elided="true" name="Back" class="button" style="width: 128px; height: 128px; background-image: url(&apos;/Assets/UI/Images/outline_logout_black_48dp.png&apos;); border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: 0; padding-left: 0; margin-bottom: 20px; border-left-width: 0; position: relative; left: auto; bottom: auto;" />
         </ui:VisualElement>
     </ui:VisualElement>
