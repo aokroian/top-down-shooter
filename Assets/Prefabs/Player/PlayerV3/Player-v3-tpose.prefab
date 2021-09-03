@@ -730,7 +730,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   afterHitDelay: 0.25
-  onHitEffect: {fileID: 0}
+  onHitEffect: {fileID: 100002, guid: f75efcef4bb42054abf94f8e5c701adc, type: 3}
   onDeath:
     m_PersistentCalls:
       m_Calls:
@@ -1024,6 +1024,9 @@ MonoBehaviour:
   - {fileID: 4560769024187506022}
   - {fileID: 7474535868532945845}
   - {fileID: 2416880251464713202}
+  playerAmmoController: {fileID: 0}
+  defaultHealth: {fileID: 0}
+  defaultStamina: {fileID: 0}
 --- !u!1 &1737877182569778681
 GameObject:
   m_ObjectHideFlags: 0

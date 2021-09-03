@@ -8719,6 +8719,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: onHitEffect
+      value: 
+      objectReference: {fileID: 100002, guid: e74af37e539075d428c1f7bd8cdb781d, type: 3}
+    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1099389162}
