@@ -31,31 +31,41 @@ public class Explosion : MonoBehaviour
 
         foreach (var hitCollider in damagedObjects)
         {
-            // check if there are obstacles between explosive and target
-            RaycastHit hit;
-            Vector3 rayDir = hitCollider.transform.position - explosivePos;
-            if (Physics.Raycast(explosivePos, rayDir, out hit, explosionRadius))
+            Target hitTarget;
+            hitCollider.gameObject.TryGetComponent<Target>(out hitTarget);
+            float clampedDist = Mathf.Clamp(Vector3.Distance(transform.position, hitCollider.transform.position), 0f, explosionRadius);
+            float damagePercent = (explosionRadius - clampedDist) / explosionRadius;
+            float clampedDamage = Mathf.Clamp(explosionMaxDamage * damagePercent, 0f, explosionMaxDamage);
+            if (hitTarget != null)
             {
-
-                Target target = hit.transform.gameObject.GetComponent<Target>();
-                if (target != null)
-                {
-                    // DAMAGE
-                    // value to make damage from explosion more natural
-                    float amplification = 1.3f;
-                    float clampedDist = Mathf.Clamp(Vector3.Distance(transform.position, hitCollider.transform.position), 0f, explosionRadius);
-                    float damagePercent = (explosionRadius - clampedDist) / explosionRadius;
-                    float clampedDamage = Mathf.Clamp(explosionMaxDamage * damagePercent * amplification, 0f, explosionMaxDamage);
-                    target.TakeDamage(clampedDamage, explosionForce, null, true, transform.position, explosionRadius);
-                }
-
-                // FORCE
-                Rigidbody rigidbody = hitCollider.gameObject.GetComponent<Rigidbody>();
-                if (rigidbody != null)
-                {
-                    rigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-                }
+                hitTarget.TakeDamage(clampedDamage, explosionForce, null, true, transform.position, explosionRadius);
             }
+           
+
+            // check if there are obstacles between explosive and target
+            //RaycastHit hit;
+            //Vector3 rayDir = hitCollider.transform.position - explosivePos;
+            //if (Physics.Raycast(explosivePos, rayDir, out hit, explosionRadius, ~LayerMask.GetMask("Obstacle")))
+            //{
+
+            //    Target target = hit.transform.gameObject.GetComponent<Target>();
+            //    if (target != null)
+            //    {
+            //        // DAMAGE
+            //        // value to make damage from explosion more natural
+            //        float clampedDist = Mathf.Clamp(Vector3.Distance(transform.position, hitCollider.transform.position), 0f, explosionRadius);
+            //        float damagePercent = (explosionRadius - clampedDist) / explosionRadius;
+            //        float clampedDamage = Mathf.Clamp(explosionMaxDamage * damagePercent, 0f, explosionMaxDamage);
+            //        target.TakeDamage(clampedDamage, explosionForce, null, true, transform.position, explosionRadius);
+            //    }
+
+            //    // FORCE
+            //    Rigidbody rigidbody = hitCollider.gameObject.GetComponent<Rigidbody>();
+            //    if (rigidbody != null)
+            //    {
+            //        rigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+            //    }
+            //}
 
 
         }
