@@ -7,12 +7,15 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public RectTransform background = null;
 
     public CustomScreenStick stick;
+    public GameObject fakeStick;
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         background.gameObject.SetActive(true);
+        fakeStick.SetActive(false);
+
         background.position = eventData.position;
-        stick.OnPointerDown(eventData);
+        stick.OnPointerDown(eventData); 
     }
 
     public virtual void OnDrag(PointerEventData eventData)
@@ -24,5 +27,6 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     {
         stick.OnPointerUp(eventData);
         background.gameObject.SetActive(false);
+        fakeStick.SetActive(true);
     }
 }
