@@ -3927,7 +3927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6349645506720649874, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
       propertyPath: explosionMaxDamage
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6349645506720649874, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
       propertyPath: cameraShakeMagnitude
@@ -4035,7 +4035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6349645506720649874, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
       propertyPath: explosionMaxDamage
-      value: 120
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: -6349645506720649874, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
       propertyPath: cameraShakeMagnitude

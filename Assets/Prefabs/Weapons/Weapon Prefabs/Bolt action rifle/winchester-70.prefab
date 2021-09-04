@@ -257,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOnPlayer: 1
   laserOriginPoint: {fileID: 2849596411155587299}
+  isEnabled: 0
 --- !u!1 &3040421391604227224
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +376,7 @@ MonoBehaviour:
   recoilHeight: 3
   clipSize: 1
   rateOfFire: 0.1
-  reloadTime: 1
+  reloadTime: 0.8
   numberOfPenetrations: 3
   localPosition: {x: 0.157, y: 0.257, z: 0.194}
   localRotation: {x: 11.53, y: 0, z: 0}

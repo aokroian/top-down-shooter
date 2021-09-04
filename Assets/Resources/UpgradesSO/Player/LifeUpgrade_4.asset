@@ -18,7 +18,7 @@ MonoBehaviour:
   image: {fileID: 0}
   cost: 100000
   upgradeName: Life
-  description: +15
+  description: +25
   orderInUpgradeScreen: 0
   playerUpgradeType: 0
-  value: 15
+  value: 25
