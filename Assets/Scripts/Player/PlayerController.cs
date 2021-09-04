@@ -174,6 +174,7 @@ public class PlayerController : MonoBehaviour
                 // single shot and only for strong weapons
                 if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
                 {
+                    equippedItemObj.transform.GetComponentInChildren<LaserAim>().isEnabled = false;
                     equippedItemObj.GetComponent<WeaponController>().Shoot(0);
                     SafelyStopShootingCoroutine();
                 }
@@ -362,6 +363,7 @@ public class PlayerController : MonoBehaviour
                     else if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
                     {
                         SafelyStopShootingCoroutine();
+                        equippedItemObj.transform.GetComponentInChildren<LaserAim>().isEnabled = true;
                     }
                 }
                 if (rightStickPosition.magnitude < 0.7f)
@@ -503,6 +505,11 @@ public class PlayerController : MonoBehaviour
 
     private void SafelyStopShootingCoroutine()
     {
+        if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
+        {
+            equippedItemObj.transform.GetComponentInChildren<LaserAim>().isEnabled = false;
+        }
+
         if (shootingCoroutine != null)
         {
             StopCoroutine(shootingCoroutine);
@@ -521,6 +528,7 @@ public class PlayerController : MonoBehaviour
             }
             if (rightStickPosition.magnitude <= 0.3f && rifleShootNeeded)
             {
+                equippedItemObj.transform.GetComponentInChildren<LaserAim>().isEnabled = false;
                 SafelyStopShootingCoroutine();
                 equippedItemObj.GetComponent<WeaponController>().Shoot(0);
                 rifleShootNeeded = false;

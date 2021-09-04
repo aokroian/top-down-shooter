@@ -35,6 +35,10 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
     public GameObject rigLayerHandsPosition;
     public GameObject parentBoneForWeapon;
     public GameObject aimSpotRef;
+
+    private GameObject rightHandPoint;
+    private GameObject leftHandPoint;
+
     //
     public float posDetectionDelay = 0.1f;
     public float minPosChangeForAnimation = 0.1f;
@@ -59,7 +63,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
     private float shootTimer;
 
-    private GameObject laser;
     private LaserAim laserAim;
 
     // Maybe make scriptable object? Now every enemy create additional object
@@ -77,6 +80,7 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
 
         // spawn weapon
         equippedWeaponObj = Instantiate(weapon, parentBoneForWeapon.transform);
+        laserAim = equippedWeaponObj.GetComponent<LaserAim>();
 
         WeaponController weaponController = equippedWeaponObj.GetComponent<WeaponController>();
 
@@ -86,13 +90,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         equippedWeaponObj.transform.localPosition = weaponController.localPosition;
         equippedWeaponObj.transform.localRotation = Quaternion.Euler(weaponController.localRotation);
         equippedWeaponObj.transform.localScale = weaponController.localScale;
-
-        FindInAllChildren(equippedWeaponObj.transform, "LaserOrigin", ref laser);
-        if (laser != null)
-        {
-            laserAim = laser.gameObject.GetComponent<LaserAim>();
-        }
-
 
         // animation rigging variables
         //FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
@@ -200,7 +197,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         switch (currentState)
         {
             case State.IDLE:
-                laserAim.isEnabled = false;
                 if (IsPlayerSpotted())
                 {
                     currentState = State.CHASING;
@@ -208,7 +204,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 }
                 break;
             case State.CHASING:
-                laserAim.isEnabled = false;
                 if (Vector3.Distance(transform.position, player.transform.position) > stopPursuitDistance)
                 {
                     currentState = State.IDLE;
@@ -228,8 +223,8 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
             case State.BEFORE_SHOT:
                 // Check if player in shoot range?
                 agent.isStopped = true;
-                laserAim.isEnabled = true;
                 AimPlayer();
+                laserAim.isEnabled = true;
                 //sound
                 audioManager.PlayAimingSound(true);
 
@@ -245,8 +240,8 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 }
                 break;
             case State.AFTER_SHOT:
-                shootTimer -= Time.deltaTime;
                 laserAim.isEnabled = false;
+                shootTimer -= Time.deltaTime;
                 if (shootTimer <= 0f)
                 {
                     agent.destination = GetRandomMovementPoint();
@@ -256,7 +251,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
                 break;
             case State.MOVING:
                 agent.isStopped = false;
-                laserAim.isEnabled = false;
                 if (!IsAtShootingRange() || !IsNoObstacle())
                 {
                     agent.destination = player.transform.position;

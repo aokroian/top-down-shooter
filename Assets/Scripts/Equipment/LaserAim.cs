@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class LaserAim : MonoBehaviour
 {
-    public bool isOnPlayer;
+
+    
     public GameObject laserOriginPoint;
-    public bool isEnabled;
+    public bool isEnabled = false;
 
     private LineRenderer lineRenderer;
 
@@ -17,31 +18,23 @@ public class LaserAim : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (!isEnabled)
-        {
-            lineRenderer.enabled = false;
-        }
+        lineRenderer.enabled = isEnabled;
+
         lineRenderer.SetPosition(0, laserOriginPoint.transform.position);
-        //lineRenderer.SetPosition(1, laserOriginPoint.transform.position + laserOriginPoint.transform.forward * 100f);
+        lineRenderer.SetPosition(1, laserOriginPoint.transform.position + laserOriginPoint.transform.forward * 100f);
         RaycastHit hit;
-        if (Physics.Raycast(laserOriginPoint.transform.position, laserOriginPoint.transform.forward, out hit, 40))
+        if (Physics.Raycast(laserOriginPoint.transform.position, laserOriginPoint.transform.forward, out hit, 100f))
         {
-            if (hit.collider.CompareTag("Player") && !isOnPlayer || hit.collider.CompareTag("Enemy") && isOnPlayer)
+            if (hit.collider)
             {
-                lineRenderer.enabled = true;
                 lineRenderer.SetPosition(1, hit.point);
             }
             else
             {
-                //lineRenderer.SetPosition(1, laserOriginPoint.transform.position + laserOriginPoint.transform.forward * 3f);
-                //lineRenderer.SetPosition(1, laserOriginPoint.transform.position);
-                lineRenderer.SetPosition(1, laserOriginPoint.transform.position);
+                lineRenderer.SetPosition(1, laserOriginPoint.transform.position + laserOriginPoint.transform.forward * 100f);
             }
-        } else
-        {
-            lineRenderer.SetPosition(1, laserOriginPoint.transform.position);
         }
     }
 }
