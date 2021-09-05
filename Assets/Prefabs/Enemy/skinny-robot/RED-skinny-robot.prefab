@@ -3687,7 +3687,7 @@ MonoBehaviour:
     - Key: Hit by player bullet
       Value: {fileID: 0}
     - Key: Before suicide
-      Value: {fileID: 8300000, guid: 516854c3024d34ebe93aa185d75cd394, type: 3}
+      Value: {fileID: 0}
 --- !u!1 &8962464125082246976
 GameObject:
   m_ObjectHideFlags: 0

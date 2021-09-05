@@ -756,6 +756,11 @@ public class PlayerController : MonoBehaviour
         }
         damageAudioSource.PlayOneShot(bulletHittingPlayerSound);
     }
+    public void PlayDeathSound()
+    {
+        
+        damageAudioSource.PlayOneShot(deathSound);
+    }
 
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
     {
