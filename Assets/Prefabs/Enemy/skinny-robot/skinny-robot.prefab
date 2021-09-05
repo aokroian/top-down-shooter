@@ -3653,7 +3653,7 @@ MonoBehaviour:
   explosives:
   - {fileID: 5375654824635933047}
   - {fileID: 4750628176609608492}
-  distanceForSound: 0
+  distanceForSound: 10
 --- !u!114 &-1605534587396907508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3682,13 +3682,13 @@ MonoBehaviour:
   audioDictionary:
     list:
     - Key: Walk
-      Value: {fileID: 8300000, guid: 599eb29df01504aceb5cf634174fac53, type: 3}
+      Value: {fileID: 0}
     - Key: Death
       Value: {fileID: 8300000, guid: f94d83daa41e64fc6add4cd6baec70bb, type: 3}
     - Key: Hit by player bullet
       Value: {fileID: 0}
     - Key: Before suicide
-      Value: {fileID: 0}
+      Value: {fileID: 8300000, guid: 65099819cbf9648a2b22c88d5a00d82a, type: 3}
 --- !u!1 &8962464125082246976
 GameObject:
   m_ObjectHideFlags: 0

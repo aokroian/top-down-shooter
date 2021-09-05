@@ -6,6 +6,7 @@ public class KamikazeController : MonoBehaviour
 {
     public GameObject[] explosives;
     public float distanceForSound;
+    
 
     private Transform player;
     private void Start()
@@ -14,12 +15,14 @@ public class KamikazeController : MonoBehaviour
     }
     private void Update()
     {
-        if (Vector3.Distance(transform.position, player.position) <= distanceForSound)
+        float distance = Vector3.Distance(transform.position, player.position);
+        if (distance <= distanceForSound)
         {
-            GetComponent<EnemyAudioManager>().PlaySoundBeforeSuicide(true);
+            float volume = (distanceForSound - distance) / distanceForSound;
+            GetComponent<EnemyAudioManager>().PlaySoundBeforeSuicide(true, volume);
         } else
         {
-            GetComponent<EnemyAudioManager>().PlaySoundBeforeSuicide(true);
+            GetComponent<EnemyAudioManager>().PlaySoundBeforeSuicide(false, 0);
         }
     }
     // Start is called before the first frame update

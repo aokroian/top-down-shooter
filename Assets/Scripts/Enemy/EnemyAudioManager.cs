@@ -80,7 +80,7 @@ public class EnemyAudioManager : MonoBehaviour
         float volume = distToPlayer / maxWalkSoundDistance;
 
         if (isPlaying)
-        {  
+        {
             if (!movementAudioSource.isPlaying)
             {
                 movementAudioSource.clip = walkSound;
@@ -171,7 +171,7 @@ public class EnemyAudioManager : MonoBehaviour
         {
             mainAudioSource.clip = sawSound;
             mainAudioSource.loop = true;
-            mainAudioSource.pitch = 1;
+            mainAudioSource.pitch = 1f;
             mainAudioSource.volume = 1;
             if (!mainAudioSource.isPlaying)
             {
@@ -188,7 +188,7 @@ public class EnemyAudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySoundBeforeSuicide(bool isPlaying)
+    public void PlaySoundBeforeSuicide(bool isPlaying, float volume)
     {
         if (soundBeforeSuicide == null)
         {
@@ -201,43 +201,35 @@ public class EnemyAudioManager : MonoBehaviour
             Debug.Log("Player not found in enemy audio manager " + gameObject.name);
             return;
         }
-        if (agent.velocity.magnitude <= 0)
-        {
-            mainAudioSource.clip = null;
-            mainAudioSource.loop = false;
-            mainAudioSource.pitch = 1;
-            mainAudioSource.volume = 1;
-            mainAudioSource.Stop();
-            return;
-        }
         if (GameLoopController.paused)
         {
-            mainAudioSource.clip = null;
-            mainAudioSource.loop = false;
-            mainAudioSource.pitch = 1;
-            mainAudioSource.volume = 1;
-            mainAudioSource.Stop();
+            movementAudioSource.clip = null;
+            movementAudioSource.loop = false;
+            movementAudioSource.pitch = 1;
+            movementAudioSource.volume = 1;
+            movementAudioSource.Stop();
             return;
         }
 
         if (isPlaying)
         {
-            if (!mainAudioSource.isPlaying)
+            Debug.Log(volume);
+            movementAudioSource.clip = soundBeforeSuicide;
+            movementAudioSource.loop = true;
+            movementAudioSource.pitch = 1;
+            movementAudioSource.volume = volume;
+            if (!movementAudioSource.isPlaying)
             {
-                mainAudioSource.clip = soundBeforeSuicide;
-                mainAudioSource.loop = true;
-                mainAudioSource.pitch = 1;
-                mainAudioSource.volume = 1;
-                mainAudioSource.Play();
+                movementAudioSource.Play();
             }
         }
         else
         {
-            mainAudioSource.clip = null;
-            mainAudioSource.loop = false;
-            mainAudioSource.pitch = 1;
-            mainAudioSource.volume = 1;
-            mainAudioSource.Stop();
+            movementAudioSource.clip = null;
+            movementAudioSource.loop = false;
+            movementAudioSource.pitch = 1;
+            movementAudioSource.volume = 1;
+            movementAudioSource.Stop();
         }
     }
 }
