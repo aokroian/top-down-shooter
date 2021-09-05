@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8310,6 +8310,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 2855859652091394054, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: audioDictionary.list.Array.data[5].Value
+      value: 
+      objectReference: {fileID: 8300000, guid: 42190f74bd0d6448295bfd27e7a85593, type: 3}
     - target: {fileID: 2880203522809197976, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8374,6 +8378,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7790ad30a76c545839f70199a14e9a53, type: 2}
+    - target: {fileID: 7502695412977259146, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7644107920053375356, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: m_RootOrder
       value: 3

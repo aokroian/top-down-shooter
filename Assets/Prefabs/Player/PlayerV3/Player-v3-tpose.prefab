@@ -979,7 +979,7 @@ MonoBehaviour:
     - Key: Hit by an enemy saw
       Value: {fileID: 8300000, guid: e38401a78e0ab4526ac682cdd80213f8, type: 3}
     - Key: Switch weapon
-      Value: {fileID: 8300000, guid: 6ff1a3ef04bfacf4f8ec6dbadfd1eba3, type: 3}
+      Value: {fileID: 8300000, guid: 42190f74bd0d6448295bfd27e7a85593, type: 3}
 --- !u!114 &1397911962566492021
 MonoBehaviour:
   m_ObjectHideFlags: 0
