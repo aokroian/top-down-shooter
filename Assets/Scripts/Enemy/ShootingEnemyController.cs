@@ -113,15 +113,6 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
         //rightHandConstraintController.transform.position = rightHandPoint.transform.position;
         //leftHandConstraintController.transform.position = leftHandPoint.transform.position;
 
-
-        // rotating enemy towards player
-        Vector3 lTargetDir = aimSpotRef.transform.position - transform.position;
-        if (lTargetDir.x != 0f && lTargetDir.z != 0f)
-        {
-            lTargetDir.y = 0.0f;
-            gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
-        }
-
         Vector3 velocity = agent.velocity;
         if (velocity.magnitude <= 0.1f)
         {
@@ -280,6 +271,15 @@ public class ShootingEnemyController : MonoBehaviour, EnemyProperties
             }
             aimSpotRef.transform.position = player.position - correction;
 
+        }
+
+        // rotating enemy towards player
+
+        Vector3 lTargetDir = aimSpotRef.transform.position - transform.position;
+        if (lTargetDir.x != 0f && lTargetDir.z != 0f)
+        {
+            lTargetDir.y = 0.0f;
+            gameObject.transform.rotation = Quaternion.LookRotation(lTargetDir);
         }
     }
 
