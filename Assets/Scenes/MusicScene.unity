@@ -176,7 +176,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6628dfe14745f4b15b016b0635f0b131, type: 3}
   - {fileID: 8300000, guid: a431787c9674f43278042f97e9265ccc, type: 3}
   - {fileID: 8300000, guid: 4253786d4c483401aba8878fccd47ce8, type: 3}
-  - {fileID: 8300000, guid: 295cb7babee9a44b5835ec1b4a709d0e, type: 3}
+  - {fileID: 8300000, guid: 7ec8bfae1a5a6418b8940c3738659d51, type: 3}
   - {fileID: 8300000, guid: 83e723398e65f43ddb40f58f26386675, type: 3}
   menuMusic:
   - {fileID: 8300000, guid: 3876994d0988c4d208f697c152248833, type: 3}

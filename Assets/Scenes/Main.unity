@@ -636,6 +636,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToLive: Infinity
   massAfterCollisionWithPlayer: 100
+--- !u!1 &165570347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165570348}
+  m_Layer: 0
+  m_Name: SmallPileOfBoxes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &165570348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165570347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.7742047, y: 0.9243803, z: 3.7678928}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &202254095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2599801259348170138, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
@@ -2719,9 +2749,6 @@ MonoBehaviour:
   - obstacle: {fileID: 7817173880744911522, guid: 59d13dff7ee57487e8cde36be213b3df, type: 3}
     yValue: 0.72
     big: 1
-  - obstacle: {fileID: 4438044729109110362, guid: 9557cb0704bf649019cdd54116deed79, type: 3}
-    yValue: 0.75
-    big: 0
   - obstacle: {fileID: 607106182383175758, guid: 2edf0265353bd4f468c2d531aa05463d, type: 3}
     yValue: 0.85
     big: 0
@@ -2734,6 +2761,15 @@ MonoBehaviour:
   - obstacle: {fileID: 5557106227692089896, guid: c36d4ee011c250a46b80c932f0de0dc8, type: 3}
     yValue: 0.9
     big: 0
+  - obstacle: {fileID: 1157132050265457658, guid: 84d9f1506ac4242a6ae31b9b35c48371, type: 3}
+    yValue: 0.7
+    big: 1
+  - obstacle: {fileID: 3720687900509299287, guid: 22c1ad6299fba485086887ded5fca0c2, type: 3}
+    yValue: 0.705
+    big: 1
+  - obstacle: {fileID: 3885435063804994878, guid: 87f19bc864f1d407ca6dcf4a46b8bf37, type: 3}
+    yValue: 0.71
+    big: 1
   noiseMultiplier: 1.11
   obstacleSize: 3
   noiseSeed: 10000
