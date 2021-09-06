@@ -46,7 +46,6 @@ public class GroundLavaController : MonoBehaviour
     void Update()
     {
         Expand();
-        Burn();
 
         // sound
         float playerFromStartDist = playerController.distance;
@@ -58,6 +57,11 @@ public class GroundLavaController : MonoBehaviour
         {
             lavaSoundManager.StopPlaying();
         }
+    }
+
+    private void LateUpdate()
+    {
+        Burn();
     }
 
     private void Expand()
@@ -89,6 +93,7 @@ public class GroundLavaController : MonoBehaviour
     {
         if (playerDamageCoroutine == null && playerController.distance < currentRadius)
         {
+
             playerDamageCoroutine = DamagePlayerCoroutine();
             StartCoroutine(playerDamageCoroutine);
         } else if (playerDamageCoroutine != null && playerController.distance >= currentRadius)
