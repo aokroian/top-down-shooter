@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="/Assets/UI/Styles/Overall.uss" />
     <Style src="/Assets/UI/Styles/Title.uss" />
-    <ui:VisualElement style="flex-grow: 1; flex-direction: column-reverse; background-image: url(&apos;/Assets/UI/Images/TitleBackground.png&apos;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(255, 186, 186);">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: column-reverse; background-image: none; -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(255, 186, 186);">
         <ui:VisualElement style="position: relative; flex-shrink: 0; flex-basis: auto; bottom: 160px; flex-direction: column; align-items: center; background-image: url(&apos;/Assets/UI/Images/Button_image.png&apos;); -unity-background-image-tint-color: rgb(0, 53, 102); background-color: rgba(0, 0, 0, 0);">
             <ui:Button text="#NewRun" display-tooltip-when-elided="true" name="NewRun" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
         </ui:VisualElement>
