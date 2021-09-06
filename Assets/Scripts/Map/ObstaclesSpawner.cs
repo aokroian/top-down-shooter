@@ -22,6 +22,8 @@ public class ObstaclesSpawner : MonoBehaviour
     public int noiseSeed;
     public bool randomSeed = false;
 
+    public EnvironmentLavaController environmentLavaController;
+
     //private float obstacleSize;
     private float yPos;
 
@@ -40,12 +42,6 @@ public class ObstaclesSpawner : MonoBehaviour
         //yPos = (obstaclePrefab.transform.position.y - obstaclePrefab.GetComponent<MeshFilter>().sharedMesh.bounds.min.y) * obstaclePrefab.transform.localScale.z;
 
         yPos = 0f; // TODO: Remove?
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SpawnObstacles(GameObject groundTile)
@@ -134,6 +130,7 @@ public class ObstaclesSpawner : MonoBehaviour
                     else
                     {
                         obstacle = Instantiate(obstaclePrefab, pos, rotation * obstaclePrefab.transform.rotation, this.transform);
+                        environmentLavaController.ObstacleSpawned(obstacle);
                     }
 
                     tileObstacles.Add(obstacle);

@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
     private PlayerAudioManager playerAudioManager;
     private AudioSource movementAudioSource;
 
+    public float distance { get; private set; }
+
     public void OnMovement(InputAction.CallbackContext value)
     {
         if (GameLoopController.paused)
@@ -291,6 +293,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        distance = Vector3.Distance(Vector3.zero, transform.position);
         if (GameLoopController.paused)
         {
             movementAudioSource.clip = null;

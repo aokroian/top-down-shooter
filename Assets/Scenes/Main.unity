@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 21440211}
   - component: {fileID: 21440213}
   - component: {fileID: 21440212}
+  - component: {fileID: 21440214}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -297,6 +298,25 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &21440214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21440210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d273369d78eea4ba85b81b5e7f9e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expandSpeed: 1
+  outerRadiusOffset: 2
+  player: {fileID: 7502695412977259143}
+  enemies: {fileID: 848356370}
+  obstacles: {fileID: 1473315388}
+  playerDamage: 5
+  enemyDamage: 1
 --- !u!1 &31522453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,6 +2729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473315389}
   - component: {fileID: 1473315390}
+  - component: {fileID: 1473315391}
   m_Layer: 0
   m_Name: Obstacles
   m_TagString: Untagged
@@ -2780,6 +2801,19 @@ MonoBehaviour:
   obstacleSize: 3
   noiseSeed: 10000
   randomSeed: 1
+  environmentLavaController: {fileID: 1473315391}
+--- !u!114 &1473315391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473315388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456de6c1da57b3147b0859e1182b6640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1477657574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2797120545495210442, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
