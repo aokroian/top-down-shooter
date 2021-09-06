@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "X4PNOBN7GAU8BUQC",
         "name": "com.DefaultCompany.topdownshooter",
-        "processId": 18684,
+        "processId": 21411,
         "exited": false
     },
     "m_SelectedPriority": 3,
@@ -78,6 +78,12 @@
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.topdownshooter",
             "processId": 18684,
+            "exited": false
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.DefaultCompany.topdownshooter",
+            "processId": 21411,
             "exited": false
         }
     ],

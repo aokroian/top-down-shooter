@@ -3488,7 +3488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34daa9c472db6dc4c8f4af27de7a072e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cost: 2
+  _cost: 3
   defaultState: 0
   visionRange: 15
   damage: 0
@@ -3577,8 +3577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 8
-  maxHealth: 8
+  health: 6
+  maxHealth: 6
   afterHitDelay: 0
   onHitEffect: {fileID: 0}
   onDeath:
@@ -4025,7 +4025,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6349645506720649874, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
       propertyPath: explosionMaxDamage
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: -4685775916219305392, guid: cf247e873e27e4794a1eff5d8503d688, type: 3}
       propertyPath: timeToLiveAfterThrow

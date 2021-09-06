@@ -172,7 +172,7 @@ public class EnemySpawner : MonoBehaviour
     {
         //int cost = Mathf.Min(costLeft, Random.Range(minEnemyCost, maxEnemyCost + 1));
         int cost = Random.Range(minEnemyCost, Mathf.Min(costLeft, maxEnemyCost));
-        //Debug.Log("Cost: " + cost + "; min: " + minEnemyCost + "; max: " + maxEnemyCost + "; left: " + costLeft);
+        Debug.Log("Cost: " + cost + "; min: " + minEnemyCost + "; max: " + maxEnemyCost + "; left: " + costLeft);
         GameObject result = enemyCosts[1][0];
         for (int i = cost; i > 0; i --)
         {

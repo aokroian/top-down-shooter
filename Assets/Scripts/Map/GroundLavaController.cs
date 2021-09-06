@@ -6,10 +6,14 @@ public class GroundLavaController : MonoBehaviour
 {
     public float expandSpeed = 1;
     public float outerRadiusOffset = 2f;
+    public float speedUpTime = 5f;
+    public float maxPlayerDistance = 50f;
     public GameObject player;
     public GameObject enemies;
     public GameObject obstacles;
+    public GameObject environment;
     public float playerDamage = 5;
+    public float playerDamageInterval = 1f;
     public float enemyDamage = 1;
 
     //sound
@@ -18,27 +22,34 @@ public class GroundLavaController : MonoBehaviour
 
     public float currentRadius { get; private set; }
     private Material material;
+    private float timeFromStart;
 
     private PlayerController playerController;
     private EnvironmentLavaController environmentLavaController;
+
+    private IEnumerator playerDamageCoroutine;
 
     private void Start()
     {
         material = transform.GetComponentInChildren<MeshRenderer>().material;
         playerController = player.GetComponent<PlayerController>();
         environmentLavaController = obstacles.GetComponent<EnvironmentLavaController>();
+        for(int i = 0; i < environment.transform.childCount; i ++)
+        {
+            environmentLavaController.ObstacleSpawned(environment.transform.GetChild(i).gameObject);
+        }
         lavaSoundManager = GetComponent<LavaSoundManager>();
+
+        StartBurnEnemies();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        currentRadius += expandSpeed * Time.deltaTime;
-        material.SetFloat("OuterRadius", currentRadius + outerRadiusOffset);
+        Expand();
         Burn();
 
         // sound
-        float playerFromStartDist = player.GetComponent<PlayerController>().distance;
+        float playerFromStartDist = playerController.distance;
         float playerFromLavaDist = playerFromStartDist - currentRadius;
         if (playerFromLavaDist < 0) playerFromLavaDist = 0;
         float volume = (maxSoundDistance - playerFromLavaDist) / maxSoundDistance;
@@ -49,36 +60,71 @@ public class GroundLavaController : MonoBehaviour
         }
     }
 
+    private void Expand()
+    {
+        if (playerController.distance - currentRadius < maxPlayerDistance)
+        {
+            if (timeFromStart < speedUpTime) {
+                timeFromStart += Time.deltaTime;
+                var speedUpMultiplier = timeFromStart / speedUpTime;
+                currentRadius += expandSpeed * Time.deltaTime * speedUpMultiplier;
+            } else
+            {
+                currentRadius += expandSpeed * Time.deltaTime;
+            }
+        } else {
+            currentRadius = playerController.distance - maxPlayerDistance;
+        }
+        material.SetFloat("OuterRadius", currentRadius + outerRadiusOffset);
+    }
+
     private void Burn()
     {
         BurnPlayer();
-        BurnEnemies();
+        
         BurnObstacles();
     }
 
     private void BurnPlayer()
     {
-        if (playerController.distance < currentRadius)
+        if (playerDamageCoroutine == null && playerController.distance < currentRadius)
         {
-            player.GetComponent<Target>().TakeDamage(playerDamage);
+            playerDamageCoroutine = DamagePlayerCoroutine();
+            StartCoroutine(playerDamageCoroutine);
+        } else if (playerDamageCoroutine != null && playerController.distance >= currentRadius)
+        {
+            StopCoroutine(playerDamageCoroutine);
+            playerDamageCoroutine = null;
         }
     }
 
-    private void BurnEnemies()
+    private IEnumerator DamagePlayerCoroutine()
+    {
+        while (true)
+        {
+            player.GetComponent<Target>().TakeDamage(playerDamage);
+            yield return new WaitForSeconds(playerDamageInterval);
+        }
+    }
+
+    private void StartBurnEnemies()
     {
         StartCoroutine(DamageEnemiesCoroutine());
     }
 
     private IEnumerator DamageEnemiesCoroutine()
     {
-        foreach (Target enemy in enemies.GetComponentsInChildren<Target>())
+        while (true)
         {
-            if (Vector3.Distance(Vector3.zero, enemy.transform.position) < currentRadius)
+            foreach (Target enemy in enemies.GetComponentsInChildren<Target>())
             {
-                enemy.TakeDamage(enemyDamage);
+                if (Vector3.Distance(Vector3.zero, enemy.transform.position) < currentRadius)
+                {
+                    enemy.TakeDamage(enemyDamage);
+                }
             }
+            yield return new WaitForSeconds(0.3f);
         }
-        yield return new WaitForSeconds(0.3f);
     }
 
     private void BurnObstacles()

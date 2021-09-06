@@ -312,13 +312,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d273369d78eea4ba85b81b5e7f9e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expandSpeed: 1
+  expandSpeed: 1.5
   outerRadiusOffset: 2
+  speedUpTime: 10
+  maxPlayerDistance: 50
   player: {fileID: 7502695412977259143}
   enemies: {fileID: 848356370}
   obstacles: {fileID: 1473315388}
-  playerDamage: 5
-  enemyDamage: 1
+  environment: {fileID: 1281642769}
+  playerDamage: 15
+  playerDamageInterval: 1
+  enemyDamage: 2
   maxSoundDistance: 20
 --- !u!82 &21440215
 AudioSource:
@@ -3696,7 +3700,7 @@ Transform:
   m_GameObject: {fileID: 1978353428}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 16.16, z: 0}
-  m_LocalScale: {x: 0.4, y: 20, z: 0.4}
+  m_LocalScale: {x: 0.55, y: 20, z: 0.55}
   m_Children: []
   m_Father: {fileID: 1281642770}
   m_RootOrder: 3
@@ -8324,6 +8328,14 @@ PrefabInstance:
     - target: {fileID: 7792201656225357584, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792201656225357584, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792201656225357584, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7792201656225357584, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
       propertyPath: m_LocalPosition.x

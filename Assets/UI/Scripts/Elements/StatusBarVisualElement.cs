@@ -47,12 +47,12 @@ public class StatusBarVisualElement : VisualElement
 
     public void SetHealth(float health)
     {
-        healthEl.style.width = new StyleLength(new Length(health * 100f, LengthUnit.Percent));
+        healthEl.style.width = new StyleLength(new Length(health * 80f, LengthUnit.Percent));
     }
 
     public void SetStamina(float stamina)
     {
-        staminaEl.style.width = new StyleLength(new Length(stamina * 100f, LengthUnit.Percent));
+        staminaEl.style.width = new StyleLength(new Length(stamina * 80f, LengthUnit.Percent));
     }
 
     public void SetHealthFull(float healthFull)
