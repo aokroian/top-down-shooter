@@ -446,7 +446,7 @@ public class PlayerController : MonoBehaviour
 
 
         // смещение
-        Vector3 offset = new Vector3(movement.x, 0.0f, movement.y) * currentMovementSpeed;
+        Vector3 offset = new Vector3(movement.x, -4.4f, movement.y) * currentMovementSpeed;
         Rigidbody rb = GetComponent<Rigidbody>();
 
         // игрок двигается по глобальным осям
@@ -456,7 +456,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector3.zero;
+            rb.velocity = new Vector3(0f, -4.4f, 0f);
         }
 
         // вращение персонажа 
