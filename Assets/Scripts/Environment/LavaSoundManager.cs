@@ -14,5 +14,12 @@ public class LavaSoundManager : MonoBehaviour
     {
         audioSource.volume = volume;
     }
+    public void StopPlaying()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
 
 }
