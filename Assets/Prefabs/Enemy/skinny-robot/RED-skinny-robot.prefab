@@ -3666,6 +3666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWalkSoundDistance: 10
+  disableWalkSound: 1
 --- !u!114 &5022095335121668716
 MonoBehaviour:
   m_ObjectHideFlags: 0

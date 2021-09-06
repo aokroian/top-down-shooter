@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyAudioManager : MonoBehaviour
 {
     public float maxWalkSoundDistance = 10;
+    public bool disableWalkSound = false;
     private Transform player;
     private NavMeshAgent agent;
 
@@ -41,6 +42,7 @@ public class EnemyAudioManager : MonoBehaviour
 
     public void PlayMovementSound(bool isPlaying)
     {
+        if (disableWalkSound) return;
         if (walkSound == null)
         {
             Debug.Log("No walking sound found in enemy audio manager " + gameObject.name);
