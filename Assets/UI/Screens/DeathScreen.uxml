@@ -20,7 +20,7 @@
                     <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="ExpLabel" class="primary-text" style="font-size: 58px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 1; margin-top: 40px;">
+            <ui:VisualElement style="flex-grow: 1; margin-top: 10px; justify-content: space-around; margin-bottom: 20px;">
                 <ui:Button text="#NewRun" display-tooltip-when-elided="true" name="NewRun" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 40px;" />
                 <ui:Button text="#Upgrades" display-tooltip-when-elided="true" name="Upgrades" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 40px;" />
                 <ui:Button text="#MainMenu" display-tooltip-when-elided="true" name="MainMenu" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 30px;" />
