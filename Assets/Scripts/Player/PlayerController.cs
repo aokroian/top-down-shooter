@@ -1,9 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.PlayerInput;
 
 
 public class PlayerController : MonoBehaviour
@@ -21,16 +18,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private float dodgeTimer = 0f;
 
-    // variables for sound system
-    private AudioSource damageAudioSource;
-    private AudioSource movementAudioSource;
-    private AudioClip deathSound;
-    private AudioClip runSound;
-    private AudioClip dodgeSound;
-    private AudioClip bulletHittingPlayerSound;
-    private AudioClip sawHittingPlayerSound;
-    private AudioClip switchWeaponSound;
-
     // variables for health and stamina
     public float health = 100f;
     public float maxHealth = 100f;
@@ -45,13 +32,10 @@ public class PlayerController : MonoBehaviour
     public GameObject parentBoneForWeapon;
     public PlayerAmmoController ammoController;
     public IngameProgressionManager progressionManager;
+    private GameObject equippedItemObj;
 
     // Touch controls
     public GameObject mobileInput;
-
-    private GameObject equippedItemObj;
-    private EquipmentItemType selectedItemType;
-
 
     // variables for animation rigging system
     [HideInInspector]
@@ -61,10 +45,6 @@ public class PlayerController : MonoBehaviour
 
     private GameObject rightHandPoint;
     private GameObject leftHandPoint;
-
-    // Should be reworked
-    private bool grenadeInHand;
-
 
     // variables for aiming system
     public Camera cam;
@@ -87,15 +67,9 @@ public class PlayerController : MonoBehaviour
     // upgrades
     private PlayerConfigurator playerConfigurator;
 
-
-    // converting input for isometric camera with 45 degrees 
-    private Vector3 IsoVectorConvert(Vector3 vector)
-    {
-        Quaternion rotation = Quaternion.Euler(0, 45f, 0);
-        Matrix4x4 isoMatrix = Matrix4x4.Rotate(rotation);
-        Vector3 result = isoMatrix.MultiplyPoint3x4(vector);
-        return result;
-    }
+    //sound
+    private PlayerAudioManager playerAudioManager;
+    private AudioSource movementAudioSource;
 
     public void OnMovement(InputAction.CallbackContext value)
     {
@@ -110,7 +84,8 @@ public class PlayerController : MonoBehaviour
             Vector3 converted = IsoVectorConvert(toConvert);
             leftStickPosition = new Vector2(converted.x, converted.z);
             wasdPosition = new Vector2(converted.x, converted.z);
-        } else if (value.canceled)
+        }
+        else if (value.canceled)
         {
             Vector2 zeroMovement = Vector2.zero;
             leftStickPosition = zeroMovement;
@@ -134,7 +109,8 @@ public class PlayerController : MonoBehaviour
             {
                 lastRightStickPosition = rightStickPosition;
             }
-        } else if (value.canceled)
+        }
+        else if (value.canceled)
         {
             Vector2 zeroMovement = Vector2.zero;
             mousePosition = zeroMovement;
@@ -205,7 +181,7 @@ public class PlayerController : MonoBehaviour
         if (value.performed)
         {
             // sound 
-            PlaySwitchWeaponSound();
+            playerAudioManager.PlaySwitchWeaponSound();
             if (selectedItemIndex + 1 == itemsEquipmentArr.Length)
             {
                 SelectItem(0);
@@ -246,7 +222,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerInput.currentControlScheme != currentControlScheme)
         {
-            
+
             currentControlScheme = playerInput.currentControlScheme;
             switch (currentControlScheme)
             {
@@ -269,14 +245,15 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         itemsEquipmentArr = progressionManager.GetWeapons();
-
     }
+
     private void OnEnable()
     {
         playerInput.SwitchCurrentControlScheme("Gamepad");
 
         RemoveAllBindingOverrides();
     }
+
     private void Start()
     {
         // upgrade system
@@ -285,19 +262,9 @@ public class PlayerController : MonoBehaviour
         {
             playerConfigurator.ApplyAllUpgrades();
         }
-
-        // writing variables for audio system
-        damageAudioSource = transform.Find("DamageAudioSource").GetComponent<AudioSource>();
+        // sound system
         movementAudioSource = transform.Find("MovementAudioSource").GetComponent<AudioSource>();
-        SerializableDictionary<string, AudioClip> audioStorage = GetComponent<AudioStorage>().audioDictionary;
-
-        audioStorage.TryGetValue("Death", out deathSound);
-        audioStorage.TryGetValue("Run", out runSound);
-        audioStorage.TryGetValue("Dodge", out dodgeSound);
-        audioStorage.TryGetValue("Hit by an enemy bullet", out bulletHittingPlayerSound);
-        audioStorage.TryGetValue("Hit by an enemy saw", out sawHittingPlayerSound);
-        audioStorage.TryGetValue("Switch weapon", out switchWeaponSound);
-
+        TryGetComponent<PlayerAudioManager>(out playerAudioManager);
 
         // finding objects for rigging
         FindInAllChildren(gameObject.transform, "RightHandController", ref rightHandConstraintController);
@@ -321,6 +288,7 @@ public class PlayerController : MonoBehaviour
         mobileInput.SetActive(false);
 #endif
     }
+
     void Update()
     {
         if (GameLoopController.paused)
@@ -337,11 +305,11 @@ public class PlayerController : MonoBehaviour
         // run sound
         if (rb.velocity.magnitude >= 1)
         {
-            PlayStepsSound(true);
+            playerAudioManager.PlayStepsSound(true);
         }
         else if (rb.velocity.magnitude < 1)
         {
-            PlayStepsSound(false);
+            playerAudioManager.PlayStepsSound(false);
         }
 
         // aiming and movement values update
@@ -428,11 +396,12 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Is Dodging", true);
 
             // stop walking audio
-            PlayStepsSound(false);
+            playerAudioManager.PlayStepsSound(false);
 
             // play dodge audio
-            movementAudioSource.PlayOneShot(dodgeSound);
-        } else
+            playerAudioManager.PlayDodgeSound();
+        }
+        else
         {
             allowedToDodge = false;
         }
@@ -455,68 +424,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator FireDelay()
-    {
-        while (true)
-        {
-            if (selectedItemType == EquipmentItemType.weapon)
-            {
-                if (equippedItemObj != null)
-                {
-                    equippedItemObj.GetComponent<WeaponController>().Shoot(0);
-                }
-            }
-            if (Input.GetMouseButtonUp(0) && equippedItemObj != null && grenadeInHand)
-            {
-                if (equippedItemObj != null && grenadeInHand)
-                {
-                    // direction and force
-                    Vector3 upForce = new Vector3(0f, 4f, 0f);
-                    Vector3 throwForce = (aimAtPosition - transform.position) + gameObject.GetComponent<Rigidbody>().velocity + upForce;
-
-                    equippedItemObj.GetComponent<ThrowableItemController>().Throw(throwForce);
-                    selectedItemIndex = 0;
-                    equippedItemObj = null;
-
-                    grenadeInHand = false;
-
-                    if (ammoController.HasAmmo(AmmoType.GRENADE))
-                    {
-                        SelectItem(3);
-                    }
-                    /*else
-                    {
-                        SelectItem(0);
-                    }*/
-                }
-            }
-            yield return new WaitForFixedUpdate();
-        }
-    }
-
-    IEnumerator Shooting()
-    {
-        while (true)
-        {
-            equippedItemObj.GetComponent<WeaponController>().Shoot(0);
-            yield return new WaitForFixedUpdate();
-        }
-    }
-
-    private void SafelyStopShootingCoroutine()
-    {
-        if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
-        {
-            equippedItemObj.transform.GetComponentInChildren<LaserAim>().isEnabled = false;
-        }
-
-        if (shootingCoroutine != null)
-        {
-            StopCoroutine(shootingCoroutine);
-            shootingCoroutine = null;
-        }
-    }
-
     private void FixedUpdate()
     {
         // shooting for strong weapons
@@ -534,7 +441,7 @@ public class PlayerController : MonoBehaviour
                 rifleShootNeeded = false;
                 lastRightStickPosition = rightStickPosition;
             }
-            
+
         }
 
 
@@ -560,6 +467,29 @@ public class PlayerController : MonoBehaviour
         rb.MoveRotation(Quaternion.LookRotation(lTargetDir, Vector3.up));
     }
 
+    IEnumerator Shooting()
+    {
+        while (true)
+        {
+            equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+            yield return new WaitForFixedUpdate();
+        }
+    }
+
+    private void SafelyStopShootingCoroutine()
+    {
+        if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
+        {
+            equippedItemObj.transform.GetComponentInChildren<LaserAim>().isEnabled = false;
+        }
+
+        if (shootingCoroutine != null)
+        {
+            StopCoroutine(shootingCoroutine);
+            shootingCoroutine = null;
+        }
+    }
+ 
     private void SelectItem(int itemIndex)
     {
         if (equippedItemObj != null)
@@ -640,21 +570,14 @@ public class PlayerController : MonoBehaviour
 
     public float GetReloadTimerPercent()
     {
-        if (selectedItemType == EquipmentItemType.weapon)
-        {
-            float result = 0f;
-            if (equippedItemObj != null)
-            {
-                var weaponController = equippedItemObj.GetComponent<WeaponController>();
-                result = weaponController.reloadTimer / weaponController.reloadTime;
-            }
-            return result;
-        }
-        else
-        {
-            return 0f;
-        }
 
+        float result = 0f;
+        if (equippedItemObj != null)
+        {
+            var weaponController = equippedItemObj.GetComponent<WeaponController>();
+            result = weaponController.reloadTimer / weaponController.reloadTime;
+        }
+        return result;
     }
 
     private void RestoreWeaponBullets(WeaponController weapon, int index)
@@ -677,91 +600,6 @@ public class PlayerController : MonoBehaviour
         return result;
     }
 
-    private void PlaySwitchWeaponSound()
-    {
-        if (GameLoopController.paused)
-        {
-            damageAudioSource.clip = null;
-            damageAudioSource.loop = false;
-            damageAudioSource.pitch = 1;
-            damageAudioSource.volume = 1;
-            damageAudioSource.Stop();
-            return;
-        }
-        if (itemsEquipmentArr.Length < 2)
-        {
-            return;
-        }
-        damageAudioSource.PlayOneShot(switchWeaponSound);
-    }
-
-
-    // if arg is true - turning on
-    // if arg is false - turning off
-    private void PlayStepsSound(bool playOrStop)
-    {
-        if (GameLoopController.paused)
-        {
-            movementAudioSource.clip = null;
-            movementAudioSource.loop = false;
-            movementAudioSource.pitch = 1;
-            movementAudioSource.volume = 1;
-            movementAudioSource.Stop();
-            return;
-        }
-        if (playOrStop)
-        {
-            movementAudioSource.clip = runSound;
-            movementAudioSource.loop = true;
-            movementAudioSource.pitch = Random.Range(0.6f, 0.8f);
-            movementAudioSource.volume = Random.Range(0.8f, 1f);
-            if (!movementAudioSource.isPlaying)
-            {
-                movementAudioSource.Play();
-            }
-        }
-        else
-        {
-            movementAudioSource.clip = null;
-            movementAudioSource.loop = false;
-            movementAudioSource.pitch = 1;
-            movementAudioSource.volume = 1;
-            movementAudioSource.Stop();
-        }
-    }
-
-    public void PlayHitByEnemySawSound()
-    {
-        if (GameLoopController.paused)
-        {
-            damageAudioSource.clip = null;
-            damageAudioSource.loop = false;
-            damageAudioSource.pitch = 1;
-            damageAudioSource.volume = 1;
-            damageAudioSource.Stop();
-            return;
-        }
-        damageAudioSource.PlayOneShot(sawHittingPlayerSound);
-    }
-    public void PlayHitByEnemyBulletSound()
-    {
-        if (GameLoopController.paused)
-        {
-            damageAudioSource.clip = null;
-            damageAudioSource.loop = false;
-            damageAudioSource.pitch = 1;
-            damageAudioSource.volume = 1;
-            damageAudioSource.Stop();
-            return;
-        }
-        damageAudioSource.PlayOneShot(bulletHittingPlayerSound);
-    }
-    public void PlayDeathSound()
-    {
-        
-        damageAudioSource.PlayOneShot(deathSound);
-    }
-
     private void FindInAllChildren(Transform obj, string name, ref GameObject storeInObj)
     {
         if (obj.Find(name) != null)
@@ -778,6 +616,13 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-
+    }
+    // converting input Vector2 for isometric camera with 45 degrees 
+    private Vector3 IsoVectorConvert(Vector3 vector)
+    {
+        Quaternion rotation = Quaternion.Euler(0, 45f, 0);
+        Matrix4x4 isoMatrix = Matrix4x4.Rotate(rotation);
+        Vector3 result = isoMatrix.MultiplyPoint3x4(vector);
+        return result;
     }
 }
