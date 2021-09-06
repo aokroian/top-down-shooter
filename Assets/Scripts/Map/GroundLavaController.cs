@@ -12,6 +12,10 @@ public class GroundLavaController : MonoBehaviour
     public float playerDamage = 5;
     public float enemyDamage = 1;
 
+    //sound
+    public float maxSoundDistance = 15;
+    private LavaSoundManager lavaSoundManager;
+
     public float currentRadius { get; private set; }
     private Material material;
 
@@ -23,6 +27,7 @@ public class GroundLavaController : MonoBehaviour
         material = transform.GetComponentInChildren<MeshRenderer>().material;
         playerController = player.GetComponent<PlayerController>();
         environmentLavaController = obstacles.GetComponent<EnvironmentLavaController>();
+        lavaSoundManager = GetComponent<LavaSoundManager>();
     }
 
     // Update is called once per frame
@@ -31,6 +36,13 @@ public class GroundLavaController : MonoBehaviour
         currentRadius += expandSpeed * Time.deltaTime;
         material.SetFloat("OuterRadius", currentRadius + outerRadiusOffset);
         Burn();
+
+        // sound
+        float playerFromStartDist = player.GetComponent<PlayerController>().distance;
+        float playerFromLavaDist = playerFromStartDist - currentRadius;
+        if (playerFromLavaDist < 0) playerFromLavaDist = 0;
+        float volume = (maxSoundDistance - playerFromLavaDist) / maxSoundDistance;
+        lavaSoundManager.AdjustVolume(volume);
     }
 
     private void Burn()
