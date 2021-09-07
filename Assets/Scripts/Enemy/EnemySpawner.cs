@@ -171,9 +171,9 @@ public class EnemySpawner : MonoBehaviour
     private GameObject GetEnemyPrefabByCost(int minEnemyCost, int maxEnemyCost)
     {
         //int cost = Mathf.Min(costLeft, Random.Range(minEnemyCost, maxEnemyCost + 1));
-        int cost = Random.Range(minEnemyCost, Mathf.Min(costLeft, maxEnemyCost));
+        int cost = Random.Range(minEnemyCost, Mathf.Min(costLeft, maxEnemyCost) + 1);
         if (cost == 1 && costLeft > 1) {
-            cost = Random.Range(minEnemyCost, Mathf.Min(costLeft, maxEnemyCost));
+            cost = Random.Range(minEnemyCost, Mathf.Min(costLeft, maxEnemyCost) + 1);
         }
         //Debug.Log("Cost: " + cost + "; min: " + minEnemyCost + "; max: " + maxEnemyCost + "; left: " + costLeft);
         GameObject result = enemyCosts[1][0];
