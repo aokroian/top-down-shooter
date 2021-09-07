@@ -61,6 +61,8 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
     public Texture2D icon;
 
+    public float noShootingTime = 0f;
+
     private void Awake()
     {
         bulletsInClip = clipSize;
@@ -95,6 +97,9 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
     private void Update()
     {
+        noShootingTime--;
+        if (noShootingTime < 0) noShootingTime = 0;
+
         // animation part
         if (animator != null)
         {
@@ -164,6 +169,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
 
     public void Shoot(float shotDamageModifier)
     {
+        if (noShootingTime > 0) return;
         // если один из таймеров еще не достиг нуля, выстрел невозможен
         if (reloadTimer > 0f || nextShotTimer > 0f) return;
         // если в обойме нет патронов, вместо выстрела производится перезарядка

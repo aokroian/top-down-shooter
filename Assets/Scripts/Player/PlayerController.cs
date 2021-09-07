@@ -542,6 +542,8 @@ public class PlayerController : MonoBehaviour
         FindInAllChildren(equippedItemObj.transform, "RightHandPoint", ref rightHandPoint);
         FindInAllChildren(equippedItemObj.transform, "LeftHandPoint", ref leftHandPoint);
 
+        weaponController.noShootingTime = 1;
+
         // UPGRADE SYSTEM
         // change ammo capacity
 
