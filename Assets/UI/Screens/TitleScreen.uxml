@@ -16,6 +16,11 @@
         <ui:VisualElement style="position: absolute; top: 20px; right: 0;">
             <ui:Button text="i" display-tooltip-when-elided="true" name="Credits" class="button" style="width: 128px; height: 128px; font-size: 96px; -unity-font-style: bold; border-right-width: 0; border-left-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 30px; border-top-right-radius: 0; border-bottom-left-radius: 30px; border-bottom-right-radius: 0;" />
         </ui:VisualElement>
+        <ui:VisualElement name="GameTitle" style="position: absolute; flex-grow: 1; left: 0; right: 0; top: 20%;">
+            <ui:Label text="Run use gun" display-tooltip-when-elided="true" class="primary-text" style="align-items: center; -unity-text-align: upper-center; font-size: 142px; -unity-font: resource(&apos;Fonts/DotGothic16-Regular&apos;); -unity-font-style: bold; position: absolute; flex-grow: 1; flex-basis: auto; flex-shrink: 1; left: 4px; right: 0; color: rgba(212, 0, 0, 255);" />
+            <ui:Label text="Run use gun" display-tooltip-when-elided="true" class="primary-text" style="align-items: center; -unity-text-align: upper-center; font-size: 141px; -unity-font: resource(&apos;Fonts/DotGothic16-Regular&apos;); -unity-font-style: bold; position: absolute; flex-grow: 1; flex-basis: auto; flex-shrink: 1; left: 2px; right: 0; color: rgb(0, 255, 0);" />
+            <ui:Label text="Run use gun" display-tooltip-when-elided="true" class="primary-text" style="align-items: center; -unity-text-align: upper-center; font-size: 140px; -unity-font: resource(&apos;Fonts/DotGothic16-Regular&apos;); -unity-font-style: bold; position: absolute; flex-grow: 1; flex-basis: auto; flex-shrink: 1; left: 0; right: 0; color: rgba(243, 243, 243, 255);" />
+        </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="Money" style="position: absolute; left: 0; flex-direction: row; right: 0; bottom: 10px; justify-content: center;">
         <ui:VisualElement style="flex-direction: row; font-size: 38px;">
