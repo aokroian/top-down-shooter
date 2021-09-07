@@ -52,10 +52,16 @@ public class GroundLavaController : MonoBehaviour
         float playerFromLavaDist = playerFromStartDist - currentRadius;
         if (playerFromLavaDist < 0) playerFromLavaDist = 0;
         float volume = (maxSoundDistance - playerFromLavaDist) / maxSoundDistance;
-        lavaSoundManager.AdjustVolume(volume);
+        
         if (GameLoopController.paused)
         {
-            lavaSoundManager.StopPlaying();
+
+            lavaSoundManager.TogglePlaying(false);
+        }
+        else if (!GameLoopController.paused)
+        {
+            lavaSoundManager.AdjustVolume(volume);
+            lavaSoundManager.TogglePlaying(true);
         }
     }
 

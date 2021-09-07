@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     public PlayerAmmoController ammoController;
     public IngameProgressionManager progressionManager;
     private GameObject equippedItemObj;
+    WeaponController weaponController;
+    private bool needToSelectPistol = false;
 
     // Touch controls
     public GameObject mobileInput;
@@ -153,7 +155,7 @@ public class PlayerController : MonoBehaviour
                 if (equippedItemObj.GetComponent<IAmmoConsumer>().GetAmmoType() == AmmoType.RIFLE)
                 {
                     equippedItemObj.transform.GetComponentInChildren<LaserAim>().isEnabled = false;
-                    equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+                    SingleShot();
                     SafelyStopShootingCoroutine();
                 }
             }
@@ -280,6 +282,7 @@ public class PlayerController : MonoBehaviour
 
         // instantiating first item in inventory
         SelectItem(0);
+        weaponController = equippedItemObj.GetComponent<WeaponController>();
         currentMovementSpeed = basicMovementSpeed;
         currentControlScheme = playerInput.currentControlScheme;
 
@@ -440,7 +443,7 @@ public class PlayerController : MonoBehaviour
             {
                 equippedItemObj.transform.GetComponentInChildren<LaserAim>().isEnabled = false;
                 SafelyStopShootingCoroutine();
-                equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+                SingleShot();
                 rifleShootNeeded = false;
                 lastRightStickPosition = rightStickPosition;
             }
@@ -474,9 +477,29 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
-            equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+            SingleShot();
             yield return new WaitForFixedUpdate();
         }
+    }
+
+    private void SingleShot()
+    {
+        
+        if (!weaponController.ammoProvider.HasAmmo(weaponController.ammoType) && weaponController.bulletsInClip <= 0)
+        {
+            if (needToSelectPistol)
+            {
+                SelectItem(0);
+                needToSelectPistol = false;
+            }
+            // audio
+            weaponController.PlayNoBulletSound();
+            needToSelectPistol = true;
+        } else
+        {
+            equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+        }
+
     }
 
     private void SafelyStopShootingCoroutine()
@@ -503,9 +526,9 @@ public class PlayerController : MonoBehaviour
 
         selectedItemIndex = itemIndex;
 
-
+        rightStickPosition = Vector2.zero;
         equippedItemObj = Instantiate(itemsEquipmentArr[itemIndex], parentBoneForWeapon.transform);
-        WeaponController weaponController = equippedItemObj.GetComponent<WeaponController>();
+        weaponController = equippedItemObj.GetComponent<WeaponController>();
 
         weaponController.ownerObjRef = gameObject;
         weaponController.ammoProvider = ammoController;

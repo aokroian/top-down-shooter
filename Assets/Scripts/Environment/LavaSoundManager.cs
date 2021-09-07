@@ -14,12 +14,24 @@ public class LavaSoundManager : MonoBehaviour
     {
         audioSource.volume = volume;
     }
-    public void StopPlaying()
+    public void TogglePlaying(bool switchOn)
     {
-        if (audioSource.isPlaying)
+        if (switchOn)
         {
-            audioSource.Stop();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+            
         }
+        else if (!switchOn)
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
+        
     }
 
 }

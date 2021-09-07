@@ -16,7 +16,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     // variables for sound system
     public float reloadSoundDelay = 0f;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     private AudioClip shotSound;
     private AudioClip reloadSound;
     private AudioClip noBulletsSound;
@@ -100,7 +100,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         {
             if (isReloading)
             {
-                float animationTime = reloadTime < 1 ? 1/reloadTime : reloadTime;
+                float animationTime = reloadTime < 1 ? 1 / reloadTime : reloadTime;
                 animator.SetFloat("reload time", animationTime);
                 animator.SetBool("is reloading", true);
             }
@@ -169,11 +169,6 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         // если в обойме нет патронов, вместо выстрела производится перезарядка
         if (bulletsInClip <= 0)
         {
-            if (!ammoProvider.HasAmmo(ammoType))
-            {
-                // audio
-                audioSource.PlayOneShot(noBulletsSound);
-            }
             Reload();
             return;
         }
@@ -240,7 +235,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     {
         // невозможно перезарядиться, если уже идет перезарядка
         if (reloadTimer > 0f) return;
-        
+
         // устанавливаем таймер
         reloadTimer = reloadTime;
 
@@ -255,7 +250,7 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
         audioSource.clip = reloadSound;
         audioSource.loop = false;
         audioSource.PlayDelayed(reloadSoundDelay);
-        
+
     }
 
     public int GetAmmoLeft()
@@ -266,5 +261,10 @@ public class WeaponController : MonoBehaviour, IAmmoConsumer
     public AmmoType GetAmmoType()
     {
         return ammoType;
+    }
+
+    public void PlayNoBulletSound()
+    {
+        audioSource.PlayOneShot(noBulletsSound);
     }
 }
