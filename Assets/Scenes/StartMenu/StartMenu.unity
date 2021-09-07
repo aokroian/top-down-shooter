@@ -1824,6 +1824,9 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
   settingsSaveEvent: {fileID: 11400000, guid: d1dcd861b20437443afb4f464a3f5c7f, type: 2}
   localizer: {fileID: 1953305824}
+  localizationTableHolder: {fileID: 11400000, guid: 901c2b6a5788b674cb462fe70656492d, type: 2}
+  confirmWindowElement: {fileID: 9197481963319205126, guid: 4483d099ebd0f2d45972d804f1ed06b6, type: 3}
+  deleteSaveEvent: {fileID: 11400000, guid: 84c47651ab8d2ba4899abcc4c5009b99, type: 2}
 --- !u!114 &1953305824
 MonoBehaviour:
   m_ObjectHideFlags: 0

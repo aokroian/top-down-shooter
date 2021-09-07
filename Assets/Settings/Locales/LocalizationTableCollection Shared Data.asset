@@ -187,6 +187,30 @@ MonoBehaviour:
     m_Key: ProgressionPoints
     m_Metadata:
       m_Items: []
+  - m_Id: 20097654870401024
+    m_Key: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20097722881040384
+    m_Key: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20097835728789504
+    m_Key: WipeConfirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20100227673251840
+    m_Key: WipeSave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20100383990767616
+    m_Key: Wipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20115410890153984
+    m_Key: Deleted
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

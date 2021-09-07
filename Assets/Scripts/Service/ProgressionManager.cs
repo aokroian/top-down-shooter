@@ -55,4 +55,11 @@ public class ProgressionManager : MonoBehaviour, Loadable
         LoadFromSaveFile();
         onLoad();
     }
+
+    public void DeleteSaveData()
+    {
+        saveLoadController.DeleteSaveFile();
+        progressionHolder.ClearAll();
+        LoadFromSaveFile();
+    }
 }

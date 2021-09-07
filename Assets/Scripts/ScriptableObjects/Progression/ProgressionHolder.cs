@@ -22,6 +22,20 @@ public class ProgressionHolder : ScriptableObject
 
     }
 
+    public void ClearAll()
+    {
+        moneyCount = 0;
+        topScore = 0;
+        exp = 0;
+        allUpgrades = null;
+        purchasedUpgrades.Clear();
+        selectedUpgrades.Clear();
+        allPlayerUpgrades = null;
+        purchasedPlayerUpgrades.Clear();
+
+        OnEnable();
+    }
+
     private void OnEnable()
     {
         //Debug.Log("ProgressionHolder OnEnable!!!!!");

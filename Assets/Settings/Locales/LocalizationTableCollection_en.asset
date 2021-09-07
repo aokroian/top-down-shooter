@@ -190,5 +190,29 @@ MonoBehaviour:
     m_Localized: Progression points
     m_Metadata:
       m_Items: []
+  - m_Id: 20097654870401024
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20097722881040384
+    m_Localized: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20097835728789504
+    m_Localized: All saved progress will be deleted. Proceed?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20100227673251840
+    m_Localized: Delete save data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20100383990767616
+    m_Localized: Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20115410890153984
+    m_Localized: Deleted
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

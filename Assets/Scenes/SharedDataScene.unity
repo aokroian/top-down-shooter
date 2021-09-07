@@ -262,10 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
-  audioMixer: {fileID: 24100000, guid: 6166c4e3e76f27e4d94faff5bd26be99, type: 2}
-  masterVolumeParamName: MasterSoundVolume
-  musicVolumeParamName: MusicVolume
-  sfxVolumeParamName: SFXVolume
   _loadCost: 3
 --- !u!114 &1436641950
 MonoBehaviour:
@@ -306,6 +302,7 @@ GameObject:
   - component: {fileID: 1572894442}
   - component: {fileID: 1572894441}
   - component: {fileID: 1572894443}
+  - component: {fileID: 1572894444}
   m_Layer: 0
   m_Name: ProgressionManager
   m_TagString: Untagged
@@ -360,6 +357,34 @@ MonoBehaviour:
       - m_Target: {fileID: 1572894441}
         m_TargetAssemblyTypeName: ProgressionManager, Assembly-CSharp
         m_MethodName: WriteToSaveFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1572894444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572894440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97932cb82ad8bc4898af84a0bf1a08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: 84c47651ab8d2ba4899abcc4c5009b99, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1572894441}
+        m_TargetAssemblyTypeName: ProgressionManager, Assembly-CSharp
+        m_MethodName: DeleteSaveData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

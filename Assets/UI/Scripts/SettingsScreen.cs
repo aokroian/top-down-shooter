@@ -13,6 +13,9 @@ public class SettingsScreen : MonoBehaviour
     public SettingsHolder settings;
     public GameEvent settingsSaveEvent;
     public UIDocumentLocalization localizer;
+    public LocalizationTableHolder localizationTableHolder;
+    public VisualTreeAsset confirmWindowElement;
+    public GameEvent deleteSaveEvent;
 
     private VisualElement rootEl;
     private ToggleVisualElement vibrationEl;
@@ -21,6 +24,7 @@ public class SettingsScreen : MonoBehaviour
     private SelectorVisualElement graphicsEl;
     private ToggleVisualElement fpsEl;
     private SelectorVisualElement languageEl;
+    private Button wipeButton;
 
     private Action backAction;
 
@@ -43,6 +47,8 @@ public class SettingsScreen : MonoBehaviour
         graphicsEl = rootEl.Q<TemplateContainer>("Graphics").Q<SelectorVisualElement>();
         fpsEl = rootEl.Q<TemplateContainer>("Fps").Q<ToggleVisualElement>();
         languageEl = rootEl.Q<TemplateContainer>("Language").Q<SelectorVisualElement>();
+        
+        rootEl.Q<Button>("WipeButton").RegisterCallback<ClickEvent>(ShowWipeConfirmWindow);
 
         rootEl.Q("BackToTitle").RegisterCallback<ClickEvent>(e => backAction?.Invoke());
         fpsEl.SetLabels("30", "60");
@@ -114,5 +120,27 @@ public class SettingsScreen : MonoBehaviour
     public void SetBackAction(Action backAction)
     {
         this.backAction = backAction;
+    }
+
+    private void ShowWipeConfirmWindow(ClickEvent clickEvent)
+    {
+        var wndRoot = confirmWindowElement.CloneTree();
+        var confirmWindow = wndRoot.Q<ConfirmWindowVisualElement>();
+        confirmWindow.Init(localizationTableHolder);
+        confirmWindow.SetCancelCallback(e => rootEl.Remove(confirmWindow));
+        confirmWindow.SetConfirmCallback(e => {
+            WipeSaves();
+            rootEl.Q<Button>("WipeButton").style.display = DisplayStyle.None;
+            rootEl.Q<Label>("WipedLabel").style.display = DisplayStyle.Flex;
+            rootEl.Remove(confirmWindow);
+        });
+        confirmWindow.style.position = Position.Absolute;
+        confirmWindow.SetText("#WipeConfirmation");
+        rootEl.Add(confirmWindow);
+    }
+
+    private void WipeSaves()
+    {
+        deleteSaveEvent.Raise();
     }
 }

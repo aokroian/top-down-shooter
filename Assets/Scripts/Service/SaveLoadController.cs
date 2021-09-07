@@ -68,4 +68,9 @@ public class SaveLoadController
         Debug.Log("Save: " + json);
         File.WriteAllText(fileFullPath, json);
     }
+
+    public void DeleteSaveFile()
+    {
+        File.Delete(fileFullPath);
+    }
 }

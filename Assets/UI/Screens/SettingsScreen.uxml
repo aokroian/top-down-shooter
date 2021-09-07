@@ -3,7 +3,7 @@
     <ui:Template name="Selector" src="Components/Selector.uxml" />
     <Style src="/Assets/UI/Styles/Overall.uss" />
     <Style src="/Assets/UI/Styles/Settings.uss" />
-    <ui:VisualElement style="flex-grow: 1;">
+    <ui:VisualElement name="RootContainer" style="flex-grow: 1;">
         <ui:VisualElement style="align-items: center; background-color: rgb(0, 8, 20); border-left-color: rgb(0, 53, 102); border-right-color: rgb(0, 53, 102); border-top-color: rgb(0, 53, 102); border-bottom-color: rgb(0, 53, 102); border-bottom-width: 3px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
             <ui:Label text="#Settings" display-tooltip-when-elided="true" class="primary-text" style="flex-grow: 1; font-size: 48px;" />
         </ui:VisualElement>
@@ -58,6 +58,15 @@
                         </ui:VisualElement>
                         <ui:VisualElement class="right_col" style="flex-grow: 1; align-items: center;">
                             <ui:Instance template="Selector" name="Language" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="row" style="flex-direction: row; align-items: center; padding-top: 0; margin-top: 30px;">
+                        <ui:VisualElement class="left_col">
+                            <ui:Label text="#WipeSave" display-tooltip-when-elided="true" class="label primary-text" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="right_col" style="flex-grow: 1; align-items: center; flex-direction: column;">
+                            <ui:Button text="#Wipe" display-tooltip-when-elided="true" name="WipeButton" class="button primary-text" style="font-size: 36px; padding-left: 12px; padding-right: 12px; padding-top: 8px; padding-bottom: 10px; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px;" />
+                            <ui:Label text="#Deleted" display-tooltip-when-elided="true" name="WipedLabel" class="primary-text" style="font-size: 36px; padding-top: 11px; padding-bottom: 13px; display: none;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
