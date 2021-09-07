@@ -54,6 +54,6 @@ MonoBehaviour:
     velocity: {x: 0, y: 0, z: 0}
     player: {fileID: 0}
     numberOfPenetrations: 0
-  grainCount: 7
+  grainCount: 9
   shotAngle: 25
   grainPrefab: {fileID: 8555050829149161235, guid: c46cfb22f88b96247ae9a0ab4a804a63, type: 3}

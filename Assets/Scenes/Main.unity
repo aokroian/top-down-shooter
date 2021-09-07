@@ -190,6 +190,9 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 05d67d8f32211a34cb56031f5bdf8644, type: 2}
   settingsSaveEvent: {fileID: 11400000, guid: d1dcd861b20437443afb4f464a3f5c7f, type: 2}
   localizer: {fileID: 14482276}
+  localizationTableHolder: {fileID: 0}
+  confirmWindowElement: {fileID: 0}
+  deleteSaveEvent: {fileID: 0}
 --- !u!114 &14482275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3880,9 +3883,9 @@ MonoBehaviour:
   progressionManager: {fileID: 0}
   health:
     bonusPrefab: {fileID: 7389978441618331954, guid: 90df346787bd66a42b27a98665b596bc, type: 3}
-    baseChance: 8
-    notGetPercent: 10
-    enemyCostAdditionalPercent: 10
+    baseChance: 6
+    notGetPercent: 20
+    enemyCostAdditionalPercent: 20
   credits:
     bonusPrefab: {fileID: 640587863994964912, guid: d70e704eedb4bf04f98439ce79213e81, type: 3}
     baseChance: 2

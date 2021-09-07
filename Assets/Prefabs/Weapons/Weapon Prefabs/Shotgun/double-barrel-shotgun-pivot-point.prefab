@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   reloadSoundDelay: 0.2
+  audioSource: {fileID: 0}
   ownerAgility: 1
   ownerRigControllerAgility: 1
   ownerObjRef: {fileID: 0}
@@ -90,7 +91,7 @@ MonoBehaviour:
   recoilHeight: 2
   clipSize: 2
   rateOfFire: 0.2
-  reloadTime: 1.2
+  reloadTime: 0.9
   numberOfPenetrations: 0
   localPosition: {x: 0.126, y: 0.246, z: 0.238}
   localRotation: {x: 12.64, y: 0, z: 0}
@@ -104,6 +105,7 @@ MonoBehaviour:
   maxShotAngle: 0
   ammoType: 5
   icon: {fileID: 2800000, guid: 416251da0227a2349bac124a02102551, type: 3}
+  noShootingTime: 0
 --- !u!114 &4956791540696850098
 MonoBehaviour:
   m_ObjectHideFlags: 0
