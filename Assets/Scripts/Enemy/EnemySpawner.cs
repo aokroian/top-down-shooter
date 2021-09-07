@@ -73,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
         NavMesh.SamplePosition(point, out hit, navMeshSearchMaxDistance, 1); // 1: walkable
         if (!hit.hit)
         {
-            Debug.LogError("NOT HIT!!! ERROR!!");
+            //Debug.LogError("NOT HIT!!! ERROR!!");
             yield break;
         }
 
@@ -88,7 +88,7 @@ public class EnemySpawner : MonoBehaviour
             //Debug.Log("radius: " + activePoint.radius + "; active: " + activePoint.active);
             if (activePoint == null)
             {
-                Debug.Log("NO AVAILABLE PLACE FOR SPAWN POINT");
+                //Debug.Log("NO AVAILABLE PLACE FOR SPAWN POINT");
                 yield break;
             }
 
