@@ -8539,11 +8539,11 @@ PrefabInstance:
       objectReference: {fileID: 31522454}
     - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: health
-      value: 1000000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: maxHealth
-      value: 1000000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
