@@ -3652,7 +3652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosives:
   - {fileID: 4750628176609608492}
-  distanceForSound: 0
+  distanceForSound: 10
 --- !u!114 &-1605534587396907508
 MonoBehaviour:
   m_ObjectHideFlags: 0
