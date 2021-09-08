@@ -99,6 +99,8 @@ public class SceneController : MonoBehaviour
 
     private void DeferIosGestures()
     {
+#if UNITY_IOS
         UnityEngine.iOS.Device.deferSystemGesturesMode = UnityEngine.iOS.SystemGestureDeferMode.All;
+#endif
     }
 }

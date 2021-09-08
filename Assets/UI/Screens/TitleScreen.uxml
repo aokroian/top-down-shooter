@@ -2,10 +2,10 @@
     <Style src="/Assets/UI/Styles/Overall.uss" />
     <Style src="/Assets/UI/Styles/Title.uss" />
     <ui:VisualElement style="flex-grow: 1; flex-direction: column-reverse; background-image: none; -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(255, 186, 186);">
-        <ui:VisualElement name="NewRunButton" style="position: relative; flex-shrink: 0; flex-basis: auto; bottom: 160px; flex-direction: column; align-items: center; background-image: url(&apos;/Assets/UI/Images/Button_image.png&apos;); -unity-background-image-tint-color: rgb(0, 53, 102); background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="NewRunButton" style="position: relative; flex-shrink: 0; flex-basis: auto; bottom: 180px; flex-direction: column; align-items: center; background-image: url(&apos;/Assets/UI/Images/Button_image.png&apos;); -unity-background-image-tint-color: rgb(0, 53, 102); background-color: rgba(0, 0, 0, 0);">
             <ui:Button text="#NewRun" display-tooltip-when-elided="true" name="NewRun" class="menu-item primary-text" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
         </ui:VisualElement>
-        <ui:VisualElement style="position: absolute; left: 0; bottom: 20px;">
+        <ui:VisualElement style="position: absolute; left: 0; bottom: 30px;">
             <ui:Button display-tooltip-when-elided="true" name="Settings" class="button" style="border-left-width: 0; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; background-image: url(&apos;/Assets/UI/Images/gear-128x128_new.png&apos;); width: 128px; height: 128px; padding-left: 0; margin-left: 0; border-bottom-left-radius: 0; border-top-left-radius: 0; border-top-right-radius: 30px; border-bottom-right-radius: 30px;" />
         </ui:VisualElement>
         <ui:VisualElement style="position: absolute; left: 0; top: 0; flex-direction: row; justify-content: center; right: 0; font-size: 48px; margin-top: 10px;">
@@ -22,7 +22,7 @@
             <ui:Label text="Run use gun" display-tooltip-when-elided="true" class="primary-text" style="align-items: center; -unity-text-align: upper-center; font-size: 140px; -unity-font: resource(&apos;Fonts/DotGothic16-Regular&apos;); -unity-font-style: bold; position: absolute; flex-grow: 1; flex-basis: auto; flex-shrink: 1; left: 0; right: 0; color: rgba(243, 243, 243, 255);" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="Money" style="position: absolute; left: 0; flex-direction: row; right: 0; bottom: 10px; justify-content: center;">
+    <ui:VisualElement name="Money" style="position: absolute; left: 0; flex-direction: row; right: 0; bottom: 25px; justify-content: center;">
         <ui:VisualElement style="flex-direction: row; font-size: 38px;">
             <ui:Label text="#Money" display-tooltip-when-elided="true" class="primary-text" />
             <ui:Label text=":" display-tooltip-when-elided="true" class="primary-text" />
