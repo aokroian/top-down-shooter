@@ -64,6 +64,8 @@ public class PlayerController : MonoBehaviour
     private int[] bulletsInClip;
     private Animator animator;
     private Coroutine shootingCoroutine;
+    // area attack
+    private AreaAttack areaAttack;
 
     // upgrades
     private PlayerConfigurator playerConfigurator;
@@ -295,6 +297,9 @@ public class PlayerController : MonoBehaviour
         currentMovementSpeed = basicMovementSpeed;
         currentControlScheme = playerInput.currentControlScheme;
 
+        // area attack
+        TryGetComponent<AreaAttack>(out areaAttack);
+
 #if UNITY_ANDROID || UNITY_IOS
         mobileInput.SetActive(true);
 #endif
@@ -402,8 +407,10 @@ public class PlayerController : MonoBehaviour
         // dodge system
         // stamina system
         StaminaCorrection();
-        if (allowedToDodge && rb.velocity.magnitude > 1f && stamina > 0)
+        if (allowedToDodge && stamina > 0)
         {
+            areaAttack.isEnabled = true;
+
             stamina -= dodgeStaminaCostPerSec * Time.deltaTime;
             currentMovementSpeed = dodgeSpeed;
 
@@ -415,13 +422,13 @@ public class PlayerController : MonoBehaviour
             // play dodge audio
             playerAudioManager.PlayDodgeSound();
         }
-        else if (stamina <= 0 || !allowedToDodge || rb.velocity.magnitude < 0.1f)
+        else if (stamina <= 0 || !allowedToDodge)
         {
             if (stamina < maxStamina)
             {
                 stamina += staminaRegenPerSecond * Time.deltaTime;
             }
-
+            areaAttack.isEnabled = false;
             allowedToDodge = false;
             animator.SetFloat("run multiplier", 1);
             currentMovementSpeed = basicMovementSpeed;

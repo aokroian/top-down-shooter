@@ -11,6 +11,7 @@ public enum HitType
 
 public class Target : MonoBehaviour
 {
+    public bool invulnerability = false;
     public float health = 100f;
     public float maxHealth = 100f;
     public float afterHitDelay = 0f;
@@ -42,6 +43,7 @@ public class Target : MonoBehaviour
 
     public void TakeDamage(float amount, float? forceAmount = null, Vector3? hitDirection = null, bool? isHitFromExplosion = null, Vector3? explPosition = null, float? explRadius = null, HitType? hitType = HitType.PlayerBullet)
     {
+        if (invulnerability) return;
         if (afterHitDelay > 0) {
             if (Time.time - prevHitTime > afterHitDelay)
             {

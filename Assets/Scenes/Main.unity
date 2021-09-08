@@ -4413,17 +4413,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1719441473545155237, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
   m_PrefabInstance: {fileID: 9205994612711088162}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7502695412977259144 stripped
+--- !u!114 &7502695412977259148
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4559793180105441750, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-  m_PrefabInstance: {fileID: 9205994612711088162}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7502695412977259143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506d41f27036246bab20b7334c1f06c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8916d9068c7df42f69548b5ad52e09e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagePerSecond: 20
+  areaRadius: 10
+  givesInvulnerability: 1
+  isEnabled: 0
 --- !u!1001 &7757959853262555954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8433,14 +8438,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099389160}
     - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: dodgeTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: dodgeSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: mobileInput
       value: 
       objectReference: {fileID: 1049430825}
@@ -8449,17 +8446,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 824559845}
     - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: dodgeStaminaCost
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: progressionManager
       value: 
       objectReference: {fileID: 31522454}
-    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: dodgeStaminaCostPerSec
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: health
       value: 100
@@ -8469,45 +8458,13 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: invulnerability
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1099389162}
-    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 7502695412977259144}
-    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayDeathSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: onRobotSawHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7502695412977259144}
-    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: onRobotBulletHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7502695412977259144}
-    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: onRobotSawHit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayHitByEnemyBulletSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: onRobotBulletHit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayHitByEnemyBulletSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: PlayerAudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: onRobotSawHit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
-      propertyPath: onRobotBulletHit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 6971399184106823467, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: playerAmmoController
       value: 

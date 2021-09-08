@@ -697,9 +697,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicMovementSpeed: 6
-  dodgeSpeed: 30
-  dodgeTime: 0.13
-  dodgeStaminaCost: 30
+  dodgeSpeed: 15
+  dodgeStaminaCostPerSec: 40
+  dodgeAnimationMultiplier: 2
   health: 100
   maxHealth: 100
   stamina: 50
@@ -747,8 +747,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2507228963358285406}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 4559793180105441750}
+        m_TargetAssemblyTypeName: PlayerAudioManager, Assembly-CSharp
         m_MethodName: PlayDeathSound
         m_Mode: 1
         m_Arguments:
@@ -762,9 +762,9 @@ MonoBehaviour:
   onRobotSawHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2507228963358285406}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: PlayHitByEnemySawSound
+      - m_Target: {fileID: 4559793180105441750}
+        m_TargetAssemblyTypeName: PlayerAudioManager, Assembly-CSharp
+        m_MethodName: PlayHitByEnemyBulletSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -777,8 +777,8 @@ MonoBehaviour:
   onRobotBulletHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2507228963358285406}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 4559793180105441750}
+        m_TargetAssemblyTypeName: PlayerAudioManager, Assembly-CSharp
         m_MethodName: PlayHitByEnemyBulletSound
         m_Mode: 1
         m_Arguments:
