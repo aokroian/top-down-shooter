@@ -8,15 +8,14 @@ public class PlayerController : MonoBehaviour
     // variables for movement
     public float basicMovementSpeed = 2f;
     public float dodgeSpeed = 20f;
-    public float dodgeTime = 0.2f;
-    public float dodgeStaminaCost = 20f;
+    public float dodgeStaminaCostPerSec = 20f;
+    public float dodgeAnimationMultiplier = 2;
 
     private Vector2 wasdPosition;
     private Vector2 leftStickPosition;
     private bool allowedToDodge = false;
     private float currentMovementSpeed = 0f;
     private Vector2 movement;
-    private float dodgeTimer = 0f;
 
     // variables for health and stamina
     public float health = 100f;
@@ -212,6 +211,10 @@ public class PlayerController : MonoBehaviour
         {
             allowedToDodge = true;
         }
+        if (value.canceled)
+        {
+            if (allowedToDodge) allowedToDodge = false;
+        }
     }
     public void OnPause(InputAction.CallbackContext value)
     {
@@ -369,9 +372,6 @@ public class PlayerController : MonoBehaviour
             movement = wasdPosition;
         }
 
-        // stamina system
-        CalculateStamina();
-
         // animations
         animator = GetComponent<Animator>();
         Vector3 globalMovement = new Vector3(movement.x, 0.0f, movement.y);
@@ -399,13 +399,15 @@ public class PlayerController : MonoBehaviour
             leftHandConstraintController.transform.position = leftHandPoint.transform.position;
         }
 
-        // dodge system РАБОТАЕТ ЧЕРЕЗ ЖОПУ
-        if (allowedToDodge && rb.velocity.magnitude > 1f && dodgeTimer == 0f && stamina >= dodgeStaminaCost)
+        // dodge system
+        // stamina system
+        StaminaCorrection();
+        if (allowedToDodge && rb.velocity.magnitude > 1f && stamina > 0)
         {
-            dodgeTimer += dodgeTime;
-            stamina -= dodgeStaminaCost;
+            stamina -= dodgeStaminaCostPerSec * Time.deltaTime;
+            currentMovementSpeed = dodgeSpeed;
 
-            animator.SetBool("Is Dodging", true);
+            animator.SetFloat("run multiplier", dodgeAnimationMultiplier);
 
             // stop walking audio
             playerAudioManager.PlayStepsSound(false);
@@ -413,26 +415,21 @@ public class PlayerController : MonoBehaviour
             // play dodge audio
             playerAudioManager.PlayDodgeSound();
         }
-        else
+        else if (stamina <= 0 || !allowedToDodge || rb.velocity.magnitude < 0.1f)
         {
-            allowedToDodge = false;
-        }
-        if (dodgeTimer > 0f)
-        {
-            allowedToDodge = false;
-            dodgeTimer -= Time.deltaTime;
-            currentMovementSpeed = dodgeSpeed;
+            if (stamina < maxStamina)
+            {
+                stamina += staminaRegenPerSecond * Time.deltaTime;
+            }
 
-        }
-        else if (dodgeTimer == 0f)
-        {
+            allowedToDodge = false;
+            animator.SetFloat("run multiplier", 1);
             currentMovementSpeed = basicMovementSpeed;
-            animator.SetBool("Is Dodging", false);
-        }
-        else if (dodgeTimer < 0f)
-        {
 
-            dodgeTimer = 0f;
+            //animator.SetBool("Is Dodging", false);
+
+            // continue walking audio
+            playerAudioManager.PlayStepsSound(true);
         }
     }
 
@@ -585,12 +582,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void CalculateStamina()
+    private void StaminaCorrection()
     {
-        if (stamina < maxStamina)
-        {
-            stamina += staminaRegenPerSecond * Time.deltaTime;
-        }
         if (stamina > maxStamina)
         {
             stamina = maxStamina;

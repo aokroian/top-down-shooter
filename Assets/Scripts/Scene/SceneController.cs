@@ -14,6 +14,8 @@ public class SceneController : MonoBehaviour
     {
         var sharedDataParam = new ChangeSceneEventParam(SceneEnum.SHARED_DATA, SceneEnum.NULL, false, SharedDataLoaded);
         ChangeScene(sharedDataParam);
+
+        DeferIosGestures();
     }
 
     private void SharedDataLoaded()
@@ -93,5 +95,10 @@ public class SceneController : MonoBehaviour
                 receiver.PassParam(param.param);
             }
         }
+    }
+
+    private void DeferIosGestures()
+    {
+        UnityEngine.iOS.Device.deferSystemGesturesMode = UnityEngine.iOS.SystemGestureDeferMode.All;
     }
 }
