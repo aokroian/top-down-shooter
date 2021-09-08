@@ -186,13 +186,19 @@ public class PlayerController : MonoBehaviour
         {
             // sound 
             playerAudioManager.PlaySwitchWeaponSound();
-            if (selectedItemIndex + 1 == itemsEquipmentArr.Length)
+
+            // item
+            int NextItemIndex()
             {
-                SelectItem(0);
+                int result = selectedItemIndex + 1 == itemsEquipmentArr.Length ? 0 : selectedItemIndex + 1;
+                return result;
             }
-            else
+
+            SelectItem(NextItemIndex());
+            // if no ammo in next weapon, select next to it
+            while (!CheckAmmo(weaponController))
             {
-                SelectItem(selectedItemIndex + 1);
+                SelectItem(NextItemIndex());
             }
         }
     }
@@ -485,7 +491,7 @@ public class PlayerController : MonoBehaviour
     private void SingleShot()
     {
         
-        if (!weaponController.ammoProvider.HasAmmo(weaponController.ammoType) && weaponController.bulletsInClip <= 0)
+        if (!CheckAmmo(weaponController))
         {
             if (needToSelectPistol)
             {
@@ -497,9 +503,18 @@ public class PlayerController : MonoBehaviour
             needToSelectPistol = true;
         } else
         {
-            equippedItemObj.GetComponent<WeaponController>().Shoot(0);
+            weaponController.Shoot(0);
         }
+    }
 
+    private bool CheckAmmo(WeaponController weaponController)
+    {
+        bool result = true;
+        if (!weaponController.ammoProvider.HasAmmo(weaponController.ammoType) && weaponController.bulletsInClip <= 0)
+        {
+            result = false;
+        }
+        return result;
     }
 
     private void SafelyStopShootingCoroutine()
