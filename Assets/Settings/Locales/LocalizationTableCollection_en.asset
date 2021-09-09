@@ -214,5 +214,9 @@ MonoBehaviour:
     m_Localized: Deleted
     m_Metadata:
       m_Items: []
+  - m_Id: 20792752847347712
+    m_Localized: Energy
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

@@ -8,6 +8,8 @@ public class AreaAttack : MonoBehaviour
     public float areaRadius = 3;
     public bool givesInvulnerability = false;
 
+    public GroundLavaController groundController;
+
     [HideInInspector]
     public bool isEnabled = false;
 
@@ -26,6 +28,7 @@ public class AreaAttack : MonoBehaviour
         pos = transform.position;
         if (isEnabled)
         {
+            groundController.ShowElectricity(areaRadius);
             // damage
             Collider[] damagedObjects = Physics.OverlapSphere(pos, areaRadius);
             foreach (var hitCollider in damagedObjects)
@@ -45,10 +48,16 @@ public class AreaAttack : MonoBehaviour
         }
         else if(!isEnabled)
         {
+            groundController.HideElectricity();
             if (ownerTarget)
             {
                 ownerTarget.invulnerability = false;
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, areaRadius);
     }
 }

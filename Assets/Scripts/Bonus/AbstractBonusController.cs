@@ -8,8 +8,8 @@ public abstract class AbstractBonusController : MonoBehaviour
     public float despawnDistance = 80f;
     public float pickUpDistance = 5f;
     public string pickupString;
-    public float textTime = 2f;
-    public float textMovement = 0.2f;
+    public float textTime = 1f;
+    public float textMovement = 0.1f;
     public Font textFont;
     public Color textColor = Color.green;
 

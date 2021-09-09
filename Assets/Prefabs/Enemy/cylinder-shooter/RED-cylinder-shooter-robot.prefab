@@ -1722,6 +1722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697ec1ebda2183d4bae3c1b62bd2763b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invulnerability: 0
   health: 40
   maxHealth: 40
   afterHitDelay: 0
@@ -1783,7 +1784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a4454aa23ba4dbca13e18dae334940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cost: 5
+  _cost: 6
   amountOfBullets: 9999
   weapon: {fileID: 2743782959536650614, guid: dd3790427396440b89ce4c14563590b5, type: 3}
   defaultState: 0
@@ -1877,6 +1878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWalkSoundDistance: 15
+  disableWalkSound: 0
 --- !u!114 &4332139763250591562
 MonoBehaviour:
   m_ObjectHideFlags: 0

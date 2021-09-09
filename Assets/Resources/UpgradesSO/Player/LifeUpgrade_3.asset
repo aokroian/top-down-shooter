@@ -17,7 +17,7 @@ MonoBehaviour:
   children:
   - {fileID: 11400000, guid: 8ad04bd9463115247b114352488a5155, type: 2}
   image: {fileID: 0}
-  cost: 75000
+  cost: 80000
   upgradeName: Life
   description: +25
   orderInUpgradeScreen: 0

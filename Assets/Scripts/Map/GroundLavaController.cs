@@ -142,6 +142,18 @@ public class GroundLavaController : MonoBehaviour
     {
         environmentLavaController.Burn(currentRadius);
     }
+
+    public void ShowElectricity(float radius)
+    {
+        material.SetVector("PlayerPos", new Vector2(player.transform.position.x, player.transform.position.z));
+
+        // 2x, dont know why!
+        material.SetFloat("LightingRadius", radius * 2);
+    }
+
+    public void HideElectricity() {
+        material.SetFloat("LightingRadius", 0f);
+    }
     
     /*
     private void OnDrawGizmos()

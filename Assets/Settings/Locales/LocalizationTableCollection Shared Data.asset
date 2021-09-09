@@ -211,6 +211,10 @@ MonoBehaviour:
     m_Key: Deleted
     m_Metadata:
       m_Items: []
+  - m_Id: 20792752847347712
+    m_Key: Energy
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

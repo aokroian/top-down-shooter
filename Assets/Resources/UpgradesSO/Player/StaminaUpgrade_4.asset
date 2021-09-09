@@ -16,9 +16,9 @@ MonoBehaviour:
   isRoot: 0
   children: []
   image: {fileID: 0}
-  cost: 60000
+  cost: 120000
   upgradeName: Stamina
-  description: +10
+  description: +15
   orderInUpgradeScreen: 2
   playerUpgradeType: 2
-  value: 10
+  value: 15

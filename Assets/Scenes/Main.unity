@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3880,7 +3880,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7502695412977259143}
-  progressionManager: {fileID: 0}
   health:
     bonusPrefab: {fileID: 7389978441618331954, guid: 90df346787bd66a42b27a98665b596bc, type: 3}
     baseChance: 6
@@ -3891,6 +3890,11 @@ MonoBehaviour:
     baseChance: 2
     notGetPercent: 50
     enemyCostAdditionalPercent: 50
+  energy:
+    bonusPrefab: {fileID: 4445631109953935465, guid: 2edd08c6c885642a3a741420fb40c53d, type: 3}
+    baseChance: 1
+    notGetPercent: 50
+    enemyCostAdditionalPercent: 100
   ammoParams:
   - bonusPrefab: {fileID: 7389978441618331954, guid: e0650115ff6b467449a8787f78584925, type: 3}
     baseChance: 8
@@ -4425,9 +4429,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8916d9068c7df42f69548b5ad52e09e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerSecond: 20
-  areaRadius: 10
+  damagePerSecond: 30
+  areaRadius: 6
   givesInvulnerability: 1
+  groundController: {fileID: 21440214}
   isEnabled: 0
 --- !u!1001 &7757959853262555954
 PrefabInstance:
@@ -8449,6 +8454,10 @@ PrefabInstance:
       propertyPath: progressionManager
       value: 
       objectReference: {fileID: 31522454}
+    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: staminaRegenPerSecond
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: health
       value: 100

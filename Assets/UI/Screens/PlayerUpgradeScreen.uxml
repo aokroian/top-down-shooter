@@ -42,7 +42,7 @@
                 </ui:VisualElement>
                 <ui:VisualElement class="upgrade-row">
                     <ui:VisualElement class="left-col">
-                        <ui:Label text="#Stamina" display-tooltip-when-elided="true" class="primary-text" />
+                        <ui:Label text="#Energy" display-tooltip-when-elided="true" class="primary-text" />
                         <ui:Label text="CurStamina" display-tooltip-when-elided="true" name="CurrentStamina" class="primary-text" />
                     </ui:VisualElement>
                     <ui:Button display-tooltip-when-elided="true" name="UpgradeStamina" class="right-col">

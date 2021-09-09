@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergyBonusController : AbstractBonusController
+public class HealthBonusController : AbstractBonusController
 {
     public float amount = 20f;
 
-    private PlayerController playerController;
+    private Target playerTarget;
 
     private void Start()
     {
-        playerController = player.GetComponent<PlayerController>();
+        playerTarget = player.GetComponent<Target>();
     }
 
     public override bool OnPickUp()
     {
-        return playerController.AddEnergy(amount);
+        return playerTarget.Heal(amount);
     }
 
     public override bool CanPickUp()
     {
-        return playerController.CanAddEnergy();
+        return playerTarget.CanHeal();
     }
 
     public override string GetPickupText()

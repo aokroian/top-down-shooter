@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FloorLava
-  m_Shader: {fileID: -6465566751694194690, guid: 75c3eaaf02985b247a954edd181a4b7d, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9a20ed335365f3848be66812f5f01ed6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -102,6 +102,7 @@ Material:
     - CirclesOffsetMultipier: 0
     - CirclesSize: 1
     - CirclesThickness: 0
+    - LightingRadius: 0
     - Metallic: 0
     - NoiseDensity: 0.3
     - NoiseScale: 300
@@ -140,6 +141,7 @@ Material:
     - MainTextureTiling: {r: 5, g: 5, b: 0, a: 0}
     - PaintColor: {r: 0.7169812, g: 0.63778, b: 0, a: 0}
     - PaintTiling: {r: 10, g: 10, b: 0, a: 0}
+    - PlayerPos: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

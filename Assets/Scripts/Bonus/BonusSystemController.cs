@@ -7,11 +7,10 @@ public class BonusSystemController : MonoBehaviour
 
     public GameObject player;
 
-    public ProgressionManager progressionManager;
-
     //public GameObject healthPrefab;
     public BonusSpawnParams health;
     public BonusSpawnParams credits;
+    public BonusSpawnParams energy;
 
     //public GameObject[] ammoPrefabs;
     public BonusSpawnParams[] ammoParams;
@@ -52,7 +51,8 @@ public class BonusSystemController : MonoBehaviour
 
         //Debug.Log("EnemyDies event executed!! Chance: " + health.GetChance(param.cost));
         SpawnIfNeed(param, health, spawnedBonuses);
-        var creditObject = SpawnIfNeed(param, credits, spawnedBonuses);
+        SpawnIfNeed(param, credits, spawnedBonuses);
+        SpawnIfNeed(param, energy, spawnedBonuses);
 
         foreach (KeyValuePair<AmmoType, BonusSpawnParams> entity in actualAmmoParams)
         {

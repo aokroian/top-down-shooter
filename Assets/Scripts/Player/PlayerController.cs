@@ -668,4 +668,20 @@ public class PlayerController : MonoBehaviour
         Vector3 result = isoMatrix.MultiplyPoint3x4(vector);
         return result;
     }
+
+    public bool AddEnergy(float amount)
+    {
+        bool result = false;
+        if (stamina < maxStamina)
+        {
+            stamina += amount;
+            result = true;
+        }
+        return result;
+    }
+
+    public bool CanAddEnergy()
+    {
+        return stamina < maxStamina;
+    }
 }
