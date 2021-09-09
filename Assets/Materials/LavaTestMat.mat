@@ -106,7 +106,7 @@ Material:
     - Metallic: 0
     - NoiseDensity: 0.3
     - NoiseScale: 300
-    - OuterRadius: 0.54
+    - OuterRadius: 89.91
     - PaintOpacity: 0.8
     - Smooth: 0.6
     - Smoothness: 0
