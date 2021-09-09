@@ -17,6 +17,7 @@ public class ScoreCounter : MonoBehaviour
     public int maxDistanceInt { get; private set; }
 
     private Label scoreLabel;
+    private int savedScore;
 
     private void OnEnable()
     {
@@ -73,8 +74,9 @@ public class ScoreCounter : MonoBehaviour
         {
             progressionHolder.topScore = currentScore;
         }
-        progressionHolder.exp += currentScore;
+        progressionHolder.exp += currentScore - savedScore;
         progressionSaveEvent.Raise();
+        savedScore = currentScore;
     }
 
     private void updateScoreLabel()
