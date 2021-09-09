@@ -16,7 +16,7 @@ MonoBehaviour:
   isRoot: 0
   children: []
   image: {fileID: 2800000, guid: 4652ed64cdc8ff64daf96d9e99819b74, type: 3}
-  cost: 25
+  cost: 45
   upgradeName: Pistol
   description: +20% dmg
   orderInUpgradeScreen: 0
