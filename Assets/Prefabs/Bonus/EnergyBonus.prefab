@@ -201,7 +201,7 @@ MonoBehaviour:
   audioDictionary:
     list:
     - Key: pick up
-      Value: {fileID: 8300000, guid: 656e4feb72ae6e244be0628896b9151e, type: 3}
+      Value: {fileID: 8300000, guid: edf84ba400fea5c44a63b274d1d43f6a, type: 3}
 --- !u!1 &4683934860751789810
 GameObject:
   m_ObjectHideFlags: 0
