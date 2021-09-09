@@ -16,7 +16,7 @@ MonoBehaviour:
   isRoot: 0
   children: []
   image: {fileID: 0}
-  cost: 80000
+  cost: 120000
   upgradeName: Ammo capacity
   description: +25%
   orderInUpgradeScreen: 1

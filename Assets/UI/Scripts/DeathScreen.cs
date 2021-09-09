@@ -16,6 +16,7 @@ public class DeathScreen : MonoBehaviour
     private VisualElement rootEl;
     private VisualElement expContainer;
     private Label expLabelEl;
+    private Label creditsLabelEl;
     private Button newRunEl;
     private Button upgradesEl;
     private Button mainMenuEl;
@@ -33,6 +34,7 @@ public class DeathScreen : MonoBehaviour
         rootEl = pauseDoc.rootVisualElement;
         expContainer = rootEl.Q("ExpContainer");
         expLabelEl = expContainer.Q<Label>("ExpLabel");
+        creditsLabelEl = rootEl.Q<Label>("CreditsLabel");
         newRunEl = rootEl.Q<Button>("NewRun");
         upgradesEl = rootEl.Q<Button>("Upgrades");
         mainMenuEl = rootEl.Q<Button>("MainMenu");
@@ -56,6 +58,8 @@ public class DeathScreen : MonoBehaviour
         {
             expLabelEl.text = progressionManager.startExp.ToString();
         }
+
+        creditsLabelEl.text = progressionHolder.moneyCount.ToString();
 
         if (!animationPlayed && this.enabled)
         {

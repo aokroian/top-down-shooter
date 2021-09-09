@@ -17,7 +17,7 @@ MonoBehaviour:
   children:
   - {fileID: 11400000, guid: 1b4c40ddbb1c6194a81fa5427b19ab1d, type: 2}
   image: {fileID: 2800000, guid: 6ebe10b455279be40a93f5f3c1728f43, type: 3}
-  cost: 20
+  cost: 25
   upgradeName: Machinegun
   description: +10% dmg
   orderInUpgradeScreen: 40

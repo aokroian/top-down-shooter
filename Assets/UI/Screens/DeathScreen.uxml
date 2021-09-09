@@ -12,12 +12,18 @@
             <ui:VisualElement style="font-size: 52px; -unity-text-align: upper-center; height: 80px; align-items: center; justify-content: center;">
                 <ui:Label text="#NewRecord" display-tooltip-when-elided="true" name="RecordLabel" class="primary-text" style="color: rgb(226, 61, 61); visibility: visible; display: none;" />
             </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 0; opacity: 1; justify-content: center; align-items: center; flex-basis: auto; height: 25%;">
-                <ui:VisualElement name="ExpContainer" style="height: 45%; flex-direction: row; align-items: center; margin-bottom: 50px;">
+            <ui:VisualElement style="flex-grow: 0; opacity: 1; justify-content: center; align-items: center; flex-basis: auto; height: 25%; margin-bottom: 30px;">
+                <ui:VisualElement name="ExpContainer" style="height: 45%; flex-direction: row; align-items: center; margin-bottom: 15px;">
                     <ui:Label text="#ProgressionPoints" display-tooltip-when-elided="true" class="primary-text" style="font-size: 58px;" />
                     <ui:Label text=":" display-tooltip-when-elided="true" class="primary-text" style="font-size: 58px; margin-right: 5px;" />
                     <ui:VisualElement style="background-image: url(&apos;/Assets/UI/Images/ExpOrb.png&apos;); width: 100px; height: 100px; -unity-background-scale-mode: scale-to-fit;" />
                     <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="ExpLabel" class="primary-text" style="font-size: 58px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="CreditsContainer" style="height: 45%; flex-direction: row; align-items: center;">
+                    <ui:Label text="#Money" display-tooltip-when-elided="true" class="primary-text" style="font-size: 58px;" />
+                    <ui:Label text=":" display-tooltip-when-elided="true" class="primary-text" style="font-size: 58px; margin-right: 5px;" />
+                    <ui:VisualElement style="background-image: url(&apos;/Assets/Materials/Bonus/CreditIcon.png&apos;); width: 85px; height: 85px; -unity-background-scale-mode: scale-to-fit; margin-left: 5px; margin-right: 5px;" />
+                    <ui:Label text="0&#10;" display-tooltip-when-elided="true" name="CreditsLabel" class="primary-text" style="font-size: 58px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1; margin-top: 10px; justify-content: space-around; margin-bottom: 20px;">
