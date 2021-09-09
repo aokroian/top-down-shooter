@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3974,9 +3974,9 @@ MonoBehaviour:
     enemyCostAdditionalPercent: 50
   energy:
     bonusPrefab: {fileID: 4445631109953935465, guid: 2edd08c6c885642a3a741420fb40c53d, type: 3}
-    baseChance: 5
+    baseChance: 1
     notGetPercent: 50
-    enemyCostAdditionalPercent: 20
+    enemyCostAdditionalPercent: 100
   ammoParams:
   - bonusPrefab: {fileID: 7389978441618331954, guid: e0650115ff6b467449a8787f78584925, type: 3}
     baseChance: 8
