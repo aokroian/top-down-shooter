@@ -38,6 +38,14 @@ public class ConfirmWindowVisualElement : VisualElement
 
         confirmButton.text = Localize(confirmButton.text);
         cancelButton.text = Localize(cancelButton.text);
+
+        if (localizer != null && localizer.currentTable.LocaleIdentifier.Code == "zh-Hans")
+        {
+            Debug.Log("BeforeStyleChange");
+            ChangeStyleRecursively(this);
+            Debug.Log("afterStyleChange");
+        }
+
         this.UnregisterCallback(initCallback);
     }
 
@@ -45,6 +53,28 @@ public class ConfirmWindowVisualElement : VisualElement
     {
         this.localizer = localizer;
     }
+
+    
+    void ChangeStyleRecursively(VisualElement element)
+    {
+        VisualElement.Hierarchy elementHierarchy = element.hierarchy;
+        int numChildren = elementHierarchy.childCount;
+        for (int i = 0; i < numChildren; i++)
+        {
+            VisualElement child = elementHierarchy.ElementAt(i);
+            child.RemoveFromClassList("primary-text");
+            child.AddToClassList("secondary-text");
+        }
+        for (int i = 0; i < numChildren; i++)
+        {
+            VisualElement child = elementHierarchy.ElementAt(i);
+            VisualElement.Hierarchy childHierarchy = child.hierarchy;
+            int numGrandChildren = childHierarchy.childCount;
+            if (numGrandChildren != 0)
+                ChangeStyleRecursively(child);
+        }
+    }
+    
 
     public void SetText(string text)
     {
