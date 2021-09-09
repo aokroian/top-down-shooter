@@ -10,6 +10,7 @@ public class PlayerAudioManager : MonoBehaviour
     private AudioClip deathSound;
     private AudioClip runSound;
     private AudioClip dodgeSound;
+    private AudioClip areaAttackSound;
     private AudioClip bulletHittingPlayerSound;
     private AudioClip sawHittingPlayerSound;
     private AudioClip switchWeaponSound;
@@ -26,6 +27,7 @@ public class PlayerAudioManager : MonoBehaviour
         audioStorage.TryGetValue("Hit by an enemy bullet", out bulletHittingPlayerSound);
         audioStorage.TryGetValue("Hit by an enemy saw", out sawHittingPlayerSound);
         audioStorage.TryGetValue("Switch weapon", out switchWeaponSound);
+        audioStorage.TryGetValue("Area attack", out areaAttackSound);
     }
     public void PlaySwitchWeaponSound()
     {
@@ -66,13 +68,45 @@ public class PlayerAudioManager : MonoBehaviour
                 movementAudioSource.Play();
             }
         }
-        else
+        else if (movementAudioSource.clip == runSound && movementAudioSource.isPlaying && !playOrStop)
         {
             movementAudioSource.clip = null;
             movementAudioSource.loop = false;
             movementAudioSource.pitch = 1;
             movementAudioSource.volume = 1;
             movementAudioSource.Stop();
+        }
+    }
+
+    public void PlayAreaAttackSound(bool enabled)
+    {
+        if (GameLoopController.paused)
+        {
+            damageAudioSource.clip = null;
+            damageAudioSource.loop = false;
+            damageAudioSource.pitch = 1;
+            damageAudioSource.volume = 1;
+            damageAudioSource.Stop();
+            return;
+        }
+        if (enabled)
+        {
+            damageAudioSource.clip = areaAttackSound;
+            damageAudioSource.loop = true;
+            damageAudioSource.pitch = Random.Range(0.6f, 0.8f);
+            damageAudioSource.volume = Random.Range(0.8f, 1f);
+            if (!damageAudioSource.isPlaying)
+            {
+                damageAudioSource.Play();
+            }
+        }
+        else if (damageAudioSource.clip == areaAttackSound && damageAudioSource.isPlaying && !enabled)
+        {
+            damageAudioSource.clip = null;
+            damageAudioSource.loop = false;
+            damageAudioSource.pitch = 1;
+            damageAudioSource.volume = 1;
+            damageAudioSource.Stop();
         }
     }
 

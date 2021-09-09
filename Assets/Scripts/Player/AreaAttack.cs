@@ -7,6 +7,7 @@ public class AreaAttack : MonoBehaviour
     public float damagePerSecond = 1;
     public float areaRadius = 3;
     public bool givesInvulnerability = false;
+    public GameObject auraObj;
 
     public GroundLavaController groundController;
 
@@ -45,6 +46,9 @@ public class AreaAttack : MonoBehaviour
             {
                 ownerTarget.invulnerability = true;
             }
+
+            // aura
+            if (auraObj != null) auraObj.SetActive(true);
         }
         else if(!isEnabled)
         {
@@ -53,6 +57,9 @@ public class AreaAttack : MonoBehaviour
             {
                 ownerTarget.invulnerability = false;
             }
+            // aura
+            if (auraObj != null) auraObj.SetActive(false);
+
         }
     }
 

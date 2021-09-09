@@ -410,6 +410,7 @@ public class PlayerController : MonoBehaviour
         if (allowedToDodge && stamina > 0)
         {
             areaAttack.isEnabled = true;
+            
 
             stamina -= dodgeStaminaCostPerSec * Time.deltaTime;
             currentMovementSpeed = dodgeSpeed;
@@ -417,10 +418,9 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("run multiplier", dodgeAnimationMultiplier);
 
             // stop walking audio
+            playerAudioManager.PlayAreaAttackSound(true);
             playerAudioManager.PlayStepsSound(false);
 
-            // play dodge audio
-            playerAudioManager.PlayDodgeSound();
         }
         else if (stamina <= 0 || !allowedToDodge)
         {
@@ -428,14 +428,14 @@ public class PlayerController : MonoBehaviour
             {
                 stamina += staminaRegenPerSecond * Time.deltaTime;
             }
+            
             areaAttack.isEnabled = false;
             allowedToDodge = false;
             animator.SetFloat("run multiplier", 1);
             currentMovementSpeed = basicMovementSpeed;
 
-            //animator.SetBool("Is Dodging", false);
-
             // continue walking audio
+            playerAudioManager.PlayAreaAttackSound(false);
             playerAudioManager.PlayStepsSound(true);
         }
     }
