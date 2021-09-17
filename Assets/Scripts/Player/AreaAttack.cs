@@ -9,7 +9,7 @@ public class AreaAttack : MonoBehaviour
     public bool givesInvulnerability = false;
     public GameObject auraObj;
 
-    public GroundLavaController groundController;
+    public GameObject electricGround;
 
     [HideInInspector]
     public bool isEnabled = false;
@@ -17,10 +17,14 @@ public class AreaAttack : MonoBehaviour
     private Vector3 pos;
     private Target ownerTarget;
 
+    private Material electricGroundMat;
+
     // Start is called before the first frame update
     void Start()
     {
         TryGetComponent<Target>(out ownerTarget);
+        electricGroundMat = electricGround.GetComponent<MeshRenderer>().material;
+        electricGroundMat.SetFloat("LightingDiameter", areaRadius * 2);
     }
 
     // Update is called once per frame
@@ -29,7 +33,8 @@ public class AreaAttack : MonoBehaviour
         pos = transform.position;
         if (isEnabled)
         {
-            groundController.ShowElectricity(areaRadius);
+            electricGroundMat.SetVector("PlayerPos", new Vector2(transform.position.x, transform.position.z));
+
             // damage
             Collider[] damagedObjects = Physics.OverlapSphere(pos, areaRadius);
             foreach (var hitCollider in damagedObjects)
@@ -52,7 +57,6 @@ public class AreaAttack : MonoBehaviour
         }
         else if(!isEnabled)
         {
-            groundController.HideElectricity();
             if (ownerTarget)
             {
                 ownerTarget.invulnerability = false;

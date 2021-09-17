@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 732860205}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3239,6 +3239,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToLive: Infinity
   massAfterCollisionWithPlayer: 100
+--- !u!1 &1725493078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4128535921617025691, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+  m_PrefabInstance: {fileID: 9205994612711088162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1730287934 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 153100920123721131, guid: 3aa247c4ddafdbb4587a1cf3f2b881d6, type: 3}
@@ -8441,6 +8446,14 @@ PrefabInstance:
       propertyPath: progressionManager
       value: 
       objectReference: {fileID: 31522454}
+    - target: {fileID: 2507228963358285406, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: staminaRegenPerSecond
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366151707178016799, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.361
+      objectReference: {fileID: 0}
     - target: {fileID: 6629349634982217810, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8450,14 +8463,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 824559845}
     - target: {fileID: 7502695412977259148, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: electricGround
+      value: 
+      objectReference: {fileID: 1725493078}
+    - target: {fileID: 7502695412977259148, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: groundController
       value: 
       objectReference: {fileID: 21440214}
+    - target: {fileID: 8842307801566470153, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1a7fb1853c292f48b47cf42115a3a18, type: 2}
     - target: {fileID: 9039489057143238393, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1071123029}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 829785359394592363, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 08dad46b9bf9a7c4689df3973ad11947, type: 3}
 --- !u!114 &9205994612711088163 stripped
 MonoBehaviour:
