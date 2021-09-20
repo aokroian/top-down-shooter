@@ -6,9 +6,10 @@ public class CageLatticeController : MonoBehaviour
 {
     public float force = 10;
     public float radiusOfOneBulletImpact = 0.2f;
+    public int numberOfNearLattices = 3;
     public float timeToLiveAfterShot = 6;
 
-    public void AddForceOppositeOfPlayer(float radiusOfOneBulletImpact)
+    public void AddForceOppositeOfPlayer(bool isRecursive)
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         Transform player = GameObject.Find("Player").transform;
@@ -23,24 +24,25 @@ public class CageLatticeController : MonoBehaviour
         FixedJoint[] joints = GetComponents<FixedJoint>();
         foreach(FixedJoint joint in joints)
         {
-            joint.connectedBody = null;
+            //joint.connectedBody = null;
             joint.breakForce = 0;
         }
         // adding force
         Vector3 direction = gameObject.transform.position - player.position;
         if (rb != null)
         {
-            rb.AddForce(direction.normalized * force, ForceMode.Impulse);
-            //rb.AddExplosionForce(force, player.transform.position, 5);
+            rb.AddForce(direction * force, ForceMode.Impulse);
         }
-        if (radiusOfOneBulletImpact > 0)
+        if (isRecursive)
         {
             Collider[] nearbyLattices = Physics.OverlapSphere(transform.position, radiusOfOneBulletImpact);
             foreach (var hitCollider in nearbyLattices)
             {
                 if (hitCollider.GetComponent<CageLatticeController>() != null)
                 {
-                    hitCollider.GetComponent<CageLatticeController>().AddForceOppositeOfPlayer(0);
+                    hitCollider.GetComponent<CageLatticeController>().AddForceOppositeOfPlayer(false);
+                    numberOfNearLattices--;
+                    if (numberOfNearLattices <= 0) return;
                 }
             }
         }

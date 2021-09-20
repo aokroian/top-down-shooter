@@ -151,7 +151,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.DefaultCompany.Runusegun
-    Standalone: com.DefaultCompany.top-down-shooter
+    Standalone: com.DefaultCompany.Runusegun
     iPhone: com.DefaultCompany.Runusegun
   buildNumber:
     Standalone: 0
