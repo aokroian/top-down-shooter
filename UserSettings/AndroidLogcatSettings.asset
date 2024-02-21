@@ -1,83 +1,59 @@
 {
     "m_SelectedDeviceId": "X4PNOBN7GAU8BUQC",
-    "m_SelectedPackage": {
+    "m_SelectedProcess": {
         "deviceId": "X4PNOBN7GAU8BUQC",
         "name": "com.DefaultCompany.Runusegun",
-        "processId": 28854,
+        "processId": 12435,
         "exited": false
     },
     "m_SelectedPriority": 3,
-    "m_KnownPackagesForSerialization": [
+    "m_KnownProcessesForSerialization": [
         {
             "deviceId": "X4PNOBN7GAU8BUQC",
-            "name": "com.oppo.launcher",
-            "processId": 2676,
-            "exited": false
-        },
-        {
-            "deviceId": "X4PNOBN7GAU8BUQC",
-            "name": "com.DefaultCompany.topdownshooter",
-            "processId": 21940,
-            "exited": true
-        },
-        {
-            "deviceId": "X4PNOBN7GAU8BUQC",
-            "name": "com.DefaultCompany.topdownshooter",
-            "processId": 30854,
-            "exited": true
-        },
-        {
-            "deviceId": "X4PNOBN7GAU8BUQC",
-            "name": "com.DefaultCompany.topdownshooter",
-            "processId": 31905,
-            "exited": true
-        },
-        {
-            "deviceId": "X4PNOBN7GAU8BUQC",
-            "name": "com.DefaultCompany.topdownshooter",
-            "processId": 32559,
-            "exited": true
-        },
-        {
-            "deviceId": "X4PNOBN7GAU8BUQC",
-            "name": "com.DefaultCompany.topdownshooter",
-            "processId": 27215,
-            "exited": true
-        },
-        {
-            "deviceId": "X4PNOBN7GAU8BUQC",
-            "name": "com.DefaultCompany.Runusegun",
-            "processId": 27175,
+            "name": "com.android.launcher",
+            "processId": 2932,
             "exited": false
         },
         {
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.Runusegun",
-            "processId": 30459,
+            "processId": 3620,
             "exited": false
         },
         {
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.Runusegun",
-            "processId": 32376,
+            "processId": 7990,
             "exited": false
         },
         {
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.Runusegun",
-            "processId": 4834,
+            "processId": 9067,
             "exited": false
         },
         {
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.Runusegun",
-            "processId": 6410,
+            "processId": 9622,
             "exited": false
         },
         {
             "deviceId": "X4PNOBN7GAU8BUQC",
             "name": "com.DefaultCompany.Runusegun",
-            "processId": 28854,
+            "processId": 10053,
+            "exited": false
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.DefaultCompany.Runusegun",
+            "processId": 11468,
+            "exited": false
+        },
+        {
+            "deviceId": "X4PNOBN7GAU8BUQC",
+            "name": "com.DefaultCompany.Runusegun",
+            "processId": 12435,
             "exited": false
         }
     ],
@@ -113,8 +89,11 @@
             }
         ]
     },
+    "m_ExtraWindowState": {
+        "Type": 0,
+        "Height": 0.0
+    },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 300.0,
         "MemoryWindowWidth": 170.0,
         "MemoryTypeEnabled": [
             true,
@@ -129,9 +108,35 @@
             true
         ],
         "MemoryGroup": 2,
-        "Behavior": 0
+        "AutoCapture": true
     },
-    "m_Filter": "",
-    "m_FilterIsRegularExpression": true,
-    "m_SymbolPaths": []
+    "m_FilterOptions": {
+        "m_Filter": "",
+        "m_UseRegularExpressions": false,
+        "m_MatchCase": false
+    },
+    "m_SymbolPaths": [],
+    "m_CaptureVideoSettings": {
+        "TimeLimitEnabled": false,
+        "TimeLimit": 180,
+        "VideoSizeEnabled": false,
+        "VideoSizeX": 1280,
+        "VideoSizeY": 720,
+        "BitRateEnabled": false,
+        "BitRateK": 20000,
+        "DisplayIdEnabled": false,
+        "DisplayId": ""
+    },
+    "m_InputSettings": {
+        "ShiftModifier": false,
+        "SendText": "",
+        "PosixKillSignal": 0,
+        "TargetProcess": {
+            "deviceId": "",
+            "name": "",
+            "processId": 0,
+            "exited": false
+        }
+    },
+    "m_AutoScroll": 0
 }
